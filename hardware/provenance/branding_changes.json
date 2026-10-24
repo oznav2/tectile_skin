@@ -1,0 +1,1317 @@
+{
+  "files": [
+    {
+      "path": "00_Docs/ROBOSKIN_Hardware_Architecture.pdf",
+      "before_this_import_sha256": "55672ee062f5b5715eb943a52cd27d25c937b9edddb0f763b97a294b56a09adc",
+      "current_sha256": "57a1041d1c767b04472b4f5cf61a6e5302ea2c54b03cc6d7ef49b5b52987c463"
+    },
+    {
+      "path": "04_BOM/ROBOSKIN_BOM_5DOF_MotionHead.xlsx",
+      "before_this_import_sha256": "db144f0d7e42524016c86ad324dac35ee313c0586816bcf483c7a6e821bcaced",
+      "current_sha256": "ff6a20969877584d7358ea0e438f7cb377d5ca902791af1a6e3af45bf39f2a74"
+    },
+    {
+      "path": "04_BOM/ROBOSKIN_BOM_7DOF_MotionHead.xlsx",
+      "before_this_import_sha256": "7f1890de2298b26703a1a6c9943913936d71eaa314f0f12e3a83517445b4ac58",
+      "current_sha256": "9ef6475a0e37f6dc481be1b82a963828b11360970dbd3f29d52141be96867c89"
+    },
+    {
+      "path": "03_Harness/ROBOSKIN_Harness_BOM.xlsx",
+      "before_this_import_sha256": "7cf481dd7d4af9559ce62c3d4499515dc42465e76985a668fd53884b62b9a4a3",
+      "current_sha256": "dd90c5f739f330413d4b933c99fa2094c8dba4c8c892a65da21c4a8985170a57"
+    },
+    {
+      "path": "03_Harness/Harness_Manufacturing_Specification.docx",
+      "before_this_import_sha256": "c1412d3f8b2d2a3347a061755a36f67447177ccf9244e44e831b99687a872a7f",
+      "current_sha256": "cde00c6cbaedc75917c675f0b7f521ed2e8c49c430aad00dc38a9a9953812a98"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/5DOF/ROBOSKIN.0136_mirrored_cosmetic_hand_cover.pdf",
+      "before_this_import_sha256": "e4d9200a7693e9038bb1330aac10d41f3f27d96ceba994d16f57c19fc12f70b4",
+      "current_sha256": "98e7e9269bd1d17eb70668f2a51151e7d7dac73c4a21fc7e2a269020b441b933"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/5DOF/ROBOSKIN.0134_mirrored_cosmetic_hand_body.pdf",
+      "before_this_import_sha256": "3451e099fc77dc4e0b367b834012e998a945fcea624c1a1308eec26611321855",
+      "current_sha256": "bb3de98390d1f31c0f0a7f6dae680261baf1be16ad8e33c2ce868a7d9cc9fd55"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/5DOF/ROBOSKIN.0133_cosmetic_hand_cover.pdf",
+      "before_this_import_sha256": "c3a034904514a905fac781edc650a0dd16ef4c870122ef9edd8261a48e4f62a7",
+      "current_sha256": "c82979fa5e2ca6f2200d958f49eb3687a1ee01b1fd622b3cce8066ed4a055955"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/5DOF/ROBOSKIN.0132_cosmetic_hand_body.pdf",
+      "before_this_import_sha256": "e2a02796b0181df22d110eabcd8badd2dbca496c3b66baed78041cdd56aa65d2",
+      "current_sha256": "dc135ff679b3bd3ad9f07336d894d254bb297fbd26ba3bf02769ae0df9a2b90d"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0086_waist_motor_housing_(LS_revision_).pdf",
+      "before_this_import_sha256": "8fd8d426146fd728521f96806a3da591a7bffe91fbd57927f5ec698c77c6089d",
+      "current_sha256": "2fd734faf3f6df7680cebe2e854d79ab52ac6021c4041edc813a468e6e9ce442"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0091_Yaw_travel_stop_3.pdf",
+      "before_this_import_sha256": "dd19a36b18ff4d66f8111f4b9bc2b9bb5bd01efeb33627b240fd86e3c496adb8",
+      "current_sha256": "05dfa5f6d01728e8c31615717fcb71cf1180147d0f4c60380d17663abe80dbfc"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0254_ankle_limit_ring_2.pdf",
+      "before_this_import_sha256": "1f808f1ff273dd2e85bd03b397808579817df3b7150acc7a2c86fe410917e8ef",
+      "current_sha256": "5aee45992e3fe9fae85e62383d52f40710703cd43c24090bcc1382ed6f3d4c94"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0287_screen_damping_foam.pdf",
+      "before_this_import_sha256": "857c11ef7d30b8cea8387a146aca68568da300cd8b254037e23b558ef7b09235",
+      "current_sha256": "7371bc10aaf1766307477a2b34d4c01242de920abdf25656220e5badc93d8c94"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0117_limit_ring.pdf",
+      "before_this_import_sha256": "a427e741c92b4c2eda56054888ae21aea76b2f907dc4143b7f1b6a6a88e72c27",
+      "current_sha256": "dbbf56c535bf4617dde6f7f389ae2abedea0cc4fd7f4e2df024f3b54b2821e3e"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0271_insole.pdf",
+      "before_this_import_sha256": "31999a07a39be1efa3cf6043f439d29c18cf58d42efedb34834e4a3611c8c239",
+      "current_sha256": "06b0e69681f0861fc139ad56f562cd3957ec6d544b3b588626f4fc62cddb00a8"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0172_speaker_bracket.pdf",
+      "before_this_import_sha256": "8a2e2afd8a5f9e309d2d98e31ad172368cd9ebb72b345062fd8f292bbd48372f",
+      "current_sha256": "1c32aeb8f7ab04bc961e70c24ad7f9fa09370c2b25a59a97771928a48a4ce491"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0149_shin_body_right.pdf",
+      "before_this_import_sha256": "52b1dc41d1999a8c637e89ba98643de3c6b33682a948cdcf8e4fc1830b23f8f7",
+      "current_sha256": "0210bded6cff9d2435e69474ff46103f072d8d79f9644f6b3223e70e77ef47a4"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0078_waist_number_1_(LS_revision_).pdf",
+      "before_this_import_sha256": "76afff436b9a6c2d89eb6a0e5410a7a5b3cf43170083644775a75d4b856f6f9a",
+      "current_sha256": "e3154c6050314300051c6e665df158cb661a02ff3345a017dc0543057cf0d059"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0279_shin_rear_cover_plate.pdf",
+      "before_this_import_sha256": "fc63d7423cbfcfea34a796c1c520a4515b9f9bff2dcedb825dd21ec3216f3a53",
+      "current_sha256": "b84db4d2649c3fd1c3d7fdf41cd8e6d4bc69bc88c3da751d826f3e01c67b0bb0"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0168_PITCH-YAW_motor_connection_bracket.pdf",
+      "before_this_import_sha256": "a51f469e15daf4f2af7e75e0381ee416f9dfa1fc4f51c7111a76b0f7b95ee8ea",
+      "current_sha256": "ee3688a3810f323e9ed18a4c6f6b93822d6a85b81b00a0abfcc5839312a3a591"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0138_75_limit_ring.pdf",
+      "before_this_import_sha256": "89d0c2831c0b488b5fdae31fef0bbee0cbf8c08c974692bd20576f057ada8e85",
+      "current_sha256": "05b53caea256f5e07c011046400a1281e061b0113b809b33210f3a46ffd84a6e"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0126_fan_retention_bracket_(_waist_).pdf",
+      "before_this_import_sha256": "ba560a1dd32f781bbb378029fe2084e1f3b1da446c1a5127523df85b033639f7",
+      "current_sha256": "afad9eaa4109818e8bc1edd6d5b4a950b38f197d4cf1996768fbd97cf50efa00"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0286_interactive_head_adhesive_light_blocking_glass.pdf",
+      "before_this_import_sha256": "b80ff51d4eaa7cfeb7bd84970e9b4a943433f896aec9f62cdfaac616b6edff87",
+      "current_sha256": "ad83331a457d0d12cedc1893d813cfa71c17649020f388bb444676ef4dcb3636"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0189_sole_retention_number_2_(02_revision_).pdf",
+      "before_this_import_sha256": "d8256e203e13e849ea0d825f0af310a18021ae5d3978decf2832cc1b830efe84",
+      "current_sha256": "e9a8247a16099791fd6ccf33b9395829285900743d9cf3a9b1f503bfb31d34c7"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0150_shin_body_left.pdf",
+      "before_this_import_sha256": "0e3d1aad9520ee7d7cd9263a415f97be6d15d67f32d7a39fb60fdc2319806080",
+      "current_sha256": "9e38883b9719c1bb56bb373e5d4d49fcaa7b89e9e35269cc9d82b2568157981c"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0233-03_kickme_version_torso_front_shell.pdf",
+      "before_this_import_sha256": "d8b9ad9d78209c37cca7478b144d1a129ca339d491438ad218c506a1ef9cbd44",
+      "current_sha256": "71d2d4307579fad8d7b0b736b69c96a5e9d197b424a7e1b4cb186f6695bef1ba"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0088_hip_joint_right_clamp.pdf",
+      "before_this_import_sha256": "ab304462d378bff66f74ddabdb0814291c4c7fbd5cd627188556b9771bd72089",
+      "current_sha256": "a67e26a78dacc78fcec697536a0ea7d9e3439410b25adda93794be0288812cc8"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0219_waist_bracket.pdf",
+      "before_this_import_sha256": "1491414bca65541451b5ba3df66d275af7859fb0c9cd204d48f1fd12fad94ccb",
+      "current_sha256": "0c4bffda5e30cbfba7453d1ce4dd9e1642b4a476bc67814e284aa27058b37074"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0127_fan_retention_cover_plate.pdf",
+      "before_this_import_sha256": "a0d0722acb36390c25b3531198b6a6527624b4f0b0a664104fecdf220cfc6104",
+      "current_sha256": "089cd45e4b9f08ca2d4d6cd481419321d876fa57a1c0af6e76ca3a32c2452980"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0278_shin_front_cover_plate.pdf",
+      "before_this_import_sha256": "52dacf43663ebc0a4c21fbc202816080b0be350c35c189fa0d9639420483070d",
+      "current_sha256": "33c2d1a4012975d2cd91cb3c16c238f1fb10d10ded574a7eb38b9c6e58985919"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0197_thigh_lower_body_left_(02_revision_).pdf",
+      "before_this_import_sha256": "db599c81b8227ce9b5069e61ffffe225647931a2bc58d3dbfd3717f8cb324bfd",
+      "current_sha256": "48c053097ffbcb641fda98df3c66c41e2304c619889c21d61922421a809738d9"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0181_mirrored_forearm_upper_body_left_(02_revision_).pdf",
+      "before_this_import_sha256": "d8f462f0066d0c54aee1d7ee4b0256a8bc512c6a65c89efb35d0d67e2c8f7119",
+      "current_sha256": "f6bf56ffe9284bb7096bc80378d873da29679a65d8bf41931bdaa717bbdfb979"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0171_collector_board_body_bracket.pdf",
+      "before_this_import_sha256": "9f115a57b9c0b2f65f0c302d30329c87ab2153f7327324d1f57c25b52b0b8c19",
+      "current_sha256": "c8865ee3bf43433f4d120cca94c592814e05099da9e58d54482715cf87795561"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0164_thigh_lower_cover_plate_right.pdf",
+      "before_this_import_sha256": "4465f98b00f96c3fc208c2afe2529d0dae122f79ca77d62b5d8197cf9eba646d",
+      "current_sha256": "61d8c57c0b671d2bb84b4e7afa2a5d7ce455777824b10f1fc09e003a40d3f796"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0103_hip_joint_front_cover_plate.pdf",
+      "before_this_import_sha256": "0cb8ba41b5a36a3c139598ae0ad2342e08a56984e234afca14348ba80b90dece",
+      "current_sha256": "0016a1f96813e1efb42fb71d4ebe72dafd762a37ee62b17b68526c122d575d84"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0242_front_shell_latch.pdf",
+      "before_this_import_sha256": "35ddd43f3eadffe53c7304b6c8dbb62c842b6872b5be1c0f9d6f3c7fc1750157",
+      "current_sha256": "2e7bdef303ed46404cad76a232da2ec8c2a021bc5d344279ca50453442c8177e"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0277_LOGO_light_light_blocking_foam.pdf",
+      "before_this_import_sha256": "dedb1385eb9fbf2bfff989120afa53245628f1c6153d32d92196674d5c1c4421",
+      "current_sha256": "69157cb76d9759c21459f968bfd19aa1470a908c2e6801d2abdc0e4ac878f5c1"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0186_mirrored_75_shoulder_body_(01_revision_).pdf",
+      "before_this_import_sha256": "6e5a899b63807ad4a3bcc50879b75b750773f919221fd006afddbbc5dd9becd7",
+      "current_sha256": "6143e073eab2aad6fe8e57b3a180b7138d47570589b9b240af610e7debbc9465"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0167_YAW_motor_mounting_bracket.pdf",
+      "before_this_import_sha256": "2b52e7a7970405dd4872663a335f4bedf55e39e39e1d84406777abb6115969d1",
+      "current_sha256": "b8da4f45078ba0fe1c5282ad22e1b72aae499c21130b4c0a3195996027c40d85"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0082_hip_joint_left_(LS_revision_).pdf",
+      "before_this_import_sha256": "f8b1d0f3c3c00d04c11991aa96019eaac5ef0eff6958fa6a1f8ba879a98282d9",
+      "current_sha256": "5f6cbac54248303dff5cdde92e468fccdde5f79499bd45e5dee1d7d8d3ed5348"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0148_shin_motor_spacer_block.pdf",
+      "before_this_import_sha256": "2ec93a214153470b5d94db43e6b45b7b9c97d30e174be50d985768b9ea36c130",
+      "current_sha256": "a85dc545f5d26a9dddee29887e483e27be3141d7410f4fbfcf62ed620c362878"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0221_kickme_version_torso_frame.pdf",
+      "before_this_import_sha256": "058943ee98f82e6a74faabd4091e14b76e1895ac73452c2be4091fab005ce19e",
+      "current_sha256": "9c3e2a237b07f3f7f07090e3a33ae4244c13beab34e9eebca106ab1ee42db280"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0087_hip_joint_left_clamp.pdf",
+      "before_this_import_sha256": "b448d47312296e30b557506b2ebe353fbcce6af0a519973c926722933697860c",
+      "current_sha256": "5a30cbdc0bde9c8536272a1c7c2d3eebeadf444d22308e981bef16224675e2b1"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0180_forearm_upper_body_right_(02_revision_).pdf",
+      "before_this_import_sha256": "661508b2f9584071c4c193ef3f70d3c2d70ebde53362eb3fa4c396002fb68106",
+      "current_sha256": "f9a5fb8f97c46e99211caa9827aa6799eafce144f78c761085d0ff6d8d60f817"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0220-02_outer_topology_bracket.pdf",
+      "before_this_import_sha256": "3f5b16c88b2e48c08213373424e04004c1a3e950dc6cbff80e460f66393cb083",
+      "current_sha256": "fac6afbf451d80dd71cf2072dc2e1a2be264fe40570d9b941bc1e0c9145e4988"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0090_fan_mounting_block.pdf",
+      "before_this_import_sha256": "4dd26b243e888ae0a2559dd02c22ccbddfb9759ed385787835f1e7114e202afd",
+      "current_sha256": "dce416d30426d64e66ea6507a9d5594d3fbee7225feaad3a6b21bffe9995337b"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0236_foot_upper.pdf",
+      "before_this_import_sha256": "51135e2c2af0a3f72dc553876abd5a0fb91e13b43261c49cfa238ab57512dd5d",
+      "current_sha256": "5465af923af51513f774d44f8c5c3c45893552e1ac2bb8423671f10e88dc6c27"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0179_forearm_upper_body_left_(02_revision_).pdf",
+      "before_this_import_sha256": "686fadfb5177865911d48b2cbc714b388bc60be7be4daf2c2f53eb570e47979e",
+      "current_sha256": "db3a636af9fdac6bfbe7aeb4a32fbd9e92bc0c3387ba9e784a28adfbe24e66a2"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0192_thigh_clamp_(_production_).pdf",
+      "before_this_import_sha256": "5cff1e46773521eab729c01a378f61c947b9cfda361c25e03d46a2ce2e4fd56a",
+      "current_sha256": "5bb668305de940d430497fe935b84decd52dd76ff7ad8ec35def7a44b5f230bc"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0077_waist_Roll_limit_ring.pdf",
+      "before_this_import_sha256": "cad6c38a579cc2f76045e8a9b813290b22fc56dc71a2bc34ae0f8f20982be774",
+      "current_sha256": "a9be200ffc3d119f9ecb950be6e2908198e74593baf74d9f81a9148d970fd649"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0195_thigh_flange_right.pdf",
+      "before_this_import_sha256": "870030399de34758dec5a0e6d79f92e55ee61f1afca6003fc4ae52cf21a42c36",
+      "current_sha256": "c2b10903faf6a8efddfb577b29991ccc71acb64e800af6a4010f57cf010c48e9"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0200_mirrored_thigh_lower_body_left_(02_revision_).pdf",
+      "before_this_import_sha256": "9a7361fcd3cb2ee43f7ca215a00024df203cc208b843d4d605e5fa5d6b0e2e38",
+      "current_sha256": "e7dd781f33e996e070df8f90b7049ce3f838aa6138112984155801a3f8427beb"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0273_motion_head_base_mounting_adapter.pdf",
+      "before_this_import_sha256": "579a908f83f398c7eb78e346813713fdc8d99b747adb36fa3d2202692d3adbb2",
+      "current_sha256": "a1c16dfac14847cf52ad6f97eb62655c0b0bd3d184137af53d3738affba88d7b"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0235_foot_plate.pdf",
+      "before_this_import_sha256": "0263844894abe8c8b62cedd09cac12e5bc6e216591a2ad6cfab7f2d663f0dee1",
+      "current_sha256": "983fb34fd7a1f0977eec0af192361f01f177aab03e877b3c501508913fa32540"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0083_hip_joint_right_(LS_revision_).pdf",
+      "before_this_import_sha256": "d8c11bea6d10164262e65998d081b4e45fc176370f11241e2f91dce10ec367b4",
+      "current_sha256": "0b95be21fd0ee198bc4344014e413fbdc1a7b0d9d226d368daa1be6581f22506"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0280_side_cable_channel.pdf",
+      "before_this_import_sha256": "82186af4ed6483a8e824cd085add492ef4cf19bdcf99463d12bdf9f7e4c29691",
+      "current_sha256": "4232db6ccdda51cb87553b535d8014061b224f697584cf5f0d553c0108904f1f"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0183_mirrored_upper_arm_lower_front_segment_(01_revision_).pdf",
+      "before_this_import_sha256": "b6c34890658a679ab3d44bcf9f61c806f0416a419d0063b661de65802ed935fa",
+      "current_sha256": "5c25aa1d00a350e1eb73da38b5eb4f934b692bc01f0d90610e6d871c193da5b7"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0173_75_shoulder_clamp_(01_revision_).pdf",
+      "before_this_import_sha256": "46db5133036bbc8596dfdd1b57d3b7dae192af264af22ae2f6c847602ea4935d",
+      "current_sha256": "7f74c73c561bb6d8873b90952901ece16f4c655a8335e24d2afbf412d76866a4"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0155_mirrored_shin_motor_spacer_block.pdf",
+      "before_this_import_sha256": "b255c2cfffb0132456c892293fa0e0fb1d28039fbeffd474e26956732f474235",
+      "current_sha256": "dca444fbdb89cec633d303b08491e2702e681ed5f86cc7800451cd383a0cd01f"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0194_Yaw_travel_stop_4(03_revision_).pdf",
+      "before_this_import_sha256": "ba727cd8f8b4daa86a6950829bcd6487c47abed4e1d7d796cf0d6ab27ceca7fc",
+      "current_sha256": "935bec3ff9437e144eebc9e576d82df0f60aec5a809417abc8841a413c61ca32"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0124_shoulder_clamp.pdf",
+      "before_this_import_sha256": "ff222f439d5b2189316da764f66c6d788307686fcb3cb9e6b781d5118d2d5971",
+      "current_sha256": "16b7bc55c4e0c8a2040068cbe47348a76c2ec2b3b68255f4b115e96d954a3421"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0160_thigh_clamp_rear.pdf",
+      "before_this_import_sha256": "011ea2b5fc138ca380140c40f2a75f4677e690be67761edfe412a310340c9427",
+      "current_sha256": "5c5847f791e8fb138ac3ccc3903e7dcaf2832abac493f026e9d89b494980cf51"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0161_thigh_clamp_front.pdf",
+      "before_this_import_sha256": "ba05191e3bd605d40445cfbacff8f49e36d0bc65dd2b08cb884414dbb9d98ae6",
+      "current_sha256": "95a4c3ffcbc7761462a0448a9b871e7ec4c0679d75a60a428162dc6ac2bd9cb8"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0153_mirrored_shin_body_left.pdf",
+      "before_this_import_sha256": "822a271f2699c1366222ca9a7a6cfa2e18775f1790ece1b718c318c2ab3c627b",
+      "current_sha256": "1f01e4dfdf77af2bfa1025e621b11ef2998cb6e7005b00800dc54354ad39d4d1"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0081_hip_joint_rear_(LS_revision_).pdf",
+      "before_this_import_sha256": "d5ba425ad8d19950ecfeea78b784ac5c122789a7ffdfb77965494b5a0e5e2e78",
+      "current_sha256": "2ded63183028d530c870777e88e2f050bdf94604533fc72c810f387519c82afb"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0225_handle_-kickme.pdf",
+      "before_this_import_sha256": "b7a8d51939cee671a6d649f5fafe1662c4833d786c5810f149173a6af7305e28",
+      "current_sha256": "ffb83464471307c570c1c05907834c03fb24bb6a355672ed0b310b5c65a0c142"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0169_PITCH-YAW_motor_flange_bracket.pdf",
+      "before_this_import_sha256": "aa3a3f2c2d439721fb239d6ff056d90e9a69e9bc0ca434708a419fdb74f0f08a",
+      "current_sha256": "f83c5619dc381c293efc5545c9f727ebc06bd4bc620ab78c1fc598af39c67574"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0199_mirrored_thigh_lower_motor_clamp_(01_revision_).pdf",
+      "before_this_import_sha256": "e643eb20c6397e4f9f1ec797115995c42a8bb73ab06937bdde6ddb4ed2018022",
+      "current_sha256": "877f6e90fffb75859f0f91df76d5b845472fd66e67270767b32d9953c4eff790"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0193_thigh_body_(_production_).pdf",
+      "before_this_import_sha256": "f6c00afd8b461c799b6b4008a2bdde1bb02b9ec91d16864b60bf2e0a2d7a2817",
+      "current_sha256": "7305f5ad301fa03394b7896947c88edc4eba75479077d88c9bf35634bbe5ea36"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0080_hip_joint_front_(LS_revision_).pdf",
+      "before_this_import_sha256": "7b6874c2ea06600ceb6d03f6358d7940fd9147252a89d38e39090e5f4030ebca",
+      "current_sha256": "95ee5c3ca065e091b45c4e4b2f108bcaa1aa9371c2f23bf0a81a37c153c8ee6b"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0229-02_EPP_cushion_layer.pdf",
+      "before_this_import_sha256": "eb2833a01fb219282e01044a75eee686791ed82035a1a1159155470d6779f401",
+      "current_sha256": "6b1571442ad4531e4e0813f716d4300a587dfb2ece63f433da0671036cfc125c"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0102_mirrored_Pitch_travel_stop.pdf",
+      "before_this_import_sha256": "1e40abc1ddb3b62e3cf0d61aadd7b0dee3e6c64e0d63430d6ab4f995c915fda7",
+      "current_sha256": "e5c0832bde97d7a077309f82275ede409944738f51ba72c2cbd8706d0f491104"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0190_Roll_travel_stop.pdf",
+      "before_this_import_sha256": "43a8c9c2976424abf31f213da9aeb5ec1bcf0282eb9afcb8b2d67b3ccc43be0c",
+      "current_sha256": "03356fac295a8f40bfc8a6d1ad5b7e28b5168c45b52742a9899d39ce5f3107a0"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0249_motion_head_bracket.pdf",
+      "before_this_import_sha256": "176b1d8f225d365828b724a823b08ccf49fcc7051ed7213d3ae42762a72c782f",
+      "current_sha256": "71641d3fe88dc61c9ec7f4b0f7d212717a3b7bcd414da81a2c1c4338b39d25ee"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0175_upper_arm_upper_body_(01_revision_).pdf",
+      "before_this_import_sha256": "9843032781dc1a202c4266b4e6d7885a1aa83e7f129acb7d4d71ef4552585a48",
+      "current_sha256": "c9d01a2aa0f21cc505c673d1574669f38395956f3f0914d472ef785d84e2aae0"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0174_75_shoulder_body_(01_revision_).pdf",
+      "before_this_import_sha256": "0ec217a00c1694e69f2f8ae96a5e0528f4bf33e10ec6d5095fbc8ec534672505",
+      "current_sha256": "3129430b38022d9388c45e3b61beb961b8c714ff9c39231d4a8c5078b4ba4a04"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0115_arm_adapter_flange.pdf",
+      "before_this_import_sha256": "df5f1206a33c88fc99a8df26d586efa58e37000e61d3680565bcfcbeb8067dfb",
+      "current_sha256": "6cdde12efdecf3c57930d3a6f357a413f768d0d260314ea81d32ccc6753ff01c"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0084_hip_joint_limit_ring_(LS_revision_).pdf",
+      "before_this_import_sha256": "97ccb909d34f5c4cb87ad9d6b9bdaa13c7c86555b409ed4e64dc6944d4ed2844",
+      "current_sha256": "960d928978a890ef14a1a16dd53bc70dff4da183b1bb7cc988157ace0b01ebf4"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0170-02_head_PITCH_motor_flange.pdf",
+      "before_this_import_sha256": "c7596e1b44a508bed192f18722701b541e85578e7652b4cab46a10e75e16aa47",
+      "current_sha256": "8b24a2df946fb87c1c4a5c34427024689a382d4bf2d1a72c4c867a99c8d85fc3"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0281_motion_control_expansion_board.pdf",
+      "before_this_import_sha256": "d56e9b02a14e4c84c7d1c02b3f49bd5aca022537a1208dcee38683a7db716caf",
+      "current_sha256": "5217cedd3b736e40d6e764bcc4c398c2daf67ed32d9690a0923a49a161c11213"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0119_elbow_bearing_housing.pdf",
+      "before_this_import_sha256": "c9ec480c3f883dc039c495061f26cc12512ce3d5eb900e80f2284b6d7c9bc64c",
+      "current_sha256": "3880c06cb27f7f8365bcea505d7ef5530420f8e0534778f5b709e28adcd31b16"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0120_limit_ring_2.pdf",
+      "before_this_import_sha256": "2b1fad0b05831ce8bb0e36bba490c90a7922b20a1717552d5bcde6d92a51fd47",
+      "current_sha256": "f7cd68db108f60429c4ccd48a3898d03f228b71c905e883bca2e5f5366289c7f"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0178_upper_arm_lower_rear_segment_(01_revision_).pdf",
+      "before_this_import_sha256": "6c9a2f386e8fc39c51d09ae10d459fda36c8e97f9b2f8e7c05019dd8b0dbf4bc",
+      "current_sha256": "3f7b340020214df61cde9fbb5a50dab83fd72a5e932d17b5d6a794e02b367d57"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0079_waist_number_1_clamp_(LS_revision_).pdf",
+      "before_this_import_sha256": "59645fa94e5b2b9979428893f010b78a5d8b5b2e595d7a3879b04d535cb13b52",
+      "current_sha256": "836813b17a1a0e16357b082ca80f0ed3f2c6cc051d5c31be7cb7b5ec96bd2f06"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0177_upper_arm_lower_front_segment_(01_revision_).pdf",
+      "before_this_import_sha256": "7a37c4f207ad78a9bb34c56d1cff2ff8e317aeaf9b43cf07fae150962f16d17e",
+      "current_sha256": "2e2ce91e080d2b3b1e3bd48b11f50b4e7e208c5a47bf3625700558b94e2e83a4"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0162_thigh_lower_body_right.pdf",
+      "before_this_import_sha256": "812a5d12336e59a803bf6ed720f9b9a6d9918a568e38609ccbf1e2060b376f64",
+      "current_sha256": "911365537a8f48ca90d6fed962a3d0457490c9a95715a06ffd2518d9d142ec74"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0196_thigh_lower_motor_clamp_(01_revision_).pdf",
+      "before_this_import_sha256": "1f3f29abe30b5359eca1657a003663c6a711b3418c71cedb9d94739d9add5847",
+      "current_sha256": "826905d94e93720300174a2273ef7de13ba6d0a75cfd2589fc0e4d74674ecdea"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0182_mirrored_forearm_upper_body_right_(02_revision_).pdf",
+      "before_this_import_sha256": "2f0b4d8b1c871a31f15362afd56854fafe8b4a6b2b0b3adf77ac41a7dd01df64",
+      "current_sha256": "82f6c7bca50381d45b1925e1f361a9aabebbdab0a5e5ceb4fbabf7dccfc09cc0"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0184_mirrored_upper_arm_lower_rear_segment_(01_revision_).pdf",
+      "before_this_import_sha256": "8a02192131268b7a987cf8417f240ca52aff7ad778723d31d5857b8eb45f9c34",
+      "current_sha256": "0c0a3cac9f145d717d0c1c4eef6cf9245cf854350e6adc293d36c538824aa1ad"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0198_thigh_flange_left.pdf",
+      "before_this_import_sha256": "244148123863b530a7d3b0269a562d288c5633f20e675674cb8270d967fcffba",
+      "current_sha256": "80c1ee177d7b1c1fa157c808d20478d915e07c4f074e34bc005ec8d96111e70d"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0143_hip_joint_rear_cover_plate.pdf",
+      "before_this_import_sha256": "6bed53abd05b77f2dd0856edcc997a3cf0da917b152a2d155c89c159b6bc0882",
+      "current_sha256": "9cb7974d1bffd91ce136a172f9f0e6c9cf9e274aceea3b7cfb41745b3c626971"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0247_97_limit_ring.pdf",
+      "before_this_import_sha256": "1e5d2db642fba9717845e15f00bc1d76a0b9ccd37925b4d4e766cdd1b5ef09e7",
+      "current_sha256": "a045de871d40e4c0e908705ee2bcf3aee40f310565b5d01b3a7c9ba6e1849332"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0232-03_kickme_version_torso_rear_shell.pdf",
+      "before_this_import_sha256": "5bf39a97be471d5a7f0ea7caf29463498c05f3580f7308dc738b8f72b9a9f9be",
+      "current_sha256": "184fbd60c24de538dad0e5d83839630eb88900e9c2679048aa1647e34f3f7987"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0096_Pitch_travel_stop.pdf",
+      "before_this_import_sha256": "4bb7897048d62c4f3dd5a829144f21d735028dbce341319876d5d07e351dca03",
+      "current_sha256": "dc96c0aedd18b9c8f10493c8229f98a8da5a1ecf577c2210b9f4781c8b5d4538"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0246_mirrored_97_limit_ring.pdf",
+      "before_this_import_sha256": "5de8c23a9d598e2b4a0f2f7ea347c67a38ea1c48b4079d36b0fcd02876386320",
+      "current_sha256": "f9d9262296986e2f8de88a4a7013dba669dad0a619cf30751f5c75fe5276f82e"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0245-03_charger_board_mounting_and_locating_bracket.pdf",
+      "before_this_import_sha256": "bfb9b78b66dc8918beb9dd4429c6363e8c81812ade184d5f933f795ac283e0a9",
+      "current_sha256": "b103caca97281ea00b49313e568db159a7c795e32085403eee5e4592c2cfda5c"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0204_mirrored_thigh_lower_body_right.pdf",
+      "before_this_import_sha256": "3fc4d7f12a4d1c0efecc95ebe6cbed03c3a497f1e29fc01c0aa4e5489057c12f",
+      "current_sha256": "5066649c02a721d46a0a0eb50d3a67f0051035c1b85dc478e3226548fde6cd50"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0231_interactive_head_mounting_bracket.pdf",
+      "before_this_import_sha256": "0af88a00849252562ebe8c13ca04ff88eb1e15d1e37b271049dae668e9419519",
+      "current_sha256": "ff32aedb080f27deb3b65b4a807f7c6a6d0b3a9799ddb9b3b42a6670043ad731"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0151_shin_ankle_spacer_block.pdf",
+      "before_this_import_sha256": "5360f1d73ab7cf79a599bb7e908aa408f82f59a8a24acf8dacde8866e1cf0c2c",
+      "current_sha256": "46db93882cbf957e0c6467dbd46ab2fb388cc7f471bd6c6f34bfa0ac1e151b4a"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0097_sole_cross_shaft.pdf",
+      "before_this_import_sha256": "87219583e6ff1fe2811fbf7a6c2aafd0615858e3a9ee1fea07d23db148f2d5d7",
+      "current_sha256": "8a8f03740c4aa52012fc8a6b9f6e271cbd23be1c25039c9acd462bb122e000f3"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0085_hip_joint_motor_cover_plate.pdf",
+      "before_this_import_sha256": "adbf063c7be9a7daf5797e02d6569c420523c0caab2fb7d8d5644675b9ab1db2",
+      "current_sha256": "8e4916b76a131244d717e2215bacba914271719eaf06a59723b8bdb7708aa506"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0076_waist_Yaw_limit_ring.pdf",
+      "before_this_import_sha256": "e5a870c84891530829f7b47e950daec91f77d2105aa9c86dfd4c873aa208a93f",
+      "current_sha256": "9044ca1613b748a905eea22ce34e298fa5af37716e7af002ae16c60e07b1ffa9"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0163_thigh_lower_cover_plate_left.pdf",
+      "before_this_import_sha256": "d2c8e81596f8bac116b85c033a0077409d845952e6c2b2fba1207358dca081af",
+      "current_sha256": "98dd4479c8de9b4b1c0ca6f3f05a886c5411d9204249bc0ffa0d215bd7d57b95"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0154_mirrored_shin_body_right.pdf",
+      "before_this_import_sha256": "f7aa14656a015680dca6cd85aeb1288df4b96d2cc61bce8a7a3d0e5a2d1cd208",
+      "current_sha256": "6b130ec710b91dd2d4b8f463099c8f78fea7fb6c670c606313153725870c82d4"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0152_mirrored_shin_ankle_spacer_block.pdf",
+      "before_this_import_sha256": "aa0aedfd0357462ae837bcdf334b7148b6ba360908c0fbc92a6e1125a6a3e67c",
+      "current_sha256": "d05973cf14ccd1f0d4f8149f80b9f6e4e372a14ddd2b8dbe4f95359b56012c82"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0176_upper_arm_upper_clamp_(01_revision_).pdf",
+      "before_this_import_sha256": "b33d13b13d8552713058ff7be9b17bb77ecb3717d0c1e86aa5501e6c10aaf6f5",
+      "current_sha256": "c05753c27ff056051c06de175ffd3fe8d510d94801f540391f9fdc139ffceb29"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0230-02_PC_cushion_bracket.pdf",
+      "before_this_import_sha256": "0a3ff96e02334cec32f57d9432d952ebdc02ffc3baf9e1d4d125636d80fd9554",
+      "current_sha256": "d45fdeb2262048eb78a75750aa3ace0a2f6c3b4156dc3b890f928747e887d9e5"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0105_knee_bearing_housing.pdf",
+      "before_this_import_sha256": "77c679a13d786be914c5017ea6fad3e1271521a2d7012ff3f13319c264753615",
+      "current_sha256": "81c2a87f38b23a2df6f859fbf0821e804a244cd7ac15d88f9e5cb510e22b3101"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0185_mirrored_75_shoulder_clamp_(01_revision_).pdf",
+      "before_this_import_sha256": "839327bf0f657c7ccd349806724aea0de946257048f0feff61a112a8b2113a7f",
+      "current_sha256": "e81daa67be53653480e3e7c65e55545f11af111e19b5b88b72d1ead0052efe8d"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/7DOF/ROBOSKIN.0114_RP_Hand_adapter.pdf",
+      "before_this_import_sha256": "75c4f1a0e3b2d2d9545ad1fa76f13c626c87f3dc75b61b2f8a3ecdea9321567d",
+      "current_sha256": "9beb37bcd614bdb8c0fe8351a8cb692b942f92517b629ae1144dd1fab478118d"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/7DOF/ROBOSKIN.0156_wrist_body.pdf",
+      "before_this_import_sha256": "9ba58cba3cd952167e603919e46ef8017591df520e70f5cc5529d26009c1860d",
+      "current_sha256": "ab97e6e640df46263e30733643d19cbc396ecbf6a8644f1057ddeafdebcc32d8"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/7DOF/ROBOSKIN.0159_wrist_lower_clamp.pdf",
+      "before_this_import_sha256": "414930fd7fd48094df3886d6e298e319f7c86567570a5c243bc3ac5563329c43",
+      "current_sha256": "bbacffc49e48edb86d4a5a1d55566b8d9cd5e497e3e639ecae30892485c5c1e4"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/7DOF/ROBOSKIN.0001_forearm_lower_body.pdf",
+      "before_this_import_sha256": "a2d2d2daf5364b24f73e864053408064ca2e4e23ceba60bee399b4631793861c",
+      "current_sha256": "082a81f1ecdc9e325e14ed74c476335dfecf6a07c4b9a4e9028433dca41e18a5"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/7DOF/ROBOSKIN.0158_wrist_upper_clamp.pdf",
+      "before_this_import_sha256": "80a58848420c969dbfccb584676b36cf95a2fb184582efda58b6df9ae8c9cee5",
+      "current_sha256": "2221d2048949956c5fe5160d0b61d9b8d788d0d4cb838b6b73bff2e342e0a74e"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/7DOF/ROBOSKIN.0113_adapter_board_retainer.pdf",
+      "before_this_import_sha256": "904950f868e22246768cfd13f03fa91bd08538d289abaa219396d9251e22d181",
+      "current_sha256": "77bd64e3ff81982d393256757714f90e9c0a84426c4a59e273b2d960d3afcf1e"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/7DOF/ROBOSKIN.0157_mirrored_wrist_body.pdf",
+      "before_this_import_sha256": "860c49d58b28c0864fdf586f9483b5bf4855fefd561d29b96d529fc2f16e6b05",
+      "current_sha256": "fbce3101644b5dcc3864f1fd103f4f35459e885ceb634587bd98d2378ecadb31"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/7DOF/ROBOSKIN.0123_55_limit_ring.pdf",
+      "before_this_import_sha256": "bb5b6a1fc5fc417206010f4ce81d6f6b1476c6f83782ffef01ab1b8c38332610",
+      "current_sha256": "c106e791976aff0e1b5a68d52bc4fd7c3df547aa5b92fd8657a27f79ce0dc5ae"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/7DOF/ROBOSKIN.0112_wrist_end_body.pdf",
+      "before_this_import_sha256": "207663afe2fdd99f5b14dcf7b0fb82f2650331e1b53d72ccf8abfd637fcbbcb5",
+      "current_sha256": "fae6a14e119b74f34baa063ddad46d38264f98b94393baf043916931e94fda08"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0251_KICKME_motion_head_body_CMF_specification.pdf",
+      "before_this_import_sha256": "a6815c1dcfbe379ca0391640c0ff6651e66a34e39e8de52682e6c07522e3bada",
+      "current_sha256": "d0372f8435239d8a9afe8a13d7a1d3e710611db915592655098e1542b3e4e90c"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0183_mirrored_upper_arm_lower_front_segment_(01_revision_)_CMF_specification.pdf",
+      "before_this_import_sha256": "e5589e4b5eb3b284a7f12d300281e26a5a5273f1250f374ecdd0241a36dac5dd",
+      "current_sha256": "1259e37855fb4b64c01ffda0f1770a8014f0005fa84104e080177ccc5937e927"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0181_mirrored_forearm_upper_body_left_(02_revision_)_CMF_specification.pdf",
+      "before_this_import_sha256": "022f4973fc91ba8df06d5b3303beb47921b35a6a78a1bc8d023201b67d54f8d1",
+      "current_sha256": "077b01ee748ff432abdf449e991cdf11da9aaa0eeb3696e4dbee98c0644f7327"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0156_wrist_body_CMF_specification.pdf",
+      "before_this_import_sha256": "49969735914388ea2b25f17085a4cceaf5c5223b92ef830084970a88834ccbe5",
+      "current_sha256": "1ad7c92704deda795f51e3117ab95c38f0867954ebee02d6e0216dfc90f92f08"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0235_foot_plate_CMF_specification.pdf",
+      "before_this_import_sha256": "6501cae9a2c77abcc9daf8a4d8889326e1e4b570a2d2670bf9f6a2cca9d3bb27",
+      "current_sha256": "8be8ee6b3471753f66a70e4e55ba7bbb20bc0be734b62d4b4e9e1a9379f91206"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0164_thigh_lower_cover_plate_right_CMF_specification.pdf",
+      "before_this_import_sha256": "d323972fb0b0d69b2c343015abe1ed1551844996cc88dca7425238c1ac6141b9",
+      "current_sha256": "047fa5271d10d19a3eca9b2a1de27de249e31343e294d390f569b0dd8b5abd4c"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0160_thigh_clamp_rear_CMF_specification.pdf",
+      "before_this_import_sha256": "2557fcd5151a4c89dcac96ac0081e37883cc719df9bcd4c4bd7738e5ca657684",
+      "current_sha256": "d2cdc8a78e3494736ed0c26396b46fbacada1deb9ab4c596b52e2e3bf1d85a19"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0084_hip_joint_limit_ring_CMF_specification.pdf",
+      "before_this_import_sha256": "1b662d17a6577f364660414b2d2924ce53eb5d8c24698396b3fa232052ba2696",
+      "current_sha256": "7262d08a40a9abb611c9048e9be365fe67329ba7bc1dff34408908a578df5d59"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0082_hip_joint_left_(LS_revision_)_CMF_specification.pdf",
+      "before_this_import_sha256": "ea8db53d20f2a1f06e8c8a39cd59f2b989b66b7d6ed10e312a9e0ed5e287b06b",
+      "current_sha256": "7eaadf5da14f45e76b974d9eb7943e1924d018c79d24cf97980a0cde21954e27"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0205_mirrored_thigh_lower_cover_plate_right_CMF_specification.pdf",
+      "before_this_import_sha256": "5f5c9b2ca1efd650d672d6b51420f1512b8d09670a59d0f42589750e63a86455",
+      "current_sha256": "6a26c2fcc9ac6ad77a11db663c2bbc9075b3b90e01df92e090cecb34ec08b0ae"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0193_thigh_body_(01_revision_)_CMF_specification.pdf",
+      "before_this_import_sha256": "9aae6c4279264af6caa1b4c981c0103a24ee26f5031fde9c605ec6ddde33e26d",
+      "current_sha256": "6badb6f1b40362e17dbdb86281ec92325c9c534eccc33c2bd1e8e822cc0d451f"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0134_mirrored_cosmetic_hand_body_CMF_specification.pdf",
+      "before_this_import_sha256": "913eae79a9b6b3941c9e3afd076ce2222536870b7b6af8ff8393d647eed5adc2",
+      "current_sha256": "b7bd56f2985d553b239a3bd4e6c12d071f57b0577037a0ade8555ed94f09cc08"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0204_mirrored_thigh_lower_body_right_CMF_specification.pdf",
+      "before_this_import_sha256": "388b039fed22cd5e22cd5b2d31a930a9b674649098c3ea6ddddac56413790dd0",
+      "current_sha256": "b3d63e47455ee0ddd3d0151a255e965e90837b3c68aa765bb67e283a6398b993"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0132_cosmetic_hand_body_CMF_specification.pdf",
+      "before_this_import_sha256": "694f1ce59aa488164632a1a750dee728cd18c0999c0510ca8c4c694b289e6f9b",
+      "current_sha256": "91ce13e2152e0ac305249786cfeb4cc2b5b5e195bdb3b4fd696eed1ebf5d4d6b"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0113_adapter_board_retainer_CMF_specification.pdf",
+      "before_this_import_sha256": "2660a2f3154651fd22c4f3128e594702c9c8895ce4ff125c2a9e8cebbef50970",
+      "current_sha256": "19d2c5668fbf54fef742f76d627e1e24ea6ab6de439ec4e32e49d2f16ae397fa"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0081_hip_joint_rear_(LS_revision_)_CMF_specification.pdf",
+      "before_this_import_sha256": "34946072871e421251dc18916e40f427831f98fde291a82194b7363c6fc0020c",
+      "current_sha256": "88970fa8733aeb493905d076bf97e440e8b4c95a1ec9a6c810b7a10d7cf953e5"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0150_shin_body_left_CMF_specification.pdf",
+      "before_this_import_sha256": "0f6c0aff258942a7b8eb06d455ee6fb8621aa643cc5c82031eb25b66bbdc6180",
+      "current_sha256": "d15ad474ee9fc37cca252b7b0b5cc3a223c8d82b1f84f9a6a67193e5f8061fc4"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0185_mirrored_75_shoulder_clamp_(01_revision_)_CMF_specification.pdf",
+      "before_this_import_sha256": "c4598f3d37014dc8f162a1f0edd3ed0545de91a01f6a02d6efc3a78cecf9de63",
+      "current_sha256": "040e2e90af74af4d6c4c95e039a98fd4ca10c10016f2a2ad26f40ff9c9c4d7ea"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0151_shin_ankle_spacer_block_CMF_specification.pdf",
+      "before_this_import_sha256": "d3bcc2db9dcaad61f8038cf5522e13e73d687e681e81d111169ebd0cd6fed88a",
+      "current_sha256": "ad398371bb9a7261d6ea1e4871885422ac2a340a77a0086182ac75680e11080b"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0199_mirrored_thigh_lower_motor_clamp_(01_revision_)_CMF_specification.pdf",
+      "before_this_import_sha256": "dcfc096d48dab73f7626b15030034fd95e372a1c1bfb06a351db447b16f3ac2e",
+      "current_sha256": "ebc06d17dce21fa121481712887a305687dcf9f535763aac69c20ad9d5c8ff5f"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0155_mirrored_shin_motor_spacer_block_CMF_specification.pdf",
+      "before_this_import_sha256": "a84d54fb7818fe7241282655731037eb9c99a603a0594cd2c7495ca90766b0c5",
+      "current_sha256": "9bd9d0b86d17fb9b51f7277e49b909c132bb74e6fd020de311ecfc2cc7be1316"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0174_75_shoulder_body_(01_revision_)_CMF_specification.pdf",
+      "before_this_import_sha256": "2561c211646b94978f23bad77f1a4f14f65091ba4aa68ecc68f9e610579a8655",
+      "current_sha256": "60dff87a753383d98ecf829638a86ce6242af92fecd12c388d1e6e67628818ca"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0173_75_shoulder_clamp_(01_revision_)_CMF_specification.pdf",
+      "before_this_import_sha256": "232fe192910d5ce7be84216ace740cd69afadc1915d3cb23e8e8f01fe21a1bae",
+      "current_sha256": "51e2daf0de508f38d8335161eaeb61e095f7579ddf61106b87ff9c66e7b2963b"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0197_thigh_lower_body_left_(02_revision_)_CMF_specification.pdf",
+      "before_this_import_sha256": "6474469fa1f9712c1f424a42441bf2fbaa571bd3819d44af8e6f29c68e88f9ce",
+      "current_sha256": "97a1d47e90d0d90404207750582c4192c36876ca9314bc777ba6d9b4214c0082"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0225_handle_CMF_specification.pdf",
+      "before_this_import_sha256": "4fd331954837dbc50acece4f821122244790233db55f4c680c76ee769213a69f",
+      "current_sha256": "548311d378580b6a145458b06cbb233212aa841105821b9da8e63d19c2c943ad"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0157_mirrored_wrist_body_CMF_specification.pdf",
+      "before_this_import_sha256": "7429edcb175dd4a2b803763993190dc921dd3d6f9e7072ef33960657bf89f812",
+      "current_sha256": "99c0ae469c0c4e6461a542c17b41d8708cd20f722607b9db3958ca50833566b4"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0175_upper_arm_upper_body_(01_revision_)_CMF_specification.pdf",
+      "before_this_import_sha256": "ee1c63f412c048e0630c00bdf93ffdf5015f12b0a99fceda3f09bc571298206b",
+      "current_sha256": "b75dc5d42966308f4640d227d0bff6eb3ca28a4df85867350fdc47a87316d389"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0252_KICKME_motion_head_screw_concealment_cover_CMF_specification.pdf",
+      "before_this_import_sha256": "01cf649bea3665ce0272ee65547950f0e180d459865b5ac8eb30fd0f59e1dc12",
+      "current_sha256": "080c50537c55f4dab7ae2544f662e792fa832ab72705a6a2ff7faffa821403cd"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0001_forearm_lower_body_CMF_specification.pdf",
+      "before_this_import_sha256": "285d851729443e3f9183090be728c46db8f12bad500263027c1399f419f2acf8",
+      "current_sha256": "c4f9e1f535fe45fbf22e4334c90ef797f0e9c79e01417df63c0c16a819dcf705"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0200_mirrored_thigh_lower_body_left_(02_revision_)_CMF_specification.pdf",
+      "before_this_import_sha256": "1c3b841633b32cdac392fa4e44d5fc8fc7252aca9e36925fda02a47c52a6573b",
+      "current_sha256": "69cd730982e6d777914dc62461aca6385b534e5c0ac43c661d81091adcc159ca"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0177_upper_arm_lower_front_segment_(01_revision_)_CMF_specification.pdf",
+      "before_this_import_sha256": "b756ebf6fb6406c73b146b786299e983488d946f648be249114fb6ce06912b64",
+      "current_sha256": "b91cd7b5fe481a7d6ab474ff1dd403b8fb53c8846afd68823b7214287ab9d24d"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0154_mirrored_shin_body_right_CMF_specification.pdf",
+      "before_this_import_sha256": "caf32a96d97879ef3b0c12dd4f8c195892c8f6d4fd33182e5b50828733f95cd9",
+      "current_sha256": "a24a27d312e122163ab77d5317a01dbf8424f72c4977254f187e85df6cfc9b99"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0203_mirrored_thigh_clamp_front_CMF_specification.pdf",
+      "before_this_import_sha256": "94a17c36e4b8fb81570fcd2b066e66edc5a8b33e799e192cba5ea4a891c77944",
+      "current_sha256": "5a403147bb26abecd7eb5aea81a520311adf390a65a5cf56ec1c43b39c29a3f6"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0149_shin_body_right_CMF_specification.pdf",
+      "before_this_import_sha256": "d8ee0204503841282e869ee8a62b809389860b3ec306b3ca16d75fcb99d928da",
+      "current_sha256": "2a08ccf5b59f9585374e6ba04696053fc3c2d7e9c2fd7f2e23b02e7828882327"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0201_mirrored_thigh_clamp_rear_CMF_specification.pdf",
+      "before_this_import_sha256": "c6c505c64fe05bd72c122f4bebe7b256004211a088d3e486cb268fffd6e5b706",
+      "current_sha256": "3b34a7377eb74d31bd24715a368a80fd5776c3619be9938ba39a4a18499e5d9a"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0114_RP_Hand_adapter_CMF_specification.pdf",
+      "before_this_import_sha256": "cb8d0f43869ee8efff100ca66b04f977eebb758153b72c7de33ac8537175db6d",
+      "current_sha256": "a2df4a01e83088046416fa6871c3902013d231e9497f2261dbcc29cbe660f2aa"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0152_mirrored_shin_ankle_spacer_block_CMF_specification.pdf",
+      "before_this_import_sha256": "9f41606e0582ecad8f73e65f2ea7c5dd1642f4cefc64570b04894aec8d46afac",
+      "current_sha256": "b0e62dc34c1c8a1d48a673abca8a840bb1377d2e0b0d877576b0815989cf2a18"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0083_hip_joint_right_(LS_revision_)_CMF_specification.pdf",
+      "before_this_import_sha256": "9a2cb3ad13b639506bc301f3cef55483d3d5b38fe6437fd47249ccd3f49c70c6",
+      "current_sha256": "38f90824d0c9164723b3596df560a3fd6d39483dc437e48f0919c69f84adf8ee"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0159_wrist_lower_clamp_CMF_specification.pdf",
+      "before_this_import_sha256": "5c77135b05e98f26727be8e9532749c365b39e7609f8e8e7250089111945af83",
+      "current_sha256": "08d5b70a84415d59d1f18a1939e13e68b9f065d3f81a564fdaf977c0a3006e45"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0202_mirrored_thigh_lower_cover_plate_left_CMF_specification.pdf",
+      "before_this_import_sha256": "9b019d8e8902a358d02afd7d27e430f08852176c521a3db942ed00790b87a87f",
+      "current_sha256": "0a0fa17de553425a60b3a334c01405c4ba90ceb8262a94546c0985d8d7ef3356"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0133_cosmetic_hand_cover_CMF_specification.pdf",
+      "before_this_import_sha256": "4efff41292e612841b855e988385baaef48f13aa0db0ced44b82415173c44056",
+      "current_sha256": "499ec2413ff8fdfa4d6e6731b9febaff978a41ea9aa74d2726effcc4c0701ae0"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0162_thigh_lower_body_right_CMF_specification.pdf",
+      "before_this_import_sha256": "11aaee8733ac478056afdbd30610a85500630e93b236f38ad4c96462fc0bc840",
+      "current_sha256": "5579641eeed3e4b4d59a587a9dd983f96e33385cab1823a38751cc8db067c76b"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0233_kickme_version_torso_front_shell_CMF_specification.pdf",
+      "before_this_import_sha256": "3633aa4982d31c5f183193daa8cd732301553eca4a60e18af798ba0f922f81a0",
+      "current_sha256": "28876f36c02663839389550140430f600fbfbbeb53aa7ea6e470a4e198e2e94f"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0186_mirrored_75_shoulder_body_(01_revision_)_CMF_specification.pdf",
+      "before_this_import_sha256": "91f1d694381d6db24d76a82a5f51d18df3f11d46abc21bab648726b31f029575",
+      "current_sha256": "555eb61e2f2ba93149f5a7d36b638b3a4a815512acfe9d591808a95e4617318c"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0244_auxiliary_battery_spring_arm_button_CMF_specification.pdf",
+      "before_this_import_sha256": "c156fe6b5bfb905bc34d4f04023b5bab0ae0ace7f3fedfe36ad97c25e5f357af",
+      "current_sha256": "c2d8ad76b1bd4f3488d8df9f7792eadcf70746d5f6717018b40aa4d6c91e4cee"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0079_waist_number_1_clamp_(LS_revision_)_CMF_specification.pdf",
+      "before_this_import_sha256": "3eb9d0ed8b02d3c37a12e317409cf0d325bed821163ef936aa42b1c184f5cdc2",
+      "current_sha256": "360d6c043f39fdd406aa25532b24b90201c73dc05194a435c5ed0bb20ee401b2"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0146_shin_front_cover_plate_CMF_specification.pdf",
+      "before_this_import_sha256": "6681be9b637624e2a6ff2d16b427abb814a1972424081dae6b19bbb6aca6f372",
+      "current_sha256": "95b0838a3693051e73deab064825999a5d177fb633efd18cd661b81c481ae8a3"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0124_shoulder_clamp_CMF_specification.pdf",
+      "before_this_import_sha256": "0798346c8e0416b7aafe0614a5a9862bd96e32c3fc719b58f2b89228a315d5a1",
+      "current_sha256": "c4c34b48d2c29b9be6d082abdbda1ee50b4e77a39528140e0effdf461dc7aa1b"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0232_kickme_version_torso_rear_shell_CMF_specification.pdf",
+      "before_this_import_sha256": "63a480202736031e0c69b09e02ae4e28f1b336506f2caebad4320bb5f4a3cd28",
+      "current_sha256": "7643b30924b3839d97b23d12e5530c70447f8cdb1c27660eaa31dd9dfb01c0b6"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0103_hip_joint_front_cover_plate_CMF_specification.pdf",
+      "before_this_import_sha256": "d966cd5c4ecb30c0bbbf12c88b8b633c5e0e0befa6d55a79b24e3649cbd9c040",
+      "current_sha256": "1ed275749175a1884f61ee73c58048d2a1298e071dd7dc0722ba7a1b3ae13209"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0179_forearm_upper_body_left_(02_revision_)_CMF_specification.pdf",
+      "before_this_import_sha256": "2670c782201aa991ebfe3a1785551b01099213a688b0fb27bb1a4ad812c97571",
+      "current_sha256": "da0f75319f8d641cea2b00e3df6a31c2dfd7fb28d66214acf6ca982c706b87ed"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0163_thigh_lower_cover_plate_left_CMF_specification.pdf",
+      "before_this_import_sha256": "bd1dd23b805d128477395f04c0706c9d0a5cab8ff94f5117baf6d72fa238cfb3",
+      "current_sha256": "6638c3f40fb36e314e3f60203ed6ece29c1600b2e37ccd44cc6c964d0e736612"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0112_wrist_end_body_CMF_specification.pdf",
+      "before_this_import_sha256": "848f63fced06d82bee9e2fa5240dc78e7f87b2391db69def3c74bfd1a142096b",
+      "current_sha256": "40b1a22c29b697d2eee898b46a5612e7464682dad4aad17e9e0420243df46946"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0184_mirrored_upper_arm_lower_rear_segment_(01_revision_)_CMF_specification.pdf",
+      "before_this_import_sha256": "6631db770f574a3efc7f20acd21d925253d4c2151a9dbf38d2b1f0395f2294f7",
+      "current_sha256": "3c19d7a9d1e79479f7f6471dd013ce1c92c13655ee880c32559eef5d97b723ef"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0182_mirrored_forearm_upper_body_right_(02_revision_)_CMF_specification.pdf",
+      "before_this_import_sha256": "4d6b697f17b87aab340f57a6a120922be83f9f74f8b0b757eeb758522589d816",
+      "current_sha256": "0784e4d530d11c06eb70080885327e518774e9e3d79fbb16194a8dad7b6a56f7"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0147_shin_rear_cover_plate_CMF_specification.pdf",
+      "before_this_import_sha256": "4f733a435356d26c1738c8c05b3f1622846f6141e59e8ddf0f7c360498b51f0f",
+      "current_sha256": "811cb913830ad7d9d6da101c5f00394319a8e413e68a2999aa87d5a4f806e2aa"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0180_forearm_upper_body_right_(02_revision_)_CMF_specification.pdf",
+      "before_this_import_sha256": "2d0de241c7a872cc3f3c5ef7ad7642eaab71a8f002a2a1865ed93df371a8661b",
+      "current_sha256": "756fd03136f80b89fc4be5bb33c1eb75870cbc2d85358d7bbc4ad39ed7e0ef86"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0238_motion_head_head_CMF_specification.pdf",
+      "before_this_import_sha256": "482afd82549caeef036bdb657ee33121c8c646aade772f69c9109f4b1c4cbf06",
+      "current_sha256": "faaf03444edd2e053240d368559696dbc4af6db2e1fbcf59510d3ff57d87d835"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0153_mirrored_shin_body_left_CMF_specification.pdf",
+      "before_this_import_sha256": "55c55b571f6b5cc563e6b2d1f018963d854980718e85e9000d3157a2bb18c512",
+      "current_sha256": "462d12bd3974a8529b474800c815328e8a91679759814459890c8b9377557f46"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0085_hip_joint_motor_cover_plate_CMF_specification.pdf",
+      "before_this_import_sha256": "29bf8eead90f27adc03b030b14f61ced1f3208605a5aaa3f982a92ee03419e9e",
+      "current_sha256": "bd0c795d4d3edffc0bd76741c64b0919814258b31c1216d7b2c7a59e83fd11c7"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0143_hip_joint_rear_cover_plate_CMF_specification.pdf",
+      "before_this_import_sha256": "ed96dcdd203512caff99e6aa47d6be22b6a41ff63a9b4325b949ee3862fcba58",
+      "current_sha256": "22d25d621713d54745c34757c216cf79ff3b5630c43830592d1faf563df91629"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0088_hip_joint_right_clamp_CMF_specification.pdf",
+      "before_this_import_sha256": "bfea034014846e1bca61932a1fb44e381fc6f7caf6f55d957f6bb52893cb2878",
+      "current_sha256": "81951380a62239e5d8eadb80d105ed5b7afbd8f32a78ebf541ba2299f4645631"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0078_waist_number_1_(LS_revision_)_CMF_specification.pdf",
+      "before_this_import_sha256": "4172d09208abedcedae57fbf7e894767a2423166ca39c569b9775ab5f6100c53",
+      "current_sha256": "24bf7e3624c9463cc01c6ac96b32d8ad1e4441c1be3a2b21df6b348fecf9f951"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0196_thigh_lower_motor_clamp_(01_revision_)_CMF_specification.pdf",
+      "before_this_import_sha256": "02b09c0aefbd5c0d45acd44e5557abb7a751e9692fdcd34a7921e29b5bcb9ca1",
+      "current_sha256": "75581574efcf88a5d03c1326db73a24b334d34c4bce1045216f5330d6fe94d78"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0148_shin_motor_spacer_block_CMF_specification.pdf",
+      "before_this_import_sha256": "ff7f34a7fa48bd323cbdd67215f66932a1ce03f6990f518c87cbf3cc9e1a5cb4",
+      "current_sha256": "43e0692938e5389fe7bf40974a91a5934ed3cfe0399f22b0d96b20bb71c96e8d"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0192_thigh_clamp_(01_revision_)_CMF_specification.pdf",
+      "before_this_import_sha256": "b999da172e9a99d920b5b1bde3fd9aa20867a5055c186f32ec0ce883626f394d",
+      "current_sha256": "bbb431cbcdd5de20ba372a105da7e0a9ddeb15ee46cd948c4db6b01f3f9e37c3"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0176_upper_arm_upper_clamp_(01_revision_)_CMF_specification.pdf",
+      "before_this_import_sha256": "9e0b18dad065eff79ef171c15369dada8c7d11b6e202580de6ce99704dd9261a",
+      "current_sha256": "07427c55b6dc37c0ebb0f6eb2a9edd720d5fb343e3f0454633a82986e6dccfac"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0087_hip_joint_left_clamp_CMF_specification.pdf",
+      "before_this_import_sha256": "8a769bd461c980380df5bbcd5b59acbb81fd18425379f9b9c5af5e26f13e2531",
+      "current_sha256": "c25f73c1a11276d7fa1e318da40757db7c68cdfcbc297f12910f3c1b7fbac0c1"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0178_upper_arm_lower_rear_segment_(01_revision_)_CMF_specification.pdf",
+      "before_this_import_sha256": "8aada2eb8c8716333b65dd9f71b8984eaa6d4322f3023cbacd4a3ce8bcbba2bf",
+      "current_sha256": "4f390f218db8262e1c58f715727db262d84ffcb008aa8aa514f5aac7f4b2e517"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0080_hip_joint_front_(LS_revision_)_CMF_specification.pdf",
+      "before_this_import_sha256": "50c0e86b1ccc4679c86590e95867c57ea0970cfe25fea6e5c13993994f0b998c",
+      "current_sha256": "aadc769b39b1d32927c14b9946d975eafe5d18fe959c6aac89ecbcdf3ca0afdf"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0161_thigh_clamp_front_CMF_specification.pdf",
+      "before_this_import_sha256": "f57d26a0dd693624359541710536df09ad1492d267fa8b3ebc52a41ad316eb3d",
+      "current_sha256": "46391f2e6602fb6c2f1f6c18dedb9e0a00154b1b789cf5d86e881b417c1db32e"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0136_mirrored_cosmetic_hand_cover_CMF_specification.pdf",
+      "before_this_import_sha256": "5427653ede03770ec313c3aa73263f6dbff80707f67f3d0a8e386706927e4e7e",
+      "current_sha256": "18832b989c2882a223c43f393d2eef9ed29fee188cdd705c4c51dd0f100281ea"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0158_wrist_upper_clamp_CMF_specification.pdf",
+      "before_this_import_sha256": "3d5dd21a5b71666b4204644fa6cd15b1730849e6e4080cc9abb8e68398fa1b69",
+      "current_sha256": "b3aa34a0eea514bd84f85236346886e0a596e2615a0769ac14e6674e77762c64"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0187_foot_plate_(01_revision_)_CMF_specification.pdf",
+      "before_this_import_sha256": "8f97ac5ddae4e081d5b16e1c71e65ca8ca922f6d2dafa57009821ee901939d40",
+      "current_sha256": "53a9919bba9d86a54ada333d91943257d257ae231c31bb9ea88fc3d80645bb16"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0237_head_light_strip_inlay_panel_CMF_specification.pdf",
+      "before_this_import_sha256": "dca68562191f98a8cca15eff184663fd493e950ee6b26d73ebb6b8532b464a27",
+      "current_sha256": "7a9f879b2020349a61d743a4dfcbea901f0964b61cd5031e5338f727e097c363"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/02_3D_Printing/CMF_Specification/ROBOSKIN.0137_75_shoulder_cover_CMF_specification.pdf",
+      "before_this_import_sha256": "56f9e96f3918e7a2cb315ba2237e38a21a22872d2dfd77b5df76051b98e20297",
+      "current_sha256": "6973a57da6ee7ccaaf690921961a0a71796cb1c49e651f1e3326acf4107b1a40"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/02_3D_Printing/CMF_Specification/ROBOSKIN.0107_forearm_upper_cover_CMF_specification.pdf",
+      "before_this_import_sha256": "ee0045f194a8dd667b9e506f26f95a826f637fb831f7a474178fa22af16dfaca",
+      "current_sha256": "94568068a043b0b232a268cc842aa817337de928c6e58ee7e5ec4192f70766d6"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/02_3D_Printing/CMF_Specification/ROBOSKIN.0145_shin_cover_plate_CMF_specification.pdf",
+      "before_this_import_sha256": "e0f0fea10f5e88d762ed87d139bc1f988bde92fbfd8432c47681a4726b8db6e4",
+      "current_sha256": "268cb9051204c9696fa5f6aa976a4b203e4b8830ee10492469db27e33dd8c93a"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/02_3D_Printing/CMF_Specification/ROBOSKIN.0108_forearm_lower_cover_CMF_specification.pdf",
+      "before_this_import_sha256": "1d48d123692448712516bce3dc3b31734d667d7a44aad810c9b26bfd83d67031",
+      "current_sha256": "a6d331b4b451ebb7652155ac0469a979dde21d7f3895f3cb425e6daa223b3103"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/02_3D_Printing/CMF_Specification/ROBOSKIN.0251_motion_head_screw_concealment_cover_CMF_specification.pdf",
+      "before_this_import_sha256": "b58347741254f3c1567ebe8f396da5ecb4a3ccf2923c7da6192b1f113681f901",
+      "current_sha256": "0fdb00d56d30604e374e2f593f009a4cd52c6a532256d72c3e1bf81c1c0ddad7"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/02_3D_Printing/CMF_Specification/ROBOSKIN.0262_interactive_head_-_rear_trim_cover_CMF_specification.pdf",
+      "before_this_import_sha256": "711af072570ffa215f7da682b7c15d481bfeb29d76f836b7308c9c565682541b",
+      "current_sha256": "6619fce191aba5d6fd05e54ba14b15cbc0ed9189d45c2eaa19cbb31f88b97eb8"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/02_3D_Printing/CMF_Specification/ROBOSKIN.0258_interactive_head_-_upper_outer_shell_bracket_CMF_specification.pdf",
+      "before_this_import_sha256": "30accc642c3651ebb1f3f319aca751240ed3b3f0a53c6e25c5855db421fd68f7",
+      "current_sha256": "b5d62ee3e9c2a7d3d2b8e7870466c4e8197ffd05124bf8d60ff23dc618c78164"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/02_3D_Printing/CMF_Specification/ROBOSKIN.0139_mirrored_75_shoulder_cover_CMF_specification.pdf",
+      "before_this_import_sha256": "368188c897074ef8c773741c5e1162e9b79076bfd67f555729764cac6a264e7a",
+      "current_sha256": "eeca178cc50d0dc387db5e9380d9e054cf71ed51cebcc5bd4978577e01f0647b"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/02_3D_Printing/CMF_Specification/ROBOSKIN.0111_wrist_end_cover_plate_CMF_specification.pdf",
+      "before_this_import_sha256": "bc4580f47fb43017a9e2c6ed73bac36742de5e83e08b2eae08c2f1472556183c",
+      "current_sha256": "4b9c8b59271a16deec3404e7043e6e0e914fb2b9c3a9a3bde31c1d3524e6a23c"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/02_3D_Printing/CMF_Specification/ROBOSKIN.0257_interactive_head_-_screen_top_cover_CMF_specification.pdf",
+      "before_this_import_sha256": "230905110b46aee995711545e35b947ceaca3fc5f3ad89ed56d118ce12b6d920",
+      "current_sha256": "eae44cfa5393810bfe5eca0999804a9c778d05096e00e6744e6dcddd325bc2b3"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/02_3D_Printing/CMF_Specification/ROBOSKIN.0264_interactive_head_-_side_trim_cover_-R_CMF_specification.pdf",
+      "before_this_import_sha256": "7cf394a8d0b2f17b11a9ee6519c1386173a0934f9db6a91e1859f2a7cd615668",
+      "current_sha256": "92e4e81254573c0dcfd2cacc30720fe757d483ec7e77b43614535a98e865cb2e"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/02_3D_Printing/CMF_Specification/ROBOSKIN.0261_interactive_head_-_upper_trim_cover_CMF_specification.pdf",
+      "before_this_import_sha256": "1aabfed99f9f4cfa2ea251c251f0923c8adbdd130e45c8f3b88a056935f8b6c4",
+      "current_sha256": "4e23ecacf52b5986afe2e63c757be7a55670916a5b03e708d8717008c85772de"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/02_3D_Printing/CMF_Specification/ROBOSKIN.0106_upper_arm_upper_cover_CMF_specification.pdf",
+      "before_this_import_sha256": "d7931ced3a1d29c297fa7dcc435b7b18b14691e8562bc6369e6e47c14184f3cf",
+      "current_sha256": "8088b2bd3c7a1114d19a0b56237f617a62eff6a110719248246c741abdd48665"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/02_3D_Printing/CMF_Specification/ROBOSKIN.0263_interactive_head_-_side_trim_cover_-L_CMF_specification.pdf",
+      "before_this_import_sha256": "30fd8dbd09c304de8aeb5a82538218c125a35368f6206559983909de6dc51429",
+      "current_sha256": "7c708cab2cf600cc7b0792101ed17277a113425f14fe8584e658be0c20154322"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/02_3D_Printing/CMF_Specification/ROBOSKIN.0259_interactive_head_-_lower_outer_shell_bracket_CMF_specification.pdf",
+      "before_this_import_sha256": "fc241280b0c7df1e0abb6808a9cc48a480dc6695f0c47cac9a04d38240e2f81d",
+      "current_sha256": "eb3358e8b6324d0f3ee5b4cbb03d8febb2889823aeb5502570de79ccf3059d4c"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/02_3D_Printing/CMF_Specification/ROBOSKIN.0255_interactive_head_-_outer_shell_front_cover_CMF_specification.pdf",
+      "before_this_import_sha256": "157138cb8578e50a8f4e4e47557f801d06a0ceb68f79de14a1d3ffec97a2e97a",
+      "current_sha256": "42ab956457c5dd7bdbd63a0681d4750d81cabb78af33e2fed62942fa44230ce7"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/02_3D_Printing/CMF_Specification/ROBOSKIN.0109_mirrored_forearm_upper_cover_CMF_specification.pdf",
+      "before_this_import_sha256": "e210f1f3892dfd0eaca0e2b07f27fef0f17d8491a74f4595d16ea969be7ecec5",
+      "current_sha256": "e2afcacc0fe129d1ca03d9fbf1230b3025804bb8f006c56476400fb05cb868e7"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/02_3D_Printing/CMF_Specification/ROBOSKIN.0142_thigh_cover_CMF_specification.pdf",
+      "before_this_import_sha256": "d3cdea1ad74e83639c6b19e8ac7e7180752a1ceb11e7ef624335b369397715de",
+      "current_sha256": "fc362f76f3aecf52a3321e27c2208edfdf1ff5c646c927d5338468cf35b60ee0"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/02_3D_Printing/CMF_Specification/ROBOSKIN.0240_logo_light_cover_CMF_specification.pdf",
+      "before_this_import_sha256": "5566a1ec3b3e309089a0a80cee6f57ce3a015bcfb97e4814b42e2cbd2ea84bdb",
+      "current_sha256": "b2de507ec8c7f3b7ef84913df8cccb5e699006b49b7c0bba98fc0eaeaa79a447"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/02_3D_Printing/CMF_Specification/ROBOSKIN.0253_KICKME_version_head_face_CMF_specification.pdf",
+      "before_this_import_sha256": "8d9975572c92940117563a09e8915dd371dc375c3f4faec5f167e6bc3e207bb6",
+      "current_sha256": "93efff90ddf2ada9b556f7a3589970e69fbdca597a470c5233853ee4fd017cde"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/02_3D_Printing/PDF_Drawings/ROBOSKIN.0268_upper_shell_2.pdf",
+      "before_this_import_sha256": "0e16b5f346048808be1f9fc8b9e78bac01e3b606969691d18b79a2fa869aa1f6",
+      "current_sha256": "22124eb9b0b662415a1bd0ee0529cb7e40dbcc7f4698793a36406dc119300472"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/02_3D_Printing/PDF_Drawings/ROBOSKIN.0266_lower_shell.pdf",
+      "before_this_import_sha256": "c0ef3d5e7bf31158867a6f69f13c8d3e1bed092c73c2be8cc0a7c607de92dbb9",
+      "current_sha256": "4776fff690e531d50b4744338ef0583bbc28dcee897c6f0d2bd0f6ab760ec35c"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/02_3D_Printing/PDF_Drawings/ROBOSKIN.0283_Mingmei_battery_bay_lower_segment.pdf",
+      "before_this_import_sha256": "b03c0caa05ae7bc23fe0c030feca0786876b5b6c8ab247df3a03a019efca9947",
+      "current_sha256": "f35462509caac3b27e91db6e09049cd3fc1d970fa1cf3052d201e0d58de7487d"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/02_3D_Printing/PDF_Drawings/ROBOSKIN.0282_Mingmei_battery_bay_upper_segment.pdf",
+      "before_this_import_sha256": "6607c293e2e32b2130ac32f6c8a82935d8c4964f02902a2c5bc4445a441f123f",
+      "current_sha256": "bc1886debee1dc2387da95b5e3fdeae5bebb3f250d451f5d936bf24d29b93563"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/02_3D_Printing/PDF_Drawings/ROBOSKIN.0267_button.pdf",
+      "before_this_import_sha256": "51cba44157fdfe2d37261b45ba16dd345cc2cc574aaa5dd5be951dd7b517e804",
+      "current_sha256": "9b4f7a88d311854d5a291c43697968781df1d664c0daeba9d1f40eb10f48377e"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/03_Rubber/CMF_Specification/ROBOSKIN.0135_mirrored_cosmetic_hand_body_CMF_specification.pdf",
+      "before_this_import_sha256": "c295ae90ab3c2af8c57fd594858f1a8013248c54cfe95d918f2da7dcfb9a2114",
+      "current_sha256": "eb35cdf6ebc82cbb44bbcb74ec495fd44009bb75792a190a22ad7e074923173d"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/03_Rubber/CMF_Specification/ROBOSKIN.0131_cosmetic_hand_body_CMF_specification.pdf",
+      "before_this_import_sha256": "192b29ff67bcdfcd88ba86167db66f7bdb4d18c817be52ad75eae1d1841aa318",
+      "current_sha256": "eb49f8d1126f9de33f5df3e1f240930c11d8b97562184e0acaf954d3c2537cb0"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/03_Rubber/PDF_Drawings/ROBOSKIN.0223_kickme_handle_rubber_plug_-r.pdf",
+      "before_this_import_sha256": "ea8809ed2fc2174931aa3e060cd77fa40fa4bdabdcc6ef78f330bf0fcd1cd721",
+      "current_sha256": "919b68228f80861cfb3e9d3f602f916ab9f6c03586a58652353d38a879ae4afb"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/03_Rubber/PDF_Drawings/ROBOSKIN.0089_hip_joint_impact_pad.pdf",
+      "before_this_import_sha256": "7cbad2350a98cde2f6632ce88db2f6fe89fc9ee877c2eebe0856f1874344b1d3",
+      "current_sha256": "a57dcbdd28725482cdea97e175b282f4ad200815591255c7323a117d11ce8f2c"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/03_Rubber/PDF_Drawings/ROBOSKIN.0104_hip_joint_rubber_cover.pdf",
+      "before_this_import_sha256": "a373f9814631eb4da0a73391380c763748d343d89603c87b3c67f91ada58cfcd",
+      "current_sha256": "a9854722e795ff7198f3510216c17a5e00c6a5f97152c6d63a12a3c079cf4335"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/03_Rubber/PDF_Drawings/ROBOSKIN.0239-02_debug_port_soft_rubber_cover.pdf",
+      "before_this_import_sha256": "f61488984057cdfbf22dfc2a73f83ade17193268b249cc7192bfd825e85c9bad",
+      "current_sha256": "66250c606a26da67eb140155e0d5e529b53aa1036ba74c250afae3e70544f418"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/03_Rubber/PDF_Drawings/ROBOSKIN.0131_cosmetic_hand_body.pdf",
+      "before_this_import_sha256": "dc3a5debcd8184329f689e0e67acabe8711ebf672fe676adb5b556d079d381b8",
+      "current_sha256": "39c8b19384b397ae21ee412d1587cce09daeb0a2625b16206921f5b2363ec859"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/03_Rubber/PDF_Drawings/ROBOSKIN.0128_handle_rubber_sleeve.pdf",
+      "before_this_import_sha256": "f0a3d82002e5d3c038ad3362d4b67ce9234b7f41fe32b78ba4632a9082e1ddb6",
+      "current_sha256": "d314f1abdcc93bd7afa8b8265baeff37cb02bde06ca34558a3e7ada6e0b08b03"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/03_Rubber/PDF_Drawings/ROBOSKIN.0135_mirrored_cosmetic_hand_body.pdf",
+      "before_this_import_sha256": "ce1ff63536e10d8d5a2af7998a3faeb17add8f3447f95843e9f1360102e58bb6",
+      "current_sha256": "25db2ac3d7728c079cdde61937e6cf5cb371cf94cd79af97b50f92b58e2fe9f6"
+    },
+    {
+      "path": "01_Mechanic/02_Manufacturing/03_Rubber/PDF_Drawings/ROBOSKIN.0222_kickme_handle_rubber_plug_-l.pdf",
+      "before_this_import_sha256": "cef48c97b75753475122973a71cca52cf7445942b198b1dab51407f7ac5d4b42",
+      "current_sha256": "c6451178b6740feeb454f5848ef2229c3f1042ee35299fdf84a6e96674817e18"
+    },
+    {
+      "path": "02_PCB/11_RBE_PWR_140WCHG/05_Assembly_Requirements_140WCHG.xlsx",
+      "before_this_import_sha256": "6205c789a1693509cb2e6ce53cb8f3a7823d800aa985ea0c60607a5d820ba5d2",
+      "current_sha256": "a67911a52ba1c0969e8dfc83e4ed597f04304929967998c37528ef0fe93e8442"
+    },
+    {
+      "path": "02_PCB/05_RBE-PWR-HANDPlusPro/05_Assembly_Requirements_HAND.xlsx",
+      "before_this_import_sha256": "804d87c50059e6a8a1e9045255bb56040677937875c005aabcdd783ddfb812af",
+      "current_sha256": "fe7b1873cfbc4dce677094638bce9770fca1a9e4d10ef4abdb01191dbad6dde8"
+    },
+    {
+      "path": "02_PCB/06_RBE-PWR-HEAD/05_Assembly_Requirements_HEAD.xlsx",
+      "before_this_import_sha256": "f75be190a466f9e6a3d3b754dd61765397aec023c8d9e09fedb13bf2074bc2e2",
+      "current_sha256": "74bc87ffe6198b80b397aebef5f25076e804957c7d9ff38b872ed1fe6a2d14c6"
+    },
+    {
+      "path": "02_PCB/04_RBE-PWR-FAN/05_Assembly_Requirements_FAN_V2.0.xlsx",
+      "before_this_import_sha256": "bee276b9fa1cfed499342619a82ebe5cef252c506110e4934f4fb6f4bc2bcf82",
+      "current_sha256": "db9d133f79faa6f515e7a9748e1f75b4c876af60b3cbbd24a067d169cea5cb4c"
+    },
+    {
+      "path": "02_PCB/13_Lighting_Board/05_Assembly_Requirements_LAMP.xlsx",
+      "before_this_import_sha256": "d46c8750560af4c2c6af3689297cbadb875dd3e7c6fdd3d7985bbd420ef0f245",
+      "current_sha256": "1dc62f4a0daa5c48214aa8d98571268a4a12789d56253c0ef1538c92e5306be2"
+    },
+    {
+      "path": "02_PCB/08_RBE-PWR-MCAP/05_Assembly_Requirements_MCAP.xlsx",
+      "before_this_import_sha256": "5727445a2942df7d96ae1755d118ed2f84d37a117422af5c15b723bedbc6a079",
+      "current_sha256": "6ace3a860ca71901756a9673f86386982c04e8b27b5292d7eaa85df6f66db234"
+    },
+    {
+      "path": "02_PCB/07_RBE-PWR-HOTSWAP/06_PCB_PDF_HOTSWAP_2026-09-18.pdf",
+      "before_this_import_sha256": "119b7af33ce19311c12751ff11ea5b1be182c8ad773879223fdcc74e1475a2a2",
+      "current_sha256": "e76d9a4fd0158da9f492b284d1cfb357ecfd042687666ff59078a6eb0156896f"
+    },
+    {
+      "path": "02_PCB/07_RBE-PWR-HOTSWAP/05_Assembly_Requirements_HOTSWAP.xlsx",
+      "before_this_import_sha256": "065ec8638093efb8dfad490a5d3b6bd65b62f1bf3ae0c1bd3fae7791551a0be9",
+      "current_sha256": "52135e250d2f37caea8489e9f761915e470dcd39e78be5c29924fdda3bec0f45"
+    },
+    {
+      "path": "02_PCB/03_RBE-MAIN-RK3588S/05_Assembly_Requirements_MAIN.xlsx",
+      "before_this_import_sha256": "1e8a0e004a6ecc931553ecc6cb87aa53851e419352d6089f20b03a651adb7f50",
+      "current_sha256": "53848778ae6b4668728f028ff78e52d033ac0f5f67e6244474350d88b4a5451b"
+    },
+    {
+      "path": "02_PCB/01_USB3_Flexible_Interconnect/05_Assembly_Requirements_FPC.xlsx",
+      "before_this_import_sha256": "6bc651fcd9322c7b083036bc26699f095ca59a69662e4ffabaf9dfb3f4ef9251",
+      "current_sha256": "6793e01098e0edfcf2ef044397527cc28e45020fb9580889017a417f4248250a"
+    },
+    {
+      "path": "02_PCB/12_RBE_PWR_BACKHUB/06_PCB_PDF_BACKHUB_V2.1.pdf",
+      "before_this_import_sha256": "67c8e5ce2c606f4be2342e2722426ab75f4b700ecd34f609d895317b71e73b08",
+      "current_sha256": "2262ee73c778f2757cc78f37e131e90edbd2bc68cd695b6762361bfb78a55c53"
+    },
+    {
+      "path": "02_PCB/12_RBE_PWR_BACKHUB/05_Assembly_Requirements_BACKHUB.pdf",
+      "before_this_import_sha256": "9822c1ee4ddf9b49a290dd151e966ae6cb6bbc40482a8add2610a499f691d5ac",
+      "current_sha256": "c93c273424ea9228df36e38abf5fd7c64173e0f4915eecf17a96e20b256a9ec7"
+    },
+    {
+      "path": "02_PCB/09_RBE-PWR-MINGMEI-BC/05_Assembly_Requirements_MINGMEI-BC.xlsx",
+      "before_this_import_sha256": "a1178dec70c6593e00e5edc8ccec75e67d8aa72add732a747173783c6b47b26a",
+      "current_sha256": "7b3c0c0c298598176d415c62f4a5ad2222bb93844d8cfdd50977200b3f45022c"
+    },
+    {
+      "path": "02_PCB/02_RBE-COMM-433TX/06_PCB_PDF_433TX_2026-09-20.pdf",
+      "before_this_import_sha256": "a4c219df6ac88597a2dce2faa8bf88fb5df2f0c22914d68c0696111f183bee3b",
+      "current_sha256": "48d8764fbd801cf411a36a240b36a30c74d5535330120f1d2409d6ca1156f739"
+    },
+    {
+      "path": "02_PCB/02_RBE-COMM-433TX/05_Assembly_Requirements_433TX.xlsx",
+      "before_this_import_sha256": "135684b223d7bc8a681920eedbbc50ca5fc5830bb0876eb73573bb58d95ad78f",
+      "current_sha256": "cf4bd5feb755e10ffc55be38f08f39ae60b148f71b2f2480d4426c113eaad53b"
+    },
+    {
+      "path": "02_PCB/14_Rear_Power_Indicator/05_Assembly_Requirements_INDICATOR.xlsx",
+      "before_this_import_sha256": "e507913af1c27675f735908d7cf5368afff06c7efd6ce9b870f9bda7a0e0fbe5",
+      "current_sha256": "fe4943dfd7078f9d5e6ead0d068b080210bf57556f19744596164706557626f9"
+    },
+    {
+      "path": "02_PCB/10_RBE-SENS-IMU/05_Assembly_Requirements_IMU.xlsx",
+      "before_this_import_sha256": "9a08f8f05e4aec96e34ff4928782fd0b5b9ec8822e7f13c5720a24ad978de2ed",
+      "current_sha256": "e8cdad342703f736a779581a496af189e2c2718b55b7358a7075e03bbdcef20a"
+    },
+    {
+      "path": "03_Harness/Drawings/ROBOSKIN-POWER01-0_Cable.pdf",
+      "before_this_import_sha256": "646c6e6742f92514bf0204dd50f4ad3b458ad2b8c5a50eea8323cfc6dbd5de3d",
+      "current_sha256": "6577bb8ccfe9b2c30e918cb6e3242c9deeca0346b1416516d4cbe719801c7de4"
+    },
+    {
+      "path": "03_Harness/Drawings/ROBOSKIN-BODY04-0_Cable.pdf",
+      "before_this_import_sha256": "b4f7883237eebf31bb5198ee471beac3cb8c1203b577a0387862991310f69bdd",
+      "current_sha256": "9079d4e09270dfe538eabe21cc0506d726e8dfe65b04e34e14eeef2b4b27f959"
+    },
+    {
+      "path": "03_Harness/Drawings/ROBOSKIN-POWER02-0_Cable.pdf",
+      "before_this_import_sha256": "c22c05f0525a095ffbe905bb2e778661fff0b978a19a16eba98aebdb86522b7e",
+      "current_sha256": "3696a50bbc0cea09d2512ee3d5e6df210f43211a01186061dcc08b914f542947"
+    },
+    {
+      "path": "03_Harness/Drawings/ROBOSKIN-LEG06-0_Cable.pdf",
+      "before_this_import_sha256": "15eb73690292aa0dcbfb5ad38f98dfab202b16212f3b38724d0c02f7b5ba9746",
+      "current_sha256": "eaf61e9a68bcaa01dbd1bfef2941a6b106321ed325677ed65f632d8457f35512"
+    },
+    {
+      "path": "03_Harness/Drawings/ROBOSKIN-ARM02-0_Cable.pdf",
+      "before_this_import_sha256": "b3fbeb8e888b71e543440092eab16719a81893bbfa3e2a2000efefabb3c1df7f",
+      "current_sha256": "2f889c86aa98cccc758091c394e9b70a5326fda228fb275461baf12a038878de"
+    },
+    {
+      "path": "03_Harness/Drawings/ROBOSKIN-HEAD3_Cable.pdf",
+      "before_this_import_sha256": "85f4811f7e78580ee536ef22170635f42e206e33353179afbc0dec6ba4ee8f2e",
+      "current_sha256": "211d823bcc5ce5b3e2dca7eb3a7be48f13996627a90c6b6a7566f46f2b54bd71"
+    },
+    {
+      "path": "03_Harness/Drawings/ROBOSKIN-HEAD1_Cable.pdf",
+      "before_this_import_sha256": "d3b0ca57c17ca205016b3a1f0e1cae237f7a7b367316aa9522d19ff8e38538c7",
+      "current_sha256": "a1f832d2b486afb0c8fe83f17808ab3dcf022d7513c7a504ee534832c547d687"
+    },
+    {
+      "path": "03_Harness/Drawings/ROBOSKIN-ARM04-0_Cable.pdf",
+      "before_this_import_sha256": "9fc8cf1d44bf8c3366f1715a20f0307cd581de0876b44c6930dfa675efb41c27",
+      "current_sha256": "5163014ceb33b4f75b65a5c36a74d2f302a5d27be38756528d8ee0c9acb0757b"
+    },
+    {
+      "path": "03_Harness/Drawings/ROBOSKIN-BODY01-0_Cable.pdf",
+      "before_this_import_sha256": "f3fd412a0b68e7ec640e6a2b73812140dc0f77d421b624d3a6b6f8e3e303b912",
+      "current_sha256": "24de77eb8c8a0d3673d1c27020fc50594682ef45bc07d8e254f6aa70adbc4c43"
+    },
+    {
+      "path": "03_Harness/Drawings/ROBOSKIN-ARM01-0_Cable.pdf",
+      "before_this_import_sha256": "a78a11fac32cd0ba15d85a79c2157a1fc4a866c4fd32bd5e5d080623e3816065",
+      "current_sha256": "33210daf5d080cefad59a8706d621a2cd3a00cb979fab5b1fc35ac37c0e69b77"
+    },
+    {
+      "path": "03_Harness/Drawings/ROBOSKIN-ARM03-0_Cable.pdf",
+      "before_this_import_sha256": "2f18108173236e24aeaa6429e8823edff18717e7284bc021ee6b164a774f64d6",
+      "current_sha256": "8d004e4f469772b9c93667ee86640d140a9257044a2e90ccf6604475c983e88a"
+    },
+    {
+      "path": "03_Harness/Drawings/ROBOSKIN-ARM05-0_Cable.pdf",
+      "before_this_import_sha256": "c9b814007401547175566034d8b56d3067c0bd56e65c335db06c49377dff7202",
+      "current_sha256": "f8999c41b70c5acf8ad50639de48e66471c69d73e21244b9b9d3ef757e5511b0"
+    },
+    {
+      "path": "03_Harness/Drawings/ROBOSKIN-BODY02-0_Cable.pdf",
+      "before_this_import_sha256": "fb6c3fac004014e561dbf7be8e2ae2115cf8e8a140744b33024608d2c8ea1fc4",
+      "current_sha256": "9e42c0369d459eef80087cfd634088399ecef8bc9779272aadddd0660b0210fb"
+    },
+    {
+      "path": "03_Harness/Drawings/ROBOSKIN-ARM06-0_Cable.pdf",
+      "before_this_import_sha256": "7df53bba355fc19e67dc9b15d731e59bcebeb3c2b98f93e7d1fce0ca1f00303a",
+      "current_sha256": "c0a033fecfdb38edbf6b8289f03a345737e10732de37ac43e1f5550e5399a282"
+    },
+    {
+      "path": "03_Harness/Drawings/ROBOSKIN-HEAD2_Cable.pdf",
+      "before_this_import_sha256": "b4f4e7908e75f3951189e0539b3ea346578df93ba54c70d880685eae4522ccb9",
+      "current_sha256": "bde85662ac08e371077e563a8d5a7997cde40abe6e5c47185767afb8a9e27302"
+    },
+    {
+      "path": "03_Harness/Drawings/ROBOSKIN-ARM07-0_Cable.pdf",
+      "before_this_import_sha256": "5670e0342bc7092418cb9ae00df31b34b2b361d67ee452f48a57bec38055c706",
+      "current_sha256": "117961136a1542a77be1fbd8724cf9f075f2d6f2c673f11ee5193094fefb80a5"
+    },
+    {
+      "path": "03_Harness/Drawings/ROBOSKIN-BODY03-0_Cable.pdf",
+      "before_this_import_sha256": "55ccbfa36129b6ade161eeac1b3c5472ad32040ca8d37f568019e6e0f277085d",
+      "current_sha256": "e609f24c727b2075db3067d98469ff00c71b06fc442ad303d96b0df7c35786ba"
+    }
+  ],
+  "unmapped_ids": [],
+  "scope": "Document text reidentification, confirmed logo replacement, restored original technical glyphs and Hebrew numeric-callout layout corrections. Original attribution retained. See per-operation reports for exact scope.",
+  "limitations": "This is not a native CAD rebuild or manufacturing qualification. Gerber silkscreen remains unchanged. delivery_inventory.json defines all final source-mapped bytes."
+}

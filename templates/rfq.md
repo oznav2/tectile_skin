@@ -1,24 +1,30 @@
-# Draft RFQ — protected 28-cell contact-skin cassette, revision 2
+<div dir="rtl" lang="he">
 
-Status: draft, not sent. Buyer: Ilan. Delivery destination: Israel (complete address and Incoterm in the purchase order).
+עברית · [English](rfq.en.md)
 
-Please quote separately for 5, 30, 100, 1,000 and 10,000 units. State currency, quote validity, MOQ, lead time, tooling/NRE, tooling maintenance, payment terms, sample charges, shipment and taxes separately. Do not substitute materials or remove tests without an itemized alternate offer.
+# טיוטת בקשה להצעת מחיר — קסטת עור מוגנת עם 28 תאי מגע, גרסה 2
 
-Reference: electronic_skin.md revision 2. The scope must identify one of:
+מצב: טיוטה, לא נשלחה. רוכש: אילן. יעד מסירה: ישראל; הכתובת המלאה ותנאי Incoterm יוגדרו בהזמנת הרכש.
 
-- Complete printed sensor sheet: 28 independent resistive cells, 23 mm active squares on 25 mm pitch, seven columns/four rows; nominal sensing rectangle 175 x 100 mm; sealing margins, tail and detailed drawing attached at release.
-- Controller PCBA: attached reviewed schematic, Gerbers, exact-MPN BOM, placement files, programming/test specification.
-- Converted protective cover/cassette assembly: attached mechanical drawing, approved material grades/gauges, thermal-island and vent interfaces.
+נא להגיש הצעות נפרדות עבור 5, 30, 100, 1,000 ו־10,000 יחידות. יש לציין בנפרד מטבע, תוקף ההצעה, כמות הזמנה מזערית, זמן אספקה, כלי ייצור ועלויות הנדסה חד־פעמיות (NRE), תחזוקת הכלים, תנאי תשלום, עלויות דגימות, משלוח ומסים. אין להחליף חומרים או להסיר בדיקות ללא הצעה חלופית מפורטת לפי סעיפים.
 
-Sensor requirements: all 28 remote EOL resistors 100 kOhm nominal, 80–120 kOhm including specified aging; independent wiring with no passive matrix ghosting; 40-contact reinforced tail to the stated Hirose connector; isolated resistive islands; controlled spacers and back-directed vents; serialized lots and 100% continuity inspection. Quote internal sheet lamination and test in the sheet price. External protective cover, thermal flex and final force calibration are separate unless explicitly itemized.
+מסמך ייחוס: electronic_skin.md, גרסה 2. יש לזהות את היקף ההצעה כאחד מאלה:
 
-Please provide:
+- יריעת חיישנים מודפסת מלאה: 28 תאים התנגדותיים עצמאיים, ריבועים פעילים של 23 מ״מ במרווח מרכזים של 25 מ״מ, שבע עמודות וארבע שורות; מלבן חישה נומינלי של 175 x 100 מ״מ; שולי איטום, לשונית חיבור ושרטוט מפורט יצורפו בשחרור לייצור.
+- כרטיס בקר מורכב (PCBA): סכימה שנבדקה, קובצי Gerber, רשימת רכיבים עם מספרי יצרן מדויקים, קובצי מיקום רכיבים ומפרט תכנות ובדיקה מצורפים.
+- מכלול כיסוי מגן וקסטה לאחר עיבוד: שרטוט מכני, סוגי חומרים ועוביים מאושרים וממשקי איי החישה התרמית ופתחי האוורור מצורפים.
 
-1. Approved material/process stack, tolerances, tooling registration, tail contact construction, bend limits and storage life.
-2. Sample raw resistance/force data, hysteresis, hold drift, humidity/temperature behavior and lifetime test conditions/sample sizes. Distinguish measured data from targets.
-3. Quote for the test plan in sections 18–19, fixture/NRE costs, first-pass and final yield assumptions, rework/scrap policy, and test data export format.
-4. Actual process time, operator attendance and station occupancy. Do not combine these into an undocumented flat calibration fee.
-5. Artwork/tool ownership, material change notification, traceability, process/IP restrictions, second-source or continuity-of-supply terms.
-6. A technical exception list against every unmet requirement. State whether the $12 sheet-cost objective at 1,000 units is attainable; if not, quote the real cost and the changes needed.
+דרישות החיישנים: כל 28 נגדי סוף הקו המרוחקים יהיו בערך נומינלי של 100 kOhm, בטווח 80–120 kOhm כולל ההזדקנות המוגדרת; חיווט עצמאי ללא מגעי רפאים של מטריצה פסיבית; לשונית מחוזקת עם 40 מגעים למחבר Hirose המוגדר; איים התנגדותיים מבודדים; מרווחים מבוקרים ופתחי אוורור הפונים לאחור; אצוות ממוספרות ובדיקת רציפות של 100% מהיחידות. יש לכלול למינציה פנימית ובדיקה במחיר היריעה. כיסוי המגן החיצוני, המעגל הגמיש התרמי וכיול הכוח הסופי יתומחרו בנפרד, אלא אם פורטו במפורש בהצעה.
 
-No production commitment is made by this inquiry. Sample acceptance and purchasing require the controlled drawing revision and written acceptance criteria. No supplier outreach was performed in preparing this draft.
+נא לספק:
+
+1. מבנה שכבות וחומרי תהליך מאושרים, סבולות, דיוק רישום כלי הייצור, מבנה מגעי הלשונית, מגבלות כיפוף וחיי מדף.
+2. נתונים גולמיים לדוגמה של התנגדות מול כוח, היסטרזיס, סחיפה בזמן החזקת עומס, התנהגות בלחות ובטמפרטורה ותנאי בדיקות אורך חיים וגודלי מדגם. יש להבחין בין נתונים שנמדדו לבין יעדים.
+3. הצעה לתוכנית הבדיקות בסעיפים 18–19, עלויות מתקנים ו־NRE, הנחות לשיעור מעבר ראשון ולשיעור תקינות סופי, מדיניות תיקון ופסילה ופורמט ייצוא נתוני בדיקה.
+4. זמן תהליך בפועל, זמן נוכחות מפעיל וזמן תפוסת תחנה. אין לאחד אותם לחיוב כיול קבוע שאינו מתועד.
+5. בעלות על קובצי הגרפיקה וכלי הייצור, הודעה על שינויי חומרים, עקיבות, מגבלות תהליך וקניין רוחני ותנאי מקור חלופי או רציפות אספקה.
+6. רשימת חריגות טכניות לכל דרישה שאינה מתקיימת. יש לציין אם יעד עלות היריעה של 12 דולר בכמות של 1,000 יחידות בר־השגה; אם לא, יש להציע את העלות האמיתית ואת השינויים הנדרשים.
+
+פנייה זו אינה התחייבות לייצור. קבלת דגימות ורכש מחייבים גרסת שרטוט מבוקרת וקריטריוני קבלה כתובים. לא בוצעה פנייה לספקים במסגרת הכנת טיוטה זו.
+
+</div>

@@ -1,17 +1,23 @@
-# Offline verification record
+<div dir="rtl" lang="he">
 
-Date: 2026-10-25. All checks below use synthetic inputs or design artifacts; none exercises a physical sensor, CAN adapter or actuator.
+עברית · [English](verification.en.md)
 
-| Check | Result |
+# רישום אימות ללא חומרה
+
+תאריך: 2026-10-25. כל הבדיקות להלן משתמשות בקלט מדומה או בתוצרי תכנון; אף אחת מהן אינה מפעילה חיישן פיזי, מתאם CAN או מפעיל.
+
+| בדיקה | תוצאה |
 | --- | --- |
-| Protocol, event reporting, wrench math and generic observer | 78 tests passed |
-| Circuit connectivity and exported netlists | 8 tests passed |
-| Generic mechanics and measured-inertia calculations | 7 tests passed |
-| Synthetic observer demonstration | 88 available sites, followed by 0 after expiry |
-| Document links, filenames and calculation snapshots | Checked by tools/verify_repository.py |
-| Research register | References 1–84, each exactly once |
+| פרוטוקול, דיווח אירועים, חישובי כוח ומומנט ומנטר כללי | 78 בדיקות עברו |
+| קישוריות המעגלים ורשימות הרשתות המיוצאות | 8 בדיקות עברו |
+| מכניקה כללית וחישובי התמד על סמך מדידות | 7 בדיקות עברו |
+| הדגמת מנטר באמצעות נתונים מדומים | 88 נקודות חישה זמינות, ולאחר מכן 0 לאחר פקיעת התוקף |
+| קישורים במסמכים, שמות קבצים ותוצאות חישוב שמורות | נבדקים באמצעות tools/verify_repository.py |
+| רישום הספרות | מקורות 1–84, כל אחד פעם אחת בדיוק |
 
-Reproduce from the repository root:
+לשחזור מתוך תיקיית השורש של המאגר:
+
+<div dir="ltr">
 
 ```bash
 python3 tools/verify_repository.py
@@ -21,6 +27,24 @@ python3 -m unittest discover -s mechanics -p 'test_*.py' -v
 python3 -m software --demo
 ```
 
-The software tests include rejected identity reuse, synchronization expiry, dropped sync retries, stale data, malformed masks, unavailable channels, overloaded contacts, temperature hold age and region faults. The mechanical tests compare generated geometry/accounting and physical inertia identities. Circuit tests check the design's explicit nets and pin constraints; they do not replace schematic ERC, PCB DRC or a powered board test.
+</div>
 
-No upstream repository history, submodule, robot SDK or external robot manufacturing assets are part of this snapshot. Git records the exact published file revisions.
+בדיקות התוכנה כוללות דחיית שימוש חוזר בזהות, פקיעת תוקף סנכרון, ניסיונות חוזרים לאחר אובדן הודעות סנכרון, נתונים שהתיישנו, מסכות פגומות, ערוצים לא זמינים, מגעים בעומס יתר, גיל נתוני טמפרטורה שנשמרו ותקלות אזוריות. בדיקות המכניקה משוות את הגאומטריה והספירות שנוצרו ואת הזהויות הפיזיקליות של חישובי ההתמד. בדיקות המעגלים בודקות את הרשתות המפורשות בתכנון ואת אילוצי הפינים; הן אינן מחליפות בדיקת ERC לסכימה, DRC לכרטיס או בדיקה של כרטיס מוזן.
+
+בדיקות אלה מתייחסות למימוש העור המקורי ולבדיקות ללא חומרה. חבילת החומרה המיובאת מתועדת בנפרד ב[רישום המקור](../hardware/provenance/README.md); הכללתה אינה הופכת את הבדיקות הללו לאימות פיזי של רובוט. Git מתעד את גרסאות הקבצים שפורסמו.
+
+
+## בדיקות התיעוד וחבילת החומרה המיובאת
+
+| בדיקה | תוצאה והיקף |
+| --- | --- |
+| מסמכי Markdown | 28 זוגות עברית ואנגלית; מבנה כותרות וטבלאות וקוד נשמרו; 30 עוגני ניווט בתוכנית בכל שפה |
+| שלמות הייבוא | כל 550 קובצי עץ המקור מיוצגים; CNC — 303, הדפסה תלת־ממדית — 78, גומי — 20 |
+| גאומטריית STEP | 186 מסמכים כולל חבר ארכיון; תרגום 1,383 תוויות ללא שינוי בזרם הנתונים שאינו מחרוזות |
+| גיליונות ייצור | 7,280 תאים מספריים ב־49 גיליונות זהים למקור |
+| מידע טכני ב־PDF | 281 קבצים ו־384 עמודי מקור, מתוכם 380 בבדיקת מיקום; ארבעה עמודי תרשים ארכיטקטורה שנוצר מחדש הוחרגו; 27,167 מקטעים טכניים מתאימים נבדקו במיקום המקורי, ללא מחיקות לא מכוונות שנותרו |
+| תמונות בארכיונים | כל 15 הארכיונים נסקרו; שתי תמונות הטבלאות היחידות נבנו בעברית, 82 ערכים או תאים ריקים נבדקו, וקובצי Gerber וקידוח לא שונו |
+
+דוחות השלבים וחתימות הקבצים נמצאים ב[רישום המקור](../hardware/provenance/README.md). בדיקת ה־PDF מבחינה בין סימונים טכניים לבין החלפה מכוונת של מזהים ותרגום טקסט; היא אינה אישור שכל הערה מתורגמת, גרפיקה צרובה או סבולת נבדקו הנדסית מחדש. מכלולי SolidWorks מנכסי השחרור נפרדים מעץ המקור המיובא, וסימון משי ב־Gerber לא תוכנן מחדש.
+
+</div>

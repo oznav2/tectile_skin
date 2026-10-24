@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "archives_inspected": 15,
+  "image_members_found": 2,
+  "inventory": [
+    {
+      "archive": "hardware/02_PCB/01_USB3_Flexible_Interconnect/02_Gerber_FPC_2026-09-18.zip",
+      "images": []
+    },
+    {
+      "archive": "hardware/02_PCB/02_RBE-COMM-433TX/02_Gerber_433TX_2026-09-20.zip",
+      "images": []
+    },
+    {
+      "archive": "hardware/02_PCB/03_RBE-MAIN-RK3588S/02_Gerber_MAIN_2026-09-18.zip",
+      "images": [
+        {
+          "member": "Impedance_Stackup.png",
+          "sha256": "5c02b7c8d2a22cd26a89da7af70c20bcf45b413539cd9eb50eb18d0f71373a6f"
+        },
+        {
+          "member": "Impedance_Traces.png",
+          "sha256": "b226bfa9cbf2d4bfe83a6e1170ccfc517275cb0fe31f5f64cb4db891e8a539c8"
+        }
+      ]
+    },
+    {
+      "archive": "hardware/02_PCB/04_RBE-PWR-FAN/02_Gerber_FAN_V2.0.zip",
+      "images": []
+    },
+    {
+      "archive": "hardware/02_PCB/05_RBE-PWR-HANDPlusPro/02_Gerber_HAND.zip",
+      "images": []
+    },
+    {
+      "archive": "hardware/02_PCB/06_RBE-PWR-HEAD/02_Gerber_HEAD.zip",
+      "images": []
+    },
+    {
+      "archive": "hardware/02_PCB/07_RBE-PWR-HOTSWAP/02_Gerber_HOTSWAP_2026-09-17.zip",
+      "images": []
+    },
+    {
+      "archive": "hardware/02_PCB/08_RBE-PWR-MCAP/02_Gerber_MCAP.zip",
+      "images": []
+    },
+    {
+      "archive": "hardware/02_PCB/09_RBE-PWR-MINGMEI-BC/02_Gerber_MINGMEI-BC.zip",
+      "images": []
+    },
+    {
+      "archive": "hardware/02_PCB/10_RBE-SENS-IMU/02_Gerber_IMU.zip",
+      "images": []
+    },
+    {
+      "archive": "hardware/02_PCB/11_RBE_PWR_140WCHG/02_Gerber_140WCHG.zip",
+      "images": []
+    },
+    {
+      "archive": "hardware/02_PCB/12_RBE_PWR_BACKHUB/02_Gerber_BACKHUB_V2.1.zip",
+      "images": []
+    },
+    {
+      "archive": "hardware/02_PCB/12_RBE_PWR_BACKHUB/03_3D_BACKHUB_2026-09-28.zip",
+      "images": []
+    },
+    {
+      "archive": "hardware/02_PCB/13_Lighting_Board/02_Gerber_LAMP.zip",
+      "images": []
+    },
+    {
+      "archive": "hardware/02_PCB/14_Rear_Power_Indicator/02_Gerber_INDICATOR.zip",
+      "images": []
+    }
+  ],
+  "scope": "All 15 source-mapped ZIP archives. Only the two MAIN impedance-table images were present. Both have been deterministically recreated in Hebrew; their tiny source circuit thumbnails contain English labels and are retained without inferred detail."
+}

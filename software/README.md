@@ -1,148 +1,104 @@
-# Standalone electronic-skin software
+<div dir="rtl" lang="he">
 
-This is a dependency-free Python reference for tactile sensing, temperature
-monitoring, event reporting and CAN FD reception. It has no robot SDK, joint
-model, actuator driver, motion commands or middleware dependency. Python 3.10
-or newer is required. Live transport additionally requires Linux SocketCAN
-and the `ip` utility; offline tests and the demo require neither.
+עברית · [English](README.en.md)
 
-From the repository root:
+# תוכנה עצמאית לעור אלקטרוני
+
+מימוש ייחוס ב־Python ללא חבילות תלויות, לחישת מגע, ניטור טמפרטורה, דיווח אירועים וקליטת CAN FD. לתוכנה אין תלות בערכת פיתוח של רובוט, במודל מפרקים, במנהל התקן למפעילים, בפקודות תנועה או בתווכה. נדרש Python בגרסה 3.10 ומעלה. תקשורת עם חומרה דורשת בנוסף Linux SocketCAN ואת כלי השירות `ip`; הבדיקות ללא חומרה וההדגמה אינן דורשות אותם.
+
+מתיקיית השורש של המאגר:
+
+<div dir="ltr">
 
 ```bash
 python3 -m unittest discover -s tests -v
 python3 -m software --demo
 ```
 
-The demo emits two JSON lines. The first has 88 available sensing sites across
-eight example patches; the second has zero available sites after the capture
-deadline. Both identify the input as simulated. No interface or device opens.
-`python3 -m software.skin_receiver --demo` is an alias for the same code path.
+</div>
 
-## Files and responsibilities
+ההדגמה מפיקה שתי שורות JSON. בראשונה יש 88 נקודות חישה זמינות בשמונה פאנלים לדוגמה; בשנייה אין נקודות זמינות לאחר חלוף מועד התוקף של המדידה. שתיהן מסמנות שהקלט מדומה. לא נפתח ממשק או התקן. הפקודה `python3 -m software.skin_receiver --demo` היא חלופה המפעילה את אותו מסלול קוד.
 
-| File | Responsibility |
+## קבצים ותחומי אחריות
+
+| קובץ | אחריות |
 |---|---|
-| `skin_protocol.py` | Version 2 binary frames, physical identity, boot epochs, sequence validation and bounded clock synchronization |
-| `skin_events.py` | Send-on-delta reporting of complete snapshots; successful transmission advances the reporting baseline |
-| `skin_wrench.py` | Pure reference wrench/frame mathematics; no actuator interface |
-| `observer.py` | Commissioned patch configuration, installed-channel masks, held-sample expiry and JSON observations |
-| `transport.py` | Dedicated SocketCAN FD ownership, bounded reads, overflow/error handling and nonce requests |
-| `can_wire.py` | Linux CAN FD socket structures and constants |
-| `demo.py` | Synthetic packets through the actual codec and validation gate |
-| `config/limb_skin.example.json` | Uncommissioned example; generic frame labels with no kinematic assumptions |
+| `skin_protocol.py` | מסגרות בינריות בגרסה 2, זהות פיזית, תקופות אתחול, אימות רצף וסנכרון שעונים עם חסם אי־ודאות |
+| `skin_events.py` | דיווח תמונות מצב מלאות לפי שינוי בערך; שידור שהצליח מקדם את ערך הייחוס לדיווח הבא |
+| `skin_wrench.py` | חישובי ייחוס טהורים לווקטורי כוח ומומנט ולמערכות צירים; ללא ממשק למפעילים |
+| `observer.py` | תצורת פאנלים שאומתה בהכנסה לשימוש, מסכות ערוצים מותקנים, פקיעת דגימות שמורות ותצפיות JSON |
+| `transport.py` | ניהול בלעדי של ממשק SocketCAN FD ייעודי, קריאות מוגבלות, טיפול בגלישה ובשגיאות ובקשות עם ערך חד־פעמי |
+| `can_wire.py` | מבני שקע וקבועים של Linux CAN FD |
+| `demo.py` | הודעות מדומות העוברות בקידוד, בפענוח ובמנגנון האימות האמיתיים |
+| `config/limb_skin.example.json` | דוגמה שטרם אומתה לשימוש; תוויות כלליות למערכות צירים ללא הנחות קינמטיות |
 
-The reference reports ordinary sampled sensors using the send-on-delta approach
-described by Cheng et al., *Comprehensive Realization of Robot Skin: Sensors,
-Sensing, Control, and Applications* (2019). This software is an implementation
-of documented principles, not a claim that those principles are new.
+מימוש הייחוס מדווח על חיישנים רגילים הנדגמים במחזוריות, באמצעות גישת send-on-delta המתוארת במאמר של Cheng ועמיתיו, *Comprehensive Realization of Robot Skin: Sensors, Sensing, Control, and Applications* משנת 2019. התוכנה מממשת עקרונות מתועדים; אין בכך טענה שהעקרונות עצמם חדשים.
 
-## Example geometry and channel profiles
+## גאומטריית הדוגמה ופרופילי הערוצים
 
-The optional example has four regional networks, each with two patches:
+הדוגמה האופציונלית כוללת ארבע רשתות אזוריות, עם שני פאנלים בכל אחת:
 
-| Generic location | Profile | Installed sites per patch |
+| מיקום כללי | פרופיל | נקודות מותקנות בכל פאנל |
 |---|---:|---:|
-| Left/right upper arm | 2 × 2 | 4 |
-| Left/right forearm | 3 × 2 | 6 |
-| Left/right thigh | 3 × 2 | 6 |
-| Left/right shin | 7 × 4 | 28 |
+| זרוע עליונה שמאלית וימנית | 2 × 2 | 4 |
+| אמה שמאלית וימנית | 3 × 2 | 6 |
+| ירך שמאלית וימנית | 3 × 2 | 6 |
+| שוק שמאלית וימנית | 7 × 4 | 28 |
 
-The total is 88 installed sites and 16 temperature channels. Frame names such as
-`upper_arm_left` are labels only. The observer accepts user-defined local frames;
-it neither infers geometry nor transforms observations into a robot base frame.
-Changing a mounting requires its own measured geometry record.
+בסך הכול 88 נקודות חישה מותקנות ו־16 ערוצי טמפרטורה. שמות מערכות צירים כגון `upper_arm_left` הם תוויות בלבד. המנטר מקבל מערכות צירים מקומיות שהמשתמש מגדיר; הוא אינו מסיק גאומטריה ואינו ממיר תצפיות למערכת הצירים בבסיס הרובוט. שינוי בהתקנה דורש רישום גאומטרי נמדד משלו.
 
-Each controller reserves 28 wire slots. Installed sites occupy contiguous slots
-`0..N-1`. Unused slots have value 255 and clear validity/open/overload bits. The
-profile masks are `0000000f`, `0000003f` and `0fffffff`. A set status bit outside
-the configured mask rejects a frame. An installed sensor failure decreases
-coverage; an unused slot does not count as a failed sensor.
+כל בקר שומר מקום ל־28 ערוצים בפורמט התקשורת. נקודות מותקנות תופסות מקומות עוקבים `0..N-1`. למקומות שאינם בשימוש ערך 255, וסיביות התקינות, הנתק ועומס היתר שלהם מאופסות. מסכות הפרופילים הן `0000000f`, `0000003f` ו־`0fffffff`. סיבית מצב פעילה מחוץ למסכה המוגדרת גורמת לדחיית המסגרת. כשל בחיישן מותקן מקטין את הכיסוי; מקום שאינו בשימוש אינו נספר כחיישן שנכשל.
 
-Configuration accepts 1–256 patches, up to eight unique node IDs per interface.
-This is a software validation ceiling, not a measured bandwidth or latency
-capacity. Add independent regional interfaces as required and measure host load,
-bus utilization and fault recovery on the actual target.
+התצורה מקבלת 1–256 פאנלים, ועד שמונה מזהי צומת ייחודיים לכל ממשק. זו תקרת אימות בתוכנה, ולא קיבולת רוחב פס או השהיה שנמדדה. יש להוסיף ממשקים אזוריים עצמאיים לפי הצורך ולמדוד עומס מארח, ניצולת אפיק והתאוששות מתקלות במערכת היעד בפועל.
 
-## Observation and freshness contract
+## מפרט התצפיות ועדכניות הנתונים
 
-The JSON schema is `tectile_skin.observation.v1`. Each record contains:
+סכמת JSON היא `tectile_skin.observation.v1`. כל רשומה כוללת:
 
-- Physical UID, node/interface, configuration CRC, sheet serial and calibration
-  hash for each patch.
-- Expected, valid, unavailable, disabled and contact-or-fault masks.
-- Ordinal touch intensity and temperature in Celsius; unavailable values are
-  `null`. Intensity is not calibrated force in newtons.
-- Boot epoch, sequence, bounded expiry, explicit health and coverage.
-- A feature vector with schema `tectile_skin.features.v1.89_per_patch`.
+- UID פיזי, צומת וממשק, CRC של התצורה, מספר סידורי של היריעה וגיבוב כיול לכל פאנל.
+- מסכות של ערוצים צפויים, תקינים, לא זמינים, מושבתים ובמצב מגע או תקלה.
+- דרגת עוצמת מגע וטמפרטורה במעלות צלזיוס; ערכים שאינם זמינים הם `null`. העוצמה אינה כוח מכויל בניוטון.
+- תקופת אתחול, מספר רצף, מועד תפוגה חסום, מצב תקינות וכיסוי מפורשים.
+- וקטור מאפיינים בסכמה `tectile_skin.features.v1.89_per_patch`.
 
-Each patch contributes 89 features in configuration order:
+כל פאנל תורם 89 מאפיינים לפי סדר התצורה:
 
-| Offset | Count | Meaning |
+| היסט | כמות | משמעות |
 |---:|---:|---|
-| 0 | 28 | Intensity / 254; unavailable entries zero-filled |
-| 28 | 28 | Per-site validity bits |
-| 56 | 28 | Overload/contact-or-fault bits |
-| 84 | 2 | Temperature Celsius / 100; unavailable entries zero-filled |
-| 86 | 2 | Temperature validity bits |
-| 88 | 1 | Acquisition record freshness |
+| 0 | 28 | עוצמה חלקי 254; ערכים שאינם זמינים ממולאים באפס |
+| 28 | 28 | סיביות תקינות לכל נקודת חישה |
+| 56 | 28 | סיביות עומס יתר או מגע־או־תקלה |
+| 84 | 2 | טמפרטורה בצלזיוס חלקי 100; ערכים שאינם זמינים ממולאים באפס |
+| 86 | 2 | סיביות תקינות הטמפרטורה |
+| 88 | 1 | עדכניות רשומת הדגימה |
 
-The example produces 712 features. Consumers must use the validity masks and
-must preserve configuration order. `control_ready` and `actuation_enabled` are
-always false in this reference. There is no joint-state subscription or policy
-input injection. An application must supply and validate its own control and
-coordinate-frame integration.
+הדוגמה מפיקה 712 מאפיינים. צרכני הנתונים חייבים להשתמש במסכות התקינות ולשמור על סדר התצורה. הערכים `control_ready` ו־`actuation_enabled` תמיד שקריים במימוש ייחוס זה. אין הרשמה לנתוני מצב מפרקים או הזרקת קלט למדיניות בקרה. על היישום לספק ולאמת בעצמו את שילוב הבקרה ומערכות הצירים.
 
-The protocol requires a matching announcement followed by a nonce exchange.
-Touch expires at the conservative 40 ms acquisition deadline, including time
-held by the receiver. Clock synchronization lasts at most 2.5 seconds; samples
-cannot outlive it. Requests renew every two seconds, with unanswered requests
-retried after 20 ms. Invalid replies revoke the old clock mapping. Rejected
-announcements revoke identity even when the boot number is unchanged.
+הפרוטוקול דורש הודעת הכרזה תואמת ולאחריה חילופי ערך חד־פעמי. תוקף המגע פוקע במועד השמרני של 40 מילישניות מהדגימה, כולל הזמן שבו המקלט מחזיק את הנתונים. סנכרון השעונים תקף לכל היותר 2.5 שניות; דגימות אינן יכולות להישאר תקפות מעבר לכך. הבקשות מתחדשות בכל שתי שניות, ובקשות שלא נענו נשלחות שוב לאחר 20 מילישניות. תשובות לא תקינות מבטלות את מיפוי השעון הקודם. הכרזה שנדחית מבטלת את הזהות גם אם מספר האתחול לא השתנה.
 
-Temperature validity includes sensor age, capture/transport age and held time,
-with a 250 ms total limit. Missing temperatures produce degraded health even
-when touch remains available. Overload stays an explicit fault/contact state.
-An acquisition with every installed site failed remains a fresh fault report,
-not a valid no-contact measurement.
+תקינות הטמפרטורה כוללת את גיל נתוני החיישן, גיל הדגימה וההעברה וזמן ההחזקה, עם מגבלה כוללת של 250 מילישניות. טמפרטורות חסרות גורמות למצב תקינות מופחת גם כאשר נתוני המגע עדיין זמינים. עומס יתר נשאר מצב מפורש של תקלה או מגע. דגימה שבה כל נקודות החישה המותקנות כשלו נשארת דיווח תקלה עדכני, ולא מדידה תקינה של היעדר מגע.
 
-All expiry fields use the producing host's monotonic clock. A consumer on
-another machine needs its own receive watchdog and a clock-transfer bound;
-comparing unrelated monotonic clocks is invalid. A stopped publisher does not
-make its last message valid indefinitely. Identity checks detect configuration
-and wiring mistakes; the bus protocol does not authenticate hostile senders.
+כל שדות התפוגה משתמשים בשעון המונוטוני של המחשב המפיק את הנתונים. צרכן במחשב אחר זקוק למנגנון פיקוח משלו על זמן הקבלה ולחסם על העברת בסיס הזמן; השוואה בין שעונים מונוטוניים שאינם קשורים אינה תקפה. עצירת המפרסם אינה הופכת את הודעתו האחרונה לתקפה ללא הגבלת זמן. בדיקות הזהות מגלות טעויות תצורה וחיווט; פרוטוקול האפיק אינו מאמת שולחים עוינים.
 
-## Live commissioning
+## הכנסה לשימוש עם חומרה
 
-1. Build and independently verify the sensor controller firmware. This package
-   does not contain a flashed MCU implementation or verified analog hardware.
-2. Use a dedicated CAN FD interface named `can_skin_<region>` and record its
-   resolved `/sys/class/net/<interface>/device` path. Keep actuator buses under
-   their existing owner's control.
-3. Configure only the verified skin interface for 1 Mbit/s arbitration,
-   2 Mbit/s data, FD enabled and MTU 72. The observer checks these properties
-   and `ERROR-ACTIVE` status; it does not configure or reset interfaces.
-4. Copy `config/limb_skin.example.json` and replace its synthetic identities,
-   CRCs, sheet serials, calibration SHA-256 values and device paths with the
-   measured commissioning record. Match the physical channel profiles.
-5. With the host machine's actuators disabled, verify complete 100 Hz acquisition,
-   at least 20 ms quiet refresh, reboot identification, nonce timing and error
-   behavior from recorded traffic. Mark the manifest commissioned only after
-   these measurements exist. Changing the example's boolean alone fails.
-6. Start the observer with the commissioned file:
+1. בנו ואמתו באופן עצמאי את קושחת בקר החיישנים. חבילה זו אינה מכילה מימוש MCU שנצרב או חומרה אנלוגית מאומתת.
+2. השתמשו בממשק CAN FD ייעודי בשם `can_skin_<region>` ותעדו את הנתיב שאליו נפתר `/sys/class/net/<interface>/device`. השאירו את אפיקי המפעילים בשליטת הגורם שכבר מנהל אותם.
+3. הגדירו רק את ממשק העור שאומת: בוררות במהירות 1 Mbit/s, נתונים במהירות 2 Mbit/s, הפעלת FD ו־MTU 72. המנטר בודק תכונות אלה ואת המצב `ERROR-ACTIVE`; הוא אינו מגדיר או מאפס ממשקים.
+4. העתיקו את `config/limb_skin.example.json` והחליפו את הזהויות המדומות, ערכי CRC, מספרי היריעות, ערכי SHA-256 של הכיול ונתיבי ההתקנים ברשומת ההכנסה לשימוש שנמדדה. התאימו את פרופילי הערוצים הפיזיים.
+5. כאשר מפעילי המערכת המארחת מושבתים, אמתו מתוך תעבורה מוקלטת דגימה מלאה בקצב 100 Hz, ריענון במצב שקט לפחות בכל 20 מילישניות, זיהוי אתחול מחדש, תזמון ערכים חד־פעמיים והתנהגות בשגיאות. סמנו את המניפסט כמאומת לשימוש רק לאחר שהמדידות קיימות. שינוי הערך הבוליאני בדוגמה לבדו לא יעבור אימות.
+6. הפעילו את המנטר באמצעות הקובץ שאומת:
+
+<div dir="ltr">
 
 ```bash
 python3 -m software --config /absolute/path/to/commissioned.json
 ```
 
-The receiver polls every 2 ms and publishes JSON approximately every 10 ms.
-Each poll reads at most 128 frames per ready interface. These are scheduling
-intentions, not a hard real-time guarantee. A regional socket error, overflow,
-malformed frame or uncommissioned node clears that region and pending nonces.
-Other regions retain independent health. The only transmitted messages are
-freshness nonce requests to skin controllers.
+</div>
 
-Bench acceptance must measure reaction latency, open/short faults, identity
-swaps, bus loss, power disturbances, full-load traffic, reboot recovery and
-temperature faults. The 78 software tests exercise codec, masks, event scheduling,
-freshness, transport fault sequences and reference mathematics. They do not
-establish physical sensor accuracy, EMC, product safety or manufacturing yield.
+המקלט מבצע סריקה בכל 2 מילישניות ומפרסם JSON בערך בכל 10 מילישניות. בכל סריקה נקראות לכל היותר 128 מסגרות מכל ממשק מוכן. אלה יעדי תזמון, ולא הבטחת זמן אמת קשיח. שגיאת שקע אזורית, גלישה, מסגרת פגומה או צומת שלא אומת לשימוש מאפסים את מצב האזור ואת הערכים החד־פעמיים הממתינים. שאר האזורים שומרים על מצב תקינות עצמאי. ההודעות המשודרות היחידות הן בקשות ערך חד־פעמי לבדיקת עדכניות בקרי העור.
+
+בדיקות הקבלה במעבדה חייבות למדוד השהיית תגובה, תקלות נתק וקצר, החלפת זהויות, אובדן אפיק, הפרעות מתח, תעבורה בעומס מלא, התאוששות מאתחול מחדש ותקלות טמפרטורה. 78 בדיקות התוכנה מפעילות קידוד ופענוח, מסכות, תזמון אירועים, עדכניות, רצפי תקלות תקשורת וחישובי ייחוס. הן אינן מוכיחות דיוק פיזי של חיישנים, תאימות אלקטרומגנטית, בטיחות מוצר או שיעור יחידות תקינות בייצור.
+
+</div>

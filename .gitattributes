@@ -1,1 +1,9 @@
 * text=auto eol=lf
+*.pdf binary
+*.step binary
+*.stp binary
+*.xlsx binary
+*.docx binary
+*.zip binary
+*.png binary
+*.jpg binary

@@ -1,17 +1,24 @@
-# Release status
+<div dir="rtl" lang="he">
 
-Working engineering release, 25 October 2026.
+עברית · [English](release_status.en.md)
 
-| Area | Delivered | Not yet established |
+# מצב התוצרים
+
+גרסת עבודה הנדסית, 25 באוקטובר 2026.
+
+| תחום | מה נמסר | מה טרם הוכח |
 | --- | --- | --- |
-| Sensing design | Materials, diagnostic circuits, protective stack and verification specification | Measured sensitivity, hysteresis, creep, seams, thermal delay and lifetime |
-| Electronics | Original pin-level circuit models, connection tables, diagrams and KiCad-format netlists | Native schematic/footprints, routed PCB, ERC/DRC and assembled qualification |
-| Firmware | Wire contract and reference event/identity/timing behavior | Board-specific compilation, flashing, scan deadlines and power/fault measurements |
-| Software | Executable codec, freshness gates, generic observer, synthetic demo and regressions | Physical CAN transfer, target load/latency and installed performance |
-| Mechanics | Original generic templates and carrier/strain-relief design | Printed/mounted fit, full motion envelope, fatigue and measured inertia |
-| Economics | Itemized allowances and executable calculations | Supplier quotes, actual unit yield, tooling, labour and delivered prototype prices |
-| Literature | 84-reference evidence register with explicit reading depth | Universal novelty, patentability, partner commitment or freedom-to-operate finding |
+| תכנון החישה | חומרים, מעגלי אבחון, מבנה שכבות ההגנה ומפרט אימות | רגישות, היסטרזיס, זחילה, התנהגות בתפרים, השהיה תרמית ואורך חיים שנמדדו בפועל |
+| אלקטרוניקה | מודלים מקוריים של מעגלים ברמת הפינים, טבלאות חיבורים, תרשימים ורשימות רשתות בפורמט KiCad | סכימה וספריית תושבות בתוכנת התכנון, כרטיס מנותב, בדיקות ERC/DRC והסמכת מכלול מורכב |
+| קושחה | מפרט התקשורת והתנהגות ייחוס לאירועים, זיהוי ותזמון | הידור וצריבה לכרטיס המסוים, עמידה בזמני סריקה ומדידות הספק ותקלות |
+| תוכנה | קידוד ופענוח ניתנים להרצה, בדיקת עדכניות, מנטר כללי, הדגמה מדומה ובדיקות רגרסיה | העברה פיזית ב־CAN, עומס והשהיה במערכת היעד וביצועים לאחר התקנה |
+| מכניקה | תבניות כלליות מקוריות ותכנון תושבת ועיגון כבלים להפחתת עומס | התאמה לאחר הדפסה והרכבה, מעטפת תנועה מלאה, עייפות ומומנטי התמד שנמדדו |
+| כלכליות | אומדנים מפורטים וחישובים ניתנים להרצה | הצעות מחיר מספקים, שיעור יחידות תקינות בפועל, כלי ייצור, עבודה ומחירי אב־טיפוס עד למסירה |
+| חומרה מיובאת | כל 550 קובצי המקור מיוצגים בחבילת ייצור עם מזהים ותרגומי מסמכים מותאמים | התאמה פיזית לעור, הסמכת ייצור והמרת הפניות SolidWorks אינן מוכחות |
+| ספרות מקצועית | רישום ראיות ל־84 מקורות עם פירוט עומק הקריאה | חדשנות כלל־עולמית, כשירות לפטנט, התחייבות של שותף או מסקנה בדבר חופש פעולה מסחרי |
 
-The repository has no robot-specific driver, actuator interface or embedded robot model. The generic frame names are labels, not measured transforms. Local contact intensity is not calibrated physical force. The software exposes no control-ready state suitable for actuator use.
+תוכנת החיישנים אינה כוללת מנהל התקן לרובוט מסוים, ממשק למפעילים או מודל קינמטי או מודל בקרה מובנה של רובוט. שמות מערכות הצירים הכלליים הם תוויות, ולא טרנספורמציות שנמדדו. עוצמת המגע המקומית אינה כוח פיזיקלי מכויל. התוכנה אינה מציגה מצב מוכנות לבקרה המתאים להפעלת מפעילים.
 
-Every physical phase requires raw measurements and a recorded pass/fail decision. Keep measured data separate from calculations and synthetic test output. Do not label missing firmware, unrouted circuit exports or untested material performance as a completed manufacturable product.
+כל שלב פיזי דורש מדידות גולמיות והחלטה מתועדת של עמידה או אי־עמידה בדרישות. יש להפריד נתונים שנמדדו מחישובים ומתוצאות בדיקות מדומות. אין לתאר קושחה חסרה, קובצי מעגלים שטרם נותבו או ביצועי חומרים שלא נבדקו כמוצר מוגמר המוכן לייצור.
+
+</div>

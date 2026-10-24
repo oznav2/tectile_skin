@@ -1,0 +1,18 @@
+[
+  {
+    "removed_stale_alias": "hardware/01_Mechanic/02_Manufacturing/02_3D_Printing/STEP_3D_Models/ROBOSKIN.0282_Sunwoda_battery_bay_upper_segment.step",
+    "canonical_path": "hardware/01_Mechanic/02_Manufacturing/02_3D_Printing/STEP_3D_Models/ROBOSKIN.0282_Mingmei_battery_bay_upper_segment.step"
+  },
+  {
+    "removed_stale_alias": "hardware/01_Mechanic/02_Manufacturing/02_3D_Printing/STEP_3D_Models/ROBOSKIN.0283_Sunwoda_battery_bay_lower_segment.step",
+    "canonical_path": "hardware/01_Mechanic/02_Manufacturing/02_3D_Printing/STEP_3D_Models/ROBOSKIN.0283_Mingmei_battery_bay_lower_segment.step"
+  },
+  {
+    "removed_stale_alias": "hardware/01_Mechanic/02_Manufacturing/02_3D_Printing/PDF_Drawings/ROBOSKIN.0282_Sunwoda_battery_bay_upper_segment.pdf",
+    "canonical_path": "hardware/01_Mechanic/02_Manufacturing/02_3D_Printing/PDF_Drawings/ROBOSKIN.0282_Mingmei_battery_bay_upper_segment.pdf"
+  },
+  {
+    "removed_stale_alias": "hardware/01_Mechanic/02_Manufacturing/02_3D_Printing/PDF_Drawings/ROBOSKIN.0283_Sunwoda_battery_bay_lower_segment.pdf",
+    "canonical_path": "hardware/01_Mechanic/02_Manufacturing/02_3D_Printing/PDF_Drawings/ROBOSKIN.0283_Mingmei_battery_bay_lower_segment.pdf"
+  }
+]

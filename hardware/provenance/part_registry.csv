@@ -1,0 +1,372 @@
+upstream_part_id,roboskin_id,english_description,identity_scope
+YCL.M000312,ROBOSKIN.0001,forearm lower body,part family; revision and source path remain separate
+YCL.A000018,ROBOSKIN.0002,hot pressed linkage assembly left,part family; revision and source path remain separate
+YCL.A000019,ROBOSKIN.0003,hot pressed linkage assembly right,part family; revision and source path remain separate
+YCL.D000043,ROBOSKIN.0004,5552 joint module ( Gongwang dual encoder ),part family; revision and source path remain separate
+YCL.E000040,ROBOSKIN.0005,RTC,part family; revision and source path remain separate
+YCL.E000057,ROBOSKIN.0006,Motor Capacitor Board,part family; revision and source path remain separate
+YCL.E000059,ROBOSKIN.0007,Inertial Sensor Board,part family; revision and source path remain separate
+YCL.E000060,ROBOSKIN.0008,Mingmei Battery Adapter Board,part family; revision and source path remain separate
+YCL.E000062,ROBOSKIN.0009,Fan Power Board,part family; revision and source path remain separate
+YCL.E000063,ROBOSKIN.0010,Lighting Board,part family; revision and source path remain separate
+YCL.E000083,ROBOSKIN.0011,Orange Pi CM5,part family; revision and source path remain separate
+YCL.E000084,ROBOSKIN.0012,ARM01-0 Cable,part family; revision and source path remain separate
+YCL.E000088,ROBOSKIN.0013,ARM02-0 Cable,part family; revision and source path remain separate
+YCL.E000089,ROBOSKIN.0014,ARM03-0 Cable,part family; revision and source path remain separate
+YCL.E000090,ROBOSKIN.0015,ARM04-0 Cable,part family; revision and source path remain separate
+YCL.E000091,ROBOSKIN.0016,ARM05-0 Cable,part family; revision and source path remain separate
+YCL.E000092,ROBOSKIN.0017,ARM06-0 Cable,part family; revision and source path remain separate
+YCL.E000093,ROBOSKIN.0018,ARM07-0 Cable,part family; revision and source path remain separate
+YCL.E000094,ROBOSKIN.0019,ARM08-0 Cable,part family; revision and source path remain separate
+YCL.E000097,ROBOSKIN.0020,BODY01-0 Cable,part family; revision and source path remain separate
+YCL.E000098,ROBOSKIN.0021,BODY02-0 Cable,part family; revision and source path remain separate
+YCL.E000099,ROBOSKIN.0022,BODY03-0 Cable,part family; revision and source path remain separate
+YCL.E000100,ROBOSKIN.0023,BODY04-0 Cable,part family; revision and source path remain separate
+YCL.E000101,ROBOSKIN.0024,BODY05-0 Cable,part family; revision and source path remain separate
+YCL.E000102,ROBOSKIN.0025,BODY06-0 Cable,part family; revision and source path remain separate
+YCL.E000103,ROBOSKIN.0026,LEG01-0 Cable,part family; revision and source path remain separate
+YCL.E000104,ROBOSKIN.0027,LEG02-0 Cable,part family; revision and source path remain separate
+YCL.E000105,ROBOSKIN.0028,LEG03-0 Cable,part family; revision and source path remain separate
+YCL.E000106,ROBOSKIN.0029,LEG04-0 Cable,part family; revision and source path remain separate
+YCL.E000107,ROBOSKIN.0030,LEG05-0 Cable,part family; revision and source path remain separate
+YCL.E000108,ROBOSKIN.0031,LEG06-0 Cable,part family; revision and source path remain separate
+YCL.E000109,ROBOSKIN.0032,LEG07-0 Cable,part family; revision and source path remain separate
+YCL.E000119,ROBOSKIN.0033,POWER01-0 Cable,part family; revision and source path remain separate
+YCL.E000120,ROBOSKIN.0034,POWER02-0 Cable,part family; revision and source path remain separate
+YCL.E000126,ROBOSKIN.0035,2510 Cooling Fan,part family; revision and source path remain separate
+YCL.E000127,ROBOSKIN.0036,Temperature Sensor,part family; revision and source path remain separate
+YCL.E000128,ROBOSKIN.0037,Emergency Stop Button,part family; revision and source path remain separate
+YCL.E000129,ROBOSKIN.0038,140W Charger,part family; revision and source path remain separate
+YCL.E000130,ROBOSKIN.0039,Battery Power Cable,part family; revision and source path remain separate
+YCL.E000211,ROBOSKIN.0040,Hand Power Adapter Board,part family; revision and source path remain separate
+YCL.E000212,ROBOSKIN.0041,433MHz Transmitter Board,part family; revision and source path remain separate
+YCL.E000223,ROBOSKIN.0042,140W Charging Board,part family; revision and source path remain separate
+YCL.E000224,ROBOSKIN.0043,Handheld Controller,part family; revision and source path remain separate
+YCL.E000226,ROBOSKIN.0044,KICKME Back Interface Board,part family; revision and source path remain separate
+YCL.E000234,ROBOSKIN.0045,Body Ethernet Cable,part family; revision and source path remain separate
+YCL.E000235,ROBOSKIN.0046,Back GPIO Cable,part family; revision and source path remain separate
+YCL.E000236,ROBOSKIN.0047,Back Key Cable,part family; revision and source path remain separate
+YCL.E000237,ROBOSKIN.0048,Back Ethernet NX Cable,part family; revision and source path remain separate
+YCL.E000238,ROBOSKIN.0049,Body RS485 Cable,part family; revision and source path remain separate
+YCL.E000239,ROBOSKIN.0050,Back Power NX Cable,part family; revision and source path remain separate
+YCL.E000240,ROBOSKIN.0051,Body Estop Cable,part family; revision and source path remain separate
+YCL.E000241,ROBOSKIN.0052,Lighting Board Cable,part family; revision and source path remain separate
+YCL.E000243,ROBOSKIN.0053,ARM 10 Signal Cable,part family; revision and source path remain separate
+YCL.E000248,ROBOSKIN.0054,OLED Display,part family; revision and source path remain separate
+YCL.E000254,ROBOSKIN.0055,Wireless Network Card,part family; revision and source path remain separate
+YCL.E000255,ROBOSKIN.0056,Rear Power Indicator Board,part family; revision and source path remain separate
+YCL.E000256,ROBOSKIN.0057,Coin Cell,part family; revision and source path remain separate
+YCL.E000257,ROBOSKIN.0058,Charging Board Fan,part family; revision and source path remain separate
+YCL.E000259,ROBOSKIN.0059,Waist 4010 Fan,part family; revision and source path remain separate
+YCL.E000260,ROBOSKIN.0060,Main Controller Fan,part family; revision and source path remain separate
+YCL.E000262,ROBOSKIN.0061,433MHz Antenna,part family; revision and source path remain separate
+YCL.E000263,ROBOSKIN.0062,Wired Main Controller Assembly,part family; revision and source path remain separate
+YCL.E000264,ROBOSKIN.0063,WiFi Antenna,part family; revision and source path remain separate
+YCL.E000268,ROBOSKIN.0064,Backup Battery Protection Board,part family; revision and source path remain separate
+YCL.E000269,ROBOSKIN.0065,Backup Battery,part family; revision and source path remain separate
+YCL.E000270,ROBOSKIN.0066,USB3 Flexible Interconnect,part family; revision and source path remain separate
+YCL.E000271,ROBOSKIN.0067,Hand Adapter Cable,part family; revision and source path remain separate
+YCL.E000272,ROBOSKIN.0068,Battery to Back Power Cable,part family; revision and source path remain separate
+YCL.E000273,ROBOSKIN.0069,Battery to Main Power Cable,part family; revision and source path remain separate
+YCL.E000274,ROBOSKIN.0070,Backup Battery Protection Long Cable,part family; revision and source path remain separate
+YCL.E000275,ROBOSKIN.0071,Backup Battery Protection Short Cable,part family; revision and source path remain separate
+YCL.E000276,ROBOSKIN.0072,Mingmei Lithium Ion Battery Pack,part family; revision and source path remain separate
+YCL.E000278,ROBOSKIN.0073,Main Controller Board,part family; revision and source path remain separate
+YCL.E000280,ROBOSKIN.0074,Main Controller Heatsink,part family; revision and source path remain separate
+YCL.E000282,ROBOSKIN.0075,XT30 2plus2 Female Connector,part family; revision and source path remain separate
+YCL.M000225,ROBOSKIN.0076,waist Yaw limit ring,part family; revision and source path remain separate
+YCL.M000226,ROBOSKIN.0077,waist Roll limit ring,part family; revision and source path remain separate
+YCL.M000227,ROBOSKIN.0078,waist number 1 (LS revision )_CMF specification,part family; revision and source path remain separate
+YCL.M000228,ROBOSKIN.0079,waist number 1 clamp (LS revision )_CMF specification,part family; revision and source path remain separate
+YCL.M000229,ROBOSKIN.0080,hip joint front (LS revision )_CMF specification,part family; revision and source path remain separate
+YCL.M000230,ROBOSKIN.0081,hip joint rear (LS revision )_CMF specification,part family; revision and source path remain separate
+YCL.M000231,ROBOSKIN.0082,hip joint left (LS revision )_CMF specification,part family; revision and source path remain separate
+YCL.M000232,ROBOSKIN.0083,hip joint right (LS revision )_CMF specification,part family; revision and source path remain separate
+YCL.M000234,ROBOSKIN.0084,hip joint limit ring _CMF specification,part family; revision and source path remain separate
+YCL.M000237,ROBOSKIN.0085,hip joint motor cover plate _CMF specification,part family; revision and source path remain separate
+YCL.M000238,ROBOSKIN.0086,waist motor housing (LS revision ),part family; revision and source path remain separate
+YCL.M000239,ROBOSKIN.0087,hip joint left clamp _CMF specification,part family; revision and source path remain separate
+YCL.M000240,ROBOSKIN.0088,hip joint right clamp _CMF specification,part family; revision and source path remain separate
+YCL.M000241,ROBOSKIN.0089,hip joint impact pad,part family; revision and source path remain separate
+YCL.M000243,ROBOSKIN.0090,fan mounting block,part family; revision and source path remain separate
+YCL.M000249,ROBOSKIN.0091,Yaw travel stop 3,part family; revision and source path remain separate
+YCL.M000250,ROBOSKIN.0092,cable clamp block 1,part family; revision and source path remain separate
+YCL.M000268,ROBOSKIN.0093,long linkage,part family; revision and source path remain separate
+YCL.M000269,ROBOSKIN.0094,short linkage,part family; revision and source path remain separate
+YCL.M000270,ROBOSKIN.0095,shin cable clamp block 2,part family; revision and source path remain separate
+YCL.M000271,ROBOSKIN.0096,Pitch travel stop,part family; revision and source path remain separate
+YCL.M000272,ROBOSKIN.0097,sole cross shaft,part family; revision and source path remain separate
+YCL.M000276,ROBOSKIN.0098,foot upper,part family; revision and source path remain separate
+YCL.M000277,ROBOSKIN.0099,insole,part family; revision and source path remain separate
+YCL.M000282,ROBOSKIN.0100,mirrored long linkage,part family; revision and source path remain separate
+YCL.M000283,ROBOSKIN.0101,mirrored short linkage,part family; revision and source path remain separate
+YCL.M000284,ROBOSKIN.0102,mirrored Pitch travel stop,part family; revision and source path remain separate
+YCL.M000289,ROBOSKIN.0103,hip joint front cover plate _CMF specification,part family; revision and source path remain separate
+YCL.M000290,ROBOSKIN.0104,hip joint rubber cover,part family; revision and source path remain separate
+YCL.M000292,ROBOSKIN.0105,knee bearing housing,part family; revision and source path remain separate
+YCL.M000298,ROBOSKIN.0106,upper arm upper cover _CMF specification,part family; revision and source path remain separate
+YCL.M000308,ROBOSKIN.0107,forearm upper cover _CMF specification,part family; revision and source path remain separate
+YCL.M000311,ROBOSKIN.0108,forearm lower cover _CMF specification,part family; revision and source path remain separate
+YCL.M000313,ROBOSKIN.0109,mirrored forearm upper cover _CMF specification,part family; revision and source path remain separate
+YCL.M000322,ROBOSKIN.0110,wrist end cable retention block,part family; revision and source path remain separate
+YCL.M000323,ROBOSKIN.0111,wrist end cover plate _CMF specification,part family; revision and source path remain separate
+YCL.M000324,ROBOSKIN.0112,wrist end body,part family; revision and source path remain separate
+YCL.M000330,ROBOSKIN.0113,adapter board retainer,part family; revision and source path remain separate
+YCL.M000331,ROBOSKIN.0114,RP_Hand adapter,part family; revision and source path remain separate
+YCL.M000332,ROBOSKIN.0115,arm adapter flange,part family; revision and source path remain separate
+YCL.M000333,ROBOSKIN.0116,cable clip,part family; revision and source path remain separate
+YCL.M000334,ROBOSKIN.0117,limit ring,part family; revision and source path remain separate
+YCL.M000335,ROBOSKIN.0118,arm cable clamp block 2,part family; revision and source path remain separate
+YCL.M000336,ROBOSKIN.0119,elbow bearing housing,part family; revision and source path remain separate
+YCL.M000337,ROBOSKIN.0120,limit ring 2,part family; revision and source path remain separate
+YCL.M000338,ROBOSKIN.0121,arm cable clamp block 3,part family; revision and source path remain separate
+YCL.M000340,ROBOSKIN.0122,arm cable clamp block 5,part family; revision and source path remain separate
+YCL.M000341,ROBOSKIN.0123,55 limit ring,part family; revision and source path remain separate
+YCL.M000342,ROBOSKIN.0124,shoulder clamp _CMF specification,part family; revision and source path remain separate
+YCL.M000346,ROBOSKIN.0125,PCBA support frame,part family; revision and source path remain separate
+YCL.M000347,ROBOSKIN.0126,fan retention bracket ( waist ),part family; revision and source path remain separate
+YCL.M000349,ROBOSKIN.0127,fan retention cover plate,part family; revision and source path remain separate
+YCL.M000359,ROBOSKIN.0128,handle rubber sleeve,part family; revision and source path remain separate
+YCL.M000365,ROBOSKIN.0129,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.M000369,ROBOSKIN.0130,handle,part family; revision and source path remain separate
+YCL.M000371,ROBOSKIN.0131,cosmetic hand body _CMF specification,part family; revision and source path remain separate
+YCL.M000372,ROBOSKIN.0132,cosmetic hand body,part family; revision and source path remain separate
+YCL.M000373,ROBOSKIN.0133,cosmetic hand cover,part family; revision and source path remain separate
+YCL.M000374,ROBOSKIN.0134,mirrored cosmetic hand body,part family; revision and source path remain separate
+YCL.M000375,ROBOSKIN.0135,mirrored cosmetic hand body _CMF specification,part family; revision and source path remain separate
+YCL.M000376,ROBOSKIN.0136,mirrored cosmetic hand cover,part family; revision and source path remain separate
+YCL.M000398,ROBOSKIN.0137,75 shoulder cover _CMF specification,part family; revision and source path remain separate
+YCL.M000399,ROBOSKIN.0138,75 limit ring,part family; revision and source path remain separate
+YCL.M000402,ROBOSKIN.0139,mirrored 75 shoulder cover _CMF specification,part family; revision and source path remain separate
+YCL.M000421,ROBOSKIN.0140,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.M000426,ROBOSKIN.0141,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.M000435,ROBOSKIN.0142,thigh cover _CMF specification,part family; revision and source path remain separate
+YCL.M000437,ROBOSKIN.0143,hip joint rear cover plate _CMF specification,part family; revision and source path remain separate
+YCL.M000438,ROBOSKIN.0144,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.M000443,ROBOSKIN.0145,shin cover plate _CMF specification,part family; revision and source path remain separate
+YCL.M000444,ROBOSKIN.0146,shin front cover plate _CMF specification,part family; revision and source path remain separate
+YCL.M000445,ROBOSKIN.0147,shin rear cover plate _CMF specification,part family; revision and source path remain separate
+YCL.M000446,ROBOSKIN.0148,shin motor spacer block _CMF specification,part family; revision and source path remain separate
+YCL.M000447,ROBOSKIN.0149,shin body right _CMF specification,part family; revision and source path remain separate
+YCL.M000448,ROBOSKIN.0150,shin body left _CMF specification,part family; revision and source path remain separate
+YCL.M000449,ROBOSKIN.0151,shin ankle spacer block _CMF specification,part family; revision and source path remain separate
+YCL.M000451,ROBOSKIN.0152,mirrored shin ankle spacer block _CMF specification,part family; revision and source path remain separate
+YCL.M000452,ROBOSKIN.0153,mirrored shin body left _CMF specification,part family; revision and source path remain separate
+YCL.M000453,ROBOSKIN.0154,mirrored shin body right _CMF specification,part family; revision and source path remain separate
+YCL.M000454,ROBOSKIN.0155,mirrored shin motor spacer block _CMF specification,part family; revision and source path remain separate
+YCL.M000471,ROBOSKIN.0156,wrist body,part family; revision and source path remain separate
+YCL.M000472,ROBOSKIN.0157,mirrored wrist body,part family; revision and source path remain separate
+YCL.M000473,ROBOSKIN.0158,wrist upper clamp,part family; revision and source path remain separate
+YCL.M000474,ROBOSKIN.0159,wrist lower clamp,part family; revision and source path remain separate
+YCL.M000475,ROBOSKIN.0160,thigh clamp rear _CMF specification,part family; revision and source path remain separate
+YCL.M000477,ROBOSKIN.0161,thigh clamp front _CMF specification,part family; revision and source path remain separate
+YCL.M000481,ROBOSKIN.0162,thigh lower body right _CMF specification,part family; revision and source path remain separate
+YCL.M000485,ROBOSKIN.0163,thigh lower cover plate left _CMF specification,part family; revision and source path remain separate
+YCL.M000486,ROBOSKIN.0164,thigh lower cover plate right _CMF specification,part family; revision and source path remain separate
+YCL.M000487,ROBOSKIN.0165,ankle output flange,part family; revision and source path remain separate
+YCL.M000559,ROBOSKIN.0166,waist roll cable retention block,part family; revision and source path remain separate
+YCL.M000561,ROBOSKIN.0167,YAW motor mounting bracket,part family; revision and source path remain separate
+YCL.M000562,ROBOSKIN.0168,PITCH-YAW motor connection bracket,part family; revision and source path remain separate
+YCL.M000563,ROBOSKIN.0169,PITCH-YAW motor flange bracket,part family; revision and source path remain separate
+YCL.M000564,ROBOSKIN.0170,-02 head PITCH motor flange,part family; revision and source path remain separate
+YCL.M000610,ROBOSKIN.0171,collector board body bracket,part family; revision and source path remain separate
+YCL.M000638,ROBOSKIN.0172,speaker bracket,part family; revision and source path remain separate
+YCL.M000640,ROBOSKIN.0173,75 shoulder clamp (01 revision )_CMF specification,part family; revision and source path remain separate
+YCL.M000641,ROBOSKIN.0174,75 shoulder body (01 revision )_CMF specification,part family; revision and source path remain separate
+YCL.M000642,ROBOSKIN.0175,upper arm upper body (01 revision )_CMF specification,part family; revision and source path remain separate
+YCL.M000643,ROBOSKIN.0176,upper arm upper clamp (01 revision )_CMF specification,part family; revision and source path remain separate
+YCL.M000644,ROBOSKIN.0177,upper arm lower front segment (01 revision )_CMF specification,part family; revision and source path remain separate
+YCL.M000645,ROBOSKIN.0178,upper arm lower rear segment (01 revision )_CMF specification,part family; revision and source path remain separate
+YCL.M000646,ROBOSKIN.0179,forearm upper body left (02 revision )_CMF specification,part family; revision and source path remain separate
+YCL.M000647,ROBOSKIN.0180,forearm upper body right (02 revision )_CMF specification,part family; revision and source path remain separate
+YCL.M000648,ROBOSKIN.0181,mirrored forearm upper body left (02 revision )_CMF specification,part family; revision and source path remain separate
+YCL.M000649,ROBOSKIN.0182,mirrored forearm upper body right (02 revision )_CMF specification,part family; revision and source path remain separate
+YCL.M000650,ROBOSKIN.0183,mirrored upper arm lower front segment (01 revision )_CMF specification,part family; revision and source path remain separate
+YCL.M000651,ROBOSKIN.0184,mirrored upper arm lower rear segment (01 revision )_CMF specification,part family; revision and source path remain separate
+YCL.M000652,ROBOSKIN.0185,mirrored 75 shoulder clamp (01 revision )_CMF specification,part family; revision and source path remain separate
+YCL.M000656,ROBOSKIN.0186,mirrored 75 shoulder body (01 revision )_CMF specification,part family; revision and source path remain separate
+YCL.M000657,ROBOSKIN.0187,foot plate (01 revision )_CMF specification,part family; revision and source path remain separate
+YCL.M000658,ROBOSKIN.0188,sole retention number 1 (02 revision ),part family; revision and source path remain separate
+YCL.M000659,ROBOSKIN.0189,sole retention number 2 (02 revision ),part family; revision and source path remain separate
+YCL.M000660,ROBOSKIN.0190,Roll travel stop,part family; revision and source path remain separate
+YCL.M000661,ROBOSKIN.0191,leg cable clip (75 motor ),part family; revision and source path remain separate
+YCL.M000662,ROBOSKIN.0192,thigh clamp (01 revision )_CMF specification,part family; revision and source path remain separate
+YCL.M000663,ROBOSKIN.0193,thigh body (01 revision )_CMF specification,part family; revision and source path remain separate
+YCL.M000664,ROBOSKIN.0194,Yaw travel stop 4(03 revision ),part family; revision and source path remain separate
+YCL.M000665,ROBOSKIN.0195,thigh flange right,part family; revision and source path remain separate
+YCL.M000666,ROBOSKIN.0196,thigh lower motor clamp (01 revision )_CMF specification,part family; revision and source path remain separate
+YCL.M000667,ROBOSKIN.0197,thigh lower body left (02 revision )_CMF specification,part family; revision and source path remain separate
+YCL.M000668,ROBOSKIN.0198,thigh flange left,part family; revision and source path remain separate
+YCL.M000669,ROBOSKIN.0199,mirrored thigh lower motor clamp (01 revision )_CMF specification,part family; revision and source path remain separate
+YCL.M000670,ROBOSKIN.0200,mirrored thigh lower body left (02 revision )_CMF specification,part family; revision and source path remain separate
+YCL.M000671,ROBOSKIN.0201,mirrored thigh clamp rear _CMF specification,part family; revision and source path remain separate
+YCL.M000672,ROBOSKIN.0202,mirrored thigh lower cover plate left _CMF specification,part family; revision and source path remain separate
+YCL.M000673,ROBOSKIN.0203,mirrored thigh clamp front _CMF specification,part family; revision and source path remain separate
+YCL.M000674,ROBOSKIN.0204,mirrored thigh lower body right _CMF specification,part family; revision and source path remain separate
+YCL.M000675,ROBOSKIN.0205,mirrored thigh lower cover plate right _CMF specification,part family; revision and source path remain separate
+YCL.M000689,ROBOSKIN.0206,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.M000690,ROBOSKIN.0207,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.M000691,ROBOSKIN.0208,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.M000692,ROBOSKIN.0209,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.M000693,ROBOSKIN.0210,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.M000694,ROBOSKIN.0211,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.M000695,ROBOSKIN.0212,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.M000696,ROBOSKIN.0213,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.M000697,ROBOSKIN.0214,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.M000698,ROBOSKIN.0215,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.M000699,ROBOSKIN.0216,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.M000700,ROBOSKIN.0217,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.M000701,ROBOSKIN.0218,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.M000702,ROBOSKIN.0219,waist bracket,part family; revision and source path remain separate
+YCL.M000703,ROBOSKIN.0220,-02 outer topology bracket,part family; revision and source path remain separate
+YCL.M000704,ROBOSKIN.0221,kickme version torso frame,part family; revision and source path remain separate
+YCL.M000705,ROBOSKIN.0222,kickme handle rubber plug -l,part family; revision and source path remain separate
+YCL.M000706,ROBOSKIN.0223,kickme handle rubber plug -r,part family; revision and source path remain separate
+YCL.M000707,ROBOSKIN.0224,kickme handle rubber sleeve,part family; revision and source path remain separate
+YCL.M000708,ROBOSKIN.0225,handle _CMF specification,part family; revision and source path remain separate
+YCL.M000709,ROBOSKIN.0226,vertical mount backplane shell,part family; revision and source path remain separate
+YCL.M000710,ROBOSKIN.0227,kickme_ version battery guide bracket,part family; revision and source path remain separate
+YCL.M000711,ROBOSKIN.0228,-02 kickme_ version main board bracket,part family; revision and source path remain separate
+YCL.M000712,ROBOSKIN.0229,-02 EPP cushion layer,part family; revision and source path remain separate
+YCL.M000713,ROBOSKIN.0230,-02 PC cushion bracket,part family; revision and source path remain separate
+YCL.M000714,ROBOSKIN.0231,interactive head mounting bracket,part family; revision and source path remain separate
+YCL.M000716,ROBOSKIN.0232,kickme version torso rear shell _CMF specification,part family; revision and source path remain separate
+YCL.M000717,ROBOSKIN.0233,kickme version torso front shell _CMF specification,part family; revision and source path remain separate
+YCL.M000718,ROBOSKIN.0234,Damiao orin bracket,part family; revision and source path remain separate
+YCL.M000722,ROBOSKIN.0235,foot plate _CMF specification,part family; revision and source path remain separate
+YCL.M000723,ROBOSKIN.0236,foot upper,part family; revision and source path remain separate
+YCL.M000740,ROBOSKIN.0237,head light strip inlay panel _CMF specification,part family; revision and source path remain separate
+YCL.M000741,ROBOSKIN.0238,motion head head _CMF specification,part family; revision and source path remain separate
+YCL.M000743,ROBOSKIN.0239,-02 debug port soft rubber cover,part family; revision and source path remain separate
+YCL.M000744,ROBOSKIN.0240,logo light cover _CMF specification,part family; revision and source path remain separate
+YCL.M000745,ROBOSKIN.0241,auxiliary battery rear shell,part family; revision and source path remain separate
+YCL.M000746,ROBOSKIN.0242,front shell latch,part family; revision and source path remain separate
+YCL.M000747,ROBOSKIN.0243,rear shell latch,part family; revision and source path remain separate
+YCL.M000748,ROBOSKIN.0244,auxiliary battery spring arm button _CMF specification,part family; revision and source path remain separate
+YCL.M000750,ROBOSKIN.0245,-03 charger board mounting and locating bracket,part family; revision and source path remain separate
+YCL.M000765,ROBOSKIN.0246,mirrored 97 limit ring,part family; revision and source path remain separate
+YCL.M000766,ROBOSKIN.0247,97 limit ring,part family; revision and source path remain separate
+YCL.M000773,ROBOSKIN.0248,ankle limit ring,part family; revision and source path remain separate
+YCL.M000782,ROBOSKIN.0249,motion head bracket,part family; revision and source path remain separate
+YCL.M000783,ROBOSKIN.0250,waist cable retention block,part family; revision and source path remain separate
+YCL.M000787,ROBOSKIN.0251,KICKME motion head body _CMF specification,part family; revision and source path remain separate
+YCL.M000788,ROBOSKIN.0252,KICKME motion head screw concealment cover _CMF specification,part family; revision and source path remain separate
+YCL.M000790,ROBOSKIN.0253,KICKME version head face _CMF specification,part family; revision and source path remain separate
+YCL.M000818,ROBOSKIN.0254,ankle limit ring 2,part family; revision and source path remain separate
+YCL.M000819,ROBOSKIN.0255,interactive head - outer shell front cover _CMF specification,part family; revision and source path remain separate
+YCL.M000820,ROBOSKIN.0256,-02 interactive head screen bottom bracket,part family; revision and source path remain separate
+YCL.M000821,ROBOSKIN.0257,interactive head - screen top cover _CMF specification,part family; revision and source path remain separate
+YCL.M000822,ROBOSKIN.0258,interactive head - upper outer shell bracket _CMF specification,part family; revision and source path remain separate
+YCL.M000823,ROBOSKIN.0259,interactive head - lower outer shell bracket _CMF specification,part family; revision and source path remain separate
+YCL.M000824,ROBOSKIN.0260,-02 interactive head SOC plate body bracket,part family; revision and source path remain separate
+YCL.M000825,ROBOSKIN.0261,interactive head - upper trim cover _CMF specification,part family; revision and source path remain separate
+YCL.M000826,ROBOSKIN.0262,interactive head - rear trim cover _CMF specification,part family; revision and source path remain separate
+YCL.M000827,ROBOSKIN.0263,interactive head - side trim cover -L_CMF specification,part family; revision and source path remain separate
+YCL.M000828,ROBOSKIN.0264,interactive head - side trim cover -R_CMF specification,part family; revision and source path remain separate
+YCL.M000830,ROBOSKIN.0265,Wuji dexterous hand adapter,part family; revision and source path remain separate
+YCL.M000832,ROBOSKIN.0266,lower shell,part family; revision and source path remain separate
+YCL.M000833,ROBOSKIN.0267,button,part family; revision and source path remain separate
+YCL.M000834,ROBOSKIN.0268,upper shell 2,part family; revision and source path remain separate
+YCL.M000895,ROBOSKIN.0269,hip fan cable guard block _01 revision,part family; revision and source path remain separate
+YCL.M000896,ROBOSKIN.0270,counterweight connection block,part family; revision and source path remain separate
+YCL.M000925,ROBOSKIN.0271,insole,part family; revision and source path remain separate
+YCL.M000926,ROBOSKIN.0272,motion head body,part family; revision and source path remain separate
+YCL.M000927,ROBOSKIN.0273,motion head base mounting adapter,part family; revision and source path remain separate
+YCL.M000928,ROBOSKIN.0274,neck cable guide clip,part family; revision and source path remain separate
+YCL.M000929,ROBOSKIN.0275,main controller FPC clamping plate,part family; revision and source path remain separate
+YCL.M000930,ROBOSKIN.0276,backplane FPC clamping plate,part family; revision and source path remain separate
+YCL.M000931,ROBOSKIN.0277,LOGO light light blocking foam,part family; revision and source path remain separate
+YCL.M000946,ROBOSKIN.0278,shin front cover plate,part family; revision and source path remain separate
+YCL.M000947,ROBOSKIN.0279,shin rear cover plate,part family; revision and source path remain separate
+YCL.M000948,ROBOSKIN.0280,side cable channel,part family; revision and source path remain separate
+YCL.M000949,ROBOSKIN.0281,motion control expansion board,part family; revision and source path remain separate
+YCL.M000976,ROBOSKIN.0282,Mingmei battery bay upper segment,part family; revision and source path remain separate
+YCL.M000977,ROBOSKIN.0283,Mingmei battery bay lower segment,part family; revision and source path remain separate
+YCL.M000979,ROBOSKIN.0284,collector board isolation cover,part family; revision and source path remain separate
+YCL.M000980,ROBOSKIN.0285,fan bracket,part family; revision and source path remain separate
+YCL.M000981,ROBOSKIN.0286,interactive head adhesive light blocking glass,part family; revision and source path remain separate
+YCL.M000982,ROBOSKIN.0287,screen damping foam,part family; revision and source path remain separate
+YCL.M000983,ROBOSKIN.0288,interactive head cable channel,part family; revision and source path remain separate
+YCL.P000014,ROBOSKIN.0289,cross roller slewing bearing RU28 XRU1008,part family; revision and source path remain separate
+YCL.P000282,ROBOSKIN.0290,R type cable clip CC-1,part family; revision and source path remain separate
+YCL.P000283,ROBOSKIN.0291,square cable tie mount 12X12X4,part family; revision and source path remain separate
+YCL.A000016,ROBOSKIN.0292,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.D000020,ROBOSKIN.0293,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.D000027,ROBOSKIN.0294,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.D000031,ROBOSKIN.0295,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.D000048,ROBOSKIN.0296,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.E000191,ROBOSKIN.0297,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.E000225,ROBOSKIN.0298,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000001,ROBOSKIN.0299,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000002,ROBOSKIN.0300,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000003,ROBOSKIN.0301,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000008,ROBOSKIN.0302,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000009,ROBOSKIN.0303,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000011,ROBOSKIN.0304,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000015,ROBOSKIN.0305,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000017,ROBOSKIN.0306,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000018,ROBOSKIN.0307,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000019,ROBOSKIN.0308,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000020,ROBOSKIN.0309,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000021,ROBOSKIN.0310,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000022,ROBOSKIN.0311,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000024,ROBOSKIN.0312,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000029,ROBOSKIN.0313,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000031,ROBOSKIN.0314,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000032,ROBOSKIN.0315,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000033,ROBOSKIN.0316,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000034,ROBOSKIN.0317,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000038,ROBOSKIN.0318,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000039,ROBOSKIN.0319,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000042,ROBOSKIN.0320,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000043,ROBOSKIN.0321,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000044,ROBOSKIN.0322,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000047,ROBOSKIN.0323,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000048,ROBOSKIN.0324,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000049,ROBOSKIN.0325,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000050,ROBOSKIN.0326,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000051,ROBOSKIN.0327,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000053,ROBOSKIN.0328,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000054,ROBOSKIN.0329,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000055,ROBOSKIN.0330,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000057,ROBOSKIN.0331,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000058,ROBOSKIN.0332,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000059,ROBOSKIN.0333,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000060,ROBOSKIN.0334,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000061,ROBOSKIN.0335,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000062,ROBOSKIN.0336,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000063,ROBOSKIN.0337,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000065,ROBOSKIN.0338,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000067,ROBOSKIN.0339,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000068,ROBOSKIN.0340,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000072,ROBOSKIN.0341,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000074,ROBOSKIN.0342,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000087,ROBOSKIN.0343,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000093,ROBOSKIN.0344,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000117,ROBOSKIN.0345,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000234,ROBOSKIN.0346,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000242,ROBOSKIN.0347,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000243,ROBOSKIN.0348,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000244,ROBOSKIN.0349,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000245,ROBOSKIN.0350,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000246,ROBOSKIN.0351,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000262,ROBOSKIN.0352,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000263,ROBOSKIN.0353,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000264,ROBOSKIN.0354,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000265,ROBOSKIN.0355,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000268,ROBOSKIN.0356,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000269,ROBOSKIN.0357,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000271,ROBOSKIN.0358,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000272,ROBOSKIN.0359,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000274,ROBOSKIN.0360,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000275,ROBOSKIN.0361,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000276,ROBOSKIN.0362,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000277,ROBOSKIN.0363,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000285,ROBOSKIN.0364,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000286,ROBOSKIN.0365,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000287,ROBOSKIN.0366,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000288,ROBOSKIN.0367,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.P000289,ROBOSKIN.0368,Source part; consult drawing and BOM,part family; revision and source path remain separate
+YCL.E000194,ROBOSKIN.0369,Electrical source identifier; resolve specification against source BOM before procurement,document alias only; source specification review required
+YCL.E000196,ROBOSKIN.0370,Electrical source identifier; resolve specification against source BOM before procurement,document alias only; source specification review required
+YCL.M00023,ROBOSKIN.0371,Incomplete mechanical source identifier; unresolved source typo; not procurement-released,document alias only; source specification review required

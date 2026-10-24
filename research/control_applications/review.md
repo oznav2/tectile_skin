@@ -1,30 +1,36 @@
-# Control and application references: systematic audit
+<div dir="rtl" lang="he">
 
-Reviewed 2026-10-24 for Ilan's affordable electronic-skin plan. Assigned references: **25–29, 35, 63–84**, all 28 accounted for in [references.json](references.json). This review owns control/application implications; it does not assess component purchasing or change the main plan.
+עברית · [English](review.en.md)
 
-The proposed baseline is 28 independent normal-contact resistive cells plus two temperature points per patch, 100 Hz acquisition and a 40 ms maximum freshness envelope. It has **no proximity sensor, per-cell IMU, shear sensor, calibrated six-axis force sensor or certified protective controller**. These facts determine which research algorithms can be implemented faithfully.
+# מקורות על בקרה ויישומים: סקירה שיטתית
 
-## Integration memo: changes to make before any motor demonstration
+נבדק בתאריך 2026-10-24 לצורך התוכנית של אילן לעור אלקטרוני במחיר נגיש. המקורות שהוקצו: **25–29, 35, 63–84**; כל 28 המקורות מתועדים ב-[references.json](references.json). סקירה זו עוסקת בהשלכות על הבקרה והיישומים; היא אינה בוחנת רכישת רכיבים ואינה משנה את התוכנית הראשית.
 
-The most defensible first product is a distributed contact-perception system with explicit coverage validity, a serviceable cover and reproducible installation/calibration. The literature establishes that skin-informed robot behavior is feasible. It does **not** establish the proposed low-cost laminate's durability, force accuracy, loop stability, manufacturing yield or market novelty. The actions below are engineering requirements inferred for this project; they are not claimed published performance.
+תצורת הבסיס המוצעת כוללת 28 תאים התנגדותיים עצמאיים לחישת מגע בכיוון הניצב למשטח, ועוד שתי נקודות טמפרטורה בכל טלאי, רכישה בתדר 100 Hz וחלון טריות מרבי של 40 ms. **אין בה חיישן קרבה, IMU בכל תא, חיישן גזירה, חיישן כוח מכויל בשישה צירים או בקר הגנה מוסמך**. עובדות אלה קובעות אילו אלגוריתמים מהמחקר אפשר לממש בנאמנות למקור.
 
-### 1. Separate measurement, virtual interaction and motion command
+## מזכר שילוב: שינויים שיש לבצע לפני כל הדגמה עם מנועים
 
-Preserve three interfaces:
+המוצר הראשון שאפשר להצדיק בצורה הטובה ביותר הוא מערכת מבוזרת לתפיסת מגע, עם תקפות כיסוי מפורשת, כיסוי חיצוני הניתן לתחזוקה, והתקנה וכיול שניתן לשחזר. הספרות מבססת את ההיתכנות של התנהגות רובוטית המשתמשת במידע מהעור. היא **אינה** מבססת את עמידות הלמינציה הזולה המוצעת, דיוק הכוח שלה, יציבות חוג הבקרה, תפוקת הייצור התקינה או החדשנות בשוק. הפעולות שלהלן הן דרישות הנדסיות שהוסקו עבור פרויקט זה; אין לייחס להן מעמד של ביצועים שפורסמו במחקר.
 
-1. `SkinObservation`: patch UID, boot/session ID, map/calibration version, taxel index, acquisition-time interval, raw code, contact state, relative intensity, temperature channel age and validity flags.
-2. `ContactPolicyRequest`: valid contact list, rigid link, contact position/normal, allowed-zone classification, and a bounded virtual interaction request. This is a policy output, not a force measurement.
-3. `RobotSupervisorDecision`: accept, limit, refuse, hold or fault, with reason and applied command. The existing robot controller owns actuator constraints and balance.
+### 1. להפריד בין מדידה, אינטראקציה וירטואלית ופקודת תנועה
 
-The [2016 control framework, §IV-A](https://mediatum.ub.tum.de/doc/1335611/document.pdf) maps weighted tactile signals to virtual normal forces. Maintain that distinction. A film signal is affected by load distribution, preload, cover mechanics and drift. Do not put raw intensity into a field named `force_N`, or infer object pressure from force divided by the nominal taxel area.
+יש לשמר שלושה ממשקים:
 
-Summed intensity also depends on contact spreading and taxel density. Keep a bounded total virtual-effort budget per rigid link and test it with the same external load applied through small and broad probes. Limit control requests independently of diagnostic contact intensity; a command limit must not erase evidence of overload or simultaneous contact. A design that reacts more strongly merely because one cover spreads a touch over four cells has a calibration/policy defect.
+1. `SkinObservation`: מזהה UID של הטלאי, מזהה אתחול/הפעלה, גרסת מיפוי/כיול, אינדקס אתר חישה, חלון זמן הרכישה, קוד גולמי, מצב מגע, עוצמה יחסית, גיל ערוץ הטמפרטורה ודגלי תקפות.
+2. `ContactPolicyRequest`: רשימת מגעים תקפים, חוליה קשיחה, מיקום המגע והנורמל שלו, סיווג אזור מותר, ובקשת אינטראקציה וירטואלית חסומה. זהו פלט של מדיניות, ולא מדידת כוח.
+3. `RobotSupervisorDecision`: קבלה, הגבלה, סירוב, החזקה או תקלה, בצירוף הסיבה והפקודה שיושמה. בקר הרובוט הקיים אחראי לאילוצי המפעילים ולשיווי המשקל.
 
-### 2. Make frames, normals and aggregation auditable
+[מסגרת הבקרה משנת 2016, סעיף IV-A](https://mediatum.ub.tum.de/doc/1335611/document.pdf) ממפה אותות מישוש משוקללים לכוחות וירטואליים בכיוון הנורמל. יש לשמור על הבחנה זו. אות הסרט מושפע מפיזור העומס, מהעומס המקדים, מהמכניקה של הכיסוי ומסחיפה. אין להכניס עוצמה גולמית לשדה בשם `force_N`, או להסיק לחץ של עצם באמצעות חלוקת הכוח בשטח הנומינלי של אתר החישה.
 
-For each taxel store `link_id`, position `r_i` in metres, a unit normal `n_i`, and the transform/map version. Define whether `n_i` points outward from the robot. Determine the reaction sign with a fixture test; never assume every paper's sensor z-axis has the same convention.
+גם סכום העוצמות תלוי בהתפשטות המגע ובצפיפות אתרי החישה. יש לשמור על תקציב חסום של מאמץ וירטואלי כולל לכל חוליה קשיחה, ולבדוק אותו תחת אותו עומס חיצוני המופעל באמצעות גשושים קטנים ורחבים. יש להגביל בקשות בקרה בנפרד מעוצמת המגע האבחונית; הגבלת פקודה אינה רשאית למחוק עדות לעומס יתר או למגעים בו־זמניים. תכן שמגיב בעוצמה רבה יותר רק משום שכיסוי מסוים מפזר מגע על ארבעה תאים סובל מליקוי בכיול או במדיניות.
 
-At one coherent robot state, form each chosen virtual vector `f_i`. For cells fixed to the same rigid link and expressed in the same frame, the equivalent wrench at link origin O is
+### 2. לאפשר ביקורת על מערכות הצירים, הנורמלים ואיגום הנתונים
+
+לכל אתר חישה יש לשמור `link_id`, מיקום `r_i` במטרים, נורמל יחידה `n_i`, וגרסת הטרנספורמציה/המפה. יש להגדיר אם `n_i` פונה החוצה מהרובוט. יש לקבוע את סימן התגובה בבדיקת מתקן; אין להניח שציר z של החיישן מוגדר באותה מוסכמה בכל מאמר.
+
+במצב רובוט עקבי אחד יש ליצור כל וקטור וירטואלי נבחר `f_i`. עבור תאים המקובעים לאותה חוליה קשיחה ומבוטאים באותה מערכת צירים, וקטור הכוח והמומנט השקול בראשית החוליה O הוא:
+
+<div dir="ltr">
 
 ```text
 F_link = sum_i f_i
@@ -33,47 +39,55 @@ W_link = [F_link; M_link]
 tau_link = transpose(J_link_at_O) * W_link
 ```
 
-The Jacobian convention here is `[linear velocity at O; angular velocity]`. A different ordering requires permuting both wrench and Jacobian. A point force may have zero free couple at its application point, but generally produces a nonzero moment at the link origin. The supplied Cheng 2019 paper's link aggregation is appropriate; naive summation of forces alone is not.
+</div>
 
-Required software tests: compare cell-by-cell and link-aggregated results; rotate the entire scene; change wrench origin; place equal/opposite forces to create a couple; place contacts whose resultant cancels; verify zero influence from joints downstream of a contact link; check `f·(Jv*qdot) = (Jv^T*f)·qdot`. Keep the original individual contacts even when net wrench is zero. A zero resultant is not an empty or unconstrained contact set.
+מוסכמת היעקוביאן כאן היא `[linear velocity at O; angular velocity]`. סדר אחר מחייב לשנות בהתאמה גם את סדר רכיבי הכוח והמומנט וגם את היעקוביאן. לכוח נקודתי עשוי להיות מומנט זוג חופשי אפס בנקודת הפעלתו, אך בדרך כלל הוא יוצר מומנט שאינו אפס בראשית החוליה. האיגום ברמת החוליה במאמר Cheng משנת 2019 שסופק הוא מתאים; סכימה נאיבית של הכוחות בלבד אינה מתאימה.
 
-### 3. Enforce time coherence beyond packet freshness
+בדיקות התוכנה הנדרשות: להשוות בין תוצאות חישוב תא־תא לתוצאות איגום לפי חוליה; לסובב את כל הסצנה; לשנות את ראשית וקטור הכוח והמומנט; להציב כוחות שווים ומנוגדים היוצרים זוג; להציב מגעים שהשקול שלהם מתאפס; לוודא שאין השפעה למפרקים הנמצאים בהמשך השרשרת מעבר לחוליית המגע; ולבדוק `f·(Jv*qdot) = (Jv^T*f)·qdot`. יש לשמור את המגעים הבודדים המקוריים גם כאשר וקטור הכוח והמומנט הכולל הוא אפס. שקול אפס אינו מעיד על קבוצת מגעים ריקה או בלתי מוגבלת.
 
-Log both acquisition and receive times. A heartbeat received now does not make an old contact or old robot pose current. At policy evaluation, reject uncertain/future timestamps, wrong boot identity, wrong body map and robot joint states that cannot be aligned to the contact acquisition interval. The 40 ms skin freshness limit is an exclusion boundary, not a target control latency or a stability proof.
+### 3. לאכוף עקביות זמנים מעבר לטריות החבילות
 
-Quantify position error from time skew with a conservative bound:
+יש לתעד גם את זמן הרכישה וגם את זמן הקבלה. הודעת חיות שהתקבלה עכשיו אינה הופכת מגע ישן או תנוחת רובוט ישנה לעדכניים. בעת הערכת המדיניות יש לדחות חותמות זמן לא ודאיות או עתידיות, זהות אתחול שגויה, מפת גוף שגויה ומצבי מפרקים שאי אפשר ליישר לחלון זמן רכישת המגע. מגבלת טריות העור של 40 ms היא גבול לפסילת נתונים, ולא יעד להשהיית בקרה או הוכחת יציבות.
+
+יש לכמת את שגיאת המיקום הנובעת מאי־התאמת הזמנים באמצעות חסם שמרני:
+
+<div dir="ltr">
 
 ```text
 contact_position_error <= geometry_error + v_contact_max * time_skew
 ```
 
-For illustration, 0.5 m/s over 40 ms adds 20 mm before calibration error, comparable to the baseline 25 mm pitch. Choose the permitted robot speed/state skew from the actual localization-error budget. Preserve scan-offset information or bound the oldest sample in a multiplexed frame. Exercise delayed, reordered, duplicated, wrapped and rebooted streams at the **application consumer**, not only the gateway.
+</div>
 
-### 4. Do not implement a torque-to-position shortcut
+להמחשה, מהירות של 0.5 m/s במשך 40 ms מוסיפה 20 mm עוד לפני שגיאת הכיול, ערך הדומה לפסיעת הבסיס של 25 mm. יש לבחור את מהירות הרובוט המותרת ואת אי־התאמת זמני המצב בהתאם לתקציב שגיאת המיקום בפועל. יש לשמור מידע על היסטי הסריקה או לחסום את גיל הדגימה הישנה ביותר במסגרת מרובבת. יש לבדוק זרמים מושהים, ששונה סדרם, כפולים, שגלשו במחזור המונה ולאחר אתחול, אצל **צרכן הנתונים היישומי**, ולא רק בשער התקשורת.
 
-The [torque resolver in ref. 64, §IV-F](https://mediatum.ub.tum.de/doc/1335611/document.pdf) contains virtual dynamics and real-state feedback. Its symbolic dynamic model does not determine actual mass, centre of mass, friction or inertia merely from a D–H table. The project must identify an OEM-supported compliance/admittance interface or specify a separate trajectory-generator implementation with its own validation.
+### 4. אין לממש קיצור דרך ממומנט למיקום
 
-Required integration fields: robot model/firmware, controlled joints and units; command update/deadline; accepted joint-state timestamps; acceleration/jerk/velocity/torque bounds; joint and workspace limits; gravity/load support; command-versus-actual position-error threshold; actuator saturation reporting; behavior on stale data, process death or bus loss; re-enable and virtual-state initialization. If any required field is absent, the demonstrator remains sensing/visualization only. This is an execution boundary with a concrete checklist, not an invitation to guess gains.
+[ממיר המומנט במקור 64, סעיף IV-F](https://mediatum.ub.tum.de/doc/1335611/document.pdf) כולל דינמיקה וירטואלית ומשוב מהמצב האמיתי. המודל הדינמי הסימבולי שלו אינו קובע את המסה בפועל, מרכז המסה, החיכוך או האינרציה מתוך טבלת D–H בלבד. על הפרויקט לזהות ממשק היענות/אדמיטנס הנתמך בידי יצרן הרובוט, או להגדיר מימוש נפרד של מחולל מסלול עם אימות משלו.
 
-### 5. Keep constraints above optional tactile behavior
+שדות השילוב הנדרשים: דגם הרובוט והקושחה, המפרקים הנשלטים והיחידות; קצב עדכון הפקודות ומועד היעד שלהן; חותמות הזמן המקובלות של מצבי המפרקים; חסמי תאוצה, שינוי תאוצה, מהירות ומומנט; מגבלות המפרקים ומרחב העבודה; תמיכה בכבידה ובעומס; סף שגיאת מיקום בין הפקודה למצב בפועל; דיווח על רוויית מפעילים; התנהגות בנתונים מיושנים, בקריסת תהליך או באובדן האפיק; הפעלה מחדש ואתחול המצב הווירטואלי. אם שדה נדרש כלשהו חסר, המדגים נשאר במצב חישה והמחשה בלבד. זהו גבול ביצוע עם רשימת בדיקה קונקרטית, ולא הזמנה לנחש הגברים.
 
-[Ref. 67, §§4.2 and 5](https://elib.dlr.de/101443/2/NullspaceSurvey.pdf) makes actuator limits and projection choice material. [Ref. 68, §§4.3–5](https://ai.stanford.edu/~lsentis/files/ijhr-05.pdf) explicitly considers infeasible lower-priority motion. A weighted sum of skin and trajectory commands is not a hard-constraint hierarchy.
+### 5. להציב אילוצים מעל התנהגות מישוש אופציונלית
 
-Use the OEM controller/constraint solver for support, joint/actuator limits and self-collision. Application behavior can request yielding only inside that feasible set. Required adversarial tests include three conflicting tasks, a rank-deficient pose, contact at a proximal link, both sides of one link pressed, two limbs contacted, a blocked retreat direction, task enable/disable during motion and an actuator hitting its command limit. Record the applied command, not only the unsaturated requested command.
+[מקור 67, סעיפים 4.2 ו-5](https://elib.dlr.de/101443/2/NullspaceSurvey.pdf) מבהיר שמגבלות המפעילים ובחירת ההיטל מהותיות. [מקור 68, סעיפים 4.3–5](https://ai.stanford.edu/~lsentis/files/ijhr-05.pdf) מתייחס במפורש לתנועה בלתי ישימה בעדיפות נמוכה. סכום משוקלל של פקודות עור ופקודות מסלול אינו היררכיה של אילוצים קשיחים.
 
-The [2016 mobile force-propagation model, §II](https://mediatum.ub.tum.de/doc/1336140/document.pdf) omits base tilting/instability and upper-limb coupling. It therefore cannot justify autonomous biped leg withdrawal. Begin with a fixed base. A later walking integration must keep support contacts and balance in the robot's existing whole-body controller.
+יש להשתמש בבקר היצרן או בפותר האילוצים לצורכי תמיכה, מגבלות מפרקים ומפעילים ומניעת התנגשות עצמית. ההתנהגות היישומית רשאית לבקש נסיגה או היענות רק בתוך קבוצת הפתרונות הישימים. בדיקות האתגר הנדרשות כוללות שלוש משימות סותרות, תנוחה עם חוסר בדרגה, מגע בחוליה קרובה לבסיס, לחיצה משני צדי אותה חוליה, מגע בשתי גפיים, כיוון נסיגה חסום, הפעלה וכיבוי משימה בזמן תנועה, ומפעיל המגיע למגבלת הפקודה שלו. יש לתעד את הפקודה שיושמה, ולא רק את הפקודה המבוקשת לפני רוויה.
 
-### 6. Treat compliance and passivity as properties of the complete loop
+[מודל העברת הכוח הנייד משנת 2016, סעיף II](https://mediatum.ub.tum.de/doc/1336140/document.pdf) אינו כולל הטיה או אי־יציבות של הבסיס, וגם לא צימוד בין הגפיים העליונות. לכן אין בו הצדקה לנסיגה אוטונומית של רגל ברובוט דו־רגלי. יש להתחיל בבסיס מקובע. שילוב עתידי בהליכה חייב להשאיר את מגעי התמיכה ואת שיווי המשקל באחריות בקר הגוף המלא הקיים של הרובוט.
 
-Positive virtual damping is not proof of passivity after sample/hold, delay, saturation, changing gains and position-servo dynamics. [Hogan's illustrative derivation, pp. 17–20](https://bpb-us-e1.wpmucdn.com/sites.mit.edu/dist/5/1384/files/2025/02/1985-impedance-control-an-approach-to-manipulation-part-III-applications.pdf) states the simplifying mechanical assumptions behind its impedance selection. Do not copy a damping ratio or gain as universal.
+### 6. להתייחס להיענות ולפסיביות כתכונות של החוג המלא
 
-Use an independent load cell/force transducer and fixture displacement/encoder measurement for physical interaction tests. Virtual intensity has no physical work unit; multiplying it by displacement does not measure joules. A claim of energy/passivity monitoring would require valid physical wrench and velocity observations and a separately reviewed controller.
+ריסון וירטואלי חיובי אינו הוכחה לפסיביות לאחר דגימה והחזקה, השהיה, רוויה, שינוי הגברים ודינמיקת סרוו מיקום. [הגזירה ההמחשתית של Hogan, עמודים 17–20](https://bpb-us-e1.wpmucdn.com/sites.mit.edu/dist/5/1384/files/2025/02/1985-impedance-control-an-approach-to-manipulation-part-III-applications.pdf) מציינת את ההנחות המכניות המפשטות שעליהן מבוססת בחירת האימפדנס. אין להעתיק יחס ריסון או הגבר כאילו היו אוניברסליים.
 
-Before enabled contact reactions, test soft, medium and rigid fixture contacts; increasing gain within the platform-approved range; actual measured delay plus injected 10/20/40 ms delay; packet bursts and loss; saturation; abrupt onset/release; boot/reset; and switched contact zones. Pre-register allowable peak reference force, excursion, oscillation amplitude, settling and stop distance from the chosen fixture/robot specification. Stop the test on violation. Results establish an operating envelope for that setup only.
+בבדיקות אינטראקציה פיזית יש להשתמש בתא עומס או במתמר כוח עצמאי, ובמדידת העתק של המתקן או במדידת מקודד. לעוצמה וירטואלית אין יחידה של עבודה פיזיקלית; הכפלתה בהעתק אינה מודדת ג'אולים. טענה לניטור אנרגיה או פסיביות מחייבת תצפיות תקפות של כוח ומומנט פיזיקליים ושל מהירות, ובקר שנבדק בנפרד.
 
-### 7. Use a state machine with a real fault destination
+לפני הפעלת תגובות למגע יש לבדוק מגעי מתקן רכים, בינוניים וקשיחים; הגדלת ההגבר בתוך התחום המאושר לפלטפורמה; השהיה שנמדדה בפועל בתוספת השהיות מוזרקות של 10/20/40 ms; פרצי חבילות ואובדן חבילות; רוויה; תחילת מגע ושחרור פתאומיים; אתחול ואיפוס; והחלפת אזורי מגע. יש לרשום מראש את כוח הייחוס המרבי המותר, התזוזה, משרעת התנודות, ההתייצבות ומרחק העצירה לפי מפרט המתקן והרובוט שנבחרו. יש לעצור את הבדיקה במקרה של חריגה. התוצאות מבססות מעטפת פעולה עבור המערך שנבדק בלבד.
 
-Suggested non-safety application states:
+### 7. להשתמש במכונת מצבים עם יעד תקלה אמיתי
+
+מצבים יישומיים מוצעים, שאינם מהווים מערכת בטיחות:
+
+<div dir="ltr">
 
 ```text
 INIT -> MONITOR_ONLY -> ENABLED_INTERACTION -> CONTROLLED_HOLD
@@ -81,69 +95,73 @@ INIT -> MONITOR_ONLY -> ENABLED_INTERACTION -> CONTROLLED_HOLD
           +--------------------+--------------------> FAULT_LATCHED
 ```
 
-Initialization requires valid identity, calibration, map, fresh observations and current robot state. Explicit enable and allowed contact zones are needed before interaction. Unknown/forbidden contact, conflicting contacts or infeasible relief requests a supervisor hold. Invalid/stale coverage enters a latched fault with explicit operator acknowledgment plus fresh successful checks before re-enable. On a load-bearing robot, do not implement fault handling as indiscriminate removal of motor torque; the platform must maintain its validated load/support behavior.
+</div>
 
-[Ref. 82, §III Remark 1 and §IV](https://www.diag.uniroma1.it/~deluca/pHRI_elective/IROS17_Magrini_ADL_HRCoexistenceContactRedundant.pdf) distinguishes its reported single-contact setting and smooth task abort. Smooth stopping consumes time and distance; both are measured requirements. Skin cannot infer intentional human guidance solely from contact intensity; that is also why a deliberate mode switch belongs in the product.
+האתחול מחייב זהות, כיול ומפה תקפים, תצפיות טריות ומצב רובוט עדכני. נדרשים אישור הפעלה מפורש ואזורי מגע מותרים לפני אינטראקציה. מגע לא ידוע או אסור, מגעים סותרים או בקשת הקלה בלתי ישימה מחייבים בקשת החזקה מהבקר המפקח. כיסוי לא תקף או מיושן מעביר לתקלה ננעלת, המחייבת אישור מפעיל מפורש ובדיקות עדכניות מוצלחות לפני הפעלה מחדש. ברובוט נושא עומס אין לממש טיפול בתקלה באמצעות הסרה גורפת של מומנט המנועים; על הפלטפורמה לשמר את התנהגות התמיכה והעומס שאומתה עבורה.
 
-### 8. Preserve the publication's scientific credibility
+[מקור 82, סעיף III הערה 1 וסעיף IV](https://www.diag.uniroma1.it/~deluca/pHRI_elective/IROS17_Magrini_ADL_HRCoexistenceContactRedundant.pdf) מבהיר את ההבחנה בין תרחיש המגע היחיד שנחקר בו לבין הפסקה חלקה של משימה. עצירה חלקה צורכת זמן ומרחק; שניהם דרישות שיש למדוד. העור אינו יכול להסיק כוונה של אדם להנחות את הרובוט מתוך עוצמת המגע בלבד; זו סיבה נוספת לכלול במוצר מעבר מצב מכוון.
 
-Publish a sensing-first baseline and a separate bounded motion demonstration. Measure detection/localization, sensor validity, communication load, installation/service time and installed mass/cost. Do not equate demonstration with a safety certificate or a manufacturable product. [Ref. 72's own productization footnote](https://mediatum.ub.tum.de/doc/1446657/883306792253.pdf) is a useful reminder that research integration and commercial qualification are distinct evidence levels.
+### 8. לשמור על האמינות המדעית של הפרסום
 
-Novelty should be stated as a falsifiable engineering advantage: lower installed lifecycle cost for a specified area, contact resolution, fault coverage and replaceability, demonstrated against matched alternatives. Thousands of sensors, artificial skin, touch teaching, send-on-delta, Jacobian mapping and distributed control already have explicit prior art. No patentability or freedom-to-operate opinion follows from this literature review.
+יש לפרסם תצורת בסיס המתמקדת בחישה, ולצדה הדגמת תנועה נפרדת ומוגבלת. יש למדוד גילוי ומיקום, תקפות חיישנים, עומס תקשורת, זמן התקנה ותחזוקה, ומסה ועלות במצב מותקן. אין להשוות הדגמה לתעודת בטיחות או למוצר בר־ייצור. [הערת השוליים של מקור 72 בנושא הפיכה למוצר](https://mediatum.ub.tum.de/doc/1446657/883306792253.pdf) מזכירה ששילוב מחקרי והכשרה מסחרית הם רמות ראיות שונות.
 
-## Phased control-validation work package
+יש לנסח חדשנות כיתרון הנדסי הניתן להפרכה: עלות מחזור חיים מותקנת נמוכה יותר עבור שטח, רזולוציית מגע, כיסוי תקלות ויכולת החלפה מוגדרים, שהודגמה מול חלופות בתנאים תואמים. לאלפי חיישנים, עור מלאכותי, לימוד באמצעות מגע, שידור לפי שינוי, מיפוי באמצעות יעקוביאן ובקרה מבוזרת כבר קיים ידע קודם מפורש. סקירת ספרות זו אינה חוות דעת על כשירות לפטנט או על חופש פעולה מסחרי.
 
-| Gate | Concrete execution | Required artifact / decision |
+## חבילת עבודה מדורגת לאימות הבקרה
+
+| שער | ביצוע קונקרטי | תוצר או החלטה נדרשים |
 |---|---|---|
-| C0: observation only | Log one patch and a fixture load reference; verify polarity, baseline, contact onset/release, invalid channels, boot identity and mapping | Dataset with raw signals, independent fixture load, timestamps and map/calibration hashes; no motor output |
-| C1: geometry/math | Run deterministic frame, moment, virtual-work, downstream-joint and aggregation/cancellation tests | Passing regression output and failing negative cases that demonstrate the checks detect an incorrect implementation |
-| C2: timing/fault replay | Replay stale/reordered/rebooted streams and old joint states to the real consumer; sever branch/region/host paths | Every invalid input results in declared invalid coverage and specified supervisor state within the documented deadline |
-| C3: shadow policy | Run contact policy on live data while blocking its motor output; replay allowed, forbidden and conflicting contact scenarios | Auditable requested/applied/blocked decision log; no surprise automatic recovery |
-| C4: fixed-base fixture | Use supported OEM control with physical bounds; exercise delay, stiffness, saturation and transition matrix above | Measured operating envelope; peak load, excursion, jerk/command slope, settling and stop-time record; retain all failures |
-| C5: limb integration | Measure clearance over full permitted joint motion, skin mass/inertia and cable load; repeat C2/C4 after assembly | Platform-specific signed integration configuration; unchanged OEM support/balance ownership |
-| C6: publication/pilot | Repeat with replacement covers and different laminate lots; timed service; compare matched sensing alternatives | Reproducible raw data, unit counts, failed-unit accounting, scripts, installation/service cost and stated limitations |
+| C0: תצפית בלבד | לתעד טלאי אחד וייחוס עומס של מתקן; לאמת קוטביות, קו בסיס, התחלה ושחרור מגע, ערוצים לא תקפים, זהות אתחול ומיפוי | מערך נתונים עם אותות גולמיים, עומס מתקן עצמאי, חותמות זמן וערכי גיבוב של המפה והכיול; ללא פלט למנועים |
+| C1: גאומטריה ומתמטיקה | להריץ בדיקות דטרמיניסטיות של מערכות צירים, מומנט, עבודה וירטואלית, מפרקים בהמשך השרשרת ואיגום/ביטול | פלט בדיקות רגרסיה עובר ומקרים שליליים נכשלים המוכיחים שהבדיקות מזהות מימוש שגוי |
+| C2: שחזור תזמון ותקלות | לשחזר לצרכן האמיתי זרמים מיושנים, ששונה סדרם ולאחר אתחול, ומצבי מפרקים ישנים; לנתק נתיבי ענף, אזור ומחשב מארח | כל קלט לא תקף גורר הכרזה על כיסוי לא תקף ועל מצב המפקח המוגדר בתוך המועד המתועד |
+| C3: מדיניות במצב צל | להריץ מדיניות מגע על נתונים חיים תוך חסימת פלט המנועים שלה; לשחזר תרחישי מגע מותרים, אסורים וסותרים | יומן החלטות מבוקשות, מיושמות וחסומות הניתן לביקורת; ללא התאוששות אוטומטית מפתיעה |
+| C4: מתקן עם בסיס מקובע | להשתמש בבקרת יצרן נתמכת עם חסמים פיזיים; להפעיל את מטריצת ההשהיה, הקשיחות, הרוויה והמעברים שלעיל | מעטפת פעולה מדודה; רישום עומס שיא, תזוזה, שינוי תאוצה/שיפוע פקודה, התייצבות וזמן עצירה; שמירת כל הכשלים |
+| C5: שילוב בגפה | למדוד מרווחים לאורך מלוא התנועה המותרת של המפרק, מסה ואינרציה של העור ועומס הכבלים; לחזור על C2/C4 לאחר ההרכבה | תצורת שילוב חתומה וספציפית לפלטפורמה; האחריות של בקר היצרן לתמיכה ולשיווי משקל נשארת ללא שינוי |
+| C6: פרסום ופיילוט | לחזור עם כיסויים חלופיים ואצוות למינציה שונות; למדוד זמני שירות; להשוות חלופות חישה בתנאים תואמים | נתונים גולמיים הניתנים לשחזור, מספרי יחידות, תיעוד יחידות שנכשלו, סקריפטים, עלות התקנה ותחזוקה ומגבלות מוצהרות |
 
-These gates do not require inventing universal actuator gains. C4 remains explicitly unapproved until its robot-specific interface and numerical limits have been supplied and verified; C0–C3 are executable without live robot control.
+שערים אלה אינם מחייבים להמציא הגברי מפעילים אוניברסליים. C4 נשאר במפורש בלתי מאושר עד שיסופקו ויאומתו הממשק הספציפי לרובוט ומגבלותיו המספריות; אפשר לבצע את C0–C3 ללא שליטה ברובוט חי.
 
-## Access audit and reference-by-reference index
+## ביקורת נגישות ואינדקס לכל מקור
 
-`FULL_TEXT` means an original/author manuscript was accessible and the stated technical sections were read; it does **not** claim cover-to-cover study or replication. `ABSTRACT_ONLY` is used conservatively where direct full-text access failed, even if a few body passages were available through a search index. `CITATION_ONLY` records bibliographic coverage without relying on unverified technical claims. Author-hosted manuscript versions are noted. Secondary summaries are not used to fill inaccessible equations or experimental details.
+`FULL_TEXT` מציין שמקור מקורי או כתב יד של המחברים היה נגיש ושהסעיפים הטכניים שצוינו נקראו; הוא **אינו** טוען לקריאה מלאה מתחילתו ועד סופו או לשחזור הניסוי. `ABSTRACT_ONLY` משמש באופן שמרני כאשר הגישה הישירה לטקסט המלא נכשלה, גם אם כמה פסקאות מגוף הטקסט היו נגישות דרך אינדקס חיפוש. `CITATION_ONLY` מתעד כיסוי ביבליוגרפי בלי להסתמך על טענות טכניות שלא אומתו. גרסאות כתבי יד באתרי המחברים מצוינות. אין להשתמש בסיכומים משניים להשלמת משוואות או פרטי ניסוי שאינם נגישים.
 
-Counts: **11 FULL_TEXT, 12 ABSTRACT_ONLY, 5 CITATION_ONLY.** Exact identities, URLs, read scopes, findings, limitations, project actions and novelty assessments are in [references.json](references.json). The table below provides a quick audit trail.
+ספירה: **11 FULL_TEXT, 12 ABSTRACT_ONLY, 5 CITATION_ONLY.** הזהויות המדויקות, כתובות המקורות, היקפי הקריאה, הממצאים, המגבלות, פעולות הפרויקט והערכות החדשנות מופיעים ב-[references.json](references.json). הטבלה שלהלן מספקת נתיב ביקורת מהיר.
 
-| Ref | Access | Material examined / implementation consequence |
+| מקור | גישה | החומר שנבדק והשלכתו על המימוש |
 |---|---|---|
-| [25](https://doi.org/10.1109/ROBOT.2002.1014313) | CITATION_ONLY | Tactile interaction historical record; no reproduced controller |
-| [26](https://ntrs.nasa.gov/citations/19930059726) | ABSTRACT_ONLY | Teleoperation/whole-arm awareness; no pre-contact claim from contact film |
-| [27](https://dblp.org/rec/conf/icra/BoddyT93) | CITATION_ONLY | Historical reactive avoidance; define infeasible withdrawal explicitly |
-| [28](https://elib.dlr.de/11914/) | CITATION_ONLY | Touch-teaching prior art; explicit operator-enabled teaching mode |
-| [29](https://iris.univpm.it/handle/11566/228093) | ABSTRACT_ONLY | Manual guidance using F/T sensing; film intensity is a different input |
-| [35](https://www.robertocalandra.com/papers/calandra_icra_2016.pdf) | FULL_TEXT | §§II–IV; learning still uses independent F/T and calibrated torque targets |
-| [63](https://staff.aist.go.jp/e.yoshida/papers/Mittendorfer_2014AR.pdf) | FULL_TEXT | Hardware, calibration and applications; required motion sensors absent from baseline |
-| [64](https://mediatum.ub.tum.de/doc/1335611/document.pdf) | FULL_TEXT | Models/control/resolver; no direct torque-to-position shortcut |
-| [65](https://portal.fis.tum.de/en/publications/whole-body-active-compliance-control-for-humanoid-robots-with-rob/) | ABSTRACT_ONLY | Whole-body humanoid compliance prior art; original controller details unavailable |
-| [66](https://portal.fis.tum.de/en/publications/tomm-tactile-omnidirectional-mobile-manipulator/) | ABSTRACT_ONLY | Wheeled integration platform; budget integration separately |
-| [67](https://elib.dlr.de/101443/2/NullspaceSurvey.pdf) | FULL_TEXT | Consistency, saturation, rank and task-priority limits |
-| [68](https://ai.stanford.edu/~lsentis/files/ijhr-05.pdf) | FULL_TEXT | Hierarchical formulation and simulated example; detect infeasible tasks |
-| [69](https://portal.fis.tum.de/en/publications/efficient-distributed-torque-computation-for-large-scale-robot-sk/) | ABSTRACT_ONLY | Distributed computation concept; profile before distributing kinematics |
-| [70](https://portal.fis.tum.de/en/publications/tactile-based-whole-body-compliance-with-force-propagation-for-mo/) | ABSTRACT_ONLY | Constrained mobile compliance; no imported biped guarantee |
-| [71](https://doi.org/10.1109/ROBOT.2004.1307969) | CITATION_ONLY | HRP-2 identity; no assumed actuator/platform capability |
-| [72](https://mediatum.ub.tum.de/doc/1446657/883306792253.pdf) | FULL_TEXT | Deployment experiment and productization caveat; time full installation/service |
-| [73](https://repository.tudelft.nl/record/uuid%3Ae16cac95-3ada-4950-b9ac-a0cdfc8cdaef) | ABSTRACT_ONLY | Point-cloud grasp planning; outside arm/leg skin scope |
-| [74](https://khatib.stanford.edu/publications/pdfs/Khatib_1987_RA.pdf) | ABSTRACT_ONLY | Operational-space background; formulas cross-checked in accessible sources |
-| [75](https://books.google.com/books/about/Robot_Control.html?id=-DZSAAAAMAAJ) | CITATION_ONLY | Book identity only; no chapter-level claim |
-| [76](https://elib.dlr.de/79360/4/Dietrich_TRO2012.pdf) | FULL_TEXT | Task transitions, damping and experimental timing; test discontinuities |
-| [77](https://mediatum.ub.tum.de/doc/1336140/document.pdf) | FULL_TEXT | Model assumptions omit tilt/instability; fixed-base first |
-| [78](https://www.diag.uniroma1.it/~labrob/pub/papers/PHRIDOM_IROS06.pdf) | FULL_TEXT | Author workshop manuscript; dependability/fault handling, historical standards excluded |
-| [79](https://bpb-us-e1.wpmucdn.com/sites.mit.edu/dist/5/1384/files/2025/02/1985-impedance-control-an-approach-to-manipulation-part-III-applications.pdf) | FULL_TEXT | Impedance selection assumptions; test the complete sampled loop |
-| [80](https://khatib.stanford.edu/publications/pdfs/Zinn_2004_IJRR.pdf) | ABSTRACT_ONLY | Abstract plus indexed saturation passage; actuation constraints remain |
-| [81](https://www.diag.uniroma1.it/deluca/pHRI_elective/ICRA15_Magrini_Flacco_ADL_ContactMotionForceControl_pHRI.pdf) | ABSTRACT_ONLY | Abstract and early modeling excerpts; use contact-specific Jacobian |
-| [82](https://www.diag.uniroma1.it/~deluca/pHRI_elective/IROS17_Magrini_ADL_HRCoexistenceContactRedundant.pdf) | FULL_TEXT | Single-contact scope, staged handling and smooth abort |
-| [83](https://sites.utexas.edu/hcrl/files/2016/01/paper-kwan-suk-icra.pdf) | ABSTRACT_ONLY | Scanner/torque fusion for gesture classification; intensity alone is not intent |
-| [84](https://www.nature.com/articles/srep30383) | ABSTRACT_ONLY | Combined rehabilitation protocol; no skin-only clinical claim |
+| [25](https://doi.org/10.1109/ROBOT.2002.1014313) | ציטוט בלבד | תיעוד היסטורי של אינטראקציית מישוש; הבקר לא שוחזר |
+| [26](https://ntrs.nasa.gov/citations/19930059726) | תקציר בלבד | הפעלה מרחוק ומודעות לאורך הזרוע כולה; אין לטעון לגילוי לפני מגע באמצעות סרט מגע |
+| [27](https://dblp.org/rec/conf/icra/BoddyT93) | ציטוט בלבד | הימנעות תגובתית היסטורית; יש להגדיר במפורש נסיגה בלתי ישימה |
+| [28](https://elib.dlr.de/11914/) | ציטוט בלבד | ידע קודם על לימוד באמצעות מגע; מצב לימוד שהמפעיל מאשר במפורש |
+| [29](https://iris.univpm.it/handle/11566/228093) | תקציר בלבד | הנחיה ידנית באמצעות חישת כוח ומומנט; עוצמת הסרט היא קלט שונה |
+| [35](https://www.robertocalandra.com/papers/calandra_icra_2016.pdf) | טקסט מלא | סעיפים II–IV; גם הלמידה משתמשת בייחוס כוח ומומנט עצמאי וביעדי מומנט מכוילים |
+| [63](https://staff.aist.go.jp/e.yoshida/papers/Mittendorfer_2014AR.pdf) | טקסט מלא | חומרה, כיול ויישומים; חיישני התנועה הנדרשים חסרים בתצורת הבסיס |
+| [64](https://mediatum.ub.tum.de/doc/1335611/document.pdf) | טקסט מלא | מודלים, בקרה וממיר מומנט; אין קיצור דרך ישיר ממומנט למיקום |
+| [65](https://portal.fis.tum.de/en/publications/whole-body-active-compliance-control-for-humanoid-robots-with-rob/) | תקציר בלבד | ידע קודם על היענות של גוף הומנואיד מלא; פרטי הבקר המקורי אינם זמינים |
+| [66](https://portal.fis.tum.de/en/publications/tomm-tactile-omnidirectional-mobile-manipulator/) | תקציר בלבד | פלטפורמת שילוב גלגלית; יש לתקצב את השילוב בנפרד |
+| [67](https://elib.dlr.de/101443/2/NullspaceSurvey.pdf) | טקסט מלא | מגבלות עקביות, רוויה, דרגה ועדיפויות משימות |
+| [68](https://ai.stanford.edu/~lsentis/files/ijhr-05.pdf) | טקסט מלא | ניסוח היררכי ודוגמת סימולציה; יש לזהות משימות בלתי ישימות |
+| [69](https://portal.fis.tum.de/en/publications/efficient-distributed-torque-computation-for-large-scale-robot-sk/) | תקציר בלבד | רעיון של חישוב מבוזר; יש למדוד עומסי חישוב לפני ביזור הקינמטיקה |
+| [70](https://portal.fis.tum.de/en/publications/tactile-based-whole-body-compliance-with-force-propagation-for-mo/) | תקציר בלבד | היענות ניידת תחת אילוצים; אין להעתיק ממנה הבטחה לרובוט דו־רגלי |
+| [71](https://doi.org/10.1109/ROBOT.2004.1307969) | ציטוט בלבד | זהות HRP-2; אין להניח יכולות של מפעילים או פלטפורמה |
+| [72](https://mediatum.ub.tum.de/doc/1446657/883306792253.pdf) | טקסט מלא | ניסוי פריסה והסתייגות בנוגע להפיכה למוצר; יש למדוד את מלוא זמן ההתקנה והתחזוקה |
+| [73](https://repository.tudelft.nl/record/uuid%3Ae16cac95-3ada-4950-b9ac-a0cdfc8cdaef) | תקציר בלבד | תכנון אחיזה לפי ענן נקודות; מחוץ להיקף עור הזרועות והרגליים |
+| [74](https://khatib.stanford.edu/publications/pdfs/Khatib_1987_RA.pdf) | תקציר בלבד | רקע על המרחב האופרציונלי; נוסחאות הוצלבו עם מקורות נגישים |
+| [75](https://books.google.com/books/about/Robot_Control.html?id=-DZSAAAAMAAJ) | ציטוט בלבד | זיהוי הספר בלבד; אין טענה ברמת פרק |
+| [76](https://elib.dlr.de/79360/4/Dietrich_TRO2012.pdf) | טקסט מלא | מעברי משימות, ריסון ותזמון ניסויי; יש לבדוק אי־רציפויות |
+| [77](https://mediatum.ub.tum.de/doc/1336140/document.pdf) | טקסט מלא | הנחות המודל אינן כוללות הטיה ואי־יציבות; מתחילים בבסיס מקובע |
+| [78](https://www.diag.uniroma1.it/~labrob/pub/papers/PHRIDOM_IROS06.pdf) | טקסט מלא | כתב יד של המחברים לסדנה; אמינות וטיפול בתקלות, ללא אימוץ תקנים היסטוריים |
+| [79](https://bpb-us-e1.wpmucdn.com/sites.mit.edu/dist/5/1384/files/2025/02/1985-impedance-control-an-approach-to-manipulation-part-III-applications.pdf) | טקסט מלא | הנחות בחירת האימפדנס; יש לבדוק את חוג הבקרה הנדגם במלואו |
+| [80](https://khatib.stanford.edu/publications/pdfs/Zinn_2004_IJRR.pdf) | תקציר בלבד | תקציר וקטע מאונדקס על רוויה; אילוצי ההנעה ממשיכים לחול |
+| [81](https://www.diag.uniroma1.it/deluca/pHRI_elective/ICRA15_Magrini_Flacco_ADL_ContactMotionForceControl_pHRI.pdf) | תקציר בלבד | תקציר וקטעי מידול מוקדמים; יש להשתמש ביעקוביאן ספציפי למגע |
+| [82](https://www.diag.uniroma1.it/~deluca/pHRI_elective/IROS17_Magrini_ADL_HRCoexistenceContactRedundant.pdf) | טקסט מלא | היקף של מגע יחיד, טיפול מדורג והפסקה חלקה |
+| [83](https://sites.utexas.edu/hcrl/files/2016/01/paper-kwan-suk-icra.pdf) | תקציר בלבד | איחוד נתוני סורק ומומנט לסיווג מחוות; עוצמה לבדה אינה כוונה |
+| [84](https://www.nature.com/articles/srep30383) | תקציר בלבד | פרוטוקול שיקום משולב; אין טענה קלינית המבוססת על העור בלבד |
 
-## What the references leave unspecified for this product
+## מה המקורות אינם מגדירים עבור מוצר זה
 
-None of the accessed material validates the proposed 28-cell sheet's assembled load transfer, long-term drift, wear, chemical resistance, transfer of calibration after replacement, temperature spatial coverage, production yield or quoted unit cost. Control publications also do not determine the new robot's command limits, plant dynamics, response to loss of communication, motor thermal behavior or balance envelope. Those are closed engineering work packages in the gates above and the main electrical/mechanical plan; they must produce measured evidence before the corresponding claim is published.
+אף אחד מהחומרים שהיו נגישים אינו מאמת את העברת העומס במכלול היריעה המוצעת בת 28 התאים, סחיפה ארוכת טווח, בלאי, עמידות כימית, העברת כיול לאחר החלפה, כיסוי מרחבי של טמפרטורה, תפוקת ייצור תקינה או מחיר יחידה בהצעת מחיר. פרסומי הבקרה גם אינם קובעים את מגבלות הפקודה של הרובוט החדש, דינמיקת המערכת, תגובתו לאובדן תקשורת, התנהגות המנועים בחום או מעטפת שיווי המשקל. אלה חבילות עבודה הנדסיות מוגדרות בשערים שלעיל ובתוכנית החשמלית והמכנית הראשית; עליהן להפיק ראיות מדודות לפני פרסום הטענה המתאימה.
 
-The strongest low-cost design choice is to avoid claiming capabilities that require omitted sensors. Retain deterministic observations, geometry, identity, freshness and fault reporting. Use existing robot control infrastructure. Spend experimental effort on whether the protective stack and replacement process preserve detection at a lower installed cost. That is a specific, testable venture hypothesis.
+בחירת התכן החזקה ביותר במוצר זול היא להימנע מטענות ליכולות המחייבות חיישנים שאינם כלולים. יש לשמר תצפיות דטרמיניסטיות, גאומטריה, זהות, טריות ודיווח תקלות. יש להשתמש בתשתית בקרת הרובוט הקיימת. יש להשקיע את המאמץ הניסויי בבדיקה אם מכלול ההגנה ותהליך ההחלפה משמרים את יכולת הגילוי בעלות מותקנת נמוכה יותר. זוהי השערה עסקית קונקרטית הניתנת לבדיקה.
+
+</div>

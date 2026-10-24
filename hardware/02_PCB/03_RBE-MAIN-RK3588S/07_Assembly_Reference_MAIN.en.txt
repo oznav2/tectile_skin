@@ -1,0 +1,2 @@
+Use sufficient solder to cover the entire solder pad.
+Do not populate components marked NC.

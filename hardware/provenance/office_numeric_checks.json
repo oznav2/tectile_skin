@@ -1,0 +1,250 @@
+{
+  "source_commit": "18ca38832cde37a8a4349cff8fbb565f05c6f254",
+  "checks": [
+    {
+      "path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN_CNC_CMF_Specification.xlsx",
+      "numeric_cells": 75,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/ROBOSKIN_CNC_BOM.xlsx",
+      "numeric_cells": 399,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/01_Mechanic/02_Manufacturing/02_3D_Printing/CMF_Specification/ROBOSKIN_3D_Print_CMF_Specification.xlsx",
+      "numeric_cells": 20,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/01_Mechanic/02_Manufacturing/02_3D_Printing/ROBOSKIN_3D_Print_BOM.xlsx",
+      "numeric_cells": 132,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/01_Mechanic/02_Manufacturing/03_Rubber/CMF_Specification/ROBOSKIN_Rubber_CMF_Specification.xlsx",
+      "numeric_cells": 2,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/01_Mechanic/02_Manufacturing/03_Rubber/ROBOSKIN_Rubber_BOM.xlsx",
+      "numeric_cells": 30,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/02_PCB/01_USB3_Flexible_Interconnect/01_BOM_FPC_2026-09-18.xlsx",
+      "numeric_cells": 1,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/02_PCB/01_USB3_Flexible_Interconnect/04_CPL_FPC_2026-09-18.xlsx",
+      "numeric_cells": 4,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/02_PCB/01_USB3_Flexible_Interconnect/05_Assembly_Requirements_FPC.xlsx",
+      "numeric_cells": 2,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/02_PCB/02_RBE-COMM-433TX/01_BOM_433TX_2026-09-20.xlsx",
+      "numeric_cells": 18,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/02_PCB/02_RBE-COMM-433TX/04_CPL_433TX_2026-09-20.xlsx",
+      "numeric_cells": 44,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/02_PCB/02_RBE-COMM-433TX/05_Assembly_Requirements_433TX.xlsx",
+      "numeric_cells": 2,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/02_PCB/03_RBE-MAIN-RK3588S/01_BOM_MAIN_2026-09-18.xlsx",
+      "numeric_cells": 183,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/02_PCB/03_RBE-MAIN-RK3588S/04_CPL_MAIN_2026-09-18.xlsx",
+      "numeric_cells": 1256,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/02_PCB/03_RBE-MAIN-RK3588S/05_Assembly_Requirements_MAIN.xlsx",
+      "numeric_cells": 2,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/02_PCB/04_RBE-PWR-FAN/01_BOM_FAN_V2.0.xlsx",
+      "numeric_cells": 22,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/02_PCB/04_RBE-PWR-FAN/04_CPL_FAN_V2.0.xlsx",
+      "numeric_cells": 54,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/02_PCB/04_RBE-PWR-FAN/05_Assembly_Requirements_FAN_V2.0.xlsx",
+      "numeric_cells": 2,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/02_PCB/05_RBE-PWR-HANDPlusPro/01_BOM_HAND_2026-09-09.xlsx",
+      "numeric_cells": 31,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/02_PCB/05_RBE-PWR-HANDPlusPro/04_CPL_HAND.xlsx",
+      "numeric_cells": 88,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/02_PCB/05_RBE-PWR-HANDPlusPro/05_Assembly_Requirements_HAND.xlsx",
+      "numeric_cells": 2,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/02_PCB/06_RBE-PWR-HEAD/01_BOM_HEAD_2026-09-09.xlsx",
+      "numeric_cells": 93,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/02_PCB/06_RBE-PWR-HEAD/04_CPL_HEAD_2026-09-16.xlsx",
+      "numeric_cells": 403,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/02_PCB/06_RBE-PWR-HEAD/05_Assembly_Requirements_HEAD.xlsx",
+      "numeric_cells": 2,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/02_PCB/07_RBE-PWR-HOTSWAP/01_BOM_HOTSWAP_2026-09-18.xlsx",
+      "numeric_cells": 27,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/02_PCB/07_RBE-PWR-HOTSWAP/04_CPL_HOTSWAP_2026-09-18.xlsx",
+      "numeric_cells": 178,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/02_PCB/07_RBE-PWR-HOTSWAP/05_Assembly_Requirements_HOTSWAP.xlsx",
+      "numeric_cells": 2,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/02_PCB/08_RBE-PWR-MCAP/01_BOM_MCAP_2026-09-07.xlsx",
+      "numeric_cells": 7,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/02_PCB/08_RBE-PWR-MCAP/04_CPL_MCAP_2026-09-16.xlsx",
+      "numeric_cells": 22,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/02_PCB/08_RBE-PWR-MCAP/05_Assembly_Requirements_MCAP.xlsx",
+      "numeric_cells": 2,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/02_PCB/09_RBE-PWR-MINGMEI-BC/04_CPL_MINGMEI-BC_2026-09-16.xlsx",
+      "numeric_cells": 2,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/02_PCB/09_RBE-PWR-MINGMEI-BC/05_Assembly_Requirements_MINGMEI-BC.xlsx",
+      "numeric_cells": 2,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/02_PCB/10_RBE-SENS-IMU/01_BOM_IMU_2026-09-09.xlsx",
+      "numeric_cells": 17,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/02_PCB/10_RBE-SENS-IMU/04_CPL_IMU_2026-09-16.xlsx",
+      "numeric_cells": 52,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/02_PCB/10_RBE-SENS-IMU/05_Assembly_Requirements_IMU.xlsx",
+      "numeric_cells": 2,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/02_PCB/11_RBE_PWR_140WCHG/01_BOM_140WCHG_2026-09-09.xlsx",
+      "numeric_cells": 87,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/02_PCB/11_RBE_PWR_140WCHG/04_CPL_140WCHG_2026-09-16.xlsx",
+      "numeric_cells": 328,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/02_PCB/11_RBE_PWR_140WCHG/05_Assembly_Requirements_140WCHG.xlsx",
+      "numeric_cells": 2,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/02_PCB/12_RBE_PWR_BACKHUB/01_BOM_BACKHUB_2026-09-14.xlsx",
+      "numeric_cells": 170,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/02_PCB/12_RBE_PWR_BACKHUB/04_CPL_BACKHUB_V2.1.xlsx",
+      "numeric_cells": 820,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/02_PCB/13_Lighting_Board/01_BOM_LAMP_2026-09-07.xlsx",
+      "numeric_cells": 2,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/02_PCB/13_Lighting_Board/04_CPL_LAMP_2026-09-16.xlsx",
+      "numeric_cells": 48,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/02_PCB/13_Lighting_Board/05_Assembly_Requirements_LAMP.xlsx",
+      "numeric_cells": 2,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/02_PCB/14_Rear_Power_Indicator/01_BOM_INDICATOR_2026-09-16.xlsx",
+      "numeric_cells": 3,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/02_PCB/14_Rear_Power_Indicator/04_CPL_INDICATOR_2026-09-16.xlsx",
+      "numeric_cells": 10,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/02_PCB/14_Rear_Power_Indicator/05_Assembly_Requirements_INDICATOR.xlsx",
+      "numeric_cells": 2,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/03_Harness/ROBOSKIN_Harness_BOM.xlsx",
+      "numeric_cells": 102,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/04_BOM/ROBOSKIN_BOM_5DOF_MotionHead.xlsx",
+      "numeric_cells": 1207,
+      "numeric_values_unchanged": true
+    },
+    {
+      "path": "hardware/04_BOM/ROBOSKIN_BOM_7DOF_MotionHead.xlsx",
+      "numeric_cells": 1317,
+      "numeric_values_unchanged": true
+    }
+  ]
+}

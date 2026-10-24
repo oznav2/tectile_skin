@@ -1,108 +1,116 @@
-# Affordable electronic skin for humanoid robots
+<div dir="rtl" lang="he">
 
-**Engineering plan, revision 2.2 — standalone ROBOSKIN design and verified host software, 25 October 2026**
-**Owner:** Ilan. **First application:** protected contact-location and approximate-intensity sensing on humanoid arms, legs and torso, with sparse contact-temperature sensing.
-**Status:** build and verification specification, with tested host protocol software and reproducible calculations. No physical performance, supplier quotation, certification, PCB release or patentability is implied by this document.
+עברית · [English](electronic_skin.en.md)
 
-This standalone edition contains the original electronic-skin design, academic research review and host reference implementation. Revision 2.2 adds editable pin-level circuit/netlist exports, generic panel templates, the independent multi-region observer and identity/synchronization fixes. It replaces the earlier low gateway allowance with a separately priced isolated laboratory adapter. This is an engineering specification with offline checks; physical patches, board firmware, fabrication release and robot qualification remain unverified.
+# עור אלקטרוני במחיר נגיש לרובוטים דמויי אדם
 
-The generic 80-patch coverage allocation below is a planning scenario, not a fitted robot. The optional compact eight-controller example has 88 active touch sites; it does not physically instantiate the full-size panel allocation. Material and unit manufacturing allowances assume the explicitly stated batch size. Current supporting files are linked from [README.md](README.md), [electronics](electronics/README.md), [mechanics](mechanics/README.md) and [software](software/README.md).
+**עדכון היקף המאגר:** חבילת החומרה המותאמת נמצאת כעת ב[hardware/](hardware/README.md), כולל CNC, הדפסת תלת־ממד, גומי, PCB, צמות ורשימות חומרים. התכנון להלן מתאר את מערכת העור; יבוא החומרה אינו מוכיח התאמה מכנית, חשמלית או תוכנתית לרובוט. [תוכנית השילוב](hardware/skin_integration.md) מפרידה בין ההתאמות שבוצעו לבין הבדיקות שעדיין דורשות חומרה.
 
-**Navigation**
+**תוכנית הנדסית, מהדורה 2.2 — תכנון עצמאי של ROBOSKIN ותוכנת מארח שנבדקה, 25 באוקטובר 2026**
+**בעלים:** אילן. **יישום ראשון:** חישה מוגנת של מיקום מגע ועוצמה מקורבת בזרועות, ברגליים ובגוף של רובוט דמוי אדם, לצד חישת טמפרטורה בנקודות מגע מעטות.
+**מצב:** מפרט בנייה ואימות, הכולל תוכנת פרוטוקול למארח שנבדקה וחישובים הניתנים לשחזור. מסמך זה אינו מעיד על ביצועים פיזיים, הצעת מחיר מספק, הסמכה, אישור PCB לייצור או כשירות לפטנט.
 
-| Sections 1–10 | Sections 11–20 | Sections 21–30 |
+מהדורה עצמאית זו כוללת את תכנון העור האלקטרוני המקורי, סקירת המחקר האקדמי ומימוש הייחוס למארח. מהדורה 2.2 מוסיפה ייצוא ניתן לעריכה של מעגלים ורשימות חיבורים ברמת הפינים, תבניות לוחות כלליות, רכיב ניטור עצמאי למספר אזורים ותיקוני זיהוי וסנכרון. היא מחליפה את הקצאת העלות הנמוכה הקודמת לשער התקשורת במתאם מעבדה מבודד המתומחר בנפרד. זהו מפרט הנדסי עם בדיקות ללא חומרה; מקטעי עור פיזיים, קושחת הכרטיסים, אישור הייצור והסמכת הרובוט טרם אומתו.
+
+הקצאת הכיסוי הכללית ל־80 מקטעים שלהלן היא תרחיש תכנון, ולא התאמה לרובוט מסוים. הדוגמה הקומפקטית האופציונלית, הכוללת שמונה בקרים, מכילה 88 אתרי מגע פעילים; היא אינה מימוש פיזי של הקצאת הלוחות בגודל המלא. הקצאות החומרים ועלות הייצור ליחידה מניחות את גודל האצווה המוצהר במפורש. קבצי התמיכה העדכניים מקושרים מתוך [README.md](README.md), [אלקטרוניקה](electronics/README.md), [מכניקה](mechanics/README.md) ו[תוכנה](software/README.md).
+
+**ניווט**
+
+| סעיפים 1–10 | סעיפים 11–20 | סעיפים 21–30 |
 |---|---|---|
-| [1. Decision, limitations and what the audit changed](#section-1) | [11. CAN protocol, freshness and software interface](#section-11) | [21. Robot behavior and evidence of customer value](#section-21) |
-| [2. Frozen requirements and coverage accounting](#section-2) | [12. Home-lab build, with explicit material selection experiment](#section-12) | [22. Competitive landscape](#section-22) |
-| [3. Material decisions and alternatives](#section-3) | [13. Calibration, hold drift and replacement](#section-13) | [23. Israeli strategic partners](#section-23) |
-| [4. System architecture and failure boundaries](#section-4) | [14. PCB release, CAD checks and configuration records](#section-14) | [24. Innovation, intellectual property and publication](#section-24) |
-| [5. Mechanical stack and construction drawing specification](#section-5) | [15. BOM, price evidence and cost-down limits](#section-15) | [25. Supplier RFQs, partner scopes and purchasing decisions](#section-25) |
-| [6. Analog circuits, diagnostics and exact component values](#section-6) | [16. Home-lab equipment and purchase ceilings](#section-16) | [26. Decision register: no unowned “research later” items](#section-26) |
-| [7. Controller pin plan, power reference and clock](#section-7) | [17. Limb economics, mass, energy and commercial margin](#section-17) | [27. Reproducibility, service data and delivered artifacts](#section-27) |
-| [8. Power distribution and fault coordination](#section-8) | [18. Manufacturing work instructions and service design](#section-18) | [28. Cheng algorithms translated into this product](#section-28) |
-| [9. Harness and connectors](#section-9) | [19. Verification procedures, failure responses and reliability evidence](#section-19) | [29. Systematic review of the 84 Cheng references](#section-29) |
-| [10. Embedded firmware work specification](#section-10) | [20. Phases, deliverables, budgets and hard stop decisions](#section-20) | [30. ProxySKIN comparison and the proximity decision](#section-30) |
+| [1. החלטה, מגבלות והשינויים בעקבות הביקורת](#section-1) | [11. פרוטוקול CAN, עדכניות הנתונים וממשק התוכנה](#section-11) | [21. התנהגות הרובוט וראיות לערך ללקוח](#section-21) |
+| [2. דרישות מוקפאות וחשבונאות כיסוי](#section-2) | [12. בנייה במעבדה ביתית, כולל ניסוי מפורש לבחירת חומרים](#section-12) | [22. מפת התחרות](#section-22) |
+| [3. החלטות חומרים וחלופות](#section-3) | [13. כיול, סחיפה תחת עומס קבוע והחלפה](#section-13) | [23. שותפים אסטרטגיים בישראל](#section-23) |
+| [4. ארכיטקטורת המערכת וגבולות הכשל](#section-4) | [14. אישור PCB לייצור, בדיקות CAD ורשומות תצורה](#section-14) | [24. חדשנות, קניין רוחני ופרסום](#section-24) |
+| [5. מבנה השכבות המכני ומפרט שרטוטי הבנייה](#section-5) | [15. רשימת חומרים, ראיות למחירים ומגבלות הוזלה](#section-15) | [25. בקשות להצעות מחיר, תחומי שותפות והחלטות רכש](#section-25) |
+| [6. מעגלים אנלוגיים, אבחון וערכי רכיבים מדויקים](#section-6) | [16. ציוד למעבדה הביתית ותקרות רכש](#section-16) | [26. יומן החלטות: אין משימות ״מחקר בהמשך״ ללא אחראי](#section-26) |
+| [7. מפת פיני הבקר, ייחוס ההספק והשעון](#section-7) | [17. כלכלת גפיים, מסה, אנרגיה ומרווח מסחרי](#section-17) | [27. שחזור, נתוני שירות ותוצרים שנמסרו](#section-27) |
+| [8. חלוקת הספק ותיאום הגנות](#section-8) | [18. הוראות עבודה לייצור ותכנון לשירות](#section-18) | [28. התאמת האלגוריתמים של Cheng למוצר זה](#section-28) |
+| [9. רתמה ומחברים](#section-9) | [19. נוהלי אימות, תגובות לכשל וראיות לאמינות](#section-19) | [29. סקירה שיטתית של 84 המקורות של Cheng](#section-29) |
+| [10. מפרט העבודה לקושחה המשובצת](#section-10) | [20. שלבים, תוצרים, תקציבים והחלטות עצירה מחייבות](#section-20) | [30. השוואה ל־ProxySKIN וההחלטה לגבי חישת קרבה](#section-30) |
 
 <a id="section-1"></a>
 
-## 1. Decision, limitations and what the audit changed
+## 1. החלטה, מגבלות והשינויים בעקבות הביקורת
 
-Build a **replaceable laminated resistive sensing sheet with local digitization and segmented CAN FD wiring**. Retain copper for the short power/data harness. The main reduction in long wires comes from sharing communication and doing measurement beside the sensors. No affordable material simultaneously improves copper's conductivity, equal-resistance cross-section, terminations and repeated-flex reliability for arbitrary actuator currents. Motor power wiring remains a separate engineering problem.
+יש לבנות **יריעת חישה התנגדותית למינציה, הניתנת להחלפה, עם דגימה דיגיטלית מקומית וחיווט CAN FD המחולק למקטעים**. יש להשאיר נחושת ברתמת ההספק והנתונים הקצרה. עיקר הצמצום בחוטים ארוכים נובע משיתוף התקשורת ומביצוע המדידה ליד החיישנים. אין חומר במחיר נגיש שמשפר בו־זמנית את המוליכות של נחושת, שטח החתך הנדרש להתנגדות שווה, חיבורי הקצה והאמינות בכיפוף חוזר עבור זרמי מפעילים שרירותיים. חיווט ההספק למנועים נותר בעיה הנדסית נפרדת.
 
-Use **28 independently wired touch cells and two temperature points per patch**, 25 mm pitch, four analog multiplexer banks, one STM32 controller and one CAN transceiver. This architecture supports simultaneous contacts without the electrical ghost paths of a passive resistive row/column matrix. There are still 28 short printed signal traces inside a patch; there are four conductors on its connection to the regional harness.
+יש להשתמש ב־**28 תאי מגע המחווטים בנפרד ובשתי נקודות טמפרטורה לכל מקטע**, בפסיעה של 25 mm, עם ארבע קבוצות מרבבים אנלוגיים, בקר STM32 אחד ומשדר־מקלט CAN אחד. ארכיטקטורה זו תומכת במגעים בו־זמניים ללא מסלולי המגע המדומים החשמליים של מטריצת שורות/עמודות התנגדותית פסיבית. בתוך המקטע עדיין יש 28 מוליכי אות מודפסים קצרים; בחיבור שלו לרתמה האזורית יש ארבעה מוליכים.
 
-The initial product is **non-safety contact perception for indoor robot shells**. It can support awareness of contact, approximate contact intensity, contact-informed motion and maintenance diagnostics. It does not measure arbitrary force vectors, resolve fingers, cover joint gaps automatically or provide a certified protective stop. Two temperature points cannot identify every hot object touching the rest of the patch.
+המוצר הראשוני הוא **מערכת תפיסת מגע שאינה מערכת בטיחות, למעטפות רובוטים בסביבה פנימית**. הוא יכול לתמוך בזיהוי מגע, עוצמת מגע מקורבת, תנועה המתחשבת במגע ואבחון תחזוקה. הוא אינו מודד וקטורי כוח שרירותיים, אינו מפריד בין אצבעות, אינו מכסה אוטומטית פערים במפרקים ואינו מספק עצירה מגוננת מוסמכת. שתי נקודות טמפרטורה אינן יכולות לזהות כל חפץ חם שנוגע בשאר המקטע.
 
-The project is technically plausible. **A commercial breakthrough and a $1,500 full-body production system are not established by present evidence.** The revised planning case is about $7,852 for an 80-patch installation, or $8,131 with spare patches, using bought development gateways and modeled 1,000-patch manufacturing costs. This is a conservative planning calculation, not a quotation. Selling an initial arm module is a more credible route than promising a complete low-cost humanoid on day one.
+הפרויקט אפשרי מבחינה טכנית. **הראיות הקיימות אינן מבססות פריצת דרך מסחרית או מערכת ייצור לכל הגוף במחיר $1,500.** תרחיש התכנון המעודכן הוא כ־$7,852 להתקנה של 80 מקטעים, או $8,131 עם מקטעים חלופיים, באמצעות שערי פיתוח קנויים ועלויות ייצור ממודלות לכמות של 1,000 מקטעים. זהו חישוב תכנון שמרני, לא הצעת מחיר. מכירת מודול ראשוני לזרוע היא דרך אמינה יותר מהבטחה לרובוט דמוי אדם שלם וזול כבר ביום הראשון.
 
-| Audit finding | Revision-2 decision | Concrete closure |
+| ממצא בביקורת | החלטה במהדורה 2 | אופן סגירה קונקרטי |
 |---|---|---|
-| Thin materials were confused with a thin installed system | Specify the complete laminate, attachment, controller pocket and joint harness separately | M01/M02 dimensional and coverage maps |
-| 28 caps, pucks and guides create assembly and preload problems | Use isolated full-area resistive islands in a registered laminate; commercial FSR pucks only in the electrical bench fixture | Four-geometry coupon experiment, then full patch |
-| Continuous resistive film can couple adjacent cells | Electrically separate all 28 resistive islands; one transfer carrier places them as an array | E02 multi-contact/isolation test |
-| 330 kΩ diagnostic path has limited open-circuit margin | 100 kΩ remote end-of-line resistor, ±20% maximum including aging | Calculated window and E01 leakage test |
-| Equal bank reference voltages hide bank swaps | Four reference levels: approximately 1,024, 1,638, 2,457, 3,071 ADC counts | E01 permutation and stuck-address tests |
-| 200 Hz leaves little acquisition margin | 100 Hz baseline, approximately 4.42 ms nominal acquisition in a 10 ms period | E03 measured deadline and bus load |
-| Receiving a frame was treated as proof of freshness | Capture timestamp, persistent boot epoch, config CRC and nonce time handshake | S01 tests, including delayed USB traffic |
-| A hard contact could disappear into an invalid reading | Separate `CONTACT_OR_FAULT` from ordinary invalid coverage | S01 overload tests and behavior contract |
-| Two ADC pins have stricter injection susceptibility | Move bank inputs to PA0, PA1, PA7 and PB1; move address GPIOs to PB5–PB7 | Package-specific connection review and E04 |
-| Crystal startup and load values were guesses | Use a specified 8 MHz CMOS oscillator; configure HSE bypass | E03 clock/startup test |
-| Gateway and manufacturing costs omitted real work | Price an identifiable development gateway; cost attended labor and station occupancy separately | C01 measured cycle time, RFQ ceiling |
-| Million-cycle claims lacked a statistical meaning | Define load/environment, sample size, failures and confidence separately | R01; no extrapolation from one good sample |
+| נוצר בלבול בין חומרים דקים למערכת מותקנת דקה | להגדיר בנפרד את מלוא הלמינציה, החיבור, כיס הבקר ורתמת המפרק | מפות מידות וכיסוי M01/M02 |
+| 28 כיפות, דיסקיות ומובילים יוצרים בעיות הרכבה ועומס מוקדם | להשתמש באיי חישה התנגדותיים מבודדים על מלוא שטח התא, בלמינציה מיושרת; דיסקיות FSR מסחריות ישמשו רק במתקן הניסוי החשמלי | ניסוי דוגמיות בארבע גאומטריות, ואחריו מקטע מלא |
+| שכבה התנגדותית רציפה עלולה לצמד תאים סמוכים | להפריד חשמלית את כל 28 האיים ההתנגדותיים; למקם אותם כמערך באמצעות יריעת העברה אחת | בדיקת מגעים מרובים ובידוד E02 |
+| מסלול אבחון של 330 kΩ נותן מרווח מוגבל לזיהוי נתק | נגד סוף־קו מרוחק של 100 kΩ, לכל היותר ±20% כולל הזדקנות | חלון מחושב ובדיקת זליגה E01 |
+| מתחי ייחוס שווים בקבוצות מסתירים החלפת קבוצות | ארבע רמות ייחוס: בקירוב 1,024, 1,638, 2,457, 3,071 ספירות ADC | בדיקות החלפת ערוצים וכתובת תקועה E01 |
+| 200 Hz משאירים מרווח קטן לרכישה | בסיס של 100 Hz, עם רכישה נומינלית של כ־4.42 ms בתוך מחזור של 10 ms | מדידת עמידה בזמן ועומס אפיק E03 |
+| קבלת מסגרת נחשבה להוכחה לעדכניות | חותמת זמן רכישה, מונה אתחול מתמיד, CRC תצורה ולחיצת יד לזמן עם nonce | בדיקות S01, כולל תעבורת USB שהתעכבה |
+| מגע חזק עלול להיעלם לתוך קריאה לא תקפה | להפריד `CONTACT_OR_FAULT` מכיסוי לא תקף רגיל | בדיקות עומס יתר S01 וחוזה התנהגות |
+| שני פיני ADC רגישים יותר להזרקת זרם | להעביר את כניסות הקבוצות ל־PA0, PA1, PA7 ו־PB1; להעביר את פיני כתובת ה־GPIO ל־PB5–PB7 | בדיקת חיבורים לפי המארז ו־E04 |
+| ערכי התנעת הגביש והעומס היו ניחוש | להשתמש במתנד CMOS מוגדר של 8 MHz; להגדיר HSE במצב bypass | בדיקת שעון והתנעה E03 |
+| עלויות השער והייצור השמיטו עבודה בפועל | לתמחר שער פיתוח מזוהה; לחשב בנפרד זמן עבודה עם מפעיל ותפוסת עמדת בדיקה | זמן מחזור מדוד C01 ותקרת RFQ |
+| טענות למיליון מחזורים חסרו משמעות סטטיסטית | להגדיר בנפרד עומס/סביבה, גודל מדגם, כשלים ורמת ביטחון | R01; אין להשליך מדוגמה טובה אחת |
 
-This is an engineering plan, not a substitute for executing it. Every physical unknown below has a named experiment, numerical criterion and prescribed response. Supplier-only facts have an explicit order condition or price ceiling. If a result fails, the specified response changes the product or stops the release; it does not become a hidden assumption.
+זו תוכנית הנדסית, לא תחליף לביצועה. לכל אי־ודאות פיזית שלהלן יש ניסוי בעל שם, קריטריון מספרי ותגובה מוגדרת. לעובדות שרק הספק יכול לאשר יש תנאי הזמנה או תקרת מחיר מפורשים. אם תוצאה נכשלת, התגובה שנקבעה משנה את המוצר או עוצרת את שחרורו; היא אינה הופכת להנחה נסתרת.
 
 <a id="section-2"></a>
 
-## 2. Frozen requirements and coverage accounting
+## 2. דרישות מוקפאות וחשבונאות כיסוי
 
-| Item | Revision-2 baseline / pass condition |
+| פריט | בסיס מהדורה 2 / תנאי קבלה |
 |---|---|
-| Patch coordinates | Seven columns × four rows. Cell `i=7r+c `; center `(12.5+25c, 12.5+25r)` mm, `r=0..3 `, `c=0..6` |
-| Sensing rectangle | 175 × 100 mm; 23 × 23 mm electrode areas. Add a 3 mm external sealing margin: nominal physical panel 181 × 106 mm, excluding tail |
-| Touch output | Cell ID, dimensionless intensity 0–254, validity mask, open mask and overload/contact-or-fault mask; 255 is invalid |
-| Detection, dry indoor | At least 99 detections in 100 applications at 0.5 N center, 1 N two-cell boundary, 2 N four-cell intersection, with a 10 mm diameter flat probe; measure all cell centers and seam classes |
-| Localization | At 2 N, report the contacted cell or its immediate neighbor; publish the full error distribution. No claim of sub-taxel accuracy |
-| Intensity | Monotonic median response at 0.5, 2, 5, 10 and 20 N using the specified probe; at least three repeatable ordinal levels. No kPa label |
-| Frame rate / latency | 100 complete acquisitions/s. Periodic mode sends 100 snapshots/s; qualified hybrid mode sends 50/s idle and up to 100/s on contact/change/fault. Normal contact-report latency p99.9 ≤30 ms; invalidate stale coverage within 40 ms of oldest possible acquisition time. See section 28 |
-| Temperature | Two points, 10 Hz numerical update, calibrated 10–60°C; assembled error ≤±2°C at verification points; response 10–90% ≤3 s under specified fixture contact |
-| Initial operating environment | Dry indoor, 10–40°C, 20–80% RH noncondensing. No liquid immersion, outdoor or solvent-cleaning claim |
-| Thickness | Active sensing laminate ≤1.5 mm above existing shell, excluding a local thermal boss if needed; controller installed behind shell, pocket ≤5 mm including clearance |
-| Mass | Reference 80-patch system engineering allocation ≤2.2 kg; a target requiring weighing, not a calculated guarantee |
-| Electrical interface | Regulated regional 5 V ±5%; short branch; 3.3 V local electronics; 1/2 Mbit/s CAN FD |
-| Consumption | Design budget ≤30 mA average per patch at 5 V, 80 mA peak; qualify a full installation source for 10 A including gateways/hubs and startup |
-| Service | Whole sensor cassette changed in ≤5 min by trained operator; controller connector rated mating budget observed; faulted region explicitly unavailable |
-| Life screen | 100,000 cycles for design selection; 1,000,000 cycles under R01 only after design freeze; drift and detection requirements still apply |
+| קואורדינטות המקטע | שבע עמודות × ארבע שורות. תא `i=7r+c `; מרכז `(12.5+25c, 12.5+25r)` mm, ‏`r=0..3 `, ‏`c=0..6` |
+| מלבן החישה | 175 × 100 mm; שטחי אלקטרודות של 23 × 23 mm. להוסיף שול איטום חיצוני של 3 mm: גודל לוח פיזי נומינלי 181 × 106 mm, ללא הזנב |
+| פלט המגע | מזהה תא, עוצמה חסרת יחידות 0–254, מסכת תקפות, מסכת נתק ומסכת עומס יתר/מגע־או־תקלה; 255 מציין ערך לא תקף |
+| זיהוי, סביבה פנימית יבשה | לפחות 99 זיהויים מתוך 100 הפעלות ב־0.5 N במרכז, 1 N בגבול בין שני תאים, 2 N במפגש ארבעה תאים, באמצעות גשוש שטוח בקוטר 10 mm; למדוד בכל מרכזי התאים ובכל סוגי התפרים |
+| מיקום | ב־2 N לדווח על התא שנגעו בו או על שכנו המיידי; לפרסם את התפלגות השגיאה המלאה. אין טענה לדיוק קטן מתא חישה |
+| עוצמה | תגובת חציון מונוטונית ב־0.5, 2, 5, 10 ו־20 N באמצעות הגשוש המוגדר; לפחות שלוש רמות סדר ניתנות לחזרה. ללא תווית kPa |
+| קצב מסגרות / השהיה | 100 רכישות מלאות בשנייה. מצב מחזורי שולח 100 תמונות מצב בשנייה; מצב משולב שאומת שולח 50 בשנייה במנוחה ועד 100 בשנייה במגע/שינוי/תקלה. השהיית דיווח מגע רגיל p99.9 ≤30 ms; לפסול כיסוי מיושן בתוך 40 ms מזמן הרכישה המוקדם ביותר האפשרי. ראו סעיף 28 |
+| טמפרטורה | שתי נקודות, עדכון מספרי ב־10 Hz, כיול ב־10–60°C; שגיאת מכלול ≤±2°C בנקודות האימות; תגובה מ־10% ל־90% בתוך ≤3 s במגע עם המתקן המוגדר |
+| סביבת עבודה ראשונית | פנים יבש, 10–40°C, לחות יחסית 20–80% ללא עיבוי. אין טענה לטבילה בנוזל, עבודה בחוץ או ניקוי בממסים |
+| עובי | למינציית חישה פעילה ≤1.5 mm מעל המעטפת הקיימת, ללא בליטה תרמית מקומית אם נדרשת; הבקר מותקן מאחורי המעטפת, כיס ≤5 mm כולל מרווח |
+| מסה | הקצאה הנדסית למערכת ייחוס של 80 מקטעים ≤2.2 kg; יעד המחייב שקילה, לא הבטחה מחושבת |
+| ממשק חשמלי | הזנה אזורית מיוצבת של 5 V ±5%; ענף קצר; אלקטרוניקה מקומית של 3.3 V; ‏CAN FD בקצב 1/2 Mbit/s |
+| צריכה | תקציב תכנון ≤30 mA בממוצע לכל מקטע ב־5 V, ‏80 mA בשיא; להכשיר ספק למערכת מלאה ל־10 A כולל שערים/רכזות והתנעה |
+| שירות | החלפת קסטת חישה שלמה בתוך ≤5 min בידי מפעיל מיומן; עמידה במספר מחזורי החיבור המותר של מחבר הבקר; אזור תקול מסומן במפורש כלא זמין |
+| בדיקת אורך חיים מקדימה | 100,000 מחזורים לבחירת התכנון; 1,000,000 מחזורים במסגרת R01 רק לאחר הקפאת התכנון; דרישות הסחיפה והזיהוי ממשיכות לחול |
 
-The seam targets differ deliberately. A 1 N load shared equally by four cells gives only 0.25 N per cell, below the proposed center detection threshold. A continuous cover does not repeal that force balance. Lower seam thresholds require measured mechanical transfer or a different sensing design.
+יעדי התפרים שונים במכוון. עומס של 1 N המתחלק שווה בשווה בין ארבעה תאים נותן רק 0.25 N לתא, פחות מסף הזיהוי המוצע במרכז. כיסוי רציף אינו מבטל את מאזן הכוחות הזה. ספי תפר נמוכים יותר מחייבים העברת כוח מכנית שנמדדה או תכנון חישה אחר.
 
-One patch contains **0.014812 m² of electrode area**, 84.64% of its 0.0175 m² nominal sensing rectangle. This is geometric area, not verified detection coverage. With external sealing margins, active area is only about 77.2% of the 181 × 106 mm physical footprint. At 80 patches the summed sensing rectangle is 1.40 m² and summed electrode area is **1.185 m²**, before overlaps, contours and joint exclusions. At 36 patches there are 1,008 touch cells and 72 temperature points, occupying 0.63 m² of nominal sensing rectangles; that is not automatically a whole-body skin.
+מקטע אחד מכיל **0.014812 m² של שטח אלקטרודות**, שהם 84.64% ממלבן החישה הנומינלי שלו, ששטחו 0.0175 m². זהו שטח גאומטרי, לא כיסוי זיהוי מאומת. עם שולי האיטום החיצוניים, השטח הפעיל הוא רק כ־77.2% מהשטח הפיזי של 181 × 106 mm. ב־80 מקטעים סכום מלבני החישה הוא 1.40 m² וסכום שטחי האלקטרודות הוא **1.185 m²**, לפני חפיפות, קווי מתאר והחרגת מפרקים. ב־36 מקטעים יש 1,008 תאי מגע ו־72 נקודות טמפרטורה, בתוך מלבני חישה נומינליים ששטחם הכולל 0.63 m²; אין פירוש הדבר אוטומטית עור לכל הגוף.
 
-Use an initial allocation of eight patches per arm, sixteen per leg, twenty-eight torso/back and four optional head/neck: 80 total, 2,240 touch cells, 160 temperature points and ten regions of at most eight nodes. Hands, fingertips, soles and joint bearing surfaces are excluded. For a robot-specific map, export the shell mesh, place panel outlines, simulate the complete joint envelope and report measured contact coverage at every 15° of joint travel. Count inaccessible/uncovered area explicitly.
+יש להתחיל בהקצאה של שמונה מקטעים לכל זרוע, שישה־עשר לכל רגל, עשרים ושמונה לגוף/גב וארבעה אופציונליים לראש/צוואר: 80 בסך הכול, 2,240 תאי מגע, 160 נקודות טמפרטורה ועשרה אזורים של עד שמונה צמתים. כפות ידיים, קצות אצבעות, סוליות ומשטחי מיסבים במפרקים אינם כלולים. למפה המותאמת לרובוט, יש לייצא את רשת המעטפת, למקם קווי מתאר של לוחות, לדמות את מלוא מעטפת תנועת המפרקים ולדווח על כיסוי מגע שנמדד בכל 15° של תנועת מפרק. יש לספור במפורש שטחים שאינם נגישים או מכוסים.
 
-**Definition of pressure:** FSR resistance depends on load distribution and mechanics. Without knowing actual contact area, force divided by nominal cell area is not object pressure. Use “relative contact intensity”; calibrate in newtons only for the stated probe/stack and label that calibration narrowly.
+**הגדרת לחץ:** התנגדות FSR תלויה בפיזור העומס ובמכניקה. ללא ידיעת שטח המגע בפועל, כוח חלקי שטח התא הנומינלי אינו לחץ החפץ. יש להשתמש במונח ״עוצמת מגע יחסית״; לכייל בניוטון רק עבור הגשוש ומבנה השכבות שהוגדרו, ולסמן את תחום הכיול במדויק.
 
 <a id="section-3"></a>
 
-## 3. Material decisions and alternatives
+## 3. החלטות חומרים וחלופות
 
-The first commercial candidate is a supplier-made, independently wired, laminated PET resistive array. A home-build surrogate uses interdigitated ENIG electrodes and **Sensitronics XactFSR** islands. These share a measurement principle; they do not share a guaranteed calibration or lifetime. Do not transfer a calibration between them.
+המועמד המסחרי הראשון הוא מערך התנגדותי בלמינציית PET, מתוצרת ספק ועם חיווט נפרד לכל תא. תחליף לבנייה ביתית משתמש באלקטרודות ENIG משולבות כאצבעות ובאיים של **Sensitronics XactFSR**. עקרון המדידה שלהם משותף; אין להם כיול או אורך חיים משותפים ומובטחים. אין להעביר כיול מאחד לשני.
 
-| Approach | Decision and exact experiment | Why it is or is not the baseline |
+| גישה | החלטה וניסוי מדויק | מדוע היא בסיס התכנון או אינה כזו |
 |---|---|---|
-| Resistive printed film, local ADC | Baseline. Run the coupon and loading sequence in section 12 | Simple electronics, simultaneous contacts, accessible manufacturing; creep and mechanics must meet tests |
-| Thin copper/polyimide flex | Use for short electrodes/interconnect and thermal flex; weigh a 175 × 100 mm panel | Reliable industrial routing; flexibility is not stretchability. Two-layer flex may cost more than printed PET |
-| Capacitive flex | Buy a development controller and build one guarded 4 × 4 coupon only if FSR drift fails M03 | Good contact/proximity option, but motor EMI, moisture and pressure interpretation need a different readout; not a plug-in film substitution |
-| Magnetic elastomer / ReSkin-type | Benchmark one available module under identical probe and nearby operating motor | Adds shear capability, but magnets, calibration and motor magnetic fields complicate low-cost large-area coverage |
-| Conductive textile / conductive foam | Build four isolated cells with the same divider for comparison; reject if unloaded drift >20% of contact span or adjacent unloaded response >15% | Quick and cheap to experiment with; material variation, humidity and dimensional stability often dominate |
+| שכבה התנגדותית מודפסת, ADC מקומי | בסיס התכנון. לבצע את ניסוי הדוגמיות ורצף ההעמסה בסעיף 12 | אלקטרוניקה פשוטה, מגעים בו־זמניים וייצור נגיש; זחילה ומכניקה חייבות לעמוד בבדיקות |
+| מעגל גמיש דק מנחושת/פוליאימיד | להשתמש לאלקטרודות/חיבורים קצרים ולמעגל התרמי הגמיש; לשקול לוח של 175 × 100 mm | ניתוב תעשייתי אמין; גמישות אינה יכולת מתיחה. מעגל גמיש דו־שכבתי עלול לעלות יותר מ־PET מודפס |
+| מעגל גמיש קיבולי | לקנות בקר פיתוח ולבנות דוגמית 4 × 4 אחת עם הגנת guard רק אם סחיפת FSR נכשלת ב־M03 | אפשרות טובה למגע/קרבה, אך EMI ממנועים, לחות ופירוש לחץ מחייבים מערכת קריאה אחרת; אין זו החלפת יריעה ללא שינוי |
+| אלסטומר מגנטי / מסוג ReSkin | לבדוק מודול זמין אחד באותו גשוש וליד מנוע פועל | מוסיף יכולת חישת גזירה, אך מגנטים, כיול ושדות מגנטיים של מנועים מסבכים כיסוי שטח גדול במחיר נמוך |
+| טקסטיל מוליך / קצף מוליך | לבנות ארבעה תאים מבודדים עם אותו מחלק מתח להשוואה; לפסול אם הסחיפה ללא עומס >20% מטווח המגע או תגובת תא סמוך שאינו מועמס >15% | מהיר וזול לניסוי; שונות החומר, לחות ויציבות ממדית נוטות להיות גורמים מכריעים |
 
-Aluminum can reduce conductor mass at equal resistance but needs roughly 1.6× copper cross-section, difficult small terminations and flex-fatigue qualification. Silver ink is useful for short printed traces, not economical replacement for motor power cables. Carbon conductors need much more cross-section for equal low resistance. Optical fiber can carry data with little conductor mass but still needs powered transceivers and does not deliver actuator power. None solves the whole system simply by being thin.
+אלומיניום עשוי להפחית מסת מוליך בהתנגדות שווה, אך דורש שטח חתך של כ־1.6× מנחושת, חיבורי קצה קטנים קשים לביצוע והכשרה לעייפות כיפוף. דיו כסף שימושי למוליכים מודפסים קצרים, ואינו תחליף חסכוני לכבלי הספק למנועים. מוליכי פחמן זקוקים לשטח חתך גדול בהרבה לאותה התנגדות נמוכה. סיב אופטי יכול להעביר נתונים עם מעט מסת מוליך, אך עדיין דורש משדרים־מקלטים מוזנים ואינו מספק אנרגיה למפעילים. אף אחת מהחלופות אינה פותרת את המערכת כולה רק משום שהיא דקה.
 
-The ADS7953 in the user's original image is an analog selector plus digitizer that sends numbers to a host. Local ADC conversion is useful; its external PGA/reference and extra IC are unnecessary for the first coarse resistive-contact product because the MCU already contains an ADC. More ADC bits cannot remove polymer creep or mechanical hysteresis. Introduce an external ADC only if measured electrical noise/settling fails E01 after layout fixes, and document the extra cost and power.
+ה־ADS7953 שבתמונה המקורית של המשתמש הוא בורר אנלוגי וממיר לדיגיטלי, השולח מספרים למארח. המרת ADC מקומית מועילה; ה־PGA/ייחוס החיצוניים שלו והשבב הנוסף אינם נחוצים למוצר המגע ההתנגדותי הגס הראשון, משום שב־MCU כבר יש ADC. יותר סיביות ADC אינן יכולות לבטל זחילת פולימר או היסטרזיס מכני. יש להוסיף ADC חיצוני רק אם רעש חשמלי/זמן התייצבות שנמדדו נכשלים ב־E01 לאחר תיקוני תכנון המעגל, ולתעד את העלות והצריכה הנוספות.
 
 <a id="section-4"></a>
 
-## 4. System architecture and failure boundaries
+## 4. ארכיטקטורת המערכת וגבולות הכשל
+
+<div dir="ltr">
 
 ```mermaid
 flowchart LR
@@ -121,57 +129,61 @@ flowchart LR
   N --> A
 ```
 
-Power and data pass along a passive trunk, not through removable sensor boards. Unplugging one branch must not disconnect the downstream trunk. There is no CAN star with eight long branches. A bus short can stop its entire region; a crashed host or common 5 V source can stop all regions. A transceiver's dominant timeout does not clear a physical short. These limitations remain even with ten networks.
+</div>
 
-Use separate software names for `NO_CONTACT `, `CONTACT `, `CONTACT_OR_FAULT `, `COVERAGE_UNAVAILABLE `, and `TEMPERATURE_UNAVAILABLE`. A missing patch must never appear as an untouched patch. The robot's existing independent stop/protection system remains responsible for its safety function.
+ההספק והנתונים עוברים לאורך גזע פסיבי, ולא דרך כרטיסי חיישנים הניתנים להסרה. ניתוק ענף אחד חייב להשאיר את המשך הגזע מחובר. אין כאן כוכב CAN עם שמונה ענפים ארוכים. קצר באפיק עלול לעצור אזור שלם; קריסת מארח או כשל במקור 5 V משותף עלולים לעצור את כל האזורים. פסק הזמן למצב דומיננטי במשדר־מקלט אינו מסלק קצר פיזי. מגבלות אלה קיימות גם עם עשר רשתות.
+
+יש להשתמש בשמות תוכנה נפרדים עבור `NO_CONTACT `, ‏`CONTACT `, ‏`CONTACT_OR_FAULT `, ‏`COVERAGE_UNAVAILABLE ` ו־`TEMPERATURE_UNAVAILABLE`. מקטע חסר לעולם אינו יכול להיראות כמקטע שלא נגעו בו. מערכת העצירה/ההגנה העצמאית הקיימת של הרובוט ממשיכה להיות אחראית לתפקוד הבטיחות שלו.
 
 <a id="section-5"></a>
 
-## 5. Mechanical stack and construction drawing specification
+## 5. מבנה השכבות המכני ומפרט שרטוטי הבנייה
 
-### 5.1 Replace the cap-and-puck production design
+### 5.1 החלפת תכנון הייצור המבוסס על כיפות ודיסקיות
 
-Do not assemble 28 individual caps and 28 silicone pucks per industrial patch. Start with the following laminate on an existing relatively rigid shell. It measures normal contact; it is not a stretchable sheet across an elbow crease.
+אין להרכיב 28 כיפות נפרדות ו־28 דיסקיות סיליקון לכל מקטע תעשייתי. יש להתחיל בלמינציה שלהלן על מעטפת קיימת וקשיחה יחסית. היא מודדת מגע בכיוון הניצב למשטח; היא אינה יריעה נמתחת החוצה קפל מרפק.
 
-| Outside to inside | Frozen initial construction | Role / assembly instruction |
+| מבחוץ פנימה | מבנה ראשוני מוקפא | תפקיד / הוראת הרכבה |
 |---|---|---|
-| Sacrificial protective film C2 | Covestro Platilon U 4201 AU, 100 µm nominal; supplier-certified grade and gauge | Electrically insulating wear surface. Buy converted sheet/sample material; do not assume a web listing means small-lot inventory |
-| Cover attachment | Perimeter/grid adhesive only, leaving active 23 mm squares free of adhesive | Avoid full-area bonding that stiffens sensing zones or creates an uncontrolled preload. Use a registered peelable cover cassette |
-| Thermal islands | Two 0603 NTCs on a separate solderable polyimide flex, shallow pockets in nonsensing seam/header areas | Thin bond to cover, insulation toward shell, no heat path to regulator. Local bump can exceed film thickness; measure it |
-| Resistive layer | 28 separate 24.5 × 24.5 mm XactFSR islands for the home prototype; coated face toward electrodes | A continuous conductive coating across cells is prohibited. Kiss-cut onto a transfer carrier for pilot manufacture |
-| Spacer | One measured 3M 467MP layer, nominal 50–60 µm; 23 × 23 mm openings within each island | 0.75 mm adhesive rim; one 0.5 mm vent interruption per cell into a rear-directed vent path. No adhesive on interdigitated metal |
-| Electrodes | 23 × 23 mm comb area on a two-layer flex; ENIG, 18 µm copper target, 0.254 mm trace and gap initially | Top layer electrodes, bottom routing; do not attempt to squeeze all signals through single-layer narrow gutters |
-| Back attachment | Supported carrier registered to shell; edge clips or service screws at existing shell mounts | No loose fastener behind a sensing cell; no concentrated bump. Sensor sheet is replaceable as a cassette |
+| שכבת הגנה מתכלה C2 | Covestro Platilon U 4201 AU, עובי נומינלי 100 µm; דרגת חומר ועובי מאושרים בידי הספק | משטח שחיקה מבודד חשמלית. לרכוש יריעה מעובדת/חומר לדוגמה; אין להניח שרישום באתר מעיד על מלאי בכמויות קטנות |
+| חיבור הכיסוי | דבק בהיקף/רשת בלבד, והשארת ריבועים פעילים של 23 mm ללא דבק | להימנע מהדבקה בכל השטח שמקשיחה אזורי חישה או יוצרת עומס מוקדם לא מבוקר. להשתמש בקסטת כיסוי מתקלפת ומיושרת |
+| איים תרמיים | שני NTC בגודל 0603 על מעגל פוליאימיד גמיש נפרד הניתן להלחמה, בכיסים רדודים באזורי תפר/חיבור שאינם חשים | חיבור דק לכיסוי, בידוד לכיוון המעטפת, ללא מסלול חום למייצב. בליטה מקומית עשויה לחרוג מעובי היריעה; יש למדוד אותה |
+| שכבה התנגדותית | 28 איי XactFSR נפרדים בגודל 24.5 × 24.5 mm לאב־הטיפוס הביתי; הצד המצופה פונה לאלקטרודות | אסור ציפוי מוליך רציף בין תאים. לבצע חיתוך kiss-cut על יריעת העברה לייצור פיילוט |
+| מרווחן | שכבת 3M 467MP מדודה אחת, נומינלית 50–60 µm; פתחים של 23 × 23 mm בתוך כל אי | שול דבק של 0.75 mm; הפסקת אוורור אחת של 0.5 mm לכל תא, למסלול אוורור הפונה לאחור. ללא דבק על המתכת המשולבת |
+| אלקטרודות | אזור מסרק של 23 × 23 mm על מעגל גמיש דו־שכבתי; ENIG, יעד נחושת 18 µm, מוליך ורווח של 0.254 mm בתחילה | אלקטרודות בשכבה העליונה וניתוב בתחתונה; אין לנסות לדחוס את כל האותות לתעלות צרות בשכבה אחת |
+| חיבור אחורי | נשא נתמך ומיושר למעטפת; תפסי קצה או ברגי שירות בנקודות ההרכבה הקיימות במעטפת | ללא מחבר מכני רופף מאחורי תא חישה וללא בליטה נקודתית. יריעת החישה ניתנת להחלפה כקסטה |
 
-Covestro documents 50–100 µm variants of this grade; the order still requires a thickness/grade certificate. A readily identifiable thicker wear comparison is **3M 8671/8671HS**, about 0.35 mm applied thickness and 439 g/m². Its adhesive and stiffness make it a different stack; do not silently substitute it or claim the same sensitivity. At 1.4 m² it adds approximately 0.45 kg relative to a 100 µm TPU film, before other differences. [Covestro film availability](https://solutions.covestro.com/pt/highlights/articles/stories/2024/tpu-films-enhance-sports-equipment-design), [3M protective tape data](https://multimedia.3m.com/mws/media/2088428O/3m-polyurethane-protective-tape-8671.pdf).
+Covestro מתעדת גרסאות של 50–100 µm לדרגת חומר זו; ההזמנה עדיין מחייבת תעודת עובי/דרגה. חלופת שחיקה עבה יותר שניתן לזהות בבירור היא **3M 8671/8671HS**, בעובי מותקן של כ־0.35 mm ובמסה של 439 g/m². הדבק והקשיחות שלה יוצרים מבנה שכבות אחר; אין להחליף אותה ללא ציון או לטעון לאותה רגישות. בשטח 1.4 m² היא מוסיפה כ־0.45 kg ביחס ליריעת TPU בעובי 100 µm, עוד לפני הבדלים נוספים. [זמינות יריעות Covestro](https://solutions.covestro.com/pt/highlights/articles/stories/2024/tpu-films-enhance-sports-equipment-design), [נתוני סרט הגנה 3M](https://multimedia.3m.com/mws/media/2088428O/3m-polyurethane-protective-tape-8671.pdf).
 
-The tape catalog and technical sheet use slightly different nominal gauges. Measure ten spacer samples with a micrometer, record compressed applied thickness and use that value in the drawing. Never include the removable liner in the installed stack. [3M 467MP technical sheet](https://multimedia.3m.com/mws/media/2366204O/3M-Adhesive-Transfer-Tape-467MP.pdf?pif=000024).
+קטלוג הסרט והדף הטכני משתמשים בעוביים נומינליים מעט שונים. יש למדוד עשר דוגמיות מרווחן במיקרומטר, לתעד את העובי הדחוס לאחר היישום ולהשתמש בערך זה בשרטוט. לעולם אין לכלול את שכבת השחרור הנשלפת במבנה המותקן. [דף טכני 3M 467MP](https://multimedia.3m.com/mws/media/2366204O/3M-Adhesive-Transfer-Tape-467MP.pdf?pif=000024).
 
-### 5.2 Electrode and sheet geometry
+### 5.2 גאומטריית האלקטרודות והיריעה
 
-For each cell, two interleaved combs terminate at `SNS_i ` and `SENS_GND`. Use 0.254 mm fingers and gaps, with 0.5 mm end clearance and no soldermask on the active comb. Place vias, EOL resistors and stiffeners outside the active aperture. The 100 kΩ EOL path is at the **remote cell**, beyond the entire signal trace, connected from that electrode's signal to ground. A resistor beside the controller cannot diagnose a broken tail. For a flex prototype, mount a 0402 resistor on the back with a relieved carrier pocket; include 28 extra placements and their assembly cost. Industrial printed EOL resistors must meet the post-aging range of 80–120 kΩ.
+בכל תא, שני מסרקים משולבים מסתיימים ב־`SNS_i ` וב־`SENS_GND`. יש להשתמש באצבעות וברווחים של 0.254 mm, עם מרווח קצה של 0.5 mm וללא מסכת הלחמה על המסרק הפעיל. יש למקם חורי מעבר, נגדי EOL וקשיחונים מחוץ לפתח הפעיל. מסלול EOL של 100 kΩ נמצא ב־**תא המרוחק**, מעבר לכל מוליך האות, ומחבר בין אות האלקטרודה להארקה. נגד ליד הבקר אינו יכול לאבחן זנב שבור. באב־טיפוס גמיש, יש להרכיב נגד 0402 בצד האחורי עם כיס שחרור בנשא; לכלול 28 השמות רכיבים נוספות ואת עלות הרכבתן. נגדי EOL מודפסים תעשייתיים חייבים לעמוד בטווח 80–120 kΩ לאחר הזדקנות.
 
-The two-layer routing specification is a manufacturable constraint, not released copper artwork. Keep at least 0.15 mm conductor/space on routing layers, via annuli and minimum drill per the selected fabricator, and give the vendor a 40-contact reinforced tail. The production PET version may use printed dielectric crossovers or a second routing layer, but cannot be quoted as a one-print, single-layer sheet. Require an artwork/netlist check proving all 28 paths are independent. EOL and signal printing are included in the sheet RFQ price.
+מפרט הניתוב הדו־שכבתי הוא אילוץ המאפשר ייצור, ולא קובץ נחושת מאושר לייצור. יש לשמור על מוליך/רווח של לפחות 0.15 mm בשכבות הניתוב, טבעות חורי מעבר וקוטר קידוח מינימלי לפי היצרן הנבחר, ולמסור לספק זנב מחוזק בעל 40 מגעים. גרסת PET לייצור יכולה להשתמש בגשרי חצייה עם דיאלקטרי מודפס או בשכבת ניתוב נוספת, אך אי אפשר לתמחר אותה כיריעה חד־שכבתית בהדפסה אחת. יש לדרוש בדיקת גרפיקה/רשימת חיבורים המוכיחה שכל 28 המסלולים עצמאיים. הדפסת EOL והאותות נכללת במחיר בקשת הצעת המחיר ליריעה.
 
-Specify end-to-end signal-trace resistance≤20 Ω and the effective common-ground return≤1 Ω from the most distant cell to the controller with the intended parallel ground contacts connected. At about 4.5 mA total loaded-cell current, 1 Ω adds only 4.5 mV; a narrow printed return of 10 Ω would add45 mV and could create cross-cell measurement errors. Measure this on completed sheets with a four-wire fixture where possible. On bare routing before resistive/EOL printing, require≥100 MΩ isolation at 3.3 V between unrelated traces. On finished sheets account for the intentional EOL paths through common ground; demanding100 MΩ between two completed sensor signals would contradict the circuit. Reject a cheap ink/layout quote that misses these resistance limits.
+יש להגדיר התנגדות מקצה לקצה של מוליך אות ≤20 Ω והתנגדות אפקטיבית של החזרת ההארקה המשותפת ≤1 Ω מהתא הרחוק ביותר לבקר, עם מגעי ההארקה המקבילים המיועדים מחוברים. בזרם כולל של כ־4.5 mA בתאים המועמסים, 1 Ω מוסיף רק 4.5 mV; החזרה מודפסת צרה של 10 Ω תוסיף 45 mV ועלולה ליצור שגיאות מדידה בין תאים. יש למדוד זאת ביריעות גמורות במתקן ארבעה חוטים ככל האפשר. בניתוב החשוף לפני הדפסת השכבה ההתנגדותית/EOL, יש לדרוש בידוד ≥100 MΩ ב־3.3 V בין מוליכים שאינם קשורים. ביריעות גמורות יש להביא בחשבון את מסלולי ה־EOL המכוונים דרך ההארקה המשותפת; דרישה ל־100 MΩ בין שני אותות חיישן גמורים תסתור את המעגל. יש לפסול הצעת מחיר זולה לדיו/ניתוב שאינה עומדת במגבלות ההתנגדות האלה.
 
-Film tolerance stack: electrode-to-spacer registration ±0.15 mm, resistive-island registration ±0.20 mm, cover ±0.5 mm, outside contour ±0.25 mm. Two 3 mm tooling holes outside the final outline set registration. Reject an island overlapping an adjacent electrode or adhesive entering the comb aperture. Use one removable transfer liner to place the array; remove that liner before final covering so it cannot bridge cells mechanically.
+שרשרת הסבולות של היריעה: יישור אלקטרודה–מרווחן ±0.15 mm, יישור אי התנגדותי ±0.20 mm, כיסוי ±0.5 mm, קו מתאר חיצוני ±0.25 mm. שני חורי כלי בקוטר 3 mm מחוץ לקו המתאר הסופי קובעים את היישור. יש לפסול אי החופף לאלקטרודה סמוכה או דבק החודר לפתח המסרק. יש להשתמש בשכבת העברה נשלפת אחת למיקום המערך; להסיר אותה לפני הכיסוי הסופי כדי שלא תגשר מכנית בין תאים.
 
-Use a vent path to the protected back edge of the cassette. Do not seal trapped air in each cavity and then expect static force response. Do not claim an ingress-protection rating with an open vent. If cleaning-fluid ingress fails M04, add a qualified hydrophobic vent membrane and rerun M01–M04, including pneumatic response; the extra part goes into the BOM.
+יש להשתמש במסלול אוורור לקצה האחורי המוגן של הקסטה. אין לאטום אוויר כלוא בכל חלל ואז לצפות לתגובה לכוח סטטי. אין לטעון לדירוג הגנה מפני חדירה עם פתח אוורור פתוח. אם חדירת נוזל ניקוי נכשלת ב־M04, יש להוסיף ממברנת אוורור הידרופובית שאומתה ולחזור על M01–M04, כולל התגובה הפנאומטית; החלק הנוסף נכנס ל־BOM.
 
-### 5.3 Joint and curvature rules
+### 5.3 כללי מפרקים ועקמומיות
 
-Mount panels on stable shell segments. A 175 mm rectangle may wrap a cylindrical limb but cannot conform without strain to arbitrary double curvature. For compound curvature, split into row strips or narrower panels, preserve individual sensor boundaries and account for the added seam and connector area. Do not stretch a PET/PI circuit to fit.
+יש להרכיב לוחות על מקטעי מעטפת יציבים. מלבן של 175 mm עשוי לעטוף גפה גלילית, אך אינו יכול להתאים ללא מאמץ לעקמומיות כפולה שרירותית. בעקמומיות מורכבת, יש לפצל לרצועות שורות או ללוחות צרים יותר, לשמר את גבולות החיישנים הנפרדים ולחשב את שטח התפרים והמחברים הנוסף. אין למתוח מעגל PET/PI כדי להתאימו.
 
-No sensing laminate crosses the elbow/knee crease in revision 2. A loose overlapping protective flap can bridge a gap visually, but the gap remains uninstrumented unless a separate tested panel is installed. Define keep-out from the swept pinch envelope using CAD plus a physical clay/foam clearance test. Require ≥3 mm clearance at the worst tolerance, full load and cable deflection; if unavailable, omit coverage there and mark it on the body map.
+במהדורה 2 אף למינציית חישה אינה חוצה את קפל המרפק/הברך. דש מגן חופף ורפוי יכול לגשר חזותית על פער, אך הפער נשאר ללא חישה אלא אם הותקן בו לוח נפרד שנבדק. יש להגדיר אזור אסור מתוך מעטפת הצביטה הנסחפת, באמצעות CAD ובדיקת מרווח פיזית בחומר פלסטי/קצף. יש לדרוש מרווח ≥3 mm בסבולת הגרועה ביותר, בעומס מלא ובהסטת הכבל; אם אין מרווח כזה, יש לוותר על הכיסוי שם ולסמן זאת במפת הגוף.
 
-For moving wire bundles, use a manufacturer-rated continuous-flex/torsion cable appropriate to the joint. Route near the rotation axis with a service loop, clamp both ends, and observe the larger of the vendor dynamic bend radius and 10× cable diameter until a smaller radius is qualified. Tensile elongation at break of TPU is not allowable cyclic strain for copper or printed silver. Test the actual harness, clamps and joint trajectory under R02.
+בצמות חוטים נעות, יש להשתמש בכבל שהיצרן דירג לכיפוף מתמשך/פיתול המתאים למפרק. יש לנתב ליד ציר הסיבוב עם לולאת שירות, לקבע בשני הקצוות ולשמור על הגדול מבין רדיוס הכיפוף הדינמי של הספק ו־10× קוטר הכבל, עד לאימות רדיוס קטן יותר. התארכות TPU בשבר אינה העיוות המחזורי המותר לנחושת או לכסף מודפס. יש לבדוק את הרתמה, התפסים ומסלול המפרק בפועל במסגרת R02.
 
 <a id="section-6"></a>
 
-## 6. Analog circuits, diagnostics and exact component values
+## 6. מעגלים אנלוגיים, אבחון וערכי רכיבים מדויקים
 
-### 6.1 One touch cell, repeated 28 times
+### 6.1 תא מגע אחד, החוזר 28 פעמים
+
+<div dir="ltr">
 
 ```text
 3V3_A -- 22.0k 1% -- SNS_i ----------------+-- resistive cell -- SENS_GND
@@ -191,220 +203,224 @@ Mux D -- 4.7k -- ADC input
                 GND
 ```
 
-The 4.7 kΩ output resistor limits fault current and ADC charge transients; it is a revision-2 change from 100 Ω. A 250 µs settling wait is retained and checked using both loaded/unloaded transitions. It does not create a guarantee of ESD survival by itself.
+</div>
 
-With ADC full scale 4,095, `code=4095*Rparallel/(22000+Rparallel)`. Unloaded nominal is **3,356.6 counts**. EOL ±20% and bias ±1% produce approximately **3,205–3,466** before electrical error. Budget **3 µA total selected-path leakage** and ten additional ADC/reference error counts, conservatively including the 1 kΩ and 4.7 kΩ series resistance: the calculated worst unloaded upper value remains below 3,574, while an open line remains above 3,974 at VREF≥3.1 V. Set open threshold **3,900**, three successive scans to assert, 100 good scans and operator acknowledgment to clear a latched service fault. These are circuit-budget bounds; E01 measures aggregate leakage and verifies the margin at environmental limits.
+נגד היציאה של 4.7 kΩ מגביל זרם תקלה ומעברי מטען של ה־ADC; זהו שינוי במהדורה 2 ביחס ל־100 Ω. נשמרת המתנת התייצבות של 250 µs, הנבדקת במעברים עם עומס וללא עומס. היא אינה מבטיחה בפני עצמה שרידות ESD.
 
-The TMUX device alone has specified worst-case leakage that is much larger than its typical room-temperature number. The 3 µA budget includes mux, MCU, protection, contamination and board leakage; do not allocate the same budget independently to every component. If measured normal error exceeds this budget, clean/rework the PCB, reduce leakage or substitute a qualified lower-leakage mux. Do not widen the open threshold until broken traces become invisible. [TI TMUX1308 data](https://www.ti.com/lit/ds/symlink/tmux1308.pdf).
+כאשר מלוא סקלת ה־ADC היא 4,095, ‏`code=4095*Rparallel/(22000+Rparallel)`. הערך הנומינלי ללא עומס הוא **3,356.6 ספירות**. EOL של ±20% ונגד הטיה של ±1% נותנים בקירוב **3,205–3,466** לפני שגיאה חשמלית. יש להקצות **3 µA לזליגה הכוללת במסלול הנבחר** ועוד עשר ספירות שגיאת ADC/ייחוס, תוך הכללה שמרנית של נגדי הטור 1 kΩ ו־4.7 kΩ: הערך העליון המחושב ללא עומס, בתרחיש הגרוע ביותר, נשאר מתחת ל־3,574, בעוד שקו פתוח נשאר מעל 3,974 כאשר VREF≥3.1 V. יש לקבוע סף נתק של **3,900**, עם שלוש סריקות רצופות להפעלה, ו־100 סריקות תקינות ואישור מפעיל לניקוי תקלת שירות שננעלה. אלה גבולות של תקציב המעגל; E01 מודד זליגה מצטברת ומאמת את המרווח בגבולות הסביבה.
 
-An ADC code below 30 for three scans means **contact overload or electrical short**. Keep intensity at 254 and set the dedicated mask while reporting the ambiguity. An open line cannot be inferred when a real contact shorts around a broken EOL path; a coating delamination can leave electrical continuity intact. Electrical continuity is not a complete test of tactile function.
+לרכיב TMUX לבדו מוגדרת זליגה בתרחיש הגרוע ביותר הגדולה בהרבה מהערך הטיפוסי בטמפרטורת החדר. תקציב 3 µA כולל מרבב, MCU, הגנה, זיהום וזליגת הכרטיס; אין להקצות את אותו תקציב לכל רכיב בנפרד. אם השגיאה הנורמלית שנמדדה חורגת מהתקציב, יש לנקות/לעבד מחדש את ה־PCB, להפחית זליגה או להחליף למרבב בעל זליגה נמוכה יותר שעבר אימות. אין להרחיב את סף הנתק עד שמוליכים שבורים נעשים בלתי נראים. [נתוני TI TMUX1308](https://www.ti.com/lit/ds/symlink/tmux1308.pdf).
 
-Maximum branch current is limited by the 22 kΩ resistor: roughly 159 µA at 3.465 V and its low tolerance. Do not drive the film directly from a GPIO or power rail. For the commercial FSR402 bench fixture use an 8 mm diameter puck, and verify the supplier's current-density requirement for the actual loaded area. [Interlink integration guide](https://www.interlinkelectronics.com/downloads/integration-guides/fsr-400-series-integration-guide.pdf).
+קוד ADC נמוך מ־30 במשך שלוש סריקות פירושו **עומס מגע חריג או קצר חשמלי**. יש להשאיר את העוצמה ב־254 ולהפעיל את המסכה הייעודית תוך דיווח על אי־הוודאות. אי אפשר להסיק שיש נתק כאשר מגע אמיתי יוצר קצר העוקף מסלול EOL שנשבר; היפרדות ציפוי יכולה להשאיר רציפות חשמלית תקינה. רציפות חשמלית אינה בדיקה מלאה של תפקוד המישוש.
 
-### 6.2 Four mux banks
+זרם הענף המרבי מוגבל באמצעות נגד 22 kΩ: כ־159 µA ב־3.465 V ובקצה הסבולת הנמוך שלו. אין להניע את היריעה ישירות מ־GPIO או ממסילת הספק. במתקן המעבדה עם FSR402 מסחרי, יש להשתמש בדיסקית בקוטר 8 mm ולאמת את דרישת צפיפות הזרם של הספק עבור שטח ההעמסה בפועל. [מדריך השילוב של Interlink](https://www.interlinkelectronics.com/downloads/integration-guides/fsr-400-series-integration-guide.pdf).
 
-Use **TMUX1308PWR, TSSOP-16**. VDD pin 16 to 3V3_A; GND 8; 100 nF local. `A0=11, A1=10, A2=9 `; common digital addresses from MCU PB5/PB6/PB7. `EN=6 `, **LOW selects, HIGH disables**, with 47 kΩ pull-up to 3V3. Pin 7 NC. `D=3 `. Input mapping is `S0=13, S1=14, S2=15, S3=12, S4=1, S5=5, S6=2, S7=4`.
+### 6.2 ארבע קבוצות מרבבים
 
-Bank `b ` measures cells `7b..7b+6` on S0–S6. Its S7 is a local divider to verify the selected bank:
+יש להשתמש ב־**TMUX1308PWR, TSSOP-16**. פין VDD מספר 16 ל־3V3_A; ‏GND בפין 8; ‏100 nF מקומי. ‏`A0=11, A1=10, A2=9 `; כתובות דיגיטליות משותפות מפיני MCU ‏PB5/PB6/PB7. ‏`EN=6 `, **LOW בוחר, HIGH משבית**, עם נגד משיכה של 47 kΩ ל־3V3. פין 7 הוא NC. ‏`D=3 `. מיפוי הכניסות הוא `S0=13, S1=14, S2=15, S3=12, S4=1, S5=5, S6=2, S7=4`.
 
-| Bank | Top resistor to 3V3_A | Bottom to GND | Expected code | Initial acceptable range |
+קבוצה `b ` מודדת את התאים `7b..7b+6` ב־S0–S6. ‏S7 שלה הוא מחלק מתח מקומי לאימות הקבוצה שנבחרה:
+
+| קבוצה | נגד עליון ל־3V3_A | נגד תחתון ל־GND | קוד צפוי | טווח קבלה ראשוני |
 |---|---:|---:|---:|---:|
 | 0 | 30.0 kΩ 1% | 10.0 kΩ 1% | 1,024 | 944–1,104 |
 | 1 | 15.0 kΩ 1% | 10.0 kΩ 1% | 1,638 | 1,558–1,718 |
 | 2 | 10.0 kΩ 1% | 15.0 kΩ 1% | 2,457 | 2,377–2,537 |
 | 3 | 10.0 kΩ 1% | 30.0 kΩ 1% | 3,071 | 2,991–3,151 |
 
-A bad reference invalidates the corresponding seven cells immediately. Three bad scans latch a diagnostic. Distinct levels detect bank swaps but do not prove all seven addresses work. At factory test, drive a different known resistance on every channel and test every address, including stuck address-line faults.
+ייחוס לא תקין פוסל מיד את שבעת התאים המתאימים. שלוש סריקות לא תקינות נועלות אבחון תקלה. הרמות השונות מזהות החלפת קבוצות, אך אינן מוכיחות שכל שבע הכתובות עובדות. בבדיקת המפעל יש להפעיל התנגדות ידועה שונה בכל ערוץ ולבדוק כל כתובת, כולל תקלות של קו כתובת תקוע.
 
-### 6.3 Two temperature circuits
+### 6.3 שני מעגלי טמפרטורה
 
-Use **Murata NCU18XH103F60RB**, 10 kΩ at 25°C, on the separate thermal flex. Each channel: `3V3_A →39 kΩ 1%→TEMP→NTC→THERM_GND`; TEMP through 1 kΩ to MCU ADC with 1 nF at the ADC and entry ESD protection. The 39 kΩ bias limits 25°C current to **67.35 µA**, approximately 45.4 µW self-heating and code 835.7. A 10 kΩ bias would exceed the listed 0.1 mA maximum operating current at 25°C. [Murata component specification](https://www.murata.com/en-us/products/productdetail?partno=NCU18XH103F60RB).
+יש להשתמש ב־**Murata NCU18XH103F60RB**, ‏10 kΩ ב־25°C, על המעגל התרמי הגמיש הנפרד. בכל ערוץ: `3V3_A →39 kΩ 1%→TEMP→NTC→THERM_GND`; ‏TEMP דרך 1 kΩ ל־ADC של ה־MCU, עם 1 nF ליד ה־ADC והגנת ESD בכניסה. נגד ההטיה 39 kΩ מגביל את הזרם ב־25°C ל־**67.35 µA**, עם חימום עצמי של כ־45.4 µW וקוד 835.7. נגד הטיה של 10 kΩ יחרוג מזרם העבודה המרבי הרשום, 0.1 mA ב־25°C. [מפרט רכיב Murata](https://www.murata.com/en-us/products/productdetail?partno=NCU18XH103F60RB).
 
-NTC1 at patch coordinate `(50, 0)` and NTC2 at `(125, 100)` mm, in dedicated edge/header pockets outside active electrodes; record actual location in the map. They sample two places only. If all-area heat awareness is a product requirement, this two-point product fails that requirement: add thermistors per cell with extra ADC channels or add an independently engineered thermal layer. Do not interpolate a colorful whole-surface temperature map and describe it as measured.
+NTC1 בקואורדינטת המקטע `(50, 0)` ו־NTC2 ב־`(125, 100)` mm, בכיסי קצה/חיבור ייעודיים מחוץ לאלקטרודות הפעילות; יש לתעד את המיקום בפועל במפה. הם דוגמים רק שני מקומות. אם זיהוי חום בכל השטח הוא דרישת מוצר, מוצר דו־נקודתי זה אינו עומד בה: יש להוסיף תרמיסטורים לכל תא עם ערוצי ADC נוספים, או להוסיף שכבה תרמית שתוכננה בנפרד. אין לבצע אינטרפולציה למפת טמפרטורה צבעונית של כל המשטח ולתאר אותה כמדידה.
 
-Define raw open/short guard bands `code>4000 ` / `code<20`; also reject calibrated results outside −20..85°C. Operational calibration is 10..60°C. Use a measured five-point raw-code/temperature table per assembled thermal channel, monotonic interpolation and independent verification temperatures. The B-value equation is only a bench sanity check, not the shipped calibration. Temperature age in the data frame reflects the age of the actual last measurement, not the most recent packet.
+יש להגדיר תחומי סף גולמיים לנתק/קצר `code>4000 ` / ‏`code<20`; יש לפסול גם תוצאות מכוילות מחוץ ל־−20..85°C. כיול העבודה הוא 10..60°C. יש להשתמש בטבלת קוד גולמי/טמפרטורה שנמדדה בחמש נקודות לכל ערוץ תרמי מורכב, באינטרפולציה מונוטונית ובטמפרטורות אימות עצמאיות. משוואת ערך B היא רק בדיקת סבירות במעבדה, לא הכיול המסופק במוצר. גיל הטמפרטורה במסגרת הנתונים משקף את גיל המדידה האחרונה בפועל, ולא את גיל החבילה האחרונה.
 
-### 6.4 Protection and witness
+### 6.4 הגנה ולולאת בדיקת שלמות
 
-Eight **TPD4E1U06DBVR** arrays cover 30 analog lines and two witness lines. Pins 1, 6, 3, 4 are channels, pin 2 GND, pin 5 NC. Route discharge loops directly to the connector-side ground copper. A protection part's IEC rating is not the complete board's rating; its clamp voltage can exceed MCU/mux rails. Do not allow exposed energized sensor contacts during service. [TI protection data](https://www.ti.com/lit/ds/symlink/tpd4e1u06.pdf).
+שמונה מערכי **TPD4E1U06DBVR** מכסים 30 קווים אנלוגיים ושני קווי בדיקת שלמות. פינים 1, 6, 3, 4 הם ערוצים, פין 2 הוא GND ופין 5 הוא NC. יש לנתב לולאות פריקה ישירות לנחושת ההארקה בצד המחבר. דירוג IEC של רכיב הגנה אינו דירוג הכרטיס השלם; מתח ההגבלה שלו עלול לחרוג ממסילות ה־MCU/מרבב. אין לאפשר מגעי חישה חשופים ומוזנים בזמן שירות. [נתוני הגנה של TI](https://www.ti.com/lit/ds/symlink/tpd4e1u06.pdf).
 
-Use the revised ADC pins in section 7, series resistance and a covered connector. E04 applies transients at accessible surfaces, power and CAN connections and observes downstream waveforms/current. A pulse exceeding a downstream absolute maximum stops release; the corrective order is shorter return path, connector shielding/grounding and an evaluated secondary clamp network, then rerun E01/E04. Do not infer positive-injection permission from a datasheet entry of “N/A, ” or use internal ESD diodes as a specified voltage regulator.
+יש להשתמש בפיני ה־ADC המעודכנים בסעיף 7, בנגדי טור ובמחבר מכוסה. E04 מפעיל פולסים חולפים על משטחים נגישים, חיבורי הספק ו־CAN, ובוחן צורות גל/זרם בהמשך המסלול. פולס החורג מהערך המרבי המוחלט של רכיב בהמשך המסלול עוצר את השחרור; סדר התיקון הוא מסלול החזרה קצר יותר, סיכוך/הארקת מחבר ורשת הגבלה משנית שנבדקה, ואז הרצה מחדש של E01/E04. אין להסיק הרשאה להזרקת זרם חיובי מרישום ״N/A, ״ בדף נתונים, ואין להשתמש בדיודות ESD פנימיות כמייצב מתח מוגדר.
 
-Witness drive PB2 through1 kΩ → sheet perimeter loop →1 kΩ return series resistor→PB4 input,100 kΩ pull-down. Drive low and high separately for 1 ms each every second; require matching return. A constant short to rail or broken loop fails. Route the loop around the tail neck and high-risk perimeter, and state that tears not crossing it may be undetected. A failed witness invalidates the entire patch immediately after the failed test, not the whole robot.
+הנעת בדיקת השלמות: PB2 דרך 1 kΩ → לולאה בהיקף היריעה → נגד טור של 1 kΩ בהחזרה → כניסת PB4, עם נגד משיכה מטה של 100 kΩ. יש להניע LOW ו־HIGH בנפרד למשך 1 ms לכל מצב, בכל שנייה; נדרשת החזרה תואמת. קצר קבוע למסילה או לולאה שבורה גורמים לכישלון. יש לנתב את הלולאה סביב צוואר הזנב וההיקף שבסיכון גבוה, ולציין שקרעים שאינם חוצים אותה עשויים לא להתגלות. כשל בלולאה פוסל את המקטע כולו מיד לאחר הבדיקה שנכשלה, ולא את הרובוט כולו.
 
 <a id="section-7"></a>
 
-## 7. Controller pin plan, power reference and clock
+## 7. מפת פיני הבקר, ייחוס ההספק והשעון
 
-Use **STM32G0B1CBT6, non-N, LQFP-48**. The N variant and Nucleo board package are different. The following is the controlled wiring plan; transcribe it into CAD and compare every physical pin against the package drawing. [ST datasheet, DS13560 revision 6](https://www.st.com/resource/en/datasheet/stm32g0b1cb.pdf).
+יש להשתמש ב־**STM32G0B1CBT6, non-N, LQFP-48**. גרסת N ומארז הכרטיס Nucleo שונים. להלן תוכנית החיווט המבוקרת; יש להעתיק אותה ל־CAD ולהשוות כל פין פיזי לשרטוט המארז. [דף נתונים ST, ‏DS13560 מהדורה 6](https://www.st.com/resource/en/datasheet/stm32g0b1cb.pdf).
 
-| Function | MCU signal / package pin |
+| תפקיד | אות MCU / פין במארז |
 |---|---|
-| Bank 0, ADC0 | PA0 / 11 |
-| Bank 1, ADC1 | PA1 / 12 |
-| Bank 2, ADC7 | PA7 / 18 |
-| Bank 3, ADC9 | PB1 / 20 |
-| Temperature 1, ADC15 | PB11 / 23 |
-| Temperature 2, ADC16 | PB12 / 24 |
-| Mux A0, A1, A2 | PB5 / 44; PB6 / 45; PB7 / 46 |
-| Mux EN0..3 | PB10 / 22; PB13 / 25; PB14 / 26; PB15 / 27 |
+| קבוצה 0, ADC0 | PA0 / 11 |
+| קבוצה 1, ADC1 | PA1 / 12 |
+| קבוצה 2, ADC7 | PA7 / 18 |
+| קבוצה 3, ADC9 | PB1 / 20 |
+| טמפרטורה 1, ADC15 | PB11 / 23 |
+| טמפרטורה 2, ADC16 | PB12 / 24 |
+| מרבב A0, A1, A2 | PB5 / 44; PB6 / 45; PB7 / 46 |
+| מרבב EN0..3 | PB10 / 22; PB13 / 25; PB14 / 26; PB15 / 27 |
 | FDCAN1 RX/TX, AF3 | PB8 / 47; PB9 / 48 |
-| Transceiver STB | PA8 / 28 |
-| Node power FAULT | PA9 / 29 |
-| Witness drive/return | PB2 / 21; PB4 / 43 |
+| STB של המשדר־מקלט | PA8 / 28 |
+| FAULT בהספק הצומת | PA9 / 29 |
+| הנעה/החזרה של לולאת השלמות | PB2 / 21; PB4 / 43 |
 | SWDIO / SWCLK | PA13 / 35; PA14 / 36 |
-| USART2 service TX/RX, AF1 | PA2 / 13; PA3 / 14 |
-| Physical service strap | PA10 / 32; 10 kΩ pull-up, jumper to GND |
-| External clock in | PF0 / 8; PF1 / 9 unused |
-| Reset | NRST / 10 |
-| VDD/VDDA, VSS/VSSA, VREF+, VBAT | 6, 7, 5, 4 respectively |
+| USART2 לשירות TX/RX, AF1 | PA2 / 13; PA3 / 14 |
+| גישור שירות פיזי | PA10 / 32; נגד משיכה של 10 kΩ למעלה, מגשר ל־GND |
+| כניסת שעון חיצוני | PF0 / 8; ‏PF1 / 9 אינו בשימוש |
+| איפוס | NRST / 10 |
+| VDD/VDDA, VSS/VSSA, VREF+, VBAT | 6, 7, 5, 4 בהתאמה |
 
-Unused pins: PC13/14/15 pins 1/2/3; PA4/5/6 pins 15/16/17; PB0 pin 19; PA11/12 pins 33/34; PA15 pin 37; PC6/7 pins 30/31; PD0..3 pins 38..41; PB3 pin 42. Configure them analog/no-pull unless a boot/debug requirement overrides; do not tie arbitrary GPIOs directly to rails.
+פינים שאינם בשימוש: PC13/14/15 בפינים 1/2/3; ‏PA4/5/6 בפינים 15/16/17; ‏PB0 בפין 19; ‏PA11/12 בפינים 33/34; ‏PA15 בפין 37; ‏PC6/7 בפינים 30/31; ‏PD0..3 בפינים 38..41; ‏PB3 בפין 42. יש להגדיר אותם כאנלוגיים ללא משיכה, אלא אם דרישת אתחול/ניפוי שגיאות גוברת על כך; אין לקשור פיני GPIO שרירותיים ישירות למסילות.
 
-Supply: `5V_NODE →TPS7A2433→3V3 `. Connect VDD/VDDA and VBAT to 3V3; VSS/VSSA to the continuous ground plane. Place 100 nF and 4.7 µF at the MCU. Feed `3V3_A` through 10 Ω from 3V3 with 1 µF +100 nF at VREF+. This rail supplies muxes, sensor dividers and reference dividers. Disable the internal VREFBUF output. Require measured 3V3_A ≥3.1 V at maximum simultaneous contact and valid conversion; monitor VREFINT against its factory calibration for gross rail faults. Ratiometry removes common slow reference changes, not ground shift or mux-settling errors.
+הזנה: `5V_NODE →TPS7A2433→3V3 `. יש לחבר VDD/VDDA ו־VBAT ל־3V3; ‏VSS/VSSA למישור ההארקה הרציף. יש למקם 100 nF ו־4.7 µF ליד ה־MCU. יש להזין את `3V3_A` דרך 10 Ω מ־3V3, עם 1 µF +100 nF ליד VREF+. מסילה זו מזינה את המרבבים, מחלקי החיישנים ומחלקי הייחוס. יש להשבית את יציאת VREFBUF הפנימית. נדרש 3V3_A מדוד ≥3.1 V במגע בו־זמני מרבי ובהמרה תקפה; יש לנטר את VREFINT מול כיול המפעל שלו לזיהוי תקלות מסילה גסות. מדידה יחסית מסלקת שינויים איטיים משותפים בייחוס, אך לא הסטת הארקה או שגיאות התייצבות של מרבב.
 
-NRST has 10 kΩ pull-up and 100 nF to ground. SWD pads expose 3V3 sense, GND, SWDIO, SWCLK, NRST. Debugger sense is not a source of power; prohibit an external programmer from driving an unpowered node. Program a brownout threshold compatible with valid 3.3 V operation and verify measured trip/recovery under E05; keep ROM/SWD recovery available.
+ל־NRST יש נגד משיכה של 10 kΩ למעלה וקבל 100 nF להארקה. משטחי SWD חושפים חישת 3V3, ‏GND, ‏SWDIO, ‏SWCLK, ‏NRST. חישת המתח של מנפה השגיאות אינה מקור הספק; יש לאסור על מתכנת חיצוני להזין צומת כבוי. יש לתכנת סף נפילת מתח המתאים לפעולה תקפה ב־3.3 V ולאמת את סף הניתוק/ההתאוששות שנמדד במסגרת E05; יש להשאיר שחזור ROM/SWD זמין.
 
-Clock: **Abracon ASV-8.000MHZ-LC-T**, 3.3 V, 8 MHz, ±50 ppm, four-pad 7 × 5.08 mm oscillator. Pin 1 enable tied to 3V3, pin 2 GND, pin 3 output through 33 Ω near oscillator to PF0, pin 4 3V3 with 100 nF. Use HSE **bypass**, no crystal load capacitors, PF1 unconnected. Budget up to 10 mA for this part even though typical is lower. Allow 10 ms for startup and fail acquisition if clock-ready is absent. Its extra cost buys a defined clock source without an unverified crystal gain margin. [Abracon ASV data and pinout](https://abracon.com/Oscillators/ASV.pdf).
+שעון: **Abracon ASV-8.000MHZ-LC-T**, ‏3.3 V, ‏8 MHz, ‏±50 ppm, מתנד בעל ארבעה משטחים בגודל 7 × 5.08 mm. פין האפשור 1 קשור ל־3V3, פין 2 ל־GND, פין 3 הוא יציאה דרך 33 Ω ליד המתנד ל־PF0, ופין 4 ל־3V3 עם 100 nF. יש להשתמש ב־HSE במצב **bypass**, ללא קבלי עומס לגביש, ו־PF1 אינו מחובר. יש להקצות עד 10 mA לרכיב זה אף שהערך הטיפוסי נמוך יותר. יש לאפשר 10 ms להתנעה ולהכשיל את הרכישה אם אין אות clock-ready. העלות הנוספת קונה מקור שעון מוגדר ללא מרווח הגבר גביש שלא אומת. [נתוני Abracon ASV ומפת פינים](https://abracon.com/Oscillators/ASV.pdf).
 
-Configure PLL HSE8 MHz /M1 ×N12 /R2 =48 MHz SYSCLK, PCLK1 48 MHz, FDCAN clock PCLK1 with divider 1. At 48 MHz: nominal prescaler 3, TSEG1 13, TSEG2 2, SJW 2 →1 Mbit/s; data prescaler 2, TSEG1 9, TSEG2 2, SJW 2 →2 Mbit/s. Confirm on the analyzer rather than trusting a GUI label.
+יש להגדיר PLL ‏HSE8 MHz /M1 ×N12 /R2 =48 MHz SYSCLK, ‏PCLK1 48 MHz ושעון FDCAN מתוך PCLK1 עם מחלק 1. ב־48 MHz: מחלק מקדים נומינלי 3, ‏TSEG1 13, ‏TSEG2 2, ‏SJW 2 →1 Mbit/s; מחלק מקדים לנתונים 2, ‏TSEG1 9, ‏TSEG2 2, ‏SJW 2 →2 Mbit/s. יש לאשר במנתח, ולא לסמוך על תווית בממשק גרפי.
 
-**CAN transceiver:** TCAN3413DR. Pin 1 TXD→PB9 (10 kΩ pull-up), 2 GND, 3 VCC→3V3, 4 RXD→PB8, 5 VIO→3V3, 6 CANL, 7 CANH, 8 STB→PA8 with 47 kΩ pull-up. Put 100 nF at VCC and VIO plus 1 µF bulk. Reset leaves the bus driver in standby. Add PESD2CANFD24V-T at the connector, pins 1/2 to CANH/CANL and pin 3 to GND. Only the two trunk ends have 120 Ω termination. [TCAN3413 data](https://www.ti.com/lit/ds/symlink/tcan3413.pdf), [CAN protection data](https://assets.nexperia.com/documents/data-sheet/PESD2CANFD24V-T.pdf).
+**משדר־מקלט CAN:** ‏TCAN3413DR. פין 1 TXD→PB9 עם נגד משיכה 10 kΩ למעלה, 2 GND, ‏3 VCC→3V3, ‏4 RXD→PB8, ‏5 VIO→3V3, ‏6 CANL, ‏7 CANH, ‏8 STB→PA8 עם נגד משיכה 47 kΩ למעלה. יש למקם 100 nF ליד VCC ו־VIO ועוד 1 µF קיבול צבירה. איפוס משאיר את דרייבר האפיק במצב המתנה. יש להוסיף PESD2CANFD24V-T ליד המחבר, פינים 1/2 ל־CANH/CANL ופין 3 ל־GND. רק שני קצות הגזע כוללים סיומת 120 Ω. [נתוני TCAN3413](https://www.ti.com/lit/ds/symlink/tcan3413.pdf), [נתוני הגנת CAN](https://assets.nexperia.com/documents/data-sheet/PESD2CANFD24V-T.pdf).
 
 <a id="section-8"></a>
 
-## 8. Power distribution and fault coordination
+## 8. חלוקת הספק ותיאום הגנות
 
-### 8.1 A closed electrical interface
+### 8.1 ממשק חשמלי מוגדר וסגור
 
-The skin accepts **regulated 5 V**, not an unspecified robot battery. For one patch use an isolated current-limited bench supply initially set to 5.0 V/100 mA, increase only after checking startup. For eight nodes set a 1.5 A source limit upstream of the regional eFuse. For the 80-node test stand use an isolated regulated 5 V/10 A supply, protected terminals and a 10 A-rated central distribution assembly; do not run ten regions through a breadboard or one JST GH connector.
+העור מקבל **5 V מיוצבים**, ולא סוללת רובוט שמאפייניה אינם מוגדרים. למקטע יחיד יש להשתמש בתחילה בספק מעבדה מבודד ומוגבל זרם, המוגדר ל־5.0 V/100 mA, ולהגדיל רק לאחר בדיקת ההתנעה. לשמונה צמתים יש להגדיר מגבלת מקור של 1.5 A לפני ה־eFuse האזורי. למתקן ניסוי של 80 צמתים יש להשתמש בספק מבודד ומיוצב של 5 V/10 A, הדקים מוגנים ומכלול חלוקה מרכזי בדירוג 10 A; אין להעביר עשרה אזורים דרך מטריצה או מחבר JST GH יחיד.
 
-The production robot must supply 4.75–5.25 V, ≤100 mVpp ripple measured with a 20 MHz-limited probe at the distributor, and maintain each node's protected LDO input ≥3.8 V. Include a 2 V-to-0 V-to-5 V brownout sequence, motor regeneration and emergency power removal in E05. Raw 24/48 V connection is outside this interface. Selecting a converter without the robot battery's maximum charging and regenerative voltage would be false precision. The integration deliverable is a signed supply-interface record with actual input envelope, converter part, fuse, OVP behavior and E05 plots before connection to the robot.
+הרובוט בייצור חייב לספק 4.75–5.25 V, אדווה ≤100 mVpp הנמדדת ליד המפצל באמצעות גשוש המוגבל ל־20 MHz, ולשמור על כניסת ה־LDO המוגנת של כל צומת ≥3.8 V. יש לכלול ב־E05 רצף נפילת מתח מ־2 V ל־0 V ול־5 V, רגנרציה של מנועים וניתוק הספק בחירום. חיבור ישיר של 24/48 V נמצא מחוץ לממשק זה. בחירת ממיר בלי לדעת את מתח הטעינה והרגנרציה המרבי של סוללת הרובוט תהיה דיוק מדומה. תוצר השילוב הוא רשומת ממשק הספק חתומה עם מעטפת כניסה בפועל, דגם ממיר, נתיך, התנהגות OVP ותרשימי E05 לפני החיבור לרובוט.
 
-At the target 30 mA average, 80 patches draw 2.4 A/12 W before gateways. At 80 mA each, patches alone need 6.4 A/32 W; the source must survive that transient plus gateways and startup. Label average and peak separately. Sequentially enable regions at 50 ms intervals to avoid common inrush collapse. With gateways external to the skin supply, still include their weight and power in system accounting.
+ביעד של 30 mA בממוצע, 80 מקטעים צורכים 2.4 A/12 W לפני שערי התקשורת. ב־80 mA לכל אחד, המקטעים לבדם דורשים 6.4 A/32 W; המקור חייב לעמוד במעבר הזה בנוסף לשערים ולהתנעה. יש לסמן ממוצע ושיא בנפרד. יש להפעיל אזורים ברצף, במרווחי 50 ms, כדי למנוע קריסה משותפת עקב זרם התנעה. גם כאשר השערים מוזנים מחוץ להספק העור, יש לכלול את משקלם וצריכתם בחשבונאות המערכת.
 
-### 8.2 Region eFuse, ten copies for the example robot
+### 8.2 eFuse אזורי, עשרה עותקים לרובוט שבדוגמה
 
-Use **TPS259530DSGR**, the specific latch-off, active-high-enable, 5.7 V clamp variant. Pin 1 dVdt:180 nF to GND. Pin 2 EN:100 kΩ to IN and 39 kΩ to GND, plus manual/open-drain reset control. Pins 3/4 IN:5 V source with 10 µF +100 nF. Pin 5 OUT:regional trunk, 10 µF local. Pin 6 nFLT:10 kΩ pull-up to the supervisor's 3.3 V. Pin 7 ILM:2.05 kΩ 1% to GND. Pin 8 and exposed pad:GND with thermal vias. Nominal current limit about 1 A; nominal ramp about 21 ms. These are starting circuit values; E05 records the actual thresholds with tolerances. [TI TPS2595 family data](https://www.ti.com/lit/ds/symlink/tps2595.pdf).
+יש להשתמש ב־**TPS259530DSGR**, הגרסה המסוימת עם כיבוי ננעל, אפשור ב־HIGH והגבלת מתח של 5.7 V. פין 1 dVdt: ‏180 nF ל־GND. פין 2 EN: ‏100 kΩ ל־IN ו־39 kΩ ל־GND, בתוספת בקרת איפוס ידנית/יציאה פתוחה. פינים 3/4 IN: מקור 5 V עם 10 µF +100 nF. פין 5 OUT: הגזע האזורי, 10 µF מקומי. פין 6 nFLT: נגד משיכה 10 kΩ ל־3.3 V של יחידת הניטור. פין 7 ILM: ‏2.05 kΩ 1% ל־GND. פין 8 והמשטח החשוף: GND עם חורי מעבר תרמיים. מגבלת הזרם הנומינלית היא כ־1 A; העלייה הנומינלית כ־21 ms. אלה ערכי פתיחה למעגל; E05 מתעד את הספים בפועל עם סבולות. [נתוני משפחת TI TPS2595](https://www.ti.com/lit/ds/symlink/tps2595.pdf).
 
-Provide a keyed service-reset button and a fault LED on each regional distributor for the laboratory build; use a separate supervisory MCU only when remote restart is implemented and tested. A USB-CAN dongle does not magically provide eFuse-control GPIOs. Automatic restart is limited to one attempt after at least one second, followed by latch-off and an operator fault record. Never continuously pulse into a hard short.
+בבניית המעבדה יש לספק לחצן איפוס שירות מקודד ונורית תקלה בכל מפצל אזורי; להשתמש ב־MCU ניטור נפרד רק כאשר הפעלה מחדש מרחוק ממומשת ונבדקה. מתאם USB-CAN אינו מספק מעצמו GPIO לבקרת eFuse. הפעלה מחדש אוטומטית מוגבלת לניסיון אחד אחרי שנייה אחת לפחות, ואחריו כיבוי ננעל ורשומת תקלה למפעיל. לעולם אין לשלוח פולסי הפעלה ללא הפסקה לתוך קצר קשיח.
 
-### 8.3 Per-node switch and LDO
+### 8.3 מתג ו־LDO לכל צומת
 
-**TPS2553DBVR-1**, latch-off SOT-23-6: pin 1 IN from branch5 V, 1 µF +100 nF; pin 2 GND; pin 3 EN pulled up 100 kΩ to IN; pin 4 FAULT to PA9 with 10 kΩ pull-up 3V3; pin 5 ILIM200 kΩ1%; pin 6 OUT=`5V_NODE`, 4.7 µF. The nominal limit is approximately135 mA, with a substantial specified range around116–158 mA before resistor tolerance. A dead downstream MCU cannot reset its own latched supply; reset by removing branch power or cycling its region. [TPS2553-1 data](https://www.ti.com/lit/ds/symlink/tps2553.pdf).
+**TPS2553DBVR-1**, כיבוי ננעל, SOT-23-6: פין 1 IN מהזנת הענף 5 V, עם 1 µF +100 nF; פין 2 GND; פין 3 EN עם משיכה של 100 kΩ ל־IN; פין 4 FAULT ל־PA9 עם משיכה 10 kΩ ל־3V3; פין 5 ILIM עם 200 kΩ 1%; פין 6 OUT=`5V_NODE`, ‏4.7 µF. המגבלה הנומינלית היא כ־135 mA, עם טווח מוגדר משמעותי של כ־116–158 mA לפני סבולת הנגד. MCU כבוי אחרי המתג אינו יכול לאפס בעצמו את ההזנה שננעלה; האיפוס נעשה בהסרת מתח הענף או בכיבוי והדלקת האזור שלו. [נתוני TPS2553-1](https://www.ti.com/lit/ds/symlink/tps2553.pdf).
 
-**TPS7A2433DBVR**, SOT-23-5: pin 1 IN5V_NODE; pin 2 GND; pin 3 EN tied IN; pin 4 NC grounded as allowed for the fixed-output part; pin 5 OUT3V3. Use4.7 µF X7R at input/output with effective capacitance ≥1 µF at voltage/temperature. Its18 V input capability accommodates the regional clamp better than a5.5 V-max LDO. Reverse current is not assumed safe: do not power the output through UART/SWD while input is off. [TI TPS7A24 data](https://www.ti.com/lit/ds/symlink/tps7a24.pdf).
+**TPS7A2433DBVR**, ‏SOT-23-5: פין 1 IN ל־5V_NODE; פין 2 GND; פין 3 EN קשור ל־IN; פין 4 NC מוארק, כפי שמותר ברכיב בעל יציאה קבועה; פין 5 OUT ל־3V3. יש להשתמש ב־4.7 µF X7R בכניסה/יציאה, עם קיבול אפקטיבי ≥1 µF במתח ובטמפרטורה. יכולת הכניסה שלו, 18 V, מתאימה להגבלה האזורית טוב יותר מ־LDO בעל מתח מרבי של 5.5 V. אין להניח שזרם הפוך בטוח: אין להזין את היציאה דרך UART/SWD כאשר הכניסה כבויה. [נתוני TI TPS7A24](https://www.ti.com/lit/ds/symlink/tps7a24.pdf).
 
-TI's direct shop showed this LDO out of stock, while DigiKey showed stock and a1,000-piece price about$0.337 during this review. Retain the part; buy from an authorized channel and archive the actual order acknowledgment. Web inventory is not a supply agreement. [DigiKey orderable part](https://www.digikey.com/en/products/detail/texas-instruments/TPS7A2433DBVR/11502221).
+בחנות הישירה של TI ה־LDO הזה הוצג כחסר במלאי, בעוד שב־DigiKey הוצג מלאי ומחיר לכמות של 1,000 יחידות בסביבות $0.337 בזמן הסקירה. יש להשאיר את הרכיב; לקנות מערוץ מורשה ולשמור את אישור ההזמנה בפועל. מלאי באתר אינו הסכם אספקה. [רכיב להזמנה ב־DigiKey](https://www.digikey.com/en/products/detail/texas-instruments/TPS7A2433DBVR/11502221).
 
-Fault selectivity test: short one node after its limiter at the far end of a fully loaded eight-node trunk; require other seven nodes to remain above their valid rail and resume/retain valid reporting within 40 ms. Then short the trunk: the region must latch off, other regions must remain valid. Finally disconnect the common supply: all coverage becomes unavailable. Publish all three outcomes; do not claim node-level fault isolation for a trunk fault.
+בדיקת סלקטיביות תקלות: לקצר צומת אחד אחרי מגביל הזרם שלו, בקצה הרחוק של גזע שמונה צמתים המועמס במלואו; לדרוש ששבעת הצמתים האחרים יישארו מעל מתח הפעולה התקף שלהם ויחזרו/ימשיכו לדווח נתונים תקפים בתוך 40 ms. לאחר מכן לקצר את הגזע: האזור חייב להינעל כבוי והאזורים האחרים חייבים להישאר תקפים. לבסוף לנתק את המקור המשותף: כל הכיסוי נעשה לא זמין. יש לפרסם את שלוש התוצאות; אין לטעון לבידוד תקלות ברמת הצומת במקרה של תקלה בגזע.
 
 <a id="section-9"></a>
 
-## 9. Harness and connectors
+## 9. רתמה ומחברים
 
-Use a linear, approximately120 Ω CAN twisted pair, maximum 2 m trunk in this reference design and stubs≤50 mm. Choose continuous-flex cable from a catalog family rated for the actual bend/torsion application; a stationary patch lead can be ordinary flexible wire. At power-off expect about 60 Ω between CANH and CANL with exactly two120 Ω terminations. Measure the real waveform with all eight nodes and the chosen adapter.
+יש להשתמש בזוג CAN שזור ליניארי של כ־120 Ω, עם גזע של 2 m לכל היותר בתכנון ייחוס זה וענפים ≤50 mm. יש לבחור כבל לכיפוף מתמשך ממשפחת קטלוג המדורגת ליישום הכיפוף/פיתול בפועל; מוליך למקטע נייח יכול להיות חוט גמיש רגיל. כאשר ההספק כבוי, מצפים לכ־60 Ω בין CANH ל־CANL עם שתי סיומות של 120 Ω בדיוק. יש למדוד את צורת הגל האמיתית עם כל שמונת הצמתים והמתאם שנבחר.
 
-Keep motor return current out of the skin return. Measure ground shift between the furthest node and gateway under worst motor PWM/regeneration; project target≤0.25 V, while all transceiver common-mode limits must also remain satisfied. A scope ground clip must not create a new high-current return path. If the robot cannot provide this grounding environment, an isolated CAN/power interface becomes a priced redesign with its own EMC test; the four-wire nonisolated reference does not silently become suitable.
+יש למנוע מזרם החזרת המנועים לעבור בהחזרת העור. יש למדוד הסטת הארקה בין הצומת הרחוק ביותר לשער בתנאי PWM/רגנרציה הגרועים ביותר של המנועים; יעד הפרויקט ≤0.25 V, ובמקביל יש לעמוד בכל גבולות המצב המשותף של המשדר־מקלט. תנין הארקה של אוסצילוסקופ אינו יכול ליצור מסלול החזרה חדש בעל זרם גבוה. אם הרובוט אינו יכול לספק סביבת הארקה כזו, ממשק CAN/הספק מבודד הופך לתכנון מחדש מתומחר עם בדיקת EMC משלו; תכנון הייחוס הלא־מבודד בעל ארבעת החוטים אינו הופך בשתיקה למתאים.
 
-Use24 AWG for the regional power pair. A2 m outward/return loop is approximately0.336 Ω at 20°C, 0.376 Ω at 50°C before joints/connectors. At0.64 A its hot wire drop is about 0.24 V. Budget connector and splice resistance separately and measure the last node. Four conductors do not mean a single four-core cable of arbitrary impedance is acceptable.
+יש להשתמש ב־24 AWG לזוג ההספק האזורי. לולאת הלוך/חזור של 2 m היא כ־0.336 Ω ב־20°C ו־0.376 Ω ב־50°C לפני חיבורים ומחברים. ב־0.64 A נפילת המתח בחוט החם היא כ־0.24 V. יש לתקצב בנפרד את התנגדות המחברים והחיבורים ולמדוד בצומת האחרון. ארבעה מוליכים אינם אומרים שכבל ארבע־גידי יחיד בעל עכבה שרירותית מתאים.
 
-Patch connector: **JST BM04B-GHS-TBT(LF)(SN)** header, **GHR-04 V-S** housing, **SSHL-002T-P0.2** contacts. Pin1 +5 V, 2 GND, 3 CANH, 4 CANL. The listed contact accepts26–30 AWG, so transition from the 24 AWG trunk to short26 AWG branches with qualified splices/distributor PCB. Never crimp24 AWG into that contact. Label pin 1 on both views and provide a red power conductor. Power-off service only; ordinary GH does not provide a guaranteed ground-first hot-swap sequence. [JST GH series](https://www.jst-mfg.com/product/pdf/eng/eGH.pdf).
+מחבר המקטע: ראש **JST BM04B-GHS-TBT(LF)(SN)**, בית **GHR-04 V-S**, מגעים **SSHL-002T-P0.2**. פין 1 הוא +5 V, ‏2 GND, ‏3 CANH, ‏4 CANL. המגע הרשום מתאים ל־26–30 AWG, לכן יש לעבור מגזע 24 AWG לענפי 26 AWG קצרים באמצעות חיבורים שאומתו או PCB מפצל. לעולם אין ללחוץ 24 AWG לתוך המגע הזה. יש לסמן פין 1 בשתי תצוגות המחבר ולהשתמש במוליך הספק אדום. שירות רק כשההספק כבוי; GH רגיל אינו מבטיח רצף החלפה חמה שבו ההארקה מתחברת ראשונה. [סדרת JST GH](https://www.jst-mfg.com/product/pdf/eng/eGH.pdf).
 
-Sensor tail connector: **Hirose FH12-40S-0.5SH(55)**, 40 contacts, 0.5 mm pitch, 0.3 mm finished stiffened tail and bottom-contact orientation. Pins1–28=SNS0–27; 29/30 reserved NC; 31=SENS_GND; 32=THERM_GND; 33=WIT_OUT; 34=WIT_IN; 35–40 additional ground returns. The two NTC analog signals use separate `T1_EXT `, `T2_EXT `, `THERM_GND` solder pads on the thermal flex; do not pretend they connect through reserved tail contacts. One end-of-line resistor remains at each cell, not in this connector. The connector's limited mating rating makes frequent film swaps inappropriate; service the cassette with a captive controller or select a separately qualified higher-cycle connector when its rated life is insufficient. [Hirose FH12 specification](https://www.hirose.com/en/product/series/FH12).
+מחבר זנב החיישן: **Hirose FH12-40S-0.5SH(55)**, ‏40 מגעים, פסיעה 0.5 mm, זנב מחוזק גמור בעובי 0.3 mm וכיוון מגע תחתון. פינים 1–28=SNS0–27; ‏29/30 שמורים NC; ‏31=SENS_GND; ‏32=THERM_GND; ‏33=WIT_OUT; ‏34=WIT_IN; ‏35–40 החזרות הארקה נוספות. שני אותות ה־NTC האנלוגיים משתמשים במשטחי הלחמה נפרדים `T1_EXT `, ‏`T2_EXT `, ‏`THERM_GND` על המעגל התרמי הגמיש; אין להציג כאילו הם מתחברים דרך מגעי הזנב השמורים. נגד סוף־קו אחד נשאר בכל תא, ולא במחבר הזה. דירוג מחזורי החיבור המוגבל של המחבר הופך החלפות יריעה תכופות לבלתי מתאימות; יש לטפל בקסטה עם בקר שנשאר מחובר אליה, או לבחור מחבר בעל מספר מחזורים גבוה יותר שאומת בנפרד כאשר אורך החיים המדורג אינו מספיק. [מפרט Hirose FH12](https://www.hirose.com/en/product/series/FH12).
 
-Manufacture a passive region distributor with keyed branches, trunk continuity independent of branches, test pads for H/L/GND/5 V, and termination selection only at physical ends. For a field service event: disable region, verify zero volts, replace cassette, inspect tail/strain relief, enable region, bind sheet serial/calibration, run one known-force check at each cell, and return coverage only after identity/time synchronization.
+יש לייצר מפצל אזורי פסיבי עם ענפים מקודדים, רציפות גזע שאינה תלויה בענפים, משטחי בדיקה ל־H/L/GND/5 V ובחירת סיומת רק בקצוות הפיזיים. באירוע שירות בשטח: להשבית את האזור, לוודא אפס וולט, להחליף קסטה, לבדוק זנב ושחרור מאמץ, להפעיל את האזור, לקשור מספר סידורי של היריעה וכיול, לבצע בדיקת כוח ידוע אחת בכל תא, ולהחזיר את הכיסוי לפעולה רק לאחר סנכרון זהות וזמן.
 
 <a id="section-10"></a>
 
-## 10. Embedded firmware work specification
+## 10. מפרט העבודה לקושחה המשובצת
 
-### 10.1 Reproducible toolchain and acquisition
+### 10.1 שרשרת כלים ניתנת לשחזור ורכישת נתונים
 
-Use STM32CubeIDE/STM32CubeG0 HAL or LL with the exact device/package selected; record toolchain version, Cube package version, `.ioc`, linker script and Git commit in the build manifest. The reference code delivered with this plan is host software, not a flashable board firmware image. Embedded implementation is a defined phase with the following tasks and acceptance tests, not an assumed included cost.
+יש להשתמש ב־STM32CubeIDE/STM32CubeG0 HAL או LL עם בחירה מדויקת של ההתקן והמארז; לתעד במניפסט הבנייה את גרסת שרשרת הכלים, גרסת חבילת Cube, קובץ `.ioc`, סקריפט המקשר ו־Git commit. קוד הייחוס שנמסר עם התוכנית הוא תוכנת מארח, ולא תמונת קושחה הניתנת לצריבה בכרטיס. מימוש משובץ הוא שלב מוגדר עם המשימות ובדיקות הקבלה שלהלן, ולא עלות שמניחים שנכללה.
 
-1. Generate the pin/clock configuration from section7; export pin and peripheral reports and diff them against the controlled table.
-2. Configure ADC12-bit, forward fixed sequence **0, 1, 7, 9, 13(VREFINT), 15, 16** using `ADC_SCAN_SEQ_FIXED`, HSI16/2=8 MHz ADC clock,160.5-cycle sample time, 2× hardware oversampling/right shift1. Calibrate ADC at startup while muxes are disabled.
-3. Enable the VREFINT internal path and allow its startup delay before scanning. Use a static seven-element DMA buffer. At each address0..7: set all muxes disabled, change address, enable, wait250 µs using a hardware timer, acquire the seven-channel sequence, copy the completed results. Never let an aborted DMA write into a returned stack frame.
-4. The seven oversampled conversions take approximately302.75 µs/address; eight addresses plus settling take 4,422 µs before software overhead. Require complete acquisition≤5 ms in normal operation. Deadline is 10 ms, not “as fast as possible.”
-5. At S7 compare the four distinct references. Clear validity for the corresponding bank on failure. DMA indices0–3 are the four banks, index4 is VREFINT, indices5/6 are the two NTCs. Map touch data as `cell[7*bank+address]`. Calculate VREF+ from VREFINT using the ST factory calibration; require3.1–3.45 V and inactive power-FAULT for the power-valid flag. Internal reference channel 13 and fixed-forward sequencing are documented in the [ST ADC LL driver](https://raw.githubusercontent.com/STMicroelectronics/stm32g0xx-hal-driver/master/Inc/stm32g0xx_ll_adc.h) and [HAL definitions](https://raw.githubusercontent.com/STMicroelectronics/stm32g0xx-hal-driver/master/Inc/stm32g0xx_hal_adc.h).
-6. Average temperature samples over the frame; update temperature output every 100 ms using the latest real sample. Stamp touch data at **start of scan**, so all reported sites are conservatively no newer than the timestamp; the within-frame skew is up to5 ms and belongs in the latency budget.
-7. After processing, apply the section28 scheduler. Keep one immutable in-flight snapshot; impose a5 ms TX deadline and explicitly resolve completion/cancellation before reusing its buffer. Update the send-on-delta baseline only after successful TX completion. A failed send increments a diagnostic counter; retry the newest complete state. An unbounded transmit queue is prohibited.
-8. Feed the independent watchdog only after successful acquisition and scheduler progress; set timeout100 ms initially and verify actual oscillator tolerance. ADC timeout400 µs/address triggers abort/reinitialize once; repeated failure invalidates acquisition and allows watchdog recovery. Log reset cause before clearing it.
+1. ליצור את תצורת הפינים והשעון מסעיף 7; לייצא דוחות פינים וציוד היקפי ולהשוות אותם לטבלה המבוקרת.
+2. להגדיר ADC של 12 סיביות, רצף קבוע קדימה **0, 1, 7, 9, 13(VREFINT), 15, 16** באמצעות `ADC_SCAN_SEQ_FIXED`, שעון ADC של HSI16/2=8 MHz, זמן דגימה של 160.5 מחזורים, דגימת יתר בחומרה 2× והזזה ימינה ב־1. לכייל ADC באתחול כאשר המרבבים מושבתים.
+3. להפעיל את המסלול הפנימי של VREFINT ולהמתין את זמן ההתנעה שלו לפני הסריקה. להשתמש במאגר DMA סטטי בן שבעה איברים. בכל כתובת 0..7: להשבית את כל המרבבים, לשנות כתובת, להפעיל, להמתין 250 µs באמצעות טיימר חומרה, לרכוש את רצף שבעת הערוצים ולהעתיק את התוצאות שהושלמו. לעולם אין לאפשר ל־DMA שבוטל לכתוב למסגרת מחסנית שכבר חזרה.
+4. שבע ההמרות עם דגימת היתר אורכות כ־302.75 µs לכתובת; שמונה כתובות עם התייצבות אורכות 4,422 µs לפני תקורת תוכנה. יש לדרוש רכישה מלאה ≤5 ms בפעולה רגילה. המועד האחרון הוא 10 ms, ולא ״מהר ככל האפשר״.
+5. ב־S7 להשוות את ארבע רמות הייחוס השונות. בכשל יש לנקות את תקפות הקבוצה המתאימה. אינדקסי DMA ‏0–3 הם ארבע הקבוצות, אינדקס 4 הוא VREFINT ואינדקסים 5/6 הם שני ה־NTC. יש למפות נתוני מגע כ־`cell[7*bank+address]`. לחשב VREF+ מתוך VREFINT באמצעות כיול המפעל של ST; לדגל תקפות ההספק נדרשים 3.1–3.45 V ואות power-FAULT שאינו פעיל. ערוץ ייחוס פנימי 13 והרצף הקבוע קדימה מתועדים ב[דרייבר ST ADC LL](https://raw.githubusercontent.com/STMicroelectronics/stm32g0xx-hal-driver/master/Inc/stm32g0xx_ll_adc.h) וב[הגדרות HAL](https://raw.githubusercontent.com/STMicroelectronics/stm32g0xx-hal-driver/master/Inc/stm32g0xx_hal_adc.h).
+6. למצע דגימות טמפרטורה לאורך המסגרת; לעדכן פלט טמפרטורה כל 100 ms באמצעות הדגימה האמיתית האחרונה. להחתים נתוני מגע ב־**תחילת הסריקה**, כך שכל האתרים המדווחים נחשבים באופן שמרני ללא־חדשים יותר מחותמת הזמן; הפער בתוך המסגרת מגיע עד 5 ms ונכלל בתקציב ההשהיה.
+7. לאחר העיבוד, להפעיל את המתזמן מסעיף 28. לשמור תמונת מצב בלתי משתנה אחת במהלך שידור; לאכוף מועד TX של 5 ms ולהכריע במפורש אם השידור הושלם או בוטל לפני שימוש חוזר במאגר שלו. לעדכן את בסיס send-on-delta רק לאחר השלמת TX מוצלחת. כשל בשידור מגדיל מונה אבחון; לנסות שוב את המצב המלא החדש ביותר. תור שידור שאינו מוגבל אסור.
+8. להזין את כלב השמירה העצמאי רק אחרי רכישה מוצלחת והתקדמות המתזמן; לקבוע בתחילה timeout של 100 ms ולאמת את סבולת המתנד בפועל. timeout של ADC של 400 µs לכתובת מפעיל ביטול ואתחול מחדש פעם אחת; כשל חוזר פוסל רכישה ומאפשר התאוששות באמצעות כלב השמירה. לתעד סיבת איפוס לפני ניקויה.
 
-Use TIM2 at 1 MHz for 32-bit microsecond timing and a monotonic32-bit millisecond uptime derived from it/software overflow extension; do not depend on a Cortex-M0+ DWT counter. Verify timer overflow and wrap logic. FDCAN interrupts have higher priority than logging; DMA completion higher than nonessential diagnostics. UART logging cannot block acquisition.
+יש להשתמש ב־TIM2 בתדר 1 MHz לתזמון מיקרו־שניות של 32 סיביות ובזמן פעילות מונוטוני של 32 סיביות במילישניות הנגזר ממנו/מהרחבת גלישה בתוכנה; אין להסתמך על מונה DWT של Cortex-M0+. יש לאמת גלישת טיימר ולוגיקת חזרה לאפס. פסיקות FDCAN בעדיפות גבוהה מרישום יומן; השלמת DMA בעדיפות גבוהה מאבחון שאינו חיוני. רישום UART אינו יכול לחסום רכישה.
 
-### 10.2 Contact processing and boot behavior
+### 10.2 עיבוד מגע והתנהגות אתחול
 
-Load the stored unloaded baseline and calibration matched to **controller UID + sheet serial + cover revision**. Do not learn “zero” automatically at boot: the robot may already be touching an object. Missing or mismatched calibration means raw bench data only and invalid commercial intensity output.
+יש לטעון את קו הבסיס ללא עומס ואת הכיול השמורים, התואמים ל־**UID של הבקר + מספר סידורי של היריעה + מהדורת הכיסוי**. אין ללמוד ״אפס״ אוטומטית באתחול: ייתכן שהרובוט כבר נוגע בחפץ. כיול חסר או לא תואם מאפשר רק נתוני מעבדה גולמיים ופלט עוצמה מסחרי לא תקף.
 
-For each site, convert ADC to an ordinal intensity using a monotonic piecewise table from section13. Assert contact after two frames above the calibrated on threshold; release after three frames below the lower off threshold. Choose on/off from the measured noise and 0.5 N data, not arbitrary universal ADC values: on must be ≥6× unloaded standard deviation and below the fifth-percentile0.5 N response; off initially0.6× on. If those ranges overlap, the material/mechanics fails M01 rather than being “fixed” by a misleading threshold.
+לכל אתר יש להמיר ADC לעוצמה סדרית באמצעות טבלה מונוטונית מקטעית מסעיף 13. יש להפעיל מצב מגע אחרי שתי מסגרות מעל סף ההפעלה המכויל; לשחרר אחרי שלוש מסגרות מתחת לסף הכיבוי הנמוך יותר. יש לבחור ספי הפעלה/כיבוי מתוך הרעש שנמדד ונתוני 0.5 N, ולא מתוך ערכי ADC אוניברסליים שרירותיים: סף ההפעלה חייב להיות ≥6× סטיית התקן ללא עומס ומתחת לאחוזון החמישי של תגובת 0.5 N; סף הכיבוי יהיה בתחילה 0.6× סף ההפעלה. אם הטווחים חופפים, החומר/המכניקה נכשלו ב־M01, במקום ״לתקן״ זאת באמצעות סף מטעה.
 
-Baseline adjustment is allowed only during a supervised unloaded calibration operation. A slow filter that adapts away a sustained hand/object contact is not acceptable. Report raw drift and overload flags independently of smoothed intensity. Temperature compensation is enabled only after cross-temperature calibration improves held-out data; do not fit a high-order curve to one sample and claim correction.
+התאמת קו הבסיס מותרת רק בפעולת כיול מפוקחת ללא עומס. מסנן איטי שמעלים בהסתגלות מגע מתמשך של יד/חפץ אינו קביל. יש לדווח על סחיפה גולמית ודגלי עומס יתר בנפרד מעוצמה מוחלקת. פיצוי טמפרטורה מופעל רק לאחר שכיול בין טמפרטורות משפר נתוני אימות שלא שימשו להתאמה; אין להתאים עקום מסדר גבוה לדוגמה אחת ולטעון לתיקון.
 
-### 10.3 Persistent identity and interrupted writes
+### 10.3 זהות מתמידה וכתיבות שנקטעו
 
-Commission node IDs1..8 one node at a time using the physical service UART/SWD. Read the STM3296-bit UID, assign physical body location, record sensor serial and calibration hash. Duplicate IDs on the same bus are a commissioning fault; identical CAN identifiers do not isolate devices with differing data.
+יש להקצות מזהי צומת 1..8, צומת אחד בכל פעם, באמצעות UART/SWD פיזי לשירות. יש לקרוא את UID בן 96 הסיביות של STM32, להקצות מיקום פיזי בגוף ולתעד מספר סידורי של החיישן וגיבוב הכיול. מזהים כפולים באותו אפיק הם תקלת הכנסה לשירות; מזהי CAN זהים אינם מבודדים התקנים בעלי נתונים שונים.
 
-Maintain a monotonically increasing32-bit **boot epoch** in a two-page flash journal. Reserve the last two2 KiB pages in the linker for the boot journal and two additional2 KiB pages for alternating calibration/configuration images; verify page size and flash geometry for this exact part in RM0444 before generating addresses. Each journal record is 32 bytes: magic32, format32, epoch32, complement32, CRC32, reserved32, and a final64-bit commit marker. Program the commit doubleword last, read back and verify before enabling CAN.
+יש לנהל **מספר דור אתחול** עולה מונוטונית של 32 סיביות ביומן flash בן שני דפים. יש לשמור במקשר את שני דפי 2 KiB האחרונים ליומן האתחול ושני דפי 2 KiB נוספים לתמונות כיול/תצורה מתחלפות; יש לאמת גודל דף וגאומטריית flash לרכיב המדויק ב־RM0444 לפני יצירת כתובות. כל רשומת יומן היא 32 בתים: magic32, format32, epoch32, complement32, CRC32, reserved32 וסמן commit סופי של 64 סיביות. יש לתכנת את המילה הכפולה של ה־commit אחרונה, לקרוא בחזרה ולאמת לפני אפשור CAN.
 
-There are64 records per 2 KiB page. Append to unused erased records; on rollover erase the other page, write/verify epoch+1 there, then retire the old page. At reset use the highest valid committed epoch and reserve the next before announcing. A torn record is skipped and never reused in place. Empty factory storage starts at 1; conflicting or corrupted committed records require service and keep the bus in standby. Epoch wrap is a service fault, not permission to reuse0. This journal distributes erase wear; qualify100 random power cuts including rollover under S02. Do not write flash on each100 Hz sample.
+יש 64 רשומות בכל דף של 2 KiB. יש להוסיף לרשומות מחוקות שטרם נוצלו; במעבר לדף הבא למחוק את הדף האחר, לכתוב ולאמת בו epoch+1, ורק אז להוציא את הדף הישן משימוש. באיפוס יש להשתמש בדור הגבוה ביותר שרשומתו תקפה ומאושרת, ולשמור את הדור הבא לפני ההכרזה. מדלגים על רשומה שנכתבה חלקית, ולעולם אין להשתמש שוב באותו מקום. אחסון ריק מהמפעל מתחיל ב־1; רשומות commit סותרות או פגומות מחייבות שירות ומשאירות את האפיק בהמתנה. גלישת דור היא תקלת שירות, לא הרשאה להשתמש שוב ב־0. היומן מפזר שחיקת מחיקה; יש לאמת 100 ניתוקי הספק אקראיים, כולל מעבר דף, במסגרת S02. אין לכתוב ל־flash בכל דגימה של 100 Hz.
 
-Calibration images include format, length, generation, controller UID, sheet serial, cover revision, tables, thresholds, firmware compatibility, CRC32 and final commit marker. A failed update retains the previous valid image. CAN allows read-only service commands initially. Calibration/ID writes require a physical service condition and power stability. SWD is the recovery route; wireless updates and cryptographic firmware delivery are outside the first product, so keep the CAN skin on a trusted internal network.
+תמונות כיול כוללות פורמט, אורך, דור, UID בקר, מספר סידורי של יריעה, מהדורת כיסוי, טבלאות, ספים, תאימות קושחה, CRC32 וסמן commit סופי. עדכון שנכשל משמר את התמונה התקפה הקודמת. בתחילה CAN מאפשר פקודות שירות לקריאה בלבד. כתיבת כיול/מזהה מחייבת מצב שירות פיזי ויציבות הספק. SWD הוא מסלול השחזור; עדכונים אלחוטיים והפצת קושחה קריפטוגרפית אינם חלק מהמוצר הראשון, ולכן יש להשאיר את CAN של העור ברשת פנימית מהימנה.
 
 <a id="section-11"></a>
 
-## 11. CAN protocol, freshness and software interface
+## 11. פרוטוקול CAN, עדכניות הנתונים וממשק התוכנה
 
-### 11.1 Capacity and topology
+### 11.1 קיבולת וטופולוגיה
 
-Use standard 11-bit identifiers, CAN FD with bit-rate switching, 1 Mbit/s arbitration and 2 Mbit/s data, ≤8 nodes per region,100 Hz/node. IDs are **added** to node 1..8: sync request `0x100+node`, data `0x200+node`, announce `0x300+node`, sync reply `0x380+node`. All multibyte application fields are little-endian. Disable remote frames. Use FD DLC 15 for 64-byte data and DLC 13 for 32-byte announce/reply; 16-byte requests use DLC 10.
+יש להשתמש במזהים תקניים של 11 סיביות, CAN FD עם החלפת קצב סיביות, קצב בוררות 1 Mbit/s וקצב נתונים 2 Mbit/s, ‏≤8 צמתים לאזור, 100 Hz לצומת. המזהים **מתווספים** למספר הצומת 1..8: בקשת סנכרון `0x100+node`, נתונים `0x200+node`, הכרזה `0x300+node`, תשובת סנכרון `0x380+node`. כל שדות היישום מרובי הבתים הם little-endian. יש להשבית מסגרות מרוחקות. למסגרת נתונים של 64 בתים יש להשתמש ב־FD DLC 15, ולהכרזה/תשובה של 32 בתים ב־DLC 13; בקשות של 16 בתים משתמשות ב־DLC 10.
 
-The executable engineering model budgets80 nominal-rate bits plus 710 fast-rate bits per 64-byte frame: **435 µs**, a deliberately padded no-error envelope, not a normative bit-exact CAN simulator. Eight nodes at 100 Hz consume about 34.8% by that bound; adding20 diagnostic/control frames/s at the same conservative size gives 35.67%. Require measured bus use<50% in normal operation, and latency target at 60% injected traffic. Errors/retries are not free bandwidth. At persistent bus errors, invalidate coverage instead of promising bounded delivery.
+המודל ההנדסי הניתן להרצה מקצה 80 סיביות בקצב הנומינלי ועוד 710 סיביות בקצב המהיר לכל מסגרת של 64 בתים: **435 µs**, מעטפת ללא שגיאות הכוללת מרווח מכוון, ולא סימולטור CAN תקני מדויק ברמת הסיבית. שמונה צמתים ב־100 Hz צורכים כ־34.8% לפי הגבול הזה; תוספת של 20 מסגרות אבחון/בקרה בשנייה באותו גודל שמרני מביאה ל־35.67%. יש לדרוש ניצולת אפיק מדודה <50% בפעולה רגילה ועמידה ביעד ההשהיה ב־60% תעבורה מוזרקת. שגיאות וניסיונות חוזרים צורכים רוחב פס. כאשר יש שגיאות אפיק מתמשכות, יש לפסול כיסוי במקום להבטיח מסירה חסומה בזמן.
 
-At80 nodes payload is 4.096 Mbit/s aggregate before USB framing, distributed across ten buses. Test all gateways on the actual hub/controller with CPU stress and logging enabled. USB topology and driver buffering matter more than its headline link speed. Lower USB speed does not excuse accumulating old data.
+ב־80 צמתים המטען השימושי המצטבר הוא 4.096 Mbit/s לפני מסגור USB, מחולק לעשרה אפיקים. יש לבדוק את כל השערים על הרכזת/בקר בפועל, עם עומס CPU ורישום יומן פעילים. טופולוגיית USB ואגירה בדרייבר חשובות יותר ממהירות הקישור המוצהרת. מהירות USB נמוכה יותר אינה תירוץ לצבירת נתונים ישנים.
 
-### 11.2 Exact version-2 data frame, 64 bytes
+### 11.2 מסגרת הנתונים המדויקת בגרסה 2, 64 בתים
 
-| Offset | Type | Meaning |
+| היסט | טיפוס | משמעות |
 |---:|---|---|
-|0|u8|Version=2|
-|1|u8|Flags bits 0 acquisition complete, 1 valid calibration, 2 witness pass, 3 power valid; bits 4–7 zero|
-|2|u16|Sequence increments every 10 ms acquisition, including intentionally suppressed and dropped frames; wraps modulo 65536. A gap is not alone proof of network loss in hybrid mode|
-|4|u32|Persistent boot epoch|
-|8|u32|Monotonic uptime in ms at start of acquisition; wraps modulo 2^32|
-|12|u32|Configuration/calibration CRC32|
-|16–43|28×u8|Cell intensities in row-major physical order, 0–254; 255 invalid|
-|44, 46|2×i16|Temperature centi-degrees C; −32768 invalid|
-|48|u32|Open mask, low 28 bits only|
-|52|u32|Short/overload `CONTACT_OR_FAULT` mask, low 28 bits only|
-|56|u32|Valid touch mask, low 28 bits only; open channels must be invalid|
-|60|u16|Temperature age in ms, 65535 if unavailable|
-|62|u16|Diagnostics bits 0–3 bank-reference bad, 4/5 thermal1/2 bad, 6 previous transmit/scan frame dropped, 7 persistent-storage fault; 8–15 zero|
+|0|u8|גרסה=2|
+|1|u8|דגלים: סיבית 0 רכישה הושלמה, 1 כיול תקף, 2 בדיקת שלמות עברה, 3 הספק תקף; סיביות 4–7 אפס|
+|2|u16|מונה רצף גדל בכל רכישה של 10 ms, כולל מסגרות שהושתקו במכוון ונשמטו; חוזר לאפס מודולו 65536. פער לבדו אינו הוכחה לאובדן ברשת במצב משולב|
+|4|u32|דור אתחול מתמיד|
+|8|u32|זמן פעילות מונוטוני במילישניות בתחילת הרכישה; חוזר לאפס מודולו 2^32|
+|12|u32|CRC32 של תצורה/כיול|
+|16–43|28×u8|עוצמות תאים בסדר פיזי שורה־אחר־שורה, 0–254; ‏255 לא תקף|
+|44, 46|2×i16|טמפרטורה במאיות מעלה C; ‏−32768 לא תקף|
+|48|u32|מסכת נתק, 28 הסיביות הנמוכות בלבד|
+|52|u32|מסכת קצר/עומס יתר `CONTACT_OR_FAULT`, ‏28 הסיביות הנמוכות בלבד|
+|56|u32|מסכת מגע תקף, 28 הסיביות הנמוכות בלבד; ערוצים מנותקים חייבים להיות לא תקפים|
+|60|u16|גיל טמפרטורה במילישניות, 65535 אם לא זמינה|
+|62|u16|סיביות אבחון 0–3 ייחוס קבוצה לא תקין, 4/5 ערוץ תרמי 1/2 לא תקין, 6 מסגרת שידור/סריקה קודמת נשמטה, 7 תקלת אחסון מתמיד; 8–15 אפס|
 
-Valid data requires flags 0x0F, matching identity/boot/config and a valid time handshake. A bank fault clears its seven validity bits. Overload may remain valid as a saturated contact indication, with the ambiguity flag. It must not be rendered as “no contact.” The delivered Python codec rejects inconsistent validity/sentinel combinations and reserved bits.
+נתונים תקפים מחייבים דגלים 0x0F, התאמה בזהות/אתחול/תצורה ולחיצת יד תקפה לזמן. תקלה בקבוצה מנקה את שבע סיביות התקפות שלה. עומס יתר יכול להישאר תקף כאינדיקציה למגע רווי, עם דגל אי־הוודאות. אסור להציגו כ״אין מגע״. מקודד/מפענח Python שנמסר דוחה שילובים סותרים של תקפות/ערך סימון וסיביות שמורות.
 
-### 11.3 Identity and time handshake
+### 11.3 לחיצת יד לזהות ולזמן
 
-Announcement 32 bytes: version u8=2, kind u8=0xA1, node u16, UID12 bytes, boot u32, configCRC u32, capabilities u32=7, scan-period-ms u16=10, reserved u16=0. Send at boot and once/second. Capability 7 means28 touch, 2 thermal and this freshness protocol. Host binds UID to the commissioned physical location; CAN ID alone is not identity.
+הכרזה של 32 בתים: version u8=2, ‏kind u8=0xA1, ‏node u16, ‏UID באורך 12 בתים, boot u32, ‏configCRC u32, ‏capabilities u32=7, ‏scan-period-ms u16=10, ‏reserved u16=0. יש לשלוח באתחול ופעם בשנייה. capability 7 פירושה 28 ערוצי מגע, 2 ערוצים תרמיים ופרוטוקול עדכניות זה. המארח קושר UID למיקום הפיזי שנקבע בהכנסה לשירות; מזהה CAN לבדו אינו זהות.
 
-Sync request 16 bytes: version 2, kind 0x51, node u16, random nonce u64, expected boot u32. Reply 32 bytes: version 2, kind 0x52, node u16, same nonce u64, boot u32, node request-receive uptime-ms u32, node reply-enqueue uptime-ms u32, configCRC u32, reserved u32=0. Capture receive time when the frame is removed from the MCU RX FIFO, and enqueue time immediately before replying. Queueing increases the observed round-trip and therefore the uncertainty; it must not be hidden by a fabricated timestamp.
+בקשת סנכרון של 16 בתים: version 2, ‏kind 0x51, ‏node u16, ‏nonce אקראי u64, ‏expected boot u32. תשובה של 32 בתים: version 2, ‏kind 0x52, ‏node u16, אותו nonce u64, ‏boot u32, זמן פעילות הצומת במילישניות בעת קבלת הבקשה u32, זמן פעילות הצומת במילישניות בעת הכנסת התשובה לתור u32, ‏configCRC u32, ‏reserved u32=0. יש ללכוד את זמן הקבלה כשהמסגרת מוצאת מ־RX FIFO של ה־MCU, ואת זמן ההכנסה לתור מיד לפני התשובה. ההמתנה בתור מגדילה את זמן ההלוך־חזור הנצפה ולכן את אי־הוודאות; אין להסתיר אותה באמצעות חותמת זמן מומצאת.
 
-Host sends a request immediately after a new announcement and every 2 s thereafter, staggered across nodes. Require host round-trip≤12 ms; handshake expires after 2.5 s. Using host monotonic send/receive times and the node's two timestamps, bound the offset and acquisition age, including 1 ms quantization and 100 ppm relative drift. Reject any data whose **oldest possible acquisition age exceeds 40 ms**, or that is inconsistent with the future-time bound. The source timestamp is essential: kernel receive timestamps alone cannot reveal time spent in USB adapter firmware queues.
+המארח שולח בקשה מיד אחרי הכרזה חדשה וכל 2 s לאחר מכן, בהזזה בין הצמתים. נדרש זמן הלוך־חזור במארח ≤12 ms; תוקף לחיצת היד פג לאחר 2.5 s. באמצעות זמני השליחה/קבלה המונוטוניים של המארח ושתי חותמות הזמן של הצומת, יש לחסום את היסט הזמן וגיל הרכישה, כולל קוונטיזציה של 1 ms וסחיפה יחסית של 100 ppm. יש לדחות כל נתון ש־**גיל הרכישה המוקדם ביותר האפשרי שלו עולה על 40 ms**, או שאינו תואם לגבול הזמן העתידי. חותמת זמן המקור חיונית: חותמות קבלה של הליבה לבדן אינן חושפות זמן המתנה בתורים בקושחת מתאם USB.
 
-Do not accept a changed boot epoch from data alone. Require a matching announcement and fresh nonce handshake. Reject duplicates, reversed sequence numbers, nonadvancing capture time, bad configuration, malformed masks and uncommissioned nodes. Use modulo differences for sequence/uptime wrap. Host queue overflow or CAN error frames invalidate the region and require a new synchronization. CRC32 is corruption detection, not authentication.
+אין לקבל שינוי בדור האתחול מתוך נתונים בלבד. נדרשות הכרזה תואמת ולחיצת יד חדשה עם nonce. יש לדחות כפילויות, מספרי רצף בסדר הפוך, זמן רכישה שאינו מתקדם, תצורה שגויה, מסכות פגומות וצמתים שלא הוכנסו לשירות. יש להשתמש בהפרשים מודולריים לגלישת רצף/זמן פעילות. גלישת תור במארח או מסגרות שגיאה של CAN פוסלות את האזור ומחייבות סנכרון חדש. CRC32 הוא זיהוי שיבוש, לא אימות זהות קריפטוגרפי.
 
-### 11.4 Gateway decision and procurement limit
+### 11.4 החלטת שער התקשורת ומגבלת הרכש
 
-For the isolated bench reference use **PEAK PCAN-USB FD, IPEH-004022**, one port per region. Its manufacturer specifies CAN FD, USB-A and galvanic isolation; the interface alone does not isolate every skin power/ground path. Use an isolated regulated skin supply and the exact connector pin mapping. The published D-sub pins are CANH 7, CANL 2 and ground 3/6; leave optional supply pin 1 disconnected. Select ISO CAN FD and verify BRS at 1 Mbit/s arbitration / 2 Mbit/s data. [Manufacturer specifications](https://www.peak-system.com/products/hardware/external-pc-interfaces/pcan-usb-fd/?L=1).
+למימוש הייחוס המבודד במעבדה יש להשתמש ב־**PEAK PCAN-USB FD, IPEH-004022**, יציאה אחת לכל אזור. היצרן מציין CAN FD, ‏USB-A ובידוד גלווני; הממשק לבדו אינו מבודד כל מסלול הספק/הארקה בעור. יש להשתמש בספק עור מבודד ומיוצב ובמיפוי פיני המחבר המדויק. פיני D-sub המפורסמים הם CANH ‏7, ‏CANL ‏2 והארקה 3/6; יש להשאיר את פין ההזנה האופציונלי 1 מנותק. יש לבחור ISO CAN FD ולאמת BRS בקצב בוררות של 1 Mbit/s וקצב נתונים של 2 Mbit/s. [מפרטי היצרן](https://www.peak-system.com/products/hardware/external-pc-interfaces/pcan-usb-fd/?L=1).
 
-The adapter allowance is $400 per region, not a supplier quotation. Add $67 per region for distribution/harness/box, a $300 reusable bench supply and $100 powered hub allowance when more than four regions are used. The small MCU boards still use quantity-1,000 manufacturing assumptions, so the model is not a retail eight-unit build quote. A non-isolated low-cost adapter is a different electrical scenario; it must not be silently substituted while retaining isolation claims.
+הקצאת העלות למתאם היא $400 לאזור, ולא הצעת מחיר מספק. יש להוסיף $67 לאזור עבור חלוקה/רתמה/מארז, $300 לספק מעבדה רב־פעמי והקצאה של $100 לרכזות מוזנות כאשר משתמשים ביותר מארבעה אזורים. כרטיסי ה־MCU הקטנים עדיין משתמשים בהנחות ייצור לכמות של 1,000, ולכן המודל אינו הצעת מחיר קמעונאית לבנייה של שמונה יחידות. מתאם זול שאינו מבודד הוא תרחיש חשמלי אחר; אין להחליפו בשתיקה תוך שמירה על טענות הבידוד.
 
-Production alternatives are a compliant bought adapter or a costed OEM gateway based on reviewed open hardware, with license obligations, USB/ESD/power design, stable driver and enclosure qualification. A custom dual-region board is a separate deliverable with a suggested$15k–40k engineering/test allowance, not a presumed$20 item. Do not commission it until measured savings exceed that NRE: at$350 saving/robot, a$25k program needs about 72 robots merely to recover NRE, before support and financing.
+חלופות לייצור הן מתאם קנוי העומד בדרישות או שער OEM מתומחר המבוסס על חומרה פתוחה שנבדקה, עם חובות רישוי, תכנון USB/ESD/הספק, דרייבר יציב והכשרת מארז. כרטיס מותאם לשני אזורים הוא תוצר נפרד עם הקצאה מוצעת של $15k–40k להנדסה/בדיקה, ולא פריט שמניחים שעולה $20. אין להזמינו עד שהחיסכון הנמדד עולה על עלות הפיתוח החד־פעמית: בחיסכון של $350 לרובוט, תוכנית של $25k דורשת כ־72 רובוטים רק כדי להחזיר NRE, לפני תמיכה ומימון.
 
-### 11.5 Delivered host software and integration contract
+### 11.5 תוכנת המארח שנמסרה וחוזה השילוב
 
-Files in `software` implement the protocol codec, identity/freshness gate and a Linux SocketCAN FD reference receiver. They use only Python's standard library. The example manifest deliberately has `commissioned:false`; replace placeholders with measured UID/configuration and body coordinates before enabling it.
+הקבצים ב־`software` מממשים את מקודד/מפענח הפרוטוקול, מנגנון הבקרה על זהות ועדכניות ומקלט ייחוס Linux SocketCAN FD. הם משתמשים רק בספרייה התקנית של Python. מניפסט הדוגמה כולל במכוון `commissioned:false`; יש להחליף ערכי מציין־מקום ב־UID/תצורה שנמדדו ובקואורדינטות גוף לפני הפעלתו.
+
+<div dir="ltr">
 
 ```sh
 cd ~/electronic_skin
@@ -415,519 +431,523 @@ python3 -m software --demo
 python3 -m software --config /absolute/path/to/commissioned_skin.json
 ```
 
-The receiver emits JSON samples, explicit rejected records and coverage transitions, including an absolute `valid_until_monotonic_s` deadline. Consumers on the same host must compare that deadline with their own monotonic clock, so blocking stdout or downstream queues cannot refresh old data. Remote hosts require an explicitly synchronized transport bridge; monotonic timestamps from different computers are not directly comparable. Temperature validity includes both its reported measurement age and the conservative transport/capture age. Run the multi-region observer under a supervisor with restart logging, stable adapter identity and a bounded downstream queue. A supervisor process must also mark coverage absent if the receiver exits; consumers must independently expire samples, not wait forever for a final invalid message. Do not automatically restart a bus-off interface repeatedly; inspect/clear the physical fault and re-enable under service policy.
+</div>
 
-The observer reports local frame labels, intensity, validity, diagnostics and bounded capture age. A future robot-specific controller must supply measured per-cell positions/normals and articulated transforms; these are not inferred by this generic software. Use joint encoder time to transform the link frame; excessive transform age invalidates world-coordinate localization but does not erase the local contact. Skin messages initially advise the existing motion controller. No direct torque command or safety-stop authority is added merely because CAN data are available.
+המקלט מפיק דגימות JSON, רשומות דחייה מפורשות ומעברי כיסוי, כולל מועד תפוגה מוחלט `valid_until_monotonic_s`. צרכנים באותו מארח חייבים להשוות את המועד הזה לשעון המונוטוני שלהם, כך שחסימת stdout או תורים בהמשך השרשרת לא יהפכו נתונים ישנים לעדכניים. מארחים מרוחקים מחייבים גשר תעבורה המסונכרן במפורש; חותמות זמן מונוטוניות ממחשבים שונים אינן ניתנות להשוואה ישירה. תקפות הטמפרטורה כוללת הן את גיל המדידה המדווח שלה והן את גיל התעבורה/הרכישה השמרני. יש להריץ את רכיב הניטור הרב־אזורי תחת מנהל תהליכים עם תיעוד הפעלות מחדש, זהות מתאם יציבה ותור מוגבל בהמשך השרשרת. תהליך הניטור חייב גם לסמן כיסוי כחסר אם המקלט יוצא; הצרכנים חייבים לפוג דגימות באופן עצמאי, ולא להמתין לעד להודעת אי־תקפות אחרונה. אין להפעיל מחדש אוטומטית שוב ושוב ממשק bus-off; יש לבדוק/לסלק את התקלה הפיזית ולהפעיל מחדש לפי מדיניות שירות.
 
-Section28 specifies the event scheduler, explicit curved-carrier geometry, reusable inertial calibration experiment, wrench aggregation and constrained robot-interface tests. The wire format and capture-age rules remain unchanged. Distinguish the ADC conversion rate, complete100 Hz patch acquisition, within-frame skew, physical sensor response, 50–100 Hz reporting and end-to-end behavior latency in every results table.
+רכיב הניטור מדווח על תוויות מערכת צירים מקומית, עוצמה, תקפות, אבחון וגיל רכישה חסום. בקר עתידי המותאם לרובוט חייב לספק מיקומים ונורמלים מדודים לכל תא וטרנספורמציות של המפרקים; התוכנה הכללית הזו אינה מסיקה אותם. יש להשתמש בזמן מקודד המפרק כדי להתמיר את מערכת הצירים של החוליה; גיל טרנספורמציה חריג פוסל מיקום בקואורדינטות העולם, אך אינו מוחק את המגע המקומי. בתחילה הודעות העור מייעצות לבקר התנועה הקיים. עצם זמינותם של נתוני CAN אינה מוסיפה פקודת מומנט ישירה או סמכות לעצירת בטיחות.
+
+סעיף 28 מגדיר את מתזמן האירועים, גאומטריית הנשא הקמור המפורשת, ניסוי כיול אינרציאלי הניתן לשימוש חוזר, צבירת כוח/מומנט ובדיקות ממשק רובוט תחת אילוצים. פורמט התעבורה וכללי גיל הרכישה נשארים ללא שינוי. בכל טבלת תוצאות יש להבחין בין קצב המרת ADC, רכישת מקטע מלאה ב־100 Hz, פער הזמנים בתוך מסגרת, תגובת החיישן הפיזית, דיווח ב־50–100 Hz והשהיית התנהגות מקצה לקצה.
 
 <a id="section-12"></a>
 
-## 12. Home-lab build, with explicit material selection experiment
+## 12. בנייה במעבדה ביתית, כולל ניסוי מפורש לבחירת חומרים
 
-### 12.1 First purchases and a bounded sequence
+### 12.1 רכישות ראשונות ורצף מוגבל
 
-Purchase one XactFSR11.5 ×13 inch sheet and one XactResponse four-geometry evaluation board. The manufacturer's displayed retail prices were$100 and$20 respectively, before listed shipping. The film sample is 5 mil PET; do not order an unspecified “conductive plastic” and assume it is equivalent. [Sensitronics material listing](https://www.sensitronics.com/products/detail/xactfsr-11-5-x-13.html), [evaluation board](https://www.sensitronics.com/products/detail/xactresponse-evaluation-board.html).
+יש לרכוש יריעת XactFSR אחת בגודל 11.5 ×13 inch וכרטיס הערכה XactResponse אחד בעל ארבע גאומטריות. המחירים הקמעונאיים שהציג היצרן היו $100 ו־$20 בהתאמה, לפני המשלוח המוצג. דוגמית היריעה היא PET בעובי 5 mil; אין להזמין ״פלסטיק מוליך״ לא מוגדר ולהניח שהוא שקול. [רשומת חומר Sensitronics](https://www.sensitronics.com/products/detail/xactfsr-11-5-x-13.html), [כרטיס הערכה](https://www.sensitronics.com/products/detail/xactresponse-evaluation-board.html).
 
-The sheet can nominally yield143 squares of 24.5 mm, or five complete28-cell sets before defects. Thus retail resistive film alone is approximately$20/patch; a$3 complete industrial sensor sheet cannot be justified from that retail purchase. Record actual usable dimensions before cutting.
+היריעה יכולה להניב נומינלית 143 ריבועים של 24.5 mm, או חמישה סטים מלאים של 28 תאים לפני פגמים. לכן היריעה ההתנגדותית הקמעונאית לבדה עולה כ־$20 למקטע; אי אפשר להצדיק יריעת חישה תעשייתית שלמה במחיר $3 מתוך רכישה קמעונאית זו. יש לתעד מידות שימושיות בפועל לפני החיתוך.
 
-For electronics buy one NUCLEO-G0B1RE, two TMUX1308 TSSOP-to-breadboard adapters, eight Interlink FSR402 sensors, a pair of 10 kΩ NTC test assemblies, resistors/capacitors and a multimeter. Begin through USB service serial; buy one CAN FD adapter and transceiver board only when the divider/ADC works. FSR402 assemblies are electronics/mechanics controls, not the final large-area industrial stack. Use their pin-mapped board connectors from the Nucleo manual; never apply the 48-pin production MCU package numbers to the 64-pin development board.
+לאלקטרוניקה יש לקנות NUCLEO-G0B1RE אחד, שני מתאמי TMUX1308 ממארז TSSOP למטריצה, שמונה חיישני Interlink FSR402, זוג מכלולי NTC לבדיקה של 10 kΩ, נגדים/קבלים ומולטימטר. יש להתחיל דרך תקשורת שירות טורית ב־USB; לקנות מתאם CAN FD וכרטיס משדר־מקלט אחד רק כאשר מחלק המתח/ADC עובדים. מכלולי FSR402 הם אמצעי ביקורת לאלקטרוניקה/מכניקה, ולא מבנה השכבות התעשייתי הסופי לשטח גדול. יש להשתמש במחברי הכרטיס לפי מפת הפינים במדריך Nucleo; לעולם אין להחיל את מספרי פיני מארז ה־MCU לייצור, בעל 48 הפינים, על כרטיס הפיתוח בעל 64 הפינים.
 
-### 12.2 Day-by-day work instructions, not a shopping-to-full-body jump
+### 12.2 הוראות עבודה יום־אחר־יום, ולא קפיצה מקניות לגוף שלם
 
-1. **Day1, resistor simulator:** replace the film with 100 kΩ, 47 kΩ, 10 kΩ, 1 kΩ, open and short. Add the 100 kΩ remote EOL where appropriate. Record measured resistance and raw ADC at 1 ksample/s. Confirm divider orientation, monotonic response, no input above rail and expected open detection. Save supply voltage and multimeter uncertainty.
-2. **Day2, two mux banks:** wire the selected eight FSRs, unique reference levels and common address bus. Apply contact to two cells together and to all eight, then deliberately disconnect each lead. Capture the mapping and error logs. No network is needed to prove this stage.
-3. **Days3–4, geometry selection:** cut four XactFSR coupons for the supplied0.004, 0.007, 0.010 and 0.015 inch trace/gap evaluation areas; mount with the same measured spacer and protected cover. The preferred starting geometry is 0.010/0.010 inch, consistent with the vendor's practical fabrication guidance. Test five loads in both directions, three repetitions, then10 min holds at 2 and 10 N. Select the coarsest geometry that passes M01/M03 and gives at least200 ADC counts between no-load and 0.5 N. If none pass, test the defined one-layer versus two-layer spacer comparison and record its result; if neither passes, buy custom sample sensors rather than continually changing thresholds. [Sensitronics application guide](https://www.sensitronics.com/product-res/xactfsr/docs/XactFSR-Application-Guide.pdf).
-4. **Day5, protective-cover comparison:** repeat on the selected geometry with 100 µm TPU, the identifiable thicker3M wear film, and no cover as a control. The winning stack must meet both sensitivity and abrasion targets. A failure of the 100 µm cover selects the thicker stack only with new mass/thermal/force calibration; do not preserve the old thickness claim.
-5. **Week2, two communicating nodes:** commission distinct UIDs/IDs, exchange64-byte frames and handshake messages. Disconnect USB, delay software reception200 ms, reset one node under contact, introduce duplicate IDs on an isolated test bus and exercise all S01 states. Capture actual bus timing.
-6. **Weeks3–5, custom board and full laminate:** capture the section6–9 nets in CAD, perform the release checks in section14, order five assembled controllers and five electrode/cassette sets. A full-panel rigid PCB is acceptable for a flat fixture only; it is not a flexible full-body implementation. Use flex or supplier-made PET for the moving-limb version.
-7. **After passing electrical and mechanical gates:** populate one eight-node region and install it on a passive or low-energy guarded limb fixture. Move through the complete intended envelope, log no-contact motion artifacts, apply contacts at poses and execute joint life testing.
+1. **יום 1, מדמה נגדים:** להחליף את היריעה ב־100 kΩ, ‏47 kΩ, ‏10 kΩ, ‏1 kΩ, נתק וקצר. להוסיף EOL מרוחק של 100 kΩ היכן שנדרש. לתעד התנגדות מדודה ו־ADC גולמי ב־1 ksample/s. לאשר כיוון מחלק המתח, תגובה מונוטונית, היעדר כניסה מעל המסילה וזיהוי נתק צפוי. לשמור מתח הזנה ואי־ודאות מולטימטר.
+2. **יום 2, שתי קבוצות מרבבים:** לחווט את שמונת ה־FSR הנבחרים, רמות ייחוס ייחודיות ואפיק כתובת משותף. להפעיל מגע בשני תאים יחד ובכל השמונה, ואז לנתק במכוון כל מוליך. ללכוד את המיפוי ויומני השגיאות. אין צורך ברשת כדי להוכיח שלב זה.
+3. **ימים 3–4, בחירת גאומטריה:** לחתוך ארבע דוגמיות XactFSR לאזורי ההערכה המסופקים עם מוליך/רווח של 0.004, 0.007, 0.010 ו־0.015 inch; להרכיב עם אותו מרווחן מדוד וכיסוי מגן. גאומטריית הפתיחה המועדפת היא 0.010/0.010 inch, בהתאם להנחיית הייצור המעשית של הספק. לבדוק חמישה עומסים בשני הכיוונים, שלוש חזרות, ואז החזקות של 10 min ב־2 וב־10 N. לבחור את הגאומטריה הגסה ביותר שעוברת M01/M03 ונותנת לפחות 200 ספירות ADC בין היעדר עומס ל־0.5 N. אם אף גאומטריה אינה עוברת, לבדוק את ההשוואה המוגדרת בין מרווחן של שכבה אחת לשתי שכבות ולתעד את התוצאה; אם שתיהן נכשלות, לקנות חיישני דוגמה מותאמים במקום לשנות ספים ללא סוף. [מדריך היישום של Sensitronics](https://www.sensitronics.com/product-res/xactfsr/docs/XactFSR-Application-Guide.pdf).
+4. **יום 5, השוואת כיסויי הגנה:** לחזור על הניסוי בגאומטריה שנבחרה עם TPU בעובי 100 µm, יריעת השחיקה העבה והמזוהה של 3M, וללא כיסוי כביקורת. מבנה השכבות הנבחר חייב לעמוד הן ביעדי הרגישות והן ביעדי השחיקה. כשל בכיסוי 100 µm מעביר לכיסוי העבה רק עם כיול חדש למסה/חום/כוח; אין לשמר את טענת העובי הישנה.
+5. **שבוע 2, שני צמתים מתקשרים:** להגדיר UID/ID שונים, להחליף מסגרות של 64 בתים והודעות לחיצת יד. לנתק USB, לעכב קבלה בתוכנה ב־200 ms, לאפס צומת אחד תחת מגע, ליצור מזהים כפולים באפיק ניסוי מבודד ולהפעיל את כל מצבי S01. ללכוד תזמון אפיק בפועל.
+6. **שבועות 3–5, כרטיס מותאם ולמינציה מלאה:** להזין ל־CAD את הרשתות מסעיפים 6–9, לבצע את בדיקות האישור בסעיף 14, ולהזמין חמישה בקרים מורכבים וחמישה סטים של אלקטרודות/קסטה. PCB קשיח בגודל לוח מלא קביל רק למתקן שטוח; הוא אינו מימוש גמיש לכל הגוף. לגרסה על גפה נעה יש להשתמש במעגל גמיש או ב־PET מתוצרת ספק.
+7. **לאחר מעבר שערי הקבלה החשמליים והמכניים:** לאכלס אזור אחד של שמונה צמתים ולהתקינו על מתקן גפה פסיבי או בעל אנרגיה נמוכה ומוגן. לנוע בכל המעטפת המיועדת, לתעד ארטיפקטים של תנועה ללא מגע, להפעיל מגעים בתנוחות שונות ולבצע בדיקות אורך חיים למפרק.
 
-No step requires purchasing80 patches first. A failed film experiment is valuable and cheap; a failed fully tooled sleeve is not.
+אף שלב אינו מחייב לרכוש 80 מקטעים מראש. ניסוי יריעה שנכשל הוא מועיל וזול; שרוול שכל כלי הייצור שלו כבר הוכנו ונכשל אינו כזה.
 
-### 12.3 Low-cost force fixture and its limits
+### 12.3 מתקן כוח זול ומגבלותיו
 
-Use a vertical screw stand, a10 mm diameter flat-ended probe with a rounded edge, a0–50 N calibrated force gauge or load cell, and a displacement stop. For static points, traceable masses can generate0.5/2/5/10/20 N using `m=F/9.80665`; approximately51/204/510/1,020/2,039 g, including probe/carriage mass. Keep the load axis normal and eliminate guide friction or measure it in both directions. A kitchen scale display alone does not establish sub-newton accuracy.
+יש להשתמש במעמד בורג אנכי, גשוש בעל קצה שטוח בקוטר 10 mm ושפה מעוגלת, מד כוח או תא עומס מכויל של 0–50 N ומעצור העתקה. בנקודות סטטיות, מסות עקיבות יכולות להפיק 0.5/2/5/10/20 N באמצעות `m=F/9.80665`; בקירוב 51/204/510/1,020/2,039 g, כולל מסת הגשוש/העגלה. יש לשמור על ציר עומס ניצב ולסלק חיכוך במוביל או למדוד אותו בשני הכיוונים. תצוגת משקל מטבח לבדה אינה מבססת דיוק קטן מניוטון.
 
-Apply1 mm/s until target load, hold2 s, record the final0.5 s, unload and wait5 s. Use an actual load-cell channel for latency: timestamp force crossing and contact output with one clock. A hand press and a screen recording are insufficient for a30 ms latency claim. For20 N on a10 mm probe, nominal probe-area pressure is about 255 kPa; distribute the load safely on the fixture, and never press a live joint or a person's body during initial testing.
+יש להתקדם ב־1 mm/s עד לעומס היעד, להחזיק 2 s, לתעד את 0.5 s האחרונות, לפרוק ולהמתין 5 s. למדידת השהיה יש להשתמש בערוץ תא עומס אמיתי: להחתים את חציית סף הכוח ואת פלט המגע באמצעות שעון אחד. לחיצה ביד והקלטת מסך אינן מספיקות לטענת השהיה של 30 ms. ב־20 N על גשוש 10 mm, הלחץ הנומינלי לפי שטח הגשוש הוא כ־255 kPa; יש לפזר את העומס בבטחה במתקן, ולעולם לא ללחוץ על מפרק פעיל או על גוף אדם בבדיקות הראשוניות.
 
 <a id="section-13"></a>
 
-## 13. Calibration, hold drift and replacement
+## 13. כיול, סחיפה תחת עומס קבוע והחלפה
 
-Calibrate the **assembled cassette**, including cover, support and adhesive dwell. Allow72 h adhesive dwell at controlled room conditions before the qualification calibration; production work-in-progress time and storage racks belong in the process plan. A quick electrical check may occur earlier but is not the final calibration.
+יש לכייל את **הקסטה המורכבת**, כולל כיסוי, תמיכה וזמן התייצבות הדבק. יש לאפשר לדבק 72 h להתייצבות בתנאי חדר מבוקרים לפני כיול ההסמכה; זמן עבודה בתהליך ומדפי אחסון בייצור שייכים לתוכנית התהליך. בדיקה חשמלית מהירה יכולה להתבצע מוקדם יותר, אך אינה הכיול הסופי.
 
-For each cell:20 conditioning cycles0→10 N→0; record 30 s unloaded; measure0.5, 2, 5, 10, 20 N ascending and descending three times; hold2 N10 min and 10 N10 min; unload60 s. Save raw codes, force, temperature, sample timestamps and fixture identity. Reject nonmonotonic median response, any spontaneous no-contact-to-contact event during the specified unloaded test, or a held contact that disappears after initial settling.
+לכל תא: 20 מחזורי הכנה 0→10 N→0; לתעד 30 s ללא עומס; למדוד 0.5, 2, 5, 10, 20 N בעלייה ובירידה שלוש פעמים; להחזיק 2 N במשך 10 min ו־10 N במשך 10 min; לפרוק 60 s. לשמור קודים גולמיים, כוח, טמפרטורה, חותמות זמן דגימה וזהות המתקן. יש לפסול תגובת חציון שאינה מונוטונית, כל מעבר ספונטני מאין־מגע למגע במהלך בדיקת היעדר העומס שהוגדרה, או מגע מוחזק שנעלם לאחר ההתייצבות הראשונית.
 
-Use five ordered intensity calibration knots for those force conditions, with 0 for the unloaded reference and 254 for saturation. Intensity indicates approximate load class under this fixture, not universally accurate force. Report hysteresis as the largest up/down difference divided by the measured0.5–20 N span. Initial product limit is≤25% of span; held10 min drift≤20% of span while contact remains detectable. If the application needs materially better precision, change sensor technology rather than hide drift with baseline adaptation.
+יש להשתמש בחמש נקודות כיול עוצמה מסודרות עבור תנאי הכוח הללו, עם 0 לייחוס ללא עומס ו־254 לרוויה. העוצמה מציינת קבוצת עומס מקורבת תחת מתקן זה, ולא כוח מדויק אוניברסלי. יש לדווח על היסטרזיס כהפרש העלייה/ירידה הגדול ביותר חלקי הטווח המדוד של 0.5–20 N. מגבלת המוצר הראשונית היא ≤25% מהטווח; סחיפה בהחזקה של 10 min תהיה ≤20% מהטווח, בעוד שהמגע ממשיך להתגלות. אם היישום דורש דיוק טוב יותר באופן מהותי, יש להחליף טכנולוגיית חיישן במקום להסתיר סחיפה באמצעות הסתגלות קו הבסיס.
 
-Production calibration has two levels. **Every patch:** electrical simulator, unloaded map and 0.5/5/20 N response check plus one release cycle. **Sampled lot qualification:** full hysteresis/hold/cross-temperature test above. A simultaneous28-plunger platen requires 560 N total for 20 N/cell; a single rigid plate does not ensure equal force. Use independently calibrated spring plungers or a sequential instrumented probe. The cost model allows240 s station occupancy and 120 s attended calibration per patch; time the chosen fixture. If sequential testing takes 10 min, enter10 min in the cost model instead of claiming the budget was met.
+לכיול הייצור שתי רמות. **כל מקטע:** מדמה חשמלי, מפת היעדר עומס ובדיקת תגובה ב־0.5/5/20 N ועוד מחזור שחרור אחד. **הכשרת אצווה מדגמית:** בדיקת ההיסטרזיס/החזקה/טמפרטורות המלאה שתוארה לעיל. משטח בעל 28 בוכנות בו־זמניות דורש כוח כולל של 560 N כדי לקבל 20 N לתא; לוח קשיח יחיד אינו מבטיח כוח שווה. יש להשתמש בבוכנות קפיציות מכוילות בנפרד או בגשוש מדידה עוקב. מודל העלות מאפשר תפוסת עמדה של 240 s ו־120 s של כיול עם מפעיל לכל מקטע; יש למדוד את זמן המתקן שנבחר. אם הבדיקה העוקבת אורכת 10 min, יש להזין 10 min במודל העלות במקום לטעון שהתקציב נשמר.
 
-Thermal calibration: equilibrate the assembled thermal area against a traceable temperature-controlled contact plate at 10, 20, 30, 45, 60°C, with a reference probe at the same surface and a reproducible2 N contact fixture. Store raw-code/temperature pairs. Verify at 15, 25, 37.5, 52.5°C not used in fitting; require±2°C. Run a25→45°C contact step to measure10–90% response. Repeat with motors and MCU transmitting to expose shell/board heating. Reject a20°C distant-hotspot demonstration as evidence that the two NTC points measure the whole patch.
+כיול תרמי: להביא את האזור התרמי המורכב לשיווי משקל מול משטח מגע בעל טמפרטורה מבוקרת ועקיבה ב־10, 20, 30, 45, 60°C, עם גשוש ייחוס באותו משטח ומתקן מגע חוזר של 2 N. לשמור זוגות קוד גולמי/טמפרטורה. לאמת ב־15, 25, 37.5, 52.5°C שלא שימשו בהתאמה; נדרש ±2°C. לבצע מדרגת מגע 25→45°C כדי למדוד תגובה של 10–90%. לחזור עם מנועים ו־MCU משדר כדי לחשוף התחממות מעטפת/כרטיס. יש לפסול הדגמת נקודה חמה מרוחקת ב־20°C כראיה לכך ששתי נקודות ה־NTC מודדות את כל המקטע.
 
-On cover or sheet replacement, keep the previous calibration only if the approved replacement procedure passes the factory-equivalent force verification. Otherwise recalibrate. Bind records to sheet serial and cover revision; do not assign a new film the old serial to avoid commissioning. Factory baseline adaptation cannot substitute for a mechanically repeatable cassette.
+בעת החלפת כיסוי או יריעה, יש לשמור את הכיול הקודם רק אם נוהל ההחלפה המאושר עובר אימות כוח השקול למפעל. אחרת יש לכייל מחדש. יש לקשור רשומות למספר הסידורי של היריעה ולמהדורת הכיסוי; אין להקצות ליריעה חדשה את המספר הישן כדי להימנע מהכנסה לשירות. הסתגלות קו בסיס במפעל אינה תחליף לקסטה מכנית הניתנת לחזרה.
 
 <a id="section-14"></a>
 
-## 14. PCB release, CAD checks and configuration records
+## 14. אישור PCB לייצור, בדיקות CAD ורשומות תצורה
 
-The diagrams and pin tables above specify the intended circuit. **They are not routed PCB files.** No Gerber/CAD package has been generated or electrically checked by an EDA tool in this revision. The first PCB order is authorized by the following completed work package, not by the presence of a convincing block diagram.
+התרשימים וטבלאות הפינים לעיל מגדירים את המעגל המיועד. **הם אינם קובצי PCB מנותבים.** במהדורה זו לא נוצרה חבילת Gerber/CAD ולא בוצעה בדיקה חשמלית בכלי EDA. ההזמנה הראשונה של PCB מאושרת על בסיס חבילת העבודה המושלמת שלהלן, ולא מעצם קיומו של תרשים בלוקים משכנע.
 
-Use a50 ×30 mm maximum four-layer controller PCB, 0.8 mm FR-4 initially: top components/signals; layer 2 continuous ground; layer 3 power/slow routing; bottom signals. Keep the ground plane continuous beneath CAN and analog paths; separate current paths by placement, not by cutting the return plane. Place sensor connector/ESD first, muxes next, MCU ADC pins nearest mux outputs, CAN/supply entry at the opposite edge. Place the oscillator beside PF0 with no analog trace beneath its output. Keep the regulator/transceiver outside the thermal island area.
+יש להשתמש ב־PCB בקר בעל ארבע שכבות, בגודל מרבי 50 ×30 mm ובתחילה FR-4 בעובי 0.8 mm: רכיבים/אותות למעלה; שכבה 2 הארקה רציפה; שכבה 3 הספק/ניתוב איטי; אותות בתחתית. יש לשמור מישור הארקה רציף מתחת למסלולי CAN והאנלוג; להפריד מסלולי זרם באמצעות מיקום רכיבים ולא באמצעות חיתוך מישור ההחזרה. למקם תחילה מחבר חיישן/ESD, אחריו מרבבים, את פיני ADC של ה־MCU קרוב ככל האפשר ליציאות המרבבים, ואת כניסת CAN/ההספק בקצה הנגדי. למקם את המתנד ליד PF0 ללא מוליך אנלוגי מתחת ליציאתו. להשאיר את המייצב/המשדר־מקלט מחוץ לאזור האי התרמי.
 
-CAD tasks and review evidence:
+משימות CAD וראיות לביקורת:
 
-1. Create manufacturer-verified symbols for the exact orderable packages; check power pins and exposed pads. Importing a downloaded symbol is not verification.
-2. Capture each connection in sections6–9, including NC pins, enable polarities, oscillator bypass, pull-ups, analog reference and all decoupling. Export the netlist, component list and pin report to a revision-controlled directory.
-3. Run ERC; resolve every error and document intentional warnings individually. Have a second qualified reviewer compare the netlist with the pin table and datasheets. If no reviewer is available, buy a limited review rather than replacing it with an unsupported claim of independent audit.
-4. Route with fabricator-approved widths/clearances; use≤0.15 mm minimum signal width/space only after DFM confirmation. Power/ground widths and vias follow current/temperature requirements, not the minimum signal rule. No via under a solder pad unless filled/capped and quoted.
-5. Add test access to5V_PATCH, 5V_NODE, 3V3, 3V3_A, GND, all four mux outputs, S0–S7 control state, SWD, CANH/L, reset, witness and each fault signal. Expose sensor signals through a replaceable mating fixture, not28 probes touching fragile active film.
-6. Run DRC; check connector side by a1:1 print and actual cable insertion. Ensure crystal footprints/load capacitors from revision 1 are absent. Check pin 1 marks on top and assembly views.
-7. Produce schematic PDF, editable CAD, stackup, Gerbers, Excellon drills, pick/place, assembly drawings, BOM with approved MPNs and DNP list, test-point map and fixture netlist. Name every release with the same hardware revision and SHA256 manifest.
-8. Order **five assembled boards**, not a full production lot. Request one unpowered first-article photo and electrical shorts/open test before completing assembly. Keep one untouched reference unit; use the others for measurement/fault injection.
+1. ליצור סמלים שאומתו מול היצרן למארזים המדויקים הניתנים להזמנה; לבדוק פיני הספק ומשטחים חשופים. ייבוא סמל שהורד אינו אימות.
+2. להזין כל חיבור בסעיפים 6–9, כולל פיני NC, קוטביות אפשור, עקיפת מתנד, נגדי משיכה, ייחוס אנלוגי וכל קבלי הניתוק. לייצא רשימת חיבורים, רשימת רכיבים ודוח פינים לתיקייה מבוקרת גרסאות.
+3. להריץ ERC; לפתור כל שגיאה ולתעד כל אזהרה מכוונת בנפרד. בודק מוסמך שני ישווה את רשימת החיבורים לטבלת הפינים ולדפי הנתונים. אם אין בודק זמין, יש לרכוש ביקורת מוגבלת במקום להחליפה בטענה לא מבוססת לביקורת עצמאית.
+4. לנתב ברוחבים/מרווחים שאושרו בידי היצרן; להשתמש ברוחב/מרווח אות מינימלי ≤0.15 mm רק לאחר אישור DFM. רוחבי הספק/הארקה וחורי מעבר נקבעים לפי דרישות זרם/טמפרטורה, ולא לפי כלל האות המינימלי. אין חור מעבר מתחת למשטח הלחמה אלא אם הוא מלא/מכוסה ונכלל בהצעת המחיר.
+5. להוסיף גישת בדיקה ל־5V_PATCH, ‏5V_NODE, ‏3V3, ‏3V3_A, ‏GND, לכל ארבע יציאות המרבבים, למצב בקרת S0–S7, ל־SWD, ‏CANH/L, איפוס, לולאת בדיקת שלמות ולכל אות תקלה. לחשוף אותות חיישן באמצעות מתקן מתחבר הניתן להחלפה, ולא באמצעות 28 גשושים הנוגעים ביריעה פעילה עדינה.
+6. להריץ DRC; לבדוק את צד המחבר באמצעות הדפסה בקנה מידה 1:1 והכנסת הכבל בפועל. לוודא שטביעות הרגל של גביש וקבלי העומס ממהדורה 1 אינן קיימות. לבדוק סימוני פין 1 בתצוגת העל ובהרכבה.
+7. להפיק PDF סכימה, CAD ניתן לעריכה, מבנה שכבות, Gerbers, קידוחי Excellon, קובצי מיקום רכיבים, שרטוטי הרכבה, BOM עם MPN מאושרים ורשימת DNP, מפת נקודות בדיקה ורשימת חיבורים למתקן. לכל שחרור לתת אותה מהדורת חומרה ומניפסט SHA256.
+8. להזמין **חמישה כרטיסים מורכבים**, ולא אצוות ייצור מלאה. לבקש צילום יחידה ראשונה ללא הספק ובדיקת קצרים/נתקים חשמלית לפני השלמת ההרכבה. להשאיר יחידת ייחוס אחת ללא שינוי; להשתמש באחרות למדידה/הזרקת תקלות.
 
-**Controller passive population, excluding the regional distributor and 28 sheet EOLs:**
+**אוכלוסיית הרכיבים הפסיביים בבקר, ללא המפצל האזורי ו־28 נגדי EOL של היריעה:**
 
-| Circuit | Resistors | Capacitors |
+| מעגל | נגדים | קבלים |
 |---|---|---|
-|28 touch inputs|28×22 kΩ1%; 28×1 kΩ1%|28×100 pF C0G|
-|4 muxes/output filters|4×47 kΩ enable pull-ups; 4×4.7 kΩ1%|4×100 nF X7R; 4×100 pF C0G|
-|4 distinct references|4×10 kΩ, 2×15 kΩ, 2×30 kΩ, all 1%|None|
-|2 NTC channels|2×39 kΩ1%; 2×1 kΩ1%|2×1 nF C0G/X7R|
-|Witness|2×1 kΩ; 1×100 kΩ|None|
-|MCU/reset/reference/service|1×10 Ω; 2×10 kΩ|3×100 nF; 1×1 µF; 1×4.7 µF|
-|Oscillator|1×33 Ω|1×100 nF|
-|CAN transceiver|1×10 kΩ TXD; 1×47 kΩ STB|2×100 nF; 1×1 µF|
-|Node power switch|1×100 kΩ EN; 1×10 kΩ FAULT; 1×200 kΩ ILIM|1×100 nF; 1×1 µF; 1×4.7 µF|
-|LDO|None|2×4.7 µF|
-|Total fitted|**88 resistors**|**52 capacitors**|
+|28 כניסות מגע|28×22 kΩ1%; ‏28×1 kΩ1%|28×100 pF C0G|
+|4 מרבבים/מסנני יציאה|4×47 kΩ משיכות אפשור למעלה; ‏4×4.7 kΩ1%|4×100 nF X7R; ‏4×100 pF C0G|
+|4 רמות ייחוס שונות|4×10 kΩ, ‏2×15 kΩ, ‏2×30 kΩ, כולם 1%|אין|
+|2 ערוצי NTC|2×39 kΩ1%; ‏2×1 kΩ1%|2×1 nF C0G/X7R|
+|בדיקת שלמות|2×1 kΩ; ‏1×100 kΩ|אין|
+|MCU/איפוס/ייחוס/שירות|1×10 Ω; ‏2×10 kΩ|3×100 nF; ‏1×1 µF; ‏1×4.7 µF|
+|מתנד|1×33 Ω|1×100 nF|
+|משדר־מקלט CAN|1×10 kΩ TXD; ‏1×47 kΩ STB|2×100 nF; ‏1×1 µF|
+|מתג הספק צומת|1×100 kΩ EN; ‏1×10 kΩ FAULT; ‏1×200 kΩ ILIM|1×100 nF; ‏1×1 µF; ‏1×4.7 µF|
+|LDO|אין|2×4.7 µF|
+|סך הכול מורכב|**88 נגדים**|**52 קבלים**|
 
-Use0402 or 0603 resistors appropriate to voltage/power and assembly capability; start0603 where space permits, do not choose0201 for a home serviceable prototype. Bulk capacitors are10 V minimum X7R with DC-bias curves checked; connector-side5 V capacitors use16 V where affordable. The100 pF capacitors are C0G.120 Ω termination is a DNP option on patch boards. The BOM allowance covers140 controller passives; fixture/programming contacts and board revisions must not silently change this count.
+יש להשתמש בנגדי 0402 או 0603 המתאימים למתח/הספק וליכולת ההרכבה; להתחיל ב־0603 היכן שהמקום מאפשר, ולא לבחור 0201 לאב־טיפוס הניתן לשירות בבית. קבלי צבירה הם X7R בדירוג 10 V לפחות, עם בדיקת עקומי הטיית DC; בקבלי 5 V בצד המחבר יש להשתמש ב־16 V כאשר העלות מאפשרת. קבלי 100 pF הם C0G. סיומת 120 Ω היא אפשרות DNP בכרטיסי המקטעים. הקצאת ה־BOM מכסה 140 רכיבים פסיביים בבקר; מגעי מתקן/תכנות ומהדורות כרטיס אינם רשאים לשנות את הספירה בשתיקה.
 
-**Configuration image specification:** reserve1536 bytes per flash image. Offsets0–3 magic `SKC2`; 4 format u16=2; 6 length u16=1536; 8 generation u32; 12–23 controller UID; 24–39 printable16-byte sheet serial, padded zero; 40 cover revision u16; 42 period u16=10; 44 nodeID u16; 46 reserved u16=0. Offsets48–1167 hold28×40-byte cell records: baseline, on-delta, off-delta, noise-RMS as four u16; five raw ADC knots at 0.5/2/5/10/20 N as five u16; remaining 22 bytes zero. Offsets1168–1207 hold two five-entry thermal tables, each entry raw-code u16 andtemperature-centiC i16.1208 board revision u16; 1210 firmware ABI u16=2; 1212–1523 reserved zero.1524–1527 standard reflected CRC32/IEEE over bytes0–1523, identical toPython `zlib.crc32`; 1528–1535 final committed marker fixed `0x534b4332434f4d54` little-endian. Reject bad lengths/reserved bytes, CRC, ordering, serial or UID. Use the computed CRC at 1524 as the transmitted configuration CRC.
+**מפרט תמונת תצורה:** יש להקצות 1536 בתים לכל תמונת flash. היסטים 0–3 הם magic ‏`SKC2`; ‏4 format u16=2; ‏6 length u16=1536; ‏8 generation u32; ‏12–23 UID בקר; ‏24–39 מספר סידורי של יריעה בן 16 בתים ניתנים להדפסה, מרופד באפס; ‏40 cover revision u16; ‏42 period u16=10; ‏44 nodeID u16; ‏46 reserved u16=0. היסטים 48–1167 מכילים 28×40 בתים של רשומות תאים: baseline, on-delta, off-delta, noise-RMS כארבעה u16; חמש נקודות ADC גולמיות ב־0.5/2/5/10/20 N כחמישה u16; ‏22 הבתים הנותרים אפס. היסטים 1168–1207 מכילים שתי טבלאות תרמיות בנות חמישה איברים; בכל איבר raw-code u16 ו־temperature-centiC i16. ‏1208 board revision u16; ‏1210 firmware ABI u16=2; ‏1212–1523 שמורים כאפס. ‏1524–1527 הם CRC32/IEEE תקני משוקף על בתים 0–1523, זהה ל־Python ‏`zlib.crc32`; ‏1528–1535 הם סמן commit סופי קבוע `0x534b4332434f4d54` ב־little-endian. יש לדחות אורכים/בתים שמורים שגויים, CRC, סדר, מספר סידורי או UID שגויים. יש להשתמש ב־CRC המחושב בהיסט 1524 כ־CRC התצורה המשודר.
 
-This image is not a substitute for complete raw calibration logs. Store the human-readable calibration report, fixture identity, raw data and SHA256 on the host. A1536-byte config fits one2 KiB page, leaving the other page for an independent valid copy. Validate actual flash memory geometry in the MCU linker release rather than hard-coding addresses from a different density device.
+תמונה זו אינה תחליף ליומני כיול גולמיים מלאים. יש לשמור במארח דוח כיול קריא, זהות מתקן, נתונים גולמיים ו־SHA256. תצורה של 1536 בתים מתאימה לדף אחד של 2 KiB, ומשאירה את הדף השני לעותק תקף עצמאי. יש לאמת את גאומטריית זיכרון ה־flash בפועל בשחרור המקשר של ה־MCU, במקום לקבע כתובות מהתקן בעל צפיפות אחרת.
 
 <a id="section-15"></a>
 
-## 15. BOM, price evidence and cost-down limits
+## 15. רשימת חומרים, ראיות למחירים ומגבלות הוזלה
 
-All costs are USD unless explicitly marked EUR. The cost model is at **1,000 patches manufactured**, approximately12.5 of the 80-patch example robots, not1,000 robots. It excludes tax, freight, import charges, development labor, warranty, sales margin and the host computer. Most numbers remain engineering allowances; exact industrial sheet and labor prices require supplier quotations. Their risk is represented in ranges and gates rather than omitted.
+כל העלויות הן בדולר ארה״ב, אלא אם צוין במפורש EUR. מודל העלות מתייחס ל־**ייצור 1,000 מקטעים**, שהם כ־12.5 רובוטים לדוגמה בעלי 80 מקטעים, ולא 1,000 רובוטים. הוא אינו כולל מס, הובלה, חיובי יבוא, עבודת פיתוח, אחריות, מרווח מכירה או מחשב מארח. רוב המספרים עדיין הקצאות הנדסיות; מחירי יריעה תעשייתית ועבודה מדויקים מחייבים הצעות מחיר מספקים. הסיכון שלהם מיוצג בטווחים ובשערי החלטה, ולא מושמט.
 
-The complete editable cost input is[`engineering/cost_inputs.csv`](engineering/cost_inputs.csv). Prices for the LDO and oscillator have identified distributor snapshots; other values are allowances, not manufactured quotations. Typical sourcing: TI/ST/Nexperia/Murata/Abracon through authorized DigiKey/Mouser/Arrow channels; Hirose/JST through authorized connector channels; industrial film from Sensitronics/Interlink or a qualified custom converter; PCB assembly from competing EMS quotations. Supplier authenticity and exact suffix matter more than a marketplace photograph.
+קובץ קלט העלויות המלא והניתן לעריכה הוא [`engineering/cost_inputs.csv`](engineering/cost_inputs.csv). למחירי ה־LDO והמתנד יש צילומי מצב מזוהים של מפיצים; יתר הערכים הם הקצאות, ולא הצעות מחיר שהומצאו. מקורות רכש טיפוסיים: TI/ST/Nexperia/Murata/Abracon דרך ערוצים מורשים של DigiKey/Mouser/Arrow; ‏Hirose/JST דרך ערוצי מחברים מורשים; יריעה תעשייתית מ־Sensitronics/Interlink או ממעבד מותאם שהוכשר; הרכבת PCB דרך הצעות מחיר מתחרות של EMS. מקוריות הספק והסיומת המדויקת חשובות יותר מתמונה בזירת מסחר.
 
-The oscillator snapshot is about$0.819 at 1,000 and$1.25 at single quantity, before shipping/tax; the listed replenishment lead time can be much longer than current stock availability. Archive an actual order acknowledgment before relying on a delivery date. [DigiKey oscillator order page](https://www.digikey.com/en/products/detail/abracon-llc/ASV-8-000MHZ-LC-T/15908697).
+צילום מצב מחיר המתנד הוא כ־$0.819 בכמות של 1,000 וכ־$1.25 ליחידה אחת, לפני משלוח/מס; זמן חידוש המלאי הרשום עלול להיות ארוך בהרבה מזמינות המלאי הנוכחי. יש לשמור אישור הזמנה בפועל לפני הסתמכות על תאריך אספקה. [דף הזמנת מתנד ב־DigiKey](https://www.digikey.com/en/products/detail/abracon-llc/ASV-8-000MHZ-LC-T/15908697).
 
-| Element | Quantity | Unit allowance at 1,000 patches | Per patch | Evidence |
+| רכיב | כמות | הקצאה ליחידה בכמות 1,000 מקטעים | למקטע | ראיה |
 |---|---:|---:|---:|---|
-|STM32G0B1CBT6|1|$2.65|$2.65|engineering allowance|
-|TCAN3413DR|1|$1.00|$1.00|engineering allowance|
-|TMUX1308PWR|4|$0.30|$1.20|engineering allowance|
-|TPS2553DBVR-1|1|$0.75|$0.75|engineering allowance|
-|TPS7A2433DBVR|1|$0.34|$0.34|DigiKey quantity 1000 snapshot 2026-10-24|
-|PESD2CANFD24V-T|1|$0.18|$0.18|engineering allowance|
-|TPD4E1U06DBVR|8|$0.18|$1.44|engineering allowance|
-|FH12-40S-0.5SH(55)|1|$2.50|$2.50|engineering allowance|
-|BM04B-GHS-TBT(LF)(SN)|1|$0.24|$0.24|board header only; mating set in harness|
-|ASV-8.000MHZ-LC-T|1|$0.82|$0.82|DigiKey quantity 1000 snapshot 2026-10-24|
-|controller passives allowance|1|$0.90|$0.90|schedule in main document; not sheet EOL|
-|controller bare PCB 4 layer 0.8 mm|1|$0.90|$0.90|RFQ ceiling must confirm layout fits|
-|SMT assembly controller|1|$1.20|$1.20|RFQ incl AOI; programming labor separate|
-|fully laminated 28 cell printed PET sheet with remote EOL|1|$12.00|$12.00|unquoted industrial allowance; no retail film assumption|
-|two site thermal flex assembly excluding NTC|1|$1.20|$1.20|engineering allowance|
-|NCU18XH103F60RB|2|$0.06|$0.12|engineering allowance|
-|protective outer film die cut|1|$0.60|$0.60|industrial allowance incl converting scrap|
-|backing and attachment carrier|1|$0.60|$0.60|no individual caps or pucks|
-|cover and attachment adhesive|1|$0.35|$0.35|sensing-sheet spacer already in sheet price|
-|serial labels and packaging|1|$0.25|$0.25|engineering allowance|
-|**Material / outsourced assembly subtotal**|||**$29.24**|Before final process, rework and yield|
+|STM32G0B1CBT6|1|$2.65|$2.65|הקצאה הנדסית|
+|TCAN3413DR|1|$1.00|$1.00|הקצאה הנדסית|
+|TMUX1308PWR|4|$0.30|$1.20|הקצאה הנדסית|
+|TPS2553DBVR-1|1|$0.75|$0.75|הקצאה הנדסית|
+|TPS7A2433DBVR|1|$0.34|$0.34|צילום מצב DigiKey לכמות 1000, ‏2026-10-24|
+|PESD2CANFD24V-T|1|$0.18|$0.18|הקצאה הנדסית|
+|TPD4E1U06DBVR|8|$0.18|$1.44|הקצאה הנדסית|
+|FH12-40S-0.5SH(55)|1|$2.50|$2.50|הקצאה הנדסית|
+|BM04B-GHS-TBT(LF)(SN)|1|$0.24|$0.24|ראש מחבר בכרטיס בלבד; הצד המשלים ברתמה|
+|ASV-8.000MHZ-LC-T|1|$0.82|$0.82|צילום מצב DigiKey לכמות 1000, ‏2026-10-24|
+|הקצאת רכיבים פסיביים לבקר|1|$0.90|$0.90|הרשימה במסמך הראשי; ללא EOL של היריעה|
+|PCB חשוף לבקר, 4 שכבות, 0.8 mm|1|$0.90|$0.90|תקרת RFQ מחייבת אישור שהתכנון נכנס|
+|הרכבת SMT לבקר|1|$1.20|$1.20|RFQ כולל AOI; עבודת תכנות בנפרד|
+|יריעת PET מודפסת בלמינציה מלאה, 28 תאים, עם EOL מרוחק|1|$12.00|$12.00|הקצאה תעשייתית ללא הצעת מחיר; ללא הנחת יריעה קמעונאית|
+|מכלול מעגל תרמי גמיש לשני אתרים ללא NTC|1|$1.20|$1.20|הקצאה הנדסית|
+|NCU18XH103F60RB|2|$0.06|$0.12|הקצאה הנדסית|
+|יריעת הגנה חיצונית חתוכה בתבנית|1|$0.60|$0.60|הקצאה תעשייתית כולל פחת עיבוד|
+|נשא גב וחיבור|1|$0.60|$0.60|ללא כיפות או דיסקיות נפרדות|
+|דבק כיסוי וחיבור|1|$0.35|$0.35|מרווחן יריעת החישה כבר נכלל במחיר היריעה|
+|תוויות סידוריות ואריזה|1|$0.25|$0.25|הקצאה הנדסית|
+|**סכום ביניים חומרים / הרכבה במיקור חוץ**|||**$29.24**|לפני תהליך סופי, תיקונים ותפוקה תקינה|
 
-The printed sheet row is **$12/patch allowance with $6–20 sensitivity**, including independent sensor cells, EOL elements, routing, spacer, resistive layer, vent and reinforced tail. It excludes the external cover, thermal flex and final calibration listed elsewhere. This price is not confirmed. If the supplier cannot meet$12 at the required quality, recalculate the business case before buying tooling. The flexible-copper/XactFSR fallback is mechanically/electrically testable but has different cost: at retail the resistive islands alone are about$20, plus the flex and 28 EOL placements. It is a prototype route, not a disguised$6 industrial sheet.
+שורת היריעה המודפסת היא **הקצאה של $12 למקטע, עם רגישות לטווח $6–20**, וכוללת תאי חישה נפרדים, רכיבי EOL, ניתוב, מרווחן, שכבה התנגדותית, אוורור וזנב מחוזק. היא אינה כוללת את הכיסוי החיצוני, המעגל התרמי הגמיש והכיול הסופי הרשומים בנפרד. המחיר אינו מאושר. אם הספק אינו יכול לעמוד ב־$12 באיכות הנדרשת, יש לחשב מחדש את המקרה העסקי לפני רכישת כלי ייצור. חלופת הנחושת הגמישה/XactFSR ניתנת לבדיקה מכנית/חשמלית אך עלותה שונה: בקמעונאות האיים ההתנגדותיים לבדם עולים כ־$20, נוסף על המעגל הגמיש ו־28 השמות EOL. זהו מסלול לאב־טיפוס, ולא יריעה תעשייתית של $6 במסווה.
 
-### Manufacturing-time cost, made explicit
+### עלות זמן הייצור, במפורש
 
-Budget fully burdened attended labor$24/h and station occupancy$12/h. Lamination/registration120 s; electrical test/programming60 s; attended calibration120 s; final inspection/packing45 s: **345 attended seconds=$2.30**. Electrical station60 s plus calibration station240 s: **300 station seconds=$1.00**. Process total$3.30. Add$0.50 expected rework/started unit, then divide total by95% final yield. With$29.24 material/outsourced-assembly subtotal, the reference good-patch cost is **$34.78**.
+יש לתקצב עבודת מפעיל בעלות מלאה של $24/h ותפוסת עמדה ב־$12/h. למינציה/יישור 120 s; בדיקה חשמלית/תכנות 60 s; כיול עם מפעיל 120 s; בדיקה סופית/אריזה 45 s: **345 שניות מפעיל=$2.30**. עמדה חשמלית 60 s ועוד עמדת כיול 240 s: **300 שניות עמדה=$1.00**. סך התהליך $3.30. יש להוסיף $0.50 תיקונים צפויים לכל יחידה שהתחילה בתהליך, ואז לחלק את הסכום בתפוקה סופית תקינה של 95%. עם סכום ביניים של $29.24 לחומרים/הרכבה במיקור חוץ, עלות הייחוס למקטע תקין היא **$34.78**.
 
-SMT assembly is already a separate BOM row; the attended times do not count pick-and-place again. The sheet quote already includes its internal lamination; patch assembly labor covers attaching the external cover, thermal strip, controller and carrier. A force fixture cannot be occupied by two patches simultaneously unless it actually has two independently measured nests. Keep operator time, machine time, adhesive dwell and calendar lead time separate.
+הרכבת SMT כבר נמצאת בשורת BOM נפרדת; זמני המפעיל אינם סופרים שוב השמת רכיבים. הצעת המחיר ליריעה כבר כוללת את הלמינציה הפנימית שלה; עבודת הרכבת המקטע מכסה חיבור כיסוי חיצוני, פס תרמי, בקר ונשא. מתקן כוח אינו יכול להיות תפוס בידי שני מקטעים בו־זמנית אלא אם יש בו בפועל שני מושבים הנמדדים בנפרד. יש להפריד בין זמן מפעיל, זמן מכונה, זמן התייצבות דבק וזמן אספקה קלנדרי.
 
-With the same process/yield assumptions, the low/high material bounds imply about **$24.09–55.09 per good patch**. They are sensitivities, not price offers. At low volume yield may be85%, not95%; at that yield the reference case becomes$38.87. A 100% yield spreadsheet is not a production plan.
+באותן הנחות תהליך/תפוקה, גבולות החומרים הנמוך/הגבוה נותנים כ־**$24.09–55.09 למקטע תקין**. אלה רגישויות, לא הצעות מחיר. בכמות נמוכה התפוקה התקינה עשויה להיות 85% ולא 95%; בתפוקה זו מקרה הייחוס עולה ל־$38.87. גיליון חישוב עם תפוקה תקינה של 100% אינו תוכנית ייצור.
 
-### Order of cost reduction
+### סדר הפחתת העלויות
 
-1. Remove manual alignment steps with a registered carrier and one array transfer. Save actual timed labor, not a hypothetical robot cell.
-2. Obtain an all-in printed-sheet quote and compare it with copper flex at equal diagnostics and calibration. A lower film price that adds minutes of assembly is not automatically cheaper.
-3. Reduce calibration time only after lot/fixture data proves the abbreviated test catches failures. Keep the golden part and destructive lot screen.
-4. Negotiate connectors and high-placement-count assembly; do not delete ESD/current limiting first.
-5. Consolidate gateways after volume justifies NRE and license/compliance work. Keep the same published protocol.
-6. Consider a controller serving two neighboring sheets only in a separately budgeted redesign with added ADC/mux capacity and short analog tails. Do not remove half the current controllers from the cost model without actually designing that board.
+1. להסיר שלבי יישור ידניים באמצעות נשא מיושר והעברת מערך אחת. לחסוך זמן עבודה שנמדד בפועל, ולא תא רובוטי היפותטי.
+2. לקבל הצעת מחיר כוללת ליריעה מודפסת ולהשוות למעגל נחושת גמיש באותה רמת אבחון וכיול. מחיר יריעה נמוך יותר המוסיף דקות הרכבה אינו בהכרח זול יותר.
+3. להפחית זמן כיול רק אחרי שנתוני אצווה/מתקן מוכיחים שהבדיקה המקוצרת מזהה כשלים. לשמור את יחידת הייחוס המוסמכת ואת בדיקת האצווה ההרסנית.
+4. לנהל משא ומתן על מחברים והרכבה בעלת מספר השמות גבוה; לא להסיר קודם ESD/הגבלת זרם.
+5. לאחד שערי תקשורת לאחר שהכמות מצדיקה NRE ועבודת רישוי/עמידה בדרישות. לשמור את אותו פרוטוקול מפורסם.
+6. לשקול בקר המשרת שתי יריעות שכנות רק בתכנון מחדש מתוקצב בנפרד, עם תוספת קיבולת ADC/מרבב וזנבות אנלוגיים קצרים. אין להסיר מחצית מהבקרים הנוכחיים ממודל העלות בלי לתכנן בפועל כרטיס כזה.
 
-An illustrative mature target of$22/patch plus$500 shared hardware gives$2,260 for 80 patches before spares, margin and NRE. It is a target requiring both verified sheet pricing and gateway redesign. A$1,500 installed target with$500 shared hardware requires **$12.50 per good patch**, substantially below the present reference: state that gap explicitly to investors.
+יעד בוגר להמחשה של $22 למקטע ועוד $500 לחומרה משותפת נותן $2,260 ל־80 מקטעים, לפני חלפים, מרווח ו־NRE. זהו יעד המחייב גם מחיר יריעה מאומת וגם תכנון מחדש של השער. יעד מותקן של $1,500 עם חומרה משותפת של $500 מחייב **$12.50 למקטע תקין**, הרבה מתחת לייחוס הנוכחי: יש להציג את הפער הזה למשקיעים במפורש.
 
 <a id="section-16"></a>
 
-## 16. Home-lab equipment and purchase ceilings
+## 16. ציוד למעבדה הביתית ותקרות רכש
 
-| Stage purchase | Quantity / budget | Deliverable before buying more |
+| רכישה בשלב | כמות / תקציב | תוצר לפני רכישה נוספת |
 |---|---:|---|
-|XactFSR sheet + evaluation board|1 each; $120 displayed before shipping|Four-geometry force/hold comparison|
-|Nucleo + two mux breakouts + discrete parts|$60–110 allowance|Resistor simulator and eight channels|
-|Commercial FSR controls|8; $50–100 allowance|Independent comparison against DIY film|
-|NTC/flex or leaded thermal test parts|$10–30|Calibrated thermal curve; leaded part is not production substitute|
-|Cover/spacer samples, fixture stock, consumables|$60–150|Documented assembled stack|
-|First isolated CAN FD adapter|$400 planning allowance before tax/shipping|Two-node protocol and timestamp tests|
-|Second node/transceiver electronics|$60–130|Reset/fault isolation experiment|
-|First five custom assembled PCBs + sensor carriers|$400–1,200 allowance|E01–E05 on actual layout|
-|First full flex/PET samples and tooling charges|$300–1,500 allowance|M01–M04 full-panel evidence|
+|יריעת XactFSR וכרטיס הערכה|אחד מכל סוג; $120 מוצג לפני משלוח|השוואת כוח/החזקה בארבע גאומטריות|
+|Nucleo, שני מתאמי מרבב ורכיבים בדידים|הקצאה $60–110|מדמה נגדים ושמונה ערוצים|
+|חיישני FSR מסחריים לביקורת|8; הקצאה $50–100|השוואה עצמאית מול יריעה בבנייה עצמית|
+|NTC/מעגל גמיש או רכיבי ניסוי תרמיים עם רגליים|$10–30|עקום תרמי מכויל; רכיב עם רגליים אינו תחליף לייצור|
+|דוגמיות כיסוי/מרווחן, חומר גלם למתקן וחומרים מתכלים|$60–150|מבנה שכבות מורכב ומתועד|
+|מתאם CAN FD מבודד ראשון|הקצאת תכנון של $400 לפני מס/משלוח|בדיקות פרוטוקול וחותמות זמן בשני צמתים|
+|אלקטרוניקת צומת/משדר־מקלט שני|$60–130|ניסוי איפוס ובידוד תקלות|
+|חמשת ה־PCB המותאמים והמורכבים הראשונים ונשאי חיישנים|הקצאה $400–1,200|E01–E05 בתכנון המעגל בפועל|
+|דוגמיות מעגל גמיש/PET מלאות ראשונות ועלויות כלי ייצור|הקצאה $300–1,500|ראיות M01–M04 ללוח מלא|
 
-If basic tools are owned, the first coupon/eight-channel experiment can be planned at roughly$300–550; two network nodes, isolated adapter and materials about$800–1,300. A custom-board/full-patch POC may require$1,500–4,000 before equipment and engineering labor. Set a cash gate of$1,000 for the initial material decision: if eight-channel/coupon results fail, stop before ordering full panels.
+אם הכלים הבסיסיים כבר קיימים, ניתן לתכנן את ניסוי הדוגמיות/שמונה הערוצים הראשון בכ־$300–550; שני צמתי רשת, מתאם מבודד וחומרים בכ־$800–1,300. הוכחת היתכנות של כרטיס מותאם/מקטע מלא עשויה לדרוש $1,500–4,000 לפני ציוד ועבודת הנדסה. יש לקבוע שער הוצאה של $1,000 להחלטת החומרים הראשונית: אם תוצאות שמונה הערוצים/הדוגמיות נכשלות, לעצור לפני הזמנת לוחות מלאים.
 
-Equipment: temperature-controlled soldering station and inspection magnifier; ESD mat; adjustable isolated5 V supply; calibrated multimeter; at least100 MHz oscilloscope with short-ground probes; logic/CAN analyzer or a second independently timestamped interface; 0–50 N force measurement and screw stand; micrometer; scale with 0.1 g resolution; thermally controlled plate plus calibrated reference; simple joint/flex fixture. Budget$1,500–5,000 if buying a serviceable set rather than already owning it. Add$500–2,000 for a multi-cell/load-life fixture as needed. Borrow/rent an environmental chamber and book an EMC lab; do not spend the first budget reproducing specialist compliance equipment.
+ציוד: תחנת הלחמה מבוקרת טמפרטורה וזכוכית מגדלת לבדיקה; משטח ESD; ספק 5 V מבודד ומתכוונן; מולטימטר מכויל; אוסצילוסקופ של לפחות 100 MHz עם גשושים בעלי חיבור הארקה קצר; מנתח לוגי/CAN או ממשק שני בעל חותמות זמן עצמאיות; מדידת כוח 0–50 N ומעמד בורג; מיקרומטר; משקל ברזולוציית 0.1 g; משטח מבוקר תרמית וייחוס מכויל; מתקן מפרק/כיפוף פשוט. יש לתקצב $1,500–5,000 אם קונים מערך שימושי במקום להשתמש בציוד שכבר קיים. להוסיף $500–2,000 למתקן רב־תאי/אורך חיים תחת עומס לפי הצורך. לשאול/לשכור תא סביבתי ולהזמין מעבדת EMC; אין להשקיע את התקציב הראשון בשחזור ציוד ייעודי לעמידה בתקנים.
 
-Use a load-cell ADC with enough actual sample rate for the latency experiment; a10 Hz scale module is inadequate for a30 ms timing claim. Verify its delay independently or use an oscilloscope comparator/reference-force threshold channel. Equipment calibration uncertainty must be smaller than the performance difference being claimed.
+יש להשתמש ב־ADC של תא עומס בעל קצב דגימה בפועל המספיק לניסוי ההשהיה; מודול שקילה של 10 Hz אינו מספיק לטענת תזמון של 30 ms. יש לאמת את העיכוב שלו בנפרד, או להשתמש בערוץ משווה/סף כוח ייחוס באוסצילוסקופ. אי־ודאות כיול הציוד חייבת להיות קטנה מהפרש הביצועים שעליו טוענים.
 
 <a id="section-17"></a>
 
-## 17. Limb economics, mass, energy and commercial margin
+## 17. כלכלת הגפיים, מסה, אנרגיה ושולי רווח מסחריים
 
-The reproducible model uses `regions=ceil(patches/8)`, $400 isolated lab adapter plus $67 regional distributor/harness/box, one $300 bench supply, and $100 powered hub allowance above four regions. These are planning allowances. A reference eight-full-panel allocation uses one region; sixteen full panels use two. Panel counts do not prove physical coverage on a particular limb.
+המודל הניתן לשחזור משתמש ב־`regions=ceil(patches/8)`, במתאם מעבדה מבודד בעלות $400 בתוספת $67 למפצל אזורי/צמה/קופסה, בספק שולחני אחד בעלות $300, ובהקצבה של $100 לרכזת מוזנת כאשר יש יותר מארבעה אזורים. אלה הקצבות לתכנון. הקצאת ייחוס של שמונה לוחות מלאים משתמשת באזור אחד; שישה־עשר לוחות מלאים משתמשים בשניים. מספר הלוחות אינו מוכיח כיסוי פיזי של גפה מסוימת.
 
-| Coverage scenario | Touch cells | Good patches | Shared hardware | Total before spares | With 10% spare patches rounded up |
+| תרחיש כיסוי | תאי מגע | טלאים תקינים | חומרה משותפת | סך הכול לפני חלפים | כולל 10% טלאים חלופיים, בעיגול כלפי מעלה |
 |---|---:|---:|---:|---:|---:|
-|Eight full panels|224|8|$767.00|$1,045.24|$1,080.02|
-|Sixteen full panels|448|16|$1,234.00|$1,790.48|$1,860.04|
-|1,008-cell demonstrator|1,008|36|$2,735.00|$3,987.08|$4,126.20|
-|Example 80-patch system|2,240|80|$5,070.00|$7,852.40|$8,130.64|
+|שמונה לוחות מלאים|224|8|$767.00|$1,045.24|$1,080.02|
+|שישה־עשר לוחות מלאים|448|16|$1,234.00|$1,790.48|$1,860.04|
+|מדגים בעל 1,008 תאים|1,008|36|$2,735.00|$3,987.08|$4,126.20|
+|מערכת לדוגמה בעלת 80 טלאים|2,240|80|$5,070.00|$7,852.40|$8,130.64|
 
-The totals are amortized quantity-1,000 patch estimates, **not the cost of buying eight retail parts today**. The first arm will cost more because prototype PCBs, fixtures and small-lot film dominate. For product pricing, a40% gross margin on$8,131 direct cost implies about$13,552 before additional overhead/warranty, not$8,131 revenue. If an OEM's skin allowance is$1,000, this80-patch configuration does not meet it; offer reduced coverage or redesign against that budget before promising affordability.
+הסכומים הם אומדנים המחושבים לפי ייצור 1,000 טלאים ופיזור העלויות על פני הכמות, **ולא עלות רכישת שמונה חלקים במחיר קמעונאי היום**. הזרוע הראשונה תעלה יותר, משום שמעגלי אב־טיפוס, מתקני עזר ויריעות בכמות קטנה הם מרכיבי עלות מרכזיים. בתמחור מוצר, שיעור רווח גולמי של 40% על עלות ישירה של $8,131 מחייב מחיר של כ־$13,552 לפני תקורה ואחריות נוספות, ולא הכנסה של $8,131. אם תקציב העור של יצרן ציוד מקורי הוא $1,000, תצורה זו של 80 טלאים אינה עומדת בו; יש להציע כיסוי מצומצם או לתכנן מחדש בהתאם לתקציב לפני שמבטיחים מחיר נגיש.
 
-### Mass is a system measurement
+### מסה נמדדת ברמת המערכת
 
-At1.4 m²,100 µm TPU of density1.15 g/cm³ is about 161 g. Two125 µm PET layers are approximately483 g at 1.38 g/cm³ before cutouts. Add spacer, ink, traces, tail reinforcement, thermal flex and external margin. Budget controller assemblies6 g×80=480 g; harness/connectors250–400 g; gateways/hubs must be weighed for the selected isolated interfaces; attachment/cover framing150–300 g. The previous 1.7–2.2 kg total used a lighter gateway assumption and is withdrawn for this isolated-adapter configuration. Sum actual gateway, hub and supply mass with the film/controller/harness allowances before stating a robot weight budget. Weigh rather than treat a density calculation as delivered mass. A full-area rigid FR-4 electrode panel is much heavier and is not included in that flexible-skin allocation.
+בשטח של 1.4 m², שכבת TPU בעובי 100 µm ובצפיפות 1.15 g/cm³ שוקלת כ־161 g. שתי שכבות PET בעובי 125 µm שוקלות כ־483 g בצפיפות 1.38 g/cm³, לפני פתחים וחיתוכים. יש להוסיף מרווחן, דיו, מוליכים מודפסים, חיזוק לזנב החיבור, מעגל גמיש תרמי ושוליים חיצוניים. הקציבו למכלולי הבקרה 6 g×80=480 g; לצמה ולמחברים 250–400 g; את השערים והרכזות יש לשקול עבור הממשקים המבודדים שנבחרו; לקיבוע ולמסגרות הכיסוי 150–300 g. הסכום הקודם, 1.7–2.2 kg, התבסס על הנחה של שער קל יותר, והוא מבוטל עבור תצורת המתאם המבודד הזו. לפני הצגת תקציב המשקל לרובוט, חברו את המסה בפועל של השער, הרכזת והספק להקצבות היריעה, הבקר והצמה. יש לשקול, ולא להתייחס לחישוב צפיפות כאילו היה המסה המסופקת בפועל. לוח אלקטרודות קשיח מ־FR-4 המכסה את מלוא השטח כבד הרבה יותר ואינו כלול בהקצאה זו לעור גמיש.
 
-For comparison, 2,240 separate two-wire2 m runs using0.032 mm² copper would contain about 2.57 kg of bare copper, before insulation/connectors. This is a deliberately explicit equal-function wiring example, **not the user's present few-dozen-sensor harness**. A distributed system could save long-wire mass relative to that baseline while still adding substantial mass relative to a sparsely instrumented robot. Both statements can be true.
+לשם השוואה, 2,240 קווים נפרדים, שכל אחד מהם מורכב משני חוטים באורך 2 m ובחתך נחושת 0.032 mm², יכילו כ־2.57 kg נחושת חשופה, לפני בידוד ומחברים. זו דוגמה מפורשת במכוון לחיווט בעל תפקוד שקול, **ולא הצמה הקיימת של המשתמש המשרתת כמה עשרות חיישנים**. מערכת מבוזרת עשויה לחסוך מסה של חוטים ארוכים ביחס לקו בסיס זה, ובה בעת להוסיף מסה ניכרת ביחס לרובוט בעל מעט חיישנים. שתי האמירות יכולות להיות נכונות.
 
-Distal placement affects motion disproportionately. Adding100 g at 0.5 m from a joint adds0.025 kg·m² inertia. Log each cassette's mass and position in robot CAD; place controller pockets and branch hardware proximally where possible. Conductive film savings are not worthwhile if a heavy controller bracket moves to the wrist or ankle.
+מיקום בקצה הגפה משפיע על התנועה באופן לא יחסי למסה. הוספת 100 g במרחק 0.5 m מציר מפרק מוסיפה מומנט התמד של 0.025 kg·m². תעדו ב־CAD של הרובוט את המסה ואת המיקום של כל קסטה; ככל האפשר, מקמו את כיסי הבקרים ואת חומרת ההסתעפות קרוב יותר לבסיס הגפה. חיסכון ביריעה מוליכה אינו כדאי אם תושבת בקר כבדה עוברת אל שורש כף היד או הקרסול.
 
-At30 mA/node from 5 V, the 80-patch average budget is 12 W before gateways. Add measured hub/gateway power and converter loss. A50 Wh battery would lose roughly 4.2 h worth of energy to a12 W skin alone if it powered nothing else; the actual robot runtime effect is computed against the much larger total robot load. LDO dissipation at 30 mA is about 51 mW/node. Surface heating and thermal-sensor bias are tested with actual mounting, not inferred harmless from low total watts.
+בצריכה של 30 mA לצומת מ־5 V, תקציב ההספק הממוצע ל־80 טלאים הוא 12 W לפני השערים. הוסיפו את ההספק המדוד של הרכזת והשער ואת הפסדי הממיר. סוללת 50 Wh הייתה מספקת אנרגיה לעור הצורך 12 W לבדו במשך כ־4.2 h אילו לא הזינה דבר אחר; ההשפעה בפועל על זמן הפעולה של הרובוט מחושבת ביחס לעומס הכולל של הרובוט, הגדול בהרבה. פיזור ההספק ב־LDO בזרם 30 mA הוא כ־51 mW לצומת. יש לבדוק התחממות פני שטח והטיה בחיישן הטמפרטורה במתקון האמיתי, ולא להסיק שהן זניחות רק משום שסך ההספק נמוך.
 
 <a id="section-18"></a>
 
-## 18. Manufacturing work instructions and service design
+## 18. הוראות עבודה לייצור ותכנון השירות
 
-### 18.1 Incoming inspection
+### 18.1 ביקורת קבלה
 
-Assign lot IDs to film, cover, adhesive, sheet, PCB and assembled controller. For each new material lot, measure thickness at ten distributed points, inspect coating under 10× magnification and check sheet resistance only using the supplier-approved method. A quoted Ω/square coating value is not directly the finished force sensor's resistance. For every sheet, test all 28 lead/EOL paths and witness loop using the mating fixture; sample electrical isolation between nonadjacent signal traces. Reject contaminated, creased or delaminated material before assembly.
+הקצו מזהי אצווה ליריעה, לכיסוי, לדבק, ללוח החישה, ל־PCB ולבקר המורכב. בכל אצוות חומר חדשה, מדדו עובי בעשר נקודות מפוזרות, בדקו את הציפוי בהגדלה של 10× ובדקו התנגדות משטחית רק בשיטה שאישר הספק. ערך ציפוי נתון ביחידות Ω/square אינו שווה ישירות להתנגדותו של חיישן הכוח המוגמר. בכל יריעה, בדקו את כל 28 מסלולי המוליך/EOL ואת לולאת הבקרה באמצעות מתקן החיבור התואם; בצעו בדיקות מדגמיות של בידוד חשמלי בין מוליכי אות שאינם סמוכים. פסלו חומר מזוהם, מקומט או בעל היפרדות שכבות לפני ההרכבה.
 
-Accept components only against exact MPNs or a signed alternate evaluation. Archive datasheets, certificates and order acknowledgments. A broker substitute with a similar name is not an approved second source. Maintain at least one alternate **supplier channel**, and separately evaluate alternate **component designs**; those are different risk controls.
+קבלו רכיבים רק לפי מספרי MPN מדויקים או הערכת חלופה חתומה. שמרו גיליונות נתונים, תעודות ואישורי הזמנה בארכיון. תחליף מסוחר רכיבים בעל שם דומה אינו מקור חלופי מאושר. החזיקו לפחות **ערוץ אספקה** חלופי אחד, ובנפרד העריכו **תכנוני רכיבים** חלופיים; אלה אמצעי בקרת סיכון שונים.
 
-### 18.2 Controller and laminate assembly traveler
+### 18.2 גיליון ליווי להרכבת הבקר והלמינציה
 
-1. PCBA supplier performs paste inspection as appropriate, reflow, AOI and electrical shorts checks. Program a unique build record; no production node ID is assigned automatically to every board.
-2. Power on at current limit. Measure3V3/3V3_A, clock, reset and standby. Run the resistor fixture across all 28 channels, four references and both thermal inputs. Test both witness states. Record exact raw values, not just a green lamp.
-3. Prepare the shell carrier and laminate on a clean flat fixture. Inspect and clean compatible surfaces per the material supplier's process; do not use an unapproved solvent on resistive ink. Register spacer and individual resistive islands using tooling holes. Photograph before closing.
-4. Attach the thermal flex with a metered bond line; keep adhesive away from vents and active cells. Add external cover without intentional stretch. Apply controlled roller pressure only on the adhesive grid/perimeter, not a forceful whole-sheet pass that damages/preloads cells.
-5. Attach controller/strain relief and label controller UID, sheet serial, material lot, cover revision, build date and orientation. Keep a machine-readable traveler tying these together.
-6. Dwell72 h, then perform the assembled calibration and final functional test. A fixture rack can hold many units during dwell; include work-in-progress inventory and handling loss in cash planning.
-7. Package with a flat support and no persistent contact load. Include approved cleaning instructions, operating limits, mating-cycle count and service procedure. Store one retain sample per material lot.
+1. ספק ה־PCBA מבצע, לפי הצורך, ביקורת משחת הלחמה, הלחמה בתנור, AOI ובדיקות קצרים חשמליים. צרבו רשומת ייצור ייחודית; אין להקצות אוטומטית לכל לוח אותו מזהה צומת ייצור.
+2. הפעילו מתח עם הגבלת זרם. מדדו 3V3/3V3_A, שעון, איפוס ומצב המתנה. הפעילו את מתקן הנגדים על כל 28 הערוצים, ארבעת ערוצי הייחוס ושתי הכניסות התרמיות. בדקו את שני מצבי לולאת הבקרה. תעדו ערכי גלם מדויקים, ולא רק נורית ירוקה.
+3. הכינו את נושא המעטפת ואת הלמינציה על מתקן שטוח ונקי. בדקו ונקו משטחים תואמים לפי תהליך ספק החומר; אין להשתמש בממס שלא אושר על דיו התנגדותי. יישרו את המרווחן ואת איי החומר ההתנגדותי הנפרדים בעזרת חורי מיקום. צלמו לפני הסגירה.
+4. חברו את המעגל הגמיש התרמי באמצעות שכבת דבק בעובי מבוקר; הרחיקו דבק מפתחי אוורור ומתאים פעילים. הוסיפו את הכיסוי החיצוני ללא מתיחה מכוונת. הפעילו לחץ גליל מבוקר רק על רשת הדבק ועל ההיקף, ולא מעבר חזק על כל היריעה שעלול לפגוע בתאים או להעמיסם מראש.
+5. חברו את הבקר ואת משכך המתיחה, וסמנו UID של הבקר, מספר סידורי של היריעה, אצוות חומר, מהדורת כיסוי, תאריך ייצור וכיוון. שמרו גיליון ליווי קריא למכונה המקשר בין כל אלה.
+6. המתינו 72 h, ואז בצעו כיול של המכלול ובדיקת תפקוד סופית. מדף מתקנים יכול להחזיק יחידות רבות במהלך ההמתנה; כללו מלאי בתהליך ואובדן עקב טיפול בתכנון התזרים.
+7. ארזו עם תמיכה שטוחה וללא עומס מגע מתמשך. צרפו הוראות ניקוי מאושרות, מגבלות הפעלה, מספר מחזורי החיבור והניתוק ונוהל שירות. שמרו דוגמת ייחוס אחת מכל אצוות חומר.
 
-### 18.3 End-of-line test sequence and throughput
+### 18.3 רצף בדיקות בסוף קו הייצור ותפוקה
 
-Every patch: program/configure, read UID, rail/current check; electrical load simulator; reference/witness test; assemble; after dwell force check0/0.5/5/20 N per cell; verify thermal channels at ambient against fixture reference; CAN identity/freshness exchange; disconnect/reconnect service test; final visual inspection. Full multi-temperature calibration may be grouped in a batch fixture and its station occupancy allocated honestly. If two-point ambient verification is substituted for full calibration in production, prove its adequacy over three material lots first and label the reduced process revision.
+לכל טלאי: צריבה/הגדרה, קריאת UID, בדיקת מסילות מתח וזרם; מדמה עומס חשמלי; בדיקת ערוצי ייחוס ולולאת בקרה; הרכבה; לאחר זמן ההמתנה, בדיקת כוח של 0/0.5/5/20 N לכל תא; אימות הערוצים התרמיים בטמפרטורת הסביבה מול ייחוס המתקן; החלפת מידע לזיהוי ולעדכניות ב־CAN; בדיקת שירות של ניתוק וחיבור מחדש; ביקורת חזותית סופית. אפשר לרכז כיול מלא במספר טמפרטורות במתקן אצווה, ולהקצות ביושר את תפוסת התחנה שהוא דורש. אם בייצור מחליפים כיול מלא באימות דו־נקודתי בתנאי סביבה, יש להוכיח תחילה שהוא מספק בשלוש אצוות חומר ולסמן את מהדורת התהליך המצומצם.
 
-At345 attended seconds per patch, one operator working7 effective hours/day handles at most73 patches/day before other interruptions. At300 seconds total station occupancy a single integrated station handles at most84/day. Thus1,000 patches need roughly 14 operator-days plus lot qualification and adhesive dwell. At10,000/month over20 days, approximately500/day requires at least7 such operator equivalents or a measured faster process and enough fixtures. Automation is justified from these bottlenecks, not from annual-unit optimism.
+ב־345 שניות עבודה בנוכחות מפעיל לכל טלאי, מפעיל אחד העובד 7 שעות יעילות ביום מטפל לכל היותר ב־73 טלאים ביום, לפני הפרעות נוספות. בתפוסת תחנה כוללת של 300 שניות, תחנה משולבת יחידה מטפלת לכל היותר ב־84 ביום. לפיכך, 1,000 טלאים דורשים כ־14 ימי־מפעיל, נוסף על הסמכת אצוות וזמן ההמתנה לדבק. בייצור של 10,000 בחודש על פני 20 ימים, נדרשים כ־500 ביום, ולכן לפחות 7 שווי־ערך של מפעילים כאלה, או תהליך מהיר יותר שנמדד ומספר מתקנים מספיק. הצדקת אוטומציה נובעת מצווארי הבקבוק האלה, ולא מאופטימיות לגבי מספר היחידות השנתי.
 
-### 18.4 Repair, warranty and field data
+### 18.4 תיקון, אחריות ונתוני שטח
 
-Track fault code, contact count, run hours, cover changes, connector mating count and current calibration revision. Do not log personal interaction audio/video merely because a tactile product is installed. For each returned unit, preserve raw logs, photograph damage and classify electrical/film/cover/adhesive/harness/software failure before replacing parts. Maintain a field failure Pareto chart and feed changes into a controlled revision.
+עקבו אחר קוד תקלה, מספר מגעים, שעות פעולה, החלפות כיסוי, מספר חיבורי מחבר ומהדורת הכיול הנוכחית. אין לתעד שמע או וידאו של אינטראקציות אישיות רק משום שהותקן מוצר חישה במגע. לכל יחידה שהוחזרה, שמרו יומני גלם, צלמו נזק וסווגו את הכשל כחשמלי/יריעה/כיסוי/דבק/צמה/תוכנה לפני החלפת חלקים. נהלו תרשים פארטו של תקלות שטח והכניסו שינויים למהדורה מבוקרת.
 
-Warranty reserve is separate from manufacturing yield: initial model provision2–5% of hardware revenue until field data supports a different figure. Avoid permanent potting of the whole skin; conformal coating the controller may be useful, but mask connectors, test pads and vent paths and include coating repair procedures. Replace covers/cassettes instead of discarding a whole limb shell wherever practical.
+עתודת האחריות נפרדת מתשואת הייצור: ההפרשה הראשונית במודל היא 2–5% מהכנסות החומרה, עד שנתוני שטח יצדיקו נתון אחר. הימנעו מיציקה אוטמת קבועה של כל העור; ציפוי מגן קונפורמי לבקר עשוי להועיל, אך יש למסך מחברים, נקודות בדיקה ונתיבי אוורור ולכלול נהלים לתיקון הציפוי. ככל שניתן, החליפו כיסויים וקסטות במקום להשליך מעטפת של גפה שלמה.
 
 <a id="section-19"></a>
 
-## 19. Verification procedures, failure responses and reliability evidence
+## 19. נהלי אימות, תגובות לכשל וראיות לאמינות
 
-All limits below are **release criteria**, not measured results. A test record contains: revision, serials, lot IDs, fixture/calibration IDs, operator, conditions, raw file SHA256, observed result, pass/fail and corrective action. Initial design screening uses five patches unless stated; pilot qualification uses thirty patches from three independent material lots. Three cuts from one sheet are not three material lots.
+כל הגבולות להלן הם **תנאי שחרור**, ולא תוצאות שנמדדו. רשומת בדיקה כוללת: מהדורה, מספרים סידוריים, מזהי אצוות, מזהי מתקן וכיול, מפעיל, תנאים, SHA256 של קובץ הגלם, תוצאה שנצפתה, עבר/נכשל ופעולה מתקנת. סינון תכן ראשוני מתבצע על חמישה טלאים, אלא אם צוין אחרת; הסמכת פיילוט מתבצעת על שלושים טלאים משלוש אצוות חומר עצמאיות. שלוש חתיכות מאותה יריעה אינן שלוש אצוות חומר.
 
-| ID | Procedure and sample | Pass criterion | Prescribed response if it fails |
+| מזהה | נוהל ומדגם | תנאי קבלה | תגובה מחייבת במקרה כשל |
 |---|---|---|---|
-|E01 analog accuracy/leakage|Five controllers, all channels; calibrated resistors for open/100k/47k/10k/1k/short; repeat at 10/25/40°C and 5 V min/max; alternate loaded/unloaded channels|Idle/open ranges separated by≥100 counts in measured data; 3 µA budget met; refs within stated windows; no channel permutation; loaded reading repeatable within 20 counts after settling|Inspect contamination/routing; increase settle to500 µs and measure total scan; if leakage dominates use qualified lower-leakage mux. No threshold-only concealment. At500 µs scan remains within 10 ms but must still pass latency|
-|E02 independence|Simultaneously load combinations including two adjacent, four corners, all cells; open every signal and common return individually; short adjacent signals|Unloaded neighbors change<15% of loaded span under electrical simulator; map follows actual mechanical transfer; every injected electrical fault identified or documented as undetectable|Split conductive islands/repair routing; if common-return fault hides detection, revise continuity pattern and retest all channels|
-|E03 clock/acquisition/network|Eight nodes on2 m trunk; 10,000 starts; run24 h; logic pulse around scan; inject60% total bus traffic and stress host logging|No acquisition>5 ms normal; 100 Hz schedule; clock within approved tolerance; normal bus<50%; p99.9 contact latency≤30 ms; no accepted data older than 40 ms|Fix scheduling/queues; reduce diagnostic traffic; split region to four nodes if necessary and recost gateways. Do not quietly lower advertised rate|
-|E04 EMC/ESD|Five assembled cassettes; specialist precompliance test:±4 kV contact on accessible conductive points, ±8 kV air on cover, ten strikes/polarity/location; operate motors at worst PWM/current near harness|No damage, unsafe control action or silently valid corrupted data; recoverable resets explicitly invalidate coverage and re-handshake; no component overstress in probed development tests|Improve discharge return/shield/secondary clamps; rerun leakage and power tests. If it resets, it cannot be marketed as uninterrupted sensing at that level|
-|E05 power/fault isolation|Fully loaded eight-node region; node short, trunk short, hot motor switching, input ramp2→0→5 V, 1,000 plug/power cycles, oscillator worst startup|Neighbor nodes remain valid for node short; regional fault contained; no backfeed; node input≥3.8 V at load; 3V3_A≥3.1 V; boot identity never reused|Increase wire/connector margin, stagger enable, correct limiter coordination; do not delete protection to force startup|
-|M01 sensitivity/coverage|Five patches; every center100 applications0.5 N; all two-cell seams1 N/four-cell corners2 N; 2 mm spatial raster around representative seam/edge; 10 mm probe|≥99/100 detections at each specified point; noise/contact distribution supports thresholds; report uncovered perimeter/joints|Reduce cover stiffness/spacer gap using predefined coupon comparison; or enlarge printed electrode area. If still failing change stated coverage/pitch and rerun costs|
-|M02 thickness/mass/fit|Five complete cassettes; micrometer and weighing; all robot poses at 15° increments with tolerance fixture|Active stack≤1.5 mm, target mass allocation met, no abrasion/pinch, ≥3 mm mechanical clearance where required|Move electronics proximally, split panel geometry, omit impossible crease coverage and update map; do not stretch PET to fit|
-|M03 drift/hysteresis|Thirty patches/three lots, representative center/edge cells; 0.5–20 N up/down; 10 min2 N and 10 N holds; repeat 10/25/40°C|Monotonic medians; hysteresis≤25% span; hold drift≤20% span; contact never auto-zeroed away; release recovers within 60 s|Try supplier's lower-drift formulation; compare capacitive/magnetic alternative under same test; restrict product to transient contact if that is the only passing behavior and customer accepts it|
-|M04 cover/adhesive/cleaning|Five patches; 10,000 dry abrasion strokes with defined10 mm rounded pad, 5 N, 25 mm stroke; 500 wipes with approved cleaner; 168 h40°C/80% RH noncondensing; then full functional check|No exposed conductor, delamination>2 mm from edge, blocked vent or moisture-induced false touch; M01 sensitivity retained|Select thicker cover, revise perimeter/vent and requalify thermal/mass; remove unsupported cleaner from product instructions|
-|M05 overload and minor impact|Five shell-supported patches; 10 mm flat probe100 N for 60 s, ten repetitions; separate20 mm hemispherical striker0.5 J impact at three defined sites; fixture guarded and unpowered for first impacts|No exposed conductor, short, cracked carrier or permanent loss of required M01 response after 60 s recovery; record raw saturation and any temporary invalidity|Add a mechanically supported wear layer or reduce survival specification; repeat sensitivity and thermal tests. This test does not qualify sharp tools, robot falls or joint crushing|
-|T01 thermal|Five assembled patches; five calibration and four independent check temperatures; 25→45°C contact step; heated object midway between sensors|Each instrumented site±2°C andresponse≤3 s; distant unobserved heat clearly reported as outside coverage|Reduce thermal bond/isolate shell; otherwise relax response spec or add sensors and redesign channels/cost. No synthetic full-area thermal claim|
-|S01 host and protocol|Delivered unit tests plus real gateways; 200 ms delayed traffic, old boot replay, wrong UID/CRC, duplicate ID, seq/uptime wrap, CAN errors, USB disconnect, host process death|Every invalid/stale case rejected; overload retained asCONTACT_OR_FAULT; downstream consumer times out≤40 ms; no stale queue becomes fresh on reconnect|Fix timestamp/identity state machine; retain raw failure log. Never clear fault by labeling receive time as acquisition time|
-|S02 flash and brownout|Five controllers,100 randomized power cuts including each journal/config rollover stage, plus 1,000 normal boots|No reused boot epoch after announcing; previous valid config survives interrupted update; corruption enters service state|Fix commit ordering/erase sequence; inhibit CAN until verified persistence; repeat entire campaign|
-|R01 sensing endurance|Thirty patches/three lots; specified sites0→10 N→0 at 2 Hz, 10 mm probe; checks10k/100k/1M cycles|No electrical opens/shorts or cover breach; M01/M03 still pass; report exact failures and cumulative cycles|Redesign film/support/cover; do not extrapolate life from a visually intact sample|
-|R02 joint harness life|Six complete harness/clamp assemblies; actual worst bend/torsion stroke, 1 Hz max unless representative; check100k then1M cycles|No intermittent frames/resistance rise>10%; no insulation damage/strain-relief migration; all joint poses retain clearance|Increase bend radius, change cable grade/clamps, reroute near axis; repeat with identical new build|
-|C01 manufacturing/cost|Thirty consecutive patches through actual process with stopwatches and invoices; three material lots; no hand-selected golden units|≥95% final yield, record first-pass yield separately; ≤345 s attended and 300 s station time or recost; sheet quote meets approved ceiling|Update cost and selling price immediately; repair process before promising volume economics|
-|B01 meaningful customer benefit|One OEM task with matched controller settings and matched task set, with/without skin; predefined100 trials each|At least one agreed benefit, e.g≥20% fewer contact-related task aborts without increased dangerous contact, or≥30% faster cassette service vs chosen baseline|Change target task/market before increasing taxel count; do not claim business value from a colorful display|
+|E01 דיוק אנלוגי וזליגה|חמישה בקרים, כל הערוצים; נגדים מכוילים למצבי נתק/100k/47k/10k/1k/קצר; חזרה ב־10/25/40°C ובמינימום ובמקסימום של הזנת 5 V; החלפה בין ערוצים עמוסים ולא עמוסים|הפרדה של ≥100 ספירות בין טווח מנוחה לטווח נתק בנתונים המדודים; עמידה בתקציב 3 µA; ערוצי הייחוס בתוך החלונות המוגדרים; ללא החלפת ערוצים; חזרתיות הקריאה בעומס בתוך 20 ספירות לאחר התייצבות|בדקו זיהום וניתוב; הגדילו את זמן ההתייצבות ל־500 µs ומדדו את זמן הסריקה הכולל; אם הזליגה דומיננטית, השתמשו במרבב מוסמך בעל זליגה נמוכה יותר. אין להסתיר את הבעיה רק בשינוי סף. בזמן התייצבות של 500 µs הסריקה עדיין בתוך 10 ms, אך חייבת לעבור גם את בדיקת ההשהיה|
+|E02 עצמאות|העמיסו בו־זמנית שילובים הכוללים שני תאים סמוכים, ארבע פינות וכל התאים; נתקו כל אות ואת המוליך החוזר המשותף בנפרד; קצרו אותות סמוכים|שינוי בשכנים שאינם עמוסים <15% מטווח הקריאה בעומס במדמה החשמלי; המפה תואמת להעברה המכנית האמיתית; כל תקלה חשמלית מוזרקת מזוהה או מתועדת כבלתי ניתנת לזיהוי|הפרידו איים מוליכים או תקנו ניתוב; אם תקלה במוליך החוזר המשותף מסתירה זיהוי, שנו את תבנית בדיקת הרציפות ובדקו שוב את כל הערוצים|
+|E03 שעון/דגימה/רשת|שמונה צמתים על קו ראשי באורך 2 m; ‏10,000 הפעלות; הרצה של 24 h; פולס לוגי המקיף את הסריקה; הזרקת תעבורה עד 60% עומס אפיק כולל והעמסת רישום היומנים במארח|אין דגימה >5 ms במצב רגיל; תזמון של 100 Hz; שעון בתוך הסבולת המאושרת; עומס אפיק רגיל <50%; השהיית מגע p99.9≤30 ms; אין קבלת נתונים שגילם מעל 40 ms|תקנו תזמון ותורים; הפחיתו תעבורת אבחון; פצלו אזור לארבעה צמתים במידת הצורך וחשבו מחדש את עלות השערים. אין להפחית בשקט את הקצב המוצהר|
+|E04 EMC/ESD|חמש קסטות מורכבות; בדיקת קדם־תאימות בידי מומחה: ±4 kV במגע בנקודות מוליכות נגישות, ±8 kV באוויר על הכיסוי, עשר פריקות לכל קוטביות ולכל מיקום; הפעילו מנועים בתנאי PWM וזרם מחמירים ליד הצמה|אין נזק, פעולת בקרה לא בטוחה או נתונים משובשים המוצגים בשקט כתקינים; איפוסים שמהם ניתן להתאושש מבטלים במפורש את תקפות הכיסוי ודורשים לחיצת יד מחדש; אין חריגה מעומס הרכיבים בבדיקות הפיתוח עם גששים|שפרו את נתיב חזרת הפריקה, הסיכוך והמהדקים המשניים; חזרו על בדיקות זליגה והספק. אם המערכת מתאפסת, אין לשווק אותה כחישה רציפה ללא הפרעה ברמה זו|
+|E05 הזנה ובידוד תקלות|אזור בעל שמונה צמתים בעומס מלא; קצר בצומת, קצר בקו הראשי, מיתוג מנוע חם, שינוי מתח כניסה 2→0→5 V, ‏1,000 מחזורי חיבור והזנה, התנעת מתנד בתנאי קצה|צמתים שכנים נשארים תקפים בקצר של צומת; תקלה אזורית נשארת תחומה; אין הזנה חוזרת; כניסת הצומת ≥3.8 V בעומס; ‏3V3_A≥3.1 V; זהות אתחול אינה משמשת שוב|הגדילו מרווח תכנון בחוטים ובמחברים, דרגו את ההפעלה בזמן, תקנו את תיאום מגבילי הזרם; אין להסיר הגנה כדי לכפות התנעה|
+|M01 רגישות וכיסוי|חמישה טלאים; 100 הפעלות של 0.5 N בכל מרכז; כל התפרים בין שני תאים ב־1 N ופינות של ארבעה תאים ב־2 N; סריקה מרחבית בצעדי 2 mm סביב תפר ושפה מייצגים; גשש 10 mm|≥99/100 זיהויים בכל נקודה מוגדרת; התפלגות הרעש והמגע תומכת בספים; דיווח על היקף ומפרקים ללא כיסוי|הפחיתו קשיחות כיסוי או מרווח מרווחן באמצעות השוואת קופונים שהוגדרה מראש, או הגדילו את שטח האלקטרודות המודפסות. אם עדיין נכשל, שנו את הכיסוי והפסיעה המוצהרים וחשבו מחדש עלויות|
+|M02 עובי/מסה/התאמה|חמש קסטות שלמות; מיקרומטר ושקילה; כל תנוחות הרובוט במרווחי 15° עם מתקן לסבולות|שכבה פעילה ≤1.5 mm, עמידה בהקצאת המסה, ללא שחיקה או צביטה, מרווח מכני ≥3 mm במקומות הנדרשים|העבירו אלקטרוניקה לכיוון בסיס הגפה, פצלו גאומטריית לוח, ותרו על כיסוי קפלים בלתי אפשרי ועדכנו את המפה; אין למתוח PET כדי להתאים|
+|M03 סחיפה והיסטרזיס|שלושים טלאים משלוש אצוות, תאי מרכז ושפה מייצגים; עלייה וירידה ב־0.5–20 N; החזקות של 10 min ב־2 N וב־10 N; חזרה ב־10/25/40°C|חציונים מונוטוניים; היסטרזיס ≤25% מהטווח; סחיפה בהחזקה ≤20% מהטווח; מגע לעולם אינו נעלם באיפוס אוטומטי; התאוששות לאחר שחרור בתוך 60 s|נסו הרכב בעל סחיפה נמוכה יותר מהספק; השוו חלופה קיבולית או מגנטית באותה בדיקה; הגבילו את המוצר למגע חולף אם זו ההתנהגות היחידה העוברת והלקוח מקבל זאת|
+|M04 כיסוי/דבק/ניקוי|חמישה טלאים; 10,000 תנועות שחיקה יבשה עם כרית מעוגלת מוגדרת של 10 mm, כוח 5 N ומהלך 25 mm; ‏500 ניגובים בחומר ניקוי מאושר; ‏168 h ב־40°C/80% RH ללא עיבוי; לאחר מכן בדיקת תפקוד מלאה|אין מוליך חשוף, היפרדות שכבות >2 mm מן השפה, פתח אוורור חסום או מגע שווא שנגרם מלחות; רגישות M01 נשמרת|בחרו כיסוי עבה יותר, שנו היקף ואוורור והסמיכו מחדש ביצועים תרמיים ומסה; הסירו חומר ניקוי בלתי מבוסס מהוראות המוצר|
+|M05 עומס יתר ופגיעה קלה|חמישה טלאים הנתמכים במעטפת; גשש שטוח 10 mm מפעיל 100 N למשך 60 s, עשר חזרות; בנפרד, מכה של 0.5 J ממקוש חצי־כדורי בקוטר 20 mm בשלושה אתרים מוגדרים; מתקן מוגן וללא מתח בפגיעות הראשונות|אין מוליך חשוף, קצר, נושא סדוק או אובדן קבוע של תגובת M01 הנדרשת לאחר התאוששות של 60 s; תיעוד רוויה גולמית וכל אי־תקפות זמנית|הוסיפו שכבת שחיקה הנתמכת מכנית או הפחיתו את מפרט העמידות; חזרו על בדיקות רגישות ותרמיות. בדיקה זו אינה מסמיכה עמידות לכלים חדים, לנפילת רובוט או למעיכה במפרק|
+|T01 תרמי|חמישה טלאים מורכבים; חמש טמפרטורות כיול וארבע טמפרטורות בדיקה עצמאיות; מדרגת מגע 25→45°C; גוף מחומם באמצע הדרך בין חיישנים|כל אתר מצויד בחיישן עומד ב־±2°C ובזמן תגובה ≤3 s; חום מרוחק שאינו נצפה מדווח בבירור כמחוץ לכיסוי|הפחיתו את ההתנגדות התרמית בחיבור או בודדו מהמעטפת; אחרת, הקלו במפרט זמן התגובה או הוסיפו חיישנים ותכננו מחדש ערוצים ועלות. אין לטעון לכיסוי תרמי סינתטי של כל השטח|
+|S01 מארח ופרוטוקול|בדיקות היחידה המסופקות יחד עם שערים אמיתיים; תעבורה המתעכבת 200 ms, שידור חוזר מאתחול ישן, UID/CRC שגויים, מזהה כפול, גלישת seq/uptime, שגיאות CAN, ניתוק USB, קריסת תהליך המארח|כל מקרה לא תקף או ישן נדחה; עומס יתר נשמר כ־CONTACT_OR_FAULT; צרכן במורד השרשרת מפעיל פסק זמן ≤40 ms; תור ישן אינו נעשה עדכני בחיבור מחדש|תקנו את מכונת המצבים של חותמות זמן וזהות; שמרו יומן גלם של הכשל. לעולם אין לנקות תקלה באמצעות הצגת זמן הקבלה כזמן הדגימה|
+|S02 זיכרון הבזק ונפילות מתח|חמישה בקרים, 100 ניתוקי מתח אקראיים הכוללים כל שלב של גלגול יומן/תצורה, וכן 1,000 אתחולים רגילים|אין שימוש חוזר בתקופת אתחול לאחר הכרזה עליה; התצורה התקפה הקודמת שורדת עדכון שנקטע; השחתה מעבירה למצב שירות|תקנו סדר השלמה ורצף מחיקה; חסמו CAN עד לאימות שמירה מתמשכת; חזרו על כל מסע הבדיקות|
+|R01 סיבולת חישה|שלושים טלאים משלוש אצוות; אתרים מוגדרים במחזור 0→10 N→0 ב־2 Hz, גשש 10 mm; בדיקות ב־10k/100k/1M מחזורים|אין נתקים או קצרים חשמליים ואין פריצת כיסוי; M01/M03 עדיין עוברים; דיווח על כשלים מדויקים ועל מספר מחזורים מצטבר|תכננו מחדש יריעה, תמיכה וכיסוי; אין להסיק אורך חיים מדוגמה שנראית שלמה|
+|R02 חיי צמת מפרק|שישה מכלולי צמה ומהדקים שלמים; מהלך הכיפוף והפיתול המחמיר בפועל, עד 1 Hz אלא אם קצב אחר מייצג; בדיקה ב־100k ולאחר מכן ב־1M מחזורים|אין מסגרות לסירוגין או עליית התנגדות >10%; אין נזק לבידוד או תזוזת משכך המתיחה; נשמר מרווח בכל תנוחות המפרק|הגדילו רדיוס כיפוף, החליפו סוג כבל או מהדקים, נתבו מחדש סמוך לציר; חזרו על הבדיקה עם מכלול חדש זהה|
+|C01 ייצור ועלות|שלושים טלאים רצופים בתהליך האמיתי עם שעוני עצר וחשבוניות; שלוש אצוות חומר; ללא יחידות מצטיינות שנבחרו ידנית|תשואה סופית ≥95%, תיעוד נפרד של תשואה במעבר ראשון; ≤345 s עבודה בנוכחות מפעיל ו־300 s זמן תחנה, או חישוב עלות מחדש; הצעת מחיר ליריעה עומדת בתקרה המאושרת|עדכנו מיד עלות ומחיר מכירה; תקנו את התהליך לפני הבטחת כדאיות בייצור כמותי|
+|B01 תועלת ממשית ללקוח|משימת OEM אחת עם הגדרות בקרה ומערך משימות תואמים, עם העור ובלעדיו; 100 ניסויים מוגדרים מראש בכל מצב|לפחות תועלת מוסכמת אחת, לדוגמה ≥20% פחות הפסקות משימה הקשורות למגע ללא עלייה במגע מסוכן, או שירות קסטה מהיר ב־≥30% לעומת קו בסיס נבחר|שנו את משימת היעד או השוק לפני הגדלת מספר תאי החישה; אין לטעון לערך עסקי על סמך תצוגה צבעונית|
 
-For E03 latency, a force-reference timestamp and received sample must share a validated clock or measured synchronization bound. Report p50, p95, p99.9, maximum, number of samples and dropped/invalid events. Ten thousand events are a starting latency dataset, not a worst-case proof.
+לבדיקת ההשהיה E03, חותמת הזמן של ייחוס הכוח והדגימה שהתקבלה חייבות להשתמש בשעון משותף שאומת או בגבול שגיאת סנכרון שנמדד. דווחו p50, p95, p99.9, מקסימום, מספר דגימות ואירועים שאבדו או נפסלו. עשרת אלפים אירועים הם מערך נתוני השהיה התחלתי, ולא הוכחה למקרה הגרוע ביותר.
 
-For M04, freeze the abrasion counterface as a smooth POM pad with 2 mm edge radius, photograph its surface and replace it at a defined wear limit; this is a repeatable engineering screen, not a claimed ASTM abrasion rating. The initial cleaning procedure is a damp microfiber cloth with 0.5% neutral detergent in water, followed by a damp-water wipe and drying; no immersion, alcohol, bleach or solvent compatibility is assumed. Control applied liquid and pad load, record the actual cleaner, and do not approve cleaning before the test passes. M05 similarly defines only a blunt-contact survival envelope; the skin is not armor.
+ב־M04, קבעו את משטח השחיקה הנגדי ככרית POM חלקה בעלת רדיוס שפה 2 mm, צלמו את פניה והחליפו אותה בגבול שחיקה מוגדר; זהו סינון הנדסי חוזר, ולא דירוג שחיקה נטען לפי ASTM. נוהל הניקוי הראשוני הוא מטלית מיקרופייבר לחה עם 0.5% חומר ניקוי ניטרלי במים, לאחריה ניגוב במים וייבוש; אין להניח התאמה לטבילה, לאלכוהול, לאקונומיקה או לממסים. בקרו את כמות הנוזל ואת עומס הכרית, תעדו את חומר הניקוי בפועל ואל תאשרו ניקוי לפני שהבדיקה עוברת. גם M05 מגדיר רק מעטפת עמידות למגע קהה; העור אינו שריון.
 
-**False contacts:** define an event as a new contact episode after debounce, not every 100 Hz sample. Test the whole intended installation under unloaded motion, temperature change and motor EMI for at least24 h. With zero events in24 system-hours, a simple Poisson upper95% bound is about 0.125 events/hour; it does not prove “never.” One patch-hour cannot be multiplied into full-robot reliability without an explicit dependence model. Re-run after adding patches or changing thresholds.
+**מגעי שווא:** הגדירו אירוע כאפיזודת מגע חדשה לאחר סינון קפיצות, ולא ככל דגימה ב־100 Hz. בדקו את כל ההתקנה המיועדת בתנועה ללא עומס, בשינוי טמפרטורה ובהפרעות אלקטרומגנטיות מהמנועים במשך לפחות 24 h. אם לא נצפו אירועים ב־24 שעות־מערכת, חסם עליון פשוט ברמת 95% לפי פואסון הוא כ־0.125 אירועים לשעה; הוא אינו מוכיח "לעולם לא". אין להכפיל שעת־טלאי אחת לאמינות של רובוט שלם ללא מודל תלות מפורש. חזרו על הבדיקה לאחר הוספת טלאים או שינוי ספים.
 
-**Reliability statistics:** thirty samples surviving a defined mission with zero failures only give a one-sided95% lower reliability bound of about 90.5%, under the independent-identical-sample model. Demonstrating99% reliability at 95% confidence with zero failures would require299 samples of that same mission. One million cycles at 2 Hz takes 5.8 days of uninterrupted cycling; at 1 Hz it takes 11.6 days. This does not include thermal aging, correlated lot defects or years of calendar exposure.
+**סטטיסטיקת אמינות:** שלושים מדגמים השורדים משימה מוגדרת ללא כשלים מספקים רק חסם אמינות תחתון חד־צדדי ברמת 95% של כ־90.5%, תחת מודל מדגמים עצמאיים וזהים. הדגמת אמינות של 99% ברמת ביטחון 95% וללא כשלים דורשת 299 מדגמים של אותה משימה. מיליון מחזורים ב־2 Hz דורשים 5.8 ימים של מחזוריות רצופה; ב־1 Hz הם דורשים 11.6 ימים. הדבר אינו כולל הזדקנות תרמית, פגמים מתואמים באצווה או שנות חשיפה קלנדריות.
 
-### Failure modes that diagnostics cannot fully cover
+### מצבי כשל שהאבחון אינו יכול לכסות במלואם
 
-| Failure | What detects it | Residual limitation / control |
+| כשל | מה מזהה אותו | מגבלה שיורית / אמצעי בקרה |
 |---|---|---|
-|Broken signal trace|Remote EOL/open range|A concurrent contact or alternative short path can mask it; factory force test still needed|
-|Resistive coating loses sensitivity|Known-force functional test|Continuity alone does not detect this; scheduled service test and lot endurance screen|
-|Cover tension/preload|Baseline/pose tests|Do not auto-zero it away; correct mechanics|
-|Water/ionic contamination|Unexpected response/leakage/environment screen|No waterproof claim; current PCB diagnostics cannot identify every contamination mode|
-|Shorted CAN bus|CAN errors/missing valid data|Entire region unavailable; independent regions remain only if common source/host survives|
-|Wrong cassette location|Commissioned UID/body map and physical orientation check|Software cannot infer arbitrary mounting from an ID alone|
-|NTC lifted from cover|Thermal step/fixture test|Its resistance can look normal while measuring shell/air; electrical continuity is insufficient|
-|Host crash or stale transforms|Consumer watchdog/time bounds|Skin itself cannot stop the robot safely; existing independent protection required|
+|מוליך אות שבור|טווח EOL/נתק מרוחק|מגע בו־זמני או מסלול קצר חלופי יכולים להסתירו; עדיין נדרשת בדיקת כוח במפעל|
+|ציפוי התנגדותי מאבד רגישות|בדיקת תפקוד בכוח ידוע|רציפות לבדה אינה מזהה זאת; נדרשים מבחן שירות מתוזמן וסינון סיבולת אצווה|
+|מתח בכיסוי או עומס מקדים|בדיקות קו בסיס ותנוחה|אין להעלים זאת באיפוס אוטומטי; יש לתקן את המכניקה|
+|מים או זיהום יוני|תגובה לא צפויה, זליגה וסינון סביבתי|אין טענה לאטימות למים; האבחון הנוכחי ב־PCB אינו מזהה כל סוג זיהום|
+|אפיק CAN מקוצר|שגיאות CAN או היעדר נתונים תקפים|כל האזור אינו זמין; אזורים עצמאיים נשארים רק אם מקור ההזנה והמארח המשותפים ממשיכים לתפקד|
+|מיקום קסטה שגוי|מפת UID/גוף שהוכנסה לשירות ובדיקת כיוון פיזית|תוכנה אינה יכולה להסיק התקנה שרירותית ממזהה בלבד|
+|NTC נפרד מהכיסוי|מדרגה תרמית או בדיקת מתקן|ההתנגדות שלו עשויה להיראות תקינה בזמן שהוא מודד מעטפת או אוויר; רציפות חשמלית אינה מספיקה|
+|קריסת מארח או טרנספורמציות לא עדכניות|כלב שמירה בצרכן וגבולות זמן|העור עצמו אינו יכול לעצור את הרובוט בבטחה; נדרשת הגנה עצמאית קיימת|
 
-This product is not a safety-rated sensing subsystem. Determine the applicable robot/product standards for the actual deployment, including [ISO 10218-1:2025](https://www.iso.org/standard/73933.html) for industrial robots, [ISO 13482:2014](https://www.iso.org/standard/53820.html) for relevant personal-care contexts, and [ISO 13849-1:2023](https://www.iso.org/standard/73481.html) for safety-related controls if a safety function is designed. The ISO 13482 revision was at FDIS stage when checked; a draft is not a published certificate. E04 precompliance does not certify a product; an IP rating, CE declaration or performance level requires its own defined scope and evidence. Keep this boundary in investor and customer material, not just engineering footnotes.
+מוצר זה אינו תת־מערכת חישה בעלת דירוג בטיחות. יש לקבוע אילו תקני רובוט ומוצר חלים על הפריסה בפועל, ובהם [ISO 10218-1:2025](https://www.iso.org/standard/73933.html) לרובוטים תעשייתיים, [ISO 13482:2014](https://www.iso.org/standard/53820.html) להקשרים רלוונטיים של טיפול אישי, ו־[ISO 13849-1:2023](https://www.iso.org/standard/73481.html) לבקרות הקשורות לבטיחות אם מתוכננת פונקציית בטיחות. מהדורת התיקון של ISO 13482 הייתה בשלב FDIS בעת הבדיקה; טיוטה אינה תעודה שפורסמה. בדיקת קדם־תאימות E04 אינה מסמיכה מוצר; דירוג IP, הצהרת CE או רמת ביצועים דורשים תחום מוגדר וראיות משלהם. שמרו על הבחנה זו בחומר למשקיעים וללקוחות, ולא רק בהערות שוליים הנדסיות.
 
 <a id="section-20"></a>
 
-## 20. Phases, deliverables, budgets and hard stop decisions
+## 20. שלבים, תוצרים, תקציבים והחלטות עצירה מחייבות
 
-The schedule below assumes one capable embedded/electronics engineer plus part-time mechanical/process support and access to a lab. If the home builder lacks these skills, contract the stated deliverables. Calendar time includes purchasing and fixture construction; it cannot be replaced with a promise that the final design is already validated.
+לוח הזמנים להלן מניח מהנדס משובצות/אלקטרוניקה מיומן אחד, תמיכה חלקית במכניקה ובתהליכים וגישה למעבדה. אם לבונה הביתי אין מיומנויות אלה, יש להזמין את התוצרים המוגדרים מאנשי מקצוע. הזמן הקלנדרי כולל רכש ובניית מתקנים; אי אפשר להחליפו בהבטחה שהתכן הסופי כבר אומת.
 
-| Phase | Concrete work and exit package | Typical elapsed time / cash excluding founder labor | Exit or stop decision |
+| שלב | עבודה מעשית וחבילת סיום | זמן טיפוסי / הוצאה כספית ללא עבודת המייסד | החלטת המשך או עצירה |
 |---|---|---|---|
-|P0 requirements and material coupon|Freeze contact/thermal claims; buy four-geometry sheet test; run resistor simulator andM01/M03 coupon sequence; record complete material stack|1–2 weeks; $300–1,000 if tools owned|Proceed only if at least one covered stack meets sensitivity/hold criteria. If none:buy custom supplier samples or switch sensing principle before electronics scale-up|
-|P1 two-node communications|Implement ADC/HAL application, protocol, flash journal; commission two nodes; runS01/S02 andE03 timing; deliver reproducible firmware image/source/config|2–4 weeks; $500–1,500 incremental prototype hardware|No scale-up until old/queued packets and reboot-loaded contact are handled correctly; software unit tests alone do not close this gate|
-|P2 five production-layout patches|Complete CAD review/release; order five assembled boards and full laminates; executeE01–E05, M01/M02, T01; update BOM with actual invoices|3–6 weeks; $1,500–5,000 plus engineering|If analog/EMC or mechanics fail, make one controlled revision and repeat affected tests. Two failed iterations trigger independent architecture review|
-|P3 one moving arm region|Eight nodes, real continuous-flex harness, body map, fixture and robot-task integration; preliminary100k cycles; complete24 h false-contact test|3–6 weeks; $1,500–5,000 incremental plus robot access|Require valid coverage in motion and measured benefit on one task. If weight/coverage harms performance more than sensing helps, reduce panel count/relocate hardware|
-|P4 thirty-unit pilot across three lots|Run full calibration/DFM/endurance/cleaning process; time every operation; obtain at least two comparable supplier quotes; release article dataset and independent review|6–12 weeks; $8,000–25,000 excluding staff and robot|Final yield≥95%, defined performance pass, customer cost ceiling accepted. Otherwise recost/redesign before advertising mass producibility|
-|P5 36/80-patch system and OEM pilot|Build physical counted system, all-region stress/fault tests, measured total mass/power/cost, customer pilot and service workflow|4–8 weeks after earlier gates; $5,000–20,000 hardware/fixtures/system integration allowance|No1,008-cell claim from simulated nodes. OEM task benefit and paid/contracted pilot support commercialization case|
-|P6 production transfer|Compliance scope and testing, approved suppliers, controlled CAD/tooling, fixture capacity, production gateway if justified, field support and pilot-customer acceptance|3–6 months typical; $30,000–100,000 external NRE/test/tooling allowance|Release only with signed electrical/mechanical/software/process acceptance, quoted recurring cost and defined warranty responsibility|
+|P0 דרישות וקופון חומר|הקפאת טענות המגע והתרמיות; רכישת ניסוי יריעה בארבע גאומטריות; הפעלת מדמה נגדים ורצף קופונים M01/M03; תיעוד מלא של שכבות החומר|1–2 שבועות; $300–1,000 אם הכלים קיימים|המשך רק אם לפחות מבנה שכבות מכוסה אחד עומד בתנאי הרגישות וההחזקה. אם אין: רכישת דוגמאות מותאמות מספק או החלפת עקרון החישה לפני הרחבת האלקטרוניקה|
+|P1 תקשורת בין שני צמתים|מימוש יישום ADC/HAL, פרוטוקול ויומן הבזק; הכנסת שני צמתים לשירות; ביצוע S01/S02 ותזמון E03; מסירת תמונת קושחה, קוד מקור ותצורה ניתנים לשחזור|2–4 שבועות; $500–1,500 נוספים לחומרת אב־טיפוס|אין להרחיב לפני טיפול נכון במנות ישנות או ממתינות ובמגע טעון בזמן אתחול; בדיקות יחידה לתוכנה לבדן אינן סוגרות שלב זה|
+|P2 חמישה טלאים בפריסת ייצור|השלמת סקירת CAD ושחרור; הזמנת חמישה לוחות מורכבים ולמינציות מלאות; ביצוע E01–E05, M01/M02, T01; עדכון BOM לפי חשבוניות בפועל|3–6 שבועות; $1,500–5,000 בתוספת הנדסה|אם האנלוג, EMC או המכניקה נכשלים, לבצע מהדורה מבוקרת אחת ולחזור על הבדיקות המושפעות. שתי איטרציות שנכשלו מחייבות סקירת ארכיטקטורה עצמאית|
+|P3 אזור אחד של זרוע נעה|שמונה צמתים, צמה אמיתית לכיפוף מתמשך, מפת גוף, מתקן ושילוב במשימת רובוט; 100k מחזורים מקדימים; בדיקת מגעי שווא מלאה של 24 h|3–6 שבועות; $1,500–5,000 נוספים, בתוספת גישה לרובוט|נדרש כיסוי תקף בתנועה ותועלת מדודה במשימה אחת. אם המשקל או הכיסוי פוגעים בביצועים יותר מהתועלת בחישה, להפחית לוחות או להעביר חומרה|
+|P4 פיילוט של שלושים יחידות משלוש אצוות|ביצוע תהליך מלא של כיול, DFM, סיבולת וניקוי; מדידת זמן לכל פעולה; קבלת לפחות שתי הצעות ספקים בנות־השוואה; פרסום מערך נתונים למאמר וסקירה עצמאית|6–12 שבועות; $8,000–25,000 ללא כוח אדם ורובוט|תשואה סופית ≥95%, עמידה בביצועים מוגדרים, ותקרת עלות שהלקוח מקבל. אחרת, חישוב עלות מחדש או תכנון מחדש לפני פרסום יכולת ייצור המוני|
+|P5 מערכת של 36/80 טלאים ופיילוט OEM|בניית מערכת פיזית שסופרים את רכיביה, בדיקות עומס ותקלה בכל האזורים, מדידת מסה/הספק/עלות כוללים, פיילוט לקוח ותהליך שירות|4–8 שבועות לאחר השלבים הקודמים; הקצבה של $5,000–20,000 לחומרה, מתקנים ואינטגרציית מערכת|אין לטעון ל־1,008 תאים על סמך צמתים מדומים. תועלת במשימת OEM ופיילוט בתשלום או בחוזה תומכים בהצדקה למסחור|
+|P6 העברה לייצור|הגדרת תחום תאימות ובדיקות, ספקים מאושרים, CAD וכלים מבוקרים, קיבולת מתקנים, שער ייצור אם מוצדק, תמיכת שטח וקבלת לקוח פיילוט|3–6 חודשים בדרך כלל; הקצבה של $30,000–100,000 להנדסה חד־פעמית חיצונית, בדיקות וכלים|שחרור רק עם אישור חתום לחשמל, מכניקה, תוכנה ותהליך, עלות חוזרת מגובה בהצעת מחיר ואחריות מוגדרת|
 
-These stages overlap only where evidence permits. Do not order production tooling while a material gate is unresolved. A credible home POC may take two to three months of part-time iteration; a robust pilot and manufacturing transfer are commonly a many-month engineering program. No schedule can guarantee supplier lead times or first-pass hardware success.
+שלבים אלה חופפים רק כאשר הראיות מאפשרות זאת. אין להזמין כלי ייצור כל עוד שער קבלת חומר לא נסגר. הוכחת היתכנות ביתית אמינה עשויה לדרוש חודשיים עד שלושה של איטרציות במשרה חלקית; פיילוט עמיד והעברה לייצור הם בדרך כלל תוכנית הנדסית הנמשכת חודשים רבים. שום לוח זמנים אינו יכול להבטיח זמני אספקה של ספקים או הצלחת חומרה בניסיון הראשון.
 
-Engineering workload planning: electronics/CAD160–300 h; embedded firmware 250–450 h; host/robot integration120–250 h; mechanics/process200–400 h; fixtures/qualification250–500 h; manufacturing transfer/compliance coordination120–250 h. Total roughly 1,100–2,150 h. At$50–100/h this is$55k–215k of engineering effort, even if founder labor is initially unpaid. Do not add a second generic NRE figure to those hours without identifying overlapping work. Legal/IP and external test-lab bills remain separate.
+תכנון היקף העבודה ההנדסית: אלקטרוניקה/CAD ‏160–300 h; קושחה משובצת 250–450 h; שילוב מארח ורובוט 120–250 h; מכניקה ותהליך 200–400 h; מתקנים והסמכה 250–500 h; העברה לייצור ותיאום תאימות 120–250 h. סך הכול כ־1,100–2,150 h. בתעריף של $50–100/h מדובר במאמץ הנדסי בשווי $55k–215k, גם אם עבודת המייסד אינה מתוגמלת בתחילה. אין להוסיף לשעות אלה אומדן כללי נוסף של הנדסה חד־פעמית בלי לזהות עבודה חופפת. הוצאות משפטיות/קניין רוחני וחשבונות מעבדות בדיקה חיצוניות נשארים נפרדים.
 
-**Hard pivots:**
+**שינויי כיוון מחייבים:**
 
-- If a protected FSR stack cannot retain a10 min contact under temperature/pose changes, it cannot be sold for sustained contact awareness under those conditions. Change material or narrow the task with customer agreement.
-- If sparse thermistors cannot satisfy the customer's heat-coverage requirement, offer contact skin without that claim or budget a denser thermal design. Do not pretend two readings are an epidermis-wide heat sensor.
-- If qualified printed sheet cost is>$20 at 1,000 patches, stop the low-cost whole-body pitch and compare partial-coverage economics, another supplier or another architecture.
-- If the whole system exceeds the robot's distal mass/energy allowance, relocate electronics and reduce coverage before pursuing thinner wire alone.
-- If no customer can identify a task worth the installed price, stop increasing sensor count and test an arm/forearm product with a specific workflow.
+- אם מבנה FSR מוגן אינו מסוגל לשמר זיהוי מגע במשך 10 min תחת שינויי טמפרטורה ותנוחה, אין למכור אותו לצורך מודעות למגע מתמשך בתנאים אלה. יש להחליף חומר או לצמצם את המשימה בהסכמת הלקוח.
+- אם תרמיסטורים דלילים אינם מספקים את דרישת הלקוח לכיסוי תרמי, יש להציע עור מגע ללא טענה זו או לתקצב תכנון תרמי צפוף יותר. אין להציג שתי קריאות כחיישן חום על פני האפידרמיס כולו.
+- אם עלות יריעה מודפסת שהוסמכה היא >$20 בכמות של 1,000 טלאים, יש להפסיק את הצגת פתרון הגוף המלא כזול ולהשוות כדאיות של כיסוי חלקי, ספק אחר או ארכיטקטורה אחרת.
+- אם המערכת כולה חורגת מתקציב המסה בקצות הגפיים או מתקציב האנרגיה של הרובוט, יש להעביר אלקטרוניקה ולצמצם כיסוי לפני שמתמקדים רק בחוט דק יותר.
+- אם אף לקוח אינו יכול לזהות משימה המצדיקה את המחיר המותקן, יש לעצור את הגדלת מספר החיישנים ולבחון מוצר לזרוע או לאמה בעל תהליך עבודה מוגדר.
 
 <a id="section-21"></a>
 
-## 21. Robot behavior and evidence of customer value
+## 21. התנהגות הרובוט וראיות לערך ללקוח
 
-The behaviors below are now implemented against the Cheng-derived architecture in section28. P1 additionally closes A01; P2 closes A02 and A06; P3 closes A04/A05 before enabling tactile motion. A03 is required only for an inertial-calibration claim; known CAD/manual mapping remains the base release path. No phase may substitute synthetic algorithm tests for measured sensor, actuator or transport results.
+ההתנהגויות שלהלן ממומשות כעת על גבי הארכיטקטורה הנגזרת מ־Cheng בסעיף 28. ‏P1 סוגר בנוסף את A01; ‏P2 סוגר את A02 ואת A06; ‏P3 סוגר את A04/A05 לפני הפעלת תנועה המגיבה למגע. A03 נדרש רק לצורך טענה לכיול אינרציאלי; מיפוי CAD ידוע או מיפוי ידני נשאר נתיב השחרור הבסיסי. שום שלב אינו רשאי להחליף תוצאות מדודות של חיישנים, מפעילים או תעבורה בבדיקות אלגוריתם סינתטיות.
 
-Start with three explicit perception behaviors, each inside the robot's existing motion limits:
+התחילו בשלוש התנהגויות תפיסה מפורשות, כל אחת בתוך מגבלות התנועה הקיימות של הרובוט:
 
-1. **Contact localization during close interaction:** map a touched forearm/shin/torso zone to a link coordinate. The controller can choose an already approved slower motion or request operator attention. Test repeated contact at different poses; compare against current torque/current sensing.
-2. **Contact-aware task recovery:** during a low-energy manipulation/navigation task, identify which shell touched the environment and choose among prevalidated recovery motions. Measure successful recoveries, task time, false triggers and peak contact reference force over100 matched trials. Do not infer force safety from skin intensity.
-3. **Maintenance and service:** identify absent coverage, a torn sheet or a shorted region before the next task; replace one cassette and verify it. Measure detection delay and hands-on service minutes against whole-sleeve replacement.
+1. **איתור מגע במהלך אינטראקציה קרובה:** מיפוי אזור באמה, בשוק או בגו שנגעו בו לקואורדינטת חוליה. הבקר יכול לבחור תנועה איטית יותר שכבר אושרה, או לבקש את תשומת לב המפעיל. בדקו מגע חוזר בתנוחות שונות; השוו לחישת המומנט או הזרם הנוכחית.
+2. **התאוששות משימה המתחשבת במגע:** במהלך משימת מניפולציה או ניווט באנרגיה נמוכה, זהו איזו מעטפת נגעה בסביבה ובחרו מתוך תנועות התאוששות שאומתו מראש. מדדו התאוששויות מוצלחות, זמן משימה, הפעלות שווא ושיא כוח מגע לפי חיישן הייחוס לאורך 100 ניסויים תואמים. אין להסיק בטיחות כוח מעוצמת אות העור.
+3. **תחזוקה ושירות:** זיהוי כיסוי חסר, יריעה קרועה או אזור מקוצר לפני המשימה הבאה; החלפת קסטה אחת ואימותה. מדדו עיכוב זיהוי ודקות עבודה ידנית בשירות לעומת החלפת שרוול שלם.
 
-Temperature is an additional point-sensing channel: report temperature at each instrumented position and explicitly indicate unavailable areas. It can support thermal-contact experiments or identify local heating; it cannot substitute for motor winding sensors, thermal camera coverage or burn protection.
+טמפרטורה היא ערוץ נוסף של חישה נקודתית: דווחו טמפרטורה בכל מיקום מצויד בחיישן וציינו במפורש אזורים שאינם זמינים. הוא יכול לתמוך בניסויי מגע תרמי או לזהות התחממות מקומית; הוא אינו תחליף לחיישני ליפופי מנוע, לכיסוי מצלמה תרמית או להגנה מכוויות.
 
-The first market offer should specify: covered area, probe detection threshold, pose range, update/age bounds, expected lifetime under a defined load, service time, installed cost and integration API. Customers buy task capability and maintainability, not the fact that a robot has a large number of receptors. Biological skin is an inspiration; a low-cost industrial implementation should copy useful distributed sensing and replaceability without claiming the full function of human skin.
+ההצעה הראשונה לשוק צריכה להגדיר: שטח מכוסה, סף זיהוי בגשש, טווח תנוחות, גבולות עדכון וגיל נתונים, אורך חיים צפוי בעומס מוגדר, זמן שירות, עלות מותקנת ו־API לאינטגרציה. לקוחות קונים יכולת ביצוע משימה ויכולת תחזוקה, ולא את עצם העובדה שלרובוט קולטנים רבים. עור ביולוגי הוא מקור השראה; מימוש תעשייתי זול צריך להעתיק חישה מבוזרת שימושית ויכולת החלפה, בלי לטעון למלוא התפקוד של עור אנושי.
 
 <a id="section-22"></a>
 
-## 22. Competitive landscape
+## 22. מפת התחרות
 
-The following combines official vendor information and primary research. Commercial statements are supplier claims unless independently tested. Products differ substantially in resolution, force axes, safety certification, coverage and included electronics. Public information does **not** establish delivered unit prices for equivalent full-body systems.
+המידע הבא משלב מידע רשמי מספקים ומחקר ראשוני. אמירות מסחריות הן טענות ספק, אלא אם נבדקו באופן עצמאי. המוצרים שונים מאוד ברזולוציה, בצירי הכוח, בהסמכת בטיחות, בכיסוי ובאלקטרוניקה הכלולה. מידע ציבורי **אינו** קובע מחירי יחידה מסופקים עבור מערכות שקולות המכסות גוף שלם.
 
-| Organization / platform | Established approach | Implication for this venture |
+| ארגון / פלטפורמה | גישה מבוססת | משמעות למיזם זה |
 |---|---|---|
-| **TUM robot skin** | Modular, distributed skin and event-driven processing; published large-scale work includes 1,260 cells and 7,560 sensing elements. A later public robot demonstration reports more than 13,000 mixed sensing elements. [TUM paper record](https://portal.fis.tum.de/en/publications/evaluation-of-a-large-scale-event-driven-robot-skin/), [TUM full-body demonstration](https://www.tum.de/en/news-and-events/all-news/press-releases/details/35732-1) | Thousands of receptors, distributed processing and reduced wiring are established prior art. Count like-for-like taxels, modalities and area |
-| **University of Genoa / ElbaTech, CySkin and ProxySKIN** | Research on modular tactile skin and distributed acquisition; 2024 primary research discusses tactile/proximity integration and system implementation. [From CySkin to ProxySKIN](https://pmc.ncbi.nlm.nih.gov/articles/PMC10892799/) | Local readout and a networked skin are not a new invention by themselves; study their mechanical and network tradeoffs |
-| **XELA Robotics, uSkin** | Commercial magnetic tactile technology with three-axis sensing; official information describes millimeter-scale sites and high update rates. [XELA technology](https://xelarobotics.com/technology/) | Stronger force-vector capability than this inexpensive normal-contact design; request equivalent-area quote and motor-magnetic-environment specifications |
-| **tacterion, plyon** | Commercial resistive/capacitive hybrid flexible sensors; manufacturer states roughly 0.5–0.7 mm sensor thickness and static-drift compensation. [tacterion technology](https://www.tacterion.com/technology) | A serious film supplier, license option or competitor. Thin protected sensing is already commercial; compare assembled thickness and cost, not bare film alone |
-| **AIRSKIN** | Commercial pneumatic contact pads; vendor describes safety-rated industrial configurations with dual-channel outputs. [AIRSKIN technology](https://airskin.io/airskin-technology/) | Relevant benchmark for rugged, maintainable contact protection. Its certified configurations are not comparable to an uncertified research skin, and it is not a dense pressure map |
-| **Touchlab** | Company develops tactile electronic skin and robotic touch applications. Public detailed specifications and equivalent-system prices need direct confirmation. [Touchlab](https://www.touchlab.io/), [company technical material](https://www.touchlab.io/_files/ugd/3d73f8_2941d745d9eb44d0b0641cd8eff7d048.pdf?index=true) | Direct strategic competitor/possible supplier; do not assert a price, volume capability or full-body performance without a current quote |
-| **Meta ReSkin** | Replaceable magnetic tactile research skin. The 2021 announcement cited under $6 per sensor at 100 units; that historical figure excludes a complete humanoid deployment. [Meta ReSkin research announcement](https://ai.meta.com/blog/reskin-a-versatile-replaceable-low-cost-skin-for-ai-research-on-tactile-perception/) | Low-cost replaceable tactile skin is not new; use as a research baseline with comparable electronics, calibration and coverage costs |
-| **AnySkin** | Research project on replaceable magnetic tactile sensing and transfer between sensor units. [AnySkin primary project](https://any-skin.github.io/) | Replacement without intensive recalibration is an active research area; do not claim universal calibration-free replacement for this FSR design |
-| **Interlink / Sensitronics / Tekscan** | Established force-sensing film products and custom manufacture. [Interlink custom sensors](https://www.interlinkelectronics.com/custom-sensor-solutions), [Sensitronics](https://www.sensitronics.com/), [Tekscan FlexiForce](https://www.tekscan.com/products-solutions/force-sensors/flexiforce-a201-sensor-0) | Sensible sourcing/partner paths. A commercial skin integrator can add value through packaging, production, diagnostics and robot integration without inventing a new sensing polymer |
+| **TUM robot skin** | עור מודולרי מבוזר ועיבוד מונחה אירועים; עבודות שפורסמו בהיקף גדול כוללות 1,260 תאים ו־7,560 רכיבי חישה. הדגמת רובוט ציבורית מאוחרת יותר מדווחת על יותר מ־13,000 רכיבי חישה ממספר סוגים. [רשומת מאמר TUM](https://portal.fis.tum.de/en/publications/evaluation-of-a-large-scale-event-driven-robot-skin/), [הדגמת גוף מלא של TUM](https://www.tum.de/en/news-and-events/all-news/press-releases/details/35732-1) | אלפי קולטנים, עיבוד מבוזר וצמצום חיווט הם ידע קודם מבוסס. יש להשוות תאי חישה, סוגי חישה ושטח על בסיס שקול |
+| **University of Genoa / ElbaTech, CySkin and ProxySKIN** | מחקר על עור מגע מודולרי ואיסוף נתונים מבוזר; מחקר ראשוני מ־2024 דן בשילוב מגע וקִרבה ובמימוש המערכת. [מ־CySkin ל־ProxySKIN](https://pmc.ncbi.nlm.nih.gov/articles/PMC10892799/) | קריאה מקומית ועור מרושת אינם כשלעצמם המצאה חדשה; יש ללמוד את הפשרות המכניות והרשתיות שלהם |
+| **XELA Robotics, uSkin** | טכנולוגיית מגע מגנטית מסחרית עם חישה בשלושה צירים; המידע הרשמי מתאר אתרי חישה בקנה מידה מילימטרי וקצבי עדכון גבוהים. [טכנולוגיית XELA](https://xelarobotics.com/technology/) | יכולת מדידת וקטור כוח טובה יותר מתכנון זול זה למגע נורמלי למשטח; יש לבקש הצעת מחיר לשטח שקול ומפרט פעולה בסביבה מגנטית של מנועים |
+| **tacterion, plyon** | חיישנים גמישים מסחריים היברידיים, התנגדותיים וקיבוליים; היצרן מציין עובי חיישן של כ־0.5–0.7 mm ופיצוי סחיפה סטטית. [טכנולוגיית tacterion](https://www.tacterion.com/technology) | ספק יריעה משמעותי, אפשרות לרישוי או מתחרה. חישה דקה ומוגנת כבר מסחרית; יש להשוות עובי ועלות של מכלול, ולא רק יריעה חשופה |
+| **AIRSKIN** | כריות מגע פנאומטיות מסחריות; הספק מתאר תצורות תעשייתיות בעלות דירוג בטיחות ויציאות דו־ערוציות. [טכנולוגיית AIRSKIN](https://airskin.io/airskin-technology/) | אמת מידה רלוונטית להגנת מגע עמידה וקלה לתחזוקה. התצורות המוסמכות שלה אינן שקולות לעור מחקרי לא מוסמך, והיא אינה מפת לחץ צפופה |
+| **Touchlab** | החברה מפתחת עור אלקטרוני למגע ויישומי מגע רובוטיים. יש לאשר ישירות מפרטים מפורטים ומחירי מערכות שקולות, שאינם מפורסמים במלואם. [Touchlab](https://www.touchlab.io/), [חומר טכני של החברה](https://www.touchlab.io/_files/ugd/3d73f8_2941d745d9eb44d0b0641cd8eff7d048.pdf?index=true) | מתחרה אסטרטגי ישיר או ספק אפשרי; אין לטעון למחיר, לכושר ייצור כמותי או לביצועי גוף מלא בלי הצעת מחיר עדכנית |
+| **Meta ReSkin** | עור מחקרי מגנטי ניתן להחלפה. בהכרזה מ־2021 צוין מחיר נמוך מ־$6 לחיישן בכמות של 100 יחידות; נתון היסטורי זה אינו כולל פריסה מלאה בהומנואיד. [הכרזת מחקר Meta ReSkin](https://ai.meta.com/blog/reskin-a-versatile-replaceable-low-cost-skin-for-ai-research-on-tactile-perception/) | עור מגע זול וניתן להחלפה אינו חדש; יש להשתמש בו כקו בסיס מחקרי עם עלויות אלקטרוניקה, כיול וכיסוי בנות־השוואה |
+| **AnySkin** | פרויקט מחקר לחישה מגנטית ניתנת להחלפה ולהעברה בין יחידות חיישן. [הפרויקט הראשוני AnySkin](https://any-skin.github.io/) | החלפה ללא כיול מחדש אינטנסיבי היא תחום מחקר פעיל; אין לטעון להחלפה אוניברסלית ללא כיול בתכן FSR זה |
+| **Interlink / Sensitronics / Tekscan** | מוצרי יריעה מבוססים לחישת כוח וייצור מותאם. [חיישנים מותאמים של Interlink](https://www.interlinkelectronics.com/custom-sensor-solutions), [Sensitronics](https://www.sensitronics.com/), [Tekscan FlexiForce](https://www.tekscan.com/products-solutions/force-sensors/flexiforce-a201-sensor-0) | מסלולי אספקה ושותפות סבירים. משלב עור מסחרי יכול להוסיף ערך באריזה, ייצור, אבחון ואינטגרציה לרובוט בלי להמציא פולימר חישה חדש |
 
-### Competitive experiment before investor claims
+### ניסוי השוואתי לפני טענות למשקיעים
 
-Buy or obtain evaluation samples of commercial FSR, tacterion if accessible, and one magnetic research/commercial design. Test identical active area, protective cover, contact probe, force sequence, motion, environmental range and total electronics/assembly cost. Report detection probability, false positives, hold drift, coverage gaps, installed thickness, mass, power, latency, replacement time and quoted delivered cost. If a vendor will not provide a quote, mark cost unknown rather than inventing an expensive comparison.
+רכשו או השיגו דוגמאות הערכה של FSR מסחרי, של tacterion אם ניתן להשיגו, ושל תכנון מגנטי מחקרי או מסחרי אחד. בדקו שטח פעיל זהה, כיסוי מגן, גשש מגע, רצף כוחות, תנועה, טווח סביבתי ועלות כוללת של אלקטרוניקה והרכבה. דווחו הסתברות זיהוי, זיהויי שווא, סחיפה בהחזקה, פערי כיסוי, עובי מותקן, מסה, הספק, השהיה, זמן החלפה ועלות מסופקת לפי הצעת מחיר. אם ספק אינו מספק הצעת מחיר, סמנו את העלות כלא ידועה במקום להמציא השוואה יקרה.
 
-Your system may win on installed coverage and service cost while losing on force precision or shear. That can still support a business. A claim of superiority in every dimension will not survive technical scrutiny.
+המערכת שלכם עשויה לנצח בכיסוי מותקן ובעלות שירות, ולהפסיד בדיוק כוח או בגזירה. גם כך אפשר לבסס עסק. טענה לעליונות בכל ממד לא תעמוד בביקורת טכנית.
 
 
-### A controlled benchmark, with a purchase limit
+### השוואה מבוקרת עם תקרת רכש
 
-Use three baseline classes: commercial Interlink/Sensitronics resistive controls, one available capacitive/hybrid film sample, and one magnetic tactile module. Allocate at most $1,500 to comparison samples before an OEM pilot; if a supplier will not sell a sample within that budget, record it as not experimentally compared. Do not label an unavailable commercial product inferior from its marketing page.
+השתמשו בשלוש קבוצות בסיס: חיישני ביקורת התנגדותיים מסחריים של Interlink/Sensitronics, דוגמת יריעה קיבולית או היברידית זמינה אחת, ומודול מגע מגנטי אחד. הקצו לכל היותר $1,500 לדוגמאות השוואה לפני פיילוט OEM; אם ספק אינו מוכר דוגמה במסגרת תקציב זה, תעדו שלא נערכה השוואה ניסויית מולו. אין להגדיר מוצר מסחרי שאינו זמין כנחות על סמך עמוד השיווק שלו.
 
-Use five samples per available technology where budget permits, the same 10 mm probe, five loads, loading speed, hold duration and ambient conditions. Compare both bare sensors and each supplier-approved protective stack; forcing the wrong cover onto a competing technology is not a fair product comparison. Present native spatial resolution, axes, installed area, sensing/processing electronics, sample rate, latency, power, service procedure and delivered price separately. Normalize cost per **tested covered square meter at a stated detection threshold**, not simply per taxel. Publish excluded areas, thermal coverage and whether a device includes a safety function.
+השתמשו בחמש דוגמאות לכל טכנולוגיה זמינה, ככל שהתקציב מאפשר, ובאותו גשש 10 mm, חמישה עומסים, מהירות העמסה, משך החזקה ותנאי סביבה. השוו גם חיישנים חשופים וגם כל מבנה הגנה שאושר בידי ספקו; כפיית כיסוי לא מתאים על טכנולוגיה מתחרה אינה השוואת מוצר הוגנת. הציגו בנפרד רזולוציה מרחבית טבעית, צירים, שטח מותקן, אלקטרוניקת חישה ועיבוד, קצב דגימה, השהיה, הספק, נוהל שירות ומחיר מסופק. נרמלו עלות לפי **מטר רבוע מכוסה שנבדק בסף זיהוי מוגדר**, ולא רק לפי תא חישה. פרסמו אזורים מוחרגים, כיסוי תרמי והאם התקן כולל פונקציית בטיחות.
 
-Specific advantage hypothesis: a replaceable cassette can preserve at least 99/100 center detections after ten cover replacements, with median 5 N response changing no more than 15% and each service taking under five minutes. Test five cassettes and randomize replacement order; recalibration counts as service time. If it fails, sell calibrated replacement cassettes instead of claiming calibration-free service. This is a falsifiable engineering differentiator, not an established patent claim.
+השערת יתרון מוגדרת: קסטה ניתנת להחלפה יכולה לשמר לפחות 99/100 זיהויי מרכז לאחר עשר החלפות כיסוי, כאשר חציון התגובה ב־5 N משתנה בלא יותר מ־15% וכל פעולת שירות נמשכת פחות מחמש דקות. בדקו חמש קסטות ובחרו סדר החלפה אקראי; כיול מחדש נכלל בזמן השירות. אם המבחן נכשל, מכרו קסטות חלופיות מכוילות במקום לטעון לשירות ללא כיול. זהו בידול הנדסי שניתן להפריך בניסוי, ולא טענת פטנט מבוססת.
 
 <a id="section-23"></a>
 
-## 23. Israeli strategic partners
+## 23. שותפים אסטרטגיים בישראל
 
-These are **potential fits inferred from public capabilities**, not relationships, endorsements or indications that they will participate. No organization has been contacted for this plan.
+אלה **התאמות אפשריות המוסקות מיכולות ציבוריות**, ולא קשרים קיימים, המלצות או סימן לכך שהארגונים ישתתפו. לא נערכה פנייה לשום ארגון לצורך תוכנית זו.
 
-| Candidate | Verified public capability | Specific proposed collaboration / first question |
+| מועמד | יכולת ציבורית מאומתת | שיתוף פעולה מוצע ומוגדר / שאלה ראשונה |
 |---|---|---|
-| **Technion, Prof. Hossam Haick / LNBD, through T3** | Research and transferable technology in skin-like sensing, protective layers, pressure/temperature and self-healing concepts. [Haick laboratory](https://lnbd.technion.ac.il/team/prof-hossam-haick/), [T3 skin-like platform](https://t3.technion.ac.il/technology/new-skin-like-sensing-platform-for-a-full-physical-and-chemical-perception-of-the-surrounding-space/) | Request a paid technical assessment and review relevant licensing/IP. Ask which materials are reproducible, what measured durability/cost data exist and whether the proposed stack conflicts with/licences their patents |
-| **Feelit** | Industrial sensing products and printed/nanomaterial sensing heritage; current business is industrial asset monitoring. [Feelit official site](https://feelit.tech/) | Explore printed film process and industrial qualification expertise. Ask if they offer OEM materials/process collaboration rather than assume their maintenance sensor is already a humanoid skin |
-| **Nistec** | Electronic design, PCB assembly, product assembly and test. [Nistec official site](https://www.nistec.com/) | Quote5/100/1k/10k controller boards, review DFM and bed-of-nails test; ask for actual placement/test labor and approved alternatives |
-| **Eltek / Nistec group** | Israeli high-reliability PCB and flex/rigid-flex manufacture. [Eltek company profile](https://www.nisteceltek.com/about-us/company-profile/), [flex-rigid capability](https://www.nisteceltek.com/high-end-pcb/flex-rigid-boards/) | Evaluate a flex interconnect only if standard FR-4 + printed sheet cannot meet mechanics. Premium rigid-flex may be unnecessary cost. Eltek and Nistec are related, not fully independent sourcing alternatives |
-| **PCB Technologies** | Israeli PCB, turnkey PCBA and packaging capabilities. [PCB Technologies](https://www.pcb-technologies.com/) | Independent DFM/manufacturing quote and pilot capacity; request cost appropriate to an affordable consumer/industrial robot, not an unnecessarily expensive packaging stack |
-| **Ben-Gurion University, Robotics and Control lab / Amir Shapiro** | Public lab focus on robot control, locomotion and manipulation. [BGU lab record](https://cris.bgu.ac.il/en/equipments/robotics-and-control-research-lab/) | Seek access to a realistic moving-limb integration experiment and contact-aware control evaluation; agree publication/IP ownership before work |
-| **Ben-Gurion University, haptics / human interaction research** | Biomedical engineering laboratories include haptics-related expertise. [BGU laboratories](https://www.bgu.ac.il/en/u/faculties/engineering/departments/biomedical-engineering/laboratories/) | Develop meaningful touch/interaction experiments and measurement protocols, rather than only a visual demo |
-| **Israel Innovation Authority** | Published startup and ideation funding programs. [Startup Fund](https://innovationisrael.org.il/en/programs/startup-fund/), [Tnufa](https://innovationisrael.org.il/en/programs/ideation-tnufa-incentive-program/) | Check current eligibility, matching funding, permitted expenses and IP/royalty obligations. Grants are competitive and conditional; do not treat them as committed cash |
+| **הטכניון, פרופ׳ חוסאם חאיק / LNBD, באמצעות T3** | מחקר וטכנולוגיה הניתנת להעברה בתחום חישה דמוית עור, שכבות מגן, לחץ וטמפרטורה ורעיונות לריפוי עצמי. [מעבדת חאיק](https://lnbd.technion.ac.il/team/prof-hossam-haick/), [פלטפורמה דמוית עור של T3](https://t3.technion.ac.il/technology/new-skin-like-sensing-platform-for-a-full-physical-and-chemical-perception-of-the-surrounding-space/) | בקשו הערכה טכנית בתשלום ובדקו רישוי וקניין רוחני רלוונטיים. שאלו אילו חומרים ניתנים לשחזור, אילו נתוני עמידות ועלות מדודים קיימים, והאם המבנה המוצע מתנגש בפטנטים שלהם או מחייב רישוי שלהם |
+| **Feelit** | מוצרי חישה תעשייתיים ורקע בחישה מודפסת ובננו־חומרים; הפעילות הנוכחית היא ניטור נכסים תעשייתיים. [האתר הרשמי של Feelit](https://feelit.tech/) | בדקו מומחיות בתהליכי יריעה מודפסת ובהסמכה תעשייתית. שאלו אם החברה מציעה שיתוף פעולה בחומרים או בתהליכים ל־OEM, במקום להניח שחיישן התחזוקה שלה הוא כבר עור להומנואיד |
+| **Nistec** | תכנון אלקטרוני, הרכבת PCB, הרכבת מוצרים ובדיקות. [האתר הרשמי של Nistec](https://www.nistec.com/) | בקשו הצעות ל־5/100/1k/10k לוחות בקרה, סקירת DFM ובדיקת מיטת מסמרים; שאלו על עבודה בפועל בהשמה ובבדיקה ועל חלופות מאושרות |
+| **Eltek / קבוצת Nistec** | ייצור ישראלי של PCB באמינות גבוהה ומעגלים גמישים וקשיחים־גמישים. [פרופיל חברת Eltek](https://www.nisteceltek.com/about-us/company-profile/), [יכולת מעגלים קשיחים־גמישים](https://www.nisteceltek.com/high-end-pcb/flex-rigid-boards/) | בחנו חיבור גמיש רק אם FR-4 רגיל עם יריעה מודפסת אינו עומד בדרישות המכניות. מעגל קשיח־גמיש יוקרתי עלול להיות עלות מיותרת. Eltek ו־Nistec קשורות זו לזו, ואינן חלופות אספקה עצמאיות לחלוטין |
+| **PCB Technologies** | יכולות ישראליות ב־PCB, ‏PCBA בשירות מלא ואריזה אלקטרונית. [PCB Technologies](https://www.pcb-technologies.com/) | הצעת DFM וייצור עצמאית וקיבולת פיילוט; בקשו עלות המתאימה לרובוט צרכני או תעשייתי במחיר נגיש, ולא מבנה אריזה יקר ללא צורך |
+| **אוניברסיטת בן־גוריון, המעבדה לרובוטיקה ובקרה / אמיר שפירא** | המיקוד הציבורי של המעבדה הוא בקרת רובוטים, תנועה ומניפולציה. [רשומת המעבדה בבן־גוריון](https://cris.bgu.ac.il/en/equipments/robotics-and-control-research-lab/) | בקשו גישה לניסוי שילוב מציאותי בגפה נעה ולהערכת בקרה המתחשבת במגע; הסכימו על זכויות פרסום וקניין רוחני לפני תחילת העבודה |
+| **אוניברסיטת בן־גוריון, מחקר בהפטיקה ובאינטראקציה אנושית** | מעבדות ההנדסה הביו־רפואית כוללות מומחיות הקשורה להפטיקה. [מעבדות בן־גוריון](https://www.bgu.ac.il/en/u/faculties/engineering/departments/biomedical-engineering/laboratories/) | פתחו ניסויי מגע ואינטראקציה בעלי משמעות ופרוטוקולי מדידה, ולא רק הדגמה חזותית |
+| **רשות החדשנות** | מסלולי מימון מפורסמים לסטארטאפים ולשלב הרעיון. [קרן ההזנק](https://innovationisrael.org.il/en/programs/startup-fund/), [תנופה](https://innovationisrael.org.il/en/programs/ideation-tnufa-incentive-program/) | בדקו זכאות עדכנית, מימון משלים, הוצאות מותרות וחובות קניין רוחני ותמלוגים. מענקים תחרותיים ומותנים; אין להתייחס אליהם ככסף שהובטח |
 
-Recommended order: independent electrical/process review → film supplier samples and quotations → one EMS DFM quote → robotic lab/OEM pilot. Advanced university materials are valuable if they solve a measured limitation; adding an exotic material solely to sound innovative can delay an affordable product.
+סדר מומלץ: סקירת חשמל ותהליך עצמאית ← דוגמאות והצעות מחיר מספק יריעות ← הצעת DFM אחת מספק EMS ← פיילוט במעבדת רובוטיקה או אצל OEM. חומרים אוניברסיטאיים מתקדמים מועילים אם הם פותרים מגבלה מדודה; הוספת חומר אקזוטי רק כדי להישמע חדשניים עלולה לעכב מוצר במחיר נגיש.
 
-T3's public page lists a physical-sciences business-development contact. Use its official contact route with a one-page nonconfidential brief; agree confidentiality and ownership before sharing potentially patentable details. Do not send the entire unreviewed concept publicly and then assume novelty is protected.
+העמוד הציבורי של T3 מציג איש קשר לפיתוח עסקי במדעי הפיזיקה. השתמשו בערוץ הקשר הרשמי עם תקציר לא סודי בן עמוד אחד; הסכימו על סודיות ובעלות לפני שיתוף פרטים העשויים להיות כשירים לפטנט. אין לשלוח לציבור את כל הרעיון שלא נבדק ואז להניח שהחדשנות מוגנת.
 
 
-### Sequence and decision criteria for Israeli engagement
+### סדר וקריטריוני החלטה לפנייה לשותפים בישראל
 
-First prepare a two-page nonconfidential brief: measured coupon curves, stack drawing, target application, cost ceiling and one specific technical question. After P0, seek a controller/DFM review from Nistec or PCB Technologies; request a dated written issue list and quote, not a general endorsement. In parallel, ask a film supplier for the tightly specified samples in section 25. A robotics laboratory becomes useful after a stable patch exists: agree one moving-limb protocol, robot time, raw-data ownership and publication rights before work begins.
+ראשית הכינו תקציר לא סודי בן שני עמודים: עקומות קופון מדודות, שרטוט שכבות, יישום יעד, תקרת עלות ושאלה טכנית מוגדרת אחת. לאחר P0, בקשו סקירת בקר/DFM מ־Nistec או מ־PCB Technologies; דרשו רשימת בעיות כתובה ומתוארכת והצעת מחיר, ולא המלצה כללית. במקביל, בקשו מספק יריעות את הדוגמאות המוגדרות בקפידה בסעיף 25. מעבדת רובוטיקה נעשית שימושית לאחר שקיים טלאי יציב: הסכימו מראש על פרוטוקול גפה נעה אחד, זמן רובוט, בעלות על נתוני גלם וזכויות פרסום.
 
-For Technion/T3 or Feelit, the decision is whether their accessible material/process solves a measured failure such as creep, adhesion or manufacturing yield. Request evidence on that exact issue and licensing/OEM supply terms. If the proposed material cannot be obtained reproducibly or exceeds the product's cost allowance, retain the established film architecture. For grant applications, use the current official program terms and a reviewed project budget; award availability and eligibility are not assumed. No partner commitment or communication has been made here.
+במקרה של הטכניון/T3 או Feelit, ההחלטה היא האם החומר או התהליך הנגישים שלהם פותרים כשל מדוד כגון זחילה, הידבקות או תשואת ייצור. בקשו ראיות לבעיה המדויקת ולתנאי רישוי או אספקה ל־OEM. אם אי אפשר להשיג את החומר המוצע באופן חוזר, או שהוא חורג מהקצאת העלות למוצר, השאירו את ארכיטקטורת היריעה המבוססת. בבקשות מענק השתמשו בתנאי המסלול הרשמיים העדכניים ובתקציב פרויקט שנבדק; אין להניח זמינות מענק או זכאות. לא ניתנה כאן שום התחייבות שותף ולא נערכה תקשורת עם שותף.
 
 <a id="section-24"></a>
 
-## 24. Innovation, intellectual property and publication
+## 24. חדשנות, קניין רוחני ופרסום
 
-### 24.1 A defensible innovation thesis
+### 24.1 תזה של חדשנות שניתן להגן עליה
 
-The combination of electronic skin, temperature/touch layers, local multiplexing, a shared communication bus and thousands of sensing points **is not a demonstrated technological breakthrough**. Existing research and commercial systems already cover much of that ground. The supplied ADC diagram is not sufficient evidence of novelty either.
+השילוב של עור אלקטרוני, שכבות טמפרטורה ומגע, ריבוב מקומי, אפיק תקשורת משותף ואלפי נקודות חישה **אינו פריצת דרך טכנולוגית שהוכחה**. מחקרים ומערכות מסחריות קיימים כבר מכסים חלק גדול מהתחום. גם תרשים ה־ADC שסופק אינו ראיה מספקת לחדשנות.
 
-Potential differentiators worth investigating:
+בידולים אפשריים שכדאי לחקור:
 
-1. A manufacturable registered laminate/vent/cover geometry that achieves low-force seam coverage with repeatable assembly and low creep.
-2. A low-cost printed sheet with remote electrical diagnostics and a service/calibration workflow that substantially reduces installed maintenance cost.
-3. A production test method that calibrates many cells rapidly while preserving contact-detection reliability across film lots.
-4. An integration package with accurate fault-aware body maps, verified joint motion life and transparent cost/coverage data.
+1. גאומטריית למינציה מיושרת, אוורור וכיסוי הניתנת לייצור ומאפשרת כיסוי תפרים בכוח נמוך, עם הרכבה חוזרת וזחילה נמוכה.
+2. יריעה מודפסת זולה עם אבחון חשמלי מרוחק ותהליך שירות וכיול המפחית משמעותית את עלות התחזוקה המותקנת.
+3. שיטת בדיקת ייצור המכיילת תאים רבים במהירות, תוך שמירה על אמינות זיהוי מגע בין אצוות יריעה.
+4. חבילת אינטגרציה עם מפות גוף מדויקות המתחשבות בתקלות, חיי תנועה מאומתים במפרקים ונתוני עלות וכיסוי שקופים.
 
-Each is a **hypothesis** until a prior-art search and controlled comparison establish what is different and useful. A unique market advantage can also come from execution, OEM integration, supply agreements and validated lifetime cost; it need not be a new material discovery.
+כל אחד מאלה הוא **השערה** עד שחיפוש ידע קודם והשוואה מבוקרת יבססו מה שונה ומה שימושי. יתרון שוק ייחודי יכול לנבוע גם מביצוע, משילוב עם OEM, מהסכמי אספקה ומעלות מחזור חיים מאומתת; אין הכרח שיהיה גילוי של חומר חדש.
 
-Before public disclosure, consult an appropriate patent professional about novelty, ownership, filing strategy and freedom to operate. Publication can destroy novelty in jurisdictions without applicable grace periods. A provisional filing, if used, does not automatically establish patentability or freedom to operate. [EPO novelty requirement, Article54](https://www.epo.org/en/legal/epc/2020/a54.html), [WIPO patent FAQ](https://www.wipo.int/en/web/patents/faq_patents).
+לפני חשיפה לציבור, התייעצו עם איש מקצוע מתאים בתחום הפטנטים לגבי חדשנות, בעלות, אסטרטגיית הגשה וחופש פעולה. פרסום עלול לשלול חדשנות בתחומי שיפוט שאין בהם תקופות חסד רלוונטיות. הגשת בקשה זמנית, אם נעשית, אינה מוכיחה אוטומטית כשירות לפטנט או חופש פעולה. [דרישת החדשנות של EPO, סעיף 54](https://www.epo.org/en/legal/epc/2020/a54.html), [שאלות נפוצות על פטנטים של WIPO](https://www.wipo.int/en/web/patents/faq_patents).
 
-### 24.2 Article structure and minimum evidence
+### 24.2 מבנה המאמר והראיות המזעריות
 
-Proposed honest title: **“A serviceable, low-cost contact skin for humanoid limbs: distributed acquisition, protected printed sensors and measured manufacturing tradeoffs.”** Use “low-cost” only alongside the actual cost definition and comparator.
+כותרת מוצעת וישרה: **״עור מגע בר־שירות ובעלות נמוכה לגפיים הומנואידיות: איסוף מבוזר, חיישנים מודפסים מוגנים ופשרות ייצור מדודות״.** השתמשו ב״עלות נמוכה״ רק לצד הגדרת העלות בפועל והגורם שאליו משווים.
 
-Article sections: problem and equal-function wiring baseline; related work; sensor/material stack; circuit and network; calibration; coverage and environmental experiments; moving-limb integration; production cost model; limitations; reproducible files/data; next qualification steps.
+פרקי המאמר: הבעיה וקו בסיס לחיווט בעל תפקוד שקול; עבודות קשורות; מבנה החיישן והחומרים; מעגל ורשת; כיול; ניסויי כיסוי וסביבה; שילוב בגפה נעה; מודל עלות ייצור; מגבלות; קבצים ונתונים ניתנים לשחזור; שלבי ההסמכה הבאים.
 
-| Proposed claim | Evidence needed before publication |
+| טענה מוצעת | ראיות נדרשות לפני פרסום |
 |---|---|
-| “Over1,000 touch sites” | Physical system with 1,008 independently addressed sites; not simulated nodes or mixed modality channel counting |
-| “Reduced wiring mass” | Weighed baseline and new harness at equal area, sample rate, function and length; include connectors/insulation |
-| “Thin” | Measured complete installed stack at active area and electronics pockets, not bare film gauge |
-| “Low-cost” | Dated small-lot invoices, supplier quotations by volume, yield/labor assumptions and NRE shown separately |
-| “Rugged” | Defined life, abrasion, cleaning, temperature, ESD and motion tests with sample count and failure data |
-| “Replaceable” | Timed replacement, mating-cycle budget, recalibration burden and response before/after |
-| “Fault tolerant” | Deliberate lead breaks, node power shorts, bus faults and host failure tests; state regional/common failure limits |
-| “Temperature sensing” | Assembled accuracy, thermal response and detection coverage; show missed hot spots if only two sites |
-| “Breakthrough” | Independent prior-art review and a substantial reproducible advance over the relevant baseline |
+| ״יותר מ־1,000 אתרי מגע״ | מערכת פיזית בעלת 1,008 אתרים ממוענים באופן עצמאי; לא צמתים מדומים ולא ספירת ערוצים מסוגי חישה שונים יחד |
+| ״מסה מופחתת של חיווט״ | שקילת צמת בסיס וצמה חדשה באותו שטח, קצב דגימה, תפקוד ואורך; כולל מחברים ובידוד |
+| ״דק״ | מדידת כל המבנה המותקן באזור הפעיל ובכיסי האלקטרוניקה, ולא רק עובי יריעה חשופה |
+| ״עלות נמוכה״ | חשבוניות מתוארכות לכמויות קטנות, הצעות מחיר ספקים לפי נפח, הנחות תשואה ועבודה והצגה נפרדת של עלויות חד־פעמיות |
+| ״עמיד״ | בדיקות מוגדרות של אורך חיים, שחיקה, ניקוי, טמפרטורה, ESD ותנועה, עם מספר דוגמאות ונתוני כשל |
+| ״ניתן להחלפה״ | מדידת זמן החלפה, תקציב מחזורי חיבור, היקף כיול מחדש ותגובה לפני ואחרי |
+| ״סביל לתקלות״ | ניתוקים מכוונים של מוליכים, קצרים בהזנת צמתים, תקלות אפיק וכשל מארח; פירוט גבולות הכשל האזורי והמשותף |
+| ״חישת טמפרטורה״ | דיוק במכלול, תגובה תרמית וכיסוי זיהוי; הצגת מוקדים חמים שהוחמצו אם יש רק שני אתרים |
+| ״פריצת דרך״ | סקירת ידע קודם עצמאית והתקדמות משמעותית וניתנת לשחזור ביחס לקו הבסיס הרלוונטי |
 
-Release raw CSV logs, fixture drawings, BOM revision, firmware/source hashes, protocol, body map and analysis scripts where IP strategy permits. Publish failures and conditions. Separate conceptual videos from footage of working hardware; label rendered cutaways as illustrations. Do not imply the previously requested animation proves functionality.
+פרסמו יומני CSV גולמיים, שרטוטי מתקנים, מהדורת BOM, גיבובי קושחה וקוד מקור, פרוטוקול, מפת גוף וסקריפטי ניתוח ככל שאסטרטגיית הקניין הרוחני מאפשרת. פרסמו כשלים ותנאים. הפרידו סרטוני קונספט מצילום חומרה פועלת; סמנו חתכים מרונדרים כאיורים. אין לרמוז שהאנימציה שהתבקשה קודם מוכיחה תפקוד.
 
-### 24.3 Investor package after the POC
+### 24.3 חבילת משקיעים לאחר הוכחת ההיתכנות
 
-Include a working limb, a short unedited multi-contact/hold/fault/replacement demonstration, independent reviewer notes, three-lot performance data, dated manufacturing RFQs, measured mass/power, customer task and pilot interest, a cost sensitivity model, IP position, remaining qualification risks and a funded milestone plan. A genuine paid pilot or documented OEM requirement is stronger market evidence than a large hypothetical humanoid market figure.
+כללו גפה פועלת, הדגמה קצרה ולא ערוכה של ריבוי מגעים, החזקה, תקלה והחלפה, הערות סוקר עצמאי, נתוני ביצועים משלוש אצוות, בקשות הצעת מחיר מתוארכות לייצור, מסה והספק מדודים, משימת לקוח ועניין בפיילוט, מודל רגישות עלות, מצב קניין רוחני, סיכוני הסמכה שנותרו ותוכנית אבני דרך ממומנת. פיילוט אמיתי בתשלום או דרישת OEM מתועדת הם ראיית שוק חזקה יותר מנתון היפותטי גדול על שוק ההומנואידים.
 
 
-### Article protocol and novelty discipline
+### פרוטוקול המאמר ומשמעת בטענות חדשנות
 
-Before collecting the comparison dataset, freeze the hypothesis, primary metric, loads, temperatures, sample counts, failure criteria and exclusion rules in a dated protocol. Use separate calibration and evaluation samples where possible. Keep every failed prototype in the engineering record; an article can describe a corrected failure, but cannot quietly remove inconvenient test units from a claimed yield calculation. Report confidence intervals and sample sizes alongside averages.
+לפני איסוף נתוני ההשוואה, הקפיאו בפרוטוקול מתוארך את ההשערה, המדד הראשי, העומסים, הטמפרטורות, גדלי המדגם, תנאי הכשל וכללי ההחרגה. ככל האפשר, השתמשו בדוגמאות נפרדות לכיול ולהערכה. שמרו כל אב־טיפוס שנכשל ברשומה ההנדסית; מאמר יכול לתאר כשל שתוקן, אך אינו יכול להסיר בשקט יחידות בדיקה לא נוחות מחישוב תשואה מוצהר. דווחו רווחי סמך וגדלי מדגם לצד ממוצעים.
 
-Prepare a prior-art matrix with columns: source/date, sensing principle, independent taxels and area, protective stack, network/readout, calibration/replacement, measured durability and cost boundary. Start with the primary research above and search patents for robot tactile skin, replaceable resistive arrays, distributed sensor acquisition, damage/continuity networks and calibration fixtures. A patent professional must evaluate claim scope/FTO for the final implementation; this document is not an FTO opinion. Until that review, describe the contribution as an affordable serviceable implementation with measured tradeoffs, not the first artificial skin or the first robot with thousands of sensors.
+הכינו מטריצת ידע קודם עם העמודות: מקור ותאריך, עקרון חישה, תאי חישה עצמאיים ושטח, מבנה הגנה, רשת וקריאה, כיול והחלפה, עמידות מדודה וגבול חישוב העלות. התחילו במחקר הראשוני לעיל וחפשו פטנטים על עור מגע רובוטי, מערכים התנגדותיים ניתנים להחלפה, איסוף נתוני חיישנים מבוזר, רשתות נזק ורציפות ומתקני כיול. איש מקצוע בפטנטים חייב להעריך את היקף התביעות וחופש הפעולה של המימוש הסופי; מסמך זה אינו חוות דעת לחופש פעולה. עד להשלמת הסקירה, תארו את התרומה כמימוש בר־שירות ובמחיר נגיש עם פשרות מדודות, ולא כעור המלאכותי הראשון או כרובוט הראשון בעל אלפי חיישנים.
 
-Minimum publication package for the first article: five physical full patches, one moving limb, raw sensitivity/seam/hold/thermal/latency/fault data, exact BOM and source revisions, actual prototype invoices, explicit industrial-cost assumptions, comparison samples available within budget and a limitations table. A 1,008-site article additionally needs the physical 36-node system. Customer value is assessed separately from scientific novelty; a well-executed incremental product can be commercially useful.
+חבילת הפרסום המזערית למאמר הראשון: חמישה טלאים מלאים פיזיים, גפה נעה אחת, נתוני גלם של רגישות, תפרים, החזקה, תרמיקה, השהיה ותקלות, מהדורות BOM ומקור מדויקות, חשבוניות אב־טיפוס בפועל, הנחות מפורשות לעלות תעשייתית, דוגמאות השוואה הזמינות בתקציב וטבלת מגבלות. מאמר על 1,008 אתרים דורש בנוסף מערכת פיזית של 36 צמתים. ערך ללקוח מוערך בנפרד מחדשנות מדעית; מוצר הדרגתי המבוצע היטב יכול להיות שימושי מבחינה מסחרית.
 
 <a id="section-25"></a>
 
-## 25. Supplier RFQs, partner scopes and purchasing decisions
+## 25. בקשות להצעות מחיר מספקים, תחומי שותפות והחלטות רכש
 
-No supplier or partner has been contacted as part of this plan. Use the ready-to-edit[`templates/rfq.md`](templates/rfq.md) and attach the controlled drawing/netlist once available. Obtain comparable written responses rather than treating a component marketplace price as an industrial assembly quotation.
+לא נערכה פנייה לספק או לשותף כחלק מתוכנית זו. השתמשו בקובץ המוכן לעריכה [`templates/rfq.md`](templates/rfq.md), וצרפו את השרטוט ורשימת הרשתות המבוקרים כשיהיו זמינים. קבלו תשובות כתובות בנות־השוואה, במקום להתייחס למחיר בזירת מסחר ברכיבים כאילו היה הצעת מחיר להרכבה תעשייתית.
 
-**Film RFQ:**28 independent23 mm touch areas on25 mm pitch; 175 ×100 mm sensing rectangle plus defined margins/tail; all 28 remote100 kΩ EOLs80–120 kΩ after qualification; 40-contact0.3 mm reinforced tail; specified vent and cover interfaces; no row/column ghosting; all 28 resistance paths tested. Request5/30/100/1,000/10,000 patches with NRE, material MOQ, tool life, lead time, yield, test records, storage life and material-change notification separate. Include drawings of film islands and routing crossovers, not just a photograph of skin. Cost gates: preferred≤$12/complete sheet at 1,000; >$20 triggers a commercial review before tooling. If no supplier offers that price, keep the measured prototype and change the business case; do not invent a successful RFQ.
+**בקשת הצעת מחיר ליריעה:** 28 שטחי מגע עצמאיים בגודל 23 mm בפסיעה של 25 mm; מלבן חישה 175 ×100 mm בתוספת שוליים וזנב חיבור מוגדרים; כל 28 נגדי ה־EOL המרוחקים של 100 kΩ עומדים ב־80–120 kΩ לאחר הסמכה; זנב מחוזק בעל 40 מגעים בפסיעה 0.3 mm; ממשקי אוורור וכיסוי מוגדרים; ללא מגעי רפאים של שורה/עמודה; בדיקת כל 28 מסלולי ההתנגדות. בקשו 5/30/100/1,000/10,000 טלאים, עם פירוט נפרד של עלויות חד־פעמיות, כמות חומר מזערית להזמנה, חיי כלי, זמן אספקה, תשואה, רשומות בדיקה, חיי אחסון והודעה על שינוי חומר. כללו שרטוטים של איי היריעה ושל הצטלבויות הניתוב, ולא רק תמונת עור. שערי עלות: יעד מועדף ≤$12 ליריעה מלאה בכמות 1,000; מחיר >$20 מחייב סקירה מסחרית לפני הזמנת כלים. אם אף ספק אינו מציע מחיר כזה, שמרו את אב־הטיפוס המדוד ושנו את התוכנית העסקית; אין להמציא בקשת הצעת מחיר שהצליחה.
 
-**EMS RFQ:**five first articles, then30/100/1,000 controllers; exact MPN BOM,140 fitted passives including the service-strap pull-up, PCB stackup, AOI, programming, test fixture minutes and repair rates. Require quote exclusions to be itemized. Separate PCB fabrication, components, assembly, test, fixture NRE and freight. The assembler must identify unbuildable spacing/thermal pads before purchasing. Collect at least two independent quotations; Nistec and Eltek are related and should not be counted as fully independent competing supply chains.
+**בקשת הצעת מחיר ל־EMS:** חמישה פריטי קדם־סדרה, ובהמשך 30/100/1,000 בקרים; BOM עם MPN מדויקים, 140 רכיבים פסיביים מורכבים כולל נגד המשיכה של גשר השירות, מבנה שכבות PCB, ‏AOI, צריבה, דקות שימוש במתקן בדיקה ושיעורי תיקון. דרשו פירוט של החרגות מהצעת המחיר. הפרידו ייצור PCB, רכיבים, הרכבה, בדיקה, עלות חד־פעמית למתקן והובלה. המרכיב חייב לזהות מרווחים ופדים תרמיים שאינם ניתנים לייצור לפני הרכישה. אספו לפחות שתי הצעות עצמאיות; Nistec ו־Eltek קשורות זו לזו, ואין לספור אותן כשרשראות אספקה מתחרות ועצמאיות לחלוטין.
 
-**Converter RFQ:**100 µm TPU, die-cut grid/perimeter attachment, thermal-flex pockets, vent path and repeatable cassette registration. Ask for delivered pieces per panel/roll and scrap allowance. “$X per square meter” alone omits cutting, liner, handling and material MOQ. Request the current approved adhesive/film compatibility statement and limits for cleaning chemicals.
+**בקשת הצעת מחיר לעיבוד יריעות:** TPU בעובי 100 µm, חיבור ברשת ובהיקף חתוך במבלט, כיסים למעגל גמיש תרמי, נתיב אוורור ומיקום קסטה חוזר. שאלו כמה חלקים מסופקים מכל לוח או גליל ומהי הקצבת הפחת. מחיר ״$X למטר רבוע״ לבדו אינו כולל חיתוך, נייר הפרדה, טיפול וכמות חומר מזערית להזמנה. בקשו הצהרת תאימות עדכנית ומאושרת בין דבק ליריעה ומגבלות לחומרי ניקוי.
 
-**Paid external review scopes:**
+**תחומי סקירה חיצונית בתשלום:**
 
-| Reviewer / candidate type | Deliverable to request | Budget ceiling to negotiate, not a quote |
+| סוקר / סוג מועמד | התוצר שיש לבקש | תקרת תקציב למשא ומתן, לא הצעת מחיר |
 |---|---|---:|
-|Independent analog/embedded engineer|Pin/netlist audit, worst-case analog/power review, firmware timing and fault-state review, annotated issue list and closure check|$1,500–4,000|
-|Nistec or PCB Technologies|DFM review of the actual CAD/BOM, 5/30/1,000 quote, fixture/test-time estimate, lead-time risks|$500–2,000 for paid review if not included in quote|
-|Sensitronics/Interlink/custom film supplier|Five sample laminates with measured force curves, known process/lot, quoted production path|$500–3,000 samples/NRE allowance|
-|Technion/T3 or suitable sensor-material lab|Defined assessment of one failed material issue or licensing fit, with sample test results and IP terms|$2,000–8,000 scoped study allowance|
-|BGU/robotics integration lab or OEM|One moving-limb fixture and 100-trial task protocol, raw data and joint-motion test access|$2,000–10,000 access/integration allowance|
+|מהנדס אנלוג/משובצות עצמאי|ביקורת פינים ורשימת רשתות, סקירת אנלוג והזנה בתנאי קצה, סקירת תזמון קושחה ומצבי תקלה, רשימת בעיות עם הערות ובדיקת סגירה|$1,500–4,000|
+|Nistec או PCB Technologies|סקירת DFM של ה־CAD וה־BOM בפועל, הצעה ל־5/30/1,000, אומדן מתקנים וזמן בדיקה, סיכוני זמני אספקה|$500–2,000 לסקירה בתשלום אם אינה כלולה בהצעה|
+|Sensitronics/Interlink/ספק יריעות מותאמות|חמש דוגמאות למינציה עם עקומות כוח מדודות, תהליך ואצווה ידועים ונתיב ייצור מגובה בהצעת מחיר|הקצבה של $500–3,000 לדוגמאות ועלויות חד־פעמיות|
+|הטכניון/T3 או מעבדת חומרי חישה מתאימה|הערכה מוגדרת של בעיית חומר אחת שנכשלה או של התאמת רישוי, עם תוצאות בדיקת דוגמאות ותנאי קניין רוחני|הקצבה של $2,000–8,000 למחקר מוגדר|
+|בן־גוריון/מעבדת שילוב רובוטיקה או OEM|מתקן גפה נעה אחד ופרוטוקול משימה של 100 ניסויים, נתוני גלם וגישה לבדיקת תנועת מפרקים|הקצבה של $2,000–10,000 לגישה ואינטגרציה|
 
-Do not pay a university materials program to solve an unmeasured problem that a commercial film already solves. Conversely, do not demand proprietary ink formulation disclosure from a supplier if buying qualified film meets the business need. Require rights to your controller/fixture/artwork and clarify access to replacement material and tooling if the supplier stops production.
+אין לשלם לתוכנית חומרים אוניברסיטאית כדי לפתור בעיה שלא נמדדה ושיריעה מסחרית כבר פותרת. מנגד, אין לדרוש מספק חשיפת נוסחת דיו קניינית אם רכישת יריעה שהוסמכה עונה לצורך העסקי. דרשו זכויות לבקר, למתקן ולתכנון הגרפי שלכם, והבהירו גישה לחומר חלופי ולכלי הייצור אם הספק מפסיק ייצור.
 
-Purchase-release checklist:approved revision; required quantity; quote total including NRE/shipping; cash ceiling; exact material/component substitutions; delivery date; acceptance test; warranty/rework obligation; ownership/license terms; person responsible for incoming inspection. A failed item blocks that purchase, not all unrelated prototype work.
+רשימת ביקורת לשחרור רכש: מהדורה מאושרת; כמות נדרשת; סכום הצעה כולל עלויות חד־פעמיות ומשלוח; תקרת הוצאה; תחליפי חומר ורכיבים מדויקים; תאריך אספקה; בדיקת קבלה; חובת אחריות או תיקון; תנאי בעלות ורישיון; אחראי לביקורת קבלה. סעיף שנכשל חוסם את הרכישה הזו, ולא את כל עבודת אב־הטיפוס שאינה קשורה אליה.
 
 <a id="section-26"></a>
 
-## 26. Decision register: no unowned “research later” items
+## 26. יומן החלטות: אין נושאי ״נחקור בהמשך״ ללא אחראי
 
-| Issue | Decision now | Evidence required before the named release | Fixed alternative or stop condition |
+| נושא | החלטה כעת | ראיות נדרשות לפני השחרור שצוין | חלופה קבועה או תנאי עצירה |
 |---|---|---|---|
-|Touch modality|Independent resistive cells|P0:M01/M03 covered coupon results|If drift/sensitivity fails, buy a lower-drift custom sample or switch to a compared modality; no full-body order|
-|Prototype material|XactFSR plus interdigitated ENIG electrodes, commercial FSR controls|Record actual sheet gauge, lot, cutting yield and all test curves|Do not substitute generic antistatic bag material for industrial claims|
-|Production material|Supplier-made isolated printed PET array with EOL and vent|P4:samples from 3 lots, priced RFQ and same tests|Copper-flex build is a separately costed fallback; sheet>$20 triggers economics review|
-|Protection layer|100 µm specified TPU with grid/perimeter attachment|P2/M04:thickness, abrasion, adhesion, cleaning; actual supplier certificate|Thicker3M wear comparison only after recalibration, mass and thermal retest|
-|Thermal ambition|Two actual measurement points/patch|T01 assembled accuracy/response and heat blind-spot demonstration|Dense thermal sensing requires new channel/BOM design; drop unsupported whole-area claim|
-|Electrical margins|100 kΩ EOL, 22 kΩ bias, 3 µA aggregate budget, distinct refs|E01 at min/max supply and temperature|Lower-leakage parts/cleaning/layout revision; no diagnostic threshold camouflage|
-|Clock|Specific8 MHz oscillator, HSE bypass|E03 startup/tolerance; archived purchase record|An alternate oscillator must meet supply, logic, startup, pinout and timing; not a random crystal substitution|
-|Gateway|Bought manufacturer-specific FD adapter for lab|P1/P5:driver/firmware hashes, all-node timing, USB queue tests|Commercial adapter or reviewed OEM gateway for shipping; prototype status disclosed|
-|Robot power|5 V regulated interface, 10 A system test source|Before robot integration:actual battery envelope, converter/fuse/OVP choice, E05 plots|Remain on isolated bench supply until interface passes; no direct motor-bus connection|
-|Joint geometry|No laminate in hinge crease; tested flexible harness|P3:full-envelope clearance map andR02|Split/omit panels and publish blind zones; do not claim human-like stretch|
-|Firmware completeness|Detailed embedded work package; tested host core supplied|P1/P2:compiling pinned Cube project, on-board traces, flash power-cut evidence|No claim of a flashable/qualified firmware release from Python tests|
-|Industrial affordability|Reference$34.78/patch planning case, explicit process cost|C01 supplier quotes, 30-unit measured time/yield, customer cost ceiling|Reduce scope or redesign; do not present$12.50 target as demonstrated cost|
-|Reliability|Defined test missions and sample confidence|P4:R01/R02 plus environmental evidence|Narrow rating or redesign; do not convert cycles into years without a mission model|
-|Novelty and market|No breakthrough assertion; test maintainability/cost-coverage advantage|Prior-art review, controlled comparator, customer pilot evidence|Publish an honest reproducible engineering contribution if novelty is limited|
+|שיטת חישת מגע|תאים התנגדותיים עצמאיים|P0: תוצאות קופונים מכוסים ב־M01/M03|אם סחיפה או רגישות נכשלות, לקנות דוגמה מותאמת בעלת סחיפה נמוכה יותר או לעבור לשיטה שנבדקה בהשוואה; אין הזמנת גוף מלא|
+|חומר אב־טיפוס|XactFSR עם אלקטרודות ENIG משולבות כאצבעות, וחיישני FSR מסחריים כביקורת|תיעוד עובי יריעה בפועל, אצווה, תשואת חיתוך וכל עקומות הבדיקה|אין להחליף בחומר שקית אנטיסטטית כללי לצורך טענות תעשייתיות|
+|חומר ייצור|מערך PET מודפס ומבודד מתוצרת ספק, עם EOL ואוורור|P4: דוגמאות מ־3 אצוות, הצעת מחיר והבדיקות הזהות|מימוש נחושת גמישה הוא חלופת גיבוי שמתומחרת בנפרד; יריעה >$20 מחייבת סקירת כדאיות|
+|שכבת הגנה|TPU מוגדר בעובי 100 µm עם חיבור ברשת ובהיקף|P2/M04: עובי, שחיקה, הידבקות, ניקוי; תעודת ספק בפועל|השוואת שכבת שחיקה עבה יותר של 3M רק לאחר כיול מחדש ובדיקות מסה ותרמיות חוזרות|
+|היקף תרמי|שתי נקודות מדידה אמיתיות לכל טלאי|T01: דיוק ותגובה במכלול והדגמת נקודה עיוורת לחום|חישה תרמית צפופה מחייבת תכנון חדש של ערוצים ו־BOM; להסיר טענה לא מבוססת לכיסוי כל השטח|
+|מרווחים חשמליים|EOL של 100 kΩ, הטיה של 22 kΩ, תקציב מצטבר של 3 µA, ערוצי ייחוס מובחנים|E01 בהזנה ובטמפרטורה מזעריות ומרביות|רכיבים בעלי זליגה נמוכה יותר, ניקוי או שינוי פריסה; אין להסוות באמצעות ספי אבחון|
+|שעון|מתנד מסוים של 8 MHz, ‏HSE bypass|E03: התנעה וסבולת; רשומת רכישה שמורה|מתנד חלופי חייב לעמוד בהזנה, רמות לוגיות, התנעה, פינים ותזמון; אין להחליף בגביש אקראי|
+|שער|מתאם FD קנוי וספציפי ליצרן למעבדה|P1/P5: גיבובי דרייבר וקושחה, תזמון כל הצמתים, בדיקות תור USB|מתאם מסחרי או שער OEM שעבר סקירה לצורך אספקה; גילוי מעמד אב־הטיפוס|
+|הזנת הרובוט|ממשק 5 V מיוצב, מקור בדיקת מערכת של 10 A|לפני שילוב ברובוט: מעטפת סוללה בפועל, בחירת ממיר/נתיך/OVP, גרפי E05|להישאר על ספק שולחני מבודד עד שהממשק עובר; אין חיבור ישיר לאפיק המנועים|
+|גאומטריית מפרק|אין למינציה בקפל ציר; צמה גמישה שנבדקה|P3: מפת מרווח לכל מעטפת התנועה ו־R02|לפצל או להשמיט לוחות ולפרסם אזורים עיוורים; אין לטעון למתיחה דמוית אדם|
+|שלמות קושחה|חבילת עבודת משובצות מפורטת; ליבת מארח שנבדקה מסופקת|P1/P2: פרויקט Cube מוצמד גרסה שמתקמפל, עקבות מדידה על הלוח, ראיות לניתוק מתח בזמן כתיבה להבזק|אין לטעון לשחרור קושחה ניתנת לצריבה או מוסמכת על סמך בדיקות Python|
+|נגישות מחיר תעשייתית|תרחיש ייחוס לתכנון של $34.78 לטלאי, עם עלות תהליך מפורשת|C01: הצעות ספקים, זמן ותשואה מדודים ב־30 יחידות, תקרת עלות ללקוח|לצמצם היקף או לתכנן מחדש; אין להציג יעד $12.50 כעלות שהוכחה|
+|אמינות|משימות בדיקה מוגדרות ורמת ביטחון של מדגם|P4: ‏R01/R02 בתוספת ראיות סביבתיות|לצמצם דירוג או לתכנן מחדש; אין להמיר מחזורים לשנים בלי מודל משימה|
+|חדשנות ושוק|אין טענה לפריצת דרך; לבדוק יתרון בתחזוקה ובעלות לכיסוי|סקירת ידע קודם, השוואה מבוקרת, ראיות מפיילוט לקוח|אם החדשנות מוגבלת, לפרסם תרומה הנדסית ישרה וניתנת לשחזור|
 
-Actual measurements, independent review and quotations cannot be generated by prose. This register removes unspecified decisions; it does not pretend experiments already happened. Every row maps to a deliverable, cost or pass/fail gate. Material substitutions, extra sensors, new joint coverage, new firmware and increased node count are controlled changes that rerun the affected tests.
+אי אפשר לייצר מדידות אמיתיות, סקירה עצמאית והצעות מחיר באמצעות טקסט. יומן זה מבטל החלטות לא מוגדרות; הוא אינו מעמיד פנים שניסויים כבר בוצעו. כל שורה מקושרת לתוצר, לעלות או לשער עבר/נכשל. החלפות חומר, חיישנים נוספים, כיסוי מפרקים חדש, קושחה חדשה ומספר צמתים מוגדל הם שינויים מבוקרים המחייבים חזרה על הבדיקות המושפעות.
 
 <a id="section-27"></a>
 
-## 27. Reproducibility, service data and delivered artifacts
+## 27. יכולת שחזור, נתוני שירות ותוצרים שנמסרו
 
-### 27.1 Local files
+### 27.1 קבצים מקומיים
 
-| File | Purpose / actual status |
+| קובץ | מטרה / מצב בפועל |
 |---|---|
-|[`electronic_skin.md`](electronic_skin.md)|This revised engineering and commercialization plan|
-|[`software/skin_protocol.py`](software/skin_protocol.py)|Executable64-byte codec, identity binding, time handshake and freshness/validity gate|
-|[`software/skin_receiver.py`](software/skin_receiver.py)|Linux native SocketCAN FD reference receiver, overflow/error handling, JSON records; not exercised on physical CAN hardware here|
-|[`tests/test_protocol.py`](tests/test_protocol.py)|Automated protocol/fault tests; synthetic inputs explicitly separate from hardware measurements|
-|[`engineering/models.py`](engineering/models.py)|ADC margin, CAN budget, scan time, cost, coverage, mass example and reliability calculations|
-|[`engineering/cost_inputs.csv`](engineering/cost_inputs.csv)|Editable per-element costs, quantity, range and evidence labels|
-|[`engineering/model_results.json`](engineering/model_results.json)|Saved output of the calculation model for this revision|
-|[`engineering/patch_geometry.svg`](engineering/patch_geometry.svg)|Dimensioned mechanical layout/inspection aid; not PCB artwork or approved die tooling|
-|[`templates/manifest.example.json`](templates/manifest.example.json)|Intentionally uncommissioned identity/body-map example|
-|[`templates/test_record.csv`](templates/test_record.csv)|Blank structured test-record template; no fabricated measurements|
-|[`templates/rfq.md`](templates/rfq.md)|Draft supplier inquiry; not sent|
+|[`electronic_skin.md`](electronic_skin.md)|תוכנית הנדסה ומסחור מעודכנת זו|
+|[`software/skin_protocol.py`](software/skin_protocol.py)|מקודד ומפענח ברי־הרצה של 64 בתים, קשירת זהות, לחיצת יד של זמן ושער עדכניות ותקפות|
+|[`software/skin_receiver.py`](software/skin_receiver.py)|מקלט ייחוס ל־SocketCAN FD מקורי בלינוקס, טיפול בגלישה ובשגיאות, רשומות JSON; לא הופעל כאן על חומרת CAN פיזית|
+|[`tests/test_protocol.py`](tests/test_protocol.py)|בדיקות אוטומטיות של פרוטוקול ותקלות; קלט סינתטי מופרד במפורש ממדידות חומרה|
+|[`engineering/models.py`](engineering/models.py)|חישובי מרווח ADC, תקציב CAN, זמן סריקה, עלות, כיסוי, דוגמת מסה ואמינות|
+|[`engineering/cost_inputs.csv`](engineering/cost_inputs.csv)|עלויות ניתנות לעריכה לפי פריט, כמות, טווח וסיווג ראיות|
+|[`engineering/model_results.json`](engineering/model_results.json)|פלט שמור של מודל החישוב למהדורה זו|
+|[`engineering/patch_geometry.svg`](engineering/patch_geometry.svg)|פריסה מכנית ממודדת ואמצעי עזר לביקורת; לא תכנון PCB ולא כלי מבלט מאושר|
+|[`templates/manifest.example.json`](templates/manifest.example.json)|דוגמת זהות ומפת גוף שלא הוכנסה לשירות במכוון|
+|[`templates/test_record.csv`](templates/test_record.csv)|תבנית ריקה ומובנית לרשומת בדיקה; אין מדידות מומצאות|
+|[`templates/rfq.md`](templates/rfq.md)|טיוטת פנייה לספק; לא נשלחה|
 
-### 27.2 Electrical/calibration service interface
+### 27.2 ממשק שירות חשמלי ולכיול
 
-Use USART2, 115200 baud, 8 data bits, no parity, 1 stop bit, 3.3 V logic. Never connect true±RS-232 levels. For production-board service, PA10/pin 32 is a service strap pulled up by10 kΩ to3V3; ground it before reset to allow calibration writes. The service-strap resistor is included in the controlled schedule: **88 resistors +52 capacitors=140 fitted passives**. Without the strap, UART may expose read-only diagnostics but cannot change identity/calibration.
+השתמשו ב־USART2, בקצב 115200 baud, ‏8 סיביות נתונים, ללא זוגיות, סיבית עצירה 1 וברמות לוגיות של 3.3 V. לעולם אין לחבר רמות ±RS-232 אמיתיות. לשירות לוח הייצור, PA10/pin 32 הוא גשר שירות עם נגד משיכה של 10 kΩ ל־3V3; חברו אותו לאדמה לפני איפוס כדי לאפשר כתיבת כיול. נגד גשר השירות כלול ברשימה המבוקרת: **88 נגדים +52 קבלים=140 רכיבים פסיביים מורכבים**. ללא הגשר, UART יכול לחשוף אבחון לקריאה בלבד, אך אינו יכול לשנות זהות או כיול.
 
-Raw acquisition record is 96 bytes:offset 0 magicASCII `SKR2`; 4 length u16=96; 6 flags u16; 8 boot u32; 12 capture-start-ms u32; 16 sequence u16; 18 reserved u16=0; 20–75 twenty-eight raw u16 touch codes; 76/78 two raw u16 thermal codes; 80–87 four raw u16 references; 88 CRC32/IEEE over bytes0–87; 92 magicASCII `END2`. Use0xFFFF for invalid ADC channels. Emit at 25 Hz in service mode while ordinary acquisition continues. Frame parsing resynchronizes on magic, checks length/CRC/end marker and imposes a200 ms timeout.
+רשומת דגימה גולמית היא בת 96 בתים: היסט 0, חתימת ASCII ‏`SKR2`; היסט 4, אורך u16=96; היסט 6, דגלים u16; היסט 8, אתחול u32; היסט 12, תחילת דגימה במילישניות u32; היסט 16, רצף u16; היסט 18, שמור u16=0; היסטים 20–75, עשרים ושמונה קודי מגע גולמיים מסוג u16; היסטים 76/78, שני קודים תרמיים גולמיים מסוג u16; היסטים 80–87, ארבעה ערכי ייחוס גולמיים מסוג u16; היסט 88, ‏CRC32/IEEE על בתים 0–87; היסט 92, חתימת ASCII ‏`END2`. השתמשו ב־0xFFFF לערוצי ADC לא תקפים. שדרו ב־25 Hz במצב שירות תוך המשך הדגימה הרגילה. פענוח המסגרות מסתנכרן מחדש לפי החתימה, בודק אורך, CRC וסמן סיום, ומחיל פסק זמן של 200 ms.
 
-Service command transport:one newline-delimited UTF-8 JSON object, maximum 256 bytes, request `{"op":"get_id","tx":1}`; operations `get_id`,`get_status `,`raw_start `with`rate_hz `1..25,`raw_stop `; write operations only`config_begin `withlength1536/expected old CRC,`config_chunk `withoffset and≤64 bytes hexadecimal data,`config_commit `withCRC. Because raw binary and JSON share the UART,`raw_start `acknowledgment precedes raw streaming; while streaming accept only`raw_stop`, which ends on a complete96-byte frame before JSON resumes. No mixed arbitrary asynchronous logs.
+תעבורת פקודות שירות: אובייקט JSON אחד בקידוד UTF-8 המסתיים בשורה חדשה, עד 256 בתים, בקשה `{"op":"get_id","tx":1}`; פעולות `get_id`,`get_status `,`raw_start ` עם `rate_hz ` בתחום 1..25, ו־`raw_stop `; פעולות כתיבה בלבד: `config_begin ` עם אורך 1536 וה־CRC הישן הצפוי, `config_chunk ` עם היסט ועד 64 בתים של נתונים הקסדצימליים, ו־`config_commit ` עם CRC. מאחר שגלם בינרי ו־JSON חולקים את ה־UART, אישור `raw_start ` קודם לזרימת הגלם; בזמן הזרימה יש לקבל רק `raw_stop`, המסיים לאחר מסגרת שלמה בת 96 בתים ולפני חידוש JSON. אין יומנים אסינכרוניים שרירותיים מעורבים.
 
-Write state machine:service strap required; begin reserves RAM staging buffer and verifies expected old configuration; chunks must be in order, no gaps or overlaps; commit validates all fields, UID, calibration ordering andCRC, then writes the alternate flash page with commit marker last. Reply contains `tx`,`ok`, error code andnewCRC. A timeout5 s aborts RAM staging without changing the current image. A reset at any point must leave the prior valid config or a complete new one. These are embedded implementation requirements and S02 test cases; the supplied host receiver does not implement this UART programmer.
+מכונת מצבי כתיבה: נדרש גשר שירות; begin מקצה חוצץ ביניים ב־RAM ומאמת את התצורה הישנה הצפויה; מקטעים חייבים להגיע לפי הסדר, ללא פערים או חפיפות; commit מאמת את כל השדות, UID, סדר ערכי הכיול ו־CRC, ואז כותב לדף ההבזק החלופי כאשר סמן ההשלמה נכתב אחרון. התשובה כוללת `tx`,`ok`, קוד שגיאה ו־newCRC. פסק זמן של 5 s מבטל את חוצץ הביניים ב־RAM בלי לשנות את התמונה הנוכחית. איפוס בכל נקודה חייב להשאיר את התצורה התקפה הקודמת או תצורה חדשה מלאה. אלה דרישות מימוש משובץ ומקרי בדיקה של S02; מקלט המארח המסופק אינו מממש מתכנת UART זה.
 
-### 27.3 Reproduce the calculations and check the files
+### 27.3 שחזור החישובים ובדיקת הקבצים
+
+<div dir="ltr">
 
 ```sh
 cd ~/electronic_skin
@@ -936,66 +956,74 @@ python3 -m compileall -q software engineering/models.py
 python3 engineering/models.py > engineering/model_results.json
 ```
 
-The model currently checks that the open threshold lies between conservative connected/open bounds, scan timing fits the selected frame period and nominal regional traffic remains below 40% under its conservative no-error estimate. Its outputs also expose a560 N total load for a28-plunger20 N calibration fixture and the sample size required for a stated reliability confidence. These checks catch accounting/design contradictions; they are not FEA, EMC simulation or a mechanical sensor model.
+</div>
 
-For firmware release, attach the actual build transcript, firmware image hash, configurationCRC, pin report, oscilloscope traces and hardware-test results. For an article, release raw data and analysis along with the cost assumptions, including failures. State which results are predictions, bench measurements or qualified product specifications. A studio3D animation is useful to explain the layers but is not experimental evidence.
+המודל בודק כעת שסף הנתק נמצא בין חסמים שמרניים של חיבור ונתק, שתזמון הסריקה נכנס למחזור המסגרת שנבחר ושתעבורה אזורית נומינלית נשארת מתחת ל־40% לפי האומדן השמרני ללא שגיאות. הפלטים שלו מציגים גם עומס כולל של 560 N במתקן כיול בעל 28 בוכנות ב־20 N, ואת גודל המדגם הנדרש לרמת ביטחון אמינות נתונה. בדיקות אלה מאתרות סתירות חשבונאיות ותכנוניות; הן אינן ניתוח אלמנטים סופיים, הדמיית EMC או מודל מכני של חיישן.
 
-### 27.4 Evidence boundary after this revision
+לשחרור קושחה, צרפו את תמליל הבנייה בפועל, גיבוב תמונת הקושחה, CRC של התצורה, דוח פינים, עקבות אוסצילוסקופ ותוצאות בדיקות חומרה. למאמר, פרסמו נתוני גלם וניתוח יחד עם הנחות העלות, לרבות כשלים. ציינו אילו תוצאות הן תחזיות, מדידות מעבדה או מפרטי מוצר שהוסמכו. אנימציית סטודיו 3D מועילה להסברת השכבות, אך אינה ראיה ניסויית.
 
-Research and cross-checking support the architecture, component selection, known limitations and proposed work program. Software tests exercise the host codec/state machine; the arithmetic model is executable and checked. **There is still no measured working physical patch, reviewed/routed production PCB, compiled target firmware, industrial sheet quotation or completed qualification campaign in this delivery.** Those are concrete execution phases with defined inputs and exit evidence above, not unspecified research tasks. The project should attract serious technical interest through reproducible evidence as those gates are completed, not through a promise of guaranteed novelty or guaranteed manufacturing success.
+### 27.4 גבול הראיות לאחר מהדורה זו
+
+מחקר ובדיקות צולבות תומכים בארכיטקטורה, בבחירת הרכיבים, במגבלות הידועות ובתוכנית העבודה המוצעת. בדיקות תוכנה מפעילות את המקודד והמפענח ואת מכונת המצבים של המארח; המודל החשבוני ניתן להרצה ונבדק. **עדיין אין במסירה זו טלאי פיזי פועל שנמדד, PCB ייצור שנסקר ונותב, קושחת יעד שהודרה, הצעת מחיר תעשייתית ליריעה או מסע הסמכה שהושלם.** אלה שלבי ביצוע מוגדרים עם קלטים וראיות סיום כמפורט לעיל, ולא משימות מחקר בלתי מוגדרות. הפרויקט צריך למשוך עניין טכני רציני באמצעות ראיות ניתנות לשחזור עם השלמת השערים, ולא באמצעות הבטחה לחדשנות מובטחת או להצלחת ייצור מובטחת.
 
 <a id="section-28"></a>
 
-## 28. Cheng algorithms translated into this product
+## 28. התאמת אלגוריתמי Cheng למוצר זה
 
-### 28.1 Source, evidence and exact adoption boundary
+### 28.1 מקור, ראיות וגבול האימוץ המדויק
 
-The complete 18-page user-supplied [Cheng et al. paper](https://doi.org/10.1109/JPROC.2019.2933348), *A Comprehensive Realization of Robot Skin: Sensors, Sensing, Control, and Applications*, Proceedings of the IEEE 107(10), 2034–2051 (2019), DOI [10.1109/JPROC.2019.2933348](https://doi.org/10.1109/JPROC.2019.2933348), was read, including the mathematical sections, application limitations, figures and bibliography. The figure provided by the user is its Fig. 2: front and rear of **one** multimodal module. The 16.31 mm dimension is a hexagon side, not thickness: regular-hexagon geometry gives approximately 28.25 mm across flats, 32.62 mm across corners and 691.13 mm² area. The figure does not establish a manufacturing price.
+נקרא במלואו [המאמר של Cheng ועמיתיו](https://doi.org/10.1109/JPROC.2019.2933348), בן 18 העמודים שסיפק המשתמש, *מימוש מקיף של עור רובוטי: חיישנים, חישה, בקרה ויישומים*, Proceedings of the IEEE ‏107(10), ‏2034–2051 ‏(2019), ‏DOI [10.1109/JPROC.2019.2933348](https://doi.org/10.1109/JPROC.2019.2933348), כולל הפרקים המתמטיים, מגבלות היישומים, האיורים והביבליוגרפיה. האיור שסיפק המשתמש הוא איור 2 במאמר: הצד הקדמי והאחורי של מודול רב־חושי **אחד**. המידה 16.31 mm היא אורך צלע משושה, ולא עובי: גאומטריית משושה משוכלל נותנת כ־28.25 mm בין צלעות מקבילות, 32.62 mm בין קודקודים ושטח של 691.13 mm². האיור אינו מוכיח מחיר ייצור.
 
-Our taxel is a resistive contact site; their cell contains several sensor modalities and a processor. Counts of cells, force transducers, axes and channels must therefore be reported separately. Do not describe our 2,240 scalar touch sites as equivalent to 2,240 TUM multimodal cells. Their capacitive force-cell implementation does not validate our resistive film, protective laminate or calibration curves.
+תא החישה שלנו הוא אתר מגע התנגדותי; התא שלהם מכיל כמה סוגי חיישנים ומעבד. לכן יש לדווח בנפרד על מספרי תאים, מתמרי כוח, צירים וערוצים. אין לתאר את 2,240 אתרי המגע הסקלריים שלנו כשקולים ל־2,240 תאים רב־חושיים של TUM. המימוש הקיבולי של תא הכוח שלהם אינו מאמת את היריעה ההתנגדותית שלנו, את למינציית ההגנה או את עקומות הכיול.
 
-| Method in the paper | Product decision | Prerequisite and limitation |
+| שיטה במאמר | החלטת מוצר | תנאי מוקדם ומגבלה |
 |---|---|---|
-| Send-on-delta, §III-A, Algorithm 1, equations 6–7 | Implement hybrid reporting locally; preserve periodic mode for comparison | 100 Hz sampling remains; absolute refresh and validity override suppression |
-| Self-configuration/localization, §II-C, equations 1–3 | Use explicit per-taxel geometry and measured root transforms; offer an offline inertial calibration experiment | Base skin has no accelerometers or neighbor-port graph. Known carrier geometry is an input, not a newly discovered result |
-| Kinematic identification, §II-D | Verify CAD/encoder geometry using a reusable motion-sensing fixture | Axis/radius identification needs excitation and timing; it cannot recover all geometric or dynamic parameters from static touch |
-| Activity matrix and postural sensory-motor map, §IV-A | Acquire an offline map on the fixed-base test rig; compare its predicted response with a geometric Jacobian | Apply observability and pose-domain gates; do not extrapolate a nearest-pose lookup across the entire humanoid workspace |
-| Skin force → wrench → joint torque, §IV-B | Implement frame-explicit virtual-force mapping and link-wrench aggregation | Ordinal intensity is not measured force; retain individual contacts for constraints |
-| Distributed torque evaluation, §IV-B6 | First aggregate wrenches on the host per rigid link; optionally move aggregation into patch controllers after profiling | No joint-state broadcasts or per-taxel trigonometry needed for the first implementation |
-| Dynamic routing/load balancing, §III-B | Retain independent CAN regions and branch-independent passive trunks | CAN is not their four-port routed mesh; no 40 ms rerouting claim |
-| Hierarchical control/torque resolver, §IV-B and §V-D/E | Use an existing robot controller's constrained task hierarchy and interface; validate a fixed-base limb first | Skin firmware does not provide a biped balance controller or a universal torque-to-position conversion |
+| שידור לפי שינוי, §III-A, אלגוריתם 1, משוואות 6–7 | לממש דיווח היברידי מקומי; לשמר מצב מחזורי להשוואה | הדגימה ב־100 Hz נמשכת; רענון ערכים מוחלטים ותקפות גוברים על דיכוי שידור |
+| תצורה ולוקליזציה עצמית, §II-C, משוואות 1–3 | להשתמש בגאומטריה מפורשת לכל תא חישה ובטרנספורמציות שורש מדודות; להציע ניסוי כיול אינרציאלי לא מקוון | לעור הבסיסי אין מדי תאוצה או גרף של יציאות שכנים. גאומטריית נושא ידועה היא קלט, ולא תוצאה שהתגלתה מחדש |
+| זיהוי קינמטי, §II-D | לאמת גאומטריית CAD ומקודדים באמצעות מתקן חישת תנועה רב־פעמי | זיהוי ציר ורדיוס דורש עירור ותזמון; אי אפשר לשחזר את כל הפרמטרים הגאומטריים או הדינמיים ממגע סטטי |
+| מטריצת פעילות ומפה חושית־מוטורית לפי תנוחה, §IV-A | לרכוש מפה לא מקוונת במתקן בעל בסיס קבוע; להשוות את התגובה החזויה שלה ליעקוביאן גאומטרי | להחיל שערי יכולת תצפית ותחום תנוחות; אין לבצע אקסטרפולציה מטבלת התנוחה הקרובה לכל מרחב העבודה של ההומנואיד |
+| כוח עור → כוח ומומנט שקולים → מומנט מפרקים, §IV-B | לממש מיפוי כוח וירטואלי עם מסגרות מפורשות ואיגום כוחות ומומנטים לפי חוליה | עוצמה סדרית אינה כוח מדוד; לשמור מגעים נפרדים לצורך אילוצים |
+| חישוב מומנטים מבוזר, §IV-B6 | תחילה לאגם כוחות ומומנטים במארח לפי חוליה קשיחה; אפשר להעביר איגום לבקרי הטלאים לאחר מדידת עומסי חישוב | במימוש הראשון אין צורך בשידור מצבי מפרקים או בטריגונומטריה לכל תא חישה |
+| ניתוב דינמי ואיזון עומסים, §III-B | לשמר אזורי CAN עצמאיים וקווים ראשיים פסיביים שאינם תלויים בהסתעפות פעילה | CAN אינו רשת ארבע היציאות המנותבת שלהם; אין טענה לניתוב מחדש בתוך 40 ms |
+| בקרה היררכית וממיר פקודות מומנט, §IV-B ו־§V-D/E | להשתמש בהיררכיית המשימות המוגבלת ובממשק של בקר הרובוט הקיים; לאמת תחילה גפה בעלת בסיס קבוע | קושחת העור אינה מספקת בקר שיווי משקל דו־רגלי או המרה אוניברסלית ממומנט למיקום |
 
-This is an explicit adaptation of published methods. The paper reports application-dependent savings of up to 90% in bandwidth and 60% in driver CPU, and specific network recovery demonstrations. None is a guaranteed figure for this design. Sections 28.2–28.9 state our own implementation and tests.
+זו התאמה מפורשת של שיטות שפורסמו. המאמר מדווח על חיסכון התלוי ביישום של עד 90% ברוחב פס ועד 60% בעומס המעבד של הדרייבר, ועל הדגמות התאוששות רשת מסוימות. אף אחד מאלה אינו נתון מובטח לתכנון זה. סעיפים 28.2–28.9 מגדירים את המימוש והבדיקות שלנו.
 
-### 28.2 Event generation without hiding failed or old sensors
+### 28.2 יצירת אירועים בלי להסתיר חיישנים תקולים או ישנים
 
-For each calibrated scalar `x_i[k]`, compare against the last successfully transmitted absolute value `s_i`, not against the previous sample:
+לכל סקלר מכויל `x_i[k]`, השוו לערך המוחלט האחרון ששודר בהצלחה `s_i`, ולא לדגימה הקודמת:
+
+<div dir="ltr">
 
 ```text
 event_i = abs(x_i[k] - s_i) >= delta_i
 ```
 
-The paper's SoDP transmits the new absolute value, not merely a signed increment. A lost packet therefore does not introduce a permanent integration drift once a later absolute value arrives. It still loses information and delays the receiver's knowledge. An unchanged contact after a lost onset event can remain unknown unless we add refresh; absolute encoding alone does not repair that.
+</div>
 
-**Controlled reporting profiles:**
+SoDP במאמר משדר את הערך המוחלט החדש, ולא רק תוספת בעלת סימן. לכן מנה שאבדה אינה יוצרת סחיפת אינטגרציה קבועה לאחר שמגיע ערך מוחלט מאוחר יותר. עדיין אובד מידע ומתעדכנת באיחור ידיעת המקלט. מגע שאינו משתנה לאחר שאירוע תחילתו אבד יכול להישאר לא ידוע אלא אם מוסיפים רענון; קידוד מוחלט לבדו אינו מתקן זאת.
 
-- `periodic`: acquire and transmit every 10 ms. This is the P1 commissioning and comparison mode.
-- `hybrid`: acquire every 10 ms; transmit on a delta, any contact/candidate transition, any validity/health/identity transition, and every scan while contact or a fault is active. Otherwise transmit a complete absolute snapshot at least every 20 ms of acquisition time. Use the existing 64-byte version-2 frame in both profiles.
-- All 28 values, masks and temperature fields are included when any trigger fires. One packet combines simultaneous taxel events. There is no separate CAN packet per touched cell.
-- Increment sequence every acquisition, including intentionally suppressed scans. A sequence gap alone is not a packet-loss measurement in hybrid mode. Keep separate generated, suppressed, enqueued, completed, aborted and host-rejected counters. Diagnostic bit 6 denotes an actual scan/TX failure, not intentional suppression.
-- Keep acquisition-period announcement at 10 ms. Bind reporting profile, delta table, calibration, contact thresholds and geometry revision to the configuration record/CRC and host manifest. A mode change requires recommissioning that configuration; never silently change the interpretation of a running robot.
+**פרופילי דיווח מבוקרים:**
 
-Start the bench comparison at `delta_i=4 ` intensity counts and temperature delta 50 centi-degrees C. These are experiment settings, not material-independent thresholds. Using held-out unloaded motion/noise data, calculate robust dispersion `sigma_i = 1.4826 median(|x_i - median(x_i)|)` and choose `delta_i >= max(1, ceil(6 sigma_i))`. Check that this does not hide the fifth-percentile required contact response. A failed separation returns to material/mechanics or periodic reporting; it does not justify raising the detection threshold until false triggers disappear. Keep contact on/off thresholds and debounce from section 10, evaluated at the fixed acquisition rate. The host must not count irregularly received packets as if they were equally spaced scans.
+- `periodic`: דגימה ושידור בכל 10 ms. זהו מצב הכנסת המערכת לשירות והשוואה בשלב P1.
+- `hybrid`: דגימה בכל 10 ms; שידור בעקבות שינוי העובר את הסף, כל מעבר במצב מגע או מועמד למגע, כל שינוי בתקפות, תקינות או זהות, ובכל סריקה כל עוד מגע או תקלה פעילים. אחרת, שידור תמונת מצב מוחלטת מלאה לפחות בכל 20 ms של זמן דגימה. השתמשו במסגרת הקיימת בת 64 בתים, גרסה 2, בשני הפרופילים.
+- כל 28 הערכים, המסכות ושדות הטמפרטורה נכללים בכל הפעלת גורם שידור. מנה אחת משלבת אירועי תאי חישה בו־זמניים. אין מנת CAN נפרדת לכל תא שנוגעים בו.
+- הגדילו את מספר הרצף בכל דגימה, לרבות סריקות שהשידור שלהן דוכא במכוון. פער רצף לבדו אינו מדד לאובדן מנות במצב היברידי. שמרו מונים נפרדים לנתונים שנוצרו, דוכאו, נכנסו לתור, הושלמו, בוטלו ונדחו במארח. סיבית אבחון 6 מציינת כשל אמיתי בסריקה או בשידור, ולא דיכוי מכוון.
+- השאירו את ההכרזה על מחזור הדגימה ב־10 ms. קשרו פרופיל דיווח, טבלת שינוי, כיול, ספי מגע ומהדורת גאומטריה לרשומת התצורה/CRC ולמניפסט המארח. שינוי מצב מחייב הכנסת תצורה זו לשירות מחדש; לעולם אין לשנות בשקט את הפרשנות של רובוט פועל.
 
-The transmitted absolute snapshot is refreshed at 50 Hz in a quiet healthy patch, so the **maximum quiet-state data-frame reduction is 50%**, not 90%. Using the existing conservative 435 µs airtime model, eight quiet nodes use 17.4% for data or 18.27% including the same 20 frames/s control allowance; all active nodes remain at the existing 35.67% modeled allowance. Do not reduce bus capacity based on average inactivity. The same 40 ms capture-age deadline and nonce synchronization remain in force. MCU analog scanning and most sensor power remain active; half as many transmitted packets does not mean half the power.
+התחילו את השוואת המעבדה ב־`delta_i=4 ` ספירות עוצמה ובהפרש טמפרטורה של 50 מאיות מעלה צלזיוס. אלה הגדרות ניסוי, ולא ספים שאינם תלויים בחומר. מנתוני תנועה ללא עומס ורעש שנשמרו בנפרד, חשבו פיזור חסין `sigma_i = 1.4826 median(|x_i - median(x_i)|)` ובחרו `delta_i >= max(1, ceil(6 sigma_i))`. בדקו שהדבר אינו מסתיר את האחוזון החמישי של תגובת המגע הנדרשת. הפרדה שנכשלה מחייבת חזרה לחומר, למכניקה או לדיווח מחזורי; היא אינה מצדיקה העלאת סף הזיהוי עד שהפעלות השווא נעלמות. שמרו את ספי המגע להפעלה ולכיבוי ואת סינון הקפיצות מסעיף 10, המוערכים בקצב הדגימה הקבוע. המארח אינו רשאי לספור מנות המתקבלות במרווחים לא אחידים כאילו היו סריקות במרווחים שווים.
 
-**Transmit semantics:** hold one immutable in-flight snapshot; do not advance `s_i ` on queue insertion. Advance it only on successful FDCAN TX completion. Impose a 5 ms enqueue-to-completion deadline in normal operation, cancel/resolve a timed-out mailbox and mark a transport fault before the next scan completes. Eight simultaneous data frames already require up to 3.48 ms in the padded airtime model; a 2 ms deadline would be inconsistent with that burst. Stagger nominal acquisition starts by `(node_id-1)` ms within each 10 ms period, and still test synchronized bursts after reboot. A next completed scan cannot silently replace an in-flight frame. Retry the newest absolute state after a failure; retain a diagnostic record of any transient event that was not delivered. Continuous congestion invalidates coverage through the host deadline, rather than growing a stale queue. The host can still miss a CAN-successful frame in a USB/OS queue; periodic absolute refresh and acquisition-age validation address recovery and staleness separately.
+תמונת המצב המוחלטת המשודרת מתרעננת ב־50 Hz בטלאי שקט ותקין, ולכן **ההפחתה המרבית במסגרות נתונים במצב שקט היא 50%**, ולא 90%. לפי מודל זמן האוויר השמרני הקיים של 435 µs, שמונה צמתים שקטים משתמשים ב־17.4% לנתונים או ב־18.27% כולל אותה הקצבת בקרה של 20 מסגרות לשנייה; כשכל הצמתים פעילים נשארת ההקצבה המחושבת הקיימת של 35.67%. אין להפחית קיבולת אפיק על סמך חוסר פעילות ממוצע. אותו מועד אחרון לגיל דגימה של 40 ms ואותו סנכרון nonce נשארים בתוקף. הסריקה האנלוגית ב־MCU ורוב צריכת החיישנים נמשכות; חצי ממספר המנות המשודרות אינו אומר חצי מההספק.
 
-Executable scheduling reference: [`skin_events.py `](software/skin_events.py). It requires explicit TX success/failure resolution and does not claim to be an MCU driver. `test_cheng_algorithms.py` checks deadband relative to last sent value, failed sends, lost-onset recovery, wrap, contact transitions, invalid channels and quiet/active reporting. Port it into the measured firmware acquisition state machine; do not run Python as a real-time motor-control loop.
+**סמנטיקת שידור:** החזיקו תמונת מצב אחת בלתי משתנה הנמצאת בתהליך שידור; אין לקדם את `s_i ` בעת הכנסה לתור. קדמו אותו רק בהשלמת שידור FDCAN מוצלחת. החילו מועד אחרון של 5 ms מהכנסה לתור ועד השלמה בפעולה רגילה, בטלו או הכריעו את מצב תיבת השידור שחרגה מהזמן וסמנו תקלה בתעבורה לפני סיום הסריקה הבאה. שמונה מסגרות נתונים בו־זמניות דורשות כבר עד 3.48 ms במודל זמן האוויר עם מרווחים; מועד אחרון של 2 ms אינו עקבי עם פרץ כזה. דרגו את תחילת הדגימה הנומינלית לפי `(node_id-1)` ms בתוך כל מחזור של 10 ms, ועדיין בדקו פרצים מסונכרנים לאחר אתחול. סריקה שהושלמה לאחר מכן אינה יכולה להחליף בשקט מסגרת הנמצאת בשידור. לאחר כשל, נסו שוב את המצב המוחלט העדכני ביותר; שמרו רשומת אבחון של כל אירוע חולף שלא נמסר. גודש מתמשך מבטל את תקפות הכיסוי באמצעות המועד האחרון במארח, במקום להצמיח תור מיושן. המארח עדיין עלול להחמיץ מסגרת ששודרה בהצלחה ב־CAN בגלל תור USB או מערכת הפעלה; רענון מוחלט מחזורי ואימות גיל הדגימה מטפלים בנפרד בהתאוששות ובהתיישנות.
 
-### 28.3 Body coordinates are a commissioned asset
+מימוש ייחוס ניתן להרצה לתזמון: [`skin_events.py `](software/skin_events.py). הוא דורש הכרעה מפורשת בהצלחת או בכישלון שידור ואינו מתיימר להיות דרייבר MCU. ‏`test_cheng_algorithms.py` בודק תחום מת ביחס לערך האחרון שנשלח, שידורים שנכשלו, התאוששות מאובדן אירוע התחלה, גלישה, מעברי מגע, ערוצים לא תקפים ודיווח שקט ופעיל. העבירו אותו למכונת מצבי הדגימה בקושחה הנמדדת; אין להריץ Python כלולאת בקרת מנוע בזמן אמת.
 
-Use unambiguous notation: `T_A_B` transforms coordinates **from B to A**, column vectors, metres and radians, right-handed axes. For cell i on rigid link L:
+### 28.3 קואורדינטות גוף הן נכס המוכנס לשירות בתהליך מבוקר
+
+השתמשו בסימון חד־משמעי: `T_A_B` ממיר קואורדינטות **מ־B ל־A**, עם וקטורי עמודה, מטרים ורדיאנים וצירים ימניים. עבור תא i על חוליה קשיחה L:
+
+<div dir="ltr">
 
 ```text
 T_world_cell(q,t) = T_world_link(q,t) * T_link_carrier * T_carrier_cell_i
@@ -1003,80 +1031,92 @@ p_world_i = R_world_link * p_link_i + t_world_link
 n_world_i = R_world_link * n_link_i
 ```
 
-Store `p_link_i ` and outward unit normal `n_link_i` for every cell. A flat 7×4 coordinate table with identical normals is only correct for a flat carrier. A sheet wrapped around an arm must use its installed curved surface coordinates and normals. The controller pocket's orientation is not the sensing surface's normal. Fixed rigid carriers with keyed mounts let this geometry be produced once per part design and verified after assembly; no IMU is required in every shipped taxel.
+</div>
 
-Commissioning procedure:
+שמרו `p_link_i ` ונורמל יחידה הפונה החוצה `n_link_i` לכל תא. טבלת קואורדינטות שטוחה של 7×4 עם נורמלים זהים נכונה רק לנושא שטוח. יריעה העטופה סביב זרוע חייבת להשתמש בקואורדינטות המשטח המעוקל ובנורמלים שלה כפי שהותקנו. כיוון כיס הבקר אינו הנורמל של משטח החישה. נושאים קשיחים וקבועים בעלי תושבות מכוונות מאפשרים ליצור גאומטריה זו פעם אחת לכל תכנון חלק ולאמתה לאחר הרכבה; אין צורך ב־IMU בכל תא חישה מסופק.
 
-1. Export the actual robot URDF/CAD, link names, joint order/sign/zero conventions, carrier drawing and per-cell positions/normals. Record hashes and metres/radians explicitly. Never transpose a matrix merely to make a display look correct.
-2. Register the carrier against three well-separated, noncollinear mechanical datums, using a measured fixture or fiducial board. Three points determine rigid pose only when their correspondence, scale and handedness are correct; use at least five points for a residual check. Mechanical datums are separate from the coarse contact response.
-3. Touch all 28 numbered cells in a recorded sequence with the fixture, then five seam/edge positions. Confirm UID, row/column order, body link and outward normal independently. A mirrored map can look plausible in a heatmap but command the wrong joint reaction.
-4. Inspect at least ten joint poses covering the approved range. For the geometry registration alone, require position residual p95 ≤5 mm and normal error ≤5° against fixture/CAD references; publish uncertainty. These are mapping targets, not a claim of 5 mm tactile spatial resolution for 25 mm-pitch sensors.
-5. Match joint encoder states to acquisition time for logging, and to the current controller tick for current kinematics. Require a bounded common timebase, joint-state age ≤10 ms and no interpolation across a detected dropout. A historical contact location and a current control point are different calculations. For stale transforms retain the local contact flag but invalidate its world-coordinate interpretation and any associated control request.
-6. Sign the commissioned manifest only after these tests. Cover/cassette replacement must preserve the datum relationship or rerun the mapping check. Record both geometry and force calibration revisions.
+נוהל הכנסה לשירות:
 
-Add fields to the production manifest: `frame_convention `, `length_unit `, `angle_unit `, `robot_model_sha256 `, `joint_order `, `carrier_geometry_sha256 `, `cells[{id,p_link_m,normal_link}]`, mapping residuals, timestamp uncertainty, reporting profile and threshold-table hash. The supplied example remains uncommissioned; no guessed identity or geometry becomes automatically trusted.
+1. ייצאו את ה־URDF/CAD האמיתי של הרובוט, שמות חוליות, סדר מפרקים ומוסכמות סימן ואפס, שרטוט נושא ומיקומים ונורמלים לכל תא. תעדו גיבובים ומטרים ורדיאנים במפורש. לעולם אין לשחלף מטריצה רק כדי שהתצוגה תיראה נכונה.
+2. רשמו את מיקום הנושא ביחס לשלוש נקודות ייחוס מכניות מרוחקות זו מזו שאינן על ישר אחד, באמצעות מתקן מדוד או לוח סמנים. שלוש נקודות קובעות תנוחה קשיחה רק כאשר ההתאמה ביניהן, קנה המידה וכיווניות הצירים נכונים; השתמשו בלפחות חמש נקודות לבדיקת שאריות. נקודות ייחוס מכניות נפרדות מתגובת המגע הגסה.
+3. געו בכל 28 התאים הממוספרים ברצף מתועד באמצעות המתקן, ולאחר מכן בחמש נקודות תפר או שפה. אשרו באופן עצמאי UID, סדר שורות ועמודות, חוליית גוף ונורמל החוצה. מפה משוקפת יכולה להיראות סבירה במפת חום אך להורות על תגובת מפרק שגויה.
+4. בדקו לפחות עשר תנוחות מפרקים המכסות את הטווח המאושר. לצורך רישום הגאומטריה בלבד, דרשו שארית מיקום p95 ≤5 mm ושגיאת נורמל ≤5° מול ייחוס המתקן או ה־CAD; פרסמו אי־ודאות. אלה יעדי מיפוי, ולא טענה לרזולוציית מגע מרחבית של 5 mm בחיישנים בעלי פסיעה של 25 mm.
+5. התאימו מצבי מקודדי מפרקים לזמן הדגימה לצורך רישום, ולפעימת הבקר הנוכחית לצורך קינמטיקה נוכחית. דרשו בסיס זמן משותף בעל חסם שגיאה, גיל מצב מפרקים ≤10 ms וללא אינטרפולציה דרך נשירת נתונים שזוהתה. מיקום מגע היסטורי ונקודת בקרה נוכחית הם חישובים שונים. בטרנספורמציות ישנות שמרו את דגל המגע המקומי, אך בטלו את תקפות פרשנותו בקואורדינטות עולם ואת כל בקשת הבקרה הקשורה אליו.
+6. חתמו על המניפסט שהוכנס לשירות רק לאחר בדיקות אלה. החלפת כיסוי או קסטה חייבת לשמר את היחס לנקודות הייחוס או לחייב בדיקת מיפוי חוזרת. תעדו גם מהדורת גאומטריה וגם מהדורת כיול כוח.
 
-### 28.4 A reusable fixture for the inertial algorithms
+הוסיפו למניפסט הייצור את השדות: `frame_convention `, `length_unit `, `angle_unit `, `robot_model_sha256 `, `joint_order `, `carrier_geometry_sha256 `, `cells[{id,p_link_m,normal_link}]`, שאריות מיפוי, אי־ודאות בחותמת זמן, פרופיל דיווח וגיבוב טבלת ספים. הדוגמה המסופקת נשארת לא מוכנסת לשירות; שום זהות או גאומטריה מנוחשות אינן נעשות מהימנות אוטומטית.
 
-The TUM self-localization algorithm measures gravity vectors from accelerometers at different poses, relates neighboring rigid cells and uses known cell geometry to infer translations. Its relative-distance assumption explicitly excludes stretching in §II-C. Our base resistive sheet has neither those accelerometers nor that network geometry. We therefore use known rigid-carrier geometry for production and a **reusable two-IMU commissioning rig** for controlled axis/radius and activity experiments. It is not a replacement for simultaneous arbitrary-shape skin reconstruction.
+### 28.4 מתקן רב־פעמי לאלגוריתמים האינרציאליים
 
-Bench fixture BOM: two [Adafruit LSM6DSOX boards, product 4438](https://www.adafruit.com/product/4438), listed $11.95 each when checked; one Raspberry Pi Pico RP2040 board, $6 allowance; short cables/headers $10 allowance; two repeatable brackets and fasteners $15–30 allowance. Total approximately $55–70 excluding tax/freight, reference encoder and motion fixture. This cost belongs to reusable lab equipment; it is not an extra IMU charge on each patch. Do not add an inertial feature to the commercial skin data sheet until actual production hardware is specified and costed.
+אלגוריתם הלוקליזציה העצמית של TUM מודד וקטורי כבידה ממדי תאוצה בתנוחות שונות, מקשר בין תאים קשיחים שכנים ומשתמש בגאומטריית תאים ידועה כדי להסיק הזזות. הנחת המרחק היחסי שלו שוללת במפורש מתיחה בסעיף §II-C. ביריעה ההתנגדותית הבסיסית שלנו אין מדי תאוצה כאלה וגם לא גאומטריית רשת כזו. לכן אנו משתמשים בגאומטריית נושא קשיח ידועה בייצור וב־**מתקן הכנסה לשירות רב־פעמי בעל שני IMU** לניסויי ציר, רדיוס ופעילות מבוקרים. הוא אינו תחליף לשחזור בו־זמני של עור בעל צורה שרירותית.
 
-Use one board on the stationary reference and the other on the rigid moving carrier of a small single-joint bench fixture. Keep I²C wiring ≤20 cm and strain-relieved. This short-bus fixture is not a proposal for running I²C through a 2 m humanoid limb.
+רשימת רכיבי מתקן מעבדה: שני [לוחות Adafruit LSM6DSOX, מוצר 4438](https://www.adafruit.com/product/4438), במחיר מוצג של $11.95 כל אחד בעת הבדיקה; לוח Raspberry Pi Pico RP2040 אחד, בהקצבה של $6; כבלים קצרים ופסי פינים בהקצבה של $10; שתי תושבות בעלות מיקום חוזר ומחברים מכניים בהקצבה של $15–30. סך הכול כ־$55–70 ללא מס ומשלוח, מקודד ייחוס ומתקן תנועה. עלות זו שייכת לציוד מעבדה רב־פעמי; היא אינה תוספת עלות IMU לכל טלאי. אין להוסיף תכונה אינרציאלית לגיליון הנתונים של העור המסחרי לפני שמוגדרת ומתומחרת חומרת ייצור אמיתית.
 
-| Pico physical pin / signal | IMU connection |
+השתמשו בלוח אחד על ייחוס נייח ובלוח השני על הנושא הקשיח הנע של מתקן מעבדה קטן בעל מפרק יחיד. שמרו חיווט I²C באורך ≤20 cm עם שיכוך מתיחה. מתקן אפיק קצר זה אינו הצעה להעביר I²C לאורך גפת הומנואיד של 2 m.
+
+| פין פיזי / אות ב־Pico | חיבור IMU |
 |---|---|
-|36, 3V3 OUT|Both breakout VIN pins; leave breakout 3Vo outputs unconnected|
-|8, GND|Both breakout GND pins|
-|6, GP4 / I²C0 SDA|Both SDA pins|
-|7, GP5 / I²C0 SCL|Both SCL pins|
-|9, GP6|Stationary IMU INT1, configured as data-ready output|
-|10, GP7|Moving IMU INT1, configured as data-ready output|
-|Board address selection|Stationary default 0x6A; moving D0 high / address jumper gives 0x6B|
+|36, 3V3 OUT|שני פיני VIN בלוחות ההרחבה; להשאיר את יציאות 3Vo שלהם לא מחוברות|
+|8, GND|שני פיני GND בלוחות ההרחבה|
+|6, GP4 / I²C0 SDA|שני פיני SDA|
+|7, GP5 / I²C0 SCL|שני פיני SCL|
+|9, GP6|INT1 של ה־IMU הנייח, מוגדר כיציאת נתונים מוכנים|
+|10, GP7|INT1 של ה־IMU הנע, מוגדר כיציאת נתונים מוכנים|
+|בחירת כתובת לוח|נייח: ברירת מחדל 0x6A; נע: D0 גבוה / מגשר כתובת נותן 0x6B|
 
-Pin references: [official Pico pinout](https://datasheets.raspberrypi.com/pico/Pico-R3-A4-Pinout.pdf), [Adafruit breakout pinout](https://learn.adafruit.com/lsm6dsox-and-ism330dhc-6-dof-imu/pinouts), [ST LSM6DSOX datasheet](https://www.st.com/resource/en/datasheet/lsm6dsox.pdf). Configure 400 kHz I²C, accelerometer ±2 g and gyroscope ±250°/s, both at 416 Hz, block-data-update and register auto-increment. Timestamp each board's data-ready interrupt on the same Pico monotonic clock, then burst-read; retain saturation and FIFO/overrun flags. The boards' internal sample clocks are not synchronized merely because I²C is shared. Resample by measured timestamps; require time alignment ≤1 ms, otherwise reject that dataset. Validate with a shared mechanical excitation before parameter fitting. USB reception time is not the measurement timestamp.
+מקורות פינים: [מפת הפינים הרשמית של Pico](https://datasheets.raspberrypi.com/pico/Pico-R3-A4-Pinout.pdf), [מפת פיני לוח ההרחבה של Adafruit](https://learn.adafruit.com/lsm6dsox-and-ism330dhc-6-dof-imu/pinouts), [גיליון נתוני ST LSM6DSOX](https://www.st.com/resource/en/datasheet/lsm6dsox.pdf). הגדירו I²C ב־400 kHz, מד תאוצה ±2 g וגירוסקופ ±250°/s, שניהם ב־416 Hz, עדכון נתונים אטומי והגדלה אוטומטית של כתובת אוגר. החתימו בזמן כל פסיקת נתונים מוכנים של כל לוח באמצעות אותו שעון מונוטוני של Pico, ואז קראו ברצף; שמרו דגלי רוויה ו־FIFO/חריגה. שעוני הדגימה הפנימיים של הלוחות אינם מסונכרנים רק מפני ש־I²C משותף. דגמו מחדש לפי חותמות הזמן המדודות; דרשו התאמת זמן ≤1 ms, אחרת פסלו את מערך הנתונים. אמתו באמצעות עירור מכני משותף לפני התאמת פרמטרים. זמן קבלת USB אינו חותמת זמן המדידה.
 
-Log `run_id, imu_id, irq_us, ax, ay, az, gx, gy, gz, q_encoder, q_time, status, pose_id`. Convert accelerations to m/s² and gyro to rad/s. Record six-face static scale/bias checks and 30 s noise at rest. The sensor reports specific force: gravity subtraction requires a consistent orientation/sign convention. Do not blindly subtract 9.81 from whichever axis appears largest during motion.
+תעדו `run_id, imu_id, irq_us, ax, ay, az, gx, gy, gz, q_encoder, q_time, status, pose_id`. המירו תאוצות ל־m/s² ונתוני גירוסקופ ל־rad/s. תעדו בדיקות קנה מידה והטיה סטטיות בשש פאות ו־30 s של רעש במנוחה. החיישן מדווח כוח סגולי: חיסור כבידה דורש מוסכמת כיוון וסימן עקבית. אין להחסיר בעיוורון 9.81 מן הציר שנראה הגדול ביותר במהלך תנועה.
 
-For a full robot whose sensors cannot fit on the short fixture bus, keep the CAD/manual commissioning route as the release method. The inertial experiment is then performed on representative detached link/carrier fixtures or with the robot's existing, timestamped link IMUs. A complete distributed inertial acquisition network is a separate hardware change, not an unstated requirement for shipping the base skin.
+ברובוט מלא שחיישניו אינם יכולים להתחבר לאפיק המתקן הקצר, השאירו את נתיב הכנסת ה־CAD או המיפוי הידני לשירות כשיטת השחרור. את הניסוי האינרציאלי מבצעים אז במתקני חוליה או נושא מייצגים ומנותקים, או באמצעות IMU קיימים בחוליות הרובוט עם חותמות זמן. רשת איסוף אינרציאלי מבוזרת מלאה היא שינוי חומרה נפרד, ולא דרישה סמויה לאספקת העור הבסיסי.
 
-### 28.5 Calibration algorithms and their observability checks
+### 28.5 אלגוריתמי כיול ובדיקות יכולת התצפית שלהם
 
-**Relative orientation via orthogonal Procrustes (paper equations 1–3).** First lock the fixture joint so the two IMUs have a fixed relative orientation, then reorient the **entire locked fixture** through at least six diverse static poses. Both boards must observe changing gravity directions with the same fixed inter-board rotation. Holding one board stationary while rotating only the other invalidates this fit. Reject moving/vibrating samples using measured gyro and acceleration norms. Put corresponding vectors in columns of `A ` and `B `. For `H=B*A^T=U*S*V^T `, use `R_B_A=U*diag(1,1,det(U*V^T))*V^T `. The determinant correction prevents reflections. Do not subtract the mean from these static gravity vectors as if they were ordinary centered point clouds; the sensor-axis origins and calibrated bias have a different meaning. Require at least two well-separated gravity directions; use `S[1]/S[0] >= 0.1` as the initial conditioning gate. A nonzero third singular value is not required for a proper rotation fit from two independent directions. One direction leaves yaw about gravity unobservable. Use the fixture geometry for translation—gravity orientation data alone does not reveal translation. Afterwards fix the reference board/base and unlock the joint for the separate axis/radius experiment.
+**כיוון יחסי באמצעות Procrustes אורתוגונלי (משוואות 1–3 במאמר).** תחילה נעלו את מפרק המתקן כך שלשני ה־IMU כיוון יחסי קבוע, ואז שנו את כיוון **כל המתקן הנעול** לפחות בשש תנוחות סטטיות מגוונות. שני הלוחות חייבים לצפות בכיווני כבידה משתנים עם אותו סיבוב קבוע בין הלוחות. החזקת לוח אחד נייח וסיבוב האחר בלבד פוסלים התאמה זו. פסלו דגימות בתנועה או ברטט באמצעות נורמות גירוסקופ ותאוצה מדודות. שימו וקטורים תואמים בעמודות `A ` ו־`B `. עבור `H=B*A^T=U*S*V^T `, השתמשו ב־`R_B_A=U*diag(1,1,det(U*V^T))*V^T `. תיקון הדטרמיננטה מונע שיקופים. אין לחסר את הממוצע מווקטורי הכבידה הסטטיים האלה כאילו היו ענני נקודות רגילים ממורכזים; לראשיות צירי החיישן ולהטיה המכוילת משמעות שונה. דרשו לפחות שני כיווני כבידה מובחנים היטב; השתמשו ב־`S[1]/S[0] >= 0.1` כשער התניה התחלתי. ערך סינגולרי שלישי שאינו אפס אינו נדרש להתאמת סיבוב תקינה משני כיוונים עצמאיים. כיוון יחיד משאיר סיבוב סביב הכבידה בלתי נצפה. השתמשו בגאומטריית המתקן להזזה — נתוני כיוון כבידה לבדם אינם מגלים הזזה. לאחר מכן קבעו את לוח הייחוס ואת הבסיס ושחררו את נעילת המפרק לניסוי ציר ורדיוס נפרד.
 
-The original network method finds connected components, selects a root minimizing graph path lengths, estimates neighbor transforms and composes them along short paths. Our CAN address list is not such a physical-neighbor graph. A 7×4 printed grid can provide a known geometry graph, but it supplies no measured bend angles without inertial/visual observations. Use the stored geometry and make that distinction explicit.
+שיטת הרשת המקורית מוצאת רכיבי קשירות, בוחרת שורש הממזער אורכי מסלולים בגרף, מעריכה טרנספורמציות בין שכנים ומרכיבה אותן לאורך מסלולים קצרים. רשימת כתובות CAN שלנו אינה גרף שכנות פיזית כזה. רשת מודפסת 7×4 יכולה לספק גרף גאומטריה ידוע, אך אינה מספקת זוויות כיפוף מדודות ללא תצפיות אינרציאליות או חזותיות. השתמשו בגאומטריה השמורה והבהירו את ההבחנה.
 
-**Axis/radius estimation (§II-D).** Hold other joints fixed, use encoder measurements rather than assuming commanded motion occurred, and move one revolute joint at a time on the supported fixture. Begin with a 2° peak-to-peak approved excursion at 0.5 Hz for ten cycles, ramped smoothly at the ends. Increase excitation only within the fixture/robot's approved velocity, acceleration and jerk envelope and only if measured signal-to-noise is inadequate. A small, slow motion may be safe but uninformative; failure to identify parameters is an acceptable test result.
+**אמידת ציר ורדיוס (§II-D).** החזיקו את שאר המפרקים קבועים, השתמשו במדידות מקודד במקום להניח שתנועה שנצטוותה אכן התרחשה, והניעו מפרק סיבובי אחד בכל פעם במתקן הנתמך. התחילו במהלך מאושר של 2° משיא לשיא בתדר 0.5 Hz למשך עשרה מחזורים, עם עלייה וירידה חלקות בקצוות. הגדילו עירור רק בתוך מעטפת המהירות, התאוצה וקצב שינוי התאוצה המאושרת למתקן או לרובוט, ורק אם יחס האות לרעש המדוד אינו מספיק. תנועה קטנה ואיטית עשויה להיות בטוחה אך לא אינפורמטיבית; כישלון בזיהוי פרמטרים הוא תוצאת בדיקה קבילה.
 
-Fit the joint-axis direction from the direction of gyro/angular-acceleration observations or the paper's inertial geometry procedure; determine its sign from encoder direction. In the moving sensor frame, for a fixed axis `u ` and sensor radius vector `r` perpendicular to that axis:
+התאימו את כיוון ציר המפרק מכיוון תצפיות הגירוסקופ או התאוצה הזוויתית, או לפי נוהל הגאומטריה האינרציאלית במאמר; קבעו את סימנו מכיוון המקודד. במסגרת החיישן הנע, עבור ציר קבוע `u ` ווקטור רדיוס חיישן `r` המאונך לציר זה:
+
+<div dir="ltr">
 
 ```text
 a_motion[k] = alpha[k] * (u × r)
             + omega[k]^2 * (u × (u × r)) + residual[k]
 ```
 
-After correcting specific force for gravity and bias, fit the two components of `r ` in an orthonormal basis perpendicular to `u` using least squares across both motion directions. Separately implement the paper's tangential-component/SVD and radius-versus-angular-acceleration fit as a comparison. The centripetal term may be negligible only after bounding it from actual speed. Require excitation signal RMS ≥10× measured stationary noise, full rank in the fitted plane, and condition number ≤100. Validate on a second frequency/pose dataset not used in fitting; require axis error ≤5° and radius error ≤max(5 mm, 5% of measured radius) against the fixture. These are our engineering gates, not accuracy figures claimed by Cheng.
+</div>
 
-The component of position along the joint axis is unobservable from this single-joint acceleration experiment. Encoder zero offsets, axis intersections, parallel-axis conventions and root pose require CAD/metrology or additional independent observations. Gravity-aligned axes require complementary robot orientations. Do not manufacture a complete D-H table from underdetermined data. Export valid identified transforms to the robot's existing URDF convention; D-H parameters are an optional representation. Kinematic identification alone does **not** identify link masses, inertia tensors, friction or actuator dynamics needed by a torque resolver.
+לאחר תיקון הכוח הסגולי לכבידה ולהטיה, התאימו את שני רכיבי `r ` בבסיס אורתונורמלי המאונך ל־`u` באמצעות ריבועים פחותים על פני שני כיווני התנועה. בנפרד, ממשו להשוואה את התאמת הרכיב המשיקי/SVD ואת התאמת הרדיוס מול התאוצה הזוויתית שבמאמר. אפשר להזניח את האיבר הצנטריפטלי רק לאחר חסימתו לפי המהירות בפועל. דרשו RMS של אות עירור ≥10× הרעש הנייח המדוד, דרגה מלאה במישור המותאם ומספר התניה ≤100. אמתו במערך נתונים שני של תדר או תנוחה שלא שימש להתאמה; דרשו שגיאת ציר ≤5° ושגיאת רדיוס ≤max(5 mm, 5% of measured radius) מול המתקן. אלה שערים הנדסיים שלנו, ולא נתוני דיוק שנטענו בידי Cheng.
 
-**Activity matrix and postural weights (§IV-A, equations 8–13).** At each approved posture, execute the same one-joint-at-a-time pattern, remove the mean from the dynamic acceleration records, and low-pass with bandwidth greater than ten times the pattern frequency while remaining below Nyquist. For the 0.5 Hz/416 Hz initial experiment, use a recorded 10 Hz low-pass setting and quantify filter delay. Calculate peak-to-peak amplitudes `A_x,A_y,A_z `; reject near-zero denominator cases before computing `w_z=s_z*A_z/(A_x+A_y+A_z)`. Reproduce the paper's first-maximum/first-minimum sign rule on synchronized whole cycles; compare against signed correlation with measured angular acceleration as a robustness check. Do not quietly replace the algorithm while calling it an exact replication.
+רכיב המיקום לאורך ציר המפרק אינו נצפה בניסוי תאוצה זה של מפרק יחיד. היסטי אפס של מקודדים, מפגשי צירים, מוסכמות לצירים מקבילים ותנוחת השורש מחייבים CAD, מטרולוגיה או תצפיות עצמאיות נוספות. צירים המקבילים לכבידה מחייבים כיווני רובוט משלימים. אין להמציא טבלת D-H מלאה מנתונים שאינם קובעים פתרון יחיד. ייצאו טרנספורמציות מזוהות תקפות למוסכמת ה־URDF הקיימת של הרובוט; פרמטרי D-H הם ייצוג אפשרי. זיהוי קינמטי לבדו **אינו** מזהה מסות חוליות, טנזורי התמד, חיכוך או דינמיקת מפעילים הדרושים לממיר פקודות מומנט.
 
-Create a binary activity matrix from joint-to-segment influence, suppress weak responses, and mask impossible ancestry using the robot kinematic tree. Repeat in complementary orientations to avoid false zeros. For our known curved carrier, project the measured/modelled local motion onto each taxel's own normal; one IMU z-axis cannot stand for every normal on a curved arm. Store pose vector, valid joint range, experiment quality and geometry hash with each weight matrix. Disable lookup outside a validated neighborhood (initially ≤5° per tested joint, then expand only using held-out tests). Require ≥95% correct predicted reaction sign for nondegenerate test contacts and explicitly reject all low-observability cases. The geometric Jacobian remains the control reference; this map is a benchmark/diagnostic until its full operating domain is demonstrated.
+**מטריצת פעילות ומשקלים לפי תנוחה (§IV-A, משוואות 8–13).** בכל תנוחה מאושרת, בצעו אותו דפוס של מפרק אחד בכל פעם, הסירו את הממוצע מרשומות התאוצה הדינמית והפעילו מסנן מעביר נמוכים שרוחב הפס שלו גדול מפי עשרה מתדר הדפוס אך קטן מתדר נייקוויסט. בניסוי ההתחלתי של 0.5 Hz/416 Hz, השתמשו בהגדרת מסנן מעביר נמוכים מתועדת של 10 Hz וכמתו את עיכוב המסנן. חשבו משרעות משיא לשיא `A_x,A_y,A_z `; פסלו מקרים של מכנה קרוב לאפס לפני חישוב `w_z=s_z*A_z/(A_x+A_y+A_z)`. שחזרו את כלל הסימן של המקסימום הראשון והמינימום הראשון מהמאמר על מחזורים שלמים מסונכרנים; השוו למתאם בעל סימן עם תאוצה זוויתית מדודה כבדיקת חסינות. אין להחליף בשקט את האלגוריתם ובו בזמן לקרוא לכך שחזור מדויק.
 
-### 28.6 Contact signals, wrenches and inexpensive computation
+צרו מטריצת פעילות בינרית מהשפעת מפרק על מקטע, דכאו תגובות חלשות ומסכו יחסי אבות בלתי אפשריים באמצעות העץ הקינמטי של הרובוט. חזרו בכיוונים משלימים כדי למנוע אפסים שגויים. עבור הנושא המעוקל הידוע שלנו, הטילו את התנועה המקומית המדודה או המחושבת על הנורמל של כל תא חישה; ציר z יחיד של IMU אינו יכול לייצג את כל הנורמלים בזרוע מעוקלת. שמרו עם כל מטריצת משקלים וקטור תנוחה, טווח מפרקים תקף, איכות ניסוי וגיבוב גאומטריה. השביתו חיפוש בטבלה מחוץ לסביבה שאומתה, בתחילה ≤5° לכל מפרק שנבדק, והרחיבו רק באמצעות בדיקות שנשמרו בנפרד. דרשו ≥95% חיזוי נכון של סימן התגובה למגעי בדיקה שאינם מנוונים, ופסלו במפורש את כל המקרים בעלי יכולת תצפית נמוכה. היעקוביאן הגאומטרי נשאר ייחוס הבקרה; מפה זו היא אמת מידה או כלי אבחון עד שיודגם מלוא תחום פעולתה.
 
-The base product reports ordinal intensity, not a calibrated normal force in newtons. A control experiment can construct a deliberately named **virtual force**:
+### 28.6 אותות מגע, כוחות ומומנטים וחישוב חסכוני
+
+המוצר הבסיסי מדווח עוצמה סדרית, ולא כוח נורמלי מכויל בניוטון. ניסוי בקרה יכול לבנות גודל שמכונה במכוון **כוח וירטואלי**:
+
+<div dir="ltr">
 
 ```text
 u_i = intensity_i / 254                 # only for valid cells
 f_i = -min(g_i*u_i, f_cap_i) * n_i      # n_i is outward; compression is inward
 ```
 
-`g_i ` and `f_cap_i` are controller tuning parameters in virtual-newton units, not a conversion inferred from polymer resistance. Choose signs by a fixture push test: a positive compressive input must yield motion away from the contacting obstacle for the approved behavior. Unknown, open or overloaded/ambiguous readings do not become a zero force; dispatch their existing fault/contact-or-fault state to the behavior supervisor. Actual Newton/kPa reporting needs an independent force calibration appropriate to contact area, loading history and temperature.
+</div>
 
-Freeze a per-contact and per-link virtual-command budget with the robot-specific gain set. Summing ordinal intensities otherwise makes the response grow with taxel count and contact spread even at the same physical load. Test one probe, a broad pad and simultaneous contacts at matched reference loads. If aggregate force/moment limits require scaling, apply the same documented scale to both direct and aggregated comparison paths. Preserve all contact constraints before scaling. Virtual intensity-derived effort cannot be used as a measured energy/force input to claim physical passivity or a force limit.
+`g_i ` ו־`f_cap_i` הם פרמטרי כוונון בקר ביחידות ניוטון וירטואלי, ולא המרה שהוסקה מהתנגדות הפולימר. בחרו סימנים באמצעות בדיקת דחיפה במתקן: קלט דחיסה חיובי חייב להניב תנועה הרחק מהמכשול הנוגע עבור ההתנהגות המאושרת. קריאות לא ידועות, מנותקות או בעומס יתר/עמומות אינן הופכות לכוח אפס; העבירו את מצב התקלה או המגע־או־תקלה הקיים שלהן לממונה ההתנהגות. דיווח אמיתי בניוטון או kPa דורש כיול כוח עצמאי המתאים לשטח המגע, להיסטוריית העמסה ולטמפרטורה.
 
-For multiple sites on the **same rigid link**, aggregate about a specified link origin O:
+הקפיאו תקציב פקודות וירטואליות לכל מגע ולכל חוליה יחד עם קבוצת ההגברים הייחודית לרובוט. אחרת, סכימת עוצמות סדריות גורמת לתגובה לגדול עם מספר תאי החישה ועם פיזור המגע גם באותו עומס פיזי. בדקו גשש יחיד, כרית רחבה ומגעים בו־זמניים בעומסי ייחוס תואמים. אם מגבלות כוח ומומנט מצטברים דורשות שינוי קנה מידה, החילו אותו קנה מידה מתועד גם על מסלול ההשוואה הישיר וגם על המסלול המאוגם. שמרו את כל אילוצי המגע לפני שינוי קנה המידה. אי אפשר להשתמש במאמץ וירטואלי הנגזר מעוצמה כקלט מדוד של אנרגיה או כוח לצורך טענה לפסיביות פיזיקלית או למגבלת כוח.
+
+לכמה אתרים על **אותה חוליה קשיחה**, אגדו ביחס לראשית חוליה מוגדרת O:
+
+<div dir="ltr">
 
 ```text
 F_L = sum(f_i)
@@ -1086,106 +1126,110 @@ tau_L = J_L(q)^T * W_L
 tau_skin = sum_over_links(tau_L)
 ```
 
-`J_L ` maps joint velocities to the linear/angular velocity of that same origin in the same axes; wrench ordering is `[force; moment]`. This is the link-level formulation in the paper's equations 22–25. It is algebraically equivalent to summing point-Jacobian contributions for rigidly attached contacts evaluated at the same joint state. It is **not** equivalent if taxels span articulated links, normals deform unpredictably, or timestamps/joint states differ.
+</div>
 
-Changing axes at the same physical origin uses block-diagonal rotation of force and moment. Shifting the origin additionally requires `M_new=M_old+(O_old-O_new)×F `. Omitting this term, or both adding it and using an already-shifted point Jacobian, gives wrong torques. Validate virtual work `tau·qdot = W·(J*qdot)` and compare direct per-taxel versus aggregated results over randomized poses. [`skin_wrench.py`](software/skin_wrench.py) supplies frame-explicit reference operations; tests include force couples, origin shifts, proper rotations, nonfinite inputs and equivalence across 28 random contacts.
+`J_L ` ממפה מהירויות מפרקים למהירות הקווית והזוויתית של אותה ראשית באותם צירים; סדר וקטור הכוח והמומנט הוא `[force; moment]`. זהו הניסוח ברמת חוליה במשוואות 22–25 במאמר. הוא שקול אלגברית לסכימת תרומות של יעקוביאנים נקודתיים למגעים המחוברים בקשיחות ומוערכים באותו מצב מפרקים. הוא **אינו** שקול אם תאי החישה משתרעים על חוליות מפרקיות, אם הנורמלים משתנים באופן לא צפוי, או אם חותמות הזמן ומצבי המפרקים שונים.
 
-On the first system, compute all of this on the host: it simplifies debugging, keeps raw taxel information, and adds no controller parts. Profile 80×28 sites over the actual approved joint model and require p99 computation ≤1 ms inside the integration budget. If it fails, move the fixed-geometry sums `F_L,M_L` to patch/regional processors and keep joint kinematics on the host. Different patches on a link must aggregate about a common origin. Include a coverage mask, oldest sample age, configuration epoch and maximum individual intensity alongside every aggregate. Never discard the location list needed for obstacle constraints.
+שינוי צירים באותה ראשית פיזית משתמש בסיבוב בלוק־אלכסוני של הכוח והמומנט. הזזת הראשית מחייבת בנוסף `M_new=M_old+(O_old-O_new)×F `. השמטת איבר זה, או גם הוספתו וגם שימוש ביעקוביאן נקודתי שכבר הוזז, נותנות מומנטים שגויים. אמתו עבודה וירטואלית `tau·qdot = W·(J*qdot)` והשוו תוצאות ישירות לכל תא חישה מול תוצאות מאוגמות על פני תנוחות אקראיות. [`skin_wrench.py`](software/skin_wrench.py) מספק פעולות ייחוס עם מסגרות מפורשות; הבדיקות כוללות צמדי כוחות, הזזות ראשית, סיבובים תקינים, קלטים לא סופיים ושקילות על פני 28 מגעים אקראיים.
 
-Opposing contacts can cancel net force or even net wrench while both contacts remain hazardous. A zero aggregate is not proof of no contact. Likewise, a centroid is unreliable for opposing normals; retain forces and moments instead of blindly averaging positions.
+במערכת הראשונה, חשבו את כל אלה במארח: הדבר מפשט איתור תקלות, שומר מידע גולמי של תאי החישה ואינו מוסיף חלקי בקר. מדדו עומס חישוב של 80×28 אתרים על מודל המפרקים המאושר בפועל ודרשו זמן חישוב p99 ≤1 ms בתוך תקציב האינטגרציה. אם הדרישה נכשלת, העבירו את הסכומים בגאומטריה קבועה `F_L,M_L` למעבדי טלאי או אזור והשאירו קינמטיקת מפרקים במארח. טלאים שונים על אותה חוליה חייבים לאגם ביחס לראשית משותפת. כללו לצד כל איגום מסכת כיסוי, גיל הדגימה הישנה ביותר, תקופת תצורה ועוצמה פרטנית מרבית. לעולם אין להשליך את רשימת המיקומים הדרושה לאילוצי מכשולים.
 
-Full per-cell forward-kinematics/fixed-point torque propagation from §IV-B6 is a second implementation choice, not necessary for this cost target. It would require joint-state broadcasts, consistent joint ordering/epochs, overflow bounds, loop-free aggregation and revalidated timing. No “constant latency regardless of sensor count” claim is made for our CAN/USB/host implementation.
+מגעים מנוגדים יכולים לבטל כוח נטו או אפילו כוח ומומנט נטו בזמן ששני המגעים עדיין מסוכנים. איגום אפס אינו הוכחה להיעדר מגע. באותו אופן, מרכז משוקלל אינו אמין בנורמלים מנוגדים; שמרו כוחות ומומנטים במקום למצע מיקומים בעיוורון.
 
-### 28.7 Controller interface and constrained behavior
+קינמטיקה קדמית מלאה לכל תא והפצת מומנטים בנקודה קבועה לפי §IV-B6 הן אפשרות מימוש שנייה, שאינה נדרשת ליעד עלות זה. היא תחייב שידור מצבי מפרקים, עקביות בסדר מפרקים ובתקופות, חסמי גלישה, איגום נטול לולאות ואימות תזמון מחדש. אין טענה ל״השהיה קבועה ללא תלות במספר החיישנים״ עבור מימוש ה־CAN/USB/מארח שלנו.
 
-Keep the paper's useful software separation: behavior/primitive generator → task library → constrained task fusion → gain set → robot-specific interface. Place event decoding, logging and visualization outside the real-time motor thread. The robot controller continues at its supported deterministic rate; 100 Hz skin data is a slower feedback channel with explicit age, not a justification to reduce a 1 kHz motor loop to 100 Hz.
+### 28.7 ממשק בקר והתנהגות תחת אילוצים
 
-For a fixed-base bench limb, first run shadow mode: calculate reactions without sending them, compare contact normal, predicted joint direction, joint limits, singularities and reference-force readings. Then enable one validated compliant behavior through the robot's existing position/velocity/admittance API or torque-control API with a separately reviewed gain set. The software supplied here does not open an actuator interface.
+שמרו את הפרדת התוכנה המועילה שבמאמר: מחולל התנהגות ופעולות בסיס → ספריית משימות → שילוב משימות תחת אילוצים → קבוצת הגברים → ממשק ייעודי לרובוט. מקמו פענוח אירועים, רישום והמחשה מחוץ לתהליכון המנוע בזמן אמת. בקר הרובוט ממשיך בקצב הדטרמיניסטי הנתמך שלו; נתוני עור ב־100 Hz הם ערוץ משוב איטי יותר בעל גיל מפורש, ולא הצדקה להפחתת לולאת מנוע של 1 kHz ל־100 Hz.
 
-The TUM position/velocity torque resolver contains nonlinear virtual dynamics and inner feedback compensating real/virtual tracking error. Multiplying torque by a scalar and sending it as an angle is not an implementation. A separate bench admittance comparison may use `M_v*qdd + D_v*qd + K_v*(q-q_ref)=tau_skin`, with positive virtual mass/damping, explicit time integration, acceleration/velocity/position/torque limits and anti-windup. Label that as a simplified comparison, not replication of their nonlinear observer. Tune only on the chosen robot with measured delays and an independent force reference.
+בגפת מעבדה בעלת בסיס קבוע, התחילו במצב צל: חשבו תגובות בלי לשלוח אותן, והשוו נורמל מגע, כיוון מפרק חזוי, מגבלות מפרקים, סינגולריות וקריאות כוח ייחוס. לאחר מכן הפעילו התנהגות היענות אחת שאומתה באמצעות API המיקום, המהירות או האדמיטנס הקיים של הרובוט, או באמצעות API בקרת מומנט, עם קבוצת הגברים שעברה סקירה נפרדת. התוכנה המסופקת כאן אינה פותחת ממשק למפעילים.
 
-For a biped, preserve the existing controller's balance, ground contacts, joint/actuator limits and self-collision constraints above discretionary tactile behavior. A weighted sum alone does not guarantee these constraints. Null-space projections require consistent Jacobian rank, dynamic assumptions and task ordering; damping a pseudoinverse changes exact task orthogonality. After actuator saturation, a formally projected task can violate a higher-priority objective. Use the OEM whole-body constrained controller, supplying contact tasks and timestamps through its supported API. Without that interface, the delivered behavior remains perception/advisory.
+ממיר המומנט לפקודות מיקום ומהירות של TUM מכיל דינמיקה וירטואלית לא ליניארית ומשוב פנימי המפצה על שגיאת עקיבה בין המערכת האמיתית לווירטואלית. הכפלת מומנט בסקלר ושליחתו כזווית אינה מימוש שלו. השוואת אדמיטנס נפרדת במעבדה יכולה להשתמש ב־`M_v*qdd + D_v*qd + K_v*(q-q_ref)=tau_skin`, עם מסה וריסון וירטואליים חיוביים, אינטגרציה מפורשת בזמן, מגבלות תאוצה, מהירות, מיקום ומומנט ומניעת הצטברות אינטגרטור ברוויה. סמנו זאת כהשוואה מפושטת, ולא כשחזור של המשער הלא ליניארי שלהם. כווננו רק ברובוט הנבחר עם השהיות מדודות וייחוס כוח עצמאי.
 
-Run explicit conflict cases: opposing contacts, a joint at either limit, singular straight arm, one stale patch, stale joint state, sensor restart while loaded, unexpected ground contact, controller saturation, task activation/deactivation and a blocked escape direction. Ramp tactile gains smoothly and enforce speed/acceleration/jerk limits already approved for the fixture. If no feasible retreat exists, invoke the existing controlled halt/operator-handling behavior; never pick an untested joint direction just because it reduces a local intensity. Skin intensity is not used as a measured force limit.
+ברובוט דו־רגלי, שמרו את שיווי המשקל, מגעי הקרקע, מגבלות המפרקים והמפעילים ואילוצי מניעת ההתנגשות העצמית של הבקר הקיים בעדיפות מעל התנהגות מגע שאינה חובה. סכום משוקלל לבדו אינו מבטיח אילוצים אלה. הטלות למרחב האפס דורשות עקביות בדרגת היעקוביאן, בהנחות הדינמיות ובסדר המשימות; ריסון פסאודו־הופכי משנה אורתוגונליות מדויקת בין משימות. לאחר רוויית מפעיל, משימה שהוטלה מתמטית יכולה להפר מטרה בעדיפות גבוהה יותר. השתמשו בבקר הגוף המלא בעל האילוצים של ה־OEM, והעבירו משימות מגע וחותמות זמן דרך ה־API הנתמך שלו. ללא ממשק זה, ההתנהגות המסופקת נשארת תפיסה או המלצה בלבד.
 
-### 28.8 Mechanical, networking and manufacturing consequences
+הריצו מקרי התנגשות דרישות מפורשים: מגעים מנוגדים, מפרק בכל אחד מגבולותיו, זרוע ישרה בסינגולריות, טלאי ישן אחד, מצב מפרקים ישן, אתחול חיישן כשהוא עמוס, מגע קרקע לא צפוי, רוויית בקר, הפעלה וכיבוי משימה וכיוון מילוט חסום. הגדילו והפחיתו הגברי מגע בהדרגה חלקה ואכפו מגבלות מהירות, תאוצה וקצב שינוי תאוצה שכבר אושרו למתקן. אם אין נסיגה אפשרית, הפעילו את התנהגות העצירה המבוקרת או הטיפול בידי מפעיל הקיימת; לעולם אין לבחור כיוון מפרק שלא נבדק רק משום שהוא מפחית עוצמה מקומית. עוצמת העור אינה משמשת כמגבלת כוח מדודה.
 
-Cheng's mounting discussion identifies curvature-induced preload and cable interference. Extend M02 with the patch attached at minimum/maximum approved curvature, ten robot postures and three harness tension conditions. Record unloaded response and a known-contact response at each. Route cables beneath non-sensing seams/carrier channels, never directly beneath an active pad. Use replaceable covers attached without stretch and compliant support where required by measured shell edges. No automatic re-zeroing is allowed to conceal strain-induced pressure.
+### 28.8 השלכות מכניות, רשתיות וייצוריות
 
-Do not copy the UR5 cable reels by default: they add bearings, tension, mass and wear points. First use internal ducts or qualified slack loops with measured full-range clearance. Add a reel only if the actual robot geometry cannot meet the harness test; its spring force and life then become separately specified components. A flexible printed circuit is conformable, not necessarily stretchable or qualified for repeated hinge bending.
+הדיון של Cheng בהתקנה מזהה עומס מקדים הנגרם מעקמומיות והפרעות מכבלים. הרחיבו את M02 כך שהטלאי יהיה מחובר בעקמומיות המאושרת המזערית והמרבית, בעשר תנוחות רובוט ובשלושה מצבי מתיחת צמה. תעדו תגובה ללא עומס ותגובה למגע ידוע בכל מצב. נתבו כבלים מתחת לתפרים שאינם חשים או לתעלות הנושא, ולעולם לא ישירות מתחת לכרית פעילה. השתמשו בכיסויים ניתנים להחלפה המותקנים ללא מתיחה ובתמיכה גמישה היכן ששפות המעטפת המדודות דורשות זאת. אין לאפשר איפוס מחדש אוטומטי כדי להסתיר לחץ שנגרם מעיוות מכני.
 
-For CAN, unplugging a branch remains independent of backbone continuity. A physical short still disables a region; segmentation detects/contains faults but does not reroute them. An availability requirement to survive one cable cut requires a separately designed redundant route/dual network with independent power/fault domains, extra transceivers, harness and duplicate suppression. It cannot be achieved by copying a routing algorithm into a single-bus transceiver. Freeze the base product claim as detection plus regional fault containment.
+אין להעתיק כברירת מחדל את גלגלות הכבל של UR5: הן מוסיפות מיסבים, מתח, מסה ונקודות שחיקה. תחילה השתמשו בתעלות פנימיות או בלולאות רפויות שהוסמכו, עם מרווח מדוד בכל טווח התנועה. הוסיפו גלגלת רק אם גאומטריית הרובוט בפועל אינה יכולה לעמוד בבדיקת הצמה; כוח הקפיץ ואורך החיים שלה הופכים אז לרכיבים בעלי מפרט נפרד. מעגל מודפס גמיש מסוגל להתאים לצורה, אך אינו בהכרח נמתח או מוסמך לכיפוף חוזר בציר.
 
-### 28.9 Additional release tests and cost effects
+ב־CAN, ניתוק הסתעפות נשאר בלתי תלוי ברציפות הקו הראשי. קצר פיזי עדיין משבית אזור; חלוקה למקטעים מזהה ומגבילה תקלות אך אינה מנתבת סביבן. דרישת זמינות לשרוד חיתוך כבל יחיד מחייבת נתיב יתיר או רשת כפולה שתוכננו בנפרד, עם תחומי הזנה וכשל עצמאיים, משדרים־מקלטים נוספים, צמה ודיכוי כפילויות. אי אפשר להשיג זאת בהעתקת אלגוריתם ניתוב למשדר־מקלט של אפיק יחיד. הקפיאו את טענת המוצר הבסיסי כזיהוי יחד עם תחימת תקלה לאזור.
 
-These gates extend section 19 and are mandatory for the corresponding feature, alongside the existing electrical/material tests.
+### 28.9 בדיקות שחרור נוספות והשפעות עלות
 
-| ID / phase | Concrete experiment | Acceptance / failure response |
+שערים אלה מרחיבים את סעיף 19 והם חובה לתכונה המתאימה, לצד בדיקות החשמל והחומרים הקיימות.
+
+| מזהה / שלב | ניסוי מעשי | קבלה / תגובה לכשל |
 |---|---|---|
-|A01 / P1 event reporting|Replay identical recorded unloaded, single contact, all-contact, sustained-contact and motor-noise traces in periodic and hybrid modes; drop host packets and timeout MCU TX; record generated/sent/received counters|No missed required contact due to deadband; no fault suppression; absolute state repaired by next ≤20 ms acquisition refresh plus measured transport; existing ≤30 ms p99.9 normal onset and 40 ms validity deadline. Fail → periodic mode, preserve raw logs|
-|A02 / P2 installed map|Five patches, all cells, five seam points, ten poses, five geometric datums|Correct identity/link/order every time; geometry residual ≤5 mm p95 and normal ≤5°; cell-contact localization remains section 2's coarser target. Fail → fix mount/map|
-|A03 / P3 inertial experiment|Two-IMU fixture, six static orientations, ten cycles/joint, complementary gravity orientations and held-out second frequency|Timing ≤1 ms, no saturation, SNR/rank/condition gates and axis/radius thresholds in 28.5. Fail → known CAD/manual calibration; no autonomous-calibration claim|
-|A04 / P3 control mathematics|Direct versus aggregated J-transpose, virtual-work checks, point/origin-frame perturbations, opposing contacts and missing masks|Double-precision synthetic equivalence relative error <1e-9 away from numerical zero; all frame/unit/validity faults rejected; real integration p99 compute ≤1 ms or profile/redesign|
-|A05 / P3 robot behavior|Shadow mode followed by supported fixed-base tests; 100 repetitions for each approved behavior and fault/conflict case|No wrong-direction response, all OEM constraints held, bounded activation and stale-data behavior; reference-force/time records retained. Failure → advisory operation only|
-|A06 / P2 dynamic contact screen|Instrumented 10 mm rounded probe with independent load cell and common clock; controlled 10/50/100 mm/s approach, 20 N cutoff, ten repetitions/cell class, and short pulses of measured duration|Record actual peak force, missed pulses, damage, filter delay and saturation. Claim only the demonstrated pulse-duration/load envelope; a 100 Hz scanner cannot promise detection of every sub-10 ms impact|
+|A01 / P1 דיווח אירועים|השמעה חוזרת של אותן עקבות מוקלטות ללא עומס, במגע יחיד, במגע בכל התאים, במגע מתמשך וברעש מנועים, במצב מחזורי ובהיברידי; השמטת מנות במארח וגרימת פסק זמן לשידור MCU; רישום מוני יצירה, שליחה וקבלה|אין החמצת מגע נדרש בגלל התחום המת; אין דיכוי תקלה; מצב מוחלט מתוקן ברענון הדגימה הבא בתוך ≤20 ms בתוספת תעבורה מדודה; נשמרים ≤30 ms ב־p99.9 לתחילת מגע רגילה וגבול תקפות 40 ms. כשל → מצב מחזורי, שמירת יומני גלם|
+|A02 / P2 מפה מותקנת|חמישה טלאים, כל התאים, חמש נקודות תפר, עשר תנוחות, חמש נקודות ייחוס גאומטריות|זהות, חוליה וסדר נכונים בכל פעם; שארית גאומטריה ≤5 mm ב־p95 ונורמל ≤5°; איתור מגע בתא נשאר לפי היעד הגס יותר של סעיף 2. כשל → תיקון מתקון או מפה|
+|A03 / P3 ניסוי אינרציאלי|מתקן שני IMU, שש תנוחות סטטיות, עשרה מחזורים למפרק, כיווני כבידה משלימים ותדר שני שנשמר לבדיקה|תזמון ≤1 ms, ללא רוויה, שערי יחס אות לרעש, דרגה והתניה וספי ציר ורדיוס מסעיף 28.5. כשל → כיול CAD ידוע או ידני; אין טענה לכיול אוטונומי|
+|A04 / P3 מתמטיקת בקרה|J-transpose ישיר מול מאוגם, בדיקות עבודה וירטואלית, הפרעות למסגרות נקודה וראשית, מגעים מנוגדים ומסכות חסרות|שגיאת שקילות יחסית סינתטית בדיוק כפול <1e-9 הרחק מאפס נומרי; כל תקלות המסגרת, היחידות והתקפות נדחות; חישוב באינטגרציה אמיתית p99 ≤1 ms, או מדידת עומס ותכנון מחדש|
+|A05 / P3 התנהגות רובוט|מצב צל ולאחריו בדיקות נתמכות עם בסיס קבוע; 100 חזרות לכל התנהגות מאושרת ולכל מקרה תקלה או התנגשות דרישות|אין תגובה בכיוון שגוי, כל אילוצי OEM נשמרים, התנהגות הפעלה ונתונים ישנים חסומה; רשומות כוח ייחוס וזמן נשמרות. כשל → פעולה מייעצת בלבד|
+|A06 / P2 סינון מגע דינמי|גשש מעוגל 10 mm מצויד במדידה, עם תא עומס עצמאי ושעון משותף; התקרבות מבוקרת ב־10/50/100 mm/s, ניתוק ב־20 N, עשר חזרות לכל קבוצת תאים ופולסים קצרים שמשך הזמן שלהם נמדד|תיעוד כוח שיא אמיתי, פולסים שהוחמצו, נזק, עיכוב מסנן ורוויה. טענה רק למעטפת משך הפולס והעומס שהודגמה; סורק 100 Hz אינו יכול להבטיח זיהוי של כל פגיעה הקצרה מ־10 ms|
 
-A06 is a low-energy fixture screen, not a certified collision-protection test or human-contact trial. A thin wear laminate is not established impact padding. Do not extrapolate static sensitivity to dynamic collision safety.
+A06 הוא סינון במתקן באנרגיה נמוכה, ולא בדיקת הגנה מהתנגשות מוסמכת או ניסוי מגע אנושי. למינציית שחיקה דקה אינה ריפוד פגיעות מוכח. אין להסיק מרגישות סטטית בטיחות בהתנגשות דינמית.
 
-Recurring patch hardware is unchanged by the baseline event/mapping/host-wrench adaptation; the existing $34.78/patch figure remains a **model**, not a validated price. Add approximately $55–70 reusable inertial electronics/brackets and $100–300 additional fixtures/reference-sensing allowance where not already covered by the lab budget. Robot access and a suitably sampled/calibrated force reference can cost more and must be itemized from actual procurement. Plan an additional 60–120 engineering hours for event integration/bench comparisons, 40–80 hours for mapping/fixture processing and 80–160 hours for one robot-interface validation **only where these tasks were not already included in section 20's integration/qualification hours**. Full biped control and autonomous reconstruction are not concealed inside this allowance.
+חומרת הטלאי החוזרת אינה משתנה בעקבות התאמת הבסיס לאירועים, מיפוי וכוחות ומומנטים במארח; הנתון הקיים של $34.78 לטלאי נשאר **מודל**, ולא מחיר מאומת. הוסיפו כ־$55–70 לאלקטרוניקה אינרציאלית ולתושבות רב־פעמיות, ועוד הקצבה של $100–300 למתקנים ולחישת ייחוס היכן שאינם כלולים כבר בתקציב המעבדה. גישה לרובוט וייחוס כוח מכויל ובעל קצב דגימה מתאים עשויים לעלות יותר, ויש לפרט אותם לפי רכש אמיתי. תכננו 60–120 שעות הנדסה נוספות לשילוב אירועים ולהשוואות מעבדה, 40–80 שעות למיפוי ולעיבוד המתקן ו־80–160 שעות לאימות ממשק רובוט אחד **רק היכן שמשימות אלה לא נכללו כבר בשעות האינטגרציה וההסמכה שבסעיף 20**. בקרת דו־רגלי מלאה ושחזור אוטונומי אינם מוסתרים בהקצבה זו.
 
-Delivered now: reference scheduler, wrench mathematics, synthetic tests and detailed work instructions. Not delivered by the literature review: target MCU firmware execution, SVD/identification application, live sensor data, real-time controller validation, supplier qualification or proof that the virtual-force behavior is stable on a particular robot.
+נמסר כעת: מתזמן ייחוס, מתמטיקת כוחות ומומנטים, בדיקות סינתטיות והוראות עבודה מפורטות. לא נמסר במסגרת סקירת הספרות: הפעלת קושחת MCU יעד, יישום SVD או זיהוי, נתוני חיישנים חיים, אימות בקר בזמן אמת, הסמכת ספקים או הוכחה שהתנהגות הכוח הווירטואלי יציבה ברובוט מסוים.
 
 <a id="section-29"></a>
 
-## 29. Systematic review of the 84 Cheng references
+## 29. סקירה שיטתית של 84 המקורות של Cheng
 
-The requested bibliography was divided among three research agents by technical responsibility, then consolidated into a reference-by-reference register. This is a systematic review of this **specified bibliography**, not an exhaustive systematic review of all worldwide literature or a patent freedom-to-operate opinion. The review records failed access and separates direct source reading from Cheng's secondary summary.
+הביבליוגרפיה שהתבקשה חולקה בין שלושה סוכני מחקר לפי אחריות טכנית, ולאחר מכן אוחדה ליומן מקור־אחר־מקור. זו סקירה שיטתית של **ביבליוגרפיה מוגדרת זו**, ולא סקירה שיטתית ממצה של כל הספרות בעולם או חוות דעת לחופש פעולה בפטנטים. הסקירה מתעדת ניסיונות גישה שנכשלו ומפרידה קריאה ישירה במקור מהסיכום המשני של Cheng.
 
-| Original-source access | Number of references |
+| גישה למקור המקורי | מספר מקורות |
 |---|---:|
 |ABSTRACT_ONLY|29|
 |CITATION_ONLY|13|
 |FULL_TEXT|25|
 |PARTIAL_TEXT|17|
-|**Total audited entries**|**84**|
+|**סך הרשומות שנבדקו**|**84**|
 
-Read the [complete numbered register](research/reference_index.md) and its [machine-readable records](research/reference_index.json). Every number 1–84 must occur exactly once. `read_scope ` states which sections or excerpts were actually examined. `FULL_TEXT ` means an original full text was available and specified sections were read; it does not automatically mean every page of a dissertation or book was studied. `ABSTRACT_ONLY`, partial-text and citation-only entries cannot substantiate uninspected experimental details. A blocked paper remains a documented evidence gap, not an invented summary.
+קראו את [היומן הממוספר המלא](research/reference_index.md) ואת [הרשומות הקריאות למכונה](research/reference_index.json). כל מספר 1–84 חייב להופיע בדיוק פעם אחת. `read_scope ` מציין אילו סעיפים או קטעים נבדקו בפועל. `FULL_TEXT ` פירושו שהיה טקסט מקורי מלא זמין ונקראו סעיפים מוגדרים; אין פירושו אוטומטית שכל עמוד בעבודת דוקטורט או בספר נלמד. רשומות `ABSTRACT_ONLY`, טקסט חלקי או ציטוט בלבד אינן יכולות לבסס פרטי ניסוי שלא נבדקו. מאמר חסום נשאר פער ראיות מתועד, ולא סיכום מומצא.
 
-| Research dossier | Assigned reference numbers | Design responsibility |
+| תיק מחקר | מספרי מקורות שהוקצו | אחריות תכנונית |
 |---|---|---|
-|[Sensing and materials](research/sensing_materials/review.md)|1–19, 30–34, 36–40|Transduction, protective mechanics, spatial/temporal resolution, material and assembly tradeoffs|
-|[Calibration and networking](research/calibration_networks/review.md)|20–24, 41–62|Sensor readout, self-localization, neuromorphic/event reporting and fault recovery|
-|[Control and applications](research/control_applications/review.md)|25–29, 35, 63–84|Robot behavior, model assumptions, constraints, force interpretation and validity of demonstrations|
+|[חישה וחומרים](research/sensing_materials/review.md)|1–19, 30–34, 36–40|התמרה, מכניקת הגנה, רזולוציה מרחבית וזמנית, פשרות חומר והרכבה|
+|[כיול ורשתות](research/calibration_networks/review.md)|20–24, 41–62|קריאת חיישנים, לוקליזציה עצמית, דיווח נוירומורפי או מונחה אירועים והתאוששות מתקלות|
+|[בקרה ויישומים](research/control_applications/review.md)|25–29, 35, 63–84|התנהגות רובוט, הנחות מודל, אילוצים, פרשנות כוח ותקפות הדגמות|
 
-The most consequential decisions are traceable through the individual source records:
+אפשר לעקוב אחר ההחלטות המשמעותיות ביותר דרך רשומות המקורות הנפרדות:
 
-1. **No first-ever skin claim.** Pressure/thermal layers, modular distributed readout, serviceability, whole-body contact and event reporting are established prior art. Pitch a measured implementation advantage with a controlled comparison, not discovery of these concepts.
-2. **Physical architecture remains a choice to test.** Capacitive, magnetic, piezoelectric and resistive skins have different response, shielding, preload and integration needs. Evidence for one does not validate our selected FSR laminate. Maintain the capped comparison program in section22.
-3. **Protective cover is part of calibration.** Record complete stack and loading conditions. Pressure-insensitive reference channels used by another design are not interchangeable with our sparse surface-temperature NTCs. A touch-like response caused by a human acting as a capacitive ground does not establish response to arbitrary insulated objects.
-4. **Report each timing layer.** ADC conversion rate, multiplexed complete-frame rate, filtering, physical material response, bus rate and final control latency are different. Our 100 Hz requirement means all 28 contact sites acquired in each10 ms cycle, with within-scan skew reported.
-5. **Require observability and independent validation.** Gravity data does not determine every orientation or translation; one revolute axis does not determine axial sensor offset; simulation is not physical calibration evidence. The fallback is explicit known geometry, not fabricated self-calibration.
-6. **Report event savings with their denominator.** Remaining traffic is not percentage reduction. Include timestamps, diagnostics, refresh, losses and active/stressed cases in our A01 comparison. No bandwidth claim rests on an idle-only demonstration.
-7. **Respect controller assumptions.** Fixed-base and mobile-manipulator demonstrations do not establish biped balance under contact; sequential contacts do not establish arbitrary simultaneous contacts; kinesthetic teaching interfaces do not establish safe unknown-force interaction.
-8. **Keep raw data and failures.** Literature headline numbers do not supply production yield, lifetime, EMC performance or current component costs. Source inconsistencies stay in the dossier; our own article must include raw data, test settings, sample counts and exclusions.
+1. **אין טענה לעור הראשון אי פעם.** שכבות לחץ ותרמיקה, קריאה מודולרית מבוזרת, יכולת שירות, מגע גוף מלא ודיווח אירועים הם ידע קודם מבוסס. הציגו יתרון מימוש מדוד עם השוואה מבוקרת, ולא גילוי של רעיונות אלה.
+2. **הארכיטקטורה הפיזית נשארת בחירה שיש לבדוק.** לעורות קיבוליים, מגנטיים, פיאזואלקטריים והתנגדותיים צרכים שונים בתגובה, סיכוך, עומס מקדים ואינטגרציה. ראיות לאחד אינם מאמתות את למינציית ה־FSR שנבחרה. שמרו על תוכנית ההשוואה מוגבלת התקציב בסעיף 22.
+3. **כיסוי ההגנה הוא חלק מהכיול.** תעדו את מבנה השכבות המלא ותנאי ההעמסה. ערוצי ייחוס שאינם רגישים ללחץ בתכנון אחר אינם בני־החלפה עם חיישני NTC הדלילים שלנו לטמפרטורת פני השטח. תגובה דמוית מגע שנגרמת מאדם המשמש כאדמה קיבולית אינה מוכיחה תגובה לעצמים מבודדים שרירותיים.
+4. **דווחו כל שכבת תזמון.** קצב המרת ADC, קצב מסגרת מלאה מרובבת, סינון, תגובת החומר הפיזיקלית, קצב אפיק והשהיית בקרה סופית הם דברים שונים. דרישת 100 Hz שלנו פירושה שכל 28 אתרי המגע נדגמים בכל מחזור 10 ms, עם דיווח על הפרש הזמנים בתוך הסריקה.
+5. **דרשו יכולת תצפית ואימות עצמאי.** נתוני כבידה אינם קובעים כל כיוון או הזזה; ציר סיבובי יחיד אינו קובע היסט חיישן לאורך הציר; הדמיה אינה ראיה לכיול פיזי. חלופת הגיבוי היא גאומטריה ידועה ומפורשת, ולא כיול עצמי מומצא.
+6. **דווחו חיסכון באירועים עם המכנה שלו.** תעבורה שנותרה אינה אחוז ההפחתה. כללו חותמות זמן, אבחון, רענון, אובדנים ומצבים פעילים או עמוסים בהשוואת A01 שלנו. אין לבסס טענת רוחב פס על הדגמה במנוחה בלבד.
+7. **כבדו הנחות בקר.** הדגמות עם בסיס קבוע או מניפולטור נייד אינן מוכיחות שיווי משקל דו־רגלי תחת מגע; מגעים עוקבים אינם מוכיחים מגעים בו־זמניים שרירותיים; ממשקי הוראה קינסתטית אינם מוכיחים אינטראקציה בטוחה בכוח לא ידוע.
+8. **שמרו נתוני גלם וכשלים.** נתוני כותרת מהספרות אינם מספקים תשואת ייצור, אורך חיים, ביצועי EMC או עלויות רכיבים עדכניות. אי־עקביות במקורות נשארת בתיק המחקר; המאמר שלנו חייב לכלול נתוני גלם, הגדרות בדיקה, גדלי מדגם והחרגות.
 
-For investor review, use a two-axis evidence table: **source support** and **our experimental validation**. A well-supported algorithm can still be untested on our hardware. For an article, cite the original applicable paper and the precise adopted/adapted method, list departures, and disclose inaccessible originals where they affect reproducibility. A reference list by itself is not an implementation.
+לסקירת משקיעים, השתמשו בטבלת ראיות דו־ממדית: **תמיכת המקורות** ו־**האימות הניסויי שלנו**. אלגוריתם מבוסס היטב עדיין עשוי להיות לא בדוק בחומרה שלנו. במאמר, צטטו את המאמר המקורי הרלוונטי ואת השיטה המדויקת שאומצה או הותאמה, פרטו סטיות וגלו מקורות מקוריים שלא היו נגישים כאשר הדבר משפיע על יכולת השחזור. רשימת מקורות לבדה אינה מימוש.
 
 <a id="section-30"></a>
 
-## 30. ProxySKIN comparison and the proximity decision
+## 30. השוואה ל־ProxySKIN והחלטת חישת הקִרבה
 
-The additional requested source is [Giovinazzo et al., *From CySkin to ProxySKIN*](https://pmc.ncbi.nlm.nih.gov/articles/PMC10892799/), Sensors24, 1334 (2024), DOI10.3390/s24041334. The complete18-page publisher PDF was read, including hardware/network sections, both tables, figures and conclusions. The open-access article is linked with attribution; third-party paper PDFs are not bundled here.
+המקור הנוסף שהתבקש הוא [Giovinazzo ועמיתיו, *מ־CySkin ל־ProxySKIN*](https://pmc.ncbi.nlm.nih.gov/articles/PMC10892799/), Sensors ‏24, ‏1334 ‏(2024), ‏DOI10.3390/s24041334. נקרא במלואו קובץ ה־PDF של המו״ל בן 18 העמודים, כולל פרקי חומרה ורשת, שתי הטבלאות, האיורים והמסקנות. המאמר בגישה פתוחה מקושר תוך מתן קרדיט; קובצי PDF של מאמרי צד שלישי אינם כלולים כאן.
 
-**Source findings:** CySkin uses11 capacitive taxels per triangle; ProxySKIN combines tactile modules with VL53L8CX proximity arrays. Reported density is 2.03 taxels/cm². The described system uses separate EtherCAT backbones at 20 Hz tactile and 15 Hz proximity. Ten ToFs consume a typical2.15 W. Table1's three10-sensor arrays leave1.067 m³ blind within 3.746 m³. Table2 reports roughly 22–49 mm standard deviations at some500/1,000 mm tests; small interference effects do not imply millimeter absolute accuracy. The conclusion describes further integration, environmental and network validation as future work. These are2024 research results, not current commercial quotations or certification evidence.
+**ממצאי המקור:** CySkin משתמש ב־11 תאי חישה קיבוליים לכל משולש; ProxySKIN משלב מודולי מגע עם מערכי קִרבה VL53L8CX. הצפיפות המדווחת היא 2.03 תאי חישה/cm². המערכת המתוארת משתמשת בקווים ראשיים נפרדים של EtherCAT ב־20 Hz למגע וב־15 Hz לקִרבה. עשרה חיישני ToF צורכים בדרך כלל 2.15 W. שלושת המערכים בני 10 החיישנים שבטבלה 1 משאירים 1.067 m³ עיוורים מתוך 3.746 m³. טבלה 2 מדווחת על סטיות תקן של כ־22–49 mm בחלק מבדיקות 500/1,000 mm; השפעות הפרעה קטנות אינן מעידות על דיוק מוחלט מילימטרי. המסקנה מציגה שילוב נוסף ואימות סביבתי ורשתי כעבודה עתידית. אלה תוצאות מחקר מ־2024, ולא הצעות מחיר מסחריות עדכניות או ראיות להסמכה.
 
-**Our engineering interpretation and decisions:**
+**הפרשנות ההנדסית וההחלטות שלנו:**
 
-- The current patch has28 sites over175 cm², or 0.16 sites/cm². It deliberately resolves coarse contact regions. Do not claim detailed hand-shape reconstruction from this density, or compare counts without an equal-area/resolution calculation. A high-resolution capacitive coupon remains a comparison/fallback; changing to it entails a different readout and cost model.
-- Retain **touch + sparse temperature** as the affordable product baseline. Put proximity on a separate optional strip or use the robot's existing vision/range sensors. A time-of-flight sensor measures distance; its infrared emitter does not make it a temperature camera. No new proximity channel or part is silently added to the base BOM.
-- A full360° arrangement still needs a volumetric blind-zone map. Our optional module's qualification must include near-surface gaps, limb self-occlusion, all joint poses and a detected/undetected map using specified target sizes, distances, colors and angles. A polished 3D picture is not proof of complete coverage.
-- Allocate optical sensors their own power/thermal budget. Place them away from thermal measurement islands; quantify regulator/emitter self-heating before interpreting skin temperature. For planning, three arrays at the paper's per-array allowance would alone require6.45 W, before interface electronics; that materially changes our existing system budget.
-- Keep distance images off the present tactile CAN regions unless a measured bandwidth/latency budget proves they fit. A future proximity gateway can use an appropriate higher-bandwidth link while retaining the tested tactile timing contract. More complex networking is justified by measured payload, synchronization and fault requirements, not by assuming the newest bus is automatically the cheapest solution.
-- Protect any optional optical aperture with an independently tested optical window and emitter/receiver separation. Our opaque or scattering protective TPU stack cannot be assumed optically suitable. Test the actual cover, air gap, scratches, dust, condensation and cleaner residues; qualify under indoor lighting, sunlight exposure and other active IR devices. An invalid range must remain invalid rather than being replaced with an apparently safe far-away value.
-- Use a defined optional-module experiment before redesign: one sensor alone, adjacent sensors, opposing arrays and moving limb configurations, on identical targets with shared timing. Record all zones, valid-return rate, bias, standard deviation, tails, interference deltas, current and temperature. Compare against a measured reference distance. Keep the entire test envelope in the article, including failures.
+- לטלאי הנוכחי 28 אתרים על פני 175 cm², כלומר 0.16 אתרים/cm². הוא מבחין במכוון בין אזורי מגע גסים. אין לטעון לשחזור מפורט של צורת כף יד מצפיפות זו, או להשוות מספרים ללא חישוב בשטח וברזולוציה שקולים. קופון קיבולי ברזולוציה גבוהה נשאר אפשרות להשוואה או לגיבוי; מעבר אליו כרוך בקריאה אחרת ובמודל עלות אחר.
+- השאירו **מגע + טמפרטורה דלילה** כבסיס המוצר במחיר נגיש. מקמו חישת קִרבה ברצועה אופציונלית נפרדת או השתמשו בחיישני הראייה או הטווח הקיימים של הרובוט. חיישן זמן־מעוף מודד מרחק; משדר האינפרה־אדום שלו אינו הופך אותו למצלמת טמפרטורה. אין להוסיף בשקט ערוץ או רכיב קִרבה חדש ל־BOM הבסיסי.
+- סידור מלא של 360° עדיין דורש מפת נפח של אזורים עיוורים. הסמכת המודול האופציונלי שלנו חייבת לכלול פערים סמוכים לפני השטח, הסתרה עצמית של הגפה, כל תנוחות המפרקים ומפת זוהה/לא זוהה באמצעות גדלים, מרחקים, צבעים וזוויות מוגדרים של מטרות. תמונת 3D מלוטשת אינה הוכחה לכיסוי מלא.
+- הקצו לחיישנים אופטיים תקציב הספק ותרמיקה משלהם. מקמו אותם הרחק מאיי המדידה התרמית; כמתו חימום עצמי של המייצב והמשדר לפני פירוש טמפרטורת העור. לתכנון, שלושה מערכים לפי ההקצבה למערך במאמר ידרשו לבדם 6.45 W, לפני אלקטרוניקת ממשק; הדבר משנה מהותית את תקציב המערכת הקיים שלנו.
+- השאירו תמונות מרחק מחוץ לאזורי CAN המגע הנוכחיים, אלא אם תקציב רוחב פס והשהיה מדוד מוכיח שהן נכנסות. שער קִרבה עתידי יכול להשתמש בקישור מתאים בעל רוחב פס גבוה יותר, תוך שמירה על חוזה התזמון שנבדק למגע. רשת מורכבת יותר מוצדקת לפי מטען נתונים, סנכרון ודרישות תקלה שנמדדו, ולא מתוך הנחה שהאפיק החדש ביותר הוא אוטומטית הפתרון הזול ביותר.
+- הגנו על כל מפתח אופטי אופציונלי באמצעות חלון אופטי שנבדק עצמאית והפרדה בין משדר למקלט. אין להניח שמבנה ה־TPU המגן האטום או המפזר שלנו מתאים אופטית. בדקו את הכיסוי האמיתי, מרווח האוויר, שריטות, אבק, עיבוי ושאריות חומרי ניקוי; הסמיכו בתאורת פנים, בחשיפה לאור שמש וליד התקני IR פעילים אחרים. טווח לא תקף חייב להישאר לא תקף, ולא להיות מוחלף בערך מרוחק הנראה בטוח.
+- השתמשו בניסוי מודול אופציונלי מוגדר לפני תכנון מחדש: חיישן יחיד, חיישנים סמוכים, מערכים מנוגדים ותצורות גפה נעה, עם מטרות זהות ותזמון משותף. תעדו את כל האזורים, שיעור החזרות התקפות, הטיה, סטיית תקן, זנבות התפלגות, הפרשי הפרעה, זרם וטמפרטורה. השוו למרחק ייחוס מדוד. שמרו במאמר את כל מעטפת הבדיקה, לרבות כשלים.
 
-The paper supports multimodal modular integration as a serious existing field. Our potential commercial contribution remains independently demonstrated installed cost, service time, durable protection and useful contact coverage. It does not establish that our present design is cheaper than ProxySKIN, and it does not provide permission to claim its preliminary demonstrations as our measured capabilities.
+המאמר תומך בשילוב מודולרי רב־חושי כתחום קיים ומשמעותי. התרומה המסחרית האפשרית שלנו נשארת עלות מותקנת, זמן שירות, הגנה עמידה וכיסוי מגע שימושי שהודגמו באופן עצמאי. הוא אינו מוכיח שהתכנון הנוכחי שלנו זול יותר מ־ProxySKIN, ואינו מתיר להציג את ההדגמות המקדימות שלו כיכולות מדודות שלנו.
+
+</div>

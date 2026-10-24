@@ -1,567 +1,601 @@
-# Sensing, materials and application references: critical review
+<div dir="rtl" lang="he">
 
-Prepared 24 October 2026 for the project engineering plan. Coverage: Cheng et al. references **1–19, 30–34 and 36–40**, exactly 29 records. The other references and ProxySKIN 2024 are handled by the coordinating review. No original paper has been purchased and no author has been contacted.
+עברית · [English](review.en.md)
 
-## Integration memo
+# מקורות על חישה, חומרים ויישומים: סקירה ביקורתית
 
-The defensible baseline is an inexpensive, replaceable limb covering that detects several contacts and ordinal normal loading, with explicitly sparse temperature sensing. This review supports local digitization and regional networking, but does **not** establish that the proposed material stack has passed fatigue, coverage, cost or industrial-yield requirements. Evidence levels below distinguish complete main text, selected full-text sections, indexed original excerpts, primary abstracts and citation-only verification.
+הוכן בתאריך 24 באוקטובר 2026 עבור התוכנית ההנדסית של הפרויקט. היקף: מקורות **1–19, 30–34 ו-36–40** של Cheng ועמיתיו, בדיוק 29 רשומות. שאר המקורות ו-ProxySKIN 2024 מטופלים בסקירה המרכזת. לא נרכש אף מאמר מקורי ולא נוצר קשר עם אף מחבר.
 
-Concrete changes recommended to the project specification:
+## מזכר שילוב
 
-1. **Make installed-layer mechanics a release gate.** Qualify the final cover, adhesive, sensor, backing and cable assembly on the intended limb curvature. Measure baseline/preload after fitting and after replacing the cover. Use a sliding/overlapping seam or leave a mapped blind band at joints; do not stretch an ordinary flex laminate across a crease. The relevant methodological basis is [8], chapter 4.1, and [9], sections III–IV. A bendable conductor alone does not validate a skin assembly.
-2. **Separate the thermal promises.** The two NTCs measure their own local thermal environment. A small hot object elsewhere can be missed. Map a controlled heated/cooled contact across each panel and seam with independent surface thermometry, record location, force, temperature step, response delay and false pressure signal. Test local heat and uniform ambient change separately. The combined-layer precedent [7] and structural compensation in [17], sections III and IV-E, are different mechanisms. Do not claim full thermal coverage or use these NTCs as pressure-compensation references without evidence.
-3. **Add matched dynamic and static tests.** A small actuator/indenter with an independently sampled load reference should apply repeatable contact profiles at randomized phases of the 100 Hz scan. Capture force onset, ADC acquisition, transmitted timestamp and host decision on one timebase. Use the deployed filter settings. Record detection probability, peak force before response, release/recovery time and post-overload offset. Begin with low-energy bench indentation; the thin outer film is not an impact absorber. [8], chapter 4.1, supplies the evaluation distinction.
-4. **Characterize force/contact geometry honestly.** Measure center, edge, seam and between-taxel locations with at least small, nominal and broad indenters. Add two simultaneous contacts, several adjacent contacts, and a broad-area load; report confusion between neighboring sites. Publish contact-class performance rather than converting arbitrary ADC readings to kPa. [16], section VI-B–D, exposes contact-area dependence and receptive-field effects. For our 25 mm-pitch patch, nearest-site coordinate quantization alone is up to 12.5 mm on each axis, about 17.7 mm diagonally inside an ideal square cell; real mechanics and dead zones can be worse. This is a geometric bound, not measured accuracy.
-5. **Keep adaptation auditable.** At boot, distinguish confirmed unloaded calibration from unknown/preloaded state. Freeze baseline while contact is latched or suspect, and log any rebasing. Test a slow force ramp, a 10-minute sustained load and a thermally drifting unloaded panel. Confirm release separately. [16], section V, gives an established touched-taxel freeze pattern, but its extracted pseudocode has a sign inconsistency; our implementation must be unit-tested against its intended signed deadband.
-6. **Use a fair alternative benchmark.** If the resistive coupon fails repeatability, thermal stability or aging requirements, compare a spacer-fabric capacitive stack based on [17] with the same area, installed thickness, cover, contact fixture, sampling and acceptance limits. Do not call it a drop-in substitution or assume its published rate and thickness meet our specification. Obtain current material/process quotes independently; old papers establish feasibility routes, not 2026 prices.
-7. **Budget information rather than wire count alone.** Four-wire centroid schemes cannot uniquely identify arbitrary multiple contacts [39]; active local scanning [9, 15, 16] preserves more information at the expense of electronics and power. Keep all 28 taxel identities. Record full-frame rate, scan skew, sample age and transport latency separately. [37], section IV, is a concrete warning against misreading per-conversion rate as full-array rate.
-8. **Scope the application and novelty claim.** Whole-body haptics, protective layers, multi-modal skin, CAN/local processing and thousands of flexible tactile sites are all prior art. An investable contribution can be a measured combination of installed cost per area, low mass, fast replacement, dependable multi-contact reporting and reproducible production. Demonstrate those with matched benchmarks and disclose blind regions. Skin sensing alone does not prove safe physical interaction, force control, balance, dexterity or human-equivalent perception.
+תצורת הבסיס שניתן להצדיק היא כיסוי זול וניתן להחלפה לגפיים, המזהה כמה מגעים ורמות יחסיות של העמסה בניצב למשטח, עם חישת טמפרטורה דלילה המוצהרת במפורש. סקירה זו תומכת בהמרה מקומית לדיגיטל ובתקשורת אזורית, אך **אינה** מבססת שמכלול שכבות החומר המוצע עבר את דרישות העייפות, הכיסוי, העלות או תפוקת הייצור התעשייתית התקינה. רמות הראיות שלהלן מבחינות בין גוף טקסט מלא, סעיפים נבחרים מהטקסט המלא, קטעים מקוריים מאונדקסים, תקצירים ראשוניים ואימות ביבליוגרפי בלבד.
 
-### Proposed coupon/limb experiments (our engineering recommendations)
+שינויים קונקרטיים המומלצים למפרט הפרויקט:
 
-Use five independently assembled panels, including at least two sensor-material/adhesive batches when available. Keep manufacturing records: film lot, surface preparation, adhesive thickness, lamination pressure/time, alignment and cure/settle time. Do not silently discard failed panels; report first-pass yield and rework.
+1. **להפוך את מכניקת השכבות המותקנות לשער שחרור.** יש להכשיר את מכלול הכיסוי, הדבק, החיישן, שכבת התמיכה והכבל הסופי על עקמומיות הגפה המיועדת. יש למדוד את קו הבסיס והעומס המקדים לאחר ההתקנה ולאחר החלפת הכיסוי. יש להשתמש בתפר מחליק או חופף, או להשאיר רצועה עיוורת ממופה במפרקים; אין למתוח למינציה גמישה רגילה על פני קפל. הבסיס המתודולוגי הרלוונטי הוא [8], פרק 4.1, ו-[9], סעיפים III–IV. מוליך שניתן לכופף אינו מאמת לבדו מכלול עור.
+2. **להפריד בין ההבטחות התרמיות.** שני חיישני ה-NTC מודדים את סביבתם התרמית המקומית. עצם חם קטן במקום אחר עלול שלא להתגלות. יש למפות מגע מחומם או מקורר ומבוקר על פני כל לוח ותפר, בעזרת מדידת טמפרטורת פני שטח עצמאית, ולתעד מיקום, כוח, מדרגת טמפרטורה, השהיית תגובה ואות לחץ כוזב. יש לבדוק חימום מקומי ושינוי אחיד של טמפרטורת הסביבה בנפרד. התקדים לשכבות משולבות [7] והפיצוי המבני ב-[17], סעיפים III ו-IV-E, הם מנגנונים שונים. אין לטעון לכיסוי תרמי מלא או להשתמש ב-NTC אלה כייחוס לפיצוי לחץ ללא ראיות.
+3. **להוסיף בדיקות דינמיות וסטטיות בתנאים תואמים.** מפעיל קטן או חוד לחיצה עם ייחוס עומס הנדגם באופן עצמאי צריך להפעיל פרופילי מגע הניתנים לחזרה, במופעים אקראיים ביחס לסריקת 100 Hz. יש ללכוד את תחילת הכוח, רכישת ה-ADC, חותמת הזמן המשודרת והחלטת המחשב המארח על בסיס זמן משותף. יש להשתמש בהגדרות המסנן שיותקנו בפועל. יש לתעד הסתברות גילוי, כוח שיא לפני התגובה, זמן שחרור והתאוששות והיסט לאחר עומס יתר. מתחילים בלחיצה במעבדה באנרגיה נמוכה; הסרט החיצוני הדק אינו בולם פגיעה. [8], פרק 4.1, מספק את ההבחנה בין סוגי ההערכה.
+4. **לאפיין ביושר את הכוח ואת גאומטריית המגע.** יש למדוד במרכז, בקצה, בתפר ובין אתרי חישה, עם חודי לחיצה קטנים, נומינליים ורחבים לפחות. יש להוסיף שני מגעים בו־זמניים, כמה מגעים סמוכים ועומס על שטח רחב; יש לדווח על בלבול בין אתרים שכנים. יש לפרסם ביצועים לפי סוגי מגע, במקום להמיר קריאות ADC שרירותיות ל-kPa. [16], סעיפים VI-B–D, חושף תלות בשטח המגע והשפעות של שדות קליטה. בטלאי שלנו, בעל פסיעה של 25 mm, שגיאת הכימות לבחירת האתר הקרוב לבדה מגיעה עד 12.5 mm בכל ציר, וכ-17.7 mm באלכסון בתוך תא מרובע אידאלי; המכניקה בפועל ואזורים מתים עלולים להחמיר אותה. זהו חסם גאומטרי, לא דיוק שנמדד.
+5. **לשמור על יכולת ביקורת של ההסתגלות.** בעת אתחול יש להבחין בין כיול במצב ללא עומס שאומת, לבין מצב לא ידוע או בעל עומס מקדים. יש להקפיא את קו הבסיס כאשר מגע ננעל או נחשד, ולתעד כל קביעה מחדש של הבסיס. יש לבדוק עליית כוח איטית, עומס רצוף במשך 10 דקות ולוח ללא עומס הסובל מסחיפה תרמית. יש לאמת את השחרור בנפרד. [16], סעיף V, מספק דפוס מבוסס להקפאת אתר חישה בעת מגע, אך בפסאודו־קוד שחולץ ממנו יש אי־התאמה בסימן; יש לבדוק את המימוש שלנו בבדיקות יחידה מול תחום אי־התגובה החתום שאליו התכוונו המחברים.
+6. **להשתמש בחלופת ייחוס הוגנת.** אם דגימת החומר ההתנגדותית אינה עומדת בדרישות החזרתיות, היציבות התרמית או ההזדקנות, יש להשוות מכלול קיבולי המבוסס על בד מרווח לפי [17], עם אותו שטח, עובי מותקן, כיסוי, מתקן מגע, דגימה וגבולות קבלה. אין להציג זאת כהחלפה ישירה או להניח שהקצב והעובי שפורסמו עומדים במפרט שלנו. יש לקבל הצעות מחיר עדכניות לחומרים ולתהליכים בנפרד; מאמרים ישנים מבססים מסלולי היתכנות, ולא מחירי 2026.
+7. **לתקצב מידע ולא רק מספר חוטים.** שיטות מרכז־כובד בעלות ארבעה חוטים אינן יכולות לזהות באופן יחיד קבוצות שרירותיות של מגעים בו־זמניים [39]; סריקה מקומית פעילה [9, 15, 16] משמרת יותר מידע במחיר של אלקטרוניקה והספק. יש לשמר את הזהויות של כל 28 אתרי החישה. יש לתעד בנפרד את קצב המסגרות המלאות, פערי זמני הסריקה, גיל הדגימות והשהיית התעבורה. [37], סעיף IV, הוא אזהרה קונקרטית מפני פירוש שגוי של קצב המרה בודדת כקצב המערך המלא.
+8. **לתחום את היישום ואת טענת החדשנות.** הפטיקה של כל הגוף, שכבות מגן, עור רב־חושי, CAN ועיבוד מקומי, ואלפי אתרי מישוש גמישים הם כולם ידע קודם. תרומה הראויה להשקעה יכולה להיות שילוב מדוד של עלות מותקנת ליחידת שטח, מסה נמוכה, החלפה מהירה, דיווח אמין על כמה מגעים וייצור שניתן לשחזר. יש להדגים זאת באמצעות מבחני ייחוס תואמים ולחשוף אזורים עיוורים. חישת עור לבדה אינה מוכיחה אינטראקציה פיזית בטוחה, בקרת כוח, שיווי משקל, מיומנות תנועה או תפיסה המקבילה לזו של אדם.
 
-- Electrical isolation: replace sensors with fixed resistors, vary one channel over the intended impedance range, and verify the other 27 channels; repeat with motor PWM active and with cable flexing. Then repeat mechanically with real two-point and broad loads. This separates electrical coupling from legitimate mechanical spreading.
-- Drift and creep: record both constant-force holds (deadweight with known contact geometry) and constant-displacement holds (fixed indenter), followed by release and recovery. Randomize loading order; include repeated cycles without long rests. Publish raw traces and thresholds, including false positives/negatives.
-- Curvature and service: compare flat, minimum-radius and nominal-radius mounting; cover replacement; cable installation; dry wiping and specified cleaning fluid. Repeat detection tests after each operation. Limit claims to the conditions actually tested.
-- Motion: use a joint fixture across the intended angular range and velocity, with the assembled routing. Measure added torque/drag, cable slack, wrinkle-induced events and connector strain. Cycle the installed assembly, not just the foil. Separate exploratory cycles from qualification cycles and document failures.
-- Thermal: place a known-temperature contact both above and between NTCs and on seams. Record effective detection region and delay with the robot electronics powered. Repeat with constant mechanical load to reveal cross-sensitivity. An undetected heated contact outside the claimed region is a coverage result, not a firmware defect.
-- Production economics: time placement, lamination, connector assembly, programming, test, calibration and replacement on each panel. Calculate cost per accepted panel after scrap and rework, not raw material cost. Keep sensors, controller, mounting, protection and harness in the installed mass total.
+### ניסויים מוצעים בדגימות ובגפיים — המלצות הנדסיות שלנו
 
-These are test instructions and decision gates, not assertions of an experimentally validated finished product. Failure must change the stack, requirement or product claim; a favorable paper cannot replace that evidence.
+יש להשתמש בחמישה לוחות שהורכבו באופן עצמאי, ובהם לפחות שתי אצוות של חומר חישה או דבק כאשר הן זמינות. יש לשמור רישומי ייצור: אצוות הסרט, הכנת פני השטח, עובי הדבק, לחץ וזמן הלמינציה, יישור וזמן הקשיה או התייצבות. אין להשמיט לוחות שנכשלו בלי לדווח; יש לפרסם תפוקה תקינה במעבר ראשון ועבודת תיקון.
 
-## Access accounting
+- בידוד חשמלי: להחליף את החיישנים בנגדים קבועים, לשנות ערוץ אחד לאורך תחום העכבה המיועד ולאמת את 27 הערוצים האחרים; לחזור כאשר PWM המנועים פעיל ותוך כיפוף הכבל. לאחר מכן לחזור על הבדיקה המכנית עם עומסים אמיתיים בשתי נקודות ועל שטח רחב. כך מפרידים בין צימוד חשמלי לפיזור מכני לגיטימי.
+- סחיפה וזחילה: לתעד גם החזקות בכוח קבוע, באמצעות משקולת וגאומטריית מגע ידועה, וגם החזקות בהעתק קבוע, באמצעות חוד לחיצה מקובע, ולאחריהן שחרור והתאוששות. יש לשנות באקראי את סדר ההעמסה ולכלול מחזורים חוזרים ללא מנוחות ארוכות. יש לפרסם עקבות גולמיים וספים, כולל גילויים חיוביים ושליליים כוזבים.
+- עקמומיות ותחזוקה: להשוות התקנה שטוחה, ברדיוס מינימלי וברדיוס נומינלי; החלפת כיסוי; התקנת כבל; ניגוב יבש ושימוש בנוזל הניקוי המוגדר. יש לחזור על בדיקות הגילוי אחרי כל פעולה. יש להגביל את הטענות לתנאים שנבדקו בפועל.
+- תנועה: להשתמש במתקן מפרק לאורך תחום הזוויות והמהירויות המיועד, עם ניתוב הכבלים המורכב. למדוד תוספת מומנט וגרר, רפיון כבל, אירועים הנוצרים מקמטים ומאמץ במחברים. לבצע מחזורי תנועה במכלול המותקן, ולא רק ביריעה. להפריד בין מחזורי חקירה למחזורי הסמכה ולתעד כשלים.
+- תרמיקה: להציב מגע בטמפרטורה ידועה מעל חיישני NTC, ביניהם ועל תפרים. לתעד את אזור הגילוי האפקטיבי ואת ההשהיה כאשר אלקטרוניקת הרובוט פועלת. לחזור תחת עומס מכני קבוע כדי לחשוף רגישות צולבת. מגע מחומם שלא התגלה מחוץ לאזור הכיסוי הנטען הוא ממצא על הכיסוי, ולא פגם בקושחה.
+- כלכלת ייצור: למדוד בכל לוח את זמני המיקום, הלמינציה, הרכבת המחברים, התכנות, הבדיקה, הכיול וההחלפה. לחשב עלות ללוח שאושר לאחר פסילות ותיקונים, ולא רק את עלות חומרי הגלם. לכלול את החיישנים, הבקר, ההתקנה, ההגנה והצמה בסך המסה המותקנת.
 
-- `citation_only`: 3 references.
-- `primary_abstract`: 8 references.
-- `primary_full_text_main`: 1 reference.
-- `primary_full_text_selected`: 12 references.
-- `primary_indexed_excerpt`: 5 references.
+אלה הוראות בדיקה ושערי החלטה, ולא טענות למוצר גמור שאומת בניסוי. כישלון חייב להביא לשינוי במכלול השכבות, בדרישה או בטענת המוצר; מאמר חיובי אינו יכול להחליף ראיות אלה.
 
-`primary_full_text_main` means the substantive paper text was read; it does not imply independent replication or a complete audit of all cited work. `primary_full_text_selected` is deliberately narrower. `primary_indexed_excerpt` means only the search-accessible portions of an original author/repository PDF were available, even when a full PDF URL exists. `primary_abstract` supports only abstract-level claims. `citation_only` supplies bibliographic history and no audited experimental claim. Figure captions were inspected where indicated; unavailable images are not represented as visually inspected.
+## פירוט היקף הגישה למקורות
 
-PDF download attempts through the shell failed DNS in this sandbox. Browser retrieval supplied many full texts, while some publishers returned verification pages, 403, timeout or subscription-only responses. These are access gaps, not evidence that a paper has no useful results. The unreviewed portions must not be cited as verified circuit details. No modern supplier availability, quotations, patent freedom-to-operate or safety certification is established by this review.
+- `citation_only`: 3 מקורות.
+- `primary_abstract`: 8 מקורות.
+- `primary_full_text_main`: מקור 1.
+- `primary_full_text_selected`: 12 מקורות.
+- `primary_indexed_excerpt`: 5 מקורות.
 
-## Numbered records
+`primary_full_text_main` פירושו שנקרא גוף הטקסט המהותי של המאמר; אין בכך טענה לשחזור עצמאי או לביקורת מלאה של כל העבודות המצוטטות. `primary_full_text_selected` מציין בכוונה היקף מצומצם יותר. `primary_indexed_excerpt` פירושו שרק החלקים הנגישים לחיפוש מתוך PDF מקורי של מחבר או מאגר היו זמינים, גם כאשר קיימת כתובת לטקסט המלא. `primary_abstract` תומך רק בטענות ברמת התקציר. `citation_only` מספק היסטוריה ביבליוגרפית, ללא טענה ניסויית שעברה ביקורת. כיתובי איורים נבדקו כאשר הדבר מצוין; תמונות שלא היו זמינות אינן מוצגות כאילו נבדקו חזותית.
+
+ניסיונות הורדת PDF דרך המעטפת נכשלו עקב DNS בסביבת הבדיקה המוגבלת. שליפה באמצעות הדפדפן סיפקה טקסטים מלאים רבים, בעוד שמוציאים לאור מסוימים החזירו דפי אימות, 403, חריגת זמן או תשובות הזמינות למנויים בלבד. אלה פערי גישה, ולא ראיה לכך שאין במאמר תוצאות שימושיות. אין לצטט את החלקים שלא נבדקו כאילו הם מספקים פרטי מעגל מאומתים. סקירה זו אינה מבססת זמינות ספקים עכשווית, הצעות מחיר, חופש פעולה בתחום הפטנטים או הסמכת בטיחות.
+
+## רשומות ממוספרות
 
 ### [1] Automated tactile sensing
 
-L. D. Harmon, International Journal of Robotics Research 1(2), 3–32, 1982. [Primary source or identity record](https://journals.sagepub.com/doi/10.1177/027836498200100201)
+L. D. Harmon, International Journal of Robotics Research 1(2), 3–32, 1982. [מקור ראשוני או רשומת זיהוי](https://journals.sagepub.com/doi/10.1177/027836498200100201)
 
-**Evidence:** citation_only
+**רמת ראיות:** citation_only
 
-**Read scope:** Publisher metadata and exposed footnotes; full article unavailable. Not treated as a full-text or abstract review.
+**היקף הקריאה:** מטא־נתונים של המוציא לאור והערות שוליים גלויות; המאמר המלא לא היה זמין. אין להתייחס לכך כסקירת טקסט מלא או תקציר.
 
-**Finding:** An early review establishing the historical depth of automated tactile sensing. No quantitative sensor result from this article is adopted here.
+**ממצא:** סקירה מוקדמת הממחישה את העומק ההיסטורי של חישת מישוש אוטומטית. לא מאומצת כאן שום תוצאה כמותית על חיישן מתוך מאמר זה.
 
-**Limit:** Published material reflects information acquired before January 1981; historical recommendations are not current component specifications.
+**מגבלה:** החומר שפורסם משקף מידע שנאסף לפני ינואר 1981; המלצות היסטוריות אינן מפרטי רכיבים עדכניים.
 
-**Plan action:** Use only as historical background. Set limb requirements from the actual contact tasks and acceptance tests, rather than invoking human-equivalence targets from an unread historical review.
+**פעולה בתוכנית:** להשתמש רק כרקע היסטורי. לקבוע את דרישות הגפיים לפי משימות המגע בפועל ובדיקות הקבלה, במקום להסתמך על יעדי שקילות לאדם מתוך סקירה היסטורית שלא נקראה.
 
-**Novelty implication:** Broad tactile sensing cannot be claimed as a new concept.
+**השלכה על החדשנות:** אין לטעון שחישת מישוש במובנה הרחב היא רעיון חדש.
 
-**Bibliographic/access note:** Publisher gives pages 3–32; Cheng bibliography/user transcription gives 3–31. DOI 10.1177/027836498200100201.
+**הערה ביבליוגרפית או על הגישה:** המוציא לאור מציין עמודים 3–32; הביבליוגרפיה של Cheng ותעתיק המשתמש מציינים 3–31. DOI 10.1177/027836498200100201.
+
 
 ### [2] E-skin: From humanoids to humans
 
-R. Dahiya, Proceedings of the IEEE 107(2), 247–252, 2019. [Primary source or identity record](https://eprints.gla.ac.uk/183481/1/183481.pdf)
+R. Dahiya, Proceedings of the IEEE 107(2), 247–252, 2019. [מקור ראשוני או רשומת זיהוי](https://eprints.gla.ac.uk/183481/1/183481.pdf)
 
-**Evidence:** primary_full_text_selected
+**רמת ראיות:** primary_full_text_selected
 
-**Read scope:** Accepted manuscript: introduction and sections comparing electronic-skin requirements, integration routes and flexible/printed electronics; not every concluding paragraph or cited work.
+**היקף הקריאה:** כתב יד שהתקבל לפרסום: המבוא וסעיפים המשווים בין דרישות עור אלקטרוני, מסלולי שילוב ואלקטרוניקה גמישה ומודפסת; לא כל פסקת סיכום או עבודה מצוטטת.
 
-**Finding:** The viewpoint contrasts conventional components on flexible substrates with printed and ultrathin electronics. More discrete functionality competes with conformability; requirements depend on the application.
+**ממצא:** מאמר העמדה משווה רכיבים רגילים על מצעים גמישים לאלקטרוניקה מודפסת ודקה במיוחד. תוספת תפקודים ברכיבים בדידים מתחרה ביכולת להתאים לצורת המשטח; הדרישות תלויות ביישום.
 
-**Limit:** A perspective article is not evidence that a particular printed film has acceptable fatigue life, manufacturing yield, cost or multimodal accuracy.
+**מגבלה:** מאמר עמדה אינו ראיה לכך שלסרט מודפס מסוים יש חיי עייפות, תפוקת ייצור תקינה, עלות או דיוק רב־חושי קבילים.
 
-**Plan action:** Keep a small number of proven modalities in the first product. Put packaged electronics on mechanically supported islands; qualify the complete interconnect and cover. Track area, installed mass and repair time separately from sensor-element thickness.
+**פעולה בתוכנית:** להשאיר במוצר הראשון מספר קטן של אופני חישה מוכחים. למקם אלקטרוניקה במארזים על איים הנתמכים מכנית; להכשיר את מלוא החיבורים והכיסוי. לעקוב אחר שטח, מסה מותקנת וזמן תיקון בנפרד מעובי רכיב החישה.
 
-**Novelty implication:** Flexible multimodal skin and distributed electronics were already established research directions.
+**השלכה על החדשנות:** עור רב־חושי גמיש ואלקטרוניקה מבוזרת כבר היו כיווני מחקר מבוססים.
 
-**Bibliographic/access note:** DOI 10.1109/JPROC.2018.2890729; repository manuscript is a primary author source.
+**הערה ביבליוגרפית או על הגישה:** DOI 10.1109/JPROC.2018.2890729; כתב היד במאגר הוא מקור ראשוני של המחבר.
+
 
 ### [3] Tactile sensing—From humans to humanoids
 
-R. S. Dahiya, G. Metta, M. Valle and G. Sandini, IEEE Transactions on Robotics 26(1), 1–20, 2010. [Primary source or identity record](https://www.robotcub.org/misc/papers/10_Dahiya_etal.pdf)
+R. S. Dahiya, G. Metta, M. Valle and G. Sandini, IEEE Transactions on Robotics 26(1), 1–20, 2010. [מקור ראשוני או רשומת זיהוי](https://www.robotcub.org/misc/papers/10_Dahiya_etal.pdf)
 
-**Evidence:** primary_indexed_excerpt
+**רמת ראיות:** primary_indexed_excerpt
 
-**Read scope:** Indexed author/project PDF excerpts: classification figure 2, section III physiology, encoding and regional sensing requirements. Direct PDF retrieval failed; author-uploaded proof excerpts also located.
+**היקף הקריאה:** קטעים מאונדקסים מתוך PDF של המחברים או הפרויקט: איור סיווג 2, סעיף III על פיזיולוגיה, קידוד ודרישות חישה אזוריות. השליפה הישירה של ה-PDF נכשלה; נמצאו גם קטעי הגהה שהעלה מחבר.
 
-**Finding:** The review distinguishes cutaneous from joint/force sensing, fingertip arrays from large-area skin, and slowly adapting from rapidly adapting tactile channels. Receptor density and required temporal/spatial performance differ by body site.
+**ממצא:** הסקירה מבחינה בין חישה עורית לחישת מפרקים וכוח, בין מערכי קצות אצבעות לעור על שטח רחב, ובין ערוצי מישוש המסתגלים לאט לכאלה המסתגלים מהר. צפיפות הקולטנים והביצועים המרחביים והזמניים הנדרשים משתנים לפי אזור הגוף.
 
-**Limit:** Biological receptor counts and perceptual acuity do not directly specify electronic taxel pitch, ADC resolution or required robot bandwidth. This is a review, not validation of our sensor stack.
+**מגבלה:** מספרי קולטנים ביולוגיים וחדות תפיסתית אינם מגדירים ישירות פסיעת אתרי חישה אלקטרוניים, רזולוציית ADC או רוחב פס נדרש לרובוט. זו סקירה, ולא אימות של מכלול החיישנים שלנו.
 
-**Plan action:** Preserve held-contact state alongside onset/change events. Specify coarse arm/leg contact localization independently from fingertip dexterity; retain joint encoders and actuator feedback. Test a sustained load so baseline adaptation cannot erase a real contact.
+**פעולה בתוכנית:** לשמר מצב של מגע מתמשך לצד אירועי התחלה ושינוי. להגדיר איתור מגע גס בזרוע וברגל בנפרד ממיומנות קצות אצבעות; לשמר מקודדי מפרקים ומשוב מפעילים. לבדוק עומס מתמשך כדי שהסתגלות קו הבסיס לא תמחק מגע אמיתי.
 
-**Novelty implication:** Biomimetic layering and biological data reduction are prior art.
+**השלכה על החדשנות:** מבנה שכבות בהשראת ביולוגיה וצמצום נתונים בהשראה ביולוגית הם ידע קודם.
 
-**Bibliographic/access note:** DOI 10.1109/TRO.2009.2033627; author proof: https://www.researchgate.net/publication/220032969_Tactile_Sensing-From_Humans_to_Humanoids
+**הערה ביבליוגרפית או על הגישה:** DOI 10.1109/TRO.2009.2033627; הגהת מחבר: https://www.researchgate.net/publication/220032969_Tactile_Sensing-From_Humans_to_Humanoids
+
 
 ### [4] Directions toward effective utilization of tactile skin: A review
 
-R. S. Dahiya et al., IEEE Sensors Journal 13(11), 4121–4138, 2013. [Primary source or identity record](https://eprints.gla.ac.uk/95989/)
+R. S. Dahiya et al., IEEE Sensors Journal 13(11), 4121–4138, 2013. [מקור ראשוני או רשומת זיהוי](https://eprints.gla.ac.uk/95989/)
 
-**Evidence:** primary_abstract
+**רמת ראיות:** primary_abstract
 
-**Read scope:** Glasgow institutional abstract and bibliographic record; TUM institutional abstract. Full original text not read.
+**היקף הקריאה:** תקציר מוסדי ורשומה ביבליוגרפית של Glasgow; תקציר מוסדי של TUM. הטקסט המקורי המלא לא נקרא.
 
-**Finding:** The authors frame useful tactile skin as a system problem involving distributed coverage, simultaneous contacts, acquisition, calibration and real-time interpretation.
+**ממצא:** המחברים מציגים עור מישוש שימושי כבעיה מערכתית הכוללת כיסוי מבוזר, מגעים בו־זמניים, רכישה, כיול ופרשנות בזמן אמת.
 
-**Limit:** The abstract supplies no verified circuit values, experimental operating envelope or manufacturing economics.
+**מגבלה:** התקציר אינו מספק ערכי מעגל מאומתים, מעטפת פעולה ניסויית או כלכלת ייצור.
 
-**Plan action:** Keep an acceptance matrix spanning material, acquisition, communication, body coordinates and application. A working single taxel cannot close the multi-contact, coverage or latency requirements.
+**פעולה בתוכנית:** לשמר מטריצת קבלה החוצה חומר, רכישה, תקשורת, קואורדינטות גוף ויישום. אתר חישה בודד שפועל אינו סוגר את דרישות ריבוי המגעים, הכיסוי או ההשהיה.
 
-**Novelty implication:** System-level integration, distributed control and calibration are longstanding research topics.
+**השלכה על החדשנות:** שילוב ברמת המערכת, בקרה מבוזרת וכיול הם נושאי מחקר ותיקים.
 
-**Bibliographic/access note:** DOI 10.1109/JSEN.2013.2279056. TUM corroboration: https://portal.fis.tum.de/en/publications/directions-toward-effective-utilization-of-tactile-skin-a-review/
+**הערה ביבליוגרפית או על הגישה:** DOI 10.1109/JSEN.2013.2279056. אימות נוסף של TUM: https://portal.fis.tum.de/en/publications/directions-toward-effective-utilization-of-tactile-skin-a-review/
+
 
 ### [5] Proximity sensing in robot manipulator motion planning: System and implementation issues
 
-E. Cheung and V. J. Lumelsky, IEEE Transactions on Robotics and Automation 5(6), 740–751, 1989. [Primary source or identity record](https://www.edcheung.com/job/sbr/IEEE88.pdf)
+E. Cheung and V. J. Lumelsky, IEEE Transactions on Robotics and Automation 5(6), 740–751, 1989. [מקור ראשוני או רשומת זיהוי](https://www.edcheung.com/job/sbr/IEEE88.pdf)
 
-**Evidence:** primary_full_text_selected
+**רמת ראיות:** primary_full_text_selected
 
-**Read scope:** Author-hosted manuscript: system architecture/local planning, approximately manuscript pages 2–4; author project page identifying the publication. Not all experiments.
+**היקף הקריאה:** כתב יד באתר המחבר: ארכיטקטורת המערכת ותכנון מקומי, בערך עמודים 2–4 בכתב היד; דף הפרויקט של המחבר המזהה את הפרסום. לא כל הניסויים.
 
-**Finding:** The tested infrared arrangement provides a roughly 10–15 cm obstacle-detection envelope around the arm and coordinates sensing with about 50 commanded positions per second. Motion is constrained by the sensed free envelope.
+**ממצא:** סידור האינפרה־אדום שנבדק מספק מעטפת גילוי מכשולים של כ-10–15 cm סביב הזרוע, ומתאם את החישה עם כ-50 מיקומי פקודה בשנייה. התנועה מוגבלת למעטפת החופשית שנחשה.
 
-**Limit:** The collision-avoidance argument depends on coverage, robot velocities, sensor characteristics and control timing; it is not a guarantee for arbitrary robots or objects.
+**מגבלה:** הטיעון למניעת התנגשות תלוי בכיסוי, במהירויות הרובוט, במאפייני החיישנים ובתזמון הבקרה; אין זו הבטחה לכל רובוט או עצם.
 
-**Plan action:** Do not describe our pressure-only skin as detecting obstacles before touch. If proximity is added, validate every joint pose and object reflectance/angle against the actual stopping envelope and measured latency.
+**פעולה בתוכנית:** אין לתאר את העור שלנו, המבוסס על לחץ בלבד, כמזהה מכשולים לפני מגע. אם מוסיפים חישת קרבה, יש לאמת כל תנוחת מפרק וכל שילוב של החזריות עצם וזווית מול מעטפת העצירה בפועל וההשהיה שנמדדה.
 
-**Novelty implication:** Distributed sensitive-arm obstacle avoidance predates the proposed product by decades.
+**השלכה על החדשנות:** הימנעות ממכשולים באמצעות זרוע רגישה מבוזרת קדמה למוצר המוצע בעשרות שנים.
 
-**Bibliographic/access note:** Author source identifies this file with the 1989 publication despite its IEEE 88 filename; project page https://www.edcheung.com/job/sbr/sbr.html.
+**הערה ביבליוגרפית או על הגישה:** מקור המחבר מזהה קובץ זה עם הפרסום משנת 1989 למרות שם הקובץ IEEE 88; דף הפרויקט https://www.edcheung.com/job/sbr/sbr.html.
+
 
 ### [6] Sensitive skin
 
-V. J. Lumelsky, M. S. Shur and S. Wagner, IEEE Sensors Journal 1(1), 41–51, 2001. [Primary source or identity record](https://resenv.media.mit.edu/classarchive/MAS965/readings/sensitiveskin.pdf)
+V. J. Lumelsky, M. S. Shur and S. Wagner, IEEE Sensors Journal 1(1), 41–51, 2001. [מקור ראשוני או רשומת זיהוי](https://resenv.media.mit.edu/classarchive/MAS965/readings/sensitiveskin.pdf)
 
-**Evidence:** primary_full_text_selected
+**רמת ראיות:** primary_full_text_selected
 
-**Read scope:** Original article via MIT teaching archive: introduction; hardware/device requirements and low-cost-process discussion, printed pp.46–47. Other portions not exhaustively read.
+**היקף הקריאה:** המאמר המקורי דרך ארכיון הוראה של MIT: המבוא; דרישות חומרה והתקנים ודיון בתהליכים זולים, עמודים מודפסים 46–47. חלקים אחרים לא נקראו באופן ממצה.
 
-**Finding:** The paper explicitly links local processing, simple sensing structures, fault tolerance, repairability and manufacture. It discusses rigid active islands joined by flexible interconnects and warns that large-area signal paths collect noise.
+**ממצא:** המאמר קושר במפורש עיבוד מקומי, מבני חישה פשוטים, עמידות לתקלות, יכולת תיקון וייצור. הוא דן באיים פעילים קשיחים המחוברים במוליכים גמישים, ומזהיר שנתיבי אות על פני שטח רחב קולטים רעש.
 
-**Limit:** The manufacturing costs and forecasts are historical; they cannot be imported into a 2026 BOM. Proposed future millions-of-sensors systems are not demonstrated production yield.
+**מגבלה:** עלויות הייצור והתחזיות הן היסטוריות; אי אפשר להעבירן לרשימת חומרים של 2026. הצעות למערכות עתידיות עם מיליוני חיישנים אינן הוכחה לתפוקת ייצור תקינה.
 
-**Plan action:** Keep analog runs short, digitize regionally, provide failed-channel reporting, and cost scrap/rework and replacement operations. Compare complete installed harnesses rather than copper mass alone.
+**פעולה בתוכנית:** לשמור על קווים אנלוגיים קצרים, להמיר לדיגיטל באופן אזורי, לספק דיווח על ערוצים שנכשלו ולתמחר פסילות, תיקונים ופעולות החלפה. להשוות צמות מלאות במצב מותקן, ולא רק את מסת הנחושת.
 
-**Novelty implication:** Low-cost, fault-tolerant, distributed artificial skin is an old objective; differentiation must be measured in implementation.
+**השלכה על החדשנות:** עור מלאכותי זול, מבוזר ועמיד לתקלות הוא יעד ותיק; הבידול חייב להימדד במימוש.
 
-**Bibliographic/access note:** DOI 10.1109/JSEN.2001.923586.
+**הערה ביבליוגרפית או על הגישה:** DOI 10.1109/JSEN.2001.923586.
+
 
 ### [7] Conformable, flexible, large-area networks of pressure and thermal sensors with organic transistor active matrixes
 
-T. Someya et al., PNAS 102(35), 12321–12325, 2005. [Primary source or identity record](https://pmc.ncbi.nlm.nih.gov/articles/PMC1187825/)
+T. Someya et al., PNAS 102(35), 12321–12325, 2005. [מקור ראשוני או רשומת זיהוי](https://pmc.ncbi.nlm.nih.gov/articles/PMC1187825/)
 
-**Evidence:** primary_full_text_selected
+**רמת ראיות:** primary_full_text_selected
 
-**Read scope:** Open primary main text, fabrication and pressure/thermal experiments, figures 1–5 captions; not supplementary data or independent replication.
+**היקף הקריאה:** גוף הטקסט הראשוני הפתוח, הייצור וניסויי הלחץ והטמפרטורה, וכיתובי איורים 1–5; ללא נתונים משלימים או שחזור עצמאי.
 
-**Finding:** A 12×12 network with 4 mm pitch combines pressure and thermal layers. Net geometry permits 25% extension; larger extension breaks strut wiring. The reported 2, 000 cycles at 20% concern simplified gold test structures, not complete skin. Organic circuitry uses −20/−40 V biases.
+**ממצא:** רשת 12×12 בפסיעה של 4 mm משלבת שכבות לחץ וטמפרטורה. גאומטריית הרשת מאפשרת התארכות של 25%; התארכות גדולה יותר שוברת את החיווט במקטעי התמיכה. 2, 000 המחזורים שדווחו בהתארכות של 20% מתייחסים למבני בדיקת זהב מפושטים, ולא לעור שלם. המעגלים האורגניים משתמשים במתחי הטיה של −20/−40 V.
 
-**Limit:** The combined thermal demonstration and transistor protection do not establish long-term humidity, abrasion or joint-fatigue performance of a commercial laminate.
+**מגבלה:** הדגמת החישה התרמית המשולבת והגנת הטרנזיסטורים אינן מבססות עמידות ארוכת טווח ללחות, לשחיקה או לעייפות מפרקים בלמינציה מסחרית.
 
-**Plan action:** Use the established layered idea with simpler low-voltage electronics, but test heat paths and full-assembly strain independently. Do not substitute conductor-coupon fatigue for connector, adhesive, sensor and wear-cover fatigue.
+**פעולה בתוכנית:** להשתמש ברעיון השכבות המבוסס עם אלקטרוניקה פשוטה יותר במתח נמוך, אך לבדוק מסלולי חום ומעוות של המכלול השלם בנפרד. אין להחליף בדיקת עייפות של מחברים, דבק, חיישן וכיסוי נשחק בבדיקת עייפות של דגימת מוליך.
 
-**Novelty implication:** Pressure-plus-temperature laminated skin is explicit prior art from 2005.
+**השלכה על החדשנות:** עור רב־שכבתי ללחץ ולטמפרטורה הוא ידע קודם מפורש משנת 2005.
 
-**Bibliographic/access note:** DOI 10.1073/pnas.0502392102. Full paper read through the substantive main experiments; no claim to have visually inspected all images.
+**הערה ביבליוגרפית או על הגישה:** DOI 10.1073/pnas.0502392102. המאמר המלא נקרא עד הניסויים העיקריים המהותיים; אין טענה לבדיקה חזותית של כל התמונות.
+
 
 ### [8] Artificial Skin in Robotics: A Comprehensive Interface for System-Environment Interaction
 
-M. Strohmayr, doctoral dissertation, Karlsruhe Institute of Technology, 2012. [Primary source or identity record](https://publikationen.bibliothek.kit.edu/1000028782/2186259)
+M. Strohmayr, doctoral dissertation, Karlsruhe Institute of Technology, 2012. [מקור ראשוני או רשומת זיהוי](https://publikationen.bibliothek.kit.edu/1000028782/2186259)
 
-**Evidence:** primary_full_text_selected
+**רמת ראיות:** primary_full_text_selected
 
-**Read scope:** Selected thesis text: design tradeoffs in chapter 3; chapter 4.1 test procedures, printed pp.152–159; conclusions. Not the complete 217-page PDF.
+**היקף הקריאה:** טקסט נבחר מהתזה: פשרות תכן בפרק 3; נהלי בדיקה בפרק 4.1, עמודים מודפסים 152–159; ומסקנות. לא כל קובץ ה-PDF בן 217 העמודים.
 
-**Finding:** The thesis separates sensitivity and collision protection and evaluates the sensor with its electronics. Its proposed testing includes static indentation, repeatability, dynamic impact, recovery and overload; filtering affects sensitivity and reaction time.
+**ממצא:** התזה מפרידה בין רגישות להגנה מהתנגשות, ומעריכה את החיישן יחד עם האלקטרוניקה שלו. הבדיקות המוצעות כוללות לחיצה סטטית, חזרתיות, פגיעה דינמית, התאוששות ועומס יתר; הסינון משפיע על הרגישות ועל זמן התגובה.
 
-**Limit:** These proposed evaluation procedures are not a universal certification standard. The thesis itself identifies unresolved performance tradeoffs.
+**מגבלה:** נהלי ההערכה המוצעים אינם תקן הסמכה אוניברסלי. התזה עצמה מצביעה על פשרות ביצועים שטרם נפתרו.
 
-**Plan action:** Add controlled dynamic indentation with an independent load/time reference, overload recovery and identical deployed filter settings. The thin TPU wear film is not an impact-energy absorber. Measure seam and mounted-curvature behavior, not flat coupons alone.
+**פעולה בתוכנית:** להוסיף לחיצה דינמית מבוקרת עם ייחוס עצמאי של עומס וזמן, התאוששות מעומס יתר והגדרות מסנן זהות לאלה שבהפעלה. סרט ה-TPU הדק נגד שחיקה אינו בולם אנרגיית פגיעה. למדוד התנהגות בתפרים ובעקמומיות מותקנת, ולא רק בדגימות שטוחות.
 
-**Novelty implication:** Combining mechanical protection with sensing is established; a quantified thin, serviceable implementation can still differentiate.
+**השלכה על החדשנות:** שילוב הגנה מכנית עם חישה כבר מבוסס; מימוש דק ובר־תחזוקה עם ביצועים כמותיים עדיין עשוי לבדל את המוצר.
 
-**Bibliographic/access note:** KIT title above is fuller than Cheng’s shortened “Artificial skin for robots.” DOI 10.5445/IR/1000028782.
+**הערה ביבליוגרפית או על הגישה:** כותרת KIT שלעיל מלאה יותר מהכותרת המקוצרת של Cheng, “Artificial skin for robots.” DOI 10.5445/IR/1000028782.
+
 
 ### [9] Conformable and scalable tactile sensor skin for curved surfaces
 
-Y. Ohmura, Y. Kuniyoshi and A. Nagakubo, ICRA 2006, 1348–1353. [Primary source or identity record](https://bdml.stanford.edu/twiki/pub/Haptics/TactileChapterReferences/Ohmura-ICRA06.pdf)
+Y. Ohmura, Y. Kuniyoshi and A. Nagakubo, ICRA 2006, 1348–1353. [מקור ראשוני או רשומת זיהוי](https://bdml.stanford.edu/twiki/pub/Haptics/TactileChapterReferences/Ohmura-ICRA06.pdf)
 
-**Evidence:** primary_full_text_selected
+**רמת ראיות:** primary_full_text_selected
 
-**Read scope:** Original six-page article: abstract, requirements, sections III–IV and beginning of V, figure captions 1–10. Remaining experiment/conclusion paragraphs not exhaustively read.
+**היקף הקריאה:** המאמר המקורי בן שישה עמודים: תקציר, דרישות, סעיפים III–IV ותחילת V, וכיתובי איורים 1–10. יתר פסקאות הניסוי והמסקנות לא נקראו באופן ממצה.
 
-**Finding:** The implementation places 32 photo-reflector sensing elements and a microcontroller on a cut/fold flexible substrate. Optical emitters are time-shared to control power; local SMBus connects to an in-body ring network. Bus capacitance constrains scaling.
+**ממצא:** המימוש מציב 32 רכיבי חישה אופטיים מבוססי החזרה ומיקרו־בקר על מצע גמיש חתוך ומקופל. הפולטים האופטיים מופעלים בחלוקת זמן כדי לשלוט בהספק; SMBus מקומי מתחבר לרשת טבעת בתוך הגוף. קיבול האפיק מגביל את ההתרחבות.
 
-**Limit:** Address-space capacity is not simultaneous full-skin throughput. The reported bare-sheet mass excludes subsequently added foam and the complete installed network. Foldability does not imply repeated stretchability.
+**מגבלה:** קיבולת מרחב הכתובות אינה קצב העברה בו־זמני של כל העור. מסת היריעה החשופה שדווחה אינה כוללת קצף שנוסף בהמשך ואת הרשת המותקנת המלאה. יכולת קיפול אינה מעידה על יכולת מתיחה חוזרת.
 
-**Plan action:** Use a small panel family and controlled mechanical relief. Measure aggregate power at the actual scan duty cycle, installed mass, and complete-frame freshness at maximum node count. Retain compact local analog wiring and a robust regional digital link.
+**פעולה בתוכנית:** להשתמש במשפחה קטנה של לוחות ובשחרור מאמצים מכני מבוקר. למדוד הספק כולל במחזור העבודה האמיתי של הסריקה, מסה מותקנת וטריות מסגרות מלאות במספר הצמתים המרבי. לשמר חיווט אנלוגי מקומי קצר וקישור דיגיטלי אזורי עמיד.
 
-**Novelty implication:** Local scanning, reduced wiring, conformable modules and cut-to-shape skin were demonstrated in 2006.
+**השלכה על החדשנות:** סריקה מקומית, צמצום חיווט, מודולים המתאימים לצורת המשטח ועור הנחתך לפי צורה הודגמו ב-2006.
 
-**Bibliographic/access note:** DOI 10.1109/ROBOT.2006.1641896.
+**הערה ביבליוגרפית או על הגישה:** DOI 10.1109/ROBOT.2006.1641896.
+
 
 ### [10] Development of the tactile sensor system of a human-interactive robot RI-MAN
 
-T. Mukai, M. Onishi, T. Odashima, S. Hirano and Z. Luo, IEEE Transactions on Robotics 24(2), 505–512, 2008. [Primary source or identity record](https://repository.gatech.edu/bitstreams/39fe7cef-a8a4-4ebb-81a4-097c885fa7bd/download)
+T. Mukai, M. Onishi, T. Odashima, S. Hirano and Z. Luo, IEEE Transactions on Robotics 24(2), 505–512, 2008. [מקור ראשוני או רשומת זיהוי](https://repository.gatech.edu/bitstreams/39fe7cef-a8a4-4ebb-81a4-097c885fa7bd/download)
 
-**Evidence:** primary_indexed_excerpt
+**רמת ראיות:** primary_indexed_excerpt
 
-**Read scope:** Indexed original first-page abstract/introduction from Georgia Tech repository. PDF download returned 403; main experiments not read.
+**היקף הקריאה:** תקציר ומבוא מאונדקסים מהעמוד הראשון המקורי, ממאגר Georgia Tech. הורדת ה-PDF החזירה 403; הניסויים המרכזיים לא נקראו.
 
-**Finding:** The original abstract reports an integrated soft areal tactile system on RI-MAN and a human-dummy lifting demonstration. No numerical sensor accuracy or robustness result from the full article is adopted here.
+**ממצא:** התקציר המקורי מדווח על מערכת מישוש רכה ושטחית משולבת ב-RI-MAN ועל הדגמת הרמת בובת אדם. לא מאומצת כאן שום תוצאה מספרית על דיוק חיישן או עמידותו מתוך המאמר המלא.
 
-**Limit:** Demonstrating a complete robot handling a dummy does not isolate sensor contribution or validate the proposed resistive panel. Semiconductive-pressure-sensor construction described in other reviews is secondary evidence only.
+**מגבלה:** הדגמת רובוט שלם המטפל בבובה אינה מבודדת את תרומת החיישן ואינה מאמתת את הלוח ההתנגדותי המוצע. תיאור מבנה חיישן לחץ מוליך־למחצה בסקירות אחרות הוא ראיה משנית בלבד.
 
-**Plan action:** Use a supported, low-mass test object for initial arm/body contact experiments. Document independently what skin detection contributes, what robot actuation contributes, and what protection is provided mechanically.
+**פעולה בתוכנית:** להשתמש בעצם ניסוי נתמך ובעל מסה נמוכה בניסויי מגע ראשוניים בזרוע ובגוף. לתעד בנפרד את תרומת גילוי המגע בעור, את תרומת ההנעה ברובוט ואת ההגנה המסופקת מכנית.
 
-**Novelty implication:** Large-area soft robot skin for physical assistance is established prior art.
+**השלכה על החדשנות:** עור רובוטי רך על שטח רחב לסיוע פיזי הוא ידע קודם מבוסס.
 
-**Bibliographic/access note:** DOI 10.1109/TRO.2008.917006; publisher article 4458232. Related open chapters were not substituted for this original.
+**הערה ביבליוגרפית או על הגישה:** DOI 10.1109/TRO.2008.917006; מספר מאמר אצל המוציא לאור 4458232. פרקים פתוחים קשורים לא שימשו תחליף למקור זה.
+
 
 ### [11] ARMAR-III: An integrated humanoid platform for sensory-motor control
 
-T. Asfour et al., IEEE-RAS Humanoid Robots, 2006, 169–175. [Primary source or identity record](https://h2t.iar.kit.edu/pdf/Asfour2006b.pdf)
+T. Asfour et al., IEEE-RAS Humanoid Robots, 2006, 169–175. [מקור ראשוני או רשומת זיהוי](https://h2t.iar.kit.edu/pdf/Asfour2006b.pdf)
 
-**Evidence:** primary_full_text_selected
+**רמת ראיות:** primary_full_text_selected
 
-**Read scope:** Original article sections on arm sensing and artificial skin, pp.2–3 of PDF, and hierarchical architecture/figure 5. Not all platform experiments.
+**היקף הקריאה:** סעיפי המאמר המקורי העוסקים בחישה בזרוע ובעור מלאכותי, עמודים 2–3 ב-PDF, והארכיטקטורה ההיררכית ואיור 5. לא כל ניסויי הפלטפורמה.
 
-**Finding:** Shoulder and arm skin is integrated through dedicated controllers into CAN, alongside separate joint-torque and wrist force/torque sensors. The architecture separates task planning, coordination and execution.
+**ממצא:** העור בכתף ובזרוע משולב ב-CAN באמצעות בקרים ייעודיים, לצד חיישני מומנט מפרקים וחיישני כוח ומומנט בשורש כף היד שהם נפרדים. הארכיטקטורה מפרידה בין תכנון משימה, תיאום וביצוע.
 
-**Limit:** This platform paper does not provide a standalone production recipe or prove that coarse skin replaces accurate joint or wrist sensing.
+**מגבלה:** מאמר פלטפורמה זה אינו מספק מתכון ייצור עצמאי ואינו מוכיח שעור גס מחליף חישה מדויקת במפרקים או בשורש כף היד.
 
-**Plan action:** Expose timestamped contact, location, confidence and faults through a dedicated driver. Leave actuator regulation in the existing robot control layer; test timeout handling at every boundary.
+**פעולה בתוכנית:** לחשוף מגע, מיקום, רמת ביטחון ותקלות עם חותמות זמן דרך מנהל התקן ייעודי. להשאיר את ויסות המפעילים בשכבת בקרת הרובוט הקיימת; לבדוק טיפול בחריגת זמן בכל גבול ממשק.
 
-**Novelty implication:** CAN-connected local skin processing and whole-robot integration were already present in 2006.
+**השלכה על החדשנות:** עיבוד עור מקומי המחובר ב-CAN ושילוב ברובוט שלם כבר התקיימו בשנת 2006.
 
-**Bibliographic/access note:** DOI 10.1109/ICHR.2006.321380.
+**הערה ביבליוגרפית או על הגישה:** DOI 10.1109/ICHR.2006.321380.
+
 
 ### [12] Design of human symbiotic robot TWENDY-ONE
 
-H. Iwata and S. Sugano, ICRA 2009, 580–586. [Primary source or identity record](https://waseda.elsevierpure.com/en/publications/design-of-human-symbiotic-robot-twendy-one/)
+H. Iwata and S. Sugano, ICRA 2009, 580–586. [מקור ראשוני או רשומת זיהוי](https://waseda.elsevierpure.com/en/publications/design-of-human-symbiotic-robot-twendy-one/)
 
-**Evidence:** primary_abstract
+**רמת ראיות:** primary_abstract
 
-**Read scope:** Author-institution publication record and abstract. Original seven-page article not accessed.
+**היקף הקריאה:** רשומת פרסום ותקציר במוסד המחברים. המאמר המקורי בן שבעת העמודים לא היה נגיש.
 
-**Finding:** The design combines passive arm mechanisms and mechanical softness in joints and skin, derived from a set of assistance-task requirements.
+**ממצא:** התכן משלב מנגנונים פסיביים בזרוע ורכות מכנית במפרקים ובעור, שנגזרו ממערכת דרישות של משימות סיוע.
 
-**Limit:** The abstract does not expose contact-force limits, hazard validation, individual skin accuracy or a component-level manufacturing cost.
+**מגבלה:** התקציר אינו חושף מגבלות כוח מגע, אימות סיכונים, דיוק של העור בנפרד או עלות ייצור ברמת רכיב.
 
-**Plan action:** Specify service tasks before adding modalities. Verify joint range, friction, cable pull and sensor prestress on a limb fixture; sensing alone cannot make an otherwise stiff mechanism mechanically compliant.
+**פעולה בתוכנית:** להגדיר משימות שירות לפני הוספת אופני חישה. לאמת טווחי מפרק, חיכוך, משיכת כבל ומאמץ מקדים בחיישן על מתקן גפה; חישה לבדה אינה יכולה להעניק היענות מכנית למנגנון קשיח.
 
-**Novelty implication:** Soft covering combined with passive joint mechanisms is prior art.
+**השלכה על החדשנות:** כיסוי רך בשילוב מנגנוני מפרק פסיביים הוא ידע קודם.
 
-**Bibliographic/access note:** DOI 10.1109/ROBOT.2009.5152702. Related Japanese 2008 appearance-design paper is a distinct publication.
+**הערה ביבליוגרפית או על הגישה:** DOI 10.1109/ROBOT.2009.5152702. המאמר היפני הקשור משנת 2008 על עיצוב המראה הוא פרסום נפרד.
+
 
 ### [13] Humanoid robot which can lift a 30 kg box by whole body contact and tactile feedback
 
-Y. Ohmura and Y. Kuniyoshi, IROS 2007, 1136–1141. [Primary source or identity record](https://www.isi.imi.i.u-tokyo.ac.jp/publication/)
+Y. Ohmura and Y. Kuniyoshi, IROS 2007, 1136–1141. [מקור ראשוני או רשומת זיהוי](https://www.isi.imi.i.u-tokyo.ac.jp/publication/)
 
-**Evidence:** citation_only
+**רמת ראיות:** citation_only
 
-**Read scope:** Author laboratory bibliography and publisher record link verified. Original article unavailable; secondary syndicated abstract seen but not used as verified experimental evidence.
+**היקף הקריאה:** אומתו הביבליוגרפיה של מעבדת המחברים וקישור לרשומת המוציא לאור. המאמר המקורי לא היה זמין; נראה תקציר משני שהופץ במאגר אחר, אך הוא לא שימש ראיה ניסויית מאומתת.
 
-**Finding:** The article identity/title documents an early whole-body-contact and tactile-feedback claim. The 30 kg result is a title-level reported claim here, not an audited replication.
+**ממצא:** זהות המאמר וכותרתו מתעדות טענה מוקדמת למגע של כל הגוף ולמשוב מישוש. תוצאת 30 kg היא כאן טענה שדווחה בכותרת, ולא שחזור שעבר ביקורת.
 
-**Limit:** No verified gains, failure statistics, force distribution or safety conditions from the original are available in this review.
+**מגבלה:** אין בסקירה זו הגברים, סטטיסטיקת כשלים, התפלגות כוחות או תנאי בטיחות מאומתים מתוך המקור.
 
-**Plan action:** Cite the precedent without importing its payload. For our proof, compare skin-enabled and disabled behavior on the same restrained, low-energy fixture with objective contact-detection and response metrics.
+**פעולה בתוכנית:** לצטט את התקדים בלי לאמץ את כושר הנשיאה שלו. בהוכחת ההיתכנות שלנו יש להשוות התנהגות עם עור פעיל וללא עור פעיל על אותו מתקן מרוסן ובעל אנרגיה נמוכה, באמצעות מדדים אובייקטיביים לגילוי מגע ולתגובה.
 
-**Novelty implication:** Whole-body tactile lifting is not a new application concept.
+**השלכה על החדשנות:** הרמה באמצעות מישוש של כל הגוף אינה רעיון יישומי חדש.
 
-**Bibliographic/access note:** DOI 10.1109/IROS.2007.4399592; publisher https://ieeexplore.ieee.org/document/4399592 requires JavaScript verification.
+**הערה ביבליוגרפית או על הגישה:** DOI 10.1109/IROS.2007.4399592; אתר המוציא לאור https://ieeexplore.ieee.org/document/4399592 מחייב אימות JavaScript.
+
 
 ### [14] Whole body haptics for augmented humanoid task capabilities
 
-Y. Kuniyoshi, Y. Ohmura and A. Nagakubo, Robotics Research, Springer Tracts in Advanced Robotics 66, 61–73. [Primary source or identity record](https://link.springer.com/chapter/10.1007/978-3-642-14743-2_6)
+Y. Kuniyoshi, Y. Ohmura and A. Nagakubo, Robotics Research, Springer Tracts in Advanced Robotics 66, 61–73. [מקור ראשוני או רשומת זיהוי](https://link.springer.com/chapter/10.1007/978-3-642-14743-2_6)
 
-**Evidence:** primary_abstract
+**רמת ראיות:** primary_abstract
 
-**Read scope:** Publisher abstract, chapter metadata and references; subscription full chapter unavailable.
+**היקף הקריאה:** תקציר המוציא לאור, מטא־נתוני הפרק והמקורות; הפרק המלא המוגבל למנויים לא היה זמין.
 
-**Finding:** The abstract reports whole-body tactile covering of an adult-size humanoid and contact-motion experiments including a 66 kg human dummy.
+**ממצא:** התקציר מדווח על כיסוי מישוש לכל הגוף של הומנואיד בגודל אדם בוגר ועל ניסויי תנועה במגע, לרבות בובת אדם במשקל 66 kg.
 
-**Limit:** The abstract alone cannot validate the loading conditions, control robustness or economics. It cannot justify human-lifting demonstrations with a home-lab prototype.
+**מגבלה:** התקציר לבדו אינו מאמת את תנאי ההעמסה, עמידות הבקרה או הכלכלה. הוא אינו מצדיק הדגמות הרמת אדם באמצעות אב־טיפוס ממעבדה ביתית.
 
-**Plan action:** Keep the early demonstrator on arms and legs, with bounded low-load contact tasks and no human support. Explain the eventual application without implying its hardware/control validation is already complete.
+**פעולה בתוכנית:** להשאיר את המדגים הראשוני בזרועות וברגליים, במשימות מגע מוגבלות ובעומס נמוך, ללא נשיאת אדם. להסביר את היישום העתידי בלי לרמוז שאימות החומרה והבקרה שלו כבר הושלם.
 
-**Novelty implication:** Whole-body contact capability and human-like distributed haptics are established motivations.
+**השלכה על החדשנות:** יכולת מגע של כל הגוף והפטיקה מבוזרת דמוית אדם הן מניעים מבוססים.
 
-**Bibliographic/access note:** Publisher citation/copyright says 2010; Cheng/user list says 2011 and lab bibliography also lists the 2011 book. Keep this edition/year discrepancy visible. DOI 10.1007/978-3-642-14743-2_6.
+**הערה ביבליוגרפית או על הגישה:** הציטוט וזכויות היוצרים אצל המוציא לאור מציינים 2010; רשימת Cheng והמשתמש מציינת 2011, וגם ביבליוגרפיית המעבדה מציינת את הספר מ-2011. יש להשאיר גלוי את פער המהדורה והשנה. DOI 10.1007/978-3-642-14743-2_6.
+
 
 ### [15] An embedded artificial skin for humanoid robots
 
-G. Cannata, M. Maggiali, G. Metta and G. Sandini, MFI 2008, 434–438. [Primary source or identity record](https://robotcub.org/misc/papers/08_cannata.pdf)
+G. Cannata, M. Maggiali, G. Metta and G. Sandini, MFI 2008, 434–438. [מקור ראשוני או רשומת זיהוי](https://robotcub.org/misc/papers/08_cannata.pdf)
 
-**Evidence:** primary_full_text_main
+**רמת ראיות:** primary_full_text_main
 
-**Read scope:** Entire substantive five-page original article, including architecture, transducer, microcontroller, experiments and conclusions; figure captions. Images not independently resolved.
+**היקף הקריאה:** כל גוף המאמר המקורי המהותי בן חמשת העמודים, כולל ארכיטקטורה, מתמר, מיקרו־בקר, ניסויים ומסקנות; וכיתובי האיורים. התמונות לא פוענחו באופן עצמאי.
 
-**Finding:** Twelve capacitive taxels per triangle use AD7147 conversion; up to 16 triangles/192 taxels connect through local buses to one MCU/CAN. A grounded deformable electrode enables contact from insulating objects and shielding. About 500 Hz averaged sensing trades spatial detail for speed; individual channels are slower.
+**ממצא:** שנים־עשר אתרי חישה קיבוליים בכל משולש משתמשים בהמרת AD7147; עד 16 משולשים או 192 אתרים מתחברים באפיקים מקומיים ל-MCU/CAN אחד. אלקטרודה מוארקת וניתנת לעיוות מאפשרת מגע בעצמים מבודדים ומספקת סיכוך. חישה ממוצעת בכ-500 Hz מחליפה פירוט מרחבי במהירות; ערוצים בודדים איטיים יותר.
 
-**Limit:** The reported prototype is six triangles, with quantitative experiments ongoing. Three-to-five-millimeter foam differs from our thin laminate. Port count does not imply adaptive rerouting.
+**מגבלה:** אב־הטיפוס המדווח כולל שישה משולשים, והניסויים הכמותיים עדיין נמשכים. קצף בעובי שלושה עד חמישה מילימטרים שונה מהלמינציה הדקה שלנו. מספר יציאות אינו מעיד על ניתוב חלופי מסתגל.
 
-**Plan action:** Keep local aggregation and distinguish normal-force sensing from bare capacitive human-touch detection. If evaluating capacitive alternatives, include the full ground-electrode, dielectric and cover stack and measure both spatial detail and response time.
+**פעולה בתוכנית:** לשמר איגום מקומי ולהבחין בין חישת כוח ניצב לבין גילוי קיבולי בסיסי של מגע אדם. בבחינת חלופות קיבוליות יש לכלול את מלוא מכלול אלקטרודת ההארקה, הדיאלקטרי והכיסוי, ולמדוד גם פירוט מרחבי וגם זמן תגובה.
 
-**Novelty implication:** Modularity, local conversion, CAN aggregation and adaptive spatial resolution are prior art.
+**השלכה על החדשנות:** מודולריות, המרה מקומית, איגום ב-CAN ורזולוציה מרחבית מסתגלת הם ידע קודם.
 
-**Bibliographic/access note:** DOI 10.1109/MFI.2008.4648033. Extracted area/power units in early PDF are ambiguous; no power-density number is adopted.
+**הערה ביבליוגרפית או על הגישה:** DOI 10.1109/MFI.2008.4648033. יחידות שטח והספק שחולצו מקובץ PDF מוקדם אינן חד־משמעיות; לא מאומץ ערך של צפיפות הספק.
+
 
 ### [16] Methods and technologies for the implementation of large-scale robot tactile sensors
 
-A. Schmitz et al., IEEE Transactions on Robotics 27(3), 389–400, 2011. [Primary source or identity record](https://www.researchgate.net/publication/224238240_Methods_and_Technologies_for_the_Implementation_of_Large-Scale_Robot_Tactile_Sensors)
+A. Schmitz et al., IEEE Transactions on Robotics 27(3), 389–400, 2011. [מקור ראשוני או רשומת זיהוי](https://www.researchgate.net/publication/224238240_Methods_and_Technologies_for_the_Implementation_of_Large-Scale_Robot_Tactile_Sensors)
 
-**Evidence:** primary_full_text_selected
+**רמת ראיות:** primary_full_text_selected
 
-**Read scope:** Author-uploaded manuscript: sections I, III, V and VI-A–D, assembly figure captions. Not every hysteresis equation or grasping trial.
+**היקף הקריאה:** כתב יד שהעלה מחבר: סעיפים I, III, V ו-VI-A–D, וכיתובי איורי ההרכבה. לא כל משוואת היסטרזיס או ניסוי אחיזה.
 
-**Finding:** The 16-bit CDC yielded 8 usable signal bits in that assembly. Drift adaptation freezes while touched. Probe geometry changes response, and some body configurations omit a top electrode and rely on a human ground plane.
+**ממצא:** ממיר הקיבול לדיגיטל בעל 16 הסיביות סיפק 8 סיביות אות שימושיות באותו מכלול. הסתגלות לסחיפה נעצרת בעת מגע. גאומטריית הגשוש משנה את התגובה, ובכמה תצורות גוף אין אלקטרודה עליונה והמערכת מסתמכת על האדם כמישור הארקה.
 
-**Limit:** The extracted drift pseudocode has an apparent missing minus sign versus its stated ±0.5 deadband; never copy it blindly. Published sensor performance does not transfer to our resistive laminate.
+**מגבלה:** בפסאודו־קוד הסחיפה שחולץ חסר כנראה סימן מינוס ביחס לתחום אי־התגובה המוצהר ±0.5; אין להעתיק אותו באופן עיוור. ביצועי החיישן שפורסמו אינם מועברים אוטומטית ללמינציה ההתנגדותית שלנו.
 
-**Plan action:** Freeze baseline during contact; test slow ramps and sustained loads. Measure actual noise-limited resolution. Test plastic, metal and gloved contacts. Calibrate several probe diameters and mounted curvature rather than claiming pressure accuracy from one probe.
+**פעולה בתוכנית:** להקפיא את קו הבסיס בזמן מגע; לבדוק עליות איטיות ועומסים מתמשכים. למדוד רזולוציה שימושית המוגבלת בפועל בידי רעש. לבדוק מגעי פלסטיק, מתכת וכפפה. לכייל כמה קוטרי גשוש ועקמומיות מותקנת במקום לטעון לדיוק לחץ מתוך גשוש יחיד.
 
-**Novelty implication:** Cheap replaceable COTS-based skin with distributed buses and calibration is prior art.
+**השלכה על החדשנות:** עור זול, ניתן להחלפה ומבוסס רכיבי מדף, עם אפיקים מבוזרים וכיול, הוא ידע קודם.
 
-**Bibliographic/access note:** DOI 10.1109/TRO.2011.2132930. Uploader is coauthor Marco Maggiali; original author-site URL currently 404.
+**הערה ביבליוגרפית או על הגישה:** DOI 10.1109/TRO.2011.2132930. מעלה הקובץ הוא השותף לכתיבה Marco Maggiali; כתובת האתר המקורית של המחבר מחזירה כעת 404.
+
 
 ### [17] A flexible and robust large scale capacitive tactile system for robots
 
-P. Maiolino, M. Maggiali, G. Cannata, G. Metta and L. Natale, IEEE Sensors Journal 13(10), 3910–3917, 2013. [Primary source or identity record](https://arxiv.org/pdf/1411.6837)
+P. Maiolino, M. Maggiali, G. Cannata, G. Metta and L. Natale, IEEE Sensors Journal 13(10), 3910–3917, 2013. [מקור ראשוני או רשומת זיהוי](https://arxiv.org/pdf/1411.6837)
 
-**Evidence:** primary_full_text_selected
+**רמת ראיות:** primary_full_text_selected
 
-**Read scope:** Author manuscript sections III–IV, integration text and experimental figure captions; most main text read, not supplementary data.
+**היקף הקריאה:** סעיפים III–IV בכתב יד המחברים, טקסט השילוב וכיתובי איורי הניסויים; רוב גוף הטקסט נקרא, אך לא הנתונים המשלימים.
 
-**Finding:** The design uses clothing-industry 3D spacer fabric and removable covers. On the flat 2 mm dielectric prototype, 15 load cycles with one-minute rests gave a maximum 9.1 fF cycle difference at 28.6 kPa, roughly 5% of range. Pressure-insensitive reference capacitors compensate structural thermal drift; they are not surface thermometers. The reported acquisition operates at 25 Hz.
+**ממצא:** התכן משתמש בבד מרווח 3D מתעשיית הביגוד ובכיסויים נשלפים. באב־טיפוס שטוח עם דיאלקטרי בעובי 2 mm, 15 מחזורי העמסה עם מנוחות של דקה הניבו הפרש מחזורים מרבי של 9.1 fF ב-28.6 kPa, בערך 5% מהתחום. קבלי ייחוס שאינם רגישים ללחץ מפצים על סחיפה תרמית מבנית; הם אינם מדי טמפרטורת פני שטח. הרכישה המדווחת פועלת ב-25 Hz.
 
-**Limit:** Ten-minute constant-displacement relaxation is not a constant-force creep or lifetime test. Neither its thickness nor performance transfers to a 1.5 mm 100 Hzresistive stack.
+**מגבלה:** הרפיה במשך עשר דקות בהעתק קבוע אינה בדיקת זחילה בכוח קבוע או בדיקת אורך חיים. לא העובי ולא הביצועים עוברים אוטומטית למכלול התנגדותי בעובי 1.5 mm ובקצב 100 Hz.
 
-**Plan action:** Use this as a capacitive fallback benchmark, subject to full-stack comparison. Separate thermal-point sensing from pressure compensation. Test both constant-force and constant-displacement holds plus local heating while loaded.
+**פעולה בתוכנית:** להשתמש כמבחן ייחוס לחלופה קיבולית, בכפוף להשוואת המכלול המלא. להפריד בין חישת טמפרטורה נקודתית לפיצוי לחץ. לבדוק החזקות בכוח קבוע ובהעתק קבוע, וגם חימום מקומי בזמן העמסה.
 
-**Novelty implication:** Fabric-based, protected, serviceable robot skin predates this proposal.
+**השלכה על החדשנות:** עור רובוטי מבוסס בד, מוגן וניתן לתחזוקה קדם להצעה זו.
 
-**Bibliographic/access note:** DOI 10.1109/JSEN.2013.2258149. arXiv submission 2014 is an author copy of the 2013 article.
+**הערה ביבליוגרפית או על הגישה:** DOI 10.1109/JSEN.2013.2258149. ההגשה ל-arXiv בשנת 2014 היא עותק מחברים של המאמר מ-2013.
+
 
 ### [18] A new silicone structure for uSkin—A soft, distributed, digital 3-axis skin sensor and its integration on humanoid robot iCub
 
-T. P. Tomo et al., IEEE Robotics and Automation Letters 3(3), 2584–2591, 2018. [Primary source or identity record](https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/55045/Jamone%20A%20New%20Silicone%202018%20Accepted.pdf?isAllowed=y&sequence=2)
+T. P. Tomo et al., IEEE Robotics and Automation Letters 3(3), 2584–2591, 2018. [מקור ראשוני או רשומת זיהוי](https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/55045/Jamone%20A%20New%20Silicone%202018%20Accepted.pdf?isAllowed=y&sequence=2)
 
-**Evidence:** primary_indexed_excerpt
+**רמת ראיות:** primary_indexed_excerpt
 
-**Read scope:** Indexed primary accepted manuscript section III-A/B, tableI and figure 1–2 captions; direct repository PDF retrieval failed. Calibration/results not fully read.
+**היקף הקריאה:** סעיפים III-A/B, טבלה I וכיתובי איורים 1–2 מאונדקסים בכתב היד הראשוני שהתקבל לפרסום; השליפה הישירה של ה-PDF מהמאגר נכשלה. הכיול והתוצאות לא נקראו במלואם.
 
-**Finding:** Sixteen magnetic 3-axis cells occupy 26×27×6.05 mm; approximately 1 mm mounting tape adds thickness. Bumps and air gaps reduce normal-to-shear mechanical coupling. A first soft-silicone attempt allowed magnets to attract each other.
+**ממצא:** שישה־עשר תאים מגנטיים בעלי 3 צירים תופסים 26×27×6.05 mm; סרט התקנה בעובי כ-1 mm מוסיף לעובי. בליטות ומרווחי אוויר מפחיתים צימוד מכני מכוח ניצב לגזירה. בניסיון ראשון עם סיליקון רך המגנטים יכלו למשוך זה את זה.
 
-**Limit:** Full assembly is thicker and more complex than a thin resistive film. Performance in motor magnetic fields, chosen cover adhesives and our limb geometry remains unverified.
+**מגבלה:** המכלול השלם עבה ומורכב יותר מסרט התנגדותי דק. הביצועים בשדות מגנטיים של מנועים, עם דבקי הכיסוי שנבחרו ובגאומטריית הגפה שלנו עדיין לא אומתו.
 
-**Plan action:** Reserve this modality for a shear-sensing variant. If evaluated, test magnetic interference with motors energized, overload, cross-axis coupling and mounting-tape creep; include every protective/mounting layer in thickness and cost.
+**פעולה בתוכנית:** לשמור אופן חישה זה לגרסה החשה גזירה. אם ייבחן, יש לבדוק הפרעה מגנטית כאשר המנועים מופעלים, עומס יתר, צימוד בין צירים וזחילה של סרט ההתקנה; לכלול כל שכבת הגנה והתקנה בעובי ובעלות.
 
-**Novelty implication:** Soft protected digital 3-axis skin is already demonstrated; simplified normal-contact coverage targets a different specification.
+**השלכה על החדשנות:** עור דיגיטלי רך ומוגן בעל 3 צירי חישה כבר הודגם; כיסוי מפושט למגע ניצב מכוון למפרט שונה.
 
-**Bibliographic/access note:** Use the accepted 2018 manuscript as the source; no unverified calibration accuracy or DOI is invented.
+**הערה ביבליוגרפית או על הגישה:** יש להשתמש בכתב היד שהתקבל בשנת 2018 כמקור; אין להמציא דיוק כיול שלא אומת או DOI שלא אומת.
+
 
 ### [19] An adjustable force sensitive sensor with an electromagnet for a soft, distributed, digital 3-axis skin sensor
 
-A. C. Holgado et al., IROS 2018, 2582–2588. [Primary source or identity record](https://waseda.elsevierpure.com/en/publications/an-adjustable-force-sensitive-sensor-with-an-electromagnet-for-a-/)
+A. C. Holgado et al., IROS 2018, 2582–2588. [מקור ראשוני או רשומת זיהוי](https://waseda.elsevierpure.com/en/publications/an-adjustable-force-sensitive-sensor-with-an-electromagnet-for-a-/)
 
-**Evidence:** primary_abstract
+**רמת ראיות:** primary_abstract
 
-**Read scope:** Author-institution abstract and publication identity; original full text not read.
+**היקף הקריאה:** תקציר ממוסד המחברים וזיהוי הפרסום; הטקסט המקורי המלא לא נקרא.
 
-**Finding:** The prototype replaces a permanent magnet with an electromagnet so current can change force sensitivity in a soft magnetic sensor.
+**ממצא:** אב־הטיפוס מחליף מגנט קבוע באלקטרומגנט, כך שהזרם יכול לשנות את רגישות הכוח בחיישן מגנטי רך.
 
-**Limit:** The abstract does not establish a mass-production cost or justify extra power, thermal coupling and calibration for approximate normal-pressure sensing.
+**מגבלה:** התקציר אינו מבסס עלות ייצור המוני ואינו מצדיק תוספת הספק, צימוד תרמי וכיול לצורך חישת לחץ ניצב בקירוב.
 
-**Plan action:** Exclude electromagnets from the baseline. Add them only if a specified force-range problem cannot be met passively and a measured benefit exceeds coil-power, heat and driver cost.
+**פעולה בתוכנית:** לא לכלול אלקטרומגנטים בתצורת הבסיס. להוסיף אותם רק אם אי אפשר לענות באופן פסיבי על בעיית תחום כוח מוגדרת, ואם התועלת המדודה עולה על עלות הספק הסליל, החום ומעגל ההנעה.
 
-**Novelty implication:** Electronically adjustable magnetic tactile sensitivity is prior art.
+**השלכה על החדשנות:** רגישות מישוש מגנטית הניתנת לכוונון אלקטרוני היא ידע קודם.
 
-**Bibliographic/access note:** DOI 10.1109/IROS.2018.8593757.
+**הערה ביבליוגרפית או על הגישה:** DOI 10.1109/IROS.2018.8593757.
+
 
 ### [30] Tactile sensing in intelligent robotic manipulation—A review
 
-J. Tegin and J. Wikander, Industrial Robot 32(1), 64–70, 2005. [Primary source or identity record](https://www.researchgate.net/publication/228667424_Tactile_sensing_in_intelligent_robotic_manipulation_-_a_review)
+J. Tegin and J. Wikander, Industrial Robot 32(1), 64–70, 2005. [מקור ראשוני או רשומת זיהוי](https://www.researchgate.net/publication/228667424_Tactile_sensing_in_intelligent_robotic_manipulation_-_a_review)
 
-**Evidence:** primary_full_text_selected
+**רמת ראיות:** primary_full_text_selected
 
-**Read scope:** Author-uploaded text: introduction, sections 5.2–5.7 and conclusions. KTH thesis reprint located but oversized PDF could not be retrieved.
+**היקף הקריאה:** טקסט שהעלה מחבר: המבוא, סעיפים 5.2–5.7 והמסקנות. נמצא הדפס חוזר בתזה של KTH, אך לא ניתן היה לשלוף את קובץ ה-PDF הגדול.
 
-**Finding:** The review separates distributed contact sensing from intrinsic force/torque sensing. It discusses mechanical inversion through soft covers, FSR/capacitive drift and hysteresis, and the loss of contact-pattern information in few-wire analog schemes.
+**ממצא:** הסקירה מפרידה בין חישת מגע מבוזרת לבין חישת כוח ומומנט פנימית. היא דנה בשחזור מכני הפוך דרך כיסויים רכים, בסחיפה ובהיסטרזיס של FSR וחיישנים קיבוליים, ובאובדן מידע על תבנית המגע בשיטות אנלוגיות בעלות מעט חוטים.
 
-**Limit:** Its supplier listings and dimensions are historical. A single resultant force/position cannot identify an arbitrary set of simultaneous contacts.
+**מגבלה:** רשימות הספקים והמידות שלה הן היסטוריות. כוח ומיקום שקולים יחידים אינם יכולים לזהות קבוצה שרירותית של מגעים בו־זמניים.
 
-**Plan action:** Preserve separate taxel identities for multi-contact limb sensing. Do not infer shear, friction, material hardness or accurate force from ordinal normal readings without additional measurement and a validated model.
+**פעולה בתוכנית:** לשמר זהויות נפרדות של אתרי חישה לצורך חישה של כמה מגעים בגפה. אין להסיק גזירה, חיכוך, קשיות חומר או כוח מדויק מתוך קריאות יחסיות בכיוון הניצב, ללא מדידה נוספת ומודל מאומת.
 
-**Novelty implication:** Resistive arrays, capacitance sensing, local processing and few-wire tactile tradeoffs are established.
+**השלכה על החדשנות:** מערכים התנגדותיים, חישה קיבולית, עיבוד מקומי ופשרות של חישת מגע עם מעט חוטים הם תחומים מבוססים.
 
-**Bibliographic/access note:** DOI 10.1108/01439910510573318; uploader identified as author Johan Tegin.
+**הערה ביבליוגרפית או על הגישה:** DOI 10.1108/01439910510573318; מעלה הקובץ מזוהה כמחבר Johan Tegin.
+
 
 ### [31] Sensitive manipulation: Manipulation through tactile feedback
 
-E. Torres-Jara and L. Natale, International Journal of Humanoid Robotics 15(1), 1850012, 2018. [Primary source or identity record](https://lornat75.github.io/pdfs/2018-torresjara-sensitive.pdf)
+E. Torres-Jara and L. Natale, International Journal of Humanoid Robotics 15(1), 1850012, 2018. [מקור ראשוני או רשומת זיהוי](https://lornat75.github.io/pdfs/2018-torresjara-sensitive.pdf)
 
-**Evidence:** primary_full_text_selected
+**רמת ראיות:** primary_full_text_selected
 
-**Read scope:** Author manuscript abstract/introduction, hardware figure 1 and sections 4.1.3–4.3, PDFpp.12–15. Not all experiments.
+**היקף הקריאה:** תקציר ומבוא בכתב יד המחברים, איור חומרה 1 וסעיפים 4.1.3–4.3, עמודי PDF 12–15. לא כל הניסויים.
 
-**Finding:** Obrero combines compliant actuation with tactile strategies for acquiring and maintaining contact. The text explicitly notes missed contacts at unsensed joint regions and a lift/retry strategy when immediate slip sensing is inadequate.
+**ממצא:** Obrero משלב הנעה בעלת היענות עם אסטרטגיות מישוש להשגת מגע ולשימורו. הטקסט מציין במפורש מגעים שלא זוהו באזורי מפרקים לא מחוששים, ואסטרטגיית הרמה וניסיון חוזר כאשר חישת החלקה מיידית אינה מספקת.
 
-**Limit:** Success depends on hand hardware, force control and exploration strategies absent from our coarse arm/leg panels. It does not show that simply adding taxels delivers dexterity.
+**מגבלה:** ההצלחה תלויה בחומרת היד, בבקרת כוח ובאסטרטגיות חקירה שאינן קיימות בלוחות הגסים שלנו לזרועות ולרגליים. אין כאן הוכחה שעצם הוספת אתרי חישה מעניקה מיומנות תנועה.
 
-**Plan action:** Include unsensed joint seams in coverage maps. Demonstrate one bounded contact-aware behavior and compare against a baseline, recording missed contacts; do not claim general slip detection or dexterous grasping.
+**פעולה בתוכנית:** לכלול תפרי מפרקים שאינם מחוששים במפות הכיסוי. להדגים התנהגות מוגבלת אחת המודעת למגע ולהשוותה לבסיס, תוך תיעוד מגעים שלא זוהו; אין לטעון לגילוי החלקה כללי או לאחיזה מיומנת.
 
-**Novelty implication:** Tactile-first manipulation and active contact exploration are prior art.
+**השלכה על החדשנות:** מניפולציה המתחילה ממישוש וחקירת מגע פעילה הן ידע קודם.
 
-**Bibliographic/access note:** Accepted manuscript datedOctober 2017 for the 2018 publication.
+**הערה ביבליוגרפית או על הגישה:** כתב היד שהתקבל לפרסום מתוארך לאוקטובר 2017, עבור הפרסום בשנת 2018.
+
 
 ### [32] High-density conformable tactile sensing glove
 
-T. Sagisaka et al., IEEE-RAS Humanoids 2011, 537–542. [Primary source or identity record](https://ieeexplore.ieee.org/document/6100898)
+T. Sagisaka et al., IEEE-RAS Humanoids 2011, 537–542. [מקור ראשוני או רשומת זיהוי](https://ieeexplore.ieee.org/document/6100898)
 
-**Evidence:** citation_only
+**רמת ראיות:** citation_only
 
-**Read scope:** Author laboratory bibliography verified; original full text not accessed. Exact-paper syndicated abstract and a distinct 2012 JRSJarticle abstract were seen, and are not substituted for the original.
+**היקף הקריאה:** אומתה הביבליוגרפיה של מעבדת המחברים; הטקסט המקורי המלא לא היה נגיש. נראו תקציר מופץ של המאמר המדויק ותקציר מאמר נפרד ב-JRSJ משנת 2012, והם לא שימשו תחליף למקור.
 
-**Finding:** An established high-density sensing-glove research line. Original-paper performance numbers are not independently verified in this record.
+**ממצא:** זהו קו מחקר מבוסס של כפפות חישה בצפיפות גבוהה. נתוני הביצועים של המאמר המקורי אינם מאומתים באופן עצמאי ברשומה זו.
 
-**Limit:** Bibliographic aggregators merge the 2011 conference and 2012 Japanese journal article. Their results must not be silently treated as the same document.
+**מגבלה:** מאגרים ביבליוגרפיים מאחדים את מאמר הכנס מ-2011 ואת המאמר בכתב העת היפני מ-2012. אין להתייחס לתוצאותיהם בשתיקה כאילו נלקחו מאותו מסמך.
 
-**Plan action:** For our arm/leg application, evaluate range-of-motion change, cable pull and pressure offsets with the covering installed. Tree/branch geometry is a useful candidate, but requires complete laminate fatigue testing.
+**פעולה בתוכנית:** ליישום הזרועות והרגליים שלנו, להעריך שינוי בטווח תנועה, משיכת כבלים והיסטי לחץ כאשר הכיסוי מותקן. גאומטריית עץ וענפים היא מועמדת שימושית, אך מחייבת בדיקת עייפות של הלמינציה המלאה.
 
-**Novelty implication:** High-density conformable sensing and joint-motion-aware routing are prior art, not a new conceptual claim.
+**השלכה על החדשנות:** חישה צפופה המתאימה לצורת המשטח וניתוב המתחשב בתנועת מפרקים הם ידע קודם, ולא טענה רעיונית חדשה.
 
-**Bibliographic/access note:** DOI 10.1109/Humanoids.2011.6100898. Related primary 2012 paper: https://www.jstage.jst.go.jp/article/jrsj/30/7/30_30_711/_article/-char/en (DOI 10.7210/jrsj.30.711).
+**הערה ביבליוגרפית או על הגישה:** DOI 10.1109/Humanoids.2011.6100898. מאמר ראשוני קשור מ-2012: https://www.jstage.jst.go.jp/article/jrsj/30/7/30_30_711/_article/-char/en (DOI 10.7210/jrsj.30.711).
+
 
 ### [33] Development and applications of high-density tactile sensing glove
 
-T. Sagisaka, Y. Ohmura, A. Nagakubo, K. Ozaki and Y. Kuniyoshi, EuroHaptics 2012, LNCS 7282, 445–456. [Primary source or identity record](https://link.springer.com/chapter/10.1007/978-3-642-31401-8_40)
+T. Sagisaka, Y. Ohmura, A. Nagakubo, K. Ozaki and Y. Kuniyoshi, EuroHaptics 2012, LNCS 7282, 445–456. [מקור ראשוני או רשומת זיהוי](https://link.springer.com/chapter/10.1007/978-3-642-31401-8_40)
 
-**Evidence:** primary_abstract
+**רמת ראיות:** primary_abstract
 
-**Read scope:** Publisher abstract and bibliographic record; subscription chapter not read in full.
+**היקף הקריאה:** תקציר המוציא לאור והרשומה הביבליוגרפית; הפרק המוגבל למנויים לא נקרא במלואו.
 
-**Finding:** The abstract describes 1, 052 pressure sites per hand using 1 mm elements on FPC, and human experiments relating pressure distribution to external-force direction and exploratory behavior.
+**ממצא:** התקציר מתאר 1, 052 אתרי לחץ בכל יד, באמצעות רכיבים בגודל 1 mm על FPC, וניסויים בבני אדם הקושרים את התפלגות הלחץ לכיוון הכוח החיצוני ולהתנהגות חקירה.
 
-**Limit:** Correlation in a human-worn glove does not establish calibrated robot shear-force measurement, full-body fatigue or inexpensive manufacturing.
+**מגבלה:** מתאם בכפפה שנלבשת בידי אדם אינו מבסס מדידת כוח גזירה מכוילת ברובוט, עמידות לעייפות בכל הגוף או ייצור זול.
 
-**Plan action:** Keep human-dexterity claims out of the limb-panel proof. If comparing density, state active area, sensor-element size and pitch separately, with installed mass and connectivity included.
+**פעולה בתוכנית:** לא לכלול טענות למיומנות אנושית בהוכחת ההיתכנות של לוח הגפה. בהשוואת צפיפות יש לציין בנפרד שטח פעיל, גודל רכיב החישה ופסיעה, תוך הכללת המסה המותקנת והחיבוריות.
 
-**Novelty implication:** Thousands of tactile channels with flexible routing were already demonstrated in human sensing equipment.
+**השלכה על החדשנות:** אלפי ערוצי מישוש עם ניתוב גמיש כבר הודגמו בציוד חישה לאדם.
 
-**Bibliographic/access note:** DOI 10.1007/978-3-642-31401-8_40. Different publication from[32].
+**הערה ביבליוגרפית או על הגישה:** DOI 10.1007/978-3-642-31401-8_40. זהו פרסום שונה מ-[32].
+
 
 ### [34] Tactile object class and internal state recognition for mobile manipulation
 
-S. Chitta, M. Piccoli and J. Sturm, ICRA 2010, 2342–2348. [Primary source or identity record](https://jsturm.de/publications/data/chitta10icra.pdf)
+S. Chitta, M. Piccoli and J. Sturm, ICRA 2010, 2342–2348. [מקור ראשוני או רשומת זיהוי](https://jsturm.de/publications/data/chitta10icra.pdf)
 
-**Evidence:** primary_indexed_excerpt
+**רמת ראיות:** primary_indexed_excerpt
 
-**Read scope:** Indexed author-hosted original conference PDF methods/results excerpts, especially tablesII–IV. Direct PDF retrieval timed out; later journal version was kept distinct.
+**היקף הקריאה:** קטעי שיטות ותוצאות מאונדקסים מתוך ה-PDF המקורי של הכנס, המאוחסן באתר מחבר, ובפרט טבלאות II–IV. השליפה הישירה של ה-PDF חרגה מזמן ההמתנה; הגרסה המאוחרת בכתב עת נשמרה כמקור נפרד.
 
-**Finding:** At 20 N probing, reported container-class accuracy is 93.9%, while internal-state accuracy varies substantially by container (water bottles 32.5%). Stronger probing improves one container result, illustrating task and stimulus dependence.
+**ממצא:** בגישוש בכוח 20 N, דיוק סיווג סוג המכל המדווח הוא 93.9%, בעוד שדיוק זיהוי המצב הפנימי משתנה מאוד לפי המכל — 32.5% בבקבוקי מים. גישוש חזק יותר משפר תוצאה של מכל מסוים, וממחיש תלות במשימה ובגירוי.
 
-**Limit:** An overall recognition number cannot be transferred across object types or contact forces; high probing forces can damage objects. These are controlled gripper observations, not generic limb-skin intelligence.
+**מגבלה:** אי אפשר להעביר נתון זיהוי כולל בין סוגי עצמים או כוחות מגע; כוחות גישוש גבוהים עלולים להזיק לעצמים. אלה תצפיות מבוקרות במלקחיים, ולא אינטליגנציה כללית של עור גפה.
 
-**Plan action:** For any classifier, report per-class confusion matrices and separate test objects/sessions from training. Keep active exploratory-force tests outside the baseline ordinal-contact product unless actuator force is independently measured.
+**פעולה בתוכנית:** לכל מסווג יש לפרסם מטריצות בלבול לפי מחלקה ולהפריד עצמים ומפגשי בדיקה מנתוני האימון. להשאיר בדיקות כוח חקירה פעיל מחוץ למוצר הבסיס של מגע יחסי, אלא אם כוח המפעיל נמדד באופן עצמאי.
 
-**Novelty implication:** Tactile object/state classification is prior art; any claimed advantage needs a matched task benchmark.
+**השלכה על החדשנות:** סיווג עצמים ומצבם באמצעות מישוש הוא ידע קודם; כל יתרון נטען מחייב מבחן משימה תואם.
 
-**Bibliographic/access note:** DOI 10.1109/ROBOT.2010.5509923. Do not substitute chitta 10 tro.pdf journal expansion for this conference paper.
+**הערה ביבליוגרפית או על הגישה:** DOI 10.1109/ROBOT.2010.5509923. אין להחליף מאמר כנס זה בהרחבה לכתב עת chitta 10 tro.pdf.
+
 
 ### [36] A simple tactile sensing foot for humanoid robot and active ground slope recognition
 
-K. Suwanratchatamanee, M. Matsumoto and S. Hashimoto, IEEE International Conference on Mechatronics, 2009, 1–6. [Primary source or identity record](https://doi.org/10.1109/ICMECH.2009.4957223)
+K. Suwanratchatamanee, M. Matsumoto and S. Hashimoto, IEEE International Conference on Mechatronics, 2009, 1–6. [מקור ראשוני או רשומת זיהוי](https://doi.org/10.1109/ICMECH.2009.4957223)
 
-**Evidence:** primary_abstract
+**רמת ראיות:** primary_abstract
 
-**Read scope:** Publisher abstract and introduction excerpt, not the complete sensor/control evaluation.
+**היקף הקריאה:** תקציר המוציא לאור וקטע מהמבוא, ולא ההערכה המלאה של החיישן והבקרה.
 
-**Finding:** The work uses a small set of thin force-sensitive resistors and active foot interaction to classify ground slope rather than requiring a dense whole-foot image.
+**ממצא:** העבודה משתמשת במספר קטן של נגדים דקים הרגישים לכוח ובאינטראקציה פעילה של כף הרגל לסיווג שיפוע הקרקע, במקום לדרוש תמונה צפופה של כל כף הרגל.
 
-**Limit:** A foot-slope demonstration does not validate arm/leg pressure sensing or balance stability. Its load paths and contact geometry differ from shell-mounted skin.
+**מגבלה:** הדגמת זיהוי שיפוע באמצעות כף רגל אינה מאמתת חישת לחץ בזרוע וברגל או יציבות שיווי משקל. מסלולי העומס וגאומטריית המגע שלה שונים מעור המותקן על מעטפת.
 
-**Plan action:** Keep feet as a separate subsystem. Establish whether a future task needs contact presence, center of pressure, slope or detailed pressure distribution before selecting sensor count.
+**פעולה בתוכנית:** להשאיר את כפות הרגליים כתת־מערכת נפרדת. לפני בחירת מספר החיישנים, לקבוע אם משימה עתידית דורשת נוכחות מגע, מרכז לחץ, שיפוע או התפלגות לחץ מפורטת.
 
-**Novelty implication:** Task-specific sparse sensing and active haptic inference are established.
+**השלכה על החדשנות:** חישה דלילה מותאמת למשימה והסקה הפטית פעילה הן שיטות מבוססות.
 
-**Bibliographic/access note:** DOI 10.1109/ICMECH.2009.4957223.
+**הערה ביבליוגרפית או על הגישה:** DOI 10.1109/ICMECH.2009.4957223.
+
 
 ### [37] Design and experiment of the NAO humanoid robot’s plantar tactile sensor for surface classification
 
-Q. Yuan and J. Wang, ICISCE 2017, 931–935. [Primary source or identity record](https://www.researchgate.net/publication/321122717_Design_and_Experiment_of_the_NAO_Humanoid_Robot%27s_Plantar_Tactile_Sensor_for_Surface_Classification)
+Q. Yuan and J. Wang, ICISCE 2017, 931–935. [מקור ראשוני או רשומת זיהוי](https://www.researchgate.net/publication/321122717_Design_and_Experiment_of_the_NAO_Humanoid_Robot%27s_Plantar_Tactile_Sensor_for_Surface_Classification)
 
-**Evidence:** primary_full_text_selected
+**רמת ראיות:** primary_full_text_selected
 
-**Read scope:** Author-uploaded original: abstract, sections III–Vthrough classifier setup, diagrams/captions. Final result table and conclusion not exhaustively read.
+**היקף הקריאה:** המקור שהעלה מחבר: תקציר, סעיפים III–V עד הגדרת המסווג, תרשימים וכיתובים. טבלת התוצאות הסופית והמסקנה לא נקראו באופן ממצה.
 
-**Finding:** A 10×16 resistive array uses 400 samples/s acquisition, but the authors explicitly state 0.4 s per full image; a 20-site subset supports faster tracking. Classification aggregates multiple walking steps.
+**ממצא:** מערך התנגדותי 10×16 משתמש ברכישה של 400 דגימות לשנייה, אך המחברים מציינים במפורש 0.4 s לתמונה מלאה; תת־מערך של 20 אתרים תומך במעקב מהיר יותר. הסיווג מאגד כמה צעדי הליכה.
 
-**Limit:** The text’s 360 total datasets versus 224 training+36 test is arithmetically inconsistent. The headline accuracy is not immediate response or demonstrated cross-robot generalization. Matrix bypass-current rejection is not established by the viewed block diagram.
+**מגבלה:** הנתון בטקסט של 360 מערכי נתונים בסך הכול אינו מתיישב חשבונית עם 224 לאימון ועוד 36 לבדיקה. נתון הדיוק הבולט אינו תגובה מיידית או הוכחת הכללה בין רובוטים. התרשים שנבדק אינו מבסס ביטול של זרמי מעקף במטריצה.
 
-**Plan action:** Publish ADC rate, per-taxel rate, full-frame rate, scan skew and reaction latency separately. Never borrow 400 Hz as a full-array benchmark. Retain independent sensing islands unless simultaneous-contact electrical crosstalk is experimentally bounded.
+**פעולה בתוכנית:** לפרסם בנפרד קצב ADC, קצב לכל אתר חישה, קצב מסגרת מלאה, פערי סריקה והשהיית תגובה. אין להשתמש ב-400 Hz כמבחן ייחוס למערך המלא. לשמר איי חישה עצמאיים, אלא אם זליגה חשמלית בין מגעים בו־זמניים נחסמה בניסוי.
 
-**Novelty implication:** Low-cost resistive skin plus simple classification is prior art.
+**השלכה על החדשנות:** עור התנגדותי זול בשילוב סיווג פשוט הוא ידע קודם.
 
-**Bibliographic/access note:** DOI 10.1109/ICISCE.2017.197. Uploader is coauthor Jianxiao Wang; no outreach performed.
+**הערה ביבליוגרפית או על הגישה:** DOI 10.1109/ICISCE.2017.197. מעלה הקובץ הוא השותף לכתיבה Jianxiao Wang; לא נוצר עמו קשר.
+
 
 ### [38] An adaptive sensor foot for a bipedal and quadrupedal robot
 
-K. Fondahl et al., BioRob 2012; Cheng lists 270–275. [Primary source or identity record](https://www.dfki.de/web/forschung/projekte-publikationen/publikation/6214)
+K. Fondahl et al., BioRob 2012; Cheng lists 270–275. [מקור ראשוני או רשומת זיהוי](https://www.dfki.de/web/forschung/projekte-publikationen/publikation/6214)
 
-**Evidence:** primary_abstract
+**רמת ראיות:** primary_abstract
 
-**Read scope:** DFKI institutional publication abstract and metadata. Original paper not read.
+**היקף הקריאה:** תקציר ומטא־נתונים של הפרסום המוסדי ב-DFKI. המאמר המקורי לא נקרא.
 
-**Finding:** The work concerns an adaptive foot mechanism and its sensor integration for different legged platforms, rather than simply applying a sensing film to an unchanged foot.
+**ממצא:** העבודה עוסקת במנגנון כף רגל מסתגל ובשילוב חיישנים בו עבור פלטפורמות שונות בעלות רגליים, ולא רק בהדבקת סרט חישה על כף רגל ללא שינוי.
 
-**Limit:** The abstract is insufficient to reproduce mechanics, control or load qualification. The institutional page’s pagination conflicts with Cheng’s bibliography.
+**מגבלה:** התקציר אינו מספיק לשחזור המכניקה, הבקרה או הכשרת העומס. מספור העמודים בדף המוסדי סותר את הביבליוגרפיה של Cheng.
 
-**Plan action:** Do not roll feet into the limb-panel BOM. A foot version needs its own contact mechanics, abrasion, overload, water/soil and gait-interface requirements.
+**פעולה בתוכנית:** אין לצרף כפות רגליים לרשימת החומרים של לוחות הגפיים. גרסת כף רגל דורשת דרישות נפרדות למכניקת מגע, שחיקה, עומס יתר, מים ואדמה, וממשק הליכה.
 
-**Novelty implication:** Adaptive sensorized feet are an established separate product/problem class.
+**השלכה על החדשנות:** כפות רגליים מסתגלות עם חיישנים הן קטגוריית מוצר ובעיה נפרדת ומבוססת.
 
-**Bibliographic/access note:** DFKI displays 2780–2786 whereas Cheng and other citations show 270–275. Flag the discrepancy; do not silently choose unverified metadata.
+**הערה ביבליוגרפית או על הגישה:** DFKI מציג 2780–2786, בעוד Cheng וציטוטים אחרים מציגים 270–275. יש לסמן את הפער ולא לבחור בשתיקה מטא־נתונים שלא אומתו.
+
 
 ### [39] A ZMP sensor for a biped robot
 
-M. Shimojo, T. Araki, A. Ming and M. Ishikawa, ICRA 2006, 1200–1205. [Primary source or identity record](https://researchmap.jp/read0072509/published_papers/15818833/attachment_file.pdf)
+M. Shimojo, T. Araki, A. Ming and M. Ishikawa, ICRA 2006, 1200–1205. [מקור ראשוני או רשומת זיהוי](https://researchmap.jp/read0072509/published_papers/15818833/attachment_file.pdf)
 
-**Evidence:** primary_indexed_excerpt
+**רמת ראיות:** primary_indexed_excerpt
 
-**Read scope:** Indexed author-hosted first-page abstract. Direct PDF retrieval 403; complete derivation and experiments not read.
+**היקף הקריאה:** תקציר מאונדקס מהעמוד הראשון, המאוחסן באתר מחבר. השליפה הישירה של ה-PDF החזירה 403; הגזירה והניסויים המלאים לא נקראו.
 
-**Finding:** The abstract reports four wires, response within 1 ms, 0.2 g/cm²areal mass, and simultaneous total load and center-of-load position.
+**ממצא:** התקציר מדווח על ארבעה חוטים, תגובה בתוך 1 ms, מסה ליחידת שטח של 0.2 g/cm², ומדידה בו־זמנית של עומס כולל ושל מיקום מרכז העומס.
 
-**Limit:** These are compressed aggregate outputs, not independent contact locations.0.2 g/cm²equals 2 kg/m²; “lightweight” must be compared using consistent units. No claim about general dynamic ZMP equivalence is adopted.
+**מגבלה:** אלה פלטים מאוגדים ודחוסים, ולא מיקומי מגע עצמאיים. 0.2 g/cm² שווה ל-2 kg/m²; יש להשוות את התיאור ״קל משקל״ באמצעות יחידות עקביות. לא מאומצת כאן טענה לשקילות כללית לנקודת מומנט אפס דינמית.
 
-**Plan action:** Test observability before replacing arrays: two equal separated contacts and one central contact can share a centroid. Our multi-contact requirement needs independent sites or another demonstrated reconstruction method.
+**פעולה בתוכנית:** לבדוק יכולת הבחנה לפני החלפת מערכים: שני מגעים שווים ומרוחקים ומגע מרכזי אחד יכולים להניב אותו מרכז כובד. דרישת ריבוי המגעים שלנו מחייבת אתרים עצמאיים או שיטת שחזור אחרת שהודגמה.
 
-**Novelty implication:** Extreme wire reduction with analog spatial aggregation is prior art; it trades away information.
+**השלכה על החדשנות:** צמצום קיצוני של חוטים באמצעות איגום מרחבי אנלוגי הוא ידע קודם; הוא בא על חשבון מידע.
 
-**Bibliographic/access note:** DOI 10.1109/ROBOT.2006.1641872.
+**הערה ביבליוגרפית או על הגישה:** DOI 10.1109/ROBOT.2006.1641872.
+
 
 ### [40] High-speed pressure sensor grid for humanoid robot foot
 
-Y. Takahashi, K. Nishiwaki, S. Kagami, H. Mizoguchi and H. Inoue, IROS 2005, 3909–3914. [Primary source or identity record](https://tus.elsevierpure.com/en/publications/high-speed-pressure-sensor-grid-for-humanoid-robot-foot/)
+Y. Takahashi, K. Nishiwaki, S. Kagami, H. Mizoguchi and H. Inoue, IROS 2005, 3909–3914. [מקור ראשוני או רשומת זיהוי](https://tus.elsevierpure.com/en/publications/high-speed-pressure-sensor-grid-for-humanoid-robot-foot/)
 
-**Evidence:** primary_abstract
+**רמת ראיות:** primary_abstract
 
-**Read scope:** Author-institution abstract and bibliographic record. Original six-page paper not accessed.
+**היקף הקריאה:** תקציר ממוסד המחברים ורשומה ביבליוגרפית. המאמר המקורי בן ששת העמודים לא היה נגיש.
 
-**Finding:** The abstract reports a 32×32 matrix, 1 kHz sampling, 14-bit conversion and 0.6 mm force-sensitive rubber. It explicitly identifies bypass-current interference and a mitigation method.
+**ממצא:** התקציר מדווח על מטריצה 32×32, דגימה ב-1 kHz, המרה של 14 סיביות וגומי רגיש לכוח בעובי 0.6 mm. הוא מזהה במפורש הפרעה מזרמי מעקף ושיטה לצמצומה.
 
-**Limit:** The abstract cannot supply the exact mitigation circuit or demonstrate our laminate’s independence, accuracy or fatigue. ADC resolution is not mechanical force accuracy.
+**מגבלה:** התקציר אינו יכול לספק את מעגל הצמצום המדויק או להדגים עצמאות, דיוק או עמידות לעייפות בלמינציה שלנו. רזולוציית ADC אינה דיוק מכני של כוח.
 
-**Plan action:** Our 100 Hzbody panels should not be marketed as equivalent to high-speed sole sensing. Any cheaper shared resistive matrix must pass a multi-contact test including unselected-row leakage, not merely isolated single presses.
+**פעולה בתוכנית:** אין לשווק את לוחות הגוף שלנו, הפועלים ב-100 Hz, כשקולים לחישת סוליה מהירה. כל מטריצה התנגדותית משותפת וזולה יותר חייבת לעבור בדיקה של כמה מגעים הכוללת זליגה בשורות שלא נבחרו, ולא רק לחיצות בודדות מבודדות.
 
-**Novelty implication:** Dense, thin resistive tactile arrays and scanning-crosstalk remedies are well-established research.
+**השלכה על החדשנות:** מערכי מישוש התנגדותיים צפופים ודקים ופתרונות לזליגה בזמן סריקה הם מחקר מבוסס היטב.
 
-**Bibliographic/access note:** DOI 10.1109/IROS.2005.1545126.
+**הערה ביבליוגרפית או על הגישה:** DOI 10.1109/IROS.2005.1545126.
+
+</div>

@@ -1,21 +1,28 @@
-# ROBOSKIN · Electronic skin
+<div dir="rtl" lang="he">
 
-[עברית](README.he.md) · [Detailed engineering plan](electronic_skin.md)
+עברית · [English](README.en.md)
 
-An independent electronic-skin project for contact location, approximate contact intensity and sparse temperature sensing. The design combines replaceable protected sensor sheets, local acquisition and a segmented CAN FD network.
+# ROBOSKIN · עור אלקטרוני
 
-The full reference patch has **28 touch sites and two temperature points**. An optional compact demonstration uses eight controllers with **88 installed touch sites and 16 temperature points**. Panel dimensions and counts are generic examples; they do not prove fit on a particular robot.
+[התוכנית ההנדסית המפורטת](electronic_skin.md)
 
-| Start here | Contents |
+פרויקט עצמאי לעור אלקטרוני, המאפשר לזהות את מיקום המגע, להעריך את עוצמתו ולמדוד טמפרטורה בנקודות נבחרות. התכנון משלב יריעות חישה מוגנות וניתנות להחלפה, איסוף נתונים מקומי ורשת תקשורת CAN FD המחולקת לאזורים.
+
+פאנל הייחוס המלא כולל **28 נקודות חישה למגע ושתי נקודות למדידת טמפרטורה**. תצורת הדגמה קומפקטית משתמשת בשמונה בקרים עם **88 נקודות חישה מותקנות למגע ו־16 נקודות למדידת טמפרטורה**. מידות הפאנלים וכמותם הן דוגמאות כלליות; הן אינן מוכיחות התאמה לרובוט מסוים.
+
+| נקודת התחלה | תוכן |
 | --- | --- |
-| [Engineering plan](electronic_skin.md) | Materials, circuits, firmware contract, calibration, manufacturing, costs, test phases, competition and Israeli partner research |
-| [Electronics](electronics/README.md) | Editable pin-level circuits, connection tables, netlists, BOM, isolated 5 V bench supply and wiring |
-| [Mechanics](mechanics/README.md) | Generic film templates, removable carrier, strain relief and mounting tests |
-| [Software](software/README.md) | Protocol, event reporting, identity, timing, multi-region observer and synthetic demo |
-| [Research register](research/reference_index.md) | All 84 requested references with explicit access and review depth |
-| [Release status](docs/release_status.md) | What exists, what was checked and what still requires physical evidence |
+| [חומרת הרובוט](hardware/README.md) | חבילת CNC, הדפסת תלת־ממד, גומי, לוחות, צמות ורשימות חומרים, עם שמות ROBOSKIN ותרגום לעברית |
+| [התוכנית ההנדסית](electronic_skin.md) | חומרים, מעגלים, דרישות קושחה, כיול, ייצור, עלויות, שלבי בדיקה, מחקר מתחרים ושותפים אפשריים בישראל |
+| [אלקטרוניקה](electronics/README.md) | מפרטי מעגלים הניתנים לעריכה ברמת הפינים, טבלאות חיבורים, רשימות רשתות חשמליות, רשימת רכיבים, אספקת מתח מעבדתית מבודדת של 5 וולט וחיווט |
+| [מכניקה](mechanics/README.md) | תבניות כלליות ליריעות, תושבת נשלפת, עיגון כבלים להפחתת עומס מכני ובדיקות התקנה |
+| [תוכנה](software/README.md) | פרוטוקול, דיווח אירועים, זיהוי, תזמון, ניטור של כמה אזורי חישה והדגמה באמצעות נתונים מדומים |
+| [סקירת הספרות המקצועית](research/reference_index.md) | כל 84 המקורות שהתבקשו, עם פירוט היקף הגישה לכל מקור ועומק בדיקתו |
+| [מצב התוצרים](docs/release_status.md) | מה כבר קיים, מה נבדק ומה עדיין דורש ראיות מבדיקה פיזית |
 
-Run the software without any hardware or additional Python packages:
+להרצת התוכנה ללא חומרה וללא חבילות Python נוספות:
+
+<div dir="ltr">
 
 ```bash
 python3 -m unittest discover -s tests -v
@@ -23,10 +30,14 @@ python3 -m software --demo
 python3 engineering/models.py
 ```
 
-The demo uses synthetic packets through the actual protocol gates: available coverage expires when measurements become stale. It opens no device and sends no actuator command. Live use requires independently commissioned identities, calibration and dedicated sensor interfaces.
+</div>
 
-The cost model uses a **$34.78 good-patch manufacturing allowance at 1,000 patches** and separately priced laboratory gateways. This is not a retail prototype quotation. The complete 80-patch laboratory-interface scenario is $7,852.40 before spare patches, tax, freight and engineering. See the detailed assumptions before using any number in a budget.
+ההדגמה מעבירה הודעות מדומות דרך מנגנוני האימות של הפרוטוקול עצמו: כאשר המדידות מתיישנות, כיסוי החישה הרלוונטי מפסיק להיחשב זמין. היא אינה פותחת חיבור להתקן ואינה שולחת פקודות למפעילים. שימוש בחומרה אמיתית דורש אימות עצמאי של זהויות הבקרים, כיול וממשקי תקשורת ייעודיים לחיישנים.
 
-This repository contains original project implementations and academic citations. It has fresh Git history, no submodules, no robot SDK dependency and no bundled robot CAD or inherited robot manufacturing package. Filenames are English; Hebrew documentation is provided. Published sensing and control principles remain attributed to their research authors.
+מודל העלויות מניח **34.78 דולר לפאנל תקין באצווה של 1,000 פאנלים**, בתוספת מתאמי תקשורת מעבדתיים המתומחרים בנפרד. זו אינה הצעת מחיר קמעונאית לאב־טיפוס. תצורת מערכת מלאה של 80 פאנלים עם ממשקי מעבדה נאמדת ב־7,852.40 דולר, לפני פאנלים חלופיים, מסים, משלוח ועבודת הנדסה. יש לקרוא את ההנחות המפורטות לפני שימוש במספרים לתכנון תקציב.
 
-**Current state:** engineering prototype specification and tested host software. Sensor performance, routed PCBs, compiled board firmware, installed fit, durability and commercial readiness have not been demonstrated by the offline tests.
+המאגר כולל מימושים מקוריים של העור לצד [חבילת חומרה נגזרת](hardware/README.md), עם היסטוריית Git עצמאית וללא תתי־מאגרים. התוכנה אינה תלויה בערכת פיתוח של רובוט. שמות הקבצים באנגלית; מסמכי Markdown הראשיים בעברית ולצדם גרסאות באנגלית בסיומת `.en.md`. עקרונות מחקר ותכנוני חומרה מיובאים שומרים על [הייחוס והרישיונות שלהם](NOTICE.md).
+
+**המצב הנוכחי:** מפרט הנדסי לאב־טיפוס ותוכנת מחשב מארח שנבדקה. הבדיקות ללא חומרה אינן מוכיחות ביצועי חיישנים, מעגלים מודפסים של העור שעברו עריכה וניתוב, קושחה שנבנתה לבקרי העור, התאמה פיזית לאחר התקנה, עמידות או מוכנות מסחרית.
+
+</div>

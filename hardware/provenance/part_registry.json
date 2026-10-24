@@ -1,0 +1,2234 @@
+{
+  "schema_version": 1,
+  "seed": "YCL.M000312 = ROBOSKIN.0001",
+  "parts": [
+    {
+      "upstream_part_id": "YCL.M000312",
+      "roboskin_id": "ROBOSKIN.0001",
+      "english_description": "forearm lower body",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.A000018",
+      "roboskin_id": "ROBOSKIN.0002",
+      "english_description": "hot pressed linkage assembly left",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.A000019",
+      "roboskin_id": "ROBOSKIN.0003",
+      "english_description": "hot pressed linkage assembly right",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.D000043",
+      "roboskin_id": "ROBOSKIN.0004",
+      "english_description": "5552 joint module ( Gongwang dual encoder )",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000040",
+      "roboskin_id": "ROBOSKIN.0005",
+      "english_description": "RTC",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000057",
+      "roboskin_id": "ROBOSKIN.0006",
+      "english_description": "Motor Capacitor Board",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000059",
+      "roboskin_id": "ROBOSKIN.0007",
+      "english_description": "Inertial Sensor Board",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000060",
+      "roboskin_id": "ROBOSKIN.0008",
+      "english_description": "Mingmei Battery Adapter Board",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000062",
+      "roboskin_id": "ROBOSKIN.0009",
+      "english_description": "Fan Power Board",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000063",
+      "roboskin_id": "ROBOSKIN.0010",
+      "english_description": "Lighting Board",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000083",
+      "roboskin_id": "ROBOSKIN.0011",
+      "english_description": "Orange Pi CM5",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000084",
+      "roboskin_id": "ROBOSKIN.0012",
+      "english_description": "ARM01-0 Cable",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000088",
+      "roboskin_id": "ROBOSKIN.0013",
+      "english_description": "ARM02-0 Cable",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000089",
+      "roboskin_id": "ROBOSKIN.0014",
+      "english_description": "ARM03-0 Cable",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000090",
+      "roboskin_id": "ROBOSKIN.0015",
+      "english_description": "ARM04-0 Cable",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000091",
+      "roboskin_id": "ROBOSKIN.0016",
+      "english_description": "ARM05-0 Cable",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000092",
+      "roboskin_id": "ROBOSKIN.0017",
+      "english_description": "ARM06-0 Cable",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000093",
+      "roboskin_id": "ROBOSKIN.0018",
+      "english_description": "ARM07-0 Cable",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000094",
+      "roboskin_id": "ROBOSKIN.0019",
+      "english_description": "ARM08-0 Cable",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000097",
+      "roboskin_id": "ROBOSKIN.0020",
+      "english_description": "BODY01-0 Cable",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000098",
+      "roboskin_id": "ROBOSKIN.0021",
+      "english_description": "BODY02-0 Cable",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000099",
+      "roboskin_id": "ROBOSKIN.0022",
+      "english_description": "BODY03-0 Cable",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000100",
+      "roboskin_id": "ROBOSKIN.0023",
+      "english_description": "BODY04-0 Cable",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000101",
+      "roboskin_id": "ROBOSKIN.0024",
+      "english_description": "BODY05-0 Cable",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000102",
+      "roboskin_id": "ROBOSKIN.0025",
+      "english_description": "BODY06-0 Cable",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000103",
+      "roboskin_id": "ROBOSKIN.0026",
+      "english_description": "LEG01-0 Cable",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000104",
+      "roboskin_id": "ROBOSKIN.0027",
+      "english_description": "LEG02-0 Cable",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000105",
+      "roboskin_id": "ROBOSKIN.0028",
+      "english_description": "LEG03-0 Cable",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000106",
+      "roboskin_id": "ROBOSKIN.0029",
+      "english_description": "LEG04-0 Cable",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000107",
+      "roboskin_id": "ROBOSKIN.0030",
+      "english_description": "LEG05-0 Cable",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000108",
+      "roboskin_id": "ROBOSKIN.0031",
+      "english_description": "LEG06-0 Cable",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000109",
+      "roboskin_id": "ROBOSKIN.0032",
+      "english_description": "LEG07-0 Cable",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000119",
+      "roboskin_id": "ROBOSKIN.0033",
+      "english_description": "POWER01-0 Cable",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000120",
+      "roboskin_id": "ROBOSKIN.0034",
+      "english_description": "POWER02-0 Cable",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000126",
+      "roboskin_id": "ROBOSKIN.0035",
+      "english_description": "2510 Cooling Fan",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000127",
+      "roboskin_id": "ROBOSKIN.0036",
+      "english_description": "Temperature Sensor",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000128",
+      "roboskin_id": "ROBOSKIN.0037",
+      "english_description": "Emergency Stop Button",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000129",
+      "roboskin_id": "ROBOSKIN.0038",
+      "english_description": "140W Charger",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000130",
+      "roboskin_id": "ROBOSKIN.0039",
+      "english_description": "Battery Power Cable",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000211",
+      "roboskin_id": "ROBOSKIN.0040",
+      "english_description": "Hand Power Adapter Board",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000212",
+      "roboskin_id": "ROBOSKIN.0041",
+      "english_description": "433MHz Transmitter Board",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000223",
+      "roboskin_id": "ROBOSKIN.0042",
+      "english_description": "140W Charging Board",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000224",
+      "roboskin_id": "ROBOSKIN.0043",
+      "english_description": "Handheld Controller",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000226",
+      "roboskin_id": "ROBOSKIN.0044",
+      "english_description": "KICKME Back Interface Board",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000234",
+      "roboskin_id": "ROBOSKIN.0045",
+      "english_description": "Body Ethernet Cable",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000235",
+      "roboskin_id": "ROBOSKIN.0046",
+      "english_description": "Back GPIO Cable",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000236",
+      "roboskin_id": "ROBOSKIN.0047",
+      "english_description": "Back Key Cable",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000237",
+      "roboskin_id": "ROBOSKIN.0048",
+      "english_description": "Back Ethernet NX Cable",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000238",
+      "roboskin_id": "ROBOSKIN.0049",
+      "english_description": "Body RS485 Cable",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000239",
+      "roboskin_id": "ROBOSKIN.0050",
+      "english_description": "Back Power NX Cable",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000240",
+      "roboskin_id": "ROBOSKIN.0051",
+      "english_description": "Body Estop Cable",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000241",
+      "roboskin_id": "ROBOSKIN.0052",
+      "english_description": "Lighting Board Cable",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000243",
+      "roboskin_id": "ROBOSKIN.0053",
+      "english_description": "ARM 10 Signal Cable",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000248",
+      "roboskin_id": "ROBOSKIN.0054",
+      "english_description": "OLED Display",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000254",
+      "roboskin_id": "ROBOSKIN.0055",
+      "english_description": "Wireless Network Card",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000255",
+      "roboskin_id": "ROBOSKIN.0056",
+      "english_description": "Rear Power Indicator Board",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000256",
+      "roboskin_id": "ROBOSKIN.0057",
+      "english_description": "Coin Cell",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000257",
+      "roboskin_id": "ROBOSKIN.0058",
+      "english_description": "Charging Board Fan",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000259",
+      "roboskin_id": "ROBOSKIN.0059",
+      "english_description": "Waist 4010 Fan",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000260",
+      "roboskin_id": "ROBOSKIN.0060",
+      "english_description": "Main Controller Fan",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000262",
+      "roboskin_id": "ROBOSKIN.0061",
+      "english_description": "433MHz Antenna",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000263",
+      "roboskin_id": "ROBOSKIN.0062",
+      "english_description": "Wired Main Controller Assembly",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000264",
+      "roboskin_id": "ROBOSKIN.0063",
+      "english_description": "WiFi Antenna",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000268",
+      "roboskin_id": "ROBOSKIN.0064",
+      "english_description": "Backup Battery Protection Board",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000269",
+      "roboskin_id": "ROBOSKIN.0065",
+      "english_description": "Backup Battery",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000270",
+      "roboskin_id": "ROBOSKIN.0066",
+      "english_description": "USB3 Flexible Interconnect",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000271",
+      "roboskin_id": "ROBOSKIN.0067",
+      "english_description": "Hand Adapter Cable",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000272",
+      "roboskin_id": "ROBOSKIN.0068",
+      "english_description": "Battery to Back Power Cable",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000273",
+      "roboskin_id": "ROBOSKIN.0069",
+      "english_description": "Battery to Main Power Cable",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000274",
+      "roboskin_id": "ROBOSKIN.0070",
+      "english_description": "Backup Battery Protection Long Cable",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000275",
+      "roboskin_id": "ROBOSKIN.0071",
+      "english_description": "Backup Battery Protection Short Cable",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000276",
+      "roboskin_id": "ROBOSKIN.0072",
+      "english_description": "Mingmei Lithium Ion Battery Pack",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000278",
+      "roboskin_id": "ROBOSKIN.0073",
+      "english_description": "Main Controller Board",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000280",
+      "roboskin_id": "ROBOSKIN.0074",
+      "english_description": "Main Controller Heatsink",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000282",
+      "roboskin_id": "ROBOSKIN.0075",
+      "english_description": "XT30 2plus2 Female Connector",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000225",
+      "roboskin_id": "ROBOSKIN.0076",
+      "english_description": "waist Yaw limit ring",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000226",
+      "roboskin_id": "ROBOSKIN.0077",
+      "english_description": "waist Roll limit ring",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000227",
+      "roboskin_id": "ROBOSKIN.0078",
+      "english_description": "waist number 1 (LS revision )_CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000228",
+      "roboskin_id": "ROBOSKIN.0079",
+      "english_description": "waist number 1 clamp (LS revision )_CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000229",
+      "roboskin_id": "ROBOSKIN.0080",
+      "english_description": "hip joint front (LS revision )_CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000230",
+      "roboskin_id": "ROBOSKIN.0081",
+      "english_description": "hip joint rear (LS revision )_CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000231",
+      "roboskin_id": "ROBOSKIN.0082",
+      "english_description": "hip joint left (LS revision )_CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000232",
+      "roboskin_id": "ROBOSKIN.0083",
+      "english_description": "hip joint right (LS revision )_CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000234",
+      "roboskin_id": "ROBOSKIN.0084",
+      "english_description": "hip joint limit ring _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000237",
+      "roboskin_id": "ROBOSKIN.0085",
+      "english_description": "hip joint motor cover plate _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000238",
+      "roboskin_id": "ROBOSKIN.0086",
+      "english_description": "waist motor housing (LS revision )",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000239",
+      "roboskin_id": "ROBOSKIN.0087",
+      "english_description": "hip joint left clamp _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000240",
+      "roboskin_id": "ROBOSKIN.0088",
+      "english_description": "hip joint right clamp _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000241",
+      "roboskin_id": "ROBOSKIN.0089",
+      "english_description": "hip joint impact pad",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000243",
+      "roboskin_id": "ROBOSKIN.0090",
+      "english_description": "fan mounting block",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000249",
+      "roboskin_id": "ROBOSKIN.0091",
+      "english_description": "Yaw travel stop 3",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000250",
+      "roboskin_id": "ROBOSKIN.0092",
+      "english_description": "cable clamp block 1",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000268",
+      "roboskin_id": "ROBOSKIN.0093",
+      "english_description": "long linkage",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000269",
+      "roboskin_id": "ROBOSKIN.0094",
+      "english_description": "short linkage",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000270",
+      "roboskin_id": "ROBOSKIN.0095",
+      "english_description": "shin cable clamp block 2",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000271",
+      "roboskin_id": "ROBOSKIN.0096",
+      "english_description": "Pitch travel stop",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000272",
+      "roboskin_id": "ROBOSKIN.0097",
+      "english_description": "sole cross shaft",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000276",
+      "roboskin_id": "ROBOSKIN.0098",
+      "english_description": "foot upper",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000277",
+      "roboskin_id": "ROBOSKIN.0099",
+      "english_description": "insole",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000282",
+      "roboskin_id": "ROBOSKIN.0100",
+      "english_description": "mirrored long linkage",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000283",
+      "roboskin_id": "ROBOSKIN.0101",
+      "english_description": "mirrored short linkage",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000284",
+      "roboskin_id": "ROBOSKIN.0102",
+      "english_description": "mirrored Pitch travel stop",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000289",
+      "roboskin_id": "ROBOSKIN.0103",
+      "english_description": "hip joint front cover plate _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000290",
+      "roboskin_id": "ROBOSKIN.0104",
+      "english_description": "hip joint rubber cover",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000292",
+      "roboskin_id": "ROBOSKIN.0105",
+      "english_description": "knee bearing housing",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000298",
+      "roboskin_id": "ROBOSKIN.0106",
+      "english_description": "upper arm upper cover _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000308",
+      "roboskin_id": "ROBOSKIN.0107",
+      "english_description": "forearm upper cover _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000311",
+      "roboskin_id": "ROBOSKIN.0108",
+      "english_description": "forearm lower cover _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000313",
+      "roboskin_id": "ROBOSKIN.0109",
+      "english_description": "mirrored forearm upper cover _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000322",
+      "roboskin_id": "ROBOSKIN.0110",
+      "english_description": "wrist end cable retention block",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000323",
+      "roboskin_id": "ROBOSKIN.0111",
+      "english_description": "wrist end cover plate _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000324",
+      "roboskin_id": "ROBOSKIN.0112",
+      "english_description": "wrist end body",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000330",
+      "roboskin_id": "ROBOSKIN.0113",
+      "english_description": "adapter board retainer",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000331",
+      "roboskin_id": "ROBOSKIN.0114",
+      "english_description": "RP_Hand adapter",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000332",
+      "roboskin_id": "ROBOSKIN.0115",
+      "english_description": "arm adapter flange",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000333",
+      "roboskin_id": "ROBOSKIN.0116",
+      "english_description": "cable clip",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000334",
+      "roboskin_id": "ROBOSKIN.0117",
+      "english_description": "limit ring",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000335",
+      "roboskin_id": "ROBOSKIN.0118",
+      "english_description": "arm cable clamp block 2",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000336",
+      "roboskin_id": "ROBOSKIN.0119",
+      "english_description": "elbow bearing housing",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000337",
+      "roboskin_id": "ROBOSKIN.0120",
+      "english_description": "limit ring 2",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000338",
+      "roboskin_id": "ROBOSKIN.0121",
+      "english_description": "arm cable clamp block 3",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000340",
+      "roboskin_id": "ROBOSKIN.0122",
+      "english_description": "arm cable clamp block 5",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000341",
+      "roboskin_id": "ROBOSKIN.0123",
+      "english_description": "55 limit ring",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000342",
+      "roboskin_id": "ROBOSKIN.0124",
+      "english_description": "shoulder clamp _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000346",
+      "roboskin_id": "ROBOSKIN.0125",
+      "english_description": "PCBA support frame",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000347",
+      "roboskin_id": "ROBOSKIN.0126",
+      "english_description": "fan retention bracket ( waist )",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000349",
+      "roboskin_id": "ROBOSKIN.0127",
+      "english_description": "fan retention cover plate",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000359",
+      "roboskin_id": "ROBOSKIN.0128",
+      "english_description": "handle rubber sleeve",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000365",
+      "roboskin_id": "ROBOSKIN.0129",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000369",
+      "roboskin_id": "ROBOSKIN.0130",
+      "english_description": "handle",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000371",
+      "roboskin_id": "ROBOSKIN.0131",
+      "english_description": "cosmetic hand body _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000372",
+      "roboskin_id": "ROBOSKIN.0132",
+      "english_description": "cosmetic hand body",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000373",
+      "roboskin_id": "ROBOSKIN.0133",
+      "english_description": "cosmetic hand cover",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000374",
+      "roboskin_id": "ROBOSKIN.0134",
+      "english_description": "mirrored cosmetic hand body",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000375",
+      "roboskin_id": "ROBOSKIN.0135",
+      "english_description": "mirrored cosmetic hand body _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000376",
+      "roboskin_id": "ROBOSKIN.0136",
+      "english_description": "mirrored cosmetic hand cover",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000398",
+      "roboskin_id": "ROBOSKIN.0137",
+      "english_description": "75 shoulder cover _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000399",
+      "roboskin_id": "ROBOSKIN.0138",
+      "english_description": "75 limit ring",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000402",
+      "roboskin_id": "ROBOSKIN.0139",
+      "english_description": "mirrored 75 shoulder cover _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000421",
+      "roboskin_id": "ROBOSKIN.0140",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000426",
+      "roboskin_id": "ROBOSKIN.0141",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000435",
+      "roboskin_id": "ROBOSKIN.0142",
+      "english_description": "thigh cover _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000437",
+      "roboskin_id": "ROBOSKIN.0143",
+      "english_description": "hip joint rear cover plate _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000438",
+      "roboskin_id": "ROBOSKIN.0144",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000443",
+      "roboskin_id": "ROBOSKIN.0145",
+      "english_description": "shin cover plate _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000444",
+      "roboskin_id": "ROBOSKIN.0146",
+      "english_description": "shin front cover plate _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000445",
+      "roboskin_id": "ROBOSKIN.0147",
+      "english_description": "shin rear cover plate _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000446",
+      "roboskin_id": "ROBOSKIN.0148",
+      "english_description": "shin motor spacer block _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000447",
+      "roboskin_id": "ROBOSKIN.0149",
+      "english_description": "shin body right _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000448",
+      "roboskin_id": "ROBOSKIN.0150",
+      "english_description": "shin body left _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000449",
+      "roboskin_id": "ROBOSKIN.0151",
+      "english_description": "shin ankle spacer block _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000451",
+      "roboskin_id": "ROBOSKIN.0152",
+      "english_description": "mirrored shin ankle spacer block _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000452",
+      "roboskin_id": "ROBOSKIN.0153",
+      "english_description": "mirrored shin body left _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000453",
+      "roboskin_id": "ROBOSKIN.0154",
+      "english_description": "mirrored shin body right _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000454",
+      "roboskin_id": "ROBOSKIN.0155",
+      "english_description": "mirrored shin motor spacer block _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000471",
+      "roboskin_id": "ROBOSKIN.0156",
+      "english_description": "wrist body",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000472",
+      "roboskin_id": "ROBOSKIN.0157",
+      "english_description": "mirrored wrist body",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000473",
+      "roboskin_id": "ROBOSKIN.0158",
+      "english_description": "wrist upper clamp",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000474",
+      "roboskin_id": "ROBOSKIN.0159",
+      "english_description": "wrist lower clamp",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000475",
+      "roboskin_id": "ROBOSKIN.0160",
+      "english_description": "thigh clamp rear _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000477",
+      "roboskin_id": "ROBOSKIN.0161",
+      "english_description": "thigh clamp front _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000481",
+      "roboskin_id": "ROBOSKIN.0162",
+      "english_description": "thigh lower body right _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000485",
+      "roboskin_id": "ROBOSKIN.0163",
+      "english_description": "thigh lower cover plate left _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000486",
+      "roboskin_id": "ROBOSKIN.0164",
+      "english_description": "thigh lower cover plate right _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000487",
+      "roboskin_id": "ROBOSKIN.0165",
+      "english_description": "ankle output flange",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000559",
+      "roboskin_id": "ROBOSKIN.0166",
+      "english_description": "waist roll cable retention block",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000561",
+      "roboskin_id": "ROBOSKIN.0167",
+      "english_description": "YAW motor mounting bracket",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000562",
+      "roboskin_id": "ROBOSKIN.0168",
+      "english_description": "PITCH-YAW motor connection bracket",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000563",
+      "roboskin_id": "ROBOSKIN.0169",
+      "english_description": "PITCH-YAW motor flange bracket",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000564",
+      "roboskin_id": "ROBOSKIN.0170",
+      "english_description": "-02 head PITCH motor flange",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000610",
+      "roboskin_id": "ROBOSKIN.0171",
+      "english_description": "collector board body bracket",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000638",
+      "roboskin_id": "ROBOSKIN.0172",
+      "english_description": "speaker bracket",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000640",
+      "roboskin_id": "ROBOSKIN.0173",
+      "english_description": "75 shoulder clamp (01 revision )_CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000641",
+      "roboskin_id": "ROBOSKIN.0174",
+      "english_description": "75 shoulder body (01 revision )_CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000642",
+      "roboskin_id": "ROBOSKIN.0175",
+      "english_description": "upper arm upper body (01 revision )_CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000643",
+      "roboskin_id": "ROBOSKIN.0176",
+      "english_description": "upper arm upper clamp (01 revision )_CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000644",
+      "roboskin_id": "ROBOSKIN.0177",
+      "english_description": "upper arm lower front segment (01 revision )_CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000645",
+      "roboskin_id": "ROBOSKIN.0178",
+      "english_description": "upper arm lower rear segment (01 revision )_CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000646",
+      "roboskin_id": "ROBOSKIN.0179",
+      "english_description": "forearm upper body left (02 revision )_CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000647",
+      "roboskin_id": "ROBOSKIN.0180",
+      "english_description": "forearm upper body right (02 revision )_CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000648",
+      "roboskin_id": "ROBOSKIN.0181",
+      "english_description": "mirrored forearm upper body left (02 revision )_CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000649",
+      "roboskin_id": "ROBOSKIN.0182",
+      "english_description": "mirrored forearm upper body right (02 revision )_CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000650",
+      "roboskin_id": "ROBOSKIN.0183",
+      "english_description": "mirrored upper arm lower front segment (01 revision )_CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000651",
+      "roboskin_id": "ROBOSKIN.0184",
+      "english_description": "mirrored upper arm lower rear segment (01 revision )_CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000652",
+      "roboskin_id": "ROBOSKIN.0185",
+      "english_description": "mirrored 75 shoulder clamp (01 revision )_CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000656",
+      "roboskin_id": "ROBOSKIN.0186",
+      "english_description": "mirrored 75 shoulder body (01 revision )_CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000657",
+      "roboskin_id": "ROBOSKIN.0187",
+      "english_description": "foot plate (01 revision )_CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000658",
+      "roboskin_id": "ROBOSKIN.0188",
+      "english_description": "sole retention number 1 (02 revision )",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000659",
+      "roboskin_id": "ROBOSKIN.0189",
+      "english_description": "sole retention number 2 (02 revision )",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000660",
+      "roboskin_id": "ROBOSKIN.0190",
+      "english_description": "Roll travel stop",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000661",
+      "roboskin_id": "ROBOSKIN.0191",
+      "english_description": "leg cable clip (75 motor )",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000662",
+      "roboskin_id": "ROBOSKIN.0192",
+      "english_description": "thigh clamp (01 revision )_CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000663",
+      "roboskin_id": "ROBOSKIN.0193",
+      "english_description": "thigh body (01 revision )_CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000664",
+      "roboskin_id": "ROBOSKIN.0194",
+      "english_description": "Yaw travel stop 4(03 revision )",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000665",
+      "roboskin_id": "ROBOSKIN.0195",
+      "english_description": "thigh flange right",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000666",
+      "roboskin_id": "ROBOSKIN.0196",
+      "english_description": "thigh lower motor clamp (01 revision )_CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000667",
+      "roboskin_id": "ROBOSKIN.0197",
+      "english_description": "thigh lower body left (02 revision )_CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000668",
+      "roboskin_id": "ROBOSKIN.0198",
+      "english_description": "thigh flange left",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000669",
+      "roboskin_id": "ROBOSKIN.0199",
+      "english_description": "mirrored thigh lower motor clamp (01 revision )_CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000670",
+      "roboskin_id": "ROBOSKIN.0200",
+      "english_description": "mirrored thigh lower body left (02 revision )_CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000671",
+      "roboskin_id": "ROBOSKIN.0201",
+      "english_description": "mirrored thigh clamp rear _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000672",
+      "roboskin_id": "ROBOSKIN.0202",
+      "english_description": "mirrored thigh lower cover plate left _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000673",
+      "roboskin_id": "ROBOSKIN.0203",
+      "english_description": "mirrored thigh clamp front _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000674",
+      "roboskin_id": "ROBOSKIN.0204",
+      "english_description": "mirrored thigh lower body right _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000675",
+      "roboskin_id": "ROBOSKIN.0205",
+      "english_description": "mirrored thigh lower cover plate right _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000689",
+      "roboskin_id": "ROBOSKIN.0206",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000690",
+      "roboskin_id": "ROBOSKIN.0207",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000691",
+      "roboskin_id": "ROBOSKIN.0208",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000692",
+      "roboskin_id": "ROBOSKIN.0209",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000693",
+      "roboskin_id": "ROBOSKIN.0210",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000694",
+      "roboskin_id": "ROBOSKIN.0211",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000695",
+      "roboskin_id": "ROBOSKIN.0212",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000696",
+      "roboskin_id": "ROBOSKIN.0213",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000697",
+      "roboskin_id": "ROBOSKIN.0214",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000698",
+      "roboskin_id": "ROBOSKIN.0215",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000699",
+      "roboskin_id": "ROBOSKIN.0216",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000700",
+      "roboskin_id": "ROBOSKIN.0217",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000701",
+      "roboskin_id": "ROBOSKIN.0218",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000702",
+      "roboskin_id": "ROBOSKIN.0219",
+      "english_description": "waist bracket",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000703",
+      "roboskin_id": "ROBOSKIN.0220",
+      "english_description": "-02 outer topology bracket",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000704",
+      "roboskin_id": "ROBOSKIN.0221",
+      "english_description": "kickme version torso frame",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000705",
+      "roboskin_id": "ROBOSKIN.0222",
+      "english_description": "kickme handle rubber plug -l",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000706",
+      "roboskin_id": "ROBOSKIN.0223",
+      "english_description": "kickme handle rubber plug -r",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000707",
+      "roboskin_id": "ROBOSKIN.0224",
+      "english_description": "kickme handle rubber sleeve",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000708",
+      "roboskin_id": "ROBOSKIN.0225",
+      "english_description": "handle _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000709",
+      "roboskin_id": "ROBOSKIN.0226",
+      "english_description": "vertical mount backplane shell",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000710",
+      "roboskin_id": "ROBOSKIN.0227",
+      "english_description": "kickme_ version battery guide bracket",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000711",
+      "roboskin_id": "ROBOSKIN.0228",
+      "english_description": "-02 kickme_ version main board bracket",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000712",
+      "roboskin_id": "ROBOSKIN.0229",
+      "english_description": "-02 EPP cushion layer",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000713",
+      "roboskin_id": "ROBOSKIN.0230",
+      "english_description": "-02 PC cushion bracket",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000714",
+      "roboskin_id": "ROBOSKIN.0231",
+      "english_description": "interactive head mounting bracket",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000716",
+      "roboskin_id": "ROBOSKIN.0232",
+      "english_description": "kickme version torso rear shell _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000717",
+      "roboskin_id": "ROBOSKIN.0233",
+      "english_description": "kickme version torso front shell _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000718",
+      "roboskin_id": "ROBOSKIN.0234",
+      "english_description": "Damiao orin bracket",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000722",
+      "roboskin_id": "ROBOSKIN.0235",
+      "english_description": "foot plate _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000723",
+      "roboskin_id": "ROBOSKIN.0236",
+      "english_description": "foot upper",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000740",
+      "roboskin_id": "ROBOSKIN.0237",
+      "english_description": "head light strip inlay panel _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000741",
+      "roboskin_id": "ROBOSKIN.0238",
+      "english_description": "motion head head _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000743",
+      "roboskin_id": "ROBOSKIN.0239",
+      "english_description": "-02 debug port soft rubber cover",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000744",
+      "roboskin_id": "ROBOSKIN.0240",
+      "english_description": "logo light cover _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000745",
+      "roboskin_id": "ROBOSKIN.0241",
+      "english_description": "auxiliary battery rear shell",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000746",
+      "roboskin_id": "ROBOSKIN.0242",
+      "english_description": "front shell latch",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000747",
+      "roboskin_id": "ROBOSKIN.0243",
+      "english_description": "rear shell latch",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000748",
+      "roboskin_id": "ROBOSKIN.0244",
+      "english_description": "auxiliary battery spring arm button _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000750",
+      "roboskin_id": "ROBOSKIN.0245",
+      "english_description": "-03 charger board mounting and locating bracket",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000765",
+      "roboskin_id": "ROBOSKIN.0246",
+      "english_description": "mirrored 97 limit ring",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000766",
+      "roboskin_id": "ROBOSKIN.0247",
+      "english_description": "97 limit ring",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000773",
+      "roboskin_id": "ROBOSKIN.0248",
+      "english_description": "ankle limit ring",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000782",
+      "roboskin_id": "ROBOSKIN.0249",
+      "english_description": "motion head bracket",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000783",
+      "roboskin_id": "ROBOSKIN.0250",
+      "english_description": "waist cable retention block",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000787",
+      "roboskin_id": "ROBOSKIN.0251",
+      "english_description": "KICKME motion head body _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000788",
+      "roboskin_id": "ROBOSKIN.0252",
+      "english_description": "KICKME motion head screw concealment cover _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000790",
+      "roboskin_id": "ROBOSKIN.0253",
+      "english_description": "KICKME version head face _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000818",
+      "roboskin_id": "ROBOSKIN.0254",
+      "english_description": "ankle limit ring 2",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000819",
+      "roboskin_id": "ROBOSKIN.0255",
+      "english_description": "interactive head - outer shell front cover _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000820",
+      "roboskin_id": "ROBOSKIN.0256",
+      "english_description": "-02 interactive head screen bottom bracket",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000821",
+      "roboskin_id": "ROBOSKIN.0257",
+      "english_description": "interactive head - screen top cover _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000822",
+      "roboskin_id": "ROBOSKIN.0258",
+      "english_description": "interactive head - upper outer shell bracket _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000823",
+      "roboskin_id": "ROBOSKIN.0259",
+      "english_description": "interactive head - lower outer shell bracket _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000824",
+      "roboskin_id": "ROBOSKIN.0260",
+      "english_description": "-02 interactive head SOC plate body bracket",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000825",
+      "roboskin_id": "ROBOSKIN.0261",
+      "english_description": "interactive head - upper trim cover _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000826",
+      "roboskin_id": "ROBOSKIN.0262",
+      "english_description": "interactive head - rear trim cover _CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000827",
+      "roboskin_id": "ROBOSKIN.0263",
+      "english_description": "interactive head - side trim cover -L_CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000828",
+      "roboskin_id": "ROBOSKIN.0264",
+      "english_description": "interactive head - side trim cover -R_CMF specification",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000830",
+      "roboskin_id": "ROBOSKIN.0265",
+      "english_description": "Wuji dexterous hand adapter",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000832",
+      "roboskin_id": "ROBOSKIN.0266",
+      "english_description": "lower shell",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000833",
+      "roboskin_id": "ROBOSKIN.0267",
+      "english_description": "button",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000834",
+      "roboskin_id": "ROBOSKIN.0268",
+      "english_description": "upper shell 2",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000895",
+      "roboskin_id": "ROBOSKIN.0269",
+      "english_description": "hip fan cable guard block _01 revision",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000896",
+      "roboskin_id": "ROBOSKIN.0270",
+      "english_description": "counterweight connection block",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000925",
+      "roboskin_id": "ROBOSKIN.0271",
+      "english_description": "insole",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000926",
+      "roboskin_id": "ROBOSKIN.0272",
+      "english_description": "motion head body",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000927",
+      "roboskin_id": "ROBOSKIN.0273",
+      "english_description": "motion head base mounting adapter",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000928",
+      "roboskin_id": "ROBOSKIN.0274",
+      "english_description": "neck cable guide clip",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000929",
+      "roboskin_id": "ROBOSKIN.0275",
+      "english_description": "main controller FPC clamping plate",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000930",
+      "roboskin_id": "ROBOSKIN.0276",
+      "english_description": "backplane FPC clamping plate",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000931",
+      "roboskin_id": "ROBOSKIN.0277",
+      "english_description": "LOGO light light blocking foam",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000946",
+      "roboskin_id": "ROBOSKIN.0278",
+      "english_description": "shin front cover plate",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000947",
+      "roboskin_id": "ROBOSKIN.0279",
+      "english_description": "shin rear cover plate",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000948",
+      "roboskin_id": "ROBOSKIN.0280",
+      "english_description": "side cable channel",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000949",
+      "roboskin_id": "ROBOSKIN.0281",
+      "english_description": "motion control expansion board",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000976",
+      "roboskin_id": "ROBOSKIN.0282",
+      "english_description": "Mingmei battery bay upper segment",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000977",
+      "roboskin_id": "ROBOSKIN.0283",
+      "english_description": "Mingmei battery bay lower segment",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000979",
+      "roboskin_id": "ROBOSKIN.0284",
+      "english_description": "collector board isolation cover",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000980",
+      "roboskin_id": "ROBOSKIN.0285",
+      "english_description": "fan bracket",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000981",
+      "roboskin_id": "ROBOSKIN.0286",
+      "english_description": "interactive head adhesive light blocking glass",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000982",
+      "roboskin_id": "ROBOSKIN.0287",
+      "english_description": "screen damping foam",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.M000983",
+      "roboskin_id": "ROBOSKIN.0288",
+      "english_description": "interactive head cable channel",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000014",
+      "roboskin_id": "ROBOSKIN.0289",
+      "english_description": "cross roller slewing bearing RU28 XRU1008",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000282",
+      "roboskin_id": "ROBOSKIN.0290",
+      "english_description": "R type cable clip CC-1",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000283",
+      "roboskin_id": "ROBOSKIN.0291",
+      "english_description": "square cable tie mount 12X12X4",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.A000016",
+      "roboskin_id": "ROBOSKIN.0292",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.D000020",
+      "roboskin_id": "ROBOSKIN.0293",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.D000027",
+      "roboskin_id": "ROBOSKIN.0294",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.D000031",
+      "roboskin_id": "ROBOSKIN.0295",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.D000048",
+      "roboskin_id": "ROBOSKIN.0296",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000191",
+      "roboskin_id": "ROBOSKIN.0297",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000225",
+      "roboskin_id": "ROBOSKIN.0298",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000001",
+      "roboskin_id": "ROBOSKIN.0299",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000002",
+      "roboskin_id": "ROBOSKIN.0300",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000003",
+      "roboskin_id": "ROBOSKIN.0301",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000008",
+      "roboskin_id": "ROBOSKIN.0302",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000009",
+      "roboskin_id": "ROBOSKIN.0303",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000011",
+      "roboskin_id": "ROBOSKIN.0304",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000015",
+      "roboskin_id": "ROBOSKIN.0305",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000017",
+      "roboskin_id": "ROBOSKIN.0306",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000018",
+      "roboskin_id": "ROBOSKIN.0307",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000019",
+      "roboskin_id": "ROBOSKIN.0308",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000020",
+      "roboskin_id": "ROBOSKIN.0309",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000021",
+      "roboskin_id": "ROBOSKIN.0310",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000022",
+      "roboskin_id": "ROBOSKIN.0311",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000024",
+      "roboskin_id": "ROBOSKIN.0312",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000029",
+      "roboskin_id": "ROBOSKIN.0313",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000031",
+      "roboskin_id": "ROBOSKIN.0314",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000032",
+      "roboskin_id": "ROBOSKIN.0315",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000033",
+      "roboskin_id": "ROBOSKIN.0316",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000034",
+      "roboskin_id": "ROBOSKIN.0317",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000038",
+      "roboskin_id": "ROBOSKIN.0318",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000039",
+      "roboskin_id": "ROBOSKIN.0319",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000042",
+      "roboskin_id": "ROBOSKIN.0320",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000043",
+      "roboskin_id": "ROBOSKIN.0321",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000044",
+      "roboskin_id": "ROBOSKIN.0322",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000047",
+      "roboskin_id": "ROBOSKIN.0323",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000048",
+      "roboskin_id": "ROBOSKIN.0324",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000049",
+      "roboskin_id": "ROBOSKIN.0325",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000050",
+      "roboskin_id": "ROBOSKIN.0326",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000051",
+      "roboskin_id": "ROBOSKIN.0327",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000053",
+      "roboskin_id": "ROBOSKIN.0328",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000054",
+      "roboskin_id": "ROBOSKIN.0329",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000055",
+      "roboskin_id": "ROBOSKIN.0330",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000057",
+      "roboskin_id": "ROBOSKIN.0331",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000058",
+      "roboskin_id": "ROBOSKIN.0332",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000059",
+      "roboskin_id": "ROBOSKIN.0333",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000060",
+      "roboskin_id": "ROBOSKIN.0334",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000061",
+      "roboskin_id": "ROBOSKIN.0335",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000062",
+      "roboskin_id": "ROBOSKIN.0336",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000063",
+      "roboskin_id": "ROBOSKIN.0337",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000065",
+      "roboskin_id": "ROBOSKIN.0338",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000067",
+      "roboskin_id": "ROBOSKIN.0339",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000068",
+      "roboskin_id": "ROBOSKIN.0340",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000072",
+      "roboskin_id": "ROBOSKIN.0341",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000074",
+      "roboskin_id": "ROBOSKIN.0342",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000087",
+      "roboskin_id": "ROBOSKIN.0343",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000093",
+      "roboskin_id": "ROBOSKIN.0344",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000117",
+      "roboskin_id": "ROBOSKIN.0345",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000234",
+      "roboskin_id": "ROBOSKIN.0346",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000242",
+      "roboskin_id": "ROBOSKIN.0347",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000243",
+      "roboskin_id": "ROBOSKIN.0348",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000244",
+      "roboskin_id": "ROBOSKIN.0349",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000245",
+      "roboskin_id": "ROBOSKIN.0350",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000246",
+      "roboskin_id": "ROBOSKIN.0351",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000262",
+      "roboskin_id": "ROBOSKIN.0352",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000263",
+      "roboskin_id": "ROBOSKIN.0353",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000264",
+      "roboskin_id": "ROBOSKIN.0354",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000265",
+      "roboskin_id": "ROBOSKIN.0355",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000268",
+      "roboskin_id": "ROBOSKIN.0356",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000269",
+      "roboskin_id": "ROBOSKIN.0357",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000271",
+      "roboskin_id": "ROBOSKIN.0358",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000272",
+      "roboskin_id": "ROBOSKIN.0359",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000274",
+      "roboskin_id": "ROBOSKIN.0360",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000275",
+      "roboskin_id": "ROBOSKIN.0361",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000276",
+      "roboskin_id": "ROBOSKIN.0362",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000277",
+      "roboskin_id": "ROBOSKIN.0363",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000285",
+      "roboskin_id": "ROBOSKIN.0364",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000286",
+      "roboskin_id": "ROBOSKIN.0365",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000287",
+      "roboskin_id": "ROBOSKIN.0366",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000288",
+      "roboskin_id": "ROBOSKIN.0367",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.P000289",
+      "roboskin_id": "ROBOSKIN.0368",
+      "english_description": "Source part; consult drawing and BOM",
+      "identity_scope": "part family; revision and source path remain separate"
+    },
+    {
+      "upstream_part_id": "YCL.E000194",
+      "roboskin_id": "ROBOSKIN.0369",
+      "english_description": "Electrical source identifier; resolve specification against source BOM before procurement",
+      "identity_scope": "document alias only; source specification review required"
+    },
+    {
+      "upstream_part_id": "YCL.E000196",
+      "roboskin_id": "ROBOSKIN.0370",
+      "english_description": "Electrical source identifier; resolve specification against source BOM before procurement",
+      "identity_scope": "document alias only; source specification review required"
+    },
+    {
+      "upstream_part_id": "YCL.M00023",
+      "roboskin_id": "ROBOSKIN.0371",
+      "english_description": "Incomplete mechanical source identifier; unresolved source typo; not procurement-released",
+      "identity_scope": "document alias only; source specification review required"
+    }
+  ],
+  "new_design_range": "ROBOSKIN.9000-9999",
+  "note": "Project IDs change. Manufacturer MPNs, standards, pin names and attribution do not."
+}

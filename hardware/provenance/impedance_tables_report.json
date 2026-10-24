@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "applied": true,
+  "destination_archive": "hardware/02_PCB/03_RBE-MAIN-RK3588S/02_Gerber_MAIN_2026-09-18.zip",
+  "original_source_archive_sha256": "82b0acbd7f0c6d41e2bad50aa5b96da6def8993febe1f8d074e1229abb96147a",
+  "before_archive_sha256": "85243accf65e0f1228a2a2d72bdf763937f75e62e4cb2b0c15b068425b840a47",
+  "final_archive_sha256": "85243accf65e0f1228a2a2d72bdf763937f75e62e4cb2b0c15b068425b840a47",
+  "structured_data_sha256": "bef534642c57ad504a0a49c26350c405701122438e4abe77c805e495d314b9c8",
+  "font_sha256": {
+    "NotoSansHebrew-Regular.ttf": "436900d5ad77d33e4234247f3076eaecd25b92b9bea0519514f684140e3566a7",
+    "DejaVuSans.ttf": "ae7b7855e115a5966d8b1b3f80f254ccc117ec86f9965e202ee2940453837280"
+  },
+  "rendered_individual_value_or_blank_cells_checked": 82,
+  "replaced_png_members": [
+    {
+      "name": "Impedance_Stackup.png",
+      "source_member": "\u963b\u6297\u53e0\u5c42.png",
+      "source_image_sha256": "57e5123496ef5a6bdaa4d2a110aac574831c35385d597a3a1c780ba31f9c2f36",
+      "output_sha256": "5c02b7c8d2a22cd26a89da7af70c20bcf45b413539cd9eb50eb18d0f71373a6f",
+      "asset": {
+        "pdf": "hardware/provenance/impedance_tables/Impedance_Stackup.he.pdf",
+        "png": "hardware/provenance/impedance_tables/Impedance_Stackup.he.png",
+        "png_sha256": "5c02b7c8d2a22cd26a89da7af70c20bcf45b413539cd9eb50eb18d0f71373a6f",
+        "pdf_sha256": "977b55a24eb03219dddbec61d23f8bcdd0122a429dd28ea9023550fc76a2188b"
+      }
+    },
+    {
+      "name": "Impedance_Traces.png",
+      "source_member": "\u963b\u6297\u7ebf.png",
+      "source_image_sha256": "d3a25f351fe40291f2d7df03ecc2c75d6b12dd6b06c14f362b717c9f47948ba3",
+      "output_sha256": "b226bfa9cbf2d4bfe83a6e1170ccfc517275cb0fe31f5f64cb4db891e8a539c8",
+      "asset": {
+        "pdf": "hardware/provenance/impedance_tables/Impedance_Traces.he.pdf",
+        "png": "hardware/provenance/impedance_tables/Impedance_Traces.he.png",
+        "png_sha256": "b226bfa9cbf2d4bfe83a6e1170ccfc517275cb0fe31f5f64cb4db891e8a539c8",
+        "pdf_sha256": "07aae9d03a8c3b8e7187ed6b8c80a65a4eca67a6fb66c00bc3ddb43a4c39ed6d",
+        "source_diagram_crops": [
+          {
+            "row": 1,
+            "source_crop_xyxy": [
+              1325,
+              156,
+              1387,
+              211
+            ],
+            "crop_sha256": "5560a79c9312141514dbf26d23cefa6ca18e47a3508eaba6b5d76abeb70db6dd",
+            "path": "hardware/provenance/impedance_tables/impedance_diagram_01.png"
+          },
+          {
+            "row": 2,
+            "source_crop_xyxy": [
+              1325,
+              228,
+              1387,
+              283
+            ],
+            "crop_sha256": "8bdf52fe39e3ea17dfada7180ef1dd92f3e05bc71c086ea808dfb0f9083006c7",
+            "path": "hardware/provenance/impedance_tables/impedance_diagram_02.png"
+          },
+          {
+            "row": 3,
+            "source_crop_xyxy": [
+              1325,
+              299,
+              1387,
+              354
+            ],
+            "crop_sha256": "14d1dc5f6f4a9364626a348e76776d8927037bdffddcecc5581de5191ae072c5",
+            "path": "hardware/provenance/impedance_tables/impedance_diagram_03.png"
+          },
+          {
+            "row": 4,
+            "source_crop_xyxy": [
+              1325,
+              371,
+              1387,
+              426
+            ],
+            "crop_sha256": "0343c452098f68bf76a2bf705f1da3564a9863473ac1088e3895e5ea3debd4f5",
+            "path": "hardware/provenance/impedance_tables/impedance_diagram_04.png"
+          },
+          {
+            "row": 5,
+            "source_crop_xyxy": [
+              1325,
+              442,
+              1387,
+              497
+            ],
+            "crop_sha256": "e3afb415b641a38845c811574d9f5495e3cce539be26361bc0e2020da8e58b88",
+            "path": "hardware/provenance/impedance_tables/impedance_diagram_05.png"
+          },
+          {
+            "row": 6,
+            "source_crop_xyxy": [
+              1325,
+              513,
+              1387,
+              568
+            ],
+            "crop_sha256": "37ab685344271eeb93dbb80a8a247c3354fb4a48f45bf1c15e8202af9e6f0a30",
+            "path": "hardware/provenance/impedance_tables/impedance_diagram_06.png"
+          },
+          {
+            "row": 7,
+            "source_crop_xyxy": [
+              1325,
+              585,
+              1387,
+              640
+            ],
+            "crop_sha256": "e42d79328177daefaf7d99453dcb4acca5b1d18afe9e4b0f0521ce382f1243d7",
+            "path": "hardware/provenance/impedance_tables/impedance_diagram_07.png"
+          },
+          {
+            "row": 8,
+            "source_crop_xyxy": [
+              1325,
+              656,
+              1387,
+              711
+            ],
+            "crop_sha256": "624708202e7ba4db4691e0064916cb378ef1c46ab995338579a9123508901437",
+            "path": "hardware/provenance/impedance_tables/impedance_diagram_08.png"
+          }
+        ]
+      }
+    }
+  ],
+  "unchanged_other_members": {
+    "Drill_NPTH_Through.DRL": true,
+    "Drill_PTH_Through.DRL": true,
+    "Drill_PTH_Through_Via.DRL": true,
+    "FlyingProbeTesting.json": true,
+    "Gerber_BoardOutlineLayer.GKO": true,
+    "Gerber_BottomLayer.GBL": true,
+    "Gerber_BottomPasteMaskLayer.GBP": true,
+    "Gerber_BottomSilkscreenLayer.GBO": true,
+    "Gerber_BottomSolderMaskLayer.GBS": true,
+    "Gerber_DocumentLayer.GDL": true,
+    "Gerber_DrillDrawingLayer.GDD": true,
+    "Gerber_InnerLayer1.G1": true,
+    "Gerber_InnerLayer2.G2": true,
+    "Gerber_InnerLayer3.G3": true,
+    "Gerber_InnerLayer4.G4": true,
+    "Gerber_TopLayer.GTL": true,
+    "Gerber_TopPasteMaskLayer.GTP": true,
+    "Gerber_TopSilkscreenLayer.GTO": true,
+    "Gerber_TopSolderMaskLayer.GTS": true,
+    "Layer_Stackup.txt": true
+  },
+  "all_other_members_including_gerber_and_drill_byte_identical": true,
+  "no_electrical_recalculation": true,
+  "source_archive_unmodified": true,
+  "limitations": [
+    "\u05e2\u05e8\u05db\u05d9 W1/S1/D1 \u05de\u05d5\u05e2\u05ea\u05e7\u05d9\u05dd \u05dc\u05dc\u05d0 \u05d9\u05d7\u05d9\u05d3\u05d5\u05ea: \u05d9\u05d7\u05d9\u05d3\u05d5\u05ea\u05d9\u05d4\u05dd \u05d0\u05d9\u05e0\u05df \u05de\u05d5\u05d3\u05e4\u05e1\u05d5\u05ea \u05d1\u05ea\u05de\u05d5\u05e0\u05ea \u05d4\u05de\u05e7\u05d5\u05e8, \u05d5\u05d0\u05d9\u05df \u05dc\u05d4\u05e0\u05d9\u05d7 mil.",
+    "\u05d4\u05e2\u05e8\u05da 0.5 \u05d1\u05e9\u05d3\u05d4 \u05e1\u05d1\u05d5\u05dc\u05ea \u05d4\u05e2\u05db\u05d1\u05d4 \u05de\u05d5\u05e4\u05d9\u05e2 \u05dc\u05dc\u05d0 \u05d9\u05d7\u05d9\u05d3\u05d4 \u05d0\u05d5 \u05e1\u05d9\u05de\u05df \u05d0\u05d7\u05d5\u05d6; \u05e0\u05e9\u05de\u05e8 \u05dc\u05dc\u05d0 \u05d4\u05e1\u05e7\u05d4.",
+    "null \u05de\u05e6\u05d9\u05d9\u05df \u05ea\u05d0 \u05e8\u05d9\u05e7 \u05d1\u05de\u05e7\u05d5\u05e8; / \u05e0\u05e9\u05de\u05e8 \u05db\u05e1\u05d9\u05de\u05df \u05e0\u05e4\u05e8\u05d3 \u05d5\u05d0\u05d9\u05e0\u05d5 \u05d0\u05e4\u05e1.",
+    "0/100 \u05d4\u05d5\u05d0 \u05de\u05d5\u05e0\u05d4 \u05ea\u05d5\u05d5\u05d9\u05dd \u05e9\u05dc \u05e9\u05d3\u05d4 \u05d4\u05e2\u05e8\u05d5\u05ea \u05e8\u05d9\u05e7 \u05d1\u05de\u05de\u05e9\u05e7 \u05d4\u05de\u05e7\u05d5\u05e8, \u05d5\u05dc\u05d0 \u05e2\u05e8\u05da \u05d7\u05e9\u05de\u05dc\u05d9.",
+    "\u05d0\u05d9\u05d5\u05e8\u05d9 \u05d7\u05ea\u05da \u05d6\u05e2\u05d9\u05e8\u05d9\u05dd \u05d1\u05d0\u05e0\u05d2\u05dc\u05d9\u05ea \u05e0\u05e9\u05de\u05e8\u05d9\u05dd \u05db\u05d7\u05d9\u05ea\u05d5\u05db\u05d9\u05dd \u05de\u05ea\u05de\u05d5\u05e0\u05ea \u05d4\u05de\u05e7\u05d5\u05e8; \u05d0\u05d9\u05db\u05d5\u05ea \u05d4\u05de\u05e7\u05d5\u05e8 \u05d0\u05d9\u05e0\u05d4 \u05de\u05d0\u05e4\u05e9\u05e8\u05ea \u05ea\u05de\u05dc\u05d5\u05dc \u05d0\u05de\u05d9\u05df \u05e9\u05dc \u05db\u05dc \u05e1\u05d9\u05de\u05e0\u05d9\u05d4\u05dd, \u05d5\u05dc\u05db\u05df \u05dc\u05d0 \u05e0\u05d5\u05d7\u05e9\u05d5 \u05e4\u05e8\u05d8\u05d9\u05dd.",
+    "H/HOZ \u05d5\u05beH/H \u05e0\u05e9\u05de\u05e8\u05d9\u05dd \u05db\u05e1\u05d9\u05de\u05d5\u05e0\u05d9 \u05d7\u05d5\u05de\u05e8 \u05e9\u05dc \u05d4\u05de\u05e7\u05d5\u05e8; \u05dc\u05d0 \u05d1\u05d5\u05e6\u05e2\u05d4 \u05d4\u05de\u05e8\u05d4 \u05d0\u05d5 \u05d4\u05e8\u05d7\u05d1\u05d4 \u05e9\u05dc \u05d4\u05e1\u05d9\u05de\u05d5\u05e0\u05d9\u05dd."
+  ]
+}

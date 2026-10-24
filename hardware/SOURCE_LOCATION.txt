@@ -1,0 +1,17 @@
+ROBOSKIN — מיקום המקור והתאמות / Source locations and modifications
+
+מקור נעול / Pinned upstream source:
+https://github.com/Roboparty/rp1_hardware/tree/18ca38832cde37a8a4349cff8fbb565f05c6f254
+
+קובצי העבודה המותאמים / Adapted working source:
+https://github.com/oznav2/tectile_skin/tree/main/hardware
+
+רישוי וייחוס / Licensing and attribution:
+LICENSE
+LICENSES.md
+LICENSES.en.md
+provenance/file_manifest.json
+provenance/delivery_inventory.json
+
+השינויים מתועדים ברישום המקור; אין אישור לייצור או חסות של בעל המקור.
+Changes are documented in the provenance records; no manufacturing approval or upstream endorsement is implied.

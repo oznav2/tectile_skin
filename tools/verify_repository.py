@@ -29,6 +29,22 @@ if sorted(nums)!=list(range(1,85)):errors.append('Research register must contain
 saved=json.loads((ROOT/'engineering/model_results.json').read_text())
 if saved!=calculate():errors.append('Stored engineering results differ from executable model')
 if (ROOT/'.gitmodules').exists():errors.append('Standalone repository must not have submodules')
+languages=json.loads((ROOT/'docs/languages.json').read_text())
+for pair in languages['pairs']:
+ he=ROOT/pair['hebrew'];en=ROOT/pair['english']
+ if not he.is_file() or not en.is_file():
+  errors.append(f'Missing language companion: {pair}');continue
+ hs=he.read_text();es=en.read_text()
+ if not hs.startswith('<div dir="rtl" lang="he">') or not re.search(r'[\u0590-\u05ff]',hs):
+  errors.append(f'Primary document must be Hebrew with RTL layout: {pair["hebrew"]}')
+ code=lambda s:re.findall(r'^```[^\n]*\n(.*?)^```',s,re.M|re.S)
+ if code(hs)!=code(es):errors.append(f'Code blocks differ between language versions: {pair["hebrew"]}')
+primary={str(p.relative_to(ROOT)) for p in ROOT.rglob('*.md') if '.git' not in p.parts and not p.name.endswith(('.en.md','.he.md'))}
+if primary!={p['hebrew'] for p in languages['pairs']}:errors.append('Language manifest does not cover all primary Markdown documents')
+manifest=json.loads((ROOT/'hardware/provenance/file_manifest.json').read_text())
+for row in manifest['files']:
+ if not (ROOT/row['destination_path']).is_file():errors.append(f'Missing imported hardware file: {row["destination_path"]}')
+if len(manifest['files'])!=550:errors.append('Pinned hardware source must account for all 550 source files')
 if errors:
  print('\n'.join(errors));raise SystemExit(1)
-print('Repository checks passed: portable local links, English filenames, no Chinese text, no submodules, reproducible estimates.')
+print('Repository checks passed: bilingual Markdown and code, portable links, English filenames, no Chinese text, all 550 source hardware files, no submodules, reproducible estimates.')

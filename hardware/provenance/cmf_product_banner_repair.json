@@ -1,0 +1,1267 @@
+{
+  "schema_version": 1,
+  "changed_files": 97,
+  "files": [
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0078_waist_number_1_(LS_revision_)_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "4172d09208abedcedae57fbf7e894767a2423166ca39c569b9775ab5f6100c53",
+      "after_sha256": "24bf7e3624c9463cc01c6ac96b32d8ad1e4441c1be3a2b21df6b348fecf9f951",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0079_waist_number_1_clamp_(LS_revision_)_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "3eb9d0ed8b02d3c37a12e317409cf0d325bed821163ef936aa42b1c184f5cdc2",
+      "after_sha256": "360d6c043f39fdd406aa25532b24b90201c73dc05194a435c5ed0bb20ee401b2",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0080_hip_joint_front_(LS_revision_)_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "50c0e86b1ccc4679c86590e95867c57ea0970cfe25fea6e5c13993994f0b998c",
+      "after_sha256": "aadc769b39b1d32927c14b9946d975eafe5d18fe959c6aac89ecbcdf3ca0afdf",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0081_hip_joint_rear_(LS_revision_)_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "34946072871e421251dc18916e40f427831f98fde291a82194b7363c6fc0020c",
+      "after_sha256": "88970fa8733aeb493905d076bf97e440e8b4c95a1ec9a6c810b7a10d7cf953e5",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0082_hip_joint_left_(LS_revision_)_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "ea8db53d20f2a1f06e8c8a39cd59f2b989b66b7d6ed10e312a9e0ed5e287b06b",
+      "after_sha256": "7eaadf5da14f45e76b974d9eb7943e1924d018c79d24cf97980a0cde21954e27",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0083_hip_joint_right_(LS_revision_)_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "9a2cb3ad13b639506bc301f3cef55483d3d5b38fe6437fd47249ccd3f49c70c6",
+      "after_sha256": "38f90824d0c9164723b3596df560a3fd6d39483dc437e48f0919c69f84adf8ee",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0084_hip_joint_limit_ring_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "1b662d17a6577f364660414b2d2924ce53eb5d8c24698396b3fa232052ba2696",
+      "after_sha256": "7262d08a40a9abb611c9048e9be365fe67329ba7bc1dff34408908a578df5d59",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0085_hip_joint_motor_cover_plate_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "29bf8eead90f27adc03b030b14f61ced1f3208605a5aaa3f982a92ee03419e9e",
+      "after_sha256": "bd0c795d4d3edffc0bd76741c64b0919814258b31c1216d7b2c7a59e83fd11c7",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0087_hip_joint_left_clamp_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "8a769bd461c980380df5bbcd5b59acbb81fd18425379f9b9c5af5e26f13e2531",
+      "after_sha256": "c25f73c1a11276d7fa1e318da40757db7c68cdfcbc297f12910f3c1b7fbac0c1",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0088_hip_joint_right_clamp_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "bfea034014846e1bca61932a1fb44e381fc6f7caf6f55d957f6bb52893cb2878",
+      "after_sha256": "81951380a62239e5d8eadb80d105ed5b7afbd8f32a78ebf541ba2299f4645631",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0103_hip_joint_front_cover_plate_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "d966cd5c4ecb30c0bbbf12c88b8b633c5e0e0befa6d55a79b24e3649cbd9c040",
+      "after_sha256": "1ed275749175a1884f61ee73c58048d2a1298e071dd7dc0722ba7a1b3ae13209",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0001_forearm_lower_body_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "285d851729443e3f9183090be728c46db8f12bad500263027c1399f419f2acf8",
+      "after_sha256": "c4f9e1f535fe45fbf22e4334c90ef797f0e9c79e01417df63c0c16a819dcf705",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0112_wrist_end_body_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "848f63fced06d82bee9e2fa5240dc78e7f87b2391db69def3c74bfd1a142096b",
+      "after_sha256": "40b1a22c29b697d2eee898b46a5612e7464682dad4aad17e9e0420243df46946",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0113_adapter_board_retainer_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "2660a2f3154651fd22c4f3128e594702c9c8895ce4ff125c2a9e8cebbef50970",
+      "after_sha256": "19d2c5668fbf54fef742f76d627e1e24ea6ab6de439ec4e32e49d2f16ae397fa",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0114_RP_Hand_adapter_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "cb8d0f43869ee8efff100ca66b04f977eebb758153b72c7de33ac8537175db6d",
+      "after_sha256": "a2df4a01e83088046416fa6871c3902013d231e9497f2261dbcc29cbe660f2aa",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0124_shoulder_clamp_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "0798346c8e0416b7aafe0614a5a9862bd96e32c3fc719b58f2b89228a315d5a1",
+      "after_sha256": "c4c34b48d2c29b9be6d082abdbda1ee50b4e77a39528140e0effdf461dc7aa1b",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0132_cosmetic_hand_body_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "694f1ce59aa488164632a1a750dee728cd18c0999c0510ca8c4c694b289e6f9b",
+      "after_sha256": "91ce13e2152e0ac305249786cfeb4cc2b5b5e195bdb3b4fd696eed1ebf5d4d6b",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0133_cosmetic_hand_cover_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "4efff41292e612841b855e988385baaef48f13aa0db0ced44b82415173c44056",
+      "after_sha256": "499ec2413ff8fdfa4d6e6731b9febaff978a41ea9aa74d2726effcc4c0701ae0",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0134_mirrored_cosmetic_hand_body_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "913eae79a9b6b3941c9e3afd076ce2222536870b7b6af8ff8393d647eed5adc2",
+      "after_sha256": "b7bd56f2985d553b239a3bd4e6c12d071f57b0577037a0ade8555ed94f09cc08",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0136_mirrored_cosmetic_hand_cover_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "5427653ede03770ec313c3aa73263f6dbff80707f67f3d0a8e386706927e4e7e",
+      "after_sha256": "18832b989c2882a223c43f393d2eef9ed29fee188cdd705c4c51dd0f100281ea",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0143_hip_joint_rear_cover_plate_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "ed96dcdd203512caff99e6aa47d6be22b6a41ff63a9b4325b949ee3862fcba58",
+      "after_sha256": "22d25d621713d54745c34757c216cf79ff3b5630c43830592d1faf563df91629",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0146_shin_front_cover_plate_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "6681be9b637624e2a6ff2d16b427abb814a1972424081dae6b19bbb6aca6f372",
+      "after_sha256": "95b0838a3693051e73deab064825999a5d177fb633efd18cd661b81c481ae8a3",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0147_shin_rear_cover_plate_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "4f733a435356d26c1738c8c05b3f1622846f6141e59e8ddf0f7c360498b51f0f",
+      "after_sha256": "811cb913830ad7d9d6da101c5f00394319a8e413e68a2999aa87d5a4f806e2aa",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0148_shin_motor_spacer_block_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "ff7f34a7fa48bd323cbdd67215f66932a1ce03f6990f518c87cbf3cc9e1a5cb4",
+      "after_sha256": "43e0692938e5389fe7bf40974a91a5934ed3cfe0399f22b0d96b20bb71c96e8d",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0149_shin_body_right_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "d8ee0204503841282e869ee8a62b809389860b3ec306b3ca16d75fcb99d928da",
+      "after_sha256": "2a08ccf5b59f9585374e6ba04696053fc3c2d7e9c2fd7f2e23b02e7828882327",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0150_shin_body_left_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "0f6c0aff258942a7b8eb06d455ee6fb8621aa643cc5c82031eb25b66bbdc6180",
+      "after_sha256": "d15ad474ee9fc37cca252b7b0b5cc3a223c8d82b1f84f9a6a67193e5f8061fc4",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0151_shin_ankle_spacer_block_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "d3bcc2db9dcaad61f8038cf5522e13e73d687e681e81d111169ebd0cd6fed88a",
+      "after_sha256": "ad398371bb9a7261d6ea1e4871885422ac2a340a77a0086182ac75680e11080b",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0152_mirrored_shin_ankle_spacer_block_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "9f41606e0582ecad8f73e65f2ea7c5dd1642f4cefc64570b04894aec8d46afac",
+      "after_sha256": "b0e62dc34c1c8a1d48a673abca8a840bb1377d2e0b0d877576b0815989cf2a18",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0153_mirrored_shin_body_left_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "55c55b571f6b5cc563e6b2d1f018963d854980718e85e9000d3157a2bb18c512",
+      "after_sha256": "462d12bd3974a8529b474800c815328e8a91679759814459890c8b9377557f46",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0154_mirrored_shin_body_right_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "caf32a96d97879ef3b0c12dd4f8c195892c8f6d4fd33182e5b50828733f95cd9",
+      "after_sha256": "a24a27d312e122163ab77d5317a01dbf8424f72c4977254f187e85df6cfc9b99",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0155_mirrored_shin_motor_spacer_block_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "a84d54fb7818fe7241282655731037eb9c99a603a0594cd2c7495ca90766b0c5",
+      "after_sha256": "9bd9d0b86d17fb9b51f7277e49b909c132bb74e6fd020de311ecfc2cc7be1316",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0156_wrist_body_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "49969735914388ea2b25f17085a4cceaf5c5223b92ef830084970a88834ccbe5",
+      "after_sha256": "1ad7c92704deda795f51e3117ab95c38f0867954ebee02d6e0216dfc90f92f08",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0157_mirrored_wrist_body_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "7429edcb175dd4a2b803763993190dc921dd3d6f9e7072ef33960657bf89f812",
+      "after_sha256": "99c0ae469c0c4e6461a542c17b41d8708cd20f722607b9db3958ca50833566b4",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0158_wrist_upper_clamp_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "3d5dd21a5b71666b4204644fa6cd15b1730849e6e4080cc9abb8e68398fa1b69",
+      "after_sha256": "b3aa34a0eea514bd84f85236346886e0a596e2615a0769ac14e6674e77762c64",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0159_wrist_lower_clamp_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "5c77135b05e98f26727be8e9532749c365b39e7609f8e8e7250089111945af83",
+      "after_sha256": "08d5b70a84415d59d1f18a1939e13e68b9f065d3f81a564fdaf977c0a3006e45",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0160_thigh_clamp_rear_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "2557fcd5151a4c89dcac96ac0081e37883cc719df9bcd4c4bd7738e5ca657684",
+      "after_sha256": "d2cdc8a78e3494736ed0c26396b46fbacada1deb9ab4c596b52e2e3bf1d85a19",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0161_thigh_clamp_front_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "f57d26a0dd693624359541710536df09ad1492d267fa8b3ebc52a41ad316eb3d",
+      "after_sha256": "46391f2e6602fb6c2f1f6c18dedb9e0a00154b1b789cf5d86e881b417c1db32e",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0162_thigh_lower_body_right_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "11aaee8733ac478056afdbd30610a85500630e93b236f38ad4c96462fc0bc840",
+      "after_sha256": "5579641eeed3e4b4d59a587a9dd983f96e33385cab1823a38751cc8db067c76b",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0163_thigh_lower_cover_plate_left_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "bd1dd23b805d128477395f04c0706c9d0a5cab8ff94f5117baf6d72fa238cfb3",
+      "after_sha256": "6638c3f40fb36e314e3f60203ed6ece29c1600b2e37ccd44cc6c964d0e736612",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0164_thigh_lower_cover_plate_right_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "d323972fb0b0d69b2c343015abe1ed1551844996cc88dca7425238c1ac6141b9",
+      "after_sha256": "047fa5271d10d19a3eca9b2a1de27de249e31343e294d390f569b0dd8b5abd4c",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0173_75_shoulder_clamp_(01_revision_)_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "232fe192910d5ce7be84216ace740cd69afadc1915d3cb23e8e8f01fe21a1bae",
+      "after_sha256": "51e2daf0de508f38d8335161eaeb61e095f7579ddf61106b87ff9c66e7b2963b",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0174_75_shoulder_body_(01_revision_)_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "2561c211646b94978f23bad77f1a4f14f65091ba4aa68ecc68f9e610579a8655",
+      "after_sha256": "60dff87a753383d98ecf829638a86ce6242af92fecd12c388d1e6e67628818ca",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0175_upper_arm_upper_body_(01_revision_)_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "ee1c63f412c048e0630c00bdf93ffdf5015f12b0a99fceda3f09bc571298206b",
+      "after_sha256": "b75dc5d42966308f4640d227d0bff6eb3ca28a4df85867350fdc47a87316d389",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0176_upper_arm_upper_clamp_(01_revision_)_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "9e0b18dad065eff79ef171c15369dada8c7d11b6e202580de6ce99704dd9261a",
+      "after_sha256": "07427c55b6dc37c0ebb0f6eb2a9edd720d5fb343e3f0454633a82986e6dccfac",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0177_upper_arm_lower_front_segment_(01_revision_)_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "b756ebf6fb6406c73b146b786299e983488d946f648be249114fb6ce06912b64",
+      "after_sha256": "b91cd7b5fe481a7d6ab474ff1dd403b8fb53c8846afd68823b7214287ab9d24d",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0178_upper_arm_lower_rear_segment_(01_revision_)_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "8aada2eb8c8716333b65dd9f71b8984eaa6d4322f3023cbacd4a3ce8bcbba2bf",
+      "after_sha256": "4f390f218db8262e1c58f715727db262d84ffcb008aa8aa514f5aac7f4b2e517",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0179_forearm_upper_body_left_(02_revision_)_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "2670c782201aa991ebfe3a1785551b01099213a688b0fb27bb1a4ad812c97571",
+      "after_sha256": "da0f75319f8d641cea2b00e3df6a31c2dfd7fb28d66214acf6ca982c706b87ed",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0180_forearm_upper_body_right_(02_revision_)_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "2d0de241c7a872cc3f3c5ef7ad7642eaab71a8f002a2a1865ed93df371a8661b",
+      "after_sha256": "756fd03136f80b89fc4be5bb33c1eb75870cbc2d85358d7bbc4ad39ed7e0ef86",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0181_mirrored_forearm_upper_body_left_(02_revision_)_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "022f4973fc91ba8df06d5b3303beb47921b35a6a78a1bc8d023201b67d54f8d1",
+      "after_sha256": "077b01ee748ff432abdf449e991cdf11da9aaa0eeb3696e4dbee98c0644f7327",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0182_mirrored_forearm_upper_body_right_(02_revision_)_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "4d6b697f17b87aab340f57a6a120922be83f9f74f8b0b757eeb758522589d816",
+      "after_sha256": "0784e4d530d11c06eb70080885327e518774e9e3d79fbb16194a8dad7b6a56f7",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0183_mirrored_upper_arm_lower_front_segment_(01_revision_)_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "e5589e4b5eb3b284a7f12d300281e26a5a5273f1250f374ecdd0241a36dac5dd",
+      "after_sha256": "1259e37855fb4b64c01ffda0f1770a8014f0005fa84104e080177ccc5937e927",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0184_mirrored_upper_arm_lower_rear_segment_(01_revision_)_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "6631db770f574a3efc7f20acd21d925253d4c2151a9dbf38d2b1f0395f2294f7",
+      "after_sha256": "3c19d7a9d1e79479f7f6471dd013ce1c92c13655ee880c32559eef5d97b723ef",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0185_mirrored_75_shoulder_clamp_(01_revision_)_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "c4598f3d37014dc8f162a1f0edd3ed0545de91a01f6a02d6efc3a78cecf9de63",
+      "after_sha256": "040e2e90af74af4d6c4c95e039a98fd4ca10c10016f2a2ad26f40ff9c9c4d7ea",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0186_mirrored_75_shoulder_body_(01_revision_)_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "91f1d694381d6db24d76a82a5f51d18df3f11d46abc21bab648726b31f029575",
+      "after_sha256": "555eb61e2f2ba93149f5a7d36b638b3a4a815512acfe9d591808a95e4617318c",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0187_foot_plate_(01_revision_)_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "8f97ac5ddae4e081d5b16e1c71e65ca8ca922f6d2dafa57009821ee901939d40",
+      "after_sha256": "53a9919bba9d86a54ada333d91943257d257ae231c31bb9ea88fc3d80645bb16",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0192_thigh_clamp_(01_revision_)_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "b999da172e9a99d920b5b1bde3fd9aa20867a5055c186f32ec0ce883626f394d",
+      "after_sha256": "bbb431cbcdd5de20ba372a105da7e0a9ddeb15ee46cd948c4db6b01f3f9e37c3",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0193_thigh_body_(01_revision_)_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "9aae6c4279264af6caa1b4c981c0103a24ee26f5031fde9c605ec6ddde33e26d",
+      "after_sha256": "6badb6f1b40362e17dbdb86281ec92325c9c534eccc33c2bd1e8e822cc0d451f",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0196_thigh_lower_motor_clamp_(01_revision_)_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "02b09c0aefbd5c0d45acd44e5557abb7a751e9692fdcd34a7921e29b5bcb9ca1",
+      "after_sha256": "75581574efcf88a5d03c1326db73a24b334d34c4bce1045216f5330d6fe94d78",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0197_thigh_lower_body_left_(02_revision_)_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "6474469fa1f9712c1f424a42441bf2fbaa571bd3819d44af8e6f29c68e88f9ce",
+      "after_sha256": "97a1d47e90d0d90404207750582c4192c36876ca9314bc777ba6d9b4214c0082",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0199_mirrored_thigh_lower_motor_clamp_(01_revision_)_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "dcfc096d48dab73f7626b15030034fd95e372a1c1bfb06a351db447b16f3ac2e",
+      "after_sha256": "ebc06d17dce21fa121481712887a305687dcf9f535763aac69c20ad9d5c8ff5f",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0200_mirrored_thigh_lower_body_left_(02_revision_)_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "1c3b841633b32cdac392fa4e44d5fc8fc7252aca9e36925fda02a47c52a6573b",
+      "after_sha256": "69cd730982e6d777914dc62461aca6385b534e5c0ac43c661d81091adcc159ca",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0201_mirrored_thigh_clamp_rear_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "c6c505c64fe05bd72c122f4bebe7b256004211a088d3e486cb268fffd6e5b706",
+      "after_sha256": "3b34a7377eb74d31bd24715a368a80fd5776c3619be9938ba39a4a18499e5d9a",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0202_mirrored_thigh_lower_cover_plate_left_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "9b019d8e8902a358d02afd7d27e430f08852176c521a3db942ed00790b87a87f",
+      "after_sha256": "0a0fa17de553425a60b3a334c01405c4ba90ceb8262a94546c0985d8d7ef3356",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0203_mirrored_thigh_clamp_front_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "94a17c36e4b8fb81570fcd2b066e66edc5a8b33e799e192cba5ea4a891c77944",
+      "after_sha256": "5a403147bb26abecd7eb5aea81a520311adf390a65a5cf56ec1c43b39c29a3f6",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0204_mirrored_thigh_lower_body_right_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "388b039fed22cd5e22cd5b2d31a930a9b674649098c3ea6ddddac56413790dd0",
+      "after_sha256": "b3d63e47455ee0ddd3d0151a255e965e90837b3c68aa765bb67e283a6398b993",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0205_mirrored_thigh_lower_cover_plate_right_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "5f5c9b2ca1efd650d672d6b51420f1512b8d09670a59d0f42589750e63a86455",
+      "after_sha256": "6a26c2fcc9ac6ad77a11db663c2bbc9075b3b90e01df92e090cecb34ec08b0ae",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0225_handle_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "4fd331954837dbc50acece4f821122244790233db55f4c680c76ee769213a69f",
+      "after_sha256": "548311d378580b6a145458b06cbb233212aa841105821b9da8e63d19c2c943ad",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0232_kickme_version_torso_rear_shell_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "63a480202736031e0c69b09e02ae4e28f1b336506f2caebad4320bb5f4a3cd28",
+      "after_sha256": "7643b30924b3839d97b23d12e5530c70447f8cdb1c27660eaa31dd9dfb01c0b6",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0233_kickme_version_torso_front_shell_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "3633aa4982d31c5f183193daa8cd732301553eca4a60e18af798ba0f922f81a0",
+      "after_sha256": "28876f36c02663839389550140430f600fbfbbeb53aa7ea6e470a4e198e2e94f",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0235_foot_plate_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "6501cae9a2c77abcc9daf8a4d8889326e1e4b570a2d2670bf9f6a2cca9d3bb27",
+      "after_sha256": "8be8ee6b3471753f66a70e4e55ba7bbb20bc0be734b62d4b4e9e1a9379f91206",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0237_head_light_strip_inlay_panel_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "dca68562191f98a8cca15eff184663fd493e950ee6b26d73ebb6b8532b464a27",
+      "after_sha256": "7a9f879b2020349a61d743a4dfcbea901f0964b61cd5031e5338f727e097c363",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0238_motion_head_head_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "482afd82549caeef036bdb657ee33121c8c646aade772f69c9109f4b1c4cbf06",
+      "after_sha256": "faaf03444edd2e053240d368559696dbc4af6db2e1fbcf59510d3ff57d87d835",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0244_auxiliary_battery_spring_arm_button_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "c156fe6b5bfb905bc34d4f04023b5bab0ae0ace7f3fedfe36ad97c25e5f357af",
+      "after_sha256": "c2d8ad76b1bd4f3488d8df9f7792eadcf70746d5f6717018b40aa4d6c91e4cee",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0251_KICKME_motion_head_body_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "a6815c1dcfbe379ca0391640c0ff6651e66a34e39e8de52682e6c07522e3bada",
+      "after_sha256": "d0372f8435239d8a9afe8a13d7a1d3e710611db915592655098e1542b3e4e90c",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/CMF_Specification/ROBOSKIN.0252_KICKME_motion_head_screw_concealment_cover_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "01cf649bea3665ce0272ee65547950f0e180d459865b5ac8eb30fd0f59e1dc12",
+      "after_sha256": "080c50537c55f4dab7ae2544f662e792fa832ab72705a6a2ff7faffa821403cd",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/02_3D_Printing/CMF_Specification/ROBOSKIN.0106_upper_arm_upper_cover_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "d7931ced3a1d29c297fa7dcc435b7b18b14691e8562bc6369e6e47c14184f3cf",
+      "after_sha256": "8088b2bd3c7a1114d19a0b56237f617a62eff6a110719248246c741abdd48665",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/02_3D_Printing/CMF_Specification/ROBOSKIN.0107_forearm_upper_cover_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "ee0045f194a8dd667b9e506f26f95a826f637fb831f7a474178fa22af16dfaca",
+      "after_sha256": "94568068a043b0b232a268cc842aa817337de928c6e58ee7e5ec4192f70766d6",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/02_3D_Printing/CMF_Specification/ROBOSKIN.0108_forearm_lower_cover_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "1d48d123692448712516bce3dc3b31734d667d7a44aad810c9b26bfd83d67031",
+      "after_sha256": "a6d331b4b451ebb7652155ac0469a979dde21d7f3895f3cb425e6daa223b3103",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/02_3D_Printing/CMF_Specification/ROBOSKIN.0109_mirrored_forearm_upper_cover_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "e210f1f3892dfd0eaca0e2b07f27fef0f17d8491a74f4595d16ea969be7ecec5",
+      "after_sha256": "e2afcacc0fe129d1ca03d9fbf1230b3025804bb8f006c56476400fb05cb868e7",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/02_3D_Printing/CMF_Specification/ROBOSKIN.0111_wrist_end_cover_plate_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "bc4580f47fb43017a9e2c6ed73bac36742de5e83e08b2eae08c2f1472556183c",
+      "after_sha256": "4b9c8b59271a16deec3404e7043e6e0e914fb2b9c3a9a3bde31c1d3524e6a23c",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/02_3D_Printing/CMF_Specification/ROBOSKIN.0137_75_shoulder_cover_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "56f9e96f3918e7a2cb315ba2237e38a21a22872d2dfd77b5df76051b98e20297",
+      "after_sha256": "6973a57da6ee7ccaaf690921961a0a71796cb1c49e651f1e3326acf4107b1a40",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/02_3D_Printing/CMF_Specification/ROBOSKIN.0139_mirrored_75_shoulder_cover_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "368188c897074ef8c773741c5e1162e9b79076bfd67f555729764cac6a264e7a",
+      "after_sha256": "eeca178cc50d0dc387db5e9380d9e054cf71ed51cebcc5bd4978577e01f0647b",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/02_3D_Printing/CMF_Specification/ROBOSKIN.0142_thigh_cover_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "d3cdea1ad74e83639c6b19e8ac7e7180752a1ceb11e7ef624335b369397715de",
+      "after_sha256": "fc362f76f3aecf52a3321e27c2208edfdf1ff5c646c927d5338468cf35b60ee0",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/02_3D_Printing/CMF_Specification/ROBOSKIN.0145_shin_cover_plate_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "e0f0fea10f5e88d762ed87d139bc1f988bde92fbfd8432c47681a4726b8db6e4",
+      "after_sha256": "268cb9051204c9696fa5f6aa976a4b203e4b8830ee10492469db27e33dd8c93a",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/02_3D_Printing/CMF_Specification/ROBOSKIN.0240_logo_light_cover_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "5566a1ec3b3e309089a0a80cee6f57ce3a015bcfb97e4814b42e2cbd2ea84bdb",
+      "after_sha256": "b2de507ec8c7f3b7ef84913df8cccb5e699006b49b7c0bba98fc0eaeaa79a447",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/02_3D_Printing/CMF_Specification/ROBOSKIN.0251_motion_head_screw_concealment_cover_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "b58347741254f3c1567ebe8f396da5ecb4a3ccf2923c7da6192b1f113681f901",
+      "after_sha256": "0fdb00d56d30604e374e2f593f009a4cd52c6a532256d72c3e1bf81c1c0ddad7",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/02_3D_Printing/CMF_Specification/ROBOSKIN.0253_KICKME_version_head_face_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "8d9975572c92940117563a09e8915dd371dc375c3f4faec5f167e6bc3e207bb6",
+      "after_sha256": "93efff90ddf2ada9b556f7a3589970e69fbdca597a470c5233853ee4fd017cde",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/02_3D_Printing/CMF_Specification/ROBOSKIN.0255_interactive_head_-_outer_shell_front_cover_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "157138cb8578e50a8f4e4e47557f801d06a0ceb68f79de14a1d3ffec97a2e97a",
+      "after_sha256": "42ab956457c5dd7bdbd63a0681d4750d81cabb78af33e2fed62942fa44230ce7",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/02_3D_Printing/CMF_Specification/ROBOSKIN.0257_interactive_head_-_screen_top_cover_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "230905110b46aee995711545e35b947ceaca3fc5f3ad89ed56d118ce12b6d920",
+      "after_sha256": "eae44cfa5393810bfe5eca0999804a9c778d05096e00e6744e6dcddd325bc2b3",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/02_3D_Printing/CMF_Specification/ROBOSKIN.0258_interactive_head_-_upper_outer_shell_bracket_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "30accc642c3651ebb1f3f319aca751240ed3b3f0a53c6e25c5855db421fd68f7",
+      "after_sha256": "b5d62ee3e9c2a7d3d2b8e7870466c4e8197ffd05124bf8d60ff23dc618c78164",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/02_3D_Printing/CMF_Specification/ROBOSKIN.0259_interactive_head_-_lower_outer_shell_bracket_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "fc241280b0c7df1e0abb6808a9cc48a480dc6695f0c47cac9a04d38240e2f81d",
+      "after_sha256": "eb3358e8b6324d0f3ee5b4cbb03d8febb2889823aeb5502570de79ccf3059d4c",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/02_3D_Printing/CMF_Specification/ROBOSKIN.0261_interactive_head_-_upper_trim_cover_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "1aabfed99f9f4cfa2ea251c251f0923c8adbdd130e45c8f3b88a056935f8b6c4",
+      "after_sha256": "4e23ecacf52b5986afe2e63c757be7a55670916a5b03e708d8717008c85772de",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/02_3D_Printing/CMF_Specification/ROBOSKIN.0262_interactive_head_-_rear_trim_cover_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "711af072570ffa215f7da682b7c15d481bfeb29d76f836b7308c9c565682541b",
+      "after_sha256": "6619fce191aba5d6fd05e54ba14b15cbc0ed9189d45c2eaa19cbb31f88b97eb8",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/02_3D_Printing/CMF_Specification/ROBOSKIN.0263_interactive_head_-_side_trim_cover_-L_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "30fd8dbd09c304de8aeb5a82538218c125a35368f6206559983909de6dc51429",
+      "after_sha256": "7c708cab2cf600cc7b0792101ed17277a113425f14fe8584e658be0c20154322",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/02_3D_Printing/CMF_Specification/ROBOSKIN.0264_interactive_head_-_side_trim_cover_-R_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "7cf394a8d0b2f17b11a9ee6519c1386173a0934f9db6a91e1859f2a7cd615668",
+      "after_sha256": "92e4e81254573c0dcfd2cacc30720fe757d483ec7e77b43614535a98e865cb2e",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/03_Rubber/CMF_Specification/ROBOSKIN.0131_cosmetic_hand_body_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "192b29ff67bcdfcd88ba86167db66f7bdb4d18c817be52ad75eae1d1841aa318",
+      "after_sha256": "eb49f8d1126f9de33f5df3e1f240930c11d8b97562184e0acaf954d3c2537cb0",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/03_Rubber/CMF_Specification/ROBOSKIN.0135_mirrored_cosmetic_hand_body_CMF_specification.pdf",
+      "page": 1,
+      "rectangle": [
+        35.0,
+        29.0,
+        310.0,
+        49.0
+      ],
+      "before_sha256": "c295ae90ab3c2af8c57fd594858f1a8013248c54cfe95d918f2da7dcfb9a2114",
+      "after_sha256": "eb35cdf6ebc82cbb44bbcb74ec495fd44009bb75792a190a22ad7e074923173d",
+      "scope": "Nontechnical product banner only; technical drawing and source-attribution pages retained."
+    }
+  ]
+}

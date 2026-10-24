@@ -13,6 +13,8 @@ jobs:
           persist-credentials: false
       - name: Verify documents and calculation snapshots
         run: python3 tools/verify_repository.py
+      - name: Verify complete hardware import
+        run: python3 tools/verify_hardware_inventory.py
       - name: Test protocol and observer
         run: python3 -m unittest discover -s tests -v
       - name: Test circuit connectivity

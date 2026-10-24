@@ -1,0 +1,320 @@
+{
+  "schema_version": 1,
+  "source_archive_path": "02_PCB/03_RBE-MAIN-RK3588S/02_Gerber_MAIN_2026-09-18.zip",
+  "destination_archive_path": "hardware/02_PCB/03_RBE-MAIN-RK3588S/02_Gerber_MAIN_2026-09-18.zip",
+  "scope": "Deterministic transcription of two original technical screenshots; no recalculation or qualification of fabrication parameters.",
+  "stackup": {
+    "destination_member": "Impedance_Stackup.png",
+    "source_image_sha256": "57e5123496ef5a6bdaa4d2a110aac574831c35385d597a3a1c780ba31f9c2f36",
+    "source_image_size_px": [
+      1193,
+      534
+    ],
+    "total_thickness_range": "1.4mm ~ 1.71mm",
+    "rows": [
+      {
+        "layer": "L1",
+        "material_he": "\u05e8\u05d3\u05d9\u05d3 \u05e0\u05d7\u05d5\u05e9\u05ea",
+        "parameters": "1oz",
+        "mil": [
+          "1.38"
+        ],
+        "mm": [
+          "0.0350"
+        ],
+        "color": "#fee6d9"
+      },
+      {
+        "layer": null,
+        "material_he": "\u05e4\u05e8\u05e4\u05e8\u05d2",
+        "parameters": "2116 RC54% 4.9mil",
+        "mil": [
+          "4.58"
+        ],
+        "mm": [
+          "0.1164"
+        ],
+        "color": "#c0e4de"
+      },
+      {
+        "layer": "L2/L3",
+        "material_he": "\u05dc\u05d9\u05d1\u05ea \u05dc\u05d5\u05d7",
+        "parameters": "0.13mm H/HOZ",
+        "parameters_note_he": "\u05d4\u05e2\u05d5\u05d1\u05d9 \u05d0\u05d9\u05e0\u05d5 \u05db\u05d5\u05dc\u05dc \u05e0\u05d7\u05d5\u05e9\u05ea",
+        "mil": [
+          "0.60",
+          "5.12",
+          "0.60"
+        ],
+        "mm": [
+          "0.0152",
+          "0.1300",
+          "0.0152"
+        ],
+        "color": "#ffe0b7"
+      },
+      {
+        "layer": null,
+        "material_he": "\u05e4\u05e8\u05e4\u05e8\u05d2",
+        "parameters": "2116 RC54% 4.9mil",
+        "mil": [
+          "4.58"
+        ],
+        "mm": [
+          "0.1164"
+        ],
+        "color": "#c0e4de"
+      },
+      {
+        "layer": "bare",
+        "layer_he": "\u05dc\u05d5\u05d7 \u05dc\u05dc\u05d0 \u05e0\u05d7\u05d5\u05e9\u05ea",
+        "material_he": "\u05dc\u05d5\u05d7 \u05dc\u05dc\u05d0 \u05e0\u05d7\u05d5\u05e9\u05ea",
+        "parameters": "0.7mm H/H",
+        "parameters_note_he": "\u05d4\u05e2\u05d5\u05d1\u05d9 \u05d0\u05d9\u05e0\u05d5 \u05db\u05d5\u05dc\u05dc \u05e0\u05d7\u05d5\u05e9\u05ea; \u05e6\u05e8\u05d9\u05d1\u05d4 \u05dc\u05dc\u05d5\u05d7 \u05dc\u05dc\u05d0 \u05e0\u05d7\u05d5\u05e9\u05ea",
+        "mil": [
+          "27.56"
+        ],
+        "mm": [
+          "0.7000"
+        ],
+        "color": "#fff3c7"
+      },
+      {
+        "layer": null,
+        "material_he": "\u05e4\u05e8\u05e4\u05e8\u05d2",
+        "parameters": "2116 RC54% 4.9mil",
+        "mil": [
+          "4.58"
+        ],
+        "mm": [
+          "0.1164"
+        ],
+        "color": "#c0e4de"
+      },
+      {
+        "layer": "L4/L5",
+        "material_he": "\u05dc\u05d9\u05d1\u05ea \u05dc\u05d5\u05d7",
+        "parameters": "0.13mm H/HOZ",
+        "parameters_note_he": "\u05d4\u05e2\u05d5\u05d1\u05d9 \u05d0\u05d9\u05e0\u05d5 \u05db\u05d5\u05dc\u05dc \u05e0\u05d7\u05d5\u05e9\u05ea",
+        "mil": [
+          "0.60",
+          "5.12",
+          "0.60"
+        ],
+        "mm": [
+          "0.0152",
+          "0.1300",
+          "0.0152"
+        ],
+        "color": "#ffe0b7"
+      },
+      {
+        "layer": null,
+        "material_he": "\u05e4\u05e8\u05e4\u05e8\u05d2",
+        "parameters": "2116 RC54% 4.9mil",
+        "mil": [
+          "4.58"
+        ],
+        "mm": [
+          "0.1164"
+        ],
+        "color": "#c0e4de"
+      },
+      {
+        "layer": "L6",
+        "material_he": "\u05e8\u05d3\u05d9\u05d3 \u05e0\u05d7\u05d5\u05e9\u05ea",
+        "parameters": "1oz",
+        "mil": [
+          "1.38"
+        ],
+        "mm": [
+          "0.0350"
+        ],
+        "color": "#fee6d9"
+      }
+    ]
+  },
+  "impedance": {
+    "destination_member": "Impedance_Traces.png",
+    "source_image_sha256": "d3a25f351fe40291f2d7df03ecc2c75d6b12dd6b06c14f362b717c9f47948ba3",
+    "source_image_size_px": [
+      1474,
+      728
+    ],
+    "source_item_number": "1",
+    "manufacturer_stackup_code": "JLC06161H-2116A",
+    "finished_board_thickness": "1.56mm\u00b110%",
+    "special_label_he": "\u05de\u05d9\u05d5\u05d7\u05d3",
+    "impedance_tolerance": "0.5",
+    "impedance_tolerance_unit": null,
+    "trace_dimension_units": null,
+    "mode_he": {
+      "single_ended_outer": "\u05d7\u05d3\u05be\u05e7\u05e6\u05d4 (\u05e9\u05db\u05d1\u05d4 \u05d7\u05d9\u05e6\u05d5\u05e0\u05d9\u05ea)",
+      "single_ended_inner": "\u05d7\u05d3\u05be\u05e7\u05e6\u05d4 (\u05e9\u05db\u05d1\u05d4 \u05e4\u05e0\u05d9\u05de\u05d9\u05ea)",
+      "differential_outer": "\u05d3\u05d9\u05e4\u05e8\u05e0\u05e6\u05d9\u05d0\u05dc\u05d9 (\u05e9\u05db\u05d1\u05d4 \u05d7\u05d9\u05e6\u05d5\u05e0\u05d9\u05ea)",
+      "differential_inner": "\u05d3\u05d9\u05e4\u05e8\u05e0\u05e6\u05d9\u05d0\u05dc\u05d9 (\u05e9\u05db\u05d1\u05d4 \u05e4\u05e0\u05d9\u05de\u05d9\u05ea)"
+    },
+    "rows": [
+      {
+        "required_ohm": "50",
+        "mode": "single_ended_outer",
+        "layer": "L1",
+        "upper_reference": "/",
+        "lower_reference": "L2",
+        "W1": "7.1",
+        "S1": null,
+        "D1": "/",
+        "reverse_impedance": "/",
+        "remarks_value": null,
+        "remarks_counter": "0/100",
+        "source_diagram_crop_xyxy": [
+          1325,
+          156,
+          1387,
+          211
+        ]
+      },
+      {
+        "required_ohm": "50",
+        "mode": "single_ended_inner",
+        "layer": "L3",
+        "upper_reference": "L2",
+        "lower_reference": "L4",
+        "W1": "7",
+        "S1": "/",
+        "D1": "/",
+        "reverse_impedance": "/",
+        "remarks_value": null,
+        "remarks_counter": "0/100",
+        "source_diagram_crop_xyxy": [
+          1325,
+          228,
+          1387,
+          283
+        ]
+      },
+      {
+        "required_ohm": "50",
+        "mode": "single_ended_outer",
+        "layer": "L1",
+        "upper_reference": "/",
+        "lower_reference": "L3",
+        "W1": "18",
+        "S1": "/",
+        "D1": "/",
+        "reverse_impedance": "/",
+        "remarks_value": null,
+        "remarks_counter": "0/100",
+        "source_diagram_crop_xyxy": [
+          1325,
+          299,
+          1387,
+          354
+        ]
+      },
+      {
+        "required_ohm": "100",
+        "mode": "differential_outer",
+        "layer": "L1",
+        "upper_reference": "/",
+        "lower_reference": "L2",
+        "W1": "5.5",
+        "S1": "8.00",
+        "D1": "/",
+        "reverse_impedance": "/",
+        "remarks_value": null,
+        "remarks_counter": "0/100",
+        "source_diagram_crop_xyxy": [
+          1325,
+          371,
+          1387,
+          426
+        ]
+      },
+      {
+        "required_ohm": "100",
+        "mode": "differential_inner",
+        "layer": "L3",
+        "upper_reference": "L2",
+        "lower_reference": "L4",
+        "W1": "5",
+        "S1": "8.00",
+        "D1": "/",
+        "reverse_impedance": "/",
+        "remarks_value": null,
+        "remarks_counter": "0/100",
+        "source_diagram_crop_xyxy": [
+          1325,
+          442,
+          1387,
+          497
+        ]
+      },
+      {
+        "required_ohm": "90",
+        "mode": "differential_outer",
+        "layer": "L1",
+        "upper_reference": "/",
+        "lower_reference": "L2",
+        "W1": "6.9",
+        "S1": "8.00",
+        "D1": "/",
+        "reverse_impedance": "/",
+        "remarks_value": null,
+        "remarks_counter": "0/100",
+        "source_diagram_crop_xyxy": [
+          1325,
+          513,
+          1387,
+          568
+        ]
+      },
+      {
+        "required_ohm": "90",
+        "mode": "differential_inner",
+        "layer": "L3",
+        "upper_reference": "L2",
+        "lower_reference": "L4",
+        "W1": "6.4",
+        "S1": "8.00",
+        "D1": "/",
+        "reverse_impedance": "/",
+        "remarks_value": null,
+        "remarks_counter": "0/100",
+        "source_diagram_crop_xyxy": [
+          1325,
+          585,
+          1387,
+          640
+        ]
+      },
+      {
+        "required_ohm": "120",
+        "mode": "differential_outer",
+        "layer": "L1",
+        "upper_reference": "/",
+        "lower_reference": "L2",
+        "W1": "3.7",
+        "S1": "10.00",
+        "D1": "/",
+        "reverse_impedance": "/",
+        "remarks_value": null,
+        "remarks_counter": "0/100",
+        "source_diagram_crop_xyxy": [
+          1325,
+          656,
+          1387,
+          711
+        ]
+      }
+    ]
+  },
+  "transcription_notes_he": [
+    "\u05e2\u05e8\u05db\u05d9 W1/S1/D1 \u05de\u05d5\u05e2\u05ea\u05e7\u05d9\u05dd \u05dc\u05dc\u05d0 \u05d9\u05d7\u05d9\u05d3\u05d5\u05ea: \u05d9\u05d7\u05d9\u05d3\u05d5\u05ea\u05d9\u05d4\u05dd \u05d0\u05d9\u05e0\u05df \u05de\u05d5\u05d3\u05e4\u05e1\u05d5\u05ea \u05d1\u05ea\u05de\u05d5\u05e0\u05ea \u05d4\u05de\u05e7\u05d5\u05e8, \u05d5\u05d0\u05d9\u05df \u05dc\u05d4\u05e0\u05d9\u05d7 mil.",
+    "\u05d4\u05e2\u05e8\u05da 0.5 \u05d1\u05e9\u05d3\u05d4 \u05e1\u05d1\u05d5\u05dc\u05ea \u05d4\u05e2\u05db\u05d1\u05d4 \u05de\u05d5\u05e4\u05d9\u05e2 \u05dc\u05dc\u05d0 \u05d9\u05d7\u05d9\u05d3\u05d4 \u05d0\u05d5 \u05e1\u05d9\u05de\u05df \u05d0\u05d7\u05d5\u05d6; \u05e0\u05e9\u05de\u05e8 \u05dc\u05dc\u05d0 \u05d4\u05e1\u05e7\u05d4.",
+    "null \u05de\u05e6\u05d9\u05d9\u05df \u05ea\u05d0 \u05e8\u05d9\u05e7 \u05d1\u05de\u05e7\u05d5\u05e8; / \u05e0\u05e9\u05de\u05e8 \u05db\u05e1\u05d9\u05de\u05df \u05e0\u05e4\u05e8\u05d3 \u05d5\u05d0\u05d9\u05e0\u05d5 \u05d0\u05e4\u05e1.",
+    "0/100 \u05d4\u05d5\u05d0 \u05de\u05d5\u05e0\u05d4 \u05ea\u05d5\u05d5\u05d9\u05dd \u05e9\u05dc \u05e9\u05d3\u05d4 \u05d4\u05e2\u05e8\u05d5\u05ea \u05e8\u05d9\u05e7 \u05d1\u05de\u05de\u05e9\u05e7 \u05d4\u05de\u05e7\u05d5\u05e8, \u05d5\u05dc\u05d0 \u05e2\u05e8\u05da \u05d7\u05e9\u05de\u05dc\u05d9.",
+    "\u05d0\u05d9\u05d5\u05e8\u05d9 \u05d7\u05ea\u05da \u05d6\u05e2\u05d9\u05e8\u05d9\u05dd \u05d1\u05d0\u05e0\u05d2\u05dc\u05d9\u05ea \u05e0\u05e9\u05de\u05e8\u05d9\u05dd \u05db\u05d7\u05d9\u05ea\u05d5\u05db\u05d9\u05dd \u05de\u05ea\u05de\u05d5\u05e0\u05ea \u05d4\u05de\u05e7\u05d5\u05e8; \u05d0\u05d9\u05db\u05d5\u05ea \u05d4\u05de\u05e7\u05d5\u05e8 \u05d0\u05d9\u05e0\u05d4 \u05de\u05d0\u05e4\u05e9\u05e8\u05ea \u05ea\u05de\u05dc\u05d5\u05dc \u05d0\u05de\u05d9\u05df \u05e9\u05dc \u05db\u05dc \u05e1\u05d9\u05de\u05e0\u05d9\u05d4\u05dd, \u05d5\u05dc\u05db\u05df \u05dc\u05d0 \u05e0\u05d5\u05d7\u05e9\u05d5 \u05e4\u05e8\u05d8\u05d9\u05dd.",
+    "H/HOZ \u05d5\u05beH/H \u05e0\u05e9\u05de\u05e8\u05d9\u05dd \u05db\u05e1\u05d9\u05de\u05d5\u05e0\u05d9 \u05d7\u05d5\u05de\u05e8 \u05e9\u05dc \u05d4\u05de\u05e7\u05d5\u05e8; \u05dc\u05d0 \u05d1\u05d5\u05e6\u05e2\u05d4 \u05d4\u05de\u05e8\u05d4 \u05d0\u05d5 \u05d4\u05e8\u05d7\u05d1\u05d4 \u05e9\u05dc \u05d4\u05e1\u05d9\u05de\u05d5\u05e0\u05d9\u05dd."
+  ]
+}

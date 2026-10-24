@@ -1,23 +1,29 @@
-# ROBOSKIN optional inertial calibration variant
+<div dir="rtl" lang="he">
 
-The base skin has touch and temperature only. Add one six-axis IMU rigidly referenced to each of the eight example controllers if testing Cheng-style joint-axis/patch localization. This is a separately costed hardware/firmware variant. Eight inertial observations are not 88 independently moving taxel observations; assume a stable known patch-to-link transform only where the mounting is actually rigid.
+עברית · [English](optional_calibration.en.md)
 
-Lab module: **Adafruit 4438, LSM6DSOX**. Manufacturer page lists$11.95,6-axis measurements, I²C/SPI and a25.6×17.8×4.6 mm board at1.7 g. Current availability differs between indexed pages, so the price is an observed list price, not a delivered quote. Eight modules plus$3 local leads and$5 mounting/test allowance each total**$159.60**, excluding firmware, synchronization, fixture and calibration engineering. Do not fold this into the base-skin cost or claim it gives automatic calibration without implementation. [Module and source design](https://www.adafruit.com/product/4438), [ST sensor datasheet](https://www.st.com/resource/en/datasheet/lsm6dsox.pdf).
+# גרסת כיול אינרציאלי אופציונלית של ROBOSKIN
 
-Production-controller add-on wiring:
+לעור הבסיסי יש מגע וטמפרטורה בלבד. הוסיפו IMU אחד בעל שישה צירים, המיוחס בקשיחות לכל אחד משמונת בקרי הדוגמה, אם בודקים לוקליזציית ציר מפרק או טלאי בסגנון Cheng. זו גרסת חומרה וקושחה המתומחרת בנפרד. שמונה תצפיות אינרציאליות אינן 88 תצפיות על תאי חישה הנעים באופן עצמאי; הניחו טרנספורמציית טלאי־לחוליה ידועה ויציבה רק היכן שההתקנה קשיחה בפועל.
 
-| Module connection | Controller connection | Rule |
+מודול מעבדה: **Adafruit 4438, LSM6DSOX**. עמוד היצרן מציג $11.95, מדידות ב־6 צירים, I²C/SPI ולוח בגודל 25.6×17.8×4.6 mm ובמסה 1.7 g. הזמינות הנוכחית שונה בין עמודים מאונדקסים, ולכן המחיר הוא מחיר מחירון שנצפה, ולא הצעת מחיר לאספקה. שמונה מודולים בתוספת $3 לחיווט מקומי ו־$5 להקצבת מתקון ובדיקה לכל אחד מסתכמים ב־**$159.60**, ללא הנדסת קושחה, סנכרון, מתקנים וכיול. אין לשלב זאת בעלות העור הבסיסי או לטעון שהדבר מספק כיול אוטומטי ללא מימוש. [מודול ותכנון מקור](https://www.adafruit.com/product/4438), [גיליון נתוני חיישן ST](https://www.st.com/resource/en/datasheet/lsm6dsox.pdf).
+
+חיווט תוספת לבקר הייצור:
+
+| חיבור מודול | חיבור בקר | כלל |
 |---|---|---|
-| VIN |3V3 |Use3.3 V supply for this add-on; include its measured current in the node budget |
-| GND |GND |Short local return |
-| SCL |PA11, LQFP48 pin33, AF6 I2C2_SCL |Local≤50 mm; no I²C through the limb |
-| SDA |PA12, LQFP48 pin34, AF6 I2C2_SDA |Local≤50 mm; inspect breakout pull-ups before adding parallel resistors |
-| INT1 |PA4, LQFP48 pin15, EXTI4 |Timestamp sample-ready interrupt in the same hardware clock domain as skin samples |
+| VIN |3V3 |השתמשו בהזנת 3.3 V לתוספת זו; כללו את הזרם המדוד שלה בתקציב הצומת |
+| GND |GND |מסלול החזרה מקומי קצר |
+| SCL |PA11, LQFP48 pin33, AF6 I2C2_SCL |מקומי ≤50 mm; אין להעביר I²C לאורך הגפה |
+| SDA |PA12, LQFP48 pin34, AF6 I2C2_SDA |מקומי ≤50 mm; בדקו נגדי משיכה בלוח ההרחבה לפני הוספת נגדים במקביל |
+| INT1 |PA4, LQFP48 pin15, EXTI4 |החתימו בזמן את פסיקת מוכנות הדגימה באותו תחום שעון חומרה של דגימות העור |
 
-These three MCU pins are unused in the base netlist and must be changed deliberately in the variant. Do not apply PA9/PA10 remapping, which conflicts with fault/service functions, and do not reassign the skin CAN RX/TX pins47/48. The peripheral mapping is documented in ST DS13560, table13; package33/34 follows table12. [ST MCU data](https://www.st.com/resource/en/datasheet/stm32g0b1vc.pdf).
+שלושת פיני ה־MCU האלה אינם בשימוש ברשימת הרשתות הבסיסית, ויש לשנות אותם במכוון בגרסה זו. אין להחיל מיפוי מחדש של PA9/PA10, המתנגש בפונקציות תקלה ושירות, ואין להקצות מחדש את פיני CAN RX/TX של העור, 47/48. מיפוי הציוד ההיקפי מתועד ב־ST DS13560, טבלה 13; פיני מארז 33/34 לפי טבלה 12. [נתוני MCU של ST](https://www.st.com/resource/en/datasheet/stm32g0b1vc.pdf).
 
-Start with 416 Hz synchronized accelerometer/gyro output,±4 g and±500 degrees/s ranges; confirm register encodings, chip identity and timestamp/overrun behavior against the actual sensor revision. Use local I²C 400 kHz interrupt/DMA transfers and record sample-ready timestamps, sequence, scale, axis orientation and FIFO overruns. Keep raw data and joint encoder samples, not only fused orientation. A calibration mode must have its own declared packet format and measured CAN load; the base 64-byte touch frame does not contain an invented inertial payload.
+התחילו בפלט מסונכרן של מד תאוצה וגירוסקופ ב־416 Hz, בטווחים ±4 g ו־±500 מעלות לשנייה; אשרו קידודי אוגרים, זהות שבב והתנהגות חותמות זמן וחריגות מול מהדורת החיישן בפועל. השתמשו בהעברות פסיקה/DMA ב־I²C מקומי של 400 kHz ותעדו חותמות זמן של דגימה מוכנה, רצף, קנה מידה, כיוון צירים וחריגות FIFO. שמרו נתוני גלם ודגימות מקודדי מפרקים, ולא רק כיוון לאחר מיזוג. מצב כיול חייב להיות בעל פורמט מנות מוצהר משלו ועומס CAN מדוד; מסגרת המגע הבסיסית בת 64 הבתים אינה מכילה מטען אינרציאלי מומצא.
 
-Before fitting a model: six-face accelerometer calibration; stationary gyro bias at relevant temperatures; timestamp offset/drift measurement against joint encoder capture; verify sign/frame with a known small motion. Move one supported joint at a time within the mechanically validated narrow range, with repeatable slow velocity and adequate measurable angular acceleration. Compare gravity-subtracted/tangential acceleration with the model. A cell near an axis or insufficient excitation produces an unobservable radius; report this rather than returning a confident zero. Validate the inferred transforms against independent measured landmarks. Keep commissioning and robot command permissions separate.
+לפני התאמת מודל: כיול מד תאוצה בשש פאות; הטיית גירוסקופ במנוחה בטמפרטורות הרלוונטיות; מדידת היסט וסחיפת חותמות זמן מול לכידת מקודד מפרק; אימות סימן ומסגרת באמצעות תנועה קטנה ידועה. הניעו מפרק נתמך אחד בכל פעם בתוך הטווח הצר שאומת מכנית, במהירות איטית חוזרת ועם תאוצה זוויתית מדידה מספקת. השוו תאוצה לאחר חיסור כבידה ותאוצה משיקית למודל. תא סמוך לציר או עירור לא מספיק יוצרים רדיוס שאינו ניתן לצפייה; דווחו זאת במקום להחזיר אפס בביטחון. אמתו את הטרנספורמציות שהוסקו מול ציוני דרך עצמאיים שנמדדו. הפרידו בין הכנסה לשירות להרשאות פיקוד לרובוט.
 
-A single central IMU cannot replace these eight spatial observations. Flexible sheet deformation also breaks a rigid-patch assumption; narrow panels and stable backing reduce that problem, while removing sensors to save cost makes some self-calibration claims unavailable.
+IMU מרכזי יחיד אינו יכול להחליף את שמונה התצפיות המרחביות האלה. עיוות יריעה גמישה מפר גם את הנחת הטלאי הקשיח; לוחות צרים ותמיכה יציבה מצמצמים את הבעיה, ואילו הסרת חיישנים כדי לחסוך בעלות הופכת חלק מטענות הכיול העצמי לבלתי זמינות.
+
+</div>

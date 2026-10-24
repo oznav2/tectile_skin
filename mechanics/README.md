@@ -1,98 +1,108 @@
-# ROBOSKIN mechanical development kit
+<div dir="rtl" lang="he">
 
-These original, platform-neutral assets define three removable skin-panel sizes, a bench carrier, strain relief, and mass-property calculations. They are suitable for dimensional mock-ups and controlled prototype development. They contain no robot-specific geometry or qualified mounting location. A particular robot's surfaces, motion envelopes, cover temperatures, cable paths, and permitted loads must be measured before installation.
+עברית · [English](README.en.md)
 
-The sensing objective is contact location and approximate pressure, with two local temperature channels per controller. The first demonstration concerns arms and legs. Neither calibrated force, shear measurement, full thermal imaging, whole-body coverage, nor a safety-rated collision sensor follows from the mechanical design.
+# ערכת פיתוח מכני ROBOSKIN
 
-## Reproduce and inspect the assets
+נכסים מקוריים אלה, שאינם תלויים בפלטפורמה, מגדירים שלושה גדלים של לוחות עור ניתנים להסרה, נושא למעבדה, שיכוך מתיחה וחישובי תכונות מסה. הם מתאימים לדגמים ממדיים ולפיתוח מבוקר של אב־טיפוס. אין בהם גאומטריה ייעודית לרובוט או מיקום התקנה שהוסמך. לפני התקנה יש למדוד ברובוט המסוים את המשטחים, מעטפות התנועה, טמפרטורות הכיסוי, מסלולי הכבלים והעומסים המותרים.
 
-From the repository root:
+מטרת החישה היא מיקום מגע ולחץ מקורב, עם שני ערוצי טמפרטורה מקומיים לכל בקר. ההדגמה הראשונה עוסקת בזרועות וברגליים. התכנון המכני אינו מקנה מדידת כוח מכוילת, מדידת גזירה, הדמיה תרמית מלאה, כיסוי גוף מלא או חיישן התנגשות בעל דירוג בטיחות.
+
+## שחזור הנכסים ובדיקתם
+
+משורש המאגר:
+
+<div dir="ltr">
 
 ```sh
 python mechanics/generate_templates.py
 python -m unittest discover -s mechanics -p 'test_*.py' -v
 ```
 
-The Python tools use only the standard library. The tests check channel geometry, physical units, reproducibility, and analytical mass-property cases. They do not validate physical fit, fatigue, sealing, or sensing performance.
+</div>
 
-| File | Purpose |
+כלי Python משתמשים רק בספרייה התקנית. הבדיקות בוחנות גאומטריית ערוצים, יחידות פיזיקליות, יכולת שחזור ומקרים אנליטיים של תכונות מסה. הן אינן מאמתות התאמה פיזית, עייפות, אטימה או ביצועי חישה.
+
+| קובץ | מטרה |
 |---|---|
-| `assets/mechanics/*_template.svg` | Print-at-100% dimensional stencils with a 25 mm scale bar and channel locations |
-| `assets/mechanics/panel_profiles.json` | Local sensor coordinates, active masks, dimensions and explicit unknown tail/temperature geometry |
-| `removable_carrier.scad` | Editable original perimeter fixture and separate sleeved-cable tie-down |
-| `added_inertia.py` | Combine measured masses, centers of mass, and physically valid inertia tensors |
-| `commissioning_record.example.json` | Record the measurements needed to commission one real panel |
+| `assets/mechanics/*_template.svg` | שבלונות ממדיות להדפסה ב־100%, עם סרגל ייחוס 25 mm ומיקומי ערוצים |
+| `assets/mechanics/panel_profiles.json` | קואורדינטות חיישנים מקומיות, מסכות פעילות, מידות וגאומטריית זנב וטמפרטורה המוגדרת במפורש כלא ידועה |
+| `removable_carrier.scad` | מתקן היקפי מקורי וניתן לעריכה ונקודת קשירה נפרדת לכבל עם שרוול |
+| `added_inertia.py` | שילוב מסות מדודות, מרכזי מסה וטנזורי התמד תקפים פיזיקלית |
+| `commissioning_record.example.json` | תיעוד המדידות הנדרשות להכנסת לוח אמיתי אחד לשירות |
 
-The SVG circles mark site centers, not electrode sizes. These stencils are **not electrode artwork, flex-PCB files, or a manufacturing release**. The nominal 3 mm perimeter does not yet prove enough room for the adhesive seal and electrical traces. Sensor-tail geometry and temperature-element placement are intentionally undefined until the chosen laminate and controller interconnect are specified and measured.
+המעגלים ב־SVG מסמנים מרכזי אתרים, ולא גדלי אלקטרודות. שבלונות אלה **אינן תכנון אלקטרודות, קובצי PCB גמיש או שחרור לייצור**. היקף נומינלי של 3 mm עדיין אינו מוכיח שיש מספיק מקום לאטימת הדבק ולמוליכים החשמליים. גאומטריית זנב החיישן ומיקום רכיבי הטמפרטורה נשארים לא מוגדרים במכוון, עד שהלמינציה וחיבור הבקר שנבחרו יוגדרו ויימדדו.
 
-## Film profiles and identification
+## פרופילי יריעה וזיהוי
 
-| Profile | Contact sites | Sensing field | Film rectangle excluding tail | Active contact mask |
+| פרופיל | אתרי מגע | שדה חישה | מלבן יריעה ללא זנב | מסכת מגע פעילה |
 |---|---:|---:|---:|---|
 | `compact_2x2` | 4 | 50 × 50 mm | 56 × 56 mm | `0x0000000f` |
 | `compact_3x2` | 6 | 75 × 50 mm | 81 × 56 mm | `0x0000003f` |
 | `standard_7x4` | 28 | 175 × 100 mm | 181 × 106 mm | `0x0fffffff` |
 
-Contact-site pitch is 25 mm in both directions. The coordinate origin is the center of the sensing field; +x runs along its length, +y across its width, and +z points outward. Index = row × columns + column; row zero is at negative y. Consequently, the bottom-left site in the drawing is site zero. Each smaller profile has its own contiguous indices: never apply seven-column indexing to a compact panel.
+פסיעת אתרי המגע היא 25 mm בשני הכיוונים. ראשית הקואורדינטות היא מרכז שדה החישה; +x לאורך השדה, +y לרוחבו ו־+z כלפי חוץ. Index = row × columns + column; שורה אפס נמצאת ב־y שלילי. לכן האתר השמאלי התחתון בשרטוט הוא אתר אפס. לכל פרופיל קטן יותר מספור רציף משלו: לעולם אין להחיל מספור של שבע עמודות על לוח קומפקטי.
 
-The controller can retain 28 contact inputs for bench reuse. Disable inactive inputs in acquisition and reporting; do not report them as failed sensors. Temperature inputs are separate from the contact mask. A new physical layout requires its own profile identifier and calibration. Cutting a wired large panel into a smaller panel is not equivalent to manufacturing that smaller layout.
+הבקר יכול לשמור 28 כניסות מגע לשימוש חוזר במעבדה. השביתו כניסות לא פעילות בדגימה ובדיווח; אין לדווח עליהן כחיישנים תקולים. כניסות הטמפרטורה נפרדות ממסכת המגע. פריסה פיזית חדשה דורשת מזהה פרופיל וכיול משלה. חיתוך לוח גדול ומחובר ללוח קטן יותר אינו שקול לייצור הפריסה הקטנה.
 
-An illustrative eight-panel purchase comprises two 2×2 panels, four 3×2 panels, and two 7×4 panels: **88 contact sites and 16 local temperature channels**. Its film rectangles total **0.062788 m²**, and its nominal sensing fields total **0.0550 m²**. This is an arithmetic example, not an assignment to any particular robot or a full-body coverage claim. Different surfaces may require different counts, smaller geometries or segmented panels.
+דוגמת רכש בת שמונה לוחות כוללת שני לוחות 2×2, ארבעה לוחות 3×2 ושני לוחות 7×4: **88 אתרי מגע ו־16 ערוצי טמפרטורה מקומיים**. מלבני היריעה מסתכמים ב־**0.062788 m²**, ושדות החישה הנומינליים מסתכמים ב־**0.0550 m²**. זו דוגמה חשבונית, ולא הקצאה לרובוט מסוים או טענה לכיסוי גוף מלא. משטחים שונים עשויים לדרוש כמויות שונות, גאומטריות קטנות יותר או לוחות מחולקים.
 
-Assign a stable serial number, profile/revision, orientation arrow, communication address and measured parent-body frame to each finished panel. A replacement should be recognized by serial/profile and require its own calibration record. Do not assume that communication address alone identifies its physical location.
+הקצו לכל לוח גמור מספר סידורי יציב, פרופיל ומהדורה, חץ כיוון, כתובת תקשורת ומסגרת גוף־אב מדודה. חלק חלופי צריך להיות מזוהה לפי מספר סידורי ופרופיל ולדרוש רשומת כיול משלו. אין להניח שכתובת תקשורת לבדה מזהה את מיקומו הפיזי.
 
-## Build one passive mock-up first
+## בנו תחילה דגם פסיבי אחד
 
-1. Print the selected SVG without fit-to-page scaling. Measure the 25 mm bar with calipers; reject a print outside 25.00 ± 0.25 mm. Make a paper stencil and then a thin, nonconductive plastic dummy with the planned laminate thickness. Record the actual film-tail and connector envelopes separately.
-2. Choose a surface wholly on one rigid robot body. A nonstretchable sensing laminate must not cross a joint or crease. Avoid compound curvature unless separate coupon tests establish that the selected stack tolerates it. Small flat or singly curved segments are easier to validate than one large forced wrap.
-3. Open `removable_carrier.scad`. Select `columns`, `rows`, and `part="carrier"`. Its default planar frame is 1.5 mm thick, with a 3 mm rim and two independent 10 mm strap paths. The overall frame envelope is film length + 6 mm by film width + 20 mm: 62×76, 87×76, or 187×126 mm. Include the tail, connector, controller, and dynamic cable loop when checking the complete envelope.
-4. Set `tail_slot_width` from the **measured** tail width plus assembly clearance. A value of zero makes a passive fit fixture only; it does not authorize trapping a live sensor tail under the rim. Inspect the exported geometry, slot edges and slicer preview before printing. No OpenSCAD compilation or physical print is claimed by this repository's tests.
-5. Use a compliant nonconductive material for the first fixture and separately verify its temperature and creep behavior. No particular printable polymer is qualified here. A flexible frame is not proof that the laminate tolerates the same bend. Where the sensing stack requires a back support, provide a continuous electrically insulating surface of known compliance; the frame's open center does not itself provide that support.
-6. Strap the frame to the same rigid body, with pads only beneath the rim and strap contact areas. Keep strap tension out of the sensing field. Measure unloaded sensor offsets before and after tightening. Reject a fixture whose retention preload produces contact indications or changes the calibrated response materially.
-7. Mount the controller on that same body and take the short sensor tail into it before a moving joint. Export `part="strain_relief"` for the separate 30×16×2 mm tie-down. Tie a soft sleeve around the cable; do not crush bare insulation or bend at a crimp exit. The cable, rather than the film or sensor tail, accommodates joint motion.
+1. הדפיסו את ה־SVG שנבחר ללא התאמה לגודל העמוד. מדדו את סרגל 25 mm בקליבר; פסלו הדפסה החורגת מ־25.00 ± 0.25 mm. הכינו שבלונת נייר ואחריה דגם דמה מפלסטיק דק ולא מוליך בעובי הלמינציה המתוכנן. תעדו בנפרד את מעטפות זנב היריעה והמחבר בפועל.
+2. בחרו משטח הנמצא כולו על גוף קשיח אחד ברובוט. למינציית חישה שאינה נמתחת אינה רשאית לחצות מפרק או קפל. הימנעו מעקמומיות מורכבת, אלא אם בדיקות קופון נפרדות מוכיחות שמבנה השכבות שנבחר סובל אותה. מקטעים קטנים שטוחים או בעלי עקמומיות בכיוון יחיד קלים יותר לאימות מעיטוף גדול הנכפה על המשטח.
+3. פתחו `removable_carrier.scad`. בחרו `columns`, `rows` ו־`part="carrier"`. מסגרת ברירת המחדל השטוחה היא בעובי 1.5 mm, עם שפה של 3 mm ושני נתיבי רצועה עצמאיים של 10 mm. מעטפת המסגרת הכוללת היא אורך היריעה + 6 mm כפול רוחב היריעה + 20 mm: ‏62×76, ‏87×76 או 187×126 mm. בבדיקת המעטפת המלאה כללו זנב, מחבר, בקר ולולאת כבל דינמית.
+4. הגדירו `tail_slot_width` לפי רוחב הזנב **המדוד** בתוספת מרווח הרכבה. ערך אפס יוצר מתקן התאמה פסיבי בלבד; הוא אינו מתיר לכלוא זנב חיישן פעיל מתחת לשפה. בדקו את הגאומטריה המיוצאת, שפות החריץ והתצוגה המקדימה בתוכנת הפריסה להדפסה. בדיקות המאגר אינן טוענות שבוצעו הידור OpenSCAD או הדפסה פיזית.
+5. השתמשו בחומר גמיש ולא מוליך למתקן הראשון ואמתו בנפרד את התנהגותו בטמפרטורה ובזחילה. שום פולימר מסוים להדפסה אינו מוסמך כאן. מסגרת גמישה אינה הוכחה שהלמינציה סובלת אותו כיפוף. היכן שמבנה החישה דורש תמיכה אחורית, ספקו משטח רציף ומבודד חשמלית בעל גמישות ידועה; המרכז הפתוח של המסגרת אינו מספק תמיכה זו בעצמו.
+6. חברו את המסגרת ברצועות לאותו גוף קשיח, עם רפידות רק מתחת לשפה ולאזורי המגע של הרצועות. הרחיקו את מתח הרצועות משדה החישה. מדדו היסטי חיישנים ללא עומס לפני ההידוק ואחריו. פסלו מתקן שעומס הקיבוע המקדים שלו יוצר סימני מגע או משנה מהותית את התגובה המכוילת.
+7. התקינו את הבקר על אותו גוף והכניסו אליו את זנב החיישן הקצר לפני מפרק נע. ייצאו `part="strain_relief"` לנקודת הקשירה הנפרדת בגודל 30×16×2 mm. קשרו סביב הכבל שרוול רך; אין למעוך בידוד חשוף או לכופף ביציאה מלחיצה. הכבל, ולא היריעה או זנב החיישן, מאפשר את תנועת המפרק.
 
-Do not drill load-bearing members, disturb motor/bearing fits, cover vents, or reuse an unverified structural fastener for this development fixture. Obtain mounting loads and permitted attachment points from the selected robot's engineering owner. A removable external carrier keeps these measurements and service operations accessible.
+אין לקדוח ברכיבים נושאי עומס, לשבש התאמות מנוע או מיסב, לכסות פתחי אוורור או להשתמש מחדש במחבר מבני שלא אומת עבור מתקן פיתוח זה. קבלו את עומסי ההתקנה ונקודות החיבור המותרות מהגורם ההנדסי האחראי לרובוט שנבחר. נושא חיצוני ניתן להסרה שומר על נגישות למדידות ולפעולות השירות האלה.
 
-## Protective cover and temperature construction
+## מבנה הכיסוי המגן והטמפרטורה
 
-Start with flat coupons assembled from the same pressure laminate, perimeter adhesive, outer cover, support and electrical tail intended for the panel. A nominal 0.5 mm nonconductive silicone cover is one candidate; a thin TPU cover is a separate candidate requiring its own material/process validation. The actual material grade, hardness, cure, adhesive, thickness tolerance and supplier batch belong in the build record. Do not combine supplier-incompatible primers and elastomers into an untested recipe.
+התחילו בקופונים שטוחים המורכבים מאותה למינציית לחץ, דבק היקפי, כיסוי חיצוני, תמיכה וזנב חשמלי המיועדים ללוח. כיסוי סיליקון לא מוליך בעובי נומינלי 0.5 mm הוא מועמד אחד; כיסוי TPU דק הוא מועמד נפרד הדורש אימות חומר ותהליך משלו. סוג החומר המדויק, קשיות, אשפרה, דבק, סבולת עובי ואצוות ספק שייכים לרשומת הייצור. אין לשלב פריימרים ואלסטומרים שאינם תואמים לפי הספקים למתכון שלא נבדק.
 
-The cover changes pressure spreading, neighboring-site response, hysteresis and thermal delay, so calibrate the finished stack. Keep adhesive away from active electrodes and strain-sensitive regions. Edge seams and cable exits require explicit sealing and pull tests; a silicone top face alone does not establish an ingress rating. Make the wear cover replaceable and repeat the calibration checks after replacement.
+הכיסוי משנה פיזור לחץ, תגובת אתרים שכנים, היסטרזיס ועיכוב תרמי, ולכן יש לכייל את המבנה המוגמר. הרחיקו דבק מאלקטרודות פעילות ומאזורים רגישים לעיוות. תפרי שפה ויציאות כבל דורשים בדיקות אטימה ומשיכה מפורשות; משטח עליון מסיליקון לבדו אינו קובע דירוג אטימות. הפכו את כיסוי השחיקה לניתן להחלפה וחזרו על בדיקות הכיול לאחר החלפתו.
 
-Locate each temperature element beneath a thin local cover, away from motor housings, regulator heat and the principal pressure electrodes. Record its exact position in the panel coordinate frame. Two elements provide two local readings; temperature at an arbitrary contact point may remain unobserved. Compare the reading against a reference probe during warm-contact and ambient-change tests, with robot electronics both cold and operating. Quantify motor-heating bias before describing the measurement as external-object temperature.
+מקמו כל רכיב טמפרטורה מתחת לכיסוי מקומי דק, הרחק מבתי מנוע, מחום מייצב ומאלקטרודות הלחץ הראשיות. תעדו את מיקומו המדויק במסגרת קואורדינטות הלוח. שני רכיבים מספקים שתי קריאות מקומיות; טמפרטורה בנקודת מגע שרירותית עשויה להישאר לא נצפית. השוו את הקריאה לגשש ייחוס בניסויי מגע חם ושינוי סביבה, הן כשהאלקטרוניקה של הרובוט קרה והן כשהיא פועלת. כמתו הטיה מחימום מנוע לפני שמתארים את המדידה כטמפרטורת עצם חיצוני.
 
-For each of at least three coupons, record thickness at five points, unloaded offset, contact threshold, hysteresis, creep, neighboring-site response, thermal step response and peel behavior. Repeat after representative cleaning, abrasion and environmental exposure. Define the actual cleaning chemicals, dwell time, humidity and temperature from the intended application before the test; passing an arbitrary exposure does not qualify a different use environment.
+בכל אחד מלפחות שלושה קופונים, תעדו עובי בחמש נקודות, היסט ללא עומס, סף מגע, היסטרזיס, זחילה, תגובת אתרים שכנים, תגובה למדרגה תרמית והתנהגות בקילוף. חזרו לאחר ניקוי, שחיקה וחשיפה סביבתית מייצגים. הגדירו לפני הבדיקה את חומרי הניקוי, זמן השהייה, הלחות והטמפרטורה בפועל לפי היישום המיועד; מעבר חשיפה שרירותית אינו מסמיך סביבת שימוש אחרת.
 
-## Motion, clearance and fatigue qualification
+## הסמכת תנועה, מרווח ועייפות
 
-Begin with a supported robot and powered motion disabled. Use its commissioned limits and approved service procedure. A model's numerical joint limits do not by themselves authorize physical travel. An independent emergency-stop path remains necessary for powered testing; these prototype skin signals are not its replacement.
+התחילו ברובוט נתמך כאשר תנועה ממונעת מושבתת. השתמשו בגבולות שהוכנסו לשירות ובנוהל השירות המאושר שלו. מגבלות מפרקים מספריות במודל אינן כשלעצמן אישור לתנועה פיזית. מסלול עצירת חירום עצמאי נשאר נחוץ בבדיקות עם הנעה; אותות עור אב־טיפוס אלה אינם תחליף לו.
 
-1. Record the surface revision, datum, neighboring joints, permitted joint intervals, mounting transform, local outward normal, cable specification and permitted dynamic bend radius. Leave `commissioned=false` until the record is complete and reviewed.
-2. Move each adjacent joint through its permitted interval, then sweep combinations of adjacent joints. Inspect the continuous sweep, not only endpoints. Measure minimum clearance to rigid structures, cable loops, covers and linkages, including deformation and tolerance. A 5 mm nominal rigid-clearance target is an initial project screen, not a universally adequate margin or a safety standard; require a larger measured margin wherever deflection can consume it.
-3. Check the cable's dynamic bend-radius and torsion ratings throughout the sweep. A static bend rating is insufficient for a moving joint. Use two strain-relief anchors and a controlled loop. Eliminate pinch, rubbing, snagging, connector traction and self-contact. A cable with no usable dynamic rating must be separately fatigue-tested before it becomes a production choice.
-4. Measure joint current/torque proxy, tracking error, temperature and mechanical interference first without the skin and then with dummy fixtures/cabling, at identical trajectories and loads. Reject binding, blocked cooling or a cable force that changes the robot's motion appreciably.
-5. Instrument a joint fixture for an initial 10,000-cycle screen and then a 100,000-cycle pilot gate at the intended stroke, speed and temperature. Log communication errors and continuity, inspect every 10,000 cycles, repeat retention checks and sensor calibration. These are proposed development gates, not a claimed service life. Commercial life must be related to actual cycles per day, duty cycle and warranty duration.
+1. תעדו מהדורת משטח, נקודת ייחוס, מפרקים שכנים, טווחי מפרקים מותרים, טרנספורמציית התקנה, נורמל מקומי החוצה, מפרט כבל ורדיוס כיפוף דינמי מותר. השאירו `commissioned=false` עד שהרשומה מלאה ונבדקה.
+2. הניעו כל מפרק סמוך בטווח המותר שלו, ואז סרקו שילובים של מפרקים סמוכים. בדקו את הסריקה הרצופה, ולא רק נקודות קצה. מדדו מרווח מזערי למבנים קשיחים, לולאות כבל, כיסויים ומנגנוני קישור, כולל עיוות וסבולת. יעד מרווח קשיח נומינלי של 5 mm הוא סינון ראשוני לפרויקט, ולא מרווח מתאים אוניברסלית או תקן בטיחות; דרשו מרווח מדוד גדול יותר בכל מקום שבו כפיפה עלולה לצרוך אותו.
+3. בדקו את דירוגי רדיוס הכיפוף הדינמי והפיתול של הכבל לאורך כל הסריקה. דירוג כיפוף סטטי אינו מספיק למפרק נע. השתמשו בשני עוגני שיכוך מתיחה ובלולאה מבוקרת. הסירו צביטה, שפשוף, היתפסות, משיכת מחבר ומגע עצמי. כבל שאין לו דירוג דינמי שימושי חייב לעבור בדיקת עייפות נפרדת לפני שנבחר לייצור.
+4. מדדו זרם מפרק או מדד חלופי למומנט, שגיאת עקיבה, טמפרטורה והפרעה מכנית תחילה ללא העור ואז עם מתקני דמה וכבלים, במסלולים ובעומסים זהים. פסלו היתקעות, קירור חסום או כוח כבל המשנה באופן ניכר את תנועת הרובוט.
+5. ציידו מתקן מפרק במדידה לסינון ראשוני של 10,000 מחזורים ולאחריו שער פיילוט של 100,000 מחזורים במהלך, במהירות ובטמפרטורה המיועדים. תעדו שגיאות תקשורת ורציפות, בדקו בכל 10,000 מחזורים וחזרו על בדיקות קיבוע וכיול חיישנים. אלה שערי פיתוח מוצעים, ולא אורך חיים נטען. חיי השירות המסחריים חייבים להיות קשורים למספר המחזורים היומי בפועל, למחזור העבודה ולמשך האחריות.
 
-Keep mass, collision and sensor-frame commissioning separate. A correctly measured location does not validate a cable's fatigue life, and a good sensor reading does not prove adequate joint clearance.
+הפרידו בין הכנסת מסה, התנגשות ומסגרת חיישן לשירות. מיקום שנמדד נכון אינו מאמת את חיי העייפות של הכבל, וקריאת חיישן טובה אינה מוכיחה מרווח מפרק מספיק.
 
-## Measure mass and inertia before integration
+## מדדו מסה והתמד לפני האינטגרציה
 
-Weigh the finished film, cover, adhesive, carrier, straps, controller enclosure, connectors and installed cable lengths. Record each component's mass and center of mass in its parent body's coordinate frame. For scale, the eight-panel example's 0.5 mm cover alone weighs approximately 34.5 g **if** its density is 1,100 kg/m³. Substitute the supplier's actual density and measured thickness; this is not a finished-skin mass estimate.
+שקלו את היריעה המוגמרת, הכיסוי, הדבק, הנושא, הרצועות, מארז הבקר, המחברים ואורכי הכבלים המותקנים. תעדו את המסה ומרכז המסה של כל רכיב במסגרת הקואורדינטות של גוף־האב שלו. להמחשת סדר הגודל, כיסוי 0.5 mm לבדו בדוגמת שמונת הלוחות שוקל כ־34.5 g **אם** צפיפותו 1,100 kg/m³. הציבו את הצפיפות בפועל של הספק ואת העובי המדוד; אין זה אומדן מסה של עור מוגמר.
 
-The inertia helper implements the parallel-axis theorem and rejects invalid masses and physically inconsistent tensors. Supply each component's intrinsic inertia about its own center of mass, already rotated into the same parent axes. A zero tensor is an explicit point-mass approximation; it is inappropriate when the component's own size materially affects the result. Moving cable loops need measurements or bounds over configuration. Review the combined mass, center of mass and inertia before updating the robot's model, balance controller or actuator margins.
+כלי ההתמד מממש את משפט הצירים המקבילים ודוחה מסות לא תקפות וטנזורים שאינם עקביים פיזיקלית. ספקו את ההתמד העצמי של כל רכיב סביב מרכז המסה שלו, כשהוא כבר מסובב לאותם צירי גוף־אב. טנזור אפס הוא קירוב מפורש של מסה נקודתית; הוא אינו מתאים כאשר הגודל העצמי של הרכיב משפיע מהותית על התוצאה. לולאות כבל נעות דורשות מדידות או חסמים על פני התצורות. בדקו את המסה המשולבת, מרכז המסה וההתמד לפני עדכון מודל הרובוט, בקר שיווי המשקל או מרווחי המפעילים.
 
-At ideal 25 mm square pitch the sensing-field density is 1,600 sites/m². Boundaries, inaccessible surfaces, seams, joint gaps and controller packaging reduce installed coverage. A thousand sites imply at least 0.625 m² of sensing-field area at this pitch, before those losses. Report measured covered area, blind zones, total added mass and installed cost rather than scaling a single panel's headline value.
+בפסיעה ריבועית אידאלית של 25 mm, צפיפות שדה החישה היא 1,600 אתרים/m². גבולות, משטחים בלתי נגישים, תפרים, פערי מפרקים ואריזת בקרים מפחיתים את הכיסוי המותקן. אלף אתרים משמעם לפחות 0.625 m² של שדה חישה בפסיעה זו, לפני הפסדים אלה. דווחו שטח מכוסה מדוד, אזורים עיוורים, מסה כוללת שנוספה ועלות מותקנת, במקום לבצע הגדלה פשוטה של נתון כותרת מלוח יחיד.
 
-## Required evidence at each phase
+## ראיות נדרשות בכל שלב
 
-| Gate | Concrete work | Required record |
+| שער | עבודה מעשית | רשומה נדרשת |
 |---|---|---|
-| M0 configuration | Identify the selected robot, mounting surfaces, allowable attachments and motion limits | Hardware identity and approved constraints |
-| M1 passive fit | Print stencils, construct dummy fixture, sweep individual and combined joints | Measured transform, full envelope, clearance and cable-radius photographs |
-| M2 one static panel | Calibrate the complete protected stack using small and broad contacts, then thermal steps | Contact localization, pressure categories, cross-talk, drift and thermal delay |
-| M3 moving limb | Run a supported limb at approved conservative motion limits | Latency, communication integrity, false contacts, retention, current and temperature comparisons |
-| M4 durability | Complete cycle, cleaning, wear and retention procedures; replace one cover | Drift/wear results, service time and measured mass/inertia |
-| M5 multiple panels | Repeat serial/profile-bound commissioning and synchronized acquisition | Correct sensor identification, no address collisions, measured bus loading and blind-zone map |
-| M6 production tooling | Freeze material and adhesive grades, tolerances, tail/connector drawing and manufacturing process | Reviewed fabrication package, supplier quotes, inspection plan and pilot yield |
+| M0 תצורה | זיהוי הרובוט שנבחר, משטחי התקנה, חיבורים מותרים ומגבלות תנועה | זהות חומרה ואילוצים מאושרים |
+| M1 התאמה פסיבית | הדפסת שבלונות, בניית מתקן דמה וסריקת מפרקים נפרדים ומשולבים | טרנספורמציה מדודה, מעטפת מלאה, מרווח ותצלומי רדיוס כבל |
+| M2 לוח סטטי אחד | כיול כל המבנה המוגן באמצעות מגעים קטנים ורחבים, ואז מדרגות תרמיות | איתור מגע, קטגוריות לחץ, זליגת תגובה, סחיפה ועיכוב תרמי |
+| M3 גפה נעה | הפעלת גפה נתמכת במגבלות תנועה שמרניות מאושרות | השוואות השהיה, שלמות תקשורת, מגעי שווא, קיבוע, זרם וטמפרטורה |
+| M4 עמידות | השלמת נהלי מחזוריות, ניקוי, שחיקה וקיבוע; החלפת כיסוי אחד | תוצאות סחיפה ושחיקה, זמן שירות ומסה והתמד מדודים |
+| M5 לוחות מרובים | חזרה על הכנסה לשירות הקשורה למספר סידורי ולפרופיל ועל דגימה מסונכרנת | זיהוי חיישנים נכון, ללא התנגשויות כתובות, עומס אפיק מדוד ומפת אזורים עיוורים |
+| M6 כלי ייצור | הקפאת דרגות חומר ודבק, סבולות, שרטוט זנב ומחבר ותהליך ייצור | חבילת ייצור שנבדקה, הצעות ספקים, תוכנית ביקורת ותשואת פיילוט |
 
-A production release requires the recorded results, not only this checklist. The geometry and files provided here make those tests reproducible without implying that physical qualification has already happened.
+שחרור לייצור דורש את התוצאות המתועדות, ולא רק רשימת ביקורת זו. הגאומטריה והקבצים המסופקים כאן מאפשרים לשחזר את הבדיקות בלי לרמוז שכבר בוצעה הסמכה פיזית.
+
+</div>

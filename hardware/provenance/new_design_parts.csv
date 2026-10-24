@@ -1,0 +1,12 @@
+roboskin_id,description,revision,quantity_demo,artifact,status
+ROBOSKIN.9000,RP1 limb skin demonstrator with 88 active touch sites,A0,1,electronic_skin.md,engineering prototype
+ROBOSKIN.9001,28 channel touch and temperature controller,A0,8,electronic_skin/electronics/patch_circuit.json,pin level specification not routed PCB
+ROBOSKIN.9002,Protected regional 5 V distributor,A0,4,electronic_skin/electronics/region_circuit.json,pin level specification
+ROBOSKIN.9003,Four conductor regional CAN FD trunk,A0,4,electronic_skin/electronics/harness_connections.csv,stationary bench harness first
+ROBOSKIN.9004,Compact 2 by 2 touch film,A0,2,electronic_skin/assets/mechanics/compact_2x2_template.svg,geometry stencil not electrode artwork
+ROBOSKIN.9005,Compact 3 by 2 touch film,A0,4,electronic_skin/assets/mechanics/compact_3x2_template.svg,geometry stencil not electrode artwork
+ROBOSKIN.9006,Standard 7 by 4 touch film,A0,2,electronic_skin/assets/mechanics/standard_7x4_template.svg,geometry stencil not electrode artwork
+ROBOSKIN.9007,Replaceable protective skin cover,A0,8,electronic_skin/mechanics/README.md,material coupon qualification required
+ROBOSKIN.9008,Removable perimeter carrier,A0,8,electronic_skin/mechanics/removable_carrier.scad,parametric bench model
+ROBOSKIN.9009,Separate cable strain relief,A0,8,electronic_skin/mechanics/removable_carrier.scad,parametric bench model
+ROBOSKIN.9010,Optional local IMU calibration module,A0,0,electronic_skin/electronics/optional_calibration.md,optional eight module upgrade

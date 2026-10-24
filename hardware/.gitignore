@@ -1,0 +1,19 @@
+# CAD design files are distributed as Releases assets.
+/01_Mechanic/01_Source_CAD/
+
+# BACKHUB STEP is supplied in the adjacent ZIP.
+/02_PCB/12_RBE_PWR_BACKHUB/03_3D_BACKHUB_2026-09-28.step
+
+# Temporary files and local work outputs.
+~$*
+*.sldprt~
+*.sldasm~
+*.slddrw~
+*.tmp
+*.bak
+*.lck
+*.lock
+Thumbs.db
+desktop.ini
+/_work/
+/_backups/

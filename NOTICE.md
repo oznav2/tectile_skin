@@ -1,7 +1,15 @@
-# Project scope and research attribution
+<div dir="rtl" lang="he">
 
-This is an independent electronic-skin engineering project. The circuit specification, generic mechanical templates and reference software are original project implementations. No external robot source tree, SDK, CAD, manufacturing BOM, repository history or submodule is included.
+עברית · [English](NOTICE.en.md)
 
-Published ideas such as distributed tactile acquisition, send-on-delta reporting, skin calibration and wrench mapping are attributed in the engineering plan and research register. Their inclusion is not a claim of novelty. Manufacturer part numbers and datasheet links identify the actual components; they are not renamed project inventions.
+# היקף הפרויקט וייחוס למקורות
 
-Original research papers are linked rather than bundled. The evidence register distinguishes full-text, partial, abstract-only and citation-only review. No supplier partnership, certification, physical sensor result or commercial breakthrough is claimed by this repository snapshot.
+מפרט מעגלי העור, התבניות המכניות הכלליות ותוכנת החיישנים הם מימושים מקוריים של הפרויקט. תיקיית [hardware](hardware/README.md) כוללת כעת חבילת חומרה נגזרת של RoboParty RP1, שהוכנסה לבקשת בעל הפרויקט עם מזהי ROBOSKIN, שמות עבודה באנגלית ותרגום טקסט מסמכים לעברית. אין טענה שהתכנונים המיובאים נוצרו על ידי ROBOSKIN.
+
+המאגר משתמש בהיסטוריית Git עצמאית ואינו תת־מאגר או עותק של היסטוריית המקור. עצמאות זו אינה מבטלת את חובות הרישוי והייחוס של קבצים נגזרים. [תחולת רישיונות החומרה והתיעוד](hardware/LICENSES.md), [רישיון CERN המקורי](hardware/LICENSE) ו[גרסת המקור ומפת הקבצים](hardware/provenance/README.md) נכללים במאגר. חומרים של ספקים וצדדים שלישיים שומרים על תנאיהם. הייחוס אינו מעיד על שותפות, חסות או אישור של מקור החומרה.
+
+רעיונות שפורסמו, כגון איסוף נתוני מגע מבוזר, דיווח לפי שינוי בערך (send-on-delta), כיול עור ומיפוי כוח ומומנט, מיוחסים למחקרים בתוכנית ובסקירת הספרות. הכללתם אינה טענה לחדשנות. מספרי רכיבים של יצרנים, תקנים ודירוגים חשמליים נשמרים ואינם מוחלפים במיתוג הפרויקט.
+
+מאמרי המחקר מקושרים ואינם מצורפים. רישום הראיות מבחין בין קריאת טקסט מלא, טקסט חלקי, תקציר בלבד ורישום ביבליוגרפי בלבד. גרסה זו אינה טוענת להסמכה, לתוצאת חיישן שנמדדה, לפריצת דרך מסחרית או לכך שחבילת החומרה המותאמת כבר הוסמכה לייצור.
+
+</div>

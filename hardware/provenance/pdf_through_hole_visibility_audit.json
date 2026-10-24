@@ -1,0 +1,498 @@
+{
+  "method": "Rasterize original extracted glyph-only overlays and repaired PDFs at 144 dpi. Every opaque glyph-mask pixel must be dark in final PDF; assesses restored visible glyphs, not complete drawing geometry.",
+  "pages": 70,
+  "total_mask_pixels": 13759,
+  "missing_ink_pixels": 0,
+  "checks": [
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/5DOF/ROBOSKIN.0132_cosmetic_hand_body.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 104,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/5DOF/ROBOSKIN.0133_cosmetic_hand_cover.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 106,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/5DOF/ROBOSKIN.0134_mirrored_cosmetic_hand_body.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 108,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/5DOF/ROBOSKIN.0136_mirrored_cosmetic_hand_cover.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 62,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/7DOF/ROBOSKIN.0001_forearm_lower_body.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 114,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/7DOF/ROBOSKIN.0112_wrist_end_body.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 1021,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/7DOF/ROBOSKIN.0158_wrist_upper_clamp.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 128,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0076_waist_Yaw_limit_ring.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 125,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0077_waist_Roll_limit_ring.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 104,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0079_waist_number_1_clamp_(LS_revision_).pdf",
+      "page": 1,
+      "glyph_ink_pixels": 112,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0080_hip_joint_front_(LS_revision_).pdf",
+      "page": 1,
+      "glyph_ink_pixels": 116,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0081_hip_joint_rear_(LS_revision_).pdf",
+      "page": 1,
+      "glyph_ink_pixels": 342,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0082_hip_joint_left_(LS_revision_).pdf",
+      "page": 1,
+      "glyph_ink_pixels": 135,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0083_hip_joint_right_(LS_revision_).pdf",
+      "page": 1,
+      "glyph_ink_pixels": 110,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0085_hip_joint_motor_cover_plate.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 43,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0086_waist_motor_housing_(LS_revision_).pdf",
+      "page": 1,
+      "glyph_ink_pixels": 114,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0087_hip_joint_left_clamp.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 235,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0088_hip_joint_right_clamp.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 232,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0091_Yaw_travel_stop_3.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 111,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0115_arm_adapter_flange.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 110,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0119_elbow_bearing_housing.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 106,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0120_limit_ring_2.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 113,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0124_shoulder_clamp.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 555,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0126_fan_retention_bracket_(_waist_).pdf",
+      "page": 1,
+      "glyph_ink_pixels": 244,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0138_75_limit_ring.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 105,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0149_shin_body_right.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 127,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0150_shin_body_left.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 344,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0151_shin_ankle_spacer_block.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 114,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0152_mirrored_shin_ankle_spacer_block.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 110,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0153_mirrored_shin_body_left.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 345,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0154_mirrored_shin_body_right.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 124,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0160_thigh_clamp_rear.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 116,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0167_YAW_motor_mounting_bracket.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 337,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0168_PITCH-YAW_motor_connection_bracket.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 108,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0169_PITCH-YAW_motor_flange_bracket.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 225,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0170-02_head_PITCH_motor_flange.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 248,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0171_collector_board_body_bracket.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 505,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0172_speaker_bracket.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 76,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0173_75_shoulder_clamp_(01_revision_).pdf",
+      "page": 1,
+      "glyph_ink_pixels": 114,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0174_75_shoulder_body_(01_revision_).pdf",
+      "page": 1,
+      "glyph_ink_pixels": 113,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0175_upper_arm_upper_body_(01_revision_).pdf",
+      "page": 1,
+      "glyph_ink_pixels": 113,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0176_upper_arm_upper_clamp_(01_revision_).pdf",
+      "page": 1,
+      "glyph_ink_pixels": 106,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0178_upper_arm_lower_rear_segment_(01_revision_).pdf",
+      "page": 1,
+      "glyph_ink_pixels": 57,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0179_forearm_upper_body_left_(02_revision_).pdf",
+      "page": 1,
+      "glyph_ink_pixels": 530,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0181_mirrored_forearm_upper_body_left_(02_revision_).pdf",
+      "page": 1,
+      "glyph_ink_pixels": 568,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0185_mirrored_75_shoulder_clamp_(01_revision_).pdf",
+      "page": 1,
+      "glyph_ink_pixels": 112,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0186_mirrored_75_shoulder_body_(01_revision_).pdf",
+      "page": 1,
+      "glyph_ink_pixels": 107,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0190_Roll_travel_stop.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 52,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0193_thigh_body_(_production_).pdf",
+      "page": 1,
+      "glyph_ink_pixels": 126,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0194_Yaw_travel_stop_4(03_revision_).pdf",
+      "page": 1,
+      "glyph_ink_pixels": 501,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0195_thigh_flange_right.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 213,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0197_thigh_lower_body_left_(02_revision_).pdf",
+      "page": 1,
+      "glyph_ink_pixels": 106,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0198_thigh_flange_left.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 208,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0200_mirrored_thigh_lower_body_left_(02_revision_).pdf",
+      "page": 1,
+      "glyph_ink_pixels": 117,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0219_waist_bracket.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 218,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0220-02_outer_topology_bracket.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 108,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0221_kickme_version_torso_frame.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 546,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0225_handle_-kickme.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 44,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0230-02_PC_cushion_bracket.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 123,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0231_interactive_head_mounting_bracket.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 122,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0235_foot_plate.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 260,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0242_front_shell_latch.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 108,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0245-03_charger_board_mounting_and_locating_bracket.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 379,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0247_97_limit_ring.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 335,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0271_insole.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 114,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0278_shin_front_cover_plate.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 236,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0279_shin_rear_cover_plate.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 116,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0280_side_cable_channel.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 118,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0281_motion_control_expansion_board.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 231,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    },
+    {
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/02_3D_Printing/PDF_Drawings/ROBOSKIN.0267_button.pdf",
+      "page": 1,
+      "glyph_ink_pixels": 124,
+      "missing_ink_pixels": 0,
+      "ratio": 0.0
+    }
+  ]
+}

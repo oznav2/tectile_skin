@@ -1,537 +1,569 @@
-# Calibration, event transport and network evidence review
+<div dir="rtl" lang="he">
 
-Reviewed 2026-10-24. Scope: Cheng et al. (2019), references20–24 and41–62, all27 assigned entries.
+עברית · [English](review.en.md)
 
-This is an evidence audit and a set of engineering adaptations for the proposed28-contact-site/two-NTC patch. It is not a claim to have read27 complete originals. Access obtained:1 complete full text,12 partial texts,9 abstracts and5 citation-only records. Ref61 was downloaded from the official MDPI static repository and read in full. Many primary repository PDFs returned429 or timed out. Indexed manuscript excerpts were usable, but missing methods and plots remain explicitly missing. The complete2019 review supplied by the user gives additional context and algorithms; it does not replace access to every underlying experiment.
+# סקירת הראיות על כיול, העברת אירועים ורשתות
 
-The source ledger is [references.json](references.json). Each numbered entry below identifies exactly what was read. "Plan action" and "test" are engineering recommendations for this project, not claims that the cited authors validated this hardware. No authors were contacted and no paywalls bypassed.
+נבדק בתאריך 2026-10-24. היקף: Cheng ועמיתיו (2019), מקורות 20–24 ו-41–62, כל 27 הרשומות שהוקצו.
 
-## Changes that should enter the plan now
+זהו מבדק ראיות ומכלול התאמות הנדסיות עבור הטלאי המוצע בעל 28 אתרי מגע ושני חיישני NTC. אין זו טענה שנקראו 27 מקורות מקוריים במלואם. היקף הגישה שהושג: טקסט מלא 1, 12 טקסטים חלקיים, 9 תקצירים ו-5 רשומות ביבליוגרפיות בלבד. מקור 61 הורד מהמאגר הסטטי הרשמי של MDPI ונקרא במלואו. קובצי PDF רבים במאגרים ראשוניים החזירו 429 או חרגו מזמן ההמתנה. קטעים מאונדקסים של כתבי יד היו שימושיים, אך שיטות וגרפים חסרים נשארים מסומנים במפורש כחסרים. הסקירה המלאה משנת 2019 שסיפק המשתמש מוסיפה הקשר ואלגוריתמים; היא אינה מחליפה גישה לכל ניסוי שעליו היא מתבססת.
 
-1. **Use the cheapest geometry that is actually observable.** Keep a mechanically registered carrier with a versioned CAD map containing every site's position and outward unit normal. A curved carrier needs different normals at different sites. Network discovery finds electronic identities; it does not determine where a patch is attached. The baseline has no per-site accelerometer, active LED marker or proximity sensor, so it cannot execute the complete TUM localization pipeline. References44–47 make these hardware distinctions important. The proposed removable dual-IMU fixture is an adaptation for checking known geometry.
+רשימת המקורות היא [references.json](references.json). כל רשומה ממוספרת להלן מזהה בדיוק מה נקרא. ״פעולה בתוכנית״ ו״בדיקה״ הן המלצות הנדסיות לפרויקט זה, ולא טענות שהמחברים המצוטטים אימתו חומרה זו. לא נוצר קשר עם מחברים ולא נעקפו חומות תשלום.
 
-2. **Separate three different calibration products.** The activity matrix says which joints influence which segments. Axis/perpendicular-radius estimation checks limited geometric parameters. A full forward model additionally needs frame conventions, link offsets, joint zeros and root registration. None of these establishes link mass, inertia or friction. Ref45 explicitly separates physical structural tests from simulated parameter estimation; ref46 later reports a physical UR5 experiment. Do not combine their evidence into an unmeasured accuracy claim for our fixture. See the [ref45 primary abstract](https://portal.fis.tum.de/en/publications/open-loop-self-calibration-of-articulated-robots-with-artificial-/) and [ref46 primary abstract](https://portal.fis.tum.de/en/publications/automatic-robot-kinematic-modeling-with-a-modular-artificial-skin/).
+## שינויים שיש להכניס לתוכנית כעת
 
-3. **Adopt a conservative send-on-delta hybrid, with a valid periodic fallback.** Scan at100Hz regardless of transmission mode. Send complete absolute snapshots at100Hz during active contact, transitions and faults; allow50Hz only in validated idle conditions. Contact, release, overload and diagnostic changes override a simple amplitude deadband. Fresh capture timestamps and a20ms idle refresh allow the existing40ms age gate to remain meaningful. Provision the network for every node at100Hz. The reduction in idle snapshot count is at most50%, before additional diagnostics. Historical packet/CPU results cannot be copied into this design; references50–52 use different packet formats and workloads. Ref61 already discusses heartbeat updates on pp.60–61, so adding a heartbeat is also prior art.
+1. **להשתמש בגאומטריה הזולה ביותר שאכן ניתנת לזיהוי.** לשמר תושבת הרשומה מכנית במיקום ידוע, עם מפת CAD בעלת גרסה הכוללת את מיקום כל אתר ואת נורמל היחידה שלו הפונה החוצה. תושבת מעוקלת מחייבת נורמלים שונים באתרים שונים. גילוי ברשת מוצא זהויות אלקטרוניות; הוא אינו קובע היכן טלאי מחובר. בתצורת הבסיס אין מד תאוצה בכל אתר, סמן LED פעיל או חיישן קרבה, ולכן היא אינה יכולה להריץ את תהליך האיכון המלא של TUM. מקורות 44–47 מדגישים את חשיבות ההבדלים האלה בחומרה. המתקן הנשלף המוצע בעל שני חיישני IMU הוא התאמה לצורך בדיקת גאומטריה ידועה.
 
-4. **Make loss and silence visible.** Absolute snapshots prevent accumulation of signed-increment reconstruction drift, but do not recover a short event that occurred and ended during a loss interval. An event sequence, session/boot identity, capture time, valid-site mask and timeout behavior must be specified within the actual wire format. A CAN acknowledgment is not confirmation that the host application consumed the sample. A successfully queued message is also not necessarily a transmitted one. Set the sender's last-reported reference on successful transmission completion, and do not clear pending transition/fault information merely because a queue was full.
+2. **להפריד בין שלושה תוצרי כיול שונים.** מטריצת הפעילות מתארת אילו מפרקים משפיעים על אילו מקטעים. אמידת ציר ורדיוס ניצב בודקת פרמטרים גאומטריים מוגבלים. מודל קינמטי קדמי מלא זקוק בנוסף למוסכמות מערכות צירים, היסטי חוליות, אפסי מפרקים ורישום מסגרת הבסיס. אף אחד מאלה אינו קובע מסה, אינרציה או חיכוך של חוליה. מקור 45 מפריד במפורש בין בדיקות מבניות פיזיות לאמידת פרמטרים בסימולציה; מקור 46 מדווח מאוחר יותר על ניסוי פיזי ב-UR5. אין לשלב את ראיותיהם לטענת דיוק שלא נמדדה עבור המתקן שלנו. ראו [התקציר הראשוני של מקור 45](https://portal.fis.tum.de/en/publications/open-loop-self-calibration-of-articulated-robots-with-artificial-/) ו-[התקציר הראשוני של מקור 46](https://portal.fis.tum.de/en/publications/automatic-robot-kinematic-modeling-with-a-modular-artificial-skin/).
 
-5. **Do not put a mesh promise on a bus.** Ref62 studies multi-hop alternative paths. A shared CAN trunk has neither the same routing structure nor an alternate route around a physical short. Region separation limits the damage, while a second independent bus costs hardware and wiring. Describe actual containment and measured recovery for each physical fault. The original [ref62 abstract](https://mediatum.ub.tum.de/doc/1459302/136167106011.pdf) reports within50ms in its tested network; this is not a CAN requirement already met.
+3. **לאמץ שידור משולב ושמרני לפי שינוי, עם חלופה מחזורית תקפה.** לסרוק ב-100 Hz ללא תלות במצב השידור. לשדר תמונות מצב מוחלטות ומלאות ב-100 Hz בזמן מגע פעיל, מעברים ותקלות; לאפשר 50 Hz רק בתנאי חוסר פעילות שאומתו. מגע, שחרור, עומס יתר ושינויים אבחוניים גוברים על תחום אי־תגובה פשוט של משרעת. חותמות רכישה טריות ורענון של 20 ms בחוסר פעילות מאפשרים לסף הגיל הקיים של 40 ms להישאר משמעותי. יש לתכנן את קיבולת הרשת לכל צומת ב-100 Hz. הצמצום במספר תמונות המצב בחוסר פעילות הוא לכל היותר 50%, לפני אבחון נוסף. אי אפשר להעתיק לתכן זה תוצאות היסטוריות של חבילות או CPU; מקורות 50–52 משתמשים בפורמטי חבילות ובעומסי עבודה שונים. מקור 61 כבר דן בעדכוני חיות בעמודים 60–61, ולכן גם הוספת הודעת חיות היא ידע קודם.
 
-6. **Keep control geometry current when tactile values stay constant.** A fixed contact on a moving link changes its base-frame location and often its joint-torque contribution. Use a regularly scheduled control loop with current joint state. Cache a valid link-frame contact estimate or wrench if useful, then remap it each control cycle. Event receipt should update a bounded state store, not directly dispatch asynchronous motor commands. Ref52 motivates event computation; it does not justify caching a world-frame Jacobian indefinitely.
+4. **להפוך אובדן ושקט לנראים.** תמונות מצב מוחלטות מונעות הצטברות סחיפה בשחזור מתוספות חתומות, אך אינן משחזרות אירוע קצר שהתחיל והסתיים בפרק זמן של אובדן. יש להגדיר רצף אירועים, זהות הפעלה ואתחול, זמן רכישה, מסכת אתרים תקפים והתנהגות בחריגת זמן בתוך פורמט התעבורה בפועל. אישור CAN אינו אישור שהיישום במחשב המארח צרך את הדגימה. גם הודעה שהוכנסה בהצלחה לתור אינה בהכרח הודעה ששודרה. יש לקבוע את ייחוס הדיווח האחרון של המשדר רק לאחר השלמת שידור מוצלחת, ולא למחוק מידע ממתין על מעבר או תקלה רק משום שהתור היה מלא.
 
-7. **Use prior art to sharpen the commercial claim.** Modular robot skin, distributed computation, event coding, skin self-calibration and reactive whole-body control all predate this project. The testable opportunity is a low-cost replaceable limb skin with reproducible manufacture, quantified approximation error, documented reliability and an auditable installed cost. The references do not yet demonstrate those results for our materials or process.
+5. **אין לייחס לאפיק הבטחות של רשת אריג.** מקור 62 חוקר נתיבים חלופיים מרובי דילוגים. לקו ראשי משותף של CAN אין אותו מבנה ניתוב ואין נתיב חלופי העוקף קצר פיזי. הפרדת אזורים מגבילה את הנזק, ואילו אפיק עצמאי שני כרוך בחומרה ובחיווט נוספים. יש לתאר את בידוד התקלה בפועל ואת ההתאוששות שנמדדה לכל תקלה פיזית. [התקציר המקורי של מקור 62](https://mediatum.ub.tum.de/doc/1459302/136167106011.pdf) מדווח על התאוששות בתוך 50 ms ברשת שנבדקה בו; זו אינה דרישת CAN שכבר הושגה.
 
-## Concrete calibration protocol and limits
+6. **לשמור על גאומטריית בקרה עדכנית גם כאשר ערכי המישוש קבועים.** מגע קבוע על חוליה נעה משנה את מיקומו במערכת צירי הבסיס, ולעיתים קרובות גם את תרומתו למומנט המפרקים. יש להשתמש בחוג בקרה המתוזמן בקביעות עם מצב מפרקים עדכני. אפשר לשמור אומדן מגע תקף או וקטור כוח ומומנט במערכת צירי החוליה אם הדבר מועיל, ואז למפות אותו מחדש בכל מחזור בקרה. קבלת אירוע צריכה לעדכן מאגר מצבים חסום, ולא לשגר ישירות פקודות מנועים אסינכרוניות. מקור 52 מצדיק חישוב מבוסס אירועים; הוא אינו מצדיק שמירת יעקוביאן במערכת העולם ללא הגבלת זמן.
 
-The following is an engineering adaptation, not a verbatim reproduction of refs45–47.
+7. **להשתמש בידע קודם לחידוד הטענה המסחרית.** עור רובוטי מודולרי, חישוב מבוזר, קידוד אירועים, כיול עצמי של העור ובקרה תגובתית של כל הגוף קדמו כולם לפרויקט זה. ההזדמנות הניתנת לבדיקה היא עור גפיים זול וניתן להחלפה, עם ייצור שניתן לשחזר, שגיאת קירוב כמותית, אמינות מתועדת ועלות מותקנת שניתנת לביקורת. המקורות עדיין אינם מדגימים תוצאות אלה עבור החומרים או התהליך שלנו.
 
-**Fixture and records.** Use a mechanically keyed reference IMU on the stationary robot base and a keyed moving IMU on a known carrier location. Record IMU serial numbers, calibration coefficients, sensor-to-fixture rotations, fixture-to-link pose, sampling period and joint-state time alignment. A6-axis IMU adds a gyro that can help estimate motion axis; the cited papers' essential sensing is accelerometry. Extra gyro data does not remove the need to calibrate mounting orientation and lever arm. Do not infer global heading from gravity alone.
+## פרוטוקול כיול קונקרטי ומגבלותיו
 
-**Stationary check.** Measure bias/noise with both fixtures stationary. Collect several static orientations when possible to distinguish bias and scale error. Compare the reference movement against the allowed stationary baseline. Reject a run if the root moved; treating a walking humanoid as a fixed base invalidates this simple experiment.
+להלן התאמה הנדסית, ולא שחזור מילולי של מקורות 45–47.
 
-**Excitation.** Use an existing robot controller to move one selected joint within its already validated motion limits, returning to its initial position. Record encoder angle and trustworthy angular derivatives along with sensor samples. Repeat in both directions and in multiple poses. Increase neither acceleration nor travel automatically to obtain a better signal. If the available motion cannot excite the parameter sufficiently, retain the CAD value and report an unobservable calibration result.
+**מתקן ותיעוד.** להשתמש ב-IMU ייחוס בעל מיקום וכיוון הנקבעים במפתח מכני על בסיס הרובוט הנייח, וב-IMU נע עם מפתח מכני במיקום ידוע בתושבת. לתעד מספרים סידוריים של חיישני IMU, מקדמי כיול, סיבובים בין חיישן למתקן, תנוחת המתקן ביחס לחוליה, זמן דגימה ויישור הזמנים עם מצב המפרקים. IMU בעל 6 צירים מוסיף גירוסקופ שיכול לסייע באמידת ציר התנועה; החישה המהותית במאמרים המצוטטים היא תאוצה. מידע נוסף מהגירוסקופ אינו מבטל את הצורך בכיול כיוון ההתקנה וזרוע המנוף. אין להסיק כיוון אופקי גלובלי מהכבידה בלבד.
 
-**Frame conversion.** An accelerometer measures specific force. In a common frame, a = R f + g, subject to its convention and calibration. Subtracting raw three-axis measurements from differently oriented sensors is incorrect. Reference subtraction must respect the separate rotations and possible translational acceleration of each mounting point.
+**בדיקת נייחות.** למדוד היסט ורעש כאשר שני המתקנים נייחים. ככל שניתן, לאסוף כמה כיוונים סטטיים כדי להבחין בין שגיאת היסט לשגיאת קנה מידה. להשוות את תנועת הייחוס לרמת הנייחות המותרת. לפסול ריצה אם הבסיס זז; התייחסות להומנואיד הולך כאל בסיס מקובע פוסלת ניסוי פשוט זה.
 
-**Activity matrix.** Compare motion-dependent energy against the measured stationary distribution and vibrations on unconnected links. Estimate which segment responds to which joint; cross-check against the known kinematic tree. Reject a row with ambiguous activity instead of assigning it automatically. A detachable fixture can inspect segments sequentially; this is different from observing every cell simultaneously.
+**עירור.** להשתמש בבקר רובוט קיים כדי להזיז מפרק נבחר אחד בתוך גבולות התנועה שכבר אומתו לו, ולחזור למיקומו ההתחלתי. לתעד זווית מקודד ונגזרות זוויתיות אמינות לצד דגימות החיישנים. לחזור בשני הכיוונים ובכמה תנוחות. אין להגדיל אוטומטית תאוצה או מהלך כדי להשיג אות טוב יותר. אם התנועה הזמינה אינה יכולה לעורר את הפרמטר במידה מספקת, יש לשמר את ערך ה-CAD ולדווח שתוצאת הכיול אינה ניתנת לזיהוי.
 
-**Axis and radius.** For an isolated rigid revolute motion about a stationary axis:
+**המרת מערכות צירים.** מד תאוצה מודד כוח סגולי. במערכת צירים משותפת, a = R f + g, בהתאם למוסכמה ולכיול שלו. חיסור מדידות גולמיות בשלושה צירים מחיישנים בעלי כיוונים שונים הוא שגוי. חיסור הייחוס חייב להתחשב בסיבובים הנפרדים ובתאוצה הקווית האפשרית של כל נקודת התקנה.
+
+**מטריצת פעילות.** להשוות אנרגיה התלויה בתנועה להתפלגות הנייחת שנמדדה ולרעידות בחוליות לא מחוברות. לאמוד איזה מקטע מגיב לאיזה מפרק, ולהצליב עם העץ הקינמטי הידוע. לפסול שורה בעלת פעילות לא חד־משמעית במקום להקצות אותה אוטומטית. מתקן נתיק יכול לבדוק מקטעים ברצף; הדבר שונה מתצפית בו־זמנית בכל תא.
+
+**ציר ורדיוס.** עבור תנועה סיבובית קשיחה ומבודדת סביב ציר נייח:
 
     a = alpha × r + omega × (omega × r)
 
-With known axis, angular acceleration and angular velocity, fit the observable perpendicular radius using all valid samples and report residuals. The component of r along the joint axis lies in the measurement nullspace. A single-joint run therefore cannot recover that axial offset. Pure or nearly constant-speed motion also gives little tangential excitation. Gravity-only orientation leaves yaw unobservable. These are physical identifiability limits, not deficiencies that a more complex optimizer can eliminate.
+כאשר הציר, התאוצה הזוויתית והמהירות הזוויתית ידועים, יש להתאים את הרדיוס הניצב שניתן לזהות באמצעות כל הדגימות התקפות, ולדווח על שאריות ההתאמה. הרכיב של r לאורך ציר המפרק נמצא במרחב האפס של המדידה. לכן ריצה של מפרק יחיד אינה יכולה לשחזר היסט צירי זה. גם תנועה במהירות קבועה או כמעט קבועה מספקת עירור משיקי מועט. כיוון הנלמד מהכבידה בלבד משאיר את זווית הסבסוב בלתי נצפית. אלה מגבלות פיזיקליות של יכולת הזיהוי, ולא ליקויים שאופטימייזר מורכב יותר יכול לבטל.
 
-**Conditioning and held-out validation.** Publish the regression singular values, noise level, residual distribution and bootstrap or repeated-run uncertainty. Select an acceptance bound from the required application accuracy and fixture metrology before looking at results. Compare with independently measured carrier geometry and poses excluded from the fit. A small training residual is insufficient. Keep the original CAD model if a fitted parameter fails any gate.
+**התניה ואימות על נתונים שהוחזקו מחוץ להתאמה.** לפרסם את הערכים הסינגולריים של הרגרסיה, רמת הרעש, התפלגות השאריות ואי־ודאות המוערכת באמצעות דגימה חוזרת או ריצות חוזרות. לבחור גבול קבלה לפי דיוק היישום הנדרש ומטרולוגיית המתקן לפני צפייה בתוצאות. להשוות לגאומטריית תושבת שנמדדה באופן עצמאי ולתנוחות שלא נכללו בהתאמה. שארית אימון קטנה אינה מספיקה. לשמר את מודל ה-CAD המקורי אם פרמטר מותאם נכשל בשער כלשהו.
 
-**Body-map release.** Store map revision, root transform, carrier model, per-site position/normal, calibration version and permitted installation orientation together. Replacing a cover may alter pressure calibration; replacing or reversing a carrier can invalidate spatial calibration. Simulate a known inward force at several sites and verify the resulting commanded retreat is outward with the intended units.
+**שחרור מפת גוף.** לשמור יחד את מהדורת המפה, טרנספורמציית הבסיס, מודל התושבת, מיקום ונורמל של כל אתר, גרסת הכיול וכיוון ההתקנה המותר. החלפת כיסוי עשויה לשנות את כיול הלחץ; החלפה או היפוך של תושבת עלולים לפסול את הכיול המרחבי. לדמות כוח ידוע הפונה פנימה בכמה אתרים, ולוודא שפקודת הנסיגה המתקבלת פונה החוצה וביחידות המיועדות.
 
-## Concrete event/network qualification
+## הכשרה קונקרטית של אירועים ורשת
 
-Use raw recordings and synthetic transport fault injection so periodic and hybrid modes see identical input.
+יש להשתמש בהקלטות גולמיות ובהזרקת תקלות תעבורה סינתטית, כך שהמצב המחזורי והמצב המשולב יקבלו קלט זהה.
 
-| Case | Required observation |
+| מקרה | תצפית נדרשת |
 |---|---|
-| Quiet motor-off and motor-on | Site noise, false transition rate, actual idle frame rate, current consumption |
-| Slow pressure ramp | No threshold-sized permanent bias; preserved absolute samples; no inappropriate zero tracking |
-| Contact held60s | Contact remains asserted; creep/drift reported separately |
-| Brief touch and release | Acquisition-detectable pulses appear; clearly report pulses shorter than the10ms scan interval may be missed |
-| All sites and all nodes active | No reliance on idle compression; bounded queues and maximum acquisition age |
-| Lost frame and lost burst | Sequence gap visible; next absolute frame restores current state; missed transient remains acknowledged as unknown |
-| Reboot, timestamp wrap, duplicate frame | Old-session/replayed data rejected; fresh identity and timing required |
-| Stopped sensor scan but running CAN | Capture age fails even if receive timestamps continue changing |
-| Failed UI/logger | Acquisition and control validity unaffected; display may drop frames independently |
-| Open branch, open trunk, bus short, gateway reset | Measured fault scope and stale transition for each; no fictional rerouting |
-| Constant contact with changing joint pose | Recomputed geometric control matches periodic reference |
+| שקט כשהמנועים כבויים וכשהם פועלים | רעש באתרי החישה, קצב מעברים כוזבים, קצב המסגרות בפועל בחוסר פעילות וצריכת זרם |
+| עליית לחץ איטית | אין היסט קבוע בגודל הסף; הדגימות המוחלטות נשמרות; אין מעקב אפס שאינו מתאים |
+| מגע המוחזק במשך 60 s | מצב המגע נשאר פעיל; זחילה וסחיפה מדווחות בנפרד |
+| נגיעה קצרה ושחרור | פולסים הניתנים לגילוי ברכישה מופיעים; יש לציין בבירור שפולסים קצרים ממרווח הסריקה של 10 ms עלולים להתפספס |
+| כל האתרים וכל הצמתים פעילים | אין הסתמכות על דחיסה בחוסר פעילות; תורים חסומים וגיל רכישה מרבי |
+| מסגרת אבודה ופרץ אבוד | פער ברצף נראה; המסגרת המוחלטת הבאה משחזרת את המצב הנוכחי; האירוע החולף שהוחמץ ממשיך להיות מסומן כלא ידוע |
+| אתחול, גלישת חותמת זמן, מסגרת כפולה | נתונים מהפעלה ישנה או משוחזרים נדחים; נדרשים זהות ותזמון חדשים |
+| סריקת החיישנים נעצרת אך CAN ממשיך לפעול | גיל הרכישה נכשל גם אם חותמות זמן הקבלה ממשיכות להשתנות |
+| ממשק המשתמש או רשם הנתונים נכשל | הרכישה ותקפות הבקרה אינן מושפעות; התצוגה רשאית להשמיט מסגרות באופן עצמאי |
+| נתק בענף, נתק בקו הראשי, קצר באפיק, איפוס שער התקשורת | היקף תקלה ומעבר למצב מיושן נמדדים לכל מקרה; ללא ניתוב חלופי דמיוני |
+| מגע קבוע עם שינוי תנוחת המפרק | הבקרה הגאומטרית המחושבת מחדש תואמת את הייחוס המחזורי |
 
-Derive delta thresholds from measured noise, quantization and the desired smallest meaningful change, then freeze/version them for the qualification run. Do not let adaptive noise suppression silently increase the threshold during real contact. Use hysteresis and explicit state transitions for contact/release. The latency budget must include scan phase, filtering, queueing, arbitration, gateway transfer and control scheduling. A100Hz scan alone permits up to10ms phase delay before filtering or networking.
+יש לגזור את ספי השינוי מהרעש הנמדד, מהכימות ומהשינוי המשמעותי הקטן ביותר הרצוי, ואז להקפיא אותם ולשייך להם גרסה לריצת ההכשרה. אין לאפשר לדיכוי רעש מסתגל להגדיל בשקט את הסף בזמן מגע אמיתי. יש להשתמש בהיסטרזיס ובמעברי מצב מפורשים למגע ולשחרור. תקציב ההשהיה חייב לכלול מופע סריקה, סינון, תורים, בוררות באפיק, מעבר בשער התקשורת ותזמון הבקרה. סריקה ב-100 Hz לבדה מאפשרת השהיית מופע של עד 10 ms לפני סינון או תקשורת.
 
-Report both median and tail/worst-observed latency, plus the test duration and number of samples. A worst-observed number is not a mathematical hard bound; queue and scheduling analysis are also required before a deterministic timing claim. This plan's40ms validity threshold is an application design parameter, not a guarantee proven by the cited studies.
+יש לדווח גם על חציון ההשהיה וגם על זנב ההתפלגות וההשהיה הגרועה ביותר שנצפתה, בצירוף משך הבדיקה ומספר הדגימות. הערך הגרוע ביותר שנצפה אינו חסם קשיח מתמטי; נדרשים גם ניתוחי תורים ותזמון לפני טענה לתזמון דטרמיניסטי. סף התקפות של 40 ms בתוכנית זו הוא פרמטר תכן יישומי, ולא הבטחה שהמחקרים המצוטטים הוכיחו.
 
-## Reference-by-reference ledger
+## רישום פרטני לכל מקור
 
 ### [20] A real-time distributed architecture for large-scale tactile sensing
 
-E. Baglini, S. Youssefi, F. Mastrogiovanni and G. Cannata; 2014. [Source](https://ewh.ieee.org/soc/ras/conf/financiallycosponsored/IROS/2014/www.iros2014.org/images/download/IROS2014-Full-Conference-Digest.pdf); DOI [10.1109/IROS.2014.6942778](https://doi.org/10.1109/IROS.2014.6942778).
+E. Baglini, S. Youssefi, F. Mastrogiovanni and G. Cannata; 2014. [מקור](https://ewh.ieee.org/soc/ras/conf/financiallycosponsored/IROS/2014/www.iros2014.org/images/download/IROS2014-Full-Conference-Digest.pdf); DOI [10.1109/IROS.2014.6942778](https://doi.org/10.1109/IROS.2014.6942778).
 
-**Access: ABSTRACT_ONLY.** Official IROS2014 digest, p.134, and author-uploaded abstract; original seven-page paper not obtained.
+**גישה: ABSTRACT_ONLY.** תקציר הכנס הרשמי IROS 2014, עמוד 134, ותקציר שהעלה מחבר; המאמר המקורי בן שבעת העמודים לא הושג.
 
-**Finding.** Describes an EtherCAT-based distributed network connecting computational nodes associated with skin patches and evaluates the real-time architecture.
+**ממצא.** מתאר רשת מבוזרת מבוססת EtherCAT המחברת צומתי חישוב המשויכים לטלאי עור, ומעריך את ארכיטקטורת הזמן האמיתי.
 
-**Limit.** The accessible material does not establish the exact hardware cost, measured deadline distribution, or fault containment available to this project. EtherCAT results cannot certify a CAN FD implementation.
+**מגבלה.** החומר הנגיש אינו מבסס את עלות החומרה המדויקת, התפלגות מועדי הביצוע שנמדדה או יכולת בידוד התקלות הזמינה לפרויקט זה. תוצאות EtherCAT אינן יכולות להכשיר מימוש CAN FD.
 
-**Plan action.** Adapt its separation of local acquisition, transport and host processing. Keep CAN FD for the low-cost baseline; qualify deadlines under maximum traffic before increasing node count.
+**פעולה בתוכנית.** לאמץ בהתאמה את ההפרדה בין רכישה מקומית, תעבורה ועיבוד במחשב המארח. להשאיר CAN FD בתצורת הבסיס הזולה; להכשיר עמידה בזמנים תחת תעבורה מרבית לפני הגדלת מספר הצמתים.
 
-**Verification.** Timestamp ADC scan completion, CAN transmission, gateway reception and consumer execution separately. Test every region at maximum active traffic while logging, displaying data and injecting node resets.
+**אימות.** לתעד בנפרד חותמות זמן של סיום סריקת ADC, שידור CAN, קבלה בשער התקשורת והרצת הצרכן. לבדוק כל אזור בתעבורה פעילה מרבית, תוך רישום, הצגת נתונים והזרקת איפוסי צמתים.
 
-**Prior art.** Distributed patch processing and real-time tactile networking are established prior art.
+**ידע קודם.** עיבוד מבוזר בטלאים ותקשורת מישוש בזמן אמת הם ידע קודם מבוסס.
 
-Additional locators: [1](https://www.researchgate.net/publication/271072617_A_real-time_distributed_architecture_for_large-scale_tactile_sensing). Their access status is described above; a link does not imply full-text review.
+מיקומים נוספים: [1](https://www.researchgate.net/publication/271072617_A_real-time_distributed_architecture_for_large-scale_tactile_sensing). מצב הגישה אליהם מתואר לעיל; קישור אינו מעיד על סקירת טקסט מלא.
+
 
 ### [21] A real-time data acquisition and processing framework for large-scale robot skin
 
-S. Youssefi, S. Denei, F. Mastrogiovanni and G. Cannata; 2015. [Source](https://www.sciencedirect.com/science/article/pii/S0921889015000172); DOI [10.1016/j.robot.2015.01.009](https://doi.org/10.1016/j.robot.2015.01.009).
+S. Youssefi, S. Denei, F. Mastrogiovanni and G. Cannata; 2015. [מקור](https://www.sciencedirect.com/science/article/pii/S0921889015000172); DOI [10.1016/j.robot.2015.01.009](https://doi.org/10.1016/j.robot.2015.01.009).
 
-**Access: PARTIAL_TEXT.** Publisher-indexed introduction and selected architecture/implementation sections, including Skinware abstraction and historical test platform. Full results and figures not reviewed.
+**גישה: PARTIAL_TEXT.** מבוא מאונדקס אצל המוציא לאור וסעיפי ארכיטקטורה ומימוש נבחרים, כולל הפשטת Skinware ופלטפורמת הבדיקה ההיסטורית. התוצאות והאיורים המלאים לא נבדקו.
 
-**Finding.** Skinware separates tactile applications from particular sensors and network technologies and treats data coherence, consistency and timing as architectural concerns. Its reported environment includes RTAI and an older Linux platform.
+**ממצא.** Skinware מפרידה בין יישומי מישוש לחיישנים ולטכנולוגיות רשת מסוימים, ומתייחסת ללכידות הנתונים, לעקביות ולתזמון כשיקולים ארכיטקטוניים. הסביבה המדווחת כוללת RTAI ופלטפורמת Linux ישנה יותר.
 
-**Limit.** Historical software-platform results do not establish present ROS2/Linux deadline behavior or direct STM32/CAN compatibility.
+**מגבלה.** תוצאות מפלטפורמת תוכנה היסטורית אינן מבססות עמידה עכשווית במועדי ביצוע ב-ROS2/Linux או תאימות ישירה ל-STM32/CAN.
 
-**Plan action.** Adopt immutable complete-scan snapshots with versioned metadata and bounded producer-consumer queues. Keep real-time consumers independent from visualization, file I/O and discovery.
+**פעולה בתוכנית.** לאמץ תמונות מצב מלאות של סריקה, שאינן ניתנות לשינוי, עם מטא־נתונים בעלי גרסה ותורי יצרן־צרכן חסומים. לשמור על עצמאות צרכני הזמן האמיתי מהמחשה, מקלט ופלט לקבצים ומגילוי התקנים.
 
-**Verification.** Freeze or crash the UI/logger while exercising acquisition. Assert the control consumer sees either a coherent fresh snapshot or an explicit invalid/stale state, never a mixture of scans.
+**אימות.** להקפיא או להפיל את ממשק המשתמש ורשם הנתונים בזמן רכישה. לוודא שצרכן הבקרה רואה תמונת מצב עקבית וטרייה או מצב מפורש לא תקף או מיושן, ולעולם לא ערבוב בין סריקות.
 
-**Prior art.** A common sensor abstraction and real-time skin middleware are established; contribution must be reproducible integration quality and cost.
+**ידע קודם.** הפשטת חיישנים משותפת ותוכנת תיווך לעור בזמן אמת הן תשתיות מבוססות; התרומה צריכה להיות איכות שילוב ועלות שניתן לשחזר.
+
 
 ### [22] Asynchronous, event-driven readout of POSFET devices for tactile sensing
 
-S. Caviglia, M. Valle and C. Bartolozzi; 2014. [Source](https://doi.org/10.1109/ISCAS.2014.6865717); DOI [10.1109/ISCAS.2014.6865717](https://doi.org/10.1109/ISCAS.2014.6865717).
+S. Caviglia, M. Valle and C. Bartolozzi; 2014. [מקור](https://doi.org/10.1109/ISCAS.2014.6865717); DOI [10.1109/ISCAS.2014.6865717](https://doi.org/10.1109/ISCAS.2014.6865717).
 
-**Access: CITATION_ONLY.** Identity and conference pages2648–2651 checked against ISCAS proceedings contents; original abstract/body not obtained. DOI corroborated by later scholarly reference lists.
+**גישה: CITATION_ONLY.** זהות המאמר ועמודי הכנס 2648–2651 נבדקו מול תוכן העניינים של מאמרי ISCAS; התקציר וגוף המאמר המקוריים לא הושגו. ה-DOI אושר גם ברשימות מקורות מדעיות מאוחרות יותר.
 
-**Finding.** The title establishes an earlier POSFET/event-readout line of work. No device-level performance or circuit claim from this paper is relied upon here.
+**ממצא.** הכותרת מבססת קיומו של קו עבודה מוקדם על POSFET וקריאה מבוססת אירועים. אין הסתמכות כאן על טענת ביצוע ברמת התקן או על טענת מעגל ממאמר זה.
 
-**Limit.** No original circuit schematic, process, power, noise or bandwidth was available for audit; a POSFET circuit cannot be presumed equivalent to the chosen resistive film.
+**מגבלה.** לא היו זמינים לביקורת תרשים מעגל מקורי, תהליך ייצור, הספק, רעש או רוחב פס; אין להניח שמעגל POSFET שקול לסרט ההתנגדותי שנבחר.
 
-**Plan action.** Do not transplant or cost a POSFET circuit from this citation. The baseline continues to use a conventional ADC and firmware change detection; identify that as sampled event reporting.
+**פעולה בתוכנית.** אין להעתיק מעגל POSFET או לתמחרו מתוך ציטוט זה. תצורת הבסיס ממשיכה להשתמש ב-ADC רגיל ובגילוי שינויים בקושחה; יש לתאר זאת כדיווח אירועים מדגימות.
 
-**Verification.** Document actual scan period and first-sample latency. Do not label the MCU design a continuously asynchronous transducer.
+**אימות.** לתעד את זמן הסריקה בפועל ואת ההשהיה עד הדגימה הראשונה. אין לכנות את תכן ה-MCU מתמר אסינכרוני רציף.
 
-**Prior art.** The title is enough to flag asynchronous tactile readout as pre-existing work; performance comparison requires the original paper.
+**ידע קודם.** הכותרת מספיקה כדי לזהות קריאת מישוש אסינכרונית כעבודה קיימת; השוואת ביצועים מחייבת את המאמר המקורי.
 
-Additional locators: [1](https://www.proceedings.com/content/022/022887webtoc.pdf). Their access status is described above; a link does not imply full-text review.
+מיקומים נוספים: [1](https://www.proceedings.com/content/022/022887webtoc.pdf). מצב הגישה אליהם מתואר לעיל; קישור אינו מעיד על סקירת טקסט מלא.
+
 
 ### [23] Event-driven encoding of off-the-shelf tactile sensors for compression and latency optimisation for robotic skin
 
-C. Bartolozzi et al.; 2017. [Source](https://www.researchgate.net/publication/321816551_Event-driven_encoding_of_off-the-shelf_tactile_sensors_for_compression_and_latency_optimisation_for_robotic_skin); DOI [10.1109/IROS.2017.8202153](https://doi.org/10.1109/IROS.2017.8202153).
+C. Bartolozzi et al.; 2017. [מקור](https://www.researchgate.net/publication/321816551_Event-driven_encoding_of_off-the-shelf_tactile_sensors_for_compression_and_latency_optimisation_for_robotic_skin); DOI [10.1109/IROS.2017.8202153](https://doi.org/10.1109/IROS.2017.8202153).
 
-**Access: PARTIAL_TEXT.** Author-uploaded manuscript excerpts: architecture, encoding comparison and conclusions. Primary IIT laboratory publication listing also checked. Full paper was not independently downloaded.
+**גישה: PARTIAL_TEXT.** קטעים מכתב יד שהעלה מחבר: ארכיטקטורה, השוואת קידודים ומסקנות. נבדקה גם רשימת הפרסומים הראשונית של מעבדת IIT. המאמר המלא לא הורד באופן עצמאי.
 
-**Finding.** Studies event encodings of existing tactile sensors, including recorded iCub fingertip data, and describes an FPGA-based acquisition path with hierarchical event addressing. Sensor conversion and event transport are distinct stages.
+**ממצא.** בוחן קידודי אירועים של חיישני מישוש קיימים, כולל נתונים מוקלטים מקצות האצבעות של iCub, ומתאר מסלול רכישה מבוסס FPGA עם מיעון אירועים היררכי. המרת החיישן והעברת האירועים הן שלבים נפרדים.
 
-**Limit.** Fingertip datasets, FPGA acquisition and AS-AER links do not demonstrate whole-limb resistive-film performance. Encoding simulations and hardware properties must be distinguished.
+**מגבלה.** מערכי נתונים מקצות אצבעות, רכישת FPGA וקישורי AS-AER אינם מדגימים ביצועי סרט התנגדותי על גפה שלמה. יש להבחין בין סימולציות קידוד למאפייני החומרה.
 
-**Plan action.** Adopt explicit body/patch/site identifiers, acquisition timestamps and a reproducible raw-data-versus-event comparison. Keep CAN integrity and periodic absolute snapshots; reject an FPGA hub as the minimum-cost baseline.
+**פעולה בתוכנית.** לאמץ מזהים מפורשים לגוף, לטלאי ולאתר, חותמות זמן רכישה והשוואה ניתנת לשחזור בין נתונים גולמיים לאירועים. לשמר בדיקות תקינות CAN ותמונות מצב מוחלטות מחזוריות; לא לכלול רכזת FPGA בתצורת הבסיס בעלת העלות המזערית.
 
-**Verification.** Replay identical raw recordings through periodic and hybrid encoders. Report event onset misses, absolute reconstruction error, bytes on the wire and end-to-end age, including packet overhead.
+**אימות.** להעביר אותן הקלטות גולמיות דרך מקודד מחזורי ומקודד משולב. לדווח על החמצת תחילת אירועים, שגיאת שחזור מוחלטת, מספר הבתים על הקו וגיל מקצה לקצה, כולל תקורת החבילות.
 
-**Prior art.** Off-the-shelf tactile event conversion, address hierarchies and event compression are prior art.
+**ידע קודם.** המרת חיישני מישוש מהמדף לאירועים, היררכיות כתובות ודחיסת אירועים הן ידע קודם.
 
-Additional locators: [1](https://edpr.iit.it/neuromorphic-icub-infrastructure). Their access status is described above; a link does not imply full-text review.
+מיקומים נוספים: [1](https://edpr.iit.it/neuromorphic-icub-infrastructure). מצב הגישה אליהם מתואר לעיל; קישור אינו מעיד על סקירת טקסט מלא.
+
 
 ### [24] The event-driven software library for YARP—With algorithms and iCub applications
 
-A. Glover, V. Vasco, M. Iacono and C. Bartolozzi; 2018. [Source](https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2017.00073/full); DOI [10.3389/frobt.2017.00073](https://doi.org/10.3389/frobt.2017.00073).
+A. Glover, V. Vasco, M. Iacono and C. Bartolozzi; 2018. [מקור](https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2017.00073/full); DOI [10.3389/frobt.2017.00073](https://doi.org/10.3389/frobt.2017.00073).
 
-**Access: PARTIAL_TEXT.** Publisher-indexed sections3.2–3.3 on event representation, readers/queues and processing; complete article body not retrieved.
+**גישה: PARTIAL_TEXT.** סעיפים 3.2–3.3 המאונדקסים אצל המוציא לאור, על ייצוג אירועים, קוראים ותורים ועיבוד; גוף המאמר המלא לא נשלף.
 
-**Finding.** Provides event packet representations and software handling in YARP, with processing decoupled from receipt. The discussion recognizes large variations in event traffic and computation.
+**ממצא.** מספק ייצוגי חבילות אירועים וטיפול בתוכנה ב-YARP, תוך הפרדת העיבוד מהקבלה. הדיון מכיר בשינויים גדולים בעומס תעבורת האירועים ובחישוב.
 
-**Limit.** Its illustrative large-rate examples concern vision. A flexible event library does not establish a hard skin-control deadline or justify silently skipping required control updates.
+**מגבלה.** הדוגמאות ההמחשתיות לקצבים גבוהים עוסקות בראייה. ספריית אירועים גמישה אינה מבססת מועד ביצוע קשיח לבקרת עור ואינה מצדיקה דילוג שקט על עדכוני בקרה נדרשים.
 
-**Plan action.** Adapt recording/replay, typed event records and independent receive/processing threads. Use bounded queues with counters and an explicit overload state; make GUI frame dropping independent of tactile validity.
+**פעולה בתוכנית.** לאמץ בהתאמה הקלטה ושחזור, רשומות אירועים בעלות טיפוסים ותהליכוני קבלה ועיבוד נפרדים. להשתמש בתורים חסומים עם מונים ועם מצב עומס יתר מפורש; להפריד בין השמטת מסגרות בממשק הגרפי לתקפות המישוש.
 
-**Verification.** Burst all sites simultaneously, pause each consumer, then resume. Verify bounded memory, monotonically sequenced records and deterministic stale-data handling.
+**אימות.** ליצור פרץ בו־זמני מכל האתרים, להשהות כל צרכן ואז להפעילו שוב. לאמת זיכרון חסום, רצף רשומות מונוטוני וטיפול דטרמיניסטי בנתונים מיושנים.
 
-**Prior art.** Event middleware and replay are established infrastructure; do not market them as a new sensory nervous system.
+**ידע קודם.** תוכנת תיווך לאירועים ושחזור הם תשתית מבוססת; אין לשווקם כמערכת עצבים חושית חדשה.
+
 
 ### [41] Humanoid multimodal tactile-sensing modules
 
-P. Mittendorfer and G. Cheng; 2011. [Source](https://portal.fis.tum.de/en/publications/humanoid-multimodal-tactile-sensing-modules/); DOI [10.1109/TRO.2011.2106330](https://doi.org/10.1109/TRO.2011.2106330).
+P. Mittendorfer and G. Cheng; 2011. [מקור](https://portal.fis.tum.de/en/publications/humanoid-multimodal-tactile-sensing-modules/); DOI [10.1109/TRO.2011.2106330](https://doi.org/10.1109/TRO.2011.2106330).
 
-**Access: ABSTRACT_ONLY.** University bibliographic record and abstract; full methods, circuit and characterization tables not obtained.
+**גישה: ABSTRACT_ONLY.** רשומה ביבליוגרפית ותקציר באוניברסיטה; השיטות המלאות, המעגל וטבלאות האפיון לא הושגו.
 
-**Finding.** Describes modular off-the-shelf multimodal skin with local digitization/processing and network connectivity, including temperature, acceleration and proximity sensing.
+**ממצא.** מתאר עור רב־חושי מודולרי מרכיבי מדף, עם המרה לדיגיטל ועיבוד מקומיים וחיבור לרשת, לרבות חישת טמפרטורה, תאוצה וקרבה.
 
-**Limit.** This earlier hardware generation should not be conflated with the later force-cap version. Its multimodal capability is absent from a pressure-plus-NTC patch.
+**מגבלה.** אין לערבב דור חומרה מוקדם זה עם הגרסה המאוחרת הכוללת כיסוי חישת כוח. יכולותיו הרב־חושיות אינן קיימות בטלאי המשלב לחץ ו-NTC.
 
-**Plan action.** Adopt local processing and replaceable modules. Publish an explicit modality table: approximate normal contact and two temperature points in baseline; no shear, proximity or inertial self-localization.
+**פעולה בתוכנית.** לאמץ עיבוד מקומי ומודולים הניתנים להחלפה. לפרסם טבלת אופני חישה מפורשת: מגע ניצב בקירוב ושתי נקודות טמפרטורה בבסיס; ללא גזירה, קרבה או איכון עצמי אינרציאלי.
 
-**Verification.** For every advertised modality, demonstrate a repeatable stimulus, calibration, uncertainty and fault response using the actual production-intent patch.
+**אימות.** לכל אופן חישה המפורסם במוצר, להדגים גירוי חוזר, כיול, אי־ודאות ותגובה לתקלה באמצעות הטלאי האמיתי המיועד לייצור.
 
-**Prior art.** Modular multimodal cells and local intelligence existed by2011.
+**ידע קודם.** תאים מודולריים רב־חושיים ועיבוד מקומי התקיימו כבר ב-2011.
+
 
 ### [42] Integrating discrete force cells into multi-modal artificial skin
 
-P. Mittendorfer and G. Cheng; 2012. [Source](https://mediatum.ub.tum.de/doc/1116556/214040.pdf); DOI [10.1109/HUMANOIDS.2012.6651619](https://doi.org/10.1109/HUMANOIDS.2012.6651619).
+P. Mittendorfer and G. Cheng; 2012. [מקור](https://mediatum.ub.tum.de/doc/1116556/214040.pdf); DOI [10.1109/HUMANOIDS.2012.6651619](https://doi.org/10.1109/HUMANOIDS.2012.6651619).
 
-**Access: PARTIAL_TEXT.** Repository-indexed first-page abstract, force-cell construction and introduction. Full force/displacement graphs and durability results not reviewed.
+**גישה: PARTIAL_TEXT.** תקציר מהעמוד הראשון, מבנה תא הכוח והמבוא, המאונדקסים במאגר. גרפי הכוח וההעתק המלאים ותוצאות העמידות לא נבדקו.
 
-**Finding.** Uses etched CuBe2 spring structures with capacitive measurement, three force cells per skin module, and automated assembly concepts. The paper reports2.5kHz acquisition filtered to250Hz and SNR greater than50dB.
+**ממצא.** משתמש במבני קפיץ צרובים מ-CuBe2 עם מדידה קיבולית, בשלושה תאי כוח בכל מודול עור וברעיונות להרכבה אוטומטית. המאמר מדווח על רכישה ב-2.5 kHz המסוננת ל-250 Hz ועל יחס אות לרעש גדול מ-50 dB.
 
-**Limit.** These figures belong to a metal-spring capacitive transducer, not a printed resistive taxel. Encapsulation and mechanical preload affect performance. CuBe processing is not proposed for the home-lab film route.
+**מגבלה.** נתונים אלה שייכים למתמר קיבולי בעל קפיץ מתכתי, ולא לאתר חישה התנגדותי מודפס. העטיפה והעומס המקדים המכני משפיעים על הביצועים. עיבוד CuBe אינו מוצע למסלול הסרט במעבדה הביתית.
 
-**Plan action.** Adopt mechanical overload stops, controlled preload and a cover-specific calibration record. Reject copying its performance numbers or force-cell BOM into the resistive design.
+**פעולה בתוכנית.** לאמץ מעצורים מכניים לעומס יתר, עומס מקדים מבוקר ורשומת כיול ספציפית לכיסוי. אין להעתיק את נתוני הביצועים או את רשימת החומרים של תא הכוח אל התכן ההתנגדותי.
 
-**Verification.** Calibrate each finished cover/sensor/carrier stack, repeat after remounting and after overload, and measure loading/unloading hysteresis and zero drift.
+**אימות.** לכייל כל מכלול גמור של כיסוי, חיישן ותושבת, לחזור לאחר התקנה מחדש ולאחר עומס יתר, ולמדוד היסטרזיס בהעמסה ובפריקה וסחיפת אפס.
 
-**Prior art.** Protected multimodal force cells and assembly-oriented mechanics are prior art.
+**ידע קודם.** תאי כוח רב־חושיים מוגנים ומכניקה המכוונת להרכבה הם ידע קודם.
+
 
 ### [43] Towards autonomous robotic skin spatial calibration: A framework based on vision and self-touch
 
-A. Albini, S. Denei and G. Cannata; 2017. [Source](https://doi.org/10.1109/IROS.2017.8202151); DOI [10.1109/IROS.2017.8202151](https://doi.org/10.1109/IROS.2017.8202151).
+A. Albini, S. Denei and G. Cannata; 2017. [מקור](https://doi.org/10.1109/IROS.2017.8202151); DOI [10.1109/IROS.2017.8202151](https://doi.org/10.1109/IROS.2017.8202151).
 
-**Access: CITATION_ONLY.** Primary university publication list verifies identity; a secondary abstract describes RGB-D/self-touch, but original abstract/body was not obtained. The secondary <2mm result is deliberately not adopted as validated evidence.
+**גישה: CITATION_ONLY.** רשימת פרסומים אוניברסיטאית ראשונית מאמתת את זהות המאמר; תקציר משני מתאר RGB-D ומגע עצמי, אך התקציר וגוף המאמר המקוריים לא הושגו. התוצאה המשנית <2 mm אינה מאומצת במכוון כראיה מאומתת.
 
-**Finding.** This is relevant prior art for spatial calibration using vision and robot-generated contacts; no exact original algorithm or performance claim is used in the design.
+**ממצא.** זהו ידע קודם רלוונטי לכיול מרחבי באמצעות ראייה ומגעים שהרובוט יוצר; בתכן לא נעשה שימוש באלגוריתם מקורי מדויק או בטענת ביצועים מדויקת.
 
-**Limit.** Reachability, camera calibration, occlusion and force-distributed contact centroids need examination before reproduction. The source available here is insufficient to promise its accuracy.
+**מגבלה.** יש לבחון יכולת הגעה, כיול מצלמה, הסתרה ומרכזי מגע הנובעים מפיזור כוח לפני שחזור. המקור הזמין כאן אינו מספיק להבטחת הדיוק שלו.
 
-**Plan action.** Keep registered CAD carriers as the baseline. Use external probing at marked sites as a measurable manufacturing check; describe any future vision/self-touch implementation as a separate reproduction.
+**פעולה בתוכנית.** לשמר תושבות CAD הרשומות במיקום ידוע כתצורת הבסיס. להשתמש בגישוש חיצוני באתרים מסומנים כבדיקת ייצור מדידה; לתאר כל מימוש עתידי של ראייה ומגע עצמי כשחזור נפרד.
 
-**Verification.** Blindly probe predeclared site centers in several poses and report position and normal errors against the fixture geometry, rather than only fitting error.
+**אימות.** לגשש באופן עיוור במרכזי אתרים שהוגדרו מראש בכמה תנוחות, ולדווח על שגיאות מיקום ונורמל ביחס לגאומטריית המתקן, ולא רק על שגיאת ההתאמה.
 
-**Prior art.** Vision-assisted and self-touch spatial registration are not a new claim for this project.
+**ידע קודם.** רישום מרחבי בסיוע ראייה ומגע עצמי אינו טענה חדשה של פרויקט זה.
 
-Additional locators: [1](https://eng.ox.ac.uk/publications/?personId=23467), [2](https://eurekamag.com/research/100/009/100009247.php). Their access status is described above; a link does not imply full-text review.
+מיקומים נוספים: [1](https://eng.ox.ac.uk/publications/?personId=23467), [2](https://eurekamag.com/research/100/009/100009247.php). מצב הגישה אליהם מתואר לעיל; קישור אינו מעיד על סקירת טקסט מלא.
+
 
 ### [44] 3D surface reconstruction for robotic body parts with artificial skins
 
-P. Mittendorfer and G. Cheng; 2012. [Source](https://mediatum.ub.tum.de/doc/1116558/621068.pdf); DOI [10.1109/IROS.2012.6385559](https://doi.org/10.1109/IROS.2012.6385559).
+P. Mittendorfer and G. Cheng; 2012. [מקור](https://mediatum.ub.tum.de/doc/1116558/621068.pdf); DOI [10.1109/IROS.2012.6385559](https://doi.org/10.1109/IROS.2012.6385559).
 
-**Access: PARTIAL_TEXT.** Repository first-page abstract/introduction and university abstract. The supplied2019 review §II-C supplies additional secondary explanation of reconstruction.
+**גישה: PARTIAL_TEXT.** תקציר ומבוא מהעמוד הראשון במאגר ותקציר אוניברסיטאי. הסקירה מ-2019 שסופקה, סעיף II-C, מוסיפה הסבר משני על השחזור.
 
-**Finding.** Reconstruction uses the modular skin's known structural geometry and motion-related sensing. The approach concerns shaped, connected modules rather than an arbitrary uninstrumented stretchable sheet.
+**ממצא.** השחזור משתמש בגאומטריה המבנית הידועה של העור המודולרי ובחישה הקשורה לתנועה. השיטה עוסקת במודולים מעוצבים ומחוברים, ולא ביריעה נמתחת שרירותית ללא חיישני המכשור הדרושים.
 
-**Limit.** A shared CAN address list does not reveal physical adjacency; resistive touch values do not supply gravity vectors. Stretch and slip violate a fixed module geometry assumption.
+**מגבלה.** רשימת כתובות משותפת ב-CAN אינה מגלה סמיכות פיזית; ערכי מגע התנגדותיים אינם מספקים וקטורי כבידה. מתיחה והחלקה מפרות את הנחת הגאומטריה הקבועה של המודול.
 
-**Plan action.** Adopt a versioned body map with per-site position and unit normal derived from the rigid carrier. Bind map revision to the installed carrier and reject unknown revisions.
+**פעולה בתוכנית.** לאמץ מפת גוף בעלת גרסה, עם מיקום ונורמל יחידה לכל אתר הנגזרים מהתושבת הקשיחה. לקשור את מהדורת המפה לתושבת המותקנת ולדחות מהדורות לא ידועות.
 
-**Verification.** Check normals at curved-edge sites as well as patch centers. Remount and probe several positions; inhibit control if the carrier cannot be registered within the declared tolerance.
+**אימות.** לבדוק נורמלים באתרים שבקצוות מעוקלים וגם במרכזי הטלאים. להתקין מחדש ולגשש בכמה מיקומים; לחסום בקרה אם אי אפשר לרשום את התושבת בתוך הסבולת המוצהרת.
 
-**Prior art.** Automatic surface reconstruction from instrumented skin is existing work, but is not implemented by the baseline BOM.
+**ידע קודם.** שחזור אוטומטי של פני שטח מעור הכולל מכשור הוא עבודה קיימת, אך רשימת החומרים של תצורת הבסיס אינה מממשת אותו.
 
-Additional locators: [1](https://portal.fis.tum.de/en/publications/3d-surface-reconstruction-for-robotic-body-parts-with-artificial-/). Their access status is described above; a link does not imply full-text review.
+מיקומים נוספים: [1](https://portal.fis.tum.de/en/publications/3d-surface-reconstruction-for-robotic-body-parts-with-artificial-/). מצב הגישה אליהם מתואר לעיל; קישור אינו מעיד על סקירת טקסט מלא.
+
 
 ### [45] Open-loop self-calibration of articulated robots with artificial skins
 
-P. Mittendorfer and G. Cheng; 2012. [Source](https://mediatum.ub.tum.de/doc/1116557/877587.pdf); DOI [10.1109/ICRA.2012.6224881](https://doi.org/10.1109/ICRA.2012.6224881).
+P. Mittendorfer and G. Cheng; 2012. [מקור](https://mediatum.ub.tum.de/doc/1116557/877587.pdf); DOI [10.1109/ICRA.2012.6224881](https://doi.org/10.1109/ICRA.2012.6224881).
 
-**Access: PARTIAL_TEXT.** Repository-indexed pages1–2 including algorithms1–2, requirements and experimental/simulation scope; university abstract read directly. Full numerical results not obtained.
+**גישה: PARTIAL_TEXT.** עמודים 1–2 המאונדקסים במאגר, כולל אלגוריתמים 1–2, דרישות והיקף הניסויים והסימולציה; התקציר האוניברסיטאי נקרא ישירות. התוצאות המספריות המלאות לא הושגו.
 
-**Finding.** Uses tri-axis accelerometers and isolated joint excitation to find segment/joint activity and construct kinematic models. Requires instrumented rigid segments and a static reference. Physical KUKA results establish structural exploration; parameter estimation is additionally demonstrated in simulation.
+**ממצא.** משתמש במדי תאוצה תלת־ציריים ובעירור מפרקים מבודד כדי לזהות פעילות מקטעים ומפרקים ולבנות מודלים קינמטיים. נדרשים מקטעים קשיחים הכוללים חיישנים וייחוס סטטי. תוצאות פיזיות ב-KUKA מבססות חקירה מבנית; אמידת פרמטרים מודגמת בנוסף בסימולציה.
 
-**Limit.** Does not validate autonomous geometry from pressure-only skin. Weak excitation, reference motion and unobserved degrees of freedom can make identification ambiguous. Full numerical error bounds were not inspected.
+**מגבלה.** העבודה אינה מאמתת גאומטריה אוטונומית מתוך עור לחץ בלבד. עירור חלש, תנועת הייחוס ודרגות חופש שלא נצפו עלולים ליצור זיהוי לא חד־משמעי. חסמי השגיאה המספריים המלאים לא נבדקו.
 
-**Plan action.** Adapt activity-matrix validation using a reusable stationary-reference/downstream IMU fixture and known joint states. Retain CAD geometry; label the fixture an adaptation, not a full reproduction of autonomous skin localization.
+**פעולה בתוכנית.** להתאים אימות של מטריצת הפעילות באמצעות מתקן IMU רב־פעמי הכולל ייחוס נייח וחיישן בהמשך השרשרת, ועם מצבי מפרקים ידועים. לשמר גאומטריית CAD; לתאר את המתקן כהתאמה, ולא כשחזור מלא של איכון עור אוטונומי.
 
-**Verification.** Use one joint at a time; repeat with reversed motion and held-out poses. Compare detected influence with the robot kinematic tree and reject low-SNR or inconsistent results.
+**אימות.** להשתמש במפרק אחד בכל פעם; לחזור בתנועה הפוכה ובתנוחות שלא השתתפו בהתאמה. להשוות את ההשפעה שזוהתה לעץ הקינמטי של הרובוט, ולדחות תוצאות עם יחס אות לרעש נמוך או תוצאות לא עקביות.
 
-**Prior art.** Activity matrices, motor excitation and accelerometer-based structural self-calibration are prior art.
+**ידע קודם.** מטריצות פעילות, עירור מנועים וכיול עצמי מבני מבוסס מדי תאוצה הם ידע קודם.
 
-Additional locators: [1](https://portal.fis.tum.de/en/publications/open-loop-self-calibration-of-articulated-robots-with-artificial-/). Their access status is described above; a link does not imply full-text review.
+מיקומים נוספים: [1](https://portal.fis.tum.de/en/publications/open-loop-self-calibration-of-articulated-robots-with-artificial-/). מצב הגישה אליהם מתואר לעיל; קישור אינו מעיד על סקירת טקסט מלא.
+
 
 ### [46] Automatic robot kinematic modeling with a modular artificial skin
 
-P. Mittendorfer, E. Dean and G. Cheng; 2014. [Source](https://portal.fis.tum.de/en/publications/automatic-robot-kinematic-modeling-with-a-modular-artificial-skin/); DOI [10.1109/HUMANOIDS.2014.7041447](https://doi.org/10.1109/HUMANOIDS.2014.7041447).
+P. Mittendorfer, E. Dean and G. Cheng; 2014. [מקור](https://portal.fis.tum.de/en/publications/automatic-robot-kinematic-modeling-with-a-modular-artificial-skin/); DOI [10.1109/HUMANOIDS.2014.7041447](https://doi.org/10.1109/HUMANOIDS.2014.7041447).
 
-**Access: ABSTRACT_ONLY.** University abstract and bibliographic record read directly. Original six-page article unavailable. Supplied2019 review §II-D is secondary evidence for axis/SVD/radius sequence.
+**גישה: ABSTRACT_ONLY.** התקציר האוניברסיטאי והרשומה הביבליוגרפית נקראו ישירות. המאמר המקורי בן ששת העמודים לא היה זמין. סקירת 2019 שסופקה, סעיף II-D, היא ראיה משנית לרצף ציר, SVD ורדיוס.
 
-**Finding.** Uses per-cell tri-axis accelerometers, open-loop motions and circle-point analysis to build a forward kinematic model. The abstract reports a physical UR5 experiment on an inertial dual-arm platform.
+**ממצא.** משתמש במדי תאוצה תלת־ציריים בכל תא, בתנועות בחוג פתוח ובניתוח נקודות מעגל כדי לבנות מודל קינמטי קדמי. התקציר מדווח על ניסוי פיזי ב-UR5 על פלטפורמה אינרציאלית בעלת שתי זרועות.
 
-**Limit.** No original numerical errors, conditioning tests or implementation parameters were accessible. One revolute motion identifies perpendicular radius, not the axial component of a sensor offset; full geometry needs additional constraints.
+**מגבלה.** לא היו נגישים שגיאות מספריות מקוריות, בדיקות התניה או פרמטרי מימוש. תנועה סיבובית יחידה מזהה רדיוס ניצב, ולא את הרכיב הצירי של היסט החיישן; גאומטריה מלאה מחייבת אילוצים נוספים.
 
-**Plan action.** Use axis/perpendicular-radius estimation only as an offline cross-check against CAD. Do not claim recovery of every DH offset, mass, inertia or friction from a dual-IMU experiment.
+**פעולה בתוכנית.** להשתמש באמידת ציר ורדיוס ניצב רק כבדיקת הצלבה לא מקוונת מול CAD. אין לטעון לשחזור כל היסט DH, מסה, אינרציה או חיכוך מתוך ניסוי עם שני חיישני IMU.
 
-**Verification.** Fit acceleration versus known angular acceleration, retain confidence intervals and residuals, and validate against independent measured radii and unseen poses. Reject rank-deficient fits.
+**אימות.** להתאים תאוצה לתאוצה זוויתית ידועה, לשמור רווחי סמך ושאריות, ולאמת מול רדיוסים שנמדדו באופן עצמאי ותנוחות שלא נראו בהתאמה. לדחות התאמות בעלות חוסר בדרגה.
 
-**Prior art.** Automatic kinematic modeling from skin acceleration precedes this project. A low-cost reusable fixture may be an implementation distinction, subject to measurement.
+**ידע קודם.** מידול קינמטי אוטומטי באמצעות תאוצת העור קדם לפרויקט זה. מתקן זול ורב־פעמי עשוי להוות בידול במימוש, בכפוף למדידה.
 
-Bibliographic note: Humanoids2014 proceedings; university record lists publication12Feb2015. Both dates refer to the same paper.
+הערה ביבליוגרפית: קובץ מאמרי Humanoids 2014; הרשומה האוניברסיטאית מציינת פרסום ב-12 בפברואר 2015. שני התאריכים מתייחסים לאותו מאמר.
+
 
 ### [47] 3D spatial self-organization of a modular artificial skin
 
-P. Mittendorfer, E. Dean and G. Cheng; 2014. [Source](https://portal.fis.tum.de/en/publications/3d-spatial-self-organization-of-a-modular-artificial-skin); DOI [10.1109/IROS.2014.6943120](https://doi.org/10.1109/IROS.2014.6943120).
+P. Mittendorfer, E. Dean and G. Cheng; 2014. [מקור](https://portal.fis.tum.de/en/publications/3d-spatial-self-organization-of-a-modular-artificial-skin); DOI [10.1109/IROS.2014.6943120](https://doi.org/10.1109/IROS.2014.6943120).
 
-**Access: ABSTRACT_ONLY.** Primary university abstract and identity. Full equations and numerical experiments not obtained.
+**גישה: ABSTRACT_ONLY.** תקציר ראשוני באוניברסיטה וזיהוי המאמר. המשוואות המלאות והניסויים המספריים לא הושגו.
 
-**Finding.** Combines skin-patch geometry with an active LED visual marker and a calibrated monocular camera for spatial registration, including partial visibility.
+**ממצא.** משלב גאומטריה של טלאי עור עם סמן LED חזותי פעיל ומצלמה חד־עינית מכוילת לצורך רישום מרחבי, גם בתנאי נראות חלקית.
 
-**Limit.** Self-organization here is not entirely camera-free. A pressure-only film lacks the per-cell inertial and active-marker information of the studied system.
+**מגבלה.** הארגון העצמי כאן אינו נטול מצלמה לחלוטין. לסרט לחץ בלבד חסרים המידע האינרציאלי בכל תא והסמן הפעיל של המערכת שנחקרה.
 
-**Plan action.** Maintain a declared manual/CAD root transform. If camera registration is used in a fixture, make camera intrinsics, marker geometry and observation quality part of its calibration record.
+**פעולה בתוכנית.** לשמר טרנספורמציית בסיס ידנית או מ-CAD המוצהרת במפורש. אם משתמשים ברישום מצלמה במתקן, יש לכלול ברשומת הכיול את הפרמטרים הפנימיים של המצלמה, גאומטריית הסמן ואיכות התצפיות.
 
-**Verification.** Register from several independent views; probe points withheld from the transform fit and verify the transform direction and units.
+**אימות.** לבצע רישום מכמה זוויות צפייה עצמאיות; לגשש בנקודות שלא נכללו בהתאמת הטרנספורמציה ולאמת את כיוונה ואת היחידות.
 
-**Prior art.** Camera-assisted skin registration is prior art; baseline simplicity is a cost/design choice, not a discovery.
+**ידע קודם.** רישום עור בסיוע מצלמה הוא ידע קודם; פשטות תצורת הבסיס היא בחירת עלות ותכן, ולא תגלית.
+
 
 ### [48] Touch, in Principles of Neural Science, fifth edition, chapter23
 
-E. P. Gardner and K. O. Johnson; 2013. [Source](https://accessmedicine.mhmedical.com/book.aspx?bookID=1049).
+E. P. Gardner and K. O. Johnson; 2013. [מקור](https://accessmedicine.mhmedical.com/book.aspx?bookID=1049).
 
-**Access: CITATION_ONLY.** User-supplied2019 bibliography identifies chapter23, pp.498–529. Full chapter not obtained; publisher book URL is a locator, not a claim of chapter access.
+**גישה: CITATION_ONLY.** הביבליוגרפיה מ-2019 שסיפק המשתמש מזהה את פרק 23, עמודים 498–529. הפרק המלא לא הושג; כתובת הספר אצל המוציא לאור היא אמצעי איתור, ולא טענה לגישה לפרק.
 
-**Finding.** Biological background cited by the2019 review. No receptor count, frequency range or quantitative biological claim is extracted here without the original chapter.
+**ממצא.** רקע ביולוגי המצוטט בסקירת 2019. אין לחלץ כאן מספר קולטנים, תחום תדרים או טענה ביולוגית כמותית ללא הפרק המקורי.
 
-**Limit.** A biological analogy cannot establish robot sensitivity, safety, durability or wiring requirements.
+**מגבלה.** אנלוגיה ביולוגית אינה יכולה לבסס רגישות, בטיחות, עמידות או דרישות חיווט של רובוט.
 
-**Plan action.** Describe the design as functionally inspired by distributed sensing. Preserve persistent contact state and temperature measurements; avoid claiming replication of human skin's complete receptor system.
+**פעולה בתוכנית.** לתאר את התכן כמקבל השראה תפקודית מחישה מבוזרת. לשמר מצב מגע מתמשך ומדידות טמפרטורה; להימנע מטענה לשחזור מלוא מערכת הקולטנים של עור האדם.
 
-**Verification.** Maintain a held contact for at least60s and verify it never disappears merely because signal change becomes small. Measure drift separately from valid sustained contact.
+**אימות.** להחזיק מגע במשך 60 s לפחות ולוודא שאינו נעלם רק משום שהשינוי באות נעשה קטן. למדוד סחיפה בנפרד ממגע מתמשך תקף.
 
-**Prior art.** Distributed sensing inspired by skin is a long-established concept.
+**ידע קודם.** חישה מבוזרת בהשראת העור היא רעיון מבוסס זה מכבר.
+
 
 ### [49] Touch is a team effort: Interplay of submodalities in cutaneous sensibility
 
-H. P. Saal and S. J. Bensmaia; 2014. [Source](https://pubmed.ncbi.nlm.nih.gov/25257208/); DOI [10.1016/j.tins.2014.08.012](https://doi.org/10.1016/j.tins.2014.08.012).
+H. P. Saal and S. J. Bensmaia; 2014. [מקור](https://pubmed.ncbi.nlm.nih.gov/25257208/); DOI [10.1016/j.tins.2014.08.012](https://doi.org/10.1016/j.tins.2014.08.012).
 
-**Access: ABSTRACT_ONLY.** Original article abstract indexed by PubMed; full review body not obtained.
+**גישה: ABSTRACT_ONLY.** תקציר המאמר המקורי המאונדקס ב-PubMed; גוף הסקירה המלא לא הושג.
 
-**Finding.** The review emphasizes joint contributions of afferent submodalities to natural touch, rather than a simple one-receptor/one-percept correspondence.
+**ממצא.** הסקירה מדגישה את התרומות המשותפות של תתי־סוגים של מסלולי תחושה עולים לתחושת המגע הטבעית, ולא התאמה פשוטה של קולטן אחד לתחושה אחת.
 
-**Limit.** It does not show that two engineered layers or sparse thermal sensors reproduce the capabilities of human skin.
+**מגבלה.** אין בה הוכחה ששתי שכבות הנדסיות או חיישני חום דלילים משחזרים את יכולות עור האדם.
 
-**Plan action.** Keep claims modality-specific. Fuse contact and temperature at the application layer without implying that sparse NTC readings provide a complete thermal image or that normal pressure measures shear.
+**פעולה בתוכנית.** לשמור על טענות ספציפיות לכל אופן חישה. לאחד מגע וטמפרטורה בשכבת היישום בלי לרמוז שקריאות NTC דלילות מספקות תמונה תרמית מלאה, או שלחץ ניצב מודד גזירה.
 
-**Verification.** Test thermal drift during contact and heat without contact. Report each modality's spatial sampling, temporal response and cross-sensitivity separately.
+**אימות.** לבדוק סחיפה תרמית בזמן מגע וחום ללא מגע. לדווח בנפרד על הדגימה המרחבית, התגובה בזמן והרגישות הצולבת של כל אופן חישה.
 
-**Prior art.** Biological multimodal integration is motivation, not an invention claim for a pressure/temperature laminate.
+**ידע קודם.** שילוב ביולוגי רב־חושי הוא מניע לתכן, ולא טענת המצאה עבור למינציית לחץ וטמפרטורה.
+
 
 ### [50] Event-based signaling for reducing required data rates and processing power in a large-scale artificial robotic skin
 
-F. Bergner, P. Mittendorfer, E. Dean-Leon and G. Cheng; 2015. [Source](https://mediatum.ub.tum.de/doc/1281179/868479268848.pdf).
+F. Bergner, P. Mittendorfer, E. Dean-Leon and G. Cheng; 2015. [מקור](https://mediatum.ub.tum.de/doc/1281179/868479268848.pdf).
 
-**Access: PARTIAL_TEXT.** Repository-indexed results page6, figures7–8/table/conclusion, plus official conference abstract. Whole methods not retrieved.
+**גישה: PARTIAL_TEXT.** עמוד תוצאות 6 המאונדקס במאגר, איורים 7–8, טבלה ומסקנה, וכן תקציר רשמי של הכנס. מלוא השיטות לא נשלפו.
 
-**Finding.** A260-cell UR5 study reports remaining traffic of16.45% at rest and47.69% under heavy stimulation without timestamps; with timestamps,21.38% and62%. Compact packets of three events suit the correlated modalities studied.
+**ממצא.** מחקר על UR5 בעל 260 תאים מדווח שתעבורת הנתונים שנותרה היא 16.45% במנוחה ו-47.69% תחת גירוי כבד ללא חותמות זמן; עם חותמות זמן, 21.38% ו-62%. חבילות קומפקטיות של שלושה אירועים מתאימות לאופני החישה המתואמים שנחקרו.
 
-**Limit.** These are remaining-traffic fractions, not reduction percentages. Packet format, timestamps and workload matter. The baseline's64-byte absolute CAN frames will not inherit these reductions.
+**מגבלה.** אלה שיעורי התעבורה שנותרה, ולא אחוזי ההפחתה. פורמט החבילה, חותמות הזמן ועומס העבודה משפיעים. מסגרות CAN מוחלטות של 64 בתים בתצורת הבסיס לא יקבלו אוטומטית הפחתות אלה.
 
-**Plan action.** Use this as a benchmark design, not a promised percentage. Specify maximum50% idle snapshot-count reduction for100Hzactive/50Hzidle, with smaller total savings after extra overhead.
+**פעולה בתוכנית.** להשתמש בכך כתכן למבחן ייחוס, ולא כאחוז מובטח. להגדיר הפחתה מרבית של 50% במספר תמונות המצב בחוסר פעילות, עבור 100 Hz בפעילות ו-50 Hz בחוסר פעילות, עם חיסכון כולל קטן יותר אחרי תקורה נוספת.
 
-**Verification.** Run quiet, motor-moving, stroking, impact and simultaneous-contact workloads. Count complete wire traffic and CPU time, not only useful sensor bytes.
+**אימות.** להריץ עומסים של שקט, תנועת מנועים, ליטוף, פגיעה ומגעים בו־זמניים. לספור את מלוא התעבורה על הקו ואת זמן המעבד, ולא רק בתי חיישנים שימושיים.
 
-**Prior art.** Local send-on-change for large robot skin and compression benchmarks are prior art.
+**ידע קודם.** שידור מקומי לפי שינוי בעור רובוטי רחב היקף ומבחני דחיסה הם ידע קודם.
 
-Additional locators: [1](https://iros2015.informatik.uni-hamburg.de/docs/IROS_Digest_WWW.pdf). Their access status is described above; a link does not imply full-text review.
+מיקומים נוספים: [1](https://iros2015.informatik.uni-hamburg.de/docs/IROS_Digest_WWW.pdf). מצב הגישה אליהם מתואר לעיל; קישור אינו מעיד על סקירת טקסט מלא.
+
 
 ### [51] Event-based signaling for large-scale artificial robotic skin—Realization and performance evaluation
 
-F. Bergner, E. Dean-Leon and G. Cheng; 2016. [Source](https://mediatum.ub.tum.de/doc/1335609/document.pdf); DOI [10.1109/IROS.2016.7759722](https://doi.org/10.1109/IROS.2016.7759722).
+F. Bergner, E. Dean-Leon and G. Cheng; 2016. [מקור](https://mediatum.ub.tum.de/doc/1335609/document.pdf); DOI [10.1109/IROS.2016.7759722](https://doi.org/10.1109/IROS.2016.7759722).
 
-**Access: PARTIAL_TEXT.** Repository-indexed introduction/architecture and primary university abstract; complete experiment methods not accessed.
+**גישה: PARTIAL_TEXT.** מבוא וארכיטקטורה המאונדקסים במאגר ותקציר ראשוני באוניברסיטה; שיטות הניסוי המלאות לא היו נגישות.
 
-**Finding.** Uses two260-cell patches with local processing. The abstract reports48.2% packet and17.79% CPU reductions in reactive control; a worst-case5000-cell extrapolation gives21.2% and17.46%, respectively.
+**ממצא.** משתמש בשני טלאים בעלי 260 תאים עם עיבוד מקומי. התקציר מדווח על הפחתה של 48.2% בחבילות ושל 17.79% בעומס CPU בבקרה תגובתית; אקסטרפולציה למקרה גרוע של 5000 תאים מניבה 21.2% ו-17.46%, בהתאמה.
 
-**Limit.** The5000-cell result is an extrapolation, not a physical5000-cell validation. Traffic, CPU and control-rate metrics are different quantities.
+**מגבלה.** תוצאת 5000 התאים היא אקסטרפולציה, ולא אימות פיזי של 5000 תאים. מדדי תעבורה, עומס מעבד וקצב בקרה הם גדלים שונים.
 
-**Plan action.** Keep a periodic diagnostic mode and a hybrid event mode in the same firmware for controlled comparison. Publish measured patch count and extrapolated counts separately.
+**פעולה בתוכנית.** לשמור באותה קושחה מצב אבחון מחזורי ומצב אירועים משולב, לצורך השוואה מבוקרת. לפרסם בנפרד את מספרי הטלאים שנמדדו ואת אלה שחושבו באקסטרפולציה.
 
-**Verification.** Replay identical captures in both modes with the same host code. Measure CPU, latency, dropped samples and reconstruction error at1,8 and multiple independent regions.
+**אימות.** לשחזר אותן הקלטות בשני המצבים עם אותו קוד במחשב המארח. למדוד עומס CPU, השהיה, דגימות שהושמטו ושגיאת שחזור ב-1, ב-8 ובכמה אזורים עצמאיים.
 
-**Prior art.** Switchable periodic/event skin operation and performance comparisons were already demonstrated.
+**ידע קודם.** פעולת עור הניתנת למעבר בין מצב מחזורי למצב אירועים והשוואות הביצועים ביניהם כבר הודגמו.
 
-Additional locators: [1](https://portal.fis.tum.de/en/publications/event-based-signaling-for-large-scale-artificial-robotic-skin-rea/). Their access status is described above; a link does not imply full-text review.
+מיקומים נוספים: [1](https://portal.fis.tum.de/en/publications/event-based-signaling-for-large-scale-artificial-robotic-skin-rea/). מצב הגישה אליהם מתואר לעיל; קישור אינו מעיד על סקירת טקסט מלא.
+
 
 ### [52] Efficient event-driven reactive control for large scale robot skin
 
-F. Bergner, E. Dean-Leon and G. Cheng; 2017. [Source](https://mediatum.ub.tum.de/doc/1366849/document.pdf); DOI [10.1109/ICRA.2017.7989051](https://doi.org/10.1109/ICRA.2017.7989051).
+F. Bergner, E. Dean-Leon and G. Cheng; 2017. [מקור](https://mediatum.ub.tum.de/doc/1366849/document.pdf); DOI [10.1109/ICRA.2017.7989051](https://doi.org/10.1109/ICRA.2017.7989051).
 
-**Access: PARTIAL_TEXT.** Repository first-page abstract/introduction. Detailed control proofs and full experimental plots not accessed.
+**גישה: PARTIAL_TEXT.** תקציר ומבוא מהעמוד הראשון במאגר. הוכחות הבקרה המפורטות וגרפי הניסויים המלאים לא היו נגישים.
 
-**Finding.** Evaluates event-driven reactive control on TOMM with two253-cell patches. The abstract reports controller CPU reductions of78% idle and66% during contact relative to the tested synchronous reference.
+**ממצא.** מעריך בקרה תגובתית מבוססת אירועים ב-TOMM עם שני טלאים בעלי 253 תאים. התקציר מדווח על ירידה בעומס המעבד של הבקר בשיעור 78% בחוסר פעילות ו-66% בזמן מגע, ביחס לייחוס הסינכרוני שנבדק.
 
-**Limit.** Controller savings cannot be substituted for network or driver savings. Unchanged pressure does not imply unchanged joint torque when robot configuration changes.
+**מגבלה.** אין להשתמש בחיסכון בבקר כתחליף לחיסכון ברשת או במנהל ההתקן. לחץ שאינו משתנה אינו מעיד על מומנט מפרק שאינו משתנה כאשר תצורת הרובוט משתנה.
 
-**Plan action.** Cache contact information or link-frame wrench contributions, but recompute their mapping with current joint states in a bounded controller cycle. Separate event receipt from command execution.
+**פעולה בתוכנית.** לשמור מידע מגע או תרומות כוח ומומנט במערכת צירי החוליה, אך לחשב מחדש את המיפוי שלהן עם מצבי מפרקים עדכניים במחזור בקרה חסום בזמן. להפריד בין קבלת אירועים לביצוע פקודות.
 
-**Verification.** Hold one contact steady while changing joint pose in simulation. Compare event-mode joint torques against a fully recomputed periodic reference, including stale/missing frames.
+**אימות.** להחזיק מגע אחד קבוע תוך שינוי תנוחת מפרק בסימולציה. להשוות מומנטי מפרקים במצב אירועים לייחוס מחזורי המחושב מחדש במלואו, כולל מסגרות מיושנות או חסרות.
 
-**Prior art.** Event-driven reactive control is prior art; the project's value must lie in verified affordability and integration.
+**ידע קודם.** בקרה תגובתית מבוססת אירועים היא ידע קודם; ערך הפרויקט חייב להיות בעלות נגישה ובשילוב שאומתו.
+
 
 ### [53] A128×128120dB15µs latency asynchronous temporal contrast vision sensor
 
-P. Lichtsteiner, C. Posch and T. Delbruck; 2008. [Source](https://doi.org/10.1109/JSSC.2007.914337); DOI [10.1109/JSSC.2007.914337](https://doi.org/10.1109/JSSC.2007.914337).
+P. Lichtsteiner, C. Posch and T. Delbruck; 2008. [מקור](https://doi.org/10.1109/JSSC.2007.914337); DOI [10.1109/JSSC.2007.914337](https://doi.org/10.1109/JSSC.2007.914337).
 
-**Access: PARTIAL_TEXT.** Original journal-paper reproduction, concluding page575 and indexed abstract. The reproduction is on a secondary host; full article not retrieved.
+**גישה: PARTIAL_TEXT.** העתק של המאמר המקורי בכתב העת, עמוד סיום 575 ותקציר מאונדקס. ההעתק נמצא במאגר משני; המאמר המלא לא נשלף.
 
-**Finding.** A custom asynchronous contrast imager reports120dB dynamic range,15µs latency and23mW power. Its discussion identifies event-bandwidth limitations and lack of direct DC response.
+**ממצא.** חיישן תמונה ייעודי ואסינכרוני לשינויי ניגודיות מדווח על תחום דינמי של 120 dB, השהיה של 15 µs והספק של 23 mW. הדיון מצביע על מגבלות רוחב פס של אירועים ועל היעדר תגובת DC ישירה.
 
-**Limit.** These are optical custom-silicon results under the paper's conditions. They do not establish response time, energy or resolution for a scanned tactile array.
+**מגבלה.** אלה תוצאות אופטיות בשבב ייעודי ובתנאי המאמר. הן אינן מבססות זמן תגובה, צריכת אנרגיה או רזולוציה של מערך מישוש נסרק.
 
-**Plan action.** Use only as historical distinction between truly asynchronous transduction and100Hz sampled send-on-delta. Retain absolute contact samples so static loads remain observable.
+**פעולה בתוכנית.** להשתמש רק כהבחנה היסטורית בין התמרה אסינכרונית אמיתית לבין שידור לפי שינוי הנדגם ב-100 Hz. לשמר דגימות מגע מוחלטות כדי שעומסים סטטיים יישארו נצפים.
 
-**Verification.** Measure tactile latency with a stimulus reference and oscilloscope; never infer it from the event-camera title.
+**אימות.** למדוד השהיית מישוש עם ייחוס גירוי ואוסצילוסקופ; אין להסיק אותה מכותרת מאמר על מצלמת אירועים.
 
-**Prior art.** Custom event sensors and address-event transmission have decades of prior art.
+**ידע קודם.** לחיישני אירועים ייעודיים ולשידור אירועים באמצעות כתובות יש ידע קודם בן עשרות שנים.
 
-Additional locators: [1](https://scispace.com/pdf/a-128-times-128-120-db-15-mu-s-latency-asynchronous-temporal-3bv4hgi11i.pdf). Their access status is described above; a link does not imply full-text review.
+מיקומים נוספים: [1](https://scispace.com/pdf/a-128-times-128-120-db-15-mu-s-latency-asynchronous-temporal-3bv4hgi11i.pdf). מצב הגישה אליהם מתואר לעיל; קישור אינו מעיד על סקירת טקסט מלא.
+
 
 ### [54] An asynchronous time-based image sensor
 
-C. Posch, D. Matolin and R. Wohlgenannt; 2008. [Source](https://publications.ait.ac.at/en/publications/an-asynchronous-time-based-image-sensor/); DOI [10.1109/ISCAS.2008.4541871](https://doi.org/10.1109/ISCAS.2008.4541871).
+C. Posch, D. Matolin and R. Wohlgenannt; 2008. [מקור](https://publications.ait.ac.at/en/publications/an-asynchronous-time-based-image-sensor/); DOI [10.1109/ISCAS.2008.4541871](https://doi.org/10.1109/ISCAS.2008.4541871).
 
-**Access: CITATION_ONLY.** Primary institutional bibliographic metadata checked. A secondary abstract was found, but no original body or complete primary abstract was reviewed.
+**גישה: CITATION_ONLY.** נבדקו מטא־נתונים ביבליוגרפיים מוסדיים ראשוניים. נמצא תקציר משני, אך לא נבדקו גוף מקורי או תקציר ראשוני מלא.
 
-**Finding.** Identified as prior work on asynchronous time-based optical sensing. No quantitative device claim is adopted.
+**ממצא.** זוהה כעבודה קודמת על חישה אופטית אסינכרונית מבוססת זמן. לא מאומצת שום טענה כמותית על ההתקן.
 
-**Limit.** It is an image-sensor design, not a tactile transducer or low-cost STM32 reference circuit.
+**מגבלה.** זהו תכן של חיישן תמונה, ולא מתמר מישוש או מעגל ייחוס זול ל-STM32.
 
-**Plan action.** Do not add custom timing-coded hardware to the baseline on this citation alone. Ordinary absolute ADC values plus timestamps are sufficient for the intended touch task.
+**פעולה בתוכנית.** אין להוסיף לתצורת הבסיס חומרה ייעודית המקודדת בזמן על סמך ציטוט זה בלבד. ערכי ADC מוחלטים רגילים בצירוף חותמות זמן מספיקים למשימת המגע המיועדת.
 
-**Verification.** Document acquisition instant separately from packet arrival and verify that changing event encoding does not change the underlying sampling limit.
+**אימות.** לתעד את רגע הרכישה בנפרד מהגעת החבילה, ולוודא ששינוי קידוד האירוע אינו משנה את מגבלת הדגימה הבסיסית.
 
-**Prior art.** Time-based event representations are established and are not a defensible novel claim here.
+**ידע קודם.** ייצוגי אירועים מבוססי זמן כבר מבוססים, ואינם טענת חדשנות שניתן להצדיק כאן.
+
 
 ### [55] AER EAR: A matched silicon cochlea pair with address event representation interface
 
-A. van Schaik and S.-C. Liu; 2005. [Source](https://researchers.westernsydney.edu.au/en/publications/aer-ear-a-matched-silicon-cochlea-pair-with-address-event-represe-3/); DOI [10.1109/ISCAS.2005.1465560](https://doi.org/10.1109/ISCAS.2005.1465560).
+A. van Schaik and S.-C. Liu; 2005. [מקור](https://researchers.westernsydney.edu.au/en/publications/aer-ear-a-matched-silicon-cochlea-pair-with-address-event-represe-3/); DOI [10.1109/ISCAS.2005.1465560](https://doi.org/10.1109/ISCAS.2005.1465560).
 
-**Access: ABSTRACT_ONLY.** Primary institutional abstract. This is the2005conference paper, not the later similarly named journal work.
+**גישה: ABSTRACT_ONLY.** תקציר מוסדי ראשוני. זהו מאמר הכנס משנת 2005, ולא העבודה המאוחרת בכתב עת בעלת השם הדומה.
 
-**Finding.** Describes paired silicon cochleae, inner-hair-cell/spiking-neuron circuitry and address-event output; its experiment uses tones from different directions.
+**ממצא.** מתאר זוג שבלולי אוזן בסיליקון, מעגלי תאי שערה פנימיים ונוירונים פולטים דחפים, ופלט אירועים ממוען; הניסוי משתמש בצלילים מכיוונים שונים.
 
-**Limit.** An auditory analog front end offers no directly transferable tactile resolution, component price or contact-safety guarantee.
+**מגבלה.** שלב מבוא אנלוגי לשמיעה אינו מספק רזולוציית מישוש, מחיר רכיב או הבטחת בטיחות מגע שניתן להעביר ישירות.
 
-**Plan action.** Use it as a historical example of modality-specific local event generation. Keep pressure and temperature acquisition parameters independently specified.
+**פעולה בתוכנית.** להשתמש כדוגמה היסטורית ליצירת אירועים מקומית המותאמת לאופן החישה. להגדיר בנפרד את פרמטרי הרכישה של לחץ ושל טמפרטורה.
 
-**Verification.** Verify both modalities retain correct physical units, sampling schedules and invalid-data flags when packed into shared transport.
+**אימות.** לוודא ששני אופני החישה משמרים יחידות פיזיקליות נכונות, תזמוני דגימה ודגלי נתונים לא תקפים כאשר אורזים אותם בתעבורה משותפת.
 
-**Prior art.** Neuromorphic sensory event coding predates this project.
+**ידע קודם.** קידוד אירועים חושיים נוירומורפי קדם לפרויקט זה.
+
 
 ### [56] VLSI analogs of neuronal visual processing: A synthesis of form and function
 
-M. Mahowald; 1992. [Source](https://authors.library.caltech.edu/records/g2vmh-8fe19); DOI [10.7907/Z9CZ35CD](https://doi.org/10.7907/Z9CZ35CD).
+M. Mahowald; 1992. [מקור](https://authors.library.caltech.edu/records/g2vmh-8fe19); DOI [10.7907/Z9CZ35CD](https://doi.org/10.7907/Z9CZ35CD).
 
-**Access: ABSTRACT_ONLY.** Caltech thesis repository metadata and abstract. The full thesis was located but not read.
+**גישה: ABSTRACT_ONLY.** מטא־נתונים ותקציר במאגר התזות של Caltech. התזה המלאה אותרה אך לא נקראה.
 
-**Finding.** Develops analog VLSI visual processing and communication inspired by neural systems, including retina/stereo/optic-nerve concepts.
+**ממצא.** מפתח עיבוד חזותי ותקשורת ב-VLSI אנלוגי בהשראת מערכות עצביות, כולל רעיונות של רשתית, סטריאו ועצב הראייה.
 
-**Limit.** A thesis abstract cannot support detailed circuit reproduction or performance comparison. Visual neuromorphic circuitry does not specify the mechanics of electronic skin.
+**מגבלה.** תקציר תזה אינו יכול לתמוך בשחזור מעגל מפורט או בהשוואת ביצועים. מעגלים נוירומורפיים חזותיים אינם מגדירים את המכניקה של עור אלקטרוני.
 
-**Plan action.** Cite as historical context if using the artificial-nervous-system analogy. Keep the engineering argument based on tested latency, reliability, mass and cost.
+**פעולה בתוכנית.** לצטט כרקע היסטורי אם משתמשים באנלוגיה של מערכת עצבים מלאכותית. לבסס את הטיעון ההנדסי על השהיה, אמינות, מסה ועלות שנבדקו.
 
-**Verification.** Audit the article's novelty claims against documented prior art and distinguish implementation economics from a new sensory-computing principle.
+**אימות.** לבקר את טענות החדשנות של המאמר המתוכנן מול ידע קודם מתועד, ולהבחין בין כלכלת המימוש לבין עיקרון חדש של חישוב חושי.
 
-**Prior art.** Neural-inspired distributed sensing and event communication are longstanding.
+**ידע קודם.** חישה מבוזרת ותקשורת אירועים בהשראת מערכות עצביות הן רעיונות ותיקים.
+
 
 ### [57] Point-to-point connectivity between neuromorphic chips using address events
 
-K. A. Boahen; 2000. [Source](https://web.stanford.edu/group/brainsinsilicon/documents/00_journ_IEEEtsc_Point.pdf); DOI [10.1109/82.842110](https://doi.org/10.1109/82.842110).
+K. A. Boahen; 2000. [מקור](https://web.stanford.edu/group/brainsinsilicon/documents/00_journ_IEEEtsc_Point.pdf); DOI [10.1109/82.842110](https://doi.org/10.1109/82.842110).
 
-**Access: PARTIAL_TEXT.** Author-hosted abstract and repository-indexed discussion/arbiter figures; not all19journal pages.
+**גישה: PARTIAL_TEXT.** תקציר באתר המחבר ודיון ואיורי בוררות המאונדקסים במאגר; לא כל 19 עמודי המאמר בכתב העת.
 
-**Finding.** Analyzes address-event communication and arbitration for time-multiplexed neuromorphic connections. Queueing and contention affect event timing and throughput.
+**ממצא.** מנתח תקשורת אירועים ממוענת ובוררות עבור חיבורים נוירומורפיים בריבוב זמן. תורים ותחרות על משאבים משפיעים על תזמון האירועים ועל קצב ההעברה.
 
-**Limit.** AER timing properties do not remove finite bandwidth, arbitration delay or buffer limits, and do not automatically apply to CAN FD.
+**מגבלה.** מאפייני התזמון של AER אינם מבטלים רוחב פס סופי, השהיית בוררות או מגבלות חוצצים, ואינם חלים אוטומטית על CAN FD.
 
-**Plan action.** Adopt worst-case burst and queue analysis. Preserve acquisition timestamps and distinguish age at sampling from transport delay; report queue overflow as invalid coverage.
+**פעולה בתוכנית.** לאמץ ניתוח של פרצים ותורים במקרה הגרוע. לשמר חותמות זמן רכישה ולהבחין בין גיל בעת הדגימה להשהיית התעבורה; לדווח על גלישת תור ככיסוי לא תקף.
 
-**Verification.** Align maximum-rate reports from every node and inject retransmissions. Measure worst observed age and overflow behavior, not merely mean latency.
+**אימות.** ליישר בזמן דיווחים בקצב המרבי מכל הצמתים ולהזריק שידורים חוזרים. למדוד את הגיל הגרוע ביותר שנצפה ואת ההתנהגות בגלישה, ולא רק השהיה ממוצעת.
 
-**Prior art.** Sparse addresses and asynchronous arbitration are prior art.
+**ידע קודם.** כתובות דלילות ובוררות אסינכרונית הן ידע קודם.
 
-Additional locators: [1](https://repository.upenn.edu/bitstreams/4087da08-9301-4ab1-9de3-47924602da72/download). Their access status is described above; a link does not imply full-text review.
+מיקומים נוספים: [1](https://repository.upenn.edu/bitstreams/4087da08-9301-4ab1-9de3-47924602da72/download). מצב הגישה אליהם מתואר לעיל; קישור אינו מעיד על סקירת טקסט מלא.
+
 
 ### [58] Asynchronous DC-free serial protocol for event-based AER systems
 
-P. M. Ros, M. Crepaldi, C. Bartolozzi and D. Demarchi; 2015. [Source](https://iris.polito.it/handle/11583/2646243); DOI [10.1109/ICECS.2015.7440295](https://doi.org/10.1109/ICECS.2015.7440295).
+P. M. Ros, M. Crepaldi, C. Bartolozzi and D. Demarchi; 2015. [מקור](https://iris.polito.it/handle/11583/2646243); DOI [10.1109/ICECS.2015.7440295](https://doi.org/10.1109/ICECS.2015.7440295).
 
-**Access: ABSTRACT_ONLY.** Primary university abstract; original article file is restricted and was not requested from authors.
+**גישה: ABSTRACT_ONLY.** תקציר ראשוני באוניברסיטה; הגישה לקובץ המאמר המקורי מוגבלת והוא לא התבקש מהמחברים.
 
-**Finding.** Proposes a serial event protocol with100Mbps raw rate and up to2.9million32-bit events/s; its abstract reports successful16-bit operation with ±2% clock mismatch, explicit flow control and AC-coupling compatibility.
+**ממצא.** מציע פרוטוקול אירועים טורי בקצב גולמי של 100 Mbps ועד 2.9 מיליון אירועים בני 32 סיביות בשנייה; התקציר מדווח על פעולה מוצלחת ב-16 סיביות עם אי־התאמה של ±2% בין שעונים, בקרת זרימה מפורשת ותאימות לצימוד AC.
 
-**Limit.** These figures refer to that protocol and implementation. A differential pair does not make it electrically or logically interchangeable with CAN.
+**מגבלה.** הנתונים מתייחסים לפרוטוקול ולמימוש המסוימים. זוג מוליכים דיפרנציאלי אינו הופך אותו לתחליף חשמלי או לוגי ל-CAN.
 
-**Plan action.** Retain CAN FD transceivers, arbitration, error detection and diagnostics. Consider AS-AER only after a measured bandwidth bottleneck justifies separate FPGA/PHY cost.
+**פעולה בתוכנית.** לשמר משדרי־מקלטי CAN FD, בוררות, גילוי שגיאות ואבחון. לשקול AS-AER רק לאחר שצוואר בקבוק מדוד ברוחב הפס מצדיק עלות נפרדת של FPGA/PHY.
 
-**Verification.** Validate the actual CAN line, termination, bit timing and error recovery. Never substitute AS-AER bitrates into the CAN capacity calculation.
+**אימות.** לאמת את קו ה-CAN בפועל, הסיומות, תזמון הסיביות וההתאוששות משגיאות. אין להציב קצבי סיביות של AS-AER בחישוב קיבולת CAN.
 
-**Prior art.** Serial event transport over a small wire count is already established.
+**ידע קודם.** העברת אירועים טורית על מספר קטן של חוטים כבר מבוססת.
+
 
 ### [59] A QVGA143dB dynamic range frame-free PWM image sensor with lossless pixel-level video compression and time-domain CDS
 
-C. Posch, D. Matolin and R. Wohlgenannt; 2011. [Source](https://ieeexplore.ieee.org/document/5648367).
+C. Posch, D. Matolin and R. Wohlgenannt; 2011. [מקור](https://ieeexplore.ieee.org/document/5648367).
 
-**Access: CITATION_ONLY.** IEEE title/record and primary AIT institutional identity; original methods and figures not obtained. Similar2010ISSCC conference versions are not substituted.
+**גישה: CITATION_ONLY.** כותרת ורשומה של IEEE וזהות מוסדית ראשונית ב-AIT; השיטות והאיורים המקוריים לא הושגו. גרסאות דומות מכנס ISSCC משנת 2010 אינן משמשות תחליף.
 
-**Finding.** Identifies prior work on frame-free optical sensing with time-domain encoding; no numerical claim beyond the bibliographic title is adopted as engineering evidence.
+**ממצא.** מזהה עבודה קודמת על חישה אופטית ללא מסגרות עם קידוד בתחום הזמן; שום טענה מספרית מעבר לכותרת הביבליוגרפית אינה מאומצת כראיה הנדסית.
 
-**Limit.** The2019 review's use as an example of absolute-value event coding does not make its optical circuit an appropriate tactile design.
+**מגבלה.** השימוש בסקירת 2019 בדוגמה לקידוד אירועים בערכים מוחלטים אינו הופך את המעגל האופטי שלה לתכן מישוש מתאים.
 
-**Plan action.** Carry absolute values in the MCU frames; do not integrate received signed increments as the only persistent contact state.
+**פעולה בתוכנית.** להעביר ערכים מוחלטים במסגרות ה-MCU; אין לבצע אינטגרציה של תוספות חתומות שהתקבלו כמקור היחיד למצב מגע מתמשך.
 
-**Verification.** Drop a contact-onset packet and confirm a subsequent absolute snapshot restores the current state. Also report that the missed transient itself cannot be reconstructed.
+**אימות.** להשמיט חבילת תחילת מגע ולוודא שתמונת מצב מוחלטת עוקבת משחזרת את המצב הנוכחי. יש לדווח גם שהאירוע החולף שהוחמץ עצמו אינו ניתן לשחזור.
 
-**Prior art.** Absolute-value/time-coded event sensing is not new.
+**ידע קודם.** חישת אירועים עם ערכים מוחלטים או קידוד זמן אינה חדשה.
 
-Additional locators: [1](https://publications.ait.ac.at/en/publications/a-qvga-143-db-dynamic-range-frame-free-pwm-image-sensor-with-loss/). Their access status is described above; a link does not imply full-text review.
+מיקומים נוספים: [1](https://publications.ait.ac.at/en/publications/a-qvga-143-db-dynamic-range-frame-free-pwm-image-sensor-with-loss/). מצב הגישה אליהם מתואר לעיל; קישור אינו מעיד על סקירת טקסט מלא.
+
 
 ### [60] A new protocol for a low power sensor network
 
-M. Neugebauer and K. Kabitzsch; 2004. [Source](https://www.researchgate.net/publication/4075406_A_new_protocol_for_a_low_power_sensor_network); DOI [10.1109/PCCC.2004.1395037](https://doi.org/10.1109/PCCC.2004.1395037).
+M. Neugebauer and K. Kabitzsch; 2004. [מקור](https://www.researchgate.net/publication/4075406_A_new_protocol_for_a_low_power_sensor_network); DOI [10.1109/PCCC.2004.1395037](https://doi.org/10.1109/PCCC.2004.1395037).
 
-**Access: ABSTRACT_ONLY.** Author-uploaded abstract and official conference contents; original protocol details and results not read.
+**גישה: ABSTRACT_ONLY.** תקציר שהעלה מחבר ותוכן עניינים רשמי של הכנס; פרטי הפרוטוקול והתוצאות המקוריים לא נקראו.
 
-**Finding.** Discusses event-oriented activity for battery-powered sensor networks, relating communication scheduling to energy consumption.
+**ממצא.** דן בפעילות מכוונת אירועים ברשתות חיישנים המופעלות מסוללה, תוך קישור בין תזמון התקשורת לצריכת אנרגיה.
 
-**Limit.** Energy benefits depend on the radio, duty cycle and application. A wired sensor that continues sampling at100Hz does not save ADC/MCU power simply because it sends fewer packets.
+**מגבלה.** יתרונות האנרגיה תלויים ברדיו, במחזור העבודה וביישום. חיישן קווי שממשיך לדגום ב-100 Hz אינו חוסך הספק ADC או MCU רק משום שהוא שולח פחות חבילות.
 
-**Plan action.** Separate bandwidth reduction from power reduction in the cost/performance table. Measure total rail current in both periodic and hybrid modes with identical scan schedules.
+**פעולה בתוכנית.** להפריד בטבלת העלות והביצועים בין הפחתת רוחב פס להפחתת הספק. למדוד את זרם האספקה הכולל במצב מחזורי ובמצב משולב עם לוחות זמנים זהים של סריקה.
 
-**Verification.** Measure quiet, contact and fault-mode current at the patch input and regional hub; include quiescent regulators and termination/transceiver activity.
+**אימות.** למדוד זרם בשקט, במגע ובמצב תקלה בכניסת הטלאי וברכזת האזורית; לכלול צריכת מנוחה של מייצבים ופעילות סיומות ומשדרי־מקלטים.
 
-**Prior art.** Event-based low-power sensor networking was established well before this project.
+**ידע קודם.** רשתות חיישנים חסכוניות בהספק המבוססות על אירועים היו מבוססות זמן רב לפני פרויקט זה.
 
-Additional locators: [1](https://www.ipccc.org/ipccc2004/TableOfContents.htm). Their access status is described above; a link does not imply full-text review.
+מיקומים נוספים: [1](https://www.ipccc.org/ipccc2004/TableOfContents.htm). מצב הגישה אליהם מתואר לעיל; קישור אינו מעיד על סקירת טקסט מלא.
+
 
 ### [61] Send-on-delta concept: An event-based data reporting strategy
 
-M. Miskowicz; 2006. [Source](https://mdpi-res.com/d_attachment/sensors/sensors-06-00049/article_deploy/sensors-06-00049.pdf); DOI [10.3390/s6010049](https://doi.org/10.3390/s6010049).
+M. Miskowicz; 2006. [מקור](https://mdpi-res.com/d_attachment/sensors/sensors-06-00049/article_deploy/sensors-06-00049.pdf); DOI [10.3390/s6010049](https://doi.org/10.3390/s6010049).
 
-**Access: FULL_TEXT.** Official MDPI static PDF downloaded locally; all15pages49–63 read, including equations1–13, tables1–2, software example and references. Figure3 on p.58 visually inspected.
+**גישה: FULL_TEXT.** קובץ PDF סטטי רשמי של MDPI הורד מקומית; כל 15 העמודים 49–63 נקראו, כולל משוואות 1–13, טבלאות 1–2, דוגמת תוכנה ומקורות. איור 3 בעמוד 58 נבדק חזותית.
 
-**Finding.** Separates continuous level-crossing from periodically sampled compound implementations (p.53). Its traffic analysis depends on signal slope, peak density and threshold, and its example compares59 periodic samples with7 events over1.2s at amplitude resolution0.2 (p.58). Heartbeat updates are already described on pp.60–61.
+**ממצא.** מפריד בין חציית רמה רציפה למימושים משולבים הנדגמים באופן מחזורי, בעמוד 53. ניתוח התעבורה תלוי בשיפוע האות, בצפיפות השיאים ובסף; הדוגמה משווה 59 דגימות מחזוריות ל-7 אירועים במשך 1.2 s ברזולוציית משרעת 0.2, בעמוד 58. עדכוני חיות מתוארים כבר בעמודים 60–61.
 
-**Limit.** The analytical comparison assumes a specified signal and resolution; it is not a universal saving, hard latency guarantee or loss/reboot protocol. The sample-count example is a simulation, not a tactile-skin experiment.
+**מגבלה.** ההשוואה האנליטית מניחה אות ורזולוציה מוגדרים; היא אינה חיסכון אוניברסלי, הבטחת השהיה קשיחה או פרוטוקול לאובדן ולאתחול. דוגמת מספר הדגימות היא סימולציה, ולא ניסוי בעור מישוש.
 
-**Plan action.** Adapt to a hybrid:100Hz scanning, delta/contact/fault triggers and fresh absolute snapshots at least every20ms while idle. Include sequence, reboot/session identity and capture time; never treat silence as healthy.
+**פעולה בתוכנית.** להתאים למצב משולב: סריקה ב-100 Hz, טריגרים לשינוי, למגע ולתקלה, ותמונות מצב מוחלטות וטריות לפחות כל 20 ms בחוסר פעילות. לכלול מספר רצף, זהות אתחול והפעלה וזמן רכישה; לעולם אין לפרש שקט כבריאות תקינה.
 
-**Verification.** Test delta-boundary noise, slow ramps, sustained contacts, burst loss, reboot, timestamp wrap and queue rejection. Keep100Hz worst-case provisioning and measure achieved savings.
+**אימות.** לבדוק רעש בגבול סף השינוי, עליות איטיות, מגעים מתמשכים, אובדן פרצים, אתחול, גלישת חותמות זמן ודחיית הכנסה לתור. לשמור על תכנון קיבולת למקרה הגרוע של 100 Hz ולמדוד את החיסכון שהושג.
 
-**Prior art.** Send-on-delta, compound sampled implementations and added heartbeat updates are all established; this project adapts them.
+**ידע קודם.** שידור לפי שינוי, מימושים משולבים הנדגמים מחזורית והוספת עדכוני חיות הם כולם ידע מבוסס; הפרויקט מתאים אותם לצרכיו.
 
-Additional locators: [1](https://citeseerx.ist.psu.edu/document?doi=e16d4fa920e6886be986d915b768dc166e7761e0&repid=rep1&type=pdf), [2](https://www.researchgate.net/publication/26546799_Send-On-Delta_Concept_An_Event-Based_Data_Reporting_Strategy). Their access status is described above; a link does not imply full-text review.
+מיקומים נוספים: [1](https://citeseerx.ist.psu.edu/document?doi=e16d4fa920e6886be986d915b768dc166e7761e0&repid=rep1&type=pdf), [2](https://www.researchgate.net/publication/26546799_Send-On-Delta_Concept_An_Event-Based_Data_Reporting_Strategy). מצב הגישה אליהם מתואר לעיל; קישור אינו מעיד על סקירת טקסט מלא.
+
 
 ### [62] A robust and efficient dynamic network protocol for a large-scale artificial robotic skin
 
-C. Bader, F. Bergner and G. Cheng; 2018. [Source](https://mediatum.ub.tum.de/doc/1459302/136167106011.pdf).
+C. Bader, F. Bergner and G. Cheng; 2018. [מקור](https://mediatum.ub.tum.de/doc/1459302/136167106011.pdf).
 
-**Access: PARTIAL_TEXT.** Repository-indexed abstract, first-page introduction and topology/rerouting figure. Detailed implementation and remaining experiments not read.
+**גישה: PARTIAL_TEXT.** תקציר מאונדקס במאגר, מבוא מהעמוד הראשון ואיור טופולוגיה וניתוב מחדש. המימוש המפורט ויתר הניסויים לא נקראו.
 
-**Finding.** Tests a multi-hop skin network with up to204cells. The original abstract reports recovery within50ms and more than30% packet-loss reduction from balancing relative to its previous protocol.
+**ממצא.** בודק רשת עור מרובת דילוגים עם עד 204 תאים. התקציר המקורי מדווח על התאוששות בתוך 50 ms ועל הפחתה של יותר מ-30% באובדן חבילות עקב איזון, ביחס לפרוטוקול הקודם שלהם.
 
-**Limit.** The supplied2019 review reports40ms and32% greater network size: those are distinct source/metric statements, not interchangeable guarantees. Rerouting requires an intact alternate physical path.
+**מגבלה.** סקירת 2019 שסופקה מדווחת על 40 ms ועל גודל רשת גדול ב-32%: אלה הצהרות נפרדות של מקור ומדד, ולא הבטחות הניתנות להחלפה. ניתוב מחדש מחייב נתיב פיזי חלופי תקין.
 
-**Plan action.** Reject literal mesh routing on the single shared CAN bus. Use regional segmentation, bounded failure detection and physical fault containment. Any redundancy needs additional buses/ports and its own BOM.
+**פעולה בתוכנית.** לדחות מימוש מילולי של ניתוב אריג על אפיק CAN משותף יחיד. להשתמש בפילוח אזורי, בגילוי תקלות חסום בזמן ובבידוד תקלות פיזי. כל יתירות מחייבת אפיקים או יציאות נוספים ורשימת חומרים משלה.
 
-**Verification.** Unplug a node, break a trunk, short the bus and reset the gateway separately. Record the actual affected region and recovery; do not claim single-wirebreak survival from software alone.
+**אימות.** לנתק צומת, לקטוע קו ראשי, לקצר את האפיק ולאפס את שער התקשורת בנפרד. לתעד את האזור שנפגע בפועל ואת ההתאוששות; אין לטעון לשרידות נתק חוט יחיד באמצעות תוכנה בלבד.
 
-**Prior art.** Dynamic robotic-skin routing and load balancing are prior art, but are not functions of the baseline CAN topology.
+**ידע קודם.** ניתוב דינמי ואיזון עומס בעור רובוטי הם ידע קודם, אך אינם פונקציות של טופולוגיית CAN בתצורת הבסיס.
 
-## Evidence completeness and release consequence
+## שלמות הראיות והשלכתה על שחרור המוצר
 
-All27 assigned references have a record and an explicit adoption/adaptation/rejection decision. Five originals remain citation-only:22,43,48,54,59. Nine were available only as abstracts:20,41,46,47,49,55,56,58,60. Twelve yielded partial original text:21,23,24,42,44,45,50,51,52,53,57,62. Ref61 was read in full; its downloaded PDF, extracted text and inspected Figure3 rendering are stored alongside this report. No other entry should be described as a complete full-text review.
+לכל 27 המקורות שהוקצו קיימת רשומה והחלטה מפורשת על אימוץ, התאמה או דחייה. חמישה מקורות נשארים ביבליוגרפיים בלבד: 22,43,48,54,59. תשעה היו נגישים רק כתקצירים: 20,41,46,47,49,55,56,58,60. שנים־עשר סיפקו טקסט מקורי חלקי: 21,23,24,42,44,45,50,51,52,53,57,62. מקור 61 נקרא במלואו; ה-PDF שהורד, הטקסט שחולץ וההדמיה של איור 3 שנבדקה נשמרו בסביבת המחקר המקומית. מאגר זה מקשר למקור ואינו מפיץ את הקבצים האלה. אין לתאר אף רשומה אחרת כסקירת טקסט מלא וממצה.
 
-These limits do not prevent building the conservative CAD-registered, ADC-sampled, CAN-networked proof of concept. They do prevent representing it as an exact reproduction of the inaccessible algorithms, promising their reported performance, or claiming a literature-complete novelty assessment. The project should retain explicit tests and release gates rather than turn a paper's result into an unmeasured specification. The record contains no vendor quotation, certification or patent freedom-to-operate conclusion.
+מגבלות אלה אינן מונעות בניית הוכחת היתכנות שמרנית הרשומה לפי CAD, נדגמת ב-ADC ומחוברת ברשת CAN. הן כן מונעות הצגתה כשחזור מדויק של האלגוריתמים שאינם נגישים, הבטחת הביצועים שדווחו בהם, או טענה להערכת חדשנות המקיפה את כל הספרות. על הפרויקט לשמר בדיקות ושערי שחרור מפורשים, במקום להפוך תוצאת מאמר למפרט שלא נמדד. הרשומה אינה כוללת הצעת מחיר מספק, הסמכה או מסקנה לגבי חופש פעולה בתחום הפטנטים.
+
+</div>

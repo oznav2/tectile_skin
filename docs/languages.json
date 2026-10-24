@@ -1,0 +1,130 @@
+{
+  "primary_language": "he",
+  "english_suffix": ".en.md",
+  "pairs": [
+    {
+      "hebrew": "NOTICE.md",
+      "english": "NOTICE.en.md"
+    },
+    {
+      "hebrew": "README.md",
+      "english": "README.en.md"
+    },
+    {
+      "hebrew": "docs/release_status.md",
+      "english": "docs/release_status.en.md"
+    },
+    {
+      "hebrew": "docs/verification.md",
+      "english": "docs/verification.en.md"
+    },
+    {
+      "hebrew": "electronic_skin.md",
+      "english": "electronic_skin.en.md"
+    },
+    {
+      "hebrew": "electronics/README.md",
+      "english": "electronics/README.en.md"
+    },
+    {
+      "hebrew": "electronics/assembly_and_acceptance.md",
+      "english": "electronics/assembly_and_acceptance.en.md"
+    },
+    {
+      "hebrew": "electronics/datasheet_traceability.md",
+      "english": "electronics/datasheet_traceability.en.md"
+    },
+    {
+      "hebrew": "electronics/optional_calibration.md",
+      "english": "electronics/optional_calibration.en.md"
+    },
+    {
+      "hebrew": "hardware/00_Docs/README.md",
+      "english": "hardware/00_Docs/README.en.md"
+    },
+    {
+      "hebrew": "hardware/01_Mechanic/README.md",
+      "english": "hardware/01_Mechanic/README.en.md"
+    },
+    {
+      "hebrew": "hardware/02_PCB/06_RBE-PWR-HEAD/README.md",
+      "english": "hardware/02_PCB/06_RBE-PWR-HEAD/README.en.md"
+    },
+    {
+      "hebrew": "hardware/02_PCB/11_RBE_PWR_140WCHG/README.md",
+      "english": "hardware/02_PCB/11_RBE_PWR_140WCHG/README.en.md"
+    },
+    {
+      "hebrew": "hardware/02_PCB/README.md",
+      "english": "hardware/02_PCB/README.en.md"
+    },
+    {
+      "hebrew": "hardware/03_Harness/README.md",
+      "english": "hardware/03_Harness/README.en.md"
+    },
+    {
+      "hebrew": "hardware/04_BOM/README.md",
+      "english": "hardware/04_BOM/README.en.md"
+    },
+    {
+      "hebrew": "hardware/LICENSES.md",
+      "english": "hardware/LICENSES.en.md"
+    },
+    {
+      "hebrew": "hardware/README.md",
+      "english": "hardware/README.en.md"
+    },
+    {
+      "hebrew": "hardware/README_CN.md",
+      "english": "hardware/README_CN.en.md"
+    },
+    {
+      "hebrew": "hardware/provenance/README.md",
+      "english": "hardware/provenance/README.en.md"
+    },
+    {
+      "hebrew": "hardware/skin_integration.md",
+      "english": "hardware/skin_integration.en.md"
+    },
+    {
+      "hebrew": "mechanics/README.md",
+      "english": "mechanics/README.en.md"
+    },
+    {
+      "hebrew": "research/calibration_networks/review.md",
+      "english": "research/calibration_networks/review.en.md"
+    },
+    {
+      "hebrew": "research/control_applications/review.md",
+      "english": "research/control_applications/review.en.md"
+    },
+    {
+      "hebrew": "research/reference_index.md",
+      "english": "research/reference_index.en.md"
+    },
+    {
+      "hebrew": "research/sensing_materials/review.md",
+      "english": "research/sensing_materials/review.en.md"
+    },
+    {
+      "hebrew": "software/README.md",
+      "english": "software/README.en.md"
+    },
+    {
+      "hebrew": "templates/rfq.md",
+      "english": "templates/rfq.en.md"
+    }
+  ],
+  "preserved_technical_content": [
+    "code blocks",
+    "part numbers",
+    "values",
+    "equations",
+    "source URLs",
+    "original publication titles"
+  ],
+  "hebrew_aliases": [
+    "README.he.md",
+    "hardware/README.he.md"
+  ]
+}

@@ -1,0 +1,763 @@
+{
+  "schema_version": 1,
+  "method": "Original glyph outlines and original affine transforms restored as vector paths; an invisible Unicode layer records character origins for search/positional checks. No surrounding drawing geometry, source-language text or branding restored.",
+  "files": [
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/01_CNC/5DOF/YCL.M000372 \u9020\u578b\u624b\u672c\u4f53.pdf",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/5DOF/ROBOSKIN.0132_cosmetic_hand_body.pdf",
+      "source_sha256": "db744e24775bdb49407185bc44a186a95fe8c2f484bf4e04808d2f983d2d99e2",
+      "before_sha256": "5628e192efd3adafb0c6748aa0d73a8c89d9ba478b36ae2d55ad46fb17bf7391",
+      "after_sha256": "ba576aadebaec55f088a9969de51b26bf1b55c074d708c829d6d1efeb6105901",
+      "restored_glyphs": 4,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 4,
+          "overlay_sha256": "895751043694907ee04f28db821660d26f4df8ba51e33a9f2dbf9f21aca02a89"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/01_CNC/5DOF/YCL.M000373 \u9020\u578b\u624b\u76d6\u5b50.pdf",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/5DOF/ROBOSKIN.0133_cosmetic_hand_cover.pdf",
+      "source_sha256": "8873b42c0a6f0a6b59ad9ddfb9a7d389af1a487135e3643e654d8befe76e46d3",
+      "before_sha256": "333af2d9453ab0ecb25853010fcde651d03a28c767d51bccdd3fba02a05f826b",
+      "after_sha256": "fc9a765f55a6b2ff9da04efa512febbe79bbbf9b90105875ae63e83a8d8d30a5",
+      "restored_glyphs": 8,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 8,
+          "overlay_sha256": "f44636c25eeb8ef745c7caf75791e527f6bd7c92ccd19faf27e23d3b242db1ee"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/01_CNC/5DOF/YCL.M000374 \u955c\u5411\u9020\u578b\u624b\u672c\u4f53.pdf",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/5DOF/ROBOSKIN.0134_mirrored_cosmetic_hand_body.pdf",
+      "source_sha256": "9d68479cc3630a85de9c570cb575c9e6547def9ec2e9293276d4a7a13b969e4a",
+      "before_sha256": "78a1ce72d228b0af0113413658e845bc7f8d983fcd0ccf7708b8fd2ff28f9f03",
+      "after_sha256": "f413b3d740da56117af6177a8ddeef32e6dad804142bbdeb5a86e5ad7a09fda9",
+      "restored_glyphs": 4,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 4,
+          "overlay_sha256": "d59b0fe67aa28eaa0b5a3904d9c7fdde20f32add3a54acbe8b48de4bfebf086a"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/01_CNC/5DOF/YCL.M000376 \u955c\u5411\u9020\u578b\u624b\u76d6\u5b50.pdf",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/5DOF/ROBOSKIN.0136_mirrored_cosmetic_hand_cover.pdf",
+      "source_sha256": "ea6eefb02035c0de90db96ec269894c9a6f7ef0dcdf4a5cd9aa342b62ac7900d",
+      "before_sha256": "a1b3744956585b89e6971441a92b7bbc440117704ebe53ab9c8f01102ef5c3fd",
+      "after_sha256": "f71bbfa60b9fb65bbb0e376c7b7bd222bf9cd1ef4d0cf638b8c06b56340937f3",
+      "restored_glyphs": 4,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 4,
+          "overlay_sha256": "4e17bbd4cef9bba4601c094354f78fdc7c288e77231f9a9bfc77e483f7c7b7bd"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/01_CNC/7DOF/YCL.M000312 \u5c0f\u81c2\u4e0b\u672c\u4f53.PDF",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/7DOF/ROBOSKIN.0001_forearm_lower_body.pdf",
+      "source_sha256": "a146ae0a583f387cbab24562928f8626f202bae9b6c7e8278240f1fcdbb9a866",
+      "before_sha256": "28b6cd6741571922c997eaeab91f532f5f01c14c096519f6543c0ec3e208e5ca",
+      "after_sha256": "73b671de2f86422d398c1cab8ef6711a8848f7b45d6b65f31242866081fe3115",
+      "restored_glyphs": 4,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 4,
+          "overlay_sha256": "10fd48bc676495305acb8e00d1eff2644b96b5e9e40538c9fee4c1f454852b7f"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/01_CNC/7DOF/YCL.M000473 \u624b\u8155\u4e0a\u62b1\u7b8d.PDF",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/7DOF/ROBOSKIN.0158_wrist_upper_clamp.pdf",
+      "source_sha256": "7b88f76bea1d6d0a9d86ee2780f0f8131407cd6ff1627a9255d0dcba15fd8366",
+      "before_sha256": "a2fd28053a61fa325e9d37212b0ec8c6ac7605427a7d6a230b9d5242f751ae17",
+      "after_sha256": "d98290087fdd5b76c3b638134e8f90c8a6f4f1f98996192b0379924597bdb369",
+      "restored_glyphs": 4,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 4,
+          "overlay_sha256": "527a601eae446b5a9ecaa227b0d0f5a947f4196882358f32ab5b41572a92545e"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/01_CNC/Common/YCL.M000228_\u8170\u90e8\u4e00\u53f7\u62b1\u7b8d\uff08LS\u7248\uff09.pdf",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0079_waist_number_1_clamp_(LS_revision_).pdf",
+      "source_sha256": "d9a7491f4c1fba5c10af406b46a01c3d5fb5a47fa36738ea9527adf5e776b9d5",
+      "before_sha256": "b1f878e2ef7f19187a6cdf1c87eba4703b608316fae0a25cdfb7f0301151fa1a",
+      "after_sha256": "8d503f64f29c90719afb472ffdef211839016f826ecf720572b72fd63d75665d",
+      "restored_glyphs": 6,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 6,
+          "overlay_sha256": "a9ed178d03df98edf6d458dc526012729f2bea2e2bc76cb3629667534567ce26"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/01_CNC/Common/YCL.M000230_\u9acb\u5173\u8282\u540e\uff08LS\u7248\uff09.pdf",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0081_hip_joint_rear_(LS_revision_).pdf",
+      "source_sha256": "13f7ab26f1fd9c28729d7a13cb6d2212a06b0409d2cef393438b1763c0ad35b5",
+      "before_sha256": "867982a601a94f876fa7ee3ea540c23e9c328e28e9a91cfbfd82dfdb174eff4d",
+      "after_sha256": "2bf28c52035f7691f78232c68f8d47e6d8f33a0b521f92e3ba008294ce600f00",
+      "restored_glyphs": 7,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 7,
+          "overlay_sha256": "a07e6542f1d6bd4a9adc4123da13909c502e4dfd2d6d74ba6272f3690d61dbb6"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/01_CNC/Common/YCL.M000239_\u9acb\u5173\u8282\u5de6\u62b1\u7b8d.pdf",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0087_hip_joint_left_clamp.pdf",
+      "source_sha256": "375fc8e8b22811258c771e3d526437243fdf188940973726df08b4bda04c79af",
+      "before_sha256": "02ff741f8827ad9f2596b5bf9fafe1cc498a89dda7007c6b02077389e3218d7b",
+      "after_sha256": "d261dae8207a11f131baad925df0bac30d4716e9cdf68d577ffe83d740e99af4",
+      "restored_glyphs": 6,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 6,
+          "overlay_sha256": "4e4f7507433841323f6f8632a4f9a05dcc12dff7559740a231d851641dd77b2b"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/01_CNC/Common/YCL.M000240_\u9acb\u5173\u8282\u53f3\u62b1\u7b8d.pdf",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0088_hip_joint_right_clamp.pdf",
+      "source_sha256": "3af872068785a29c6aeba8866062683603f271606856055b99062931a651a5e6",
+      "before_sha256": "3adc20d3d64f970b0afd881805b1e8a048fe38742780ff2e3a7559ced3d6bc87",
+      "after_sha256": "eeeea8ed012066f7617a840e97e46695fb7da67504e91f52efa4689f00d18500",
+      "restored_glyphs": 5,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 5,
+          "overlay_sha256": "30dbfd894eb74f0d7479d2d69181952b5d0fb744df41d1f8ba8d0cc1873f817f"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/01_CNC/Common/YCL.M000249 Yaw\u9650\u4f4d3.PDF",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0091_Yaw_travel_stop_3.pdf",
+      "source_sha256": "8390231a3c7bac13a189e1ef49d17891d1b70792db03fa0947e7cbb699b74dc3",
+      "before_sha256": "7840add3c815282a031edff998fdc7156c80f3123f25629c618012d842ad3787",
+      "after_sha256": "c11679f4d96f6137c06bd9cb12c1874d6d75232621eec89153360d2a3375c301",
+      "restored_glyphs": 4,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 4,
+          "overlay_sha256": "45dc3424975552493945d65fbae5aca421fe8acdccba47136544eefb63dc4d5d"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/01_CNC/Common/YCL.M000332 \u624b\u81c2\u8f6c\u63a5\u6cd5\u5170.PDF",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0115_arm_adapter_flange.pdf",
+      "source_sha256": "0b4908d77028005382aa0adb409ce2a445da5d49d8762a2a138d81e6c45a9b6e",
+      "before_sha256": "145e47ea2eb8d6690abe84f83951ddc57e42ef03cf78b1f01a3fd19463d02ca1",
+      "after_sha256": "21ce492895b02165836147fb3ee4de408776627578838890ad13280648589cff",
+      "restored_glyphs": 2,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 2,
+          "overlay_sha256": "f0e1455535725da857b05b955b1f3e798d8d2dd1cea4340b43879e328c830627"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/01_CNC/Common/YCL.M000336 \u8098\u90e8\u8f74\u627f\u5ea7.PDF",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0119_elbow_bearing_housing.pdf",
+      "source_sha256": "06732c8349eb7a6050d05232d396b01ad6ceb8eb34d13ba2f6f59a63667b12ea",
+      "before_sha256": "4b6bf2fdbed9a1dbba3ed833a572daca77630b19d74ac1eecb489f7bdc96d3ec",
+      "after_sha256": "9d469084234a7c84757a39064a5b455bddc19ab7b8d3341ce169e5ac9f563d1e",
+      "restored_glyphs": 5,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 5,
+          "overlay_sha256": "7c8f27599863af8b304b477f2561019218be3267761c9259e9d049b110e52e92"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/01_CNC/Common/YCL.M000447 \u5c0f\u817f\u672c\u4f53\u53f3.pdf",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0149_shin_body_right.pdf",
+      "source_sha256": "c9976d182100ed0da4754ff80564fd726cf5e376da78f5cf565bf3211bf4da59",
+      "before_sha256": "1a944f323600fe0557da768e2c89b5954dd3eff89a217bbec16851cd78e015e6",
+      "after_sha256": "c9b3f2a5368c047166380610c1a4fca9a60d232870293640c2e8bc830a113988",
+      "restored_glyphs": 2,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 2,
+          "overlay_sha256": "d66c79577df5da253fee0981025019aa19201af635755095cb391c02d21deef0"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/01_CNC/Common/YCL.M000448 \u5c0f\u817f\u672c\u4f53\u5de6.pdf",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0150_shin_body_left.pdf",
+      "source_sha256": "e58efaade067b311cc5a02c3b6aba81f6ea70fe611146932dba57bc98cdd7dd5",
+      "before_sha256": "2a962866158de1a52fe7348d2487efebc494ff048e5b2d77aa2e6bcee8adff32",
+      "after_sha256": "0d07d0c07ae67be582a842ba37df092fa38cb1b959c349ab6c1c1ad45a82312c",
+      "restored_glyphs": 10,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 10,
+          "overlay_sha256": "7f12015cb3a5f62720ce3b5eac94e7ae3ac6dc443386669b2f45eb079a7e351c"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/01_CNC/Common/YCL.M000449 \u5c0f\u817f\u811a\u8e1d\u5206\u79bb\u5757.pdf",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0151_shin_ankle_spacer_block.pdf",
+      "source_sha256": "a993c53be214ad14e46b4f1e13e0109511141384ecea1f265f6300c02b130d40",
+      "before_sha256": "05b5863e146440e2f805accc951384645636dfa4117fe19011cea606396ada0b",
+      "after_sha256": "263ec061336514c052ffe9fad214f0fa5426fe9c635bccb40d5d4e1e8bee361a",
+      "restored_glyphs": 5,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 5,
+          "overlay_sha256": "fdf987d21dc8633cf2727f40d33317ee1234d76850f210f4b877edfc5fbe45bb"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/01_CNC/Common/YCL.M000451 \u955c\u5411\u5c0f\u817f\u811a\u8e1d\u5206\u79bb\u5757.pdf",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0152_mirrored_shin_ankle_spacer_block.pdf",
+      "source_sha256": "4e36b205aae2654bbc9aa3ab7d0ee56c538c26e70d0783fa2959d452d441c1e3",
+      "before_sha256": "97a01995d4f616046a433bf7cfe77d2058dfcca14edba61d82a020454ddbda59",
+      "after_sha256": "005a10daa5200f61022343032947503b3b82658dd74972f5f8f8a0f3d8149d20",
+      "restored_glyphs": 4,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 4,
+          "overlay_sha256": "e7f7fc5803a6524d372cf13539da4b748a609368ed18a84dbe27f227d9469f6d"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/01_CNC/Common/YCL.M000452 \u955c\u5411\u5c0f\u817f\u672c\u4f53\u5de6.pdf",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0153_mirrored_shin_body_left.pdf",
+      "source_sha256": "767a8c5a110cda52fd542849ac07b61f96aa0586d00d4d673b9d16624e1a5eae",
+      "before_sha256": "2f90b8d9054d8df20e6385ee0ece15f52b07f26d6ce8c01cf0229716282f7d7c",
+      "after_sha256": "fb392cc3aca1cbd0e0b1741f4c587f9f0b24d77e1b39ef7ad3a2f8a7d466e49d",
+      "restored_glyphs": 10,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 10,
+          "overlay_sha256": "55b7ad35e31aa2c510addbd2028365c5df38d7f81206a70872f732ddc99f3ca8"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/01_CNC/Common/YCL.M000453 \u955c\u5411\u5c0f\u817f\u672c\u4f53\u53f3.pdf",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0154_mirrored_shin_body_right.pdf",
+      "source_sha256": "5f3a36ea3a03408ee8e09d88c40475cf7da275f57d572208b437150ee9d96605",
+      "before_sha256": "22c783d76f4e60306d478a35a6856d21ca11147814416001d86f36cbaaab2df6",
+      "after_sha256": "cc960ad5c4a09c70be1d8f5bff0f9abccb641c906b075a4b13553c54b419d01d",
+      "restored_glyphs": 2,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 2,
+          "overlay_sha256": "dc46bde98079f21fb9f12dd12bb4227f674e8094ef3c3cb45be055ebde86a08f"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/01_CNC/Common/YCL.M000475 \u5927\u817f\u5361\u7b8d\u540e.PDF",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0160_thigh_clamp_rear.pdf",
+      "source_sha256": "229fd7105864c02b86be4eaa34b5e903322155181d9a34844378d48e436fb103",
+      "before_sha256": "810a763cca65df4b790938421a37eeb007385a1d248978b16eab6c5333b09d0f",
+      "after_sha256": "481473180af0e4904ca956ddfcca07debf4b3555edd43e74b0571c9216b47148",
+      "restored_glyphs": 7,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 7,
+          "overlay_sha256": "8339f89bcfc3d9316234cf580c05f2340936f6aa96c013cf20cb107244e148d0"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/01_CNC/Common/YCL.M000561 YAW\u7535\u673a\u5b89\u88c5\u652f\u67b6.pdf",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0167_YAW_motor_mounting_bracket.pdf",
+      "source_sha256": "f0375b9fa4fc97c9ac1d7fa72721e65c084fb03259b599dd4cfb7e2fd9949b72",
+      "before_sha256": "867d7fd4e0bbe5bdf213afd65cf478cbd13c113c58893503988156b9ccb30925",
+      "after_sha256": "cbf86fbaf9cfc1023f09c0f50f9ae1fcd6501957c81ae5dd4fa9918de72ce70a",
+      "restored_glyphs": 2,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 2,
+          "overlay_sha256": "5b8a4af3ad5af0e5645fef16d867225b3986eb927d90cafa5e17c84d29152ca8"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/01_CNC/Common/YCL.M000563 PITCH-YAW\u7535\u673a\u6cd5\u5170\u652f\u67b6.pdf",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0169_PITCH-YAW_motor_flange_bracket.pdf",
+      "source_sha256": "75452f8c9aae153a82f8ff823b773ae8ddcb7ef7d946e72b18df305e43c96370",
+      "before_sha256": "7b301fe56f74a2834995c4f7c59dfcbb825c8eb79bce1aeefbbcb95bcd010ec9",
+      "after_sha256": "ba44bf11c7d96f243d49e6dd62f52386dee1fe3a73e4fbdf96055332a6071f0f",
+      "restored_glyphs": 8,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 8,
+          "overlay_sha256": "aa61b04e4d5bfa0d72eeb726aa1d1c5a339387b23f25ab251bd54e46a218594e"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/01_CNC/Common/YCL.M000638 \u626c\u58f0\u5668\u652f\u67b6.pdf",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0172_speaker_bracket.pdf",
+      "source_sha256": "1df5e9a1e0510926e7a3c31ddfd0b441f3cad4b5251e664c9dd96e455e5ce525",
+      "before_sha256": "9e12c0de8d476095d0009fa79bb5d1955afa30bd0968875cfdf9c59d5eb44e83",
+      "after_sha256": "054eedaa2d3fa681f514de279b74e29476e4a221658ccad071680f2df8af5959",
+      "restored_glyphs": 3,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 3,
+          "overlay_sha256": "7a8c4f1d1c9066cc68bd9e0f67e8e804be6e40a8dc68a404e5f9b5a0891a082f"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/01_CNC/Common/YCL.M000640 75\u80a9\u90e8\u62b1\u7b8d\uff0801\u7248\uff09.pdf",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0173_75_shoulder_clamp_(01_revision_).pdf",
+      "source_sha256": "c75631edb6defcce78184b4de9fb1688934e4a34627a3c9d73756fd2e886fbf0",
+      "before_sha256": "f6cf2c989154baca42f1b0fe7b4eb347c951fda14812a65e90222dd8f9a90134",
+      "after_sha256": "699633228b97b5d4bd1f1527c07a7ee6d5b6263fcb152198be8f675a2f73b2d8",
+      "restored_glyphs": 5,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 5,
+          "overlay_sha256": "ca5da8c4005fbfbd7ee74c293f3ed97519f95747ce9ba4d34c3fa4c4eb0aeca8"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/01_CNC/Common/YCL.M000642 \u5927\u81c2\u4e0a\u672c\u4f53\uff0801\u7248\uff09.PDF",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0175_upper_arm_upper_body_(01_revision_).pdf",
+      "source_sha256": "839fbfc622b5400fdc7a158700e1435c30c911dcc29fd5e8636db2cc3e013451",
+      "before_sha256": "1b585ea1c2d798480d714567fa56a007201832ec4ff5beddaa2c3d893105e864",
+      "after_sha256": "27f23462ef6754e48da4bc865e004edd11d719cdf9b89101214d32824a5d8276",
+      "restored_glyphs": 2,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 2,
+          "overlay_sha256": "3858714a2b1cf423cdea3eb2fcf93327a8cd0ae33a9f34f3796221146a1e10b0"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/01_CNC/Common/YCL.M000643 \u5927\u81c2\u4e0a\u62b1\u7b8d\uff0801\u7248\uff09.PDF",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0176_upper_arm_upper_clamp_(01_revision_).pdf",
+      "source_sha256": "de5b08305292003af31585d5097642147626df84ab3dcc7e0cfe5042d2886fec",
+      "before_sha256": "d5d49b73a425299e21624fe79a8f2bbc4e37128afb22811b9f40c04bbfac8c45",
+      "after_sha256": "bbfd21d72e3bc472ec69ff9d6c0c161d655b4ed1028dd98e85fc6054a8ddbc52",
+      "restored_glyphs": 5,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 5,
+          "overlay_sha256": "fb5826dc99ab3c7460bdba3fadd9d73251ea127963f18aad27cc885b0cffdebf"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/01_CNC/Common/YCL.M000645 \u5927\u81c2\u4e0b\u540e\u5206\u4ef6(01\u7248).pdf",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0178_upper_arm_lower_rear_segment_(01_revision_).pdf",
+      "source_sha256": "9cbc32582f9d4edca2910c795bc6f525e65c07b5cf67d514d36c21542298bb4a",
+      "before_sha256": "461d2d16535c654bce2b9294ea79d8e9979950be3505e2fc31d9981664114b94",
+      "after_sha256": "fa4d1dbdf0e8ab110fab0ab64b544bee19406e74ce76af9066b103563a9b49fd",
+      "restored_glyphs": 4,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 4,
+          "overlay_sha256": "f16e5202219e6596488a82aa2d45c5deb2dbf1357cd24b8e27320a93f43530d5"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/01_CNC/Common/YCL.M000646 \u5c0f\u81c2\u4e0a\u672c\u4f53\u5de6\uff0802\u7248\uff09.pdf",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0179_forearm_upper_body_left_(02_revision_).pdf",
+      "source_sha256": "34c3fb56baab375ea567edb0616f7aa56abe0d41137710ee1f6877df6405d6fb",
+      "before_sha256": "4da255748df3ab1b7a7c4b71d90339f3b4c755dcd6d1369e0bad37fb931fe94e",
+      "after_sha256": "ae74ed7f0df77fa0b7d1f7c0674f29f57be5ba3bb478ce587b322fef196a7157",
+      "restored_glyphs": 10,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 10,
+          "overlay_sha256": "68ac8aebb7c7c00879a925ca3da2718c88169fbe3712c73a686b821529ed5d08"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/01_CNC/Common/YCL.M000648 \u955c\u5411\u5c0f\u81c2\u4e0a\u672c\u4f53\u5de6\uff0802\u7248\uff09.pdf",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0181_mirrored_forearm_upper_body_left_(02_revision_).pdf",
+      "source_sha256": "e6520e3938c202a1325733d70e8b03b84d2732902c5aa5597e39f71b9c77a259",
+      "before_sha256": "e9e656c02e7ba8c0c2b9577833260b54fe7567d3ff6e17540e0e255763f73561",
+      "after_sha256": "f0ba939ba3880199b44b495b3cb3337e7e2494433a4b53fa1dfb0902ce8b9090",
+      "restored_glyphs": 9,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 9,
+          "overlay_sha256": "c4095a42527008ad9bd7329e6188f369b1d7990f6a734beeb87b80823f5d25ec"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/01_CNC/Common/YCL.M000649 \u955c\u5411\u5c0f\u81c2\u4e0a\u672c\u4f53\u53f3\uff0802\u7248\uff09.pdf",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0182_mirrored_forearm_upper_body_right_(02_revision_).pdf",
+      "source_sha256": "658f8b354820e431a1028cf1e72158f35bcfa166e5a5742e0293bda5945a8508",
+      "before_sha256": "dc09997ab720ff5c27ebb127ac9053ad666fa6467fc9487bf31b2e34f8b1dc7e",
+      "after_sha256": "82f6c7bca50381d45b1925e1f361a9aabebbdab0a5e5ceb4fbabf7dccfc09cc0",
+      "restored_glyphs": 2,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 2,
+          "overlay_sha256": "7bbf7549741ea9463d19f4225f6352f03b27ce548a27e778b9cc5557fe527e54"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/01_CNC/Common/YCL.M000652 \u955c\u541175\u80a9\u90e8\u62b1\u7b8d\uff0801\u7248\uff09.pdf",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0185_mirrored_75_shoulder_clamp_(01_revision_).pdf",
+      "source_sha256": "40e40e675366bed8f471646bc1afafdc3c5120c9d2b3cf61ce38e8f7b9cda599",
+      "before_sha256": "65d67a9b983b7b407f07036e6190068b46b1efbda0dc234c8d1b6373868e0e9e",
+      "after_sha256": "06ba811ee364dbed2ed23d9a9dd1c7a24da1f832ac2c246928bcf53c77bed687",
+      "restored_glyphs": 5,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 5,
+          "overlay_sha256": "e527d88ee2710714a4eafc7e1dc7631b2a06c818236f26efa4d3fc3d0574880f"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/01_CNC/Common/YCL.M000660 Roll\u9650\u4f4d.PDF",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0190_Roll_travel_stop.pdf",
+      "source_sha256": "06a7ecd190bedb95e5aa575163219ee6046793b4b5ddfe8ed9fbbe7bfd676247",
+      "before_sha256": "3f746481d545181d9c73e0673c09852686453fe90e3b02102be8504bfdae608b",
+      "after_sha256": "02209151eb854e3776a7b8fefdbbcc3c6c6dfe766f483433893a3caf99838f1a",
+      "restored_glyphs": 2,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 2,
+          "overlay_sha256": "176b60b2a2fd7d2f3a041ac7ab12865223ead6b63bee7bf4a20980cc7052ae3a"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/01_CNC/Common/YCL.M000663 \u5927\u817f\u672c\u4f53\uff08\u91cf\u4ea7\uff09.PDF",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0193_thigh_body_(_production_).pdf",
+      "source_sha256": "7c6a3f11448973ff814a3c4a5a1f601dea29570462ca60951c93b0fb660ed589",
+      "before_sha256": "b8be91153a036d954e8ba42e5168dec64e4a092e220e341391130cbd053ecc8c",
+      "after_sha256": "3dd819f3534c6114113ec51f39cd6d758b29ffbf9a6d198262b8fec4022dd2f2",
+      "restored_glyphs": 4,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 4,
+          "overlay_sha256": "f659231e452808954e587889c28ecb7c1411b82038205d0265b3ae6a3879dcfa"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/01_CNC/Common/YCL.M000665 \u5927\u817f\u6cd5\u5170\u53f3.PDF",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0195_thigh_flange_right.pdf",
+      "source_sha256": "ca20cbd5d4b0e53fc14576b582dee4bb95c34bb6c18aaa2514e1a5a1d9cf6589",
+      "before_sha256": "da9d2c49dfc161a55b1884c32385b3512841e78b4c6bc10ece7bb4d95f15948b",
+      "after_sha256": "9a09af821a8e4b81bb975b59676739ed8afb0b3982b51dcd2b47f2fd7640a5c2",
+      "restored_glyphs": 10,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 10,
+          "overlay_sha256": "65efb0938e25b6141462d525cc43bebe253e367cb67dbe5144830e7c5a1185a8"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/01_CNC/Common/YCL.M000667 \u5927\u817f\u4e0b\u672c\u4f53\u5de6(02\u7248).pdf",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0197_thigh_lower_body_left_(02_revision_).pdf",
+      "source_sha256": "a8348d400d2a12d3fbd2adc066f545493e9391644209227b685c92407a2406b1",
+      "before_sha256": "afcc04c0ac424ed2a11ffa1a30867b30a89f0e8b9b9e9c0bdb8ba27cc2acc5a7",
+      "after_sha256": "afdd9917656980c34bd50895c71678d406548de6f622958dadd650a2f22325b8",
+      "restored_glyphs": 5,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 5,
+          "overlay_sha256": "30ca2e178f368c1e1358559bbdae32935b8e9e89ed9d85ee8572a532006a6838"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/01_CNC/Common/YCL.M000668 \u5927\u817f\u6cd5\u5170\u5de6.PDF",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0198_thigh_flange_left.pdf",
+      "source_sha256": "c00b1024aebd24b68472166cea7507b8994e118544512f9bec76cdd8296f75a4",
+      "before_sha256": "6987c4c43dc1c83e40fa5e9720ac10d5690ebeda70b16c6322956426acea6080",
+      "after_sha256": "308d83cda822d90581af68015fb355080aaca7d255a20491902ba68024a81224",
+      "restored_glyphs": 10,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 10,
+          "overlay_sha256": "c803c563716adbd45e7cb88f09faa76b419f72b3220cd98092ae1bef63a905f9"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/01_CNC/Common/YCL.M000669 \u955c\u5411\u5927\u817f\u4e0b\u7535\u673a\u62b1\u7b8d\uff0801\u7248\uff09.pdf",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0199_mirrored_thigh_lower_motor_clamp_(01_revision_).pdf",
+      "source_sha256": "31f1e4437f6f5a44dc5e4131f9a502df2ae827165a9f4470226cad970e5ac506",
+      "before_sha256": "d7eb40be7b050da5db2ef57dbe2e4682f07d689c206e4752aff6ae86777913d2",
+      "after_sha256": "877f6e90fffb75859f0f91df76d5b845472fd66e67270767b32d9953c4eff790",
+      "restored_glyphs": 1,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 1,
+          "overlay_sha256": "1862bcaf8e702321f4dbfd8ab8eec350b68a5a02d76d1b953021459d1f1f9420"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/01_CNC/Common/YCL.M000670 \u955c\u5411\u5927\u817f\u4e0b\u672c\u4f53\u5de6(02\u7248).pdf",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0200_mirrored_thigh_lower_body_left_(02_revision_).pdf",
+      "source_sha256": "bca1d80df2161fe4f11bf05073129bedc81e7a24285ee11974fdf444fd9ff960",
+      "before_sha256": "fa8e86f10be2bec519799ad675c161c49483df8055f72dd3dea0168e49c88b1e",
+      "after_sha256": "5f54c1d4c3e92f28b6b740ca3c545eaf1edd72481a0beed28260380f02efe620",
+      "restored_glyphs": 5,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 5,
+          "overlay_sha256": "1d4564c70fdd39701930997141dc08db70735be159c02f501ccbfbc0fcfc811f"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/01_CNC/Common/YCL.M000702 \u8170\u90e8\u652f\u67b6.pdf",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0219_waist_bracket.pdf",
+      "source_sha256": "ba6072126f2e4461799dbfe71db02c2d05af72f43355ba2b1e38cface9c4484c",
+      "before_sha256": "7cb70f31fae66bc5137e2d715a5d30f3f120068041ad4db82cfd9a19c18a013a",
+      "after_sha256": "3f925a3723e8606a4441c32fee648f43b268b03a0a4fa53c54699a1f528ebdd2",
+      "restored_glyphs": 5,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 5,
+          "overlay_sha256": "9d559d11228bfca6ec423f303d88e5d18eb39710a2fd703924a40d88c1389824"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/01_CNC/Common/YCL.M000708 \u628a\u624b-kickme.pdf",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0225_handle_-kickme.pdf",
+      "source_sha256": "a9aa1e352dbab87a153c7702beeb62641b50c6991c97ce44ea12b50d6c14ea63",
+      "before_sha256": "27a251cbc29782418e25787d906074e16a52abdb0e0675a7f0d571af7f1e7729",
+      "after_sha256": "4ea2f54ac73963416920f9b8c5f3cfc900da216943f6fec4b066ba16ce1f49f9",
+      "restored_glyphs": 3,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 3,
+          "overlay_sha256": "aad102f0ed4aa90d34179be831e93cfcfaf9a5d8bc9d4dbd1ea442adaa4d6570"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/01_CNC/Common/YCL.M000714 \u4ea4\u4e92\u5934\u5b89\u88c5\u652f\u67b6.pdf",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0231_interactive_head_mounting_bracket.pdf",
+      "source_sha256": "8fabd4f1c00f9f46535c3f2ea7edec64f22c2c92fa8a43f33c13c41bac4185c3",
+      "before_sha256": "061007c09deb5b859b2184c989aff8b42152053f6ccc83729ff8b42ae8fa29e7",
+      "after_sha256": "b1b327756323f353d018e18706cb6326b07b49aa613168e15b3257b1684a665a",
+      "restored_glyphs": 2,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 2,
+          "overlay_sha256": "0e3285d81a48a1fba4254acafd86e3e35372ec554178cd792871af81b92bef23"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/01_CNC/Common/YCL.M000722 \u811a\u677f.pdf",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0235_foot_plate.pdf",
+      "source_sha256": "61b14ba4391a139db73d9d45a4594182a10a69108a5f7587fd50cb45a95f0679",
+      "before_sha256": "cf836389bfd5287554d95fa16bf08e26f3674d74e0c12d060330f0192c248853",
+      "after_sha256": "cd4bf6688d2a533e1ec441b18f14e518a949f2661d7bda8f2fd2c869f1039d11",
+      "restored_glyphs": 11,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 11,
+          "overlay_sha256": "c61fbabcd2c7d6acedff5fbdd5417b90025d2a3635cf290c9e3c2744f7d6833d"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/01_CNC/Common/YCL.M000723 \u811a\u9762.pdf",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0236_foot_upper.pdf",
+      "source_sha256": "64809a40317ba8c5e5edc74ed3b13b592ec638b856ae87624f1d8049190c2b18",
+      "before_sha256": "1c29e9ef6958da895e13d583528280e8a7190da94b55326b180fb088b71491ce",
+      "after_sha256": "5465af923af51513f774d44f8c5c3c45893552e1ac2bb8423671f10e88dc6c27",
+      "restored_glyphs": 3,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 3,
+          "overlay_sha256": "fb45bcae2b2937100610545cab6ce9427164a6837f834f5455c0ded1880ccf17"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/01_CNC/Common/YCL.M000925 \u978b\u57ab.pdf",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0271_insole.pdf",
+      "source_sha256": "84283c6f07ae71f05acd24c4fdb2ca66dcba91f01ba4f0c536cb90eee65ec979",
+      "before_sha256": "56c24034da9b9593f1172b8e9ea3a5afe723aef50bca554831e1d455d84a1f55",
+      "after_sha256": "c8e171806b2cee68a71dd6a3cb45e4d7b4b83753607b62a9fc847ba74937cdbf",
+      "restored_glyphs": 6,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 6,
+          "overlay_sha256": "7e64a69b1e2e4d1187c1d78afd7c8d71afb2388fe5b4457702efb3288679c3b5"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/01_CNC/Common/YCL.M000946 \u5c0f\u817f\u524d\u76d6\u677f.pdf",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0278_shin_front_cover_plate.pdf",
+      "source_sha256": "41ca5ac4c2d54ce19b4a4802d5cd4f2c776cdbbdb95dd5110a9594f62e2f81ae",
+      "before_sha256": "d4f6d97db3df7ff516f918fe9de704dff876f36206abba32c01b4555bfe09239",
+      "after_sha256": "0271658a0772f75ce28e37a56488a8a22792e1985ec024aa1e55807f088f6eb1",
+      "restored_glyphs": 12,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 12,
+          "overlay_sha256": "140d04268f8d4674397a32cb7827a23aa7aac227ae8973134fb16673f750208e"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/01_CNC/Common/YCL.M000947 \u5c0f\u817f\u540e\u76d6\u677f.pdf",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/01_CNC/Common/ROBOSKIN.0279_shin_rear_cover_plate.pdf",
+      "source_sha256": "76234351eee2da72372411b3c9861724ed202aa5cb4a85e2195affb7b61b806c",
+      "before_sha256": "cf3ea11076b755543c569fe7f834124e8306d5b076370ab41fdd85ee707f5899",
+      "after_sha256": "158b7529e4ad2d1114c4295d57edeeefbcf8ccd0742aca26555d1f6a882e77f7",
+      "restored_glyphs": 6,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 6,
+          "overlay_sha256": "8a98e774148994df5be7f6c50124be2b8af6764fe9ac5aeee9047e5adade7a20"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/02_3D_Printing/PDF\u6587\u4ef6/YCL.M000976 \u660e\u7f8e\u7535\u6c60\u4ed3\u4e0a\u5206\u4ef6.pdf",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/02_3D_Printing/PDF_Drawings/ROBOSKIN.0282_Mingmei_battery_bay_upper_segment.pdf",
+      "source_sha256": "166f7dfcd95e12fa6ccec535a9593867a5ff6bcce86aa5dadab572125706d77b",
+      "before_sha256": "ee51992658285239f526dc0eee967c7c79bd3de31dcf710c5a1f2789505e5bb4",
+      "after_sha256": "bc1886debee1dc2387da95b5e3fdeae5bebb3f250d451f5d936bf24d29b93563",
+      "restored_glyphs": 20,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 20,
+          "overlay_sha256": "21b6fd11ee4e2df4eff9a7bcad77853a0171e1e4eab6f62e72eceb4a7e09fe14"
+        }
+      ]
+    },
+    {
+      "source_path": "01_Mechanic/02_Manufacturing/02_3D_Printing/PDF\u6587\u4ef6/YCL.M000977 \u660e\u7f8e\u7535\u6c60\u4ed3\u4e0b\u5206\u4ef6.PDF",
+      "destination_path": "hardware/01_Mechanic/02_Manufacturing/02_3D_Printing/PDF_Drawings/ROBOSKIN.0283_Mingmei_battery_bay_lower_segment.pdf",
+      "source_sha256": "aad319ee9cb76aa089dd8d7e5522a39fcb92432847bcaf098b435d0c692f0a6c",
+      "before_sha256": "c0a87b42652c1d7870e248dcf020808f7b3c9057806ff7dbc7253c27af3747f2",
+      "after_sha256": "f35462509caac3b27e91db6e09049cd3fc1d970fa1cf3052d201e0d58de7487d",
+      "restored_glyphs": 32,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 32,
+          "overlay_sha256": "715ccb33312600d048d2f0f6d21daf4037f8ec11ab05c34d1da46acab8fde404"
+        }
+      ]
+    },
+    {
+      "source_path": "02_PCB/12_RBE_PWR_BACKHUB/06_PCB_PDF_BACKHUB_V2.1.pdf",
+      "destination_path": "hardware/02_PCB/12_RBE_PWR_BACKHUB/06_PCB_PDF_BACKHUB_V2.1.pdf",
+      "source_sha256": "3fd944e7e8ad432e662a25c650fd8e2be791295823a708725bc6f1397fcd2424",
+      "before_sha256": "67c8e5ce2c606f4be2342e2722426ab75f4b700ecd34f609d895317b71e73b08",
+      "after_sha256": "2262ee73c778f2757cc78f37e131e90edbd2bc68cd695b6762361bfb78a55c53",
+      "restored_glyphs": 21,
+      "pages": [
+        {
+          "page": 12,
+          "glyphs": 14,
+          "overlay_sha256": "a17d7652ae4e6e9361bd09f32c3156fdabc376af1422f32dac65d77ae2db42cf"
+        },
+        {
+          "page": 25,
+          "glyphs": 7,
+          "overlay_sha256": "40780003ca37a83c7f670d6df0854407e42acfb082c9faafcd6035c338d21c43"
+        }
+      ]
+    },
+    {
+      "source_path": "03_Harness/Drawings/RP1-ARM07-0\u7ebf\u6750.pdf",
+      "destination_path": "hardware/03_Harness/Drawings/ROBOSKIN-ARM07-0_Cable.pdf",
+      "source_sha256": "d95a9c1b514899798a5166d1194649f912695f73de4e657609406fe7160d6263",
+      "before_sha256": "2889ed3e87588fd2cc1a2942de4feedcd8241af6f262ff9f632e6b542b469346",
+      "after_sha256": "117961136a1542a77be1fbd8724cf9f075f2d6f2c673f11ee5193094fefb80a5",
+      "restored_glyphs": 3,
+      "pages": [
+        {
+          "page": 1,
+          "glyphs": 3,
+          "overlay_sha256": "2a1024359f2aa7f3204b1fa9d290822a04dd943b012700957dc54c1c50d8f0e6"
+        }
+      ]
+    }
+  ],
+  "restored_files": 50,
+  "restored_glyphs": 319
+}

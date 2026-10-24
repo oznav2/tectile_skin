@@ -1,781 +1,787 @@
-# Cheng bibliography: all 84 requested references
+<div dir="rtl" lang="he">
 
-Evidence audit dated 24 October 2026. Original numbering is preserved. This covers the specified bibliography, not every publication in the field.
+עברית · [English](reference_index.en.md)
 
-**Reading status matters:** full text available with specified section review is different from complete reading of every page; partial/indexed excerpts, abstracts and citations are explicitly labeled. See each record’s `read_scope`. No unavailable methods or measurements are invented.
+# הביבליוגרפיה של Cheng: כל 84 המקורות שהתבקשו
 
-| Access level | References |
+ביקורת הראיות מתאריך 24 באוקטובר 2026. המספור המקורי נשמר. הבדיקה מכסה את הביבליוגרפיה שצוינה, ולא כל פרסום בתחום.
+
+**יש משמעות להיקף הקריאה:** זמינות טקסט מלא ובדיקת סעיפים מוגדרים שונות מקריאה מלאה של כל עמוד; קטעים חלקיים/מאונדקסים, תקצירים וציטוטים מסומנים במפורש. ראו `read_scope` בכל רשומה. אין המצאה של שיטות או מדידות שאינן זמינות.
+
+| רמת גישה | מספר מקורות |
 |---|---:|
 | ABSTRACT_ONLY | 29 |
 | CITATION_ONLY | 13 |
 | FULL_TEXT | 25 |
 | PARTIAL_TEXT | 17 |
 
-Detailed dossiers:
+תיקי סקירה מפורטים:
 
-- [Sensing and materials](sensing_materials/review.md)
-- [Calibration and networking](calibration_networks/review.md)
-- [Control and applications](control_applications/review.md)
+- [חישה וחומרים](sensing_materials/review.md)
+- [כיול ותקשורת רשת](calibration_networks/review.md)
+- [בקרה ויישומים](control_applications/review.md)
 
-[Structured records](reference_index.json) retain source URLs, reading scope, findings, limitations and plan decisions.
+[הרשומות המובנות](reference_index.json) שומרות את כתובות המקורות, היקף הקריאה, הממצאים, המגבלות וההחלטות עבור התוכנית.
 
-| No. | Original source | Access | Exact reading scope |
+| מס׳ | המקור המקורי | גישה | היקף הקריאה המדויק |
 |---:|---|---|---|
-| 1 | [Automated tactile sensing](https://journals.sagepub.com/doi/10.1177/027836498200100201) | CITATION_ONLY | Publisher metadata and exposed footnotes; full article unavailable. Not treated as a full-text or abstract review. |
-| 2 | [E-skin: From humanoids to humans](https://eprints.gla.ac.uk/183481/1/183481.pdf) | FULL_TEXT | Accepted manuscript: introduction and sections comparing electronic-skin requirements, integration routes and flexible/printed electronics; not every concluding paragraph or cited work. |
-| 3 | [Tactile sensing—From humans to humanoids](https://www.robotcub.org/misc/papers/10_Dahiya_etal.pdf) | PARTIAL_TEXT | Indexed author/project PDF excerpts: classification figure 2, section III physiology, encoding and regional sensing requirements. Direct PDF retrieval failed; author-uploaded proof excerpts also located. |
-| 4 | [Directions toward effective utilization of tactile skin: A review](https://eprints.gla.ac.uk/95989/) | ABSTRACT_ONLY | Glasgow institutional abstract and bibliographic record; TUM institutional abstract. Full original text not read. |
-| 5 | [Proximity sensing in robot manipulator motion planning: System and implementation issues](https://www.edcheung.com/job/sbr/IEEE88.pdf) | FULL_TEXT | Author-hosted manuscript: system architecture/local planning, approximately manuscript pages 2–4; author project page identifying the publication. Not all experiments. |
-| 6 | [Sensitive skin](https://resenv.media.mit.edu/classarchive/MAS965/readings/sensitiveskin.pdf) | FULL_TEXT | Original article via MIT teaching archive: introduction; hardware/device requirements and low-cost-process discussion, printed pp.46–47. Other portions not exhaustively read. |
-| 7 | [Conformable, flexible, large-area networks of pressure and thermal sensors with organic transistor active matrixes](https://pmc.ncbi.nlm.nih.gov/articles/PMC1187825/) | FULL_TEXT | Open primary main text, fabrication and pressure/thermal experiments, figures 1–5 captions; not supplementary data or independent replication. |
-| 8 | [Artificial Skin in Robotics: A Comprehensive Interface for System-Environment Interaction](https://publikationen.bibliothek.kit.edu/1000028782/2186259) | FULL_TEXT | Selected thesis text: design tradeoffs in chapter 3; chapter 4.1 test procedures, printed pp.152–159; conclusions. Not the complete 217-page PDF. |
-| 9 | [Conformable and scalable tactile sensor skin for curved surfaces](https://bdml.stanford.edu/twiki/pub/Haptics/TactileChapterReferences/Ohmura-ICRA06.pdf) | FULL_TEXT | Original six-page article: abstract, requirements, sections III–IV and beginning of V, figure captions 1–10. Remaining experiment/conclusion paragraphs not exhaustively read. |
-| 10 | [Development of the tactile sensor system of a human-interactive robot RI-MAN](https://repository.gatech.edu/bitstreams/39fe7cef-a8a4-4ebb-81a4-097c885fa7bd/download) | PARTIAL_TEXT | Indexed original first-page abstract/introduction from Georgia Tech repository. PDF download returned 403; main experiments not read. |
-| 11 | [ARMAR-III: An integrated humanoid platform for sensory-motor control](https://h2t.iar.kit.edu/pdf/Asfour2006b.pdf) | FULL_TEXT | Original article sections on arm sensing and artificial skin, pp.2–3 of PDF, and hierarchical architecture/figure 5. Not all platform experiments. |
-| 12 | [Design of human symbiotic robot TWENDY-ONE](https://waseda.elsevierpure.com/en/publications/design-of-human-symbiotic-robot-twendy-one/) | ABSTRACT_ONLY | Author-institution publication record and abstract. Original seven-page article not accessed. |
-| 13 | [Humanoid robot which can lift a 30 kg box by whole body contact and tactile feedback](https://www.isi.imi.i.u-tokyo.ac.jp/publication/) | CITATION_ONLY | Author laboratory bibliography and publisher record link verified. Original article unavailable; secondary syndicated abstract seen but not used as verified experimental evidence. |
-| 14 | [Whole body haptics for augmented humanoid task capabilities](https://link.springer.com/chapter/10.1007/978-3-642-14743-2_6) | ABSTRACT_ONLY | Publisher abstract, chapter metadata and references; subscription full chapter unavailable. |
-| 15 | [An embedded artificial skin for humanoid robots](https://robotcub.org/misc/papers/08_cannata.pdf) | FULL_TEXT | Entire substantive five-page original article, including architecture, transducer, microcontroller, experiments and conclusions; figure captions. Images not independently resolved. |
-| 16 | [Methods and technologies for the implementation of large-scale robot tactile sensors](https://www.researchgate.net/publication/224238240_Methods_and_Technologies_for_the_Implementation_of_Large-Scale_Robot_Tactile_Sensors) | FULL_TEXT | Author-uploaded manuscript: sections I, III, V and VI-A–D, assembly figure captions. Not every hysteresis equation or grasping trial. |
-| 17 | [A flexible and robust large scale capacitive tactile system for robots](https://arxiv.org/pdf/1411.6837) | FULL_TEXT | Author manuscript sections III–IV, integration text and experimental figure captions; most main text read, not supplementary data. |
-| 18 | [A new silicone structure for uSkin—A soft, distributed, digital 3-axis skin sensor and its integration on humanoid robot iCub](https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/55045/Jamone%20A%20New%20Silicone%202018%20Accepted.pdf?isAllowed=y&sequence=2) | PARTIAL_TEXT | Indexed primary accepted manuscript section III-A/B, tableI and figure 1–2 captions; direct repository PDF retrieval failed. Calibration/results not fully read. |
-| 19 | [An adjustable force sensitive sensor with an electromagnet for a soft, distributed, digital 3-axis skin sensor](https://waseda.elsevierpure.com/en/publications/an-adjustable-force-sensitive-sensor-with-an-electromagnet-for-a-/) | ABSTRACT_ONLY | Author-institution abstract and publication identity; original full text not read. |
-| 20 | [A real-time distributed architecture for large-scale tactile sensing](https://ewh.ieee.org/soc/ras/conf/financiallycosponsored/IROS/2014/www.iros2014.org/images/download/IROS2014-Full-Conference-Digest.pdf) | ABSTRACT_ONLY | Official IROS2014 digest, p.134, and author-uploaded abstract; original seven-page paper not obtained. |
-| 21 | [A real-time data acquisition and processing framework for large-scale robot skin](https://www.sciencedirect.com/science/article/pii/S0921889015000172) | PARTIAL_TEXT | Publisher-indexed introduction and selected architecture/implementation sections, including Skinware abstraction and historical test platform. Full results and figures not reviewed. |
-| 22 | [Asynchronous, event-driven readout of POSFET devices for tactile sensing](https://doi.org/10.1109/ISCAS.2014.6865717) | CITATION_ONLY | Identity and conference pages2648–2651 checked against ISCAS proceedings contents; original abstract/body not obtained. DOI corroborated by later scholarly reference lists. |
-| 23 | [Event-driven encoding of off-the-shelf tactile sensors for compression and latency optimisation for robotic skin](https://www.researchgate.net/publication/321816551_Event-driven_encoding_of_off-the-shelf_tactile_sensors_for_compression_and_latency_optimisation_for_robotic_skin) | PARTIAL_TEXT | Author-uploaded manuscript excerpts: architecture, encoding comparison and conclusions. Primary IIT laboratory publication listing also checked. Full paper was not independently downloaded. |
-| 24 | [The event-driven software library for YARP—With algorithms and iCub applications](https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2017.00073/full) | PARTIAL_TEXT | Publisher-indexed sections3.2–3.3 on event representation, readers/queues and processing; complete article body not retrieved. |
-| 25 | [Reactive motion control for human-robot tactile interaction](https://doi.org/10.1109/ROBOT.2002.1014313) | CITATION_ONLY | Citation identity checked against DBLP; a ResearchGate-hosted abstract was found, but no primary full text or primary abstract was successfully retrieved. The secondary abstract is not used as implementation evidence. |
-| 26 | [Real-time collision avoidance in teleoperated whole-sensitive robot arm manipulators](https://ntrs.nasa.gov/citations/19930059726) | ABSTRACT_ONLY | NASA repository abstract and metadata. Author-hosted TR91.pdf was identified as an earlier technical report, not silently treated as the exact 1993 journal article. |
-| 27 | [Whole-arm reactive collision avoidance control of kinematically redundant manipulators](https://dblp.org/rec/conf/icra/BoddyT93) | CITATION_ONLY | DBLP identity and secondary Science Explorer abstract located. No author/publisher full text retrieved; secondary abstract is excluded as technical proof. |
-| 28 | [Programming by touch: The different way of human-robot interaction](https://elib.dlr.de/11914/) | CITATION_ONLY | DLR publication record; repository explicitly does not supply the full text. No algorithm inferred from the title. |
-| 29 | [Manual guidance for industrial robot programming](https://iris.univpm.it/handle/11566/228093) | ABSTRACT_ONLY | University repository metadata and complete abstract; no attached full text available. |
-| 30 | [Tactile sensing in intelligent robotic manipulation—A review](https://www.researchgate.net/publication/228667424_Tactile_sensing_in_intelligent_robotic_manipulation_-_a_review) | FULL_TEXT | Author-uploaded text: introduction, sections 5.2–5.7 and conclusions. KTH thesis reprint located but oversized PDF could not be retrieved. |
-| 31 | [Sensitive manipulation: Manipulation through tactile feedback](https://lornat75.github.io/pdfs/2018-torresjara-sensitive.pdf) | FULL_TEXT | Author manuscript abstract/introduction, hardware figure 1 and sections 4.1.3–4.3, PDFpp.12–15. Not all experiments. |
-| 32 | [High-density conformable tactile sensing glove](https://ieeexplore.ieee.org/document/6100898) | CITATION_ONLY | Author laboratory bibliography verified; original full text not accessed. Exact-paper syndicated abstract and a distinct 2012 JRSJarticle abstract were seen, and are not substituted for the original. |
-| 33 | [Development and applications of high-density tactile sensing glove](https://link.springer.com/chapter/10.1007/978-3-642-31401-8_40) | ABSTRACT_ONLY | Publisher abstract and bibliographic record; subscription chapter not read in full. |
-| 34 | [Tactile object class and internal state recognition for mobile manipulation](https://jsturm.de/publications/data/chitta10icra.pdf) | PARTIAL_TEXT | Indexed author-hosted original conference PDF methods/results excerpts, especially tablesII–IV. Direct PDF retrieval timed out; later journal version was kept distinct. |
-| 35 | [Learning inverse dynamics models with contacts](https://www.robertocalandra.com/papers/calandra_icra_2016.pdf) | FULL_TEXT | Author PDF, 6 pages; abstract, §§II–III, §IV-A through E and conclusion read. Filename says 2016; bibliographic paper is 2015. |
-| 36 | [A simple tactile sensing foot for humanoid robot and active ground slope recognition](https://doi.org/10.1109/ICMECH.2009.4957223) | ABSTRACT_ONLY | Publisher abstract and introduction excerpt, not the complete sensor/control evaluation. |
-| 37 | [Design and experiment of the NAO humanoid robot’s plantar tactile sensor for surface classification](https://www.researchgate.net/publication/321122717_Design_and_Experiment_of_the_NAO_Humanoid_Robot%27s_Plantar_Tactile_Sensor_for_Surface_Classification) | FULL_TEXT | Author-uploaded original: abstract, sections III–Vthrough classifier setup, diagrams/captions. Final result table and conclusion not exhaustively read. |
-| 38 | [An adaptive sensor foot for a bipedal and quadrupedal robot](https://www.dfki.de/web/forschung/projekte-publikationen/publikation/6214) | ABSTRACT_ONLY | DFKI institutional publication abstract and metadata. Original paper not read. |
-| 39 | [A ZMP sensor for a biped robot](https://researchmap.jp/read0072509/published_papers/15818833/attachment_file.pdf) | PARTIAL_TEXT | Indexed author-hosted first-page abstract. Direct PDF retrieval 403; complete derivation and experiments not read. |
-| 40 | [High-speed pressure sensor grid for humanoid robot foot](https://tus.elsevierpure.com/en/publications/high-speed-pressure-sensor-grid-for-humanoid-robot-foot/) | ABSTRACT_ONLY | Author-institution abstract and bibliographic record. Original six-page paper not accessed. |
-| 41 | [Humanoid multimodal tactile-sensing modules](https://portal.fis.tum.de/en/publications/humanoid-multimodal-tactile-sensing-modules/) | ABSTRACT_ONLY | University bibliographic record and abstract; full methods, circuit and characterization tables not obtained. |
-| 42 | [Integrating discrete force cells into multi-modal artificial skin](https://mediatum.ub.tum.de/doc/1116556/214040.pdf) | PARTIAL_TEXT | Repository-indexed first-page abstract, force-cell construction and introduction. Full force/displacement graphs and durability results not reviewed. |
-| 43 | [Towards autonomous robotic skin spatial calibration: A framework based on vision and self-touch](https://doi.org/10.1109/IROS.2017.8202151) | CITATION_ONLY | Primary university publication list verifies identity; a secondary abstract describes RGB-D/self-touch, but original abstract/body was not obtained. The secondary <2mm result is deliberately not adopted as validated evidence. |
-| 44 | [3D surface reconstruction for robotic body parts with artificial skins](https://mediatum.ub.tum.de/doc/1116558/621068.pdf) | PARTIAL_TEXT | Repository first-page abstract/introduction and university abstract. The supplied2019 review §II-C supplies additional secondary explanation of reconstruction. |
-| 45 | [Open-loop self-calibration of articulated robots with artificial skins](https://mediatum.ub.tum.de/doc/1116557/877587.pdf) | PARTIAL_TEXT | Repository-indexed pages1–2 including algorithms1–2, requirements and experimental/simulation scope; university abstract read directly. Full numerical results not obtained. |
-| 46 | [Automatic robot kinematic modeling with a modular artificial skin](https://portal.fis.tum.de/en/publications/automatic-robot-kinematic-modeling-with-a-modular-artificial-skin/) | ABSTRACT_ONLY | University abstract and bibliographic record read directly. Original six-page article unavailable. Supplied2019 review §II-D is secondary evidence for axis/SVD/radius sequence. |
-| 47 | [3D spatial self-organization of a modular artificial skin](https://portal.fis.tum.de/en/publications/3d-spatial-self-organization-of-a-modular-artificial-skin) | ABSTRACT_ONLY | Primary university abstract and identity. Full equations and numerical experiments not obtained. |
-| 48 | [Touch, in Principles of Neural Science, fifth edition, chapter23](https://accessmedicine.mhmedical.com/book.aspx?bookID=1049) | CITATION_ONLY | User-supplied2019 bibliography identifies chapter23, pp.498–529. Full chapter not obtained; publisher book URL is a locator, not a claim of chapter access. |
-| 49 | [Touch is a team effort: Interplay of submodalities in cutaneous sensibility](https://pubmed.ncbi.nlm.nih.gov/25257208/) | ABSTRACT_ONLY | Original article abstract indexed by PubMed; full review body not obtained. |
-| 50 | [Event-based signaling for reducing required data rates and processing power in a large-scale artificial robotic skin](https://mediatum.ub.tum.de/doc/1281179/868479268848.pdf) | PARTIAL_TEXT | Repository-indexed results page6, figures7–8/table/conclusion, plus official conference abstract. Whole methods not retrieved. |
-| 51 | [Event-based signaling for large-scale artificial robotic skin—Realization and performance evaluation](https://mediatum.ub.tum.de/doc/1335609/document.pdf) | PARTIAL_TEXT | Repository-indexed introduction/architecture and primary university abstract; complete experiment methods not accessed. |
-| 52 | [Efficient event-driven reactive control for large scale robot skin](https://mediatum.ub.tum.de/doc/1366849/document.pdf) | PARTIAL_TEXT | Repository first-page abstract/introduction. Detailed control proofs and full experimental plots not accessed. |
-| 53 | [A128×128120dB15µs latency asynchronous temporal contrast vision sensor](https://doi.org/10.1109/JSSC.2007.914337) | PARTIAL_TEXT | Original journal-paper reproduction, concluding page575 and indexed abstract. The reproduction is on a secondary host; full article not retrieved. |
-| 54 | [An asynchronous time-based image sensor](https://publications.ait.ac.at/en/publications/an-asynchronous-time-based-image-sensor/) | CITATION_ONLY | Primary institutional bibliographic metadata checked. A secondary abstract was found, but no original body or complete primary abstract was reviewed. |
-| 55 | [AER EAR: A matched silicon cochlea pair with address event representation interface](https://researchers.westernsydney.edu.au/en/publications/aer-ear-a-matched-silicon-cochlea-pair-with-address-event-represe-3/) | ABSTRACT_ONLY | Primary institutional abstract. This is the2005conference paper, not the later similarly named journal work. |
-| 56 | [VLSI analogs of neuronal visual processing: A synthesis of form and function](https://authors.library.caltech.edu/records/g2vmh-8fe19) | ABSTRACT_ONLY | Caltech thesis repository metadata and abstract. The full thesis was located but not read. |
-| 57 | [Point-to-point connectivity between neuromorphic chips using address events](https://web.stanford.edu/group/brainsinsilicon/documents/00_journ_IEEEtsc_Point.pdf) | PARTIAL_TEXT | Author-hosted abstract and repository-indexed discussion/arbiter figures; not all19journal pages. |
-| 58 | [Asynchronous DC-free serial protocol for event-based AER systems](https://iris.polito.it/handle/11583/2646243) | ABSTRACT_ONLY | Primary university abstract; original article file is restricted and was not requested from authors. |
-| 59 | [A QVGA143dB dynamic range frame-free PWM image sensor with lossless pixel-level video compression and time-domain CDS](https://ieeexplore.ieee.org/document/5648367) | CITATION_ONLY | IEEE title/record and primary AIT institutional identity; original methods and figures not obtained. Similar2010ISSCC conference versions are not substituted. |
-| 60 | [A new protocol for a low power sensor network](https://www.researchgate.net/publication/4075406_A_new_protocol_for_a_low_power_sensor_network) | ABSTRACT_ONLY | Author-uploaded abstract and official conference contents; original protocol details and results not read. |
-| 61 | [Send-on-delta concept: An event-based data reporting strategy](https://mdpi-res.com/d_attachment/sensors/sensors-06-00049/article_deploy/sensors-06-00049.pdf) | FULL_TEXT | Official MDPI static PDF downloaded locally; all15pages49–63 read, including equations1–13, tables1–2, software example and references. Figure3 on p.58 visually inspected. |
-| 62 | [A robust and efficient dynamic network protocol for a large-scale artificial robotic skin](https://mediatum.ub.tum.de/doc/1459302/136167106011.pdf) | PARTIAL_TEXT | Repository-indexed abstract, first-page introduction and topology/rerouting figure. Detailed implementation and remaining experiments not read. |
-| 63 | [Realizing whole-body tactile interactions with a self-organizing, multi-modal artificial skin on a humanoid robot](https://staff.aist.go.jp/e.yoshida/papers/Mittendorfer_2014AR.pdf) | FULL_TEXT | Author PDF, 17 pages; hardware tables, §§3–4.3, §5, grasping experiments and limitations/conclusion examined. Equations for activity and sensory-motor mapping checked. |
-| 64 | [From multi-modal tactile signals to a compliant control](https://mediatum.ub.tum.de/doc/1335611/document.pdf) | FULL_TEXT | Author PDF, 7 pages; §§II–III, IV-A and IV-D–F, experimental section and conclusion read. |
-| 65 | [Whole-body active compliance control for humanoid robots with robot skin](https://portal.fis.tum.de/en/publications/whole-body-active-compliance-control-for-humanoid-robots-with-rob/) | ABSTRACT_ONLY | TUM author-affiliated abstract and metadata; original full paper unavailable. Cheng 2019's summary is secondary evidence, not a substitute full-text read. |
-| 66 | [TOMM: Tactile omnidirectional mobile manipulator](https://portal.fis.tum.de/en/publications/tomm-tactile-omnidirectional-mobile-manipulator/) | ABSTRACT_ONLY | TUM publication record and full abstract; original implementation paper not read. |
-| 67 | [An overview of null space projections for redundant, torque-controlled robots](https://elib.dlr.de/101443/2/NullspaceSurvey.pdf) | FULL_TEXT | DLR author manuscript, 17 PDF pages; §2 assumptions, consistency formulations, §4.2 actuator-limited experiment and §§5.1–5.2 discussion read. |
-| 68 | [Synthesis of whole-body behaviors through hierarchical control of behavioral primitives](https://ai.stanford.edu/~lsentis/files/ijhr-05.pdf) | FULL_TEXT | Author-hosted journal PDF, 14 pages; §§1–4 including equations 17–22, §5 simulated example and discussion read. |
-| 69 | [Efficient distributed torque computation for large scale robot skin](https://portal.fis.tum.de/en/publications/efficient-distributed-torque-computation-for-large-scale-robot-sk/) | ABSTRACT_ONLY | TUM abstract; original author PDF at mediatum/1459300 returned rate/access errors. Detailed fixed-point/poly approximation description available only through the user-supplied Cheng 2019 review. |
-| 70 | [Tactile-based whole-body compliance with force propagation for mobile manipulators](https://portal.fis.tum.de/en/publications/tactile-based-whole-body-compliance-with-force-propagation-for-mo/) | ABSTRACT_ONLY | TUM abstract; primary PDF mediatum/1474210 identified but access failed. Earlier conference paper [77] read separately and not represented as this journal article. |
-| 71 | [Humanoid robot HRP-2](https://doi.org/10.1109/ROBOT.2004.1307969) | CITATION_ONLY | Citation identity checked; third-party PDF mirror found but not successfully retrieved. Related AIST platform material is not substituted for the original article. |
-| 72 | [Integration of robotic technologies for rapidly deployable robots](https://mediatum.ub.tum.de/doc/1446657/883306792253.pdf) | FULL_TEXT | Author PDF contains duplicated proof material (22 pages for an approximately 11-page manuscript); architecture, §V deployment/application results, footnote 13 and conclusion read. |
-| 73 | [A survey of unknown object grasping and our fast grasping algorithm—C shape grasping](https://repository.tudelft.nl/record/uuid%3Ae16cac95-3ada-4950-b9ac-a0cdfc8cdaef) | ABSTRACT_ONLY | TU Delft original conference repository abstract and metadata. Related thesis chapter located but not used as a complete read of the conference paper. |
-| 74 | [A unified approach for motion and force control of robot manipulators: The operational space formulation](https://khatib.stanford.edu/publications/pdfs/Khatib_1987_RA.pdf) | ABSTRACT_ONLY | Author-hosted first-page abstract/introduction indexed by search; direct PDF fetch repeatedly timed out. Full equation audit uses [64,68] and the supplied Cheng 2019 text instead. |
-| 75 | [Robot Control: The Task Function Approach](https://books.google.com/books/about/Robot_Control.html?id=-DZSAAAAMAAJ) | CITATION_ONLY | Bibliographic book metadata; no chapter text retrieved or read. |
-| 76 | [Integration of reactive, torque-based self-collision avoidance into a task hierarchy](https://elib.dlr.de/79360/4/Dietrich_TRO2012.pdf) | FULL_TEXT | DLR author manuscript, 15 PDF pages; formulation, damping/task-transition treatment, experiment setup and limitations examined. |
-| 77 | [Tactile-based compliance with hierarchical force propagation for omnidirectional mobile manipulators](https://mediatum.ub.tum.de/doc/1336140/document.pdf) | FULL_TEXT | Author PDF, 6 pages; introduction and §II modeling assumptions, skin-force and propagation formulation read; not a complete experimental replication audit. |
-| 78 | [Safe and dependable physical human-robot interaction in anthropic domains: State of the art and challenges](https://www.diag.uniroma1.it/~labrob/pub/papers/PHRIDOM_IROS06.pdf) | FULL_TEXT | Author-hosted workshop manuscript, 15 PDF pages; §§II-A, III-A/B and IV sensor/dependability discussion read. Version/pagination differ from publisher metadata; standards discussion is historical, not current compliance advice. |
-| 79 | [Impedance control: An approach to manipulation: Part III—Applications](https://bpb-us-e1.wpmucdn.com/sites.mit.edu/dist/5/1384/files/2025/02/1985-impedance-control-an-approach-to-manipulation-part-III-applications.pdf) | FULL_TEXT | MIT-hosted original paper, 8 pages; introduction, impedance selection and obstacle-avoidance derivation read, especially pp. 17–20 and simplifying assumptions. |
-| 80 | [A new actuation approach for human friendly robot design](https://khatib.stanford.edu/publications/pdfs/Zinn_2004_IJRR.pdf) | ABSTRACT_ONLY | Author-hosted journal abstract/first page and one search-indexed §3.1.3 passage on saturation inspected. Direct full PDF fetch failed. Closely titled ISER/ICRA versions are not substituted. |
-| 81 | [Control of generalized contact motion and force in physical human-robot interaction](https://www.diag.uniroma1.it/deluca/pHRI_elective/ICRA15_Magrini_Flacco_ADL_ContactMotionForceControl_pHRI.pdf) | ABSTRACT_ONLY | Author-hosted abstract/introduction and search-indexed early modeling passages inspected; repeated direct PDF fetches timed out. Classified conservatively because full paper was not retrieved. |
-| 82 | [Human-robot coexistence and contact handling with redundant robots](https://www.diag.uniroma1.it/~deluca/pHRI_elective/IROS17_Magrini_ADL_HRCoexistenceContactRedundant.pdf) | FULL_TEXT | Author PDF, 7 pages; introduction, §III including Remark 1, §IV handling logic and transition description read. |
-| 83 | [Human body part multicontact recognition and detection methodology](https://sites.utexas.edu/hcrl/files/2016/01/paper-kwan-suk-icra.pdf) | ABSTRACT_ONLY | UT Austin author-hosted abstract/introduction via search index. Direct PDF fetch failed; author-uploaded secondary full text found but not substituted for a verified full read. |
-| 84 | [Long-term training with a brain-machine interface-based gait protocol induces partial neurological recovery in paraplegic patients](https://www.nature.com/articles/srep30383) | ABSTRACT_ONLY | Publisher-indexed abstract and bibliographic identity; publisher full text redirected to an inaccessible identity service and PMC4980986 returned a browser challenge. No methods-section audit claimed. |
+| 1 | [Automated tactile sensing](https://journals.sagepub.com/doi/10.1177/027836498200100201) | CITATION_ONLY | מטא־נתונים והערות שוליים חשופות באתר המו״ל; המאמר המלא אינו זמין. לא נחשב לסקירת טקסט מלא או תקציר. |
+| 2 | [E-skin: From humanoids to humans](https://eprints.gla.ac.uk/183481/1/183481.pdf) | FULL_TEXT | כתב היד שהתקבל לפרסום: המבוא והסעיפים המשווים דרישות מעור אלקטרוני, מסלולי שילוב ואלקטרוניקה גמישה/מודפסת; לא כל פסקת סיכום או עבודה מצוטטת. |
+| 3 | [Tactile sensing—From humans to humanoids](https://www.robotcub.org/misc/papers/10_Dahiya_etal.pdf) | PARTIAL_TEXT | קטעים מאונדקסים מקובץ PDF של המחברים/הפרויקט: איור הסיווג 2, סעיף III על פיזיולוגיה, קידוד ודרישות חישה אזוריות. אחזור ישיר של ה־PDF נכשל; אותרו גם קטעים מהגהה שהעלו המחברים. |
+| 4 | [Directions toward effective utilization of tactile skin: A review](https://eprints.gla.ac.uk/95989/) | ABSTRACT_ONLY | תקציר ורשומה ביבליוגרפית במאגר המוסדי של Glasgow; תקציר מוסדי של TUM. הטקסט המקורי המלא לא נקרא. |
+| 5 | [Proximity sensing in robot manipulator motion planning: System and implementation issues](https://www.edcheung.com/job/sbr/IEEE88.pdf) | FULL_TEXT | כתב יד באתר המחבר: ארכיטקטורת המערכת/תכנון מקומי, בערך עמודים 2–4 בכתב היד; עמוד הפרויקט של המחבר המזהה את הפרסום. לא כל הניסויים. |
+| 6 | [Sensitive skin](https://resenv.media.mit.edu/classarchive/MAS965/readings/sensitiveskin.pdf) | FULL_TEXT | המאמר המקורי בארכיון ההוראה של MIT: מבוא; דרישות חומרה/התקנים והדיון בתהליך ייצור זול, עמ׳ 46–47 במהדורה המודפסת. יתר החלקים לא נקראו באופן ממצה. |
+| 7 | [Conformable, flexible, large-area networks of pressure and thermal sensors with organic transistor active matrixes](https://pmc.ncbi.nlm.nih.gov/articles/PMC1187825/) | FULL_TEXT | הטקסט הראשי של המקור הראשוני הפתוח, הייצור וניסויי הלחץ/הטמפרטורה, וכיתובי איורים 1–5; ללא נתונים משלימים או שחזור בלתי תלוי. |
+| 8 | [Artificial Skin in Robotics: A Comprehensive Interface for System-Environment Interaction](https://publikationen.bibliothek.kit.edu/1000028782/2186259) | FULL_TEXT | קטעים נבחרים מהתזה: פשרות תכנון בפרק 3; נוהלי בדיקה בפרק 4.1, עמ׳ 152–159 במהדורה המודפסת; מסקנות. לא כל קובץ ה־PDF בן 217 העמודים. |
+| 9 | [Conformable and scalable tactile sensor skin for curved surfaces](https://bdml.stanford.edu/twiki/pub/Haptics/TactileChapterReferences/Ohmura-ICRA06.pdf) | FULL_TEXT | המאמר המקורי בן שישה עמודים: תקציר, דרישות, סעיפים III–IV ותחילת V, כיתובי איורים 1–10. יתר פסקאות הניסויים/המסקנות לא נקראו באופן ממצה. |
+| 10 | [Development of the tactile sensor system of a human-interactive robot RI-MAN](https://repository.gatech.edu/bitstreams/39fe7cef-a8a4-4ebb-81a4-097c885fa7bd/download) | PARTIAL_TEXT | תקציר/מבוא מקוריים מהעמוד הראשון, המאונדקסים במאגר Georgia Tech. הורדת ה־PDF החזירה 403; הניסויים העיקריים לא נקראו. |
+| 11 | [ARMAR-III: An integrated humanoid platform for sensory-motor control](https://h2t.iar.kit.edu/pdf/Asfour2006b.pdf) | FULL_TEXT | סעיפי המאמר המקורי על חישת הזרוע והעור המלאכותי, עמ׳ 2–3 ב־PDF, והארכיטקטורה ההיררכית/איור 5. לא כל ניסויי הפלטפורמה. |
+| 12 | [Design of human symbiotic robot TWENDY-ONE](https://waseda.elsevierpure.com/en/publications/design-of-human-symbiotic-robot-twendy-one/) | ABSTRACT_ONLY | רשומת הפרסום והתקציר במוסד של המחברים. לא הושגה גישה למאמר המקורי בן שבעה עמודים. |
+| 13 | [Humanoid robot which can lift a 30 kg box by whole body contact and tactile feedback](https://www.isi.imi.i.u-tokyo.ac.jp/publication/) | CITATION_ONLY | אומתו הביבליוגרפיה של מעבדת המחברים והקישור לרשומת המו״ל. המאמר המקורי אינו זמין; נצפה תקציר משני שהופץ מחדש, אך הוא לא שימש כראיה ניסויית מאומתת. |
+| 14 | [Whole body haptics for augmented humanoid task capabilities](https://link.springer.com/chapter/10.1007/978-3-642-14743-2_6) | ABSTRACT_ONLY | תקציר המו״ל, מטא־נתוני הפרק והמקורות; הפרק המלא, המחייב מנוי, אינו זמין. |
+| 15 | [An embedded artificial skin for humanoid robots](https://robotcub.org/misc/papers/08_cannata.pdf) | FULL_TEXT | כל התוכן המהותי של המאמר המקורי בן חמישה עמודים, לרבות הארכיטקטורה, המתמר, המיקרו־בקר, הניסויים והמסקנות; כיתובי האיורים. התמונות לא נבחנו בנפרד בפירוט. |
+| 16 | [Methods and technologies for the implementation of large-scale robot tactile sensors](https://www.researchgate.net/publication/224238240_Methods_and_Technologies_for_the_Implementation_of_Large-Scale_Robot_Tactile_Sensors) | FULL_TEXT | כתב יד שהעלו המחברים: סעיפים I, III, V ו־VI-A–D, וכיתובי איורי ההרכבה. לא כל משוואת היסטרזיס או ניסוי אחיזה. |
+| 17 | [A flexible and robust large scale capacitive tactile system for robots](https://arxiv.org/pdf/1411.6837) | FULL_TEXT | כתב היד של המחברים, סעיפים III–IV, טקסט השילוב וכיתובי האיורים הניסויים; רוב הטקסט הראשי נקרא, ללא נתונים משלימים. |
+| 18 | [A new silicone structure for uSkin—A soft, distributed, digital 3-axis skin sensor and its integration on humanoid robot iCub](https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/55045/Jamone%20A%20New%20Silicone%202018%20Accepted.pdf?isAllowed=y&sequence=2) | PARTIAL_TEXT | קטעים מאונדקסים מכתב היד הראשוני שהתקבל לפרסום, סעיפים III-A/B, טבלה I וכיתובי איורים 1–2; אחזור ישיר של PDF מהמאגר נכשל. הכיול/התוצאות לא נקראו במלואם. |
+| 19 | [An adjustable force sensitive sensor with an electromagnet for a soft, distributed, digital 3-axis skin sensor](https://waseda.elsevierpure.com/en/publications/an-adjustable-force-sensitive-sensor-with-an-electromagnet-for-a-/) | ABSTRACT_ONLY | תקציר במוסד של המחברים וזיהוי הפרסום; הטקסט המקורי המלא לא נקרא. |
+| 20 | [A real-time distributed architecture for large-scale tactile sensing](https://ewh.ieee.org/soc/ras/conf/financiallycosponsored/IROS/2014/www.iros2014.org/images/download/IROS2014-Full-Conference-Digest.pdf) | ABSTRACT_ONLY | תקציר הכנס הרשמי IROS2014, עמ׳ 134, ותקציר שהעלו המחברים; המאמר המקורי בן שבעה עמודים לא הושג. |
+| 21 | [A real-time data acquisition and processing framework for large-scale robot skin](https://www.sciencedirect.com/science/article/pii/S0921889015000172) | PARTIAL_TEXT | מבוא מאונדקס מטעם המו״ל וסעיפי ארכיטקטורה/מימוש נבחרים, לרבות ההפשטה של Skinware ופלטפורמת הבדיקה ההיסטורית. מלוא התוצאות והאיורים לא נבדקו. |
+| 22 | [Asynchronous, event-driven readout of POSFET devices for tactile sensing](https://doi.org/10.1109/ISCAS.2014.6865717) | CITATION_ONLY | הזהות ועמודי הכנס 2648–2651 נבדקו מול תוכן העניינים של פרסומי ISCAS; התקציר/גוף המאמר המקוריים לא הושגו. ה־DOI אושר באמצעות רשימות מקורות אקדמיות מאוחרות יותר. |
+| 23 | [Event-driven encoding of off-the-shelf tactile sensors for compression and latency optimisation for robotic skin](https://www.researchgate.net/publication/321816551_Event-driven_encoding_of_off-the-shelf_tactile_sensors_for_compression_and_latency_optimisation_for_robotic_skin) | PARTIAL_TEXT | קטעים מכתב יד שהעלו המחברים: ארכיטקטורה, השוואת קידודים ומסקנות. נבדקה גם רשימת הפרסומים הראשונית של מעבדת IIT. המאמר המלא לא הורד באופן עצמאי. |
+| 24 | [The event-driven software library for YARP—With algorithms and iCub applications](https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2017.00073/full) | PARTIAL_TEXT | סעיפים 3.2–3.3 המאונדקסים מטעם המו״ל על ייצוג אירועים, קוראים/תורים ועיבוד; גוף המאמר השלם לא אוחזר. |
+| 25 | [Reactive motion control for human-robot tactile interaction](https://doi.org/10.1109/ROBOT.2002.1014313) | CITATION_ONLY | זהות הציטוט נבדקה מול DBLP; נמצא תקציר באתר ResearchGate, אך לא אוחזר בהצלחה טקסט מלא ממקור ראשוני או תקציר ראשוני. התקציר המשני אינו משמש כראיה למימוש. |
+| 26 | [Real-time collision avoidance in teleoperated whole-sensitive robot arm manipulators](https://ntrs.nasa.gov/citations/19930059726) | ABSTRACT_ONLY | תקציר ומטא־נתונים במאגר NASA. הקובץ TR91.pdf באתר המחבר זוהה כדוח טכני מוקדם יותר, ולא הוצג בשתיקה כאותו מאמר כתב־עת משנת 1993. |
+| 27 | [Whole-arm reactive collision avoidance control of kinematically redundant manipulators](https://dblp.org/rec/conf/icra/BoddyT93) | CITATION_ONLY | אותרו הזהות ב־DBLP ותקציר משני ב־Science Explorer. לא אוחזר טקסט מלא מהמחברים/המו״ל; התקציר המשני אינו נכלל כהוכחה טכנית. |
+| 28 | [Programming by touch: The different way of human-robot interaction](https://elib.dlr.de/11914/) | CITATION_ONLY | רשומת הפרסום ב־DLR; המאגר מציין במפורש שאינו מספק את הטקסט המלא. לא הוסק אלגוריתם מתוך הכותרת. |
+| 29 | [Manual guidance for industrial robot programming](https://iris.univpm.it/handle/11566/228093) | ABSTRACT_ONLY | מטא־נתונים ותקציר מלא במאגר האוניברסיטה; אין טקסט מלא מצורף זמין. |
+| 30 | [Tactile sensing in intelligent robotic manipulation—A review](https://www.researchgate.net/publication/228667424_Tactile_sensing_in_intelligent_robotic_manipulation_-_a_review) | FULL_TEXT | טקסט שהעלו המחברים: מבוא, סעיפים 5.2–5.7 ומסקנות. אותר הדפס חוזר בתזה של KTH, אך לא ניתן היה לאחזר את קובץ ה־PDF הגדול. |
+| 31 | [Sensitive manipulation: Manipulation through tactile feedback](https://lornat75.github.io/pdfs/2018-torresjara-sensitive.pdf) | FULL_TEXT | תקציר/מבוא בכתב היד של המחברים, איור החומרה 1 וסעיפים 4.1.3–4.3, עמ׳ 12–15 ב־PDF. לא כל הניסויים. |
+| 32 | [High-density conformable tactile sensing glove](https://ieeexplore.ieee.org/document/6100898) | CITATION_ONLY | אומתה הביבליוגרפיה של מעבדת המחברים; לא הושגה גישה לטקסט המקורי המלא. נצפו תקציר מופץ של המאמר המסוים ותקציר של מאמר נפרד ב־JRSJ משנת 2012, והם אינם משמשים תחליף למקור. |
+| 33 | [Development and applications of high-density tactile sensing glove](https://link.springer.com/chapter/10.1007/978-3-642-31401-8_40) | ABSTRACT_ONLY | תקציר המו״ל והרשומה הביבליוגרפית; הפרק המחייב מנוי לא נקרא במלואו. |
+| 34 | [Tactile object class and internal state recognition for mobile manipulation](https://jsturm.de/publications/data/chitta10icra.pdf) | PARTIAL_TEXT | קטעים מאונדקסים של שיטות/תוצאות ב־PDF המקורי של מאמר הכנס באתר המחבר, במיוחד טבלאות II–IV. אחזור PDF ישיר הסתיים בחריגת זמן; גרסת כתב־עת מאוחרת נשמרה בנפרד. |
+| 35 | [Learning inverse dynamics models with contacts](https://www.robertocalandra.com/papers/calandra_icra_2016.pdf) | FULL_TEXT | PDF של המחבר, 6 עמודים; נקראו התקציר, §§II–III, §IV-A עד E והמסקנה. שם הקובץ מציין 2016; המאמר הביבליוגרפי הוא משנת 2015. |
+| 36 | [A simple tactile sensing foot for humanoid robot and active ground slope recognition](https://doi.org/10.1109/ICMECH.2009.4957223) | ABSTRACT_ONLY | תקציר המו״ל וקטע מבוא, ללא מלוא הערכת החיישן/הבקרה. |
+| 37 | [Design and experiment of the NAO humanoid robot’s plantar tactile sensor for surface classification](https://www.researchgate.net/publication/321122717_Design_and_Experiment_of_the_NAO_Humanoid_Robot%27s_Plantar_Tactile_Sensor_for_Surface_Classification) | FULL_TEXT | המקור שהעלו המחברים: תקציר, סעיפים III–V עד הגדרת המסווג, תרשימים/כיתובים. טבלת התוצאות הסופית והמסקנה לא נקראו באופן ממצה. |
+| 38 | [An adaptive sensor foot for a bipedal and quadrupedal robot](https://www.dfki.de/web/forschung/projekte-publikationen/publikation/6214) | ABSTRACT_ONLY | תקציר הפרסום המוסדי והמטא־נתונים של DFKI. המאמר המקורי לא נקרא. |
+| 39 | [A ZMP sensor for a biped robot](https://researchmap.jp/read0072509/published_papers/15818833/attachment_file.pdf) | PARTIAL_TEXT | תקציר מאונדקס מהעמוד הראשון באתר המחבר. אחזור ישיר של PDF החזיר 403; הגזירה המלאה והניסויים לא נקראו. |
+| 40 | [High-speed pressure sensor grid for humanoid robot foot](https://tus.elsevierpure.com/en/publications/high-speed-pressure-sensor-grid-for-humanoid-robot-foot/) | ABSTRACT_ONLY | תקציר ורשומה ביבליוגרפית במוסד של המחברים. לא הושגה גישה למאמר המקורי בן שישה עמודים. |
+| 41 | [Humanoid multimodal tactile-sensing modules](https://portal.fis.tum.de/en/publications/humanoid-multimodal-tactile-sensing-modules/) | ABSTRACT_ONLY | הרשומה הביבליוגרפית והתקציר באוניברסיטה; השיטות המלאות, המעגל וטבלאות האפיון לא הושגו. |
+| 42 | [Integrating discrete force cells into multi-modal artificial skin](https://mediatum.ub.tum.de/doc/1116556/214040.pdf) | PARTIAL_TEXT | תקציר העמוד הראשון, מבנה תא הכוח והמבוא כפי שאונדקסו במאגר. גרפי הכוח/ההעתק המלאים ותוצאות העמידות לא נבדקו. |
+| 43 | [Towards autonomous robotic skin spatial calibration: A framework based on vision and self-touch](https://doi.org/10.1109/IROS.2017.8202151) | CITATION_ONLY | רשימת פרסומים ראשונית של האוניברסיטה מאמתת את הזהות; תקציר משני מתאר RGB-D/מגע עצמי, אך התקציר/גוף המאמר המקוריים לא הושגו. התוצאה המשנית של <2mm אינה מאומצת בכוונה כראיה מאומתת. |
+| 44 | [3D surface reconstruction for robotic body parts with artificial skins](https://mediatum.ub.tum.de/doc/1116558/621068.pdf) | PARTIAL_TEXT | תקציר/מבוא העמוד הראשון במאגר והתקציר באוניברסיטה. סקירת 2019 שסופקה, §II-C, מספקת הסבר משני נוסף לשחזור. |
+| 45 | [Open-loop self-calibration of articulated robots with artificial skins](https://mediatum.ub.tum.de/doc/1116557/877587.pdf) | PARTIAL_TEXT | עמודים 1–2 המאונדקסים במאגר, לרבות אלגוריתמים 1–2, הדרישות והיקף הניסויים/הסימולציות; תקציר האוניברסיטה נקרא ישירות. מלוא התוצאות המספריות לא הושג. |
+| 46 | [Automatic robot kinematic modeling with a modular artificial skin](https://portal.fis.tum.de/en/publications/automatic-robot-kinematic-modeling-with-a-modular-artificial-skin/) | ABSTRACT_ONLY | התקציר והרשומה הביבליוגרפית באוניברסיטה נקראו ישירות. המאמר המקורי בן שישה עמודים אינו זמין. סקירת 2019 שסופקה, §II-D, היא ראיה משנית לרצף ציר/SVD/רדיוס. |
+| 47 | [3D spatial self-organization of a modular artificial skin](https://portal.fis.tum.de/en/publications/3d-spatial-self-organization-of-a-modular-artificial-skin) | ABSTRACT_ONLY | התקציר הראשוני והזהות באוניברסיטה. המשוואות המלאות והניסויים המספריים לא הושגו. |
+| 48 | [Touch, in Principles of Neural Science, fifth edition, chapter23](https://accessmedicine.mhmedical.com/book.aspx?bookID=1049) | CITATION_ONLY | ביבליוגרפיית 2019 שסיפק המשתמש מזהה את פרק 23, עמ׳ 498–529. הפרק המלא לא הושג; כתובת הספר אצל המו״ל היא אמצעי איתור, לא טענה לגישה לפרק. |
+| 49 | [Touch is a team effort: Interplay of submodalities in cutaneous sensibility](https://pubmed.ncbi.nlm.nih.gov/25257208/) | ABSTRACT_ONLY | תקציר המאמר המקורי המאונדקס ב־PubMed; גוף הסקירה המלא לא הושג. |
+| 50 | [Event-based signaling for reducing required data rates and processing power in a large-scale artificial robotic skin](https://mediatum.ub.tum.de/doc/1281179/868479268848.pdf) | PARTIAL_TEXT | עמוד התוצאות 6 המאונדקס במאגר, איורים 7–8/טבלה/מסקנה, וכן תקציר הכנס הרשמי. מלוא השיטות לא אוחזר. |
+| 51 | [Event-based signaling for large-scale artificial robotic skin—Realization and performance evaluation](https://mediatum.ub.tum.de/doc/1335609/document.pdf) | PARTIAL_TEXT | המבוא/הארכיטקטורה המאונדקסים במאגר והתקציר הראשוני באוניברסיטה; לא הושגה גישה לשיטות הניסוי המלאות. |
+| 52 | [Efficient event-driven reactive control for large scale robot skin](https://mediatum.ub.tum.de/doc/1366849/document.pdf) | PARTIAL_TEXT | תקציר/מבוא העמוד הראשון במאגר. לא הושגה גישה להוכחות הבקרה המפורטות ולגרפים הניסויים המלאים. |
+| 53 | [A128×128120dB15µs latency asynchronous temporal contrast vision sensor](https://doi.org/10.1109/JSSC.2007.914337) | PARTIAL_TEXT | עותק של מאמר כתב־העת המקורי, עמוד הסיום 575 והתקציר המאונדקס. העותק נמצא באתר משני; המאמר המלא לא אוחזר. |
+| 54 | [An asynchronous time-based image sensor](https://publications.ait.ac.at/en/publications/an-asynchronous-time-based-image-sensor/) | CITATION_ONLY | נבדקו מטא־נתונים ביבליוגרפיים מוסדיים ראשוניים. נמצא תקציר משני, אך לא נבדק גוף המאמר המקורי או תקציר ראשוני מלא. |
+| 55 | [AER EAR: A matched silicon cochlea pair with address event representation interface](https://researchers.westernsydney.edu.au/en/publications/aer-ear-a-matched-silicon-cochlea-pair-with-address-event-represe-3/) | ABSTRACT_ONLY | תקציר מוסדי ראשוני. זהו מאמר הכנס משנת 2005, ולא עבודת כתב־עת מאוחרת בעלת שם דומה. |
+| 56 | [VLSI analogs of neuronal visual processing: A synthesis of form and function](https://authors.library.caltech.edu/records/g2vmh-8fe19) | ABSTRACT_ONLY | מטא־נתונים ותקציר במאגר התזות של Caltech. התזה המלאה אותרה אך לא נקראה. |
+| 57 | [Point-to-point connectivity between neuromorphic chips using address events](https://web.stanford.edu/group/brainsinsilicon/documents/00_journ_IEEEtsc_Point.pdf) | PARTIAL_TEXT | תקציר באתר המחבר ודיון/איורי בורר המאונדקסים במאגר; לא כל 19 עמודי כתב־העת. |
+| 58 | [Asynchronous DC-free serial protocol for event-based AER systems](https://iris.polito.it/handle/11583/2646243) | ABSTRACT_ONLY | תקציר ראשוני באוניברסיטה; קובץ המאמר המקורי מוגבל בגישה ולא התבקש מהמחברים. |
+| 59 | [A QVGA143dB dynamic range frame-free PWM image sensor with lossless pixel-level video compression and time-domain CDS](https://ieeexplore.ieee.org/document/5648367) | CITATION_ONLY | הכותרת/הרשומה ב־IEEE והזהות המוסדית הראשונית ב־AIT; השיטות והאיורים המקוריים לא הושגו. גרסאות כנס ISSCC דומות משנת 2010 אינן משמשות תחליף. |
+| 60 | [A new protocol for a low power sensor network](https://www.researchgate.net/publication/4075406_A_new_protocol_for_a_low_power_sensor_network) | ABSTRACT_ONLY | תקציר שהעלו המחברים ותוכן העניינים הרשמי של הכנס; פרטי הפרוטוקול ותוצאותיו המקוריים לא נקראו. |
+| 61 | [Send-on-delta concept: An event-based data reporting strategy](https://mdpi-res.com/d_attachment/sensors/sensors-06-00049/article_deploy/sensors-06-00049.pdf) | FULL_TEXT | קובץ PDF סטטי רשמי של MDPI הורד מקומית; נקראו כל 15 העמודים 49–63, לרבות משוואות 1–13, טבלאות 1–2, דוגמת התוכנה והמקורות. איור 3 בעמ׳ 58 נבדק חזותית. |
+| 62 | [A robust and efficient dynamic network protocol for a large-scale artificial robotic skin](https://mediatum.ub.tum.de/doc/1459302/136167106011.pdf) | PARTIAL_TEXT | התקציר המאונדקס במאגר, מבוא העמוד הראשון ואיור הטופולוגיה/ניתוב מחדש. המימוש המפורט ושאר הניסויים לא נקראו. |
+| 63 | [Realizing whole-body tactile interactions with a self-organizing, multi-modal artificial skin on a humanoid robot](https://staff.aist.go.jp/e.yoshida/papers/Mittendorfer_2014AR.pdf) | FULL_TEXT | PDF של המחבר, 17 עמודים; נבדקו טבלאות החומרה, §§3–4.3, §5, ניסויי האחיזה והמגבלות/המסקנה. נבדקו המשוואות לפעילות ולמיפוי תחושתי־מוטורי. |
+| 64 | [From multi-modal tactile signals to a compliant control](https://mediatum.ub.tum.de/doc/1335611/document.pdf) | FULL_TEXT | PDF של המחבר, 7 עמודים; נקראו §§II–III, IV-A ו־IV-D–F, סעיף הניסוי והמסקנה. |
+| 65 | [Whole-body active compliance control for humanoid robots with robot skin](https://portal.fis.tum.de/en/publications/whole-body-active-compliance-control-for-humanoid-robots-with-rob/) | ABSTRACT_ONLY | תקציר ומטא־נתונים ב־TUM, המוסד שאליו משויכים המחברים; המאמר המקורי המלא אינו זמין. הסיכום אצל Cheng 2019 הוא ראיה משנית, ולא תחליף לקריאת הטקסט המלא. |
+| 66 | [TOMM: Tactile omnidirectional mobile manipulator](https://portal.fis.tum.de/en/publications/tomm-tactile-omnidirectional-mobile-manipulator/) | ABSTRACT_ONLY | רשומת הפרסום והתקציר המלא ב־TUM; מאמר המימוש המקורי לא נקרא. |
+| 67 | [An overview of null space projections for redundant, torque-controlled robots](https://elib.dlr.de/101443/2/NullspaceSurvey.pdf) | FULL_TEXT | כתב יד של המחברים ב־DLR, 17 עמודי PDF; נקראו הנחות §2, ניסוחי העקביות, ניסוי מוגבל־המפעיל ב־§4.2 והדיון ב־§§5.1–5.2. |
+| 68 | [Synthesis of whole-body behaviors through hierarchical control of behavioral primitives](https://ai.stanford.edu/~lsentis/files/ijhr-05.pdf) | FULL_TEXT | PDF של מאמר כתב־העת באתר המחבר, 14 עמודים; נקראו §§1–4 לרבות משוואות 17–22, הדוגמה המדומה ב־§5 והדיון. |
+| 69 | [Efficient distributed torque computation for large scale robot skin](https://portal.fis.tum.de/en/publications/efficient-distributed-torque-computation-for-large-scale-robot-sk/) | ABSTRACT_ONLY | תקציר ב־TUM; ה־PDF המקורי של המחבר ב־mediatum/1459300 החזיר שגיאות קצב/גישה. התיאור המפורט של קירוב נקודה קבועה/פולינום זמין רק דרך סקירת Cheng 2019 שסיפק המשתמש. |
+| 70 | [Tactile-based whole-body compliance with force propagation for mobile manipulators](https://portal.fis.tum.de/en/publications/tactile-based-whole-body-compliance-with-force-propagation-for-mo/) | ABSTRACT_ONLY | תקציר ב־TUM; זוהה PDF ראשוני ב־mediatum/1474210 אך הגישה נכשלה. מאמר הכנס המוקדם [77] נקרא בנפרד ואינו מוצג כאותו מאמר כתב־עת. |
+| 71 | [Humanoid robot HRP-2](https://doi.org/10.1109/ROBOT.2004.1307969) | CITATION_ONLY | נבדקה זהות הציטוט; נמצא עותק PDF באתר צד שלישי אך הוא לא אוחזר בהצלחה. חומר קשור של AIST על הפלטפורמה אינו משמש תחליף למאמר המקורי. |
+| 72 | [Integration of robotic technologies for rapidly deployable robots](https://mediatum.ub.tum.de/doc/1446657/883306792253.pdf) | FULL_TEXT | ה־PDF של המחבר כולל חומר הגהה כפול (22 עמודים עבור כתב יד שאורכו כ־11 עמודים); נקראו הארכיטקטורה, תוצאות הפריסה/היישום ב־§V, הערת שוליים 13 והמסקנה. |
+| 73 | [A survey of unknown object grasping and our fast grasping algorithm—C shape grasping](https://repository.tudelft.nl/record/uuid%3Ae16cac95-3ada-4950-b9ac-a0cdfc8cdaef) | ABSTRACT_ONLY | תקציר ומטא־נתונים במאגר המקורי של הכנס ב־TU Delft. אותר פרק קשור בתזה, אך הוא לא שימש כקריאה מלאה של מאמר הכנס. |
+| 74 | [A unified approach for motion and force control of robot manipulators: The operational space formulation](https://khatib.stanford.edu/publications/pdfs/Khatib_1987_RA.pdf) | ABSTRACT_ONLY | תקציר/מבוא העמוד הראשון באתר המחבר, כפי שאונדקסו בחיפוש; אחזור PDF ישיר הסתיים שוב ושוב בחריגת זמן. לבדיקת המשוואות המלאה משמשים במקום זאת [64,68] וטקסט Cheng 2019 שסופק. |
+| 75 | [Robot Control: The Task Function Approach](https://books.google.com/books/about/Robot_Control.html?id=-DZSAAAAMAAJ) | CITATION_ONLY | מטא־נתונים ביבליוגרפיים של הספר; לא אוחזר או נקרא טקסט של פרק כלשהו. |
+| 76 | [Integration of reactive, torque-based self-collision avoidance into a task hierarchy](https://elib.dlr.de/79360/4/Dietrich_TRO2012.pdf) | FULL_TEXT | כתב יד של המחברים ב־DLR, 15 עמודי PDF; נבדקו הניסוח, טיפול בריסון/מעבר בין משימות, מערך הניסוי והמגבלות. |
+| 77 | [Tactile-based compliance with hierarchical force propagation for omnidirectional mobile manipulators](https://mediatum.ub.tum.de/doc/1336140/document.pdf) | FULL_TEXT | PDF של המחבר, 6 עמודים; נקראו המבוא והנחות המידול ב־§II, וניסוח כוח העור והתפשטותו; זו אינה ביקורת שחזור ניסויי מלאה. |
+| 78 | [Safe and dependable physical human-robot interaction in anthropic domains: State of the art and challenges](https://www.diag.uniroma1.it/~labrob/pub/papers/PHRIDOM_IROS06.pdf) | FULL_TEXT | כתב יד של סדנה באתר המחבר, 15 עמודי PDF; נקראו §§II-A, III-A/B והדיון בחיישנים/מהימנות ב־IV. הגרסה/העימוד שונים ממטא־נתוני המו״ל; הדיון בתקנים היסטורי ואינו הנחיית תאימות עדכנית. |
+| 79 | [Impedance control: An approach to manipulation: Part III—Applications](https://bpb-us-e1.wpmucdn.com/sites.mit.edu/dist/5/1384/files/2025/02/1985-impedance-control-an-approach-to-manipulation-part-III-applications.pdf) | FULL_TEXT | המאמר המקורי באתר MIT, 8 עמודים; נקראו המבוא, בחירת העכבה וגזירת הימנעות המכשולים, במיוחד עמ׳ 17–20 וההנחות המפשטות. |
+| 80 | [A new actuation approach for human friendly robot design](https://khatib.stanford.edu/publications/pdfs/Zinn_2004_IJRR.pdf) | ABSTRACT_ONLY | נבדקו תקציר כתב־העת/העמוד הראשון באתר המחבר וקטע אחד המאונדקס בחיפוש מתוך §3.1.3 על רוויה. אחזור ישיר של PDF מלא נכשל. גרסאות ISER/ICRA בעלות כותרות דומות אינן משמשות תחליף. |
+| 81 | [Control of generalized contact motion and force in physical human-robot interaction](https://www.diag.uniroma1.it/deluca/pHRI_elective/ICRA15_Magrini_Flacco_ADL_ContactMotionForceControl_pHRI.pdf) | ABSTRACT_ONLY | נבדקו התקציר/המבוא באתר המחבר וקטעי מידול מוקדמים המאונדקסים בחיפוש; ניסיונות אחזור PDF ישירים חוזרים הסתיימו בחריגת זמן. סווג באופן שמרני משום שהמאמר המלא לא אוחזר. |
+| 82 | [Human-robot coexistence and contact handling with redundant robots](https://www.diag.uniroma1.it/~deluca/pHRI_elective/IROS17_Magrini_ADL_HRCoexistenceContactRedundant.pdf) | FULL_TEXT | PDF של המחבר, 7 עמודים; נקראו המבוא, §III לרבות הערה 1, לוגיקת הטיפול ב־§IV ותיאור המעברים. |
+| 83 | [Human body part multicontact recognition and detection methodology](https://sites.utexas.edu/hcrl/files/2016/01/paper-kwan-suk-icra.pdf) | ABSTRACT_ONLY | תקציר/מבוא באתר המחבר ב־UT Austin דרך אינדקס החיפוש. אחזור PDF ישיר נכשל; נמצא טקסט מלא משני שהעלה המחבר, אך הוא לא שימש תחליף לקריאה מלאה מאומתת. |
+| 84 | [Long-term training with a brain-machine interface-based gait protocol induces partial neurological recovery in paraplegic patients](https://www.nature.com/articles/srep30383) | ABSTRACT_ONLY | תקציר מאונדקס מטעם המו״ל וזהות ביבליוגרפית; הטקסט המלא אצל המו״ל הפנה לשירות זהות בלתי נגיש, ו־PMC4980986 החזיר אתגר דפדפן. לא נטען שנערכה בדיקת סעיף השיטות. |
 
-## Decisions and unresolved evidence
+## החלטות וראיות שטרם הובהרו
 
 ### [1] Automated tactile sensing
 
-**Supported finding:** An early review establishing the historical depth of automated tactile sensing. No quantitative sensor result from this article is adopted here.
+**ממצא נתמך:** סקירה מוקדמת המבססת את העומק ההיסטורי של חישת מגע אוטומטית. לא מאומצת כאן תוצאת חיישן כמותית מתוך מאמר זה.
 
-**Limit:** Published material reflects information acquired before January 1981; historical recommendations are not current component specifications.
+**מגבלה:** החומר שפורסם משקף מידע שנאסף לפני ינואר 1981; המלצות היסטוריות אינן מפרטי רכיבים עדכניים.
 
-**Action for this project:** Use only as historical background. Set limb requirements from the actual contact tasks and acceptance tests, rather than invoking human-equivalence targets from an unread historical review.
+**פעולה לפרויקט זה:** להשתמש בו כרקע היסטורי בלבד. לקבוע את דרישות הגפיים מתוך משימות המגע בפועל ובדיקות הקבלה, במקום להסתמך על יעדי שקילות לאדם מתוך סקירה היסטורית שלא נקראה.
 
 ### [2] E-skin: From humanoids to humans
 
-**Supported finding:** The viewpoint contrasts conventional components on flexible substrates with printed and ultrathin electronics. More discrete functionality competes with conformability; requirements depend on the application.
+**ממצא נתמך:** מאמר העמדה משווה רכיבים רגילים על מצעים גמישים לאלקטרוניקה מודפסת ודקה במיוחד. הוספת פונקציות בדידות מתחרה ביכולת ההתאמה לצורה; הדרישות תלויות ביישום.
 
-**Limit:** A perspective article is not evidence that a particular printed film has acceptable fatigue life, manufacturing yield, cost or multimodal accuracy.
+**מגבלה:** מאמר עמדה אינו ראיה לכך שליריעה מודפסת מסוימת יש אורך חיי עייפות, נצולת ייצור, עלות או דיוק רב־אופני מקובלים.
 
-**Action for this project:** Keep a small number of proven modalities in the first product. Put packaged electronics on mechanically supported islands; qualify the complete interconnect and cover. Track area, installed mass and repair time separately from sensor-element thickness.
+**פעולה לפרויקט זה:** לשמור על מספר קטן של אופני חישה מוכחים במוצר הראשון. להציב אלקטרוניקה ארוזה על איים הנתמכים מכנית; לאמת את כל מערכת הקישור והכיסוי. לעקוב אחר השטח, המסה המותקנת וזמן התיקון בנפרד מעובי רכיב החישה.
 
 ### [3] Tactile sensing—From humans to humanoids
 
-**Supported finding:** The review distinguishes cutaneous from joint/force sensing, fingertip arrays from large-area skin, and slowly adapting from rapidly adapting tactile channels. Receptor density and required temporal/spatial performance differ by body site.
+**ממצא נתמך:** הסקירה מבחינה בין חישה עורית לחישת מפרקים/כוח, בין מערכי קצות אצבעות לעור בשטח גדול, ובין ערוצי מגע בעלי הסתגלות איטית ומהירה. צפיפות הקולטנים ודרישות הביצועים בזמן ובמרחב משתנות בין אזורי גוף.
 
-**Limit:** Biological receptor counts and perceptual acuity do not directly specify electronic taxel pitch, ADC resolution or required robot bandwidth. This is a review, not validation of our sensor stack.
+**מגבלה:** מספרי קולטנים ביולוגיים וחדות התפיסה אינם מגדירים ישירות את הפסיעה בין תאי החישה האלקטרוניים, רזולוציית ה־ADC או רוחב הפס הנדרש מהרובוט. זוהי סקירה, ולא אימות של מערך השכבות שלנו.
 
-**Action for this project:** Preserve held-contact state alongside onset/change events. Specify coarse arm/leg contact localization independently from fingertip dexterity; retain joint encoders and actuator feedback. Test a sustained load so baseline adaptation cannot erase a real contact.
+**פעולה לפרויקט זה:** לשמר מצב של מגע מתמשך לצד אירועי תחילה/שינוי. להגדיר מיקום מגע גס בזרועות/רגליים בנפרד ממיומנות קצות אצבעות; לשמר מקודדי מפרקים ומשוב מפעילים. לבדוק עומס מתמשך כדי שהסתגלות קו הבסיס לא תמחק מגע אמיתי.
 
 ### [4] Directions toward effective utilization of tactile skin: A review
 
-**Supported finding:** The authors frame useful tactile skin as a system problem involving distributed coverage, simultaneous contacts, acquisition, calibration and real-time interpretation.
+**ממצא נתמך:** המחברים מציגים עור מגע שימושי כבעיית מערכת הכוללת כיסוי מבוזר, מגעים בו־זמניים, רכישה, כיול ופענוח בזמן אמת.
 
-**Limit:** The abstract supplies no verified circuit values, experimental operating envelope or manufacturing economics.
+**מגבלה:** התקציר אינו מספק ערכי מעגל מאומתים, מעטפת פעולה ניסויית או כלכלת ייצור.
 
-**Action for this project:** Keep an acceptance matrix spanning material, acquisition, communication, body coordinates and application. A working single taxel cannot close the multi-contact, coverage or latency requirements.
+**פעולה לפרויקט זה:** לשמור על מטריצת קבלה המכסה חומר, רכישה, תקשורת, קואורדינטות גוף ויישום. תא חישה בודד שפועל אינו יכול להשלים את דרישות ריבוי המגעים, הכיסוי או ההשהיה.
 
 ### [5] Proximity sensing in robot manipulator motion planning: System and implementation issues
 
-**Supported finding:** The tested infrared arrangement provides a roughly 10–15 cm obstacle-detection envelope around the arm and coordinates sensing with about 50 commanded positions per second. Motion is constrained by the sensed free envelope.
+**ממצא נתמך:** מערך התת־אדום שנבדק מספק מעטפת זיהוי מכשולים של כ־10–15 cm סביב הזרוע ומתאם את החישה עם כ־50 מיקומים נפקדים בשנייה. התנועה מוגבלת על ידי המעטפת הפנויה שנחשה.
 
-**Limit:** The collision-avoidance argument depends on coverage, robot velocities, sensor characteristics and control timing; it is not a guarantee for arbitrary robots or objects.
+**מגבלה:** הטיעון להימנעות מהתנגשות תלוי בכיסוי, במהירויות הרובוט, במאפייני החיישנים ובתזמון הבקרה; הוא אינו ערובה לכל רובוט או עצם.
 
-**Action for this project:** Do not describe our pressure-only skin as detecting obstacles before touch. If proximity is added, validate every joint pose and object reflectance/angle against the actual stopping envelope and measured latency.
+**פעולה לפרויקט זה:** לא לתאר את העור שלנו, החוש לחץ בלבד, כמזהה מכשולים לפני מגע. אם מוסיפים חישת קרבה, לאמת כל תנוחת מפרק והחזריות/זווית של עצמים מול מעטפת העצירה בפועל וההשהיה שנמדדה.
 
 ### [6] Sensitive skin
 
-**Supported finding:** The paper explicitly links local processing, simple sensing structures, fault tolerance, repairability and manufacture. It discusses rigid active islands joined by flexible interconnects and warns that large-area signal paths collect noise.
+**ממצא נתמך:** המאמר קושר במפורש בין עיבוד מקומי, מבני חישה פשוטים, סבילות לתקלות, יכולת תיקון וייצור. הוא דן באיים פעילים קשיחים המחוברים בקישורים גמישים ומזהיר שמסלולי אות על שטח גדול קולטים רעש.
 
-**Limit:** The manufacturing costs and forecasts are historical; they cannot be imported into a 2026 BOM. Proposed future millions-of-sensors systems are not demonstrated production yield.
+**מגבלה:** עלויות הייצור והתחזיות הן היסטוריות; אי אפשר להעתיקן לרשימת רכיבים לשנת 2026. הצעות למערכות עתידיות עם מיליוני חיישנים אינן נצולת ייצור שהודגמה.
 
-**Action for this project:** Keep analog runs short, digitize regionally, provide failed-channel reporting, and cost scrap/rework and replacement operations. Compare complete installed harnesses rather than copper mass alone.
+**פעולה לפרויקט זה:** לשמור על מסלולים אנלוגיים קצרים, לבצע דיגיטציה אזורית, לספק דיווח על ערוצים תקולים, ולתמחר פסילה/עיבוד חוזר ופעולות החלפה. להשוות רתמות מותקנות שלמות, ולא רק את מסת הנחושת.
 
 ### [7] Conformable, flexible, large-area networks of pressure and thermal sensors with organic transistor active matrixes
 
-**Supported finding:** A 12×12 network with 4 mm pitch combines pressure and thermal layers. Net geometry permits 25% extension; larger extension breaks strut wiring. The reported 2, 000 cycles at 20% concern simplified gold test structures, not complete skin. Organic circuitry uses −20/−40 V biases.
+**ממצא נתמך:** רשת 12×12 בפסיעה של 4 mm משלבת שכבות לחץ וטמפרטורה. גאומטריית הרשת מאפשרת התארכות של 25%; התארכות גדולה יותר שוברת את החיווט בתומכות. 2, 000 המחזורים שדווחו במתיחה של 20% מתייחסים למבני בדיקה מפושטים מזהב, ולא לעור שלם. המעגלים האורגניים משתמשים במתחי הטיה של −20/−40 V.
 
-**Limit:** The combined thermal demonstration and transistor protection do not establish long-term humidity, abrasion or joint-fatigue performance of a commercial laminate.
+**מגבלה:** הדגמת החישה התרמית המשולבת והגנת הטרנזיסטורים אינן מבססות ביצועים ארוכי טווח בלחות, שחיקה או עייפות מפרקים של למינציה מסחרית.
 
-**Action for this project:** Use the established layered idea with simpler low-voltage electronics, but test heat paths and full-assembly strain independently. Do not substitute conductor-coupon fatigue for connector, adhesive, sensor and wear-cover fatigue.
+**פעולה לפרויקט זה:** להשתמש ברעיון השכבות המבוסס עם אלקטרוניקה פשוטה יותר במתח נמוך, אך לבדוק בנפרד מסלולי חום ומעוות בהרכבה המלאה. לא להחליף בדיקת עייפות של מחבר, דבק, חיישן וכיסוי שחיקה בבדיקת עייפות של דגימת מוליך.
 
 ### [8] Artificial Skin in Robotics: A Comprehensive Interface for System-Environment Interaction
 
-**Supported finding:** The thesis separates sensitivity and collision protection and evaluates the sensor with its electronics. Its proposed testing includes static indentation, repeatability, dynamic impact, recovery and overload; filtering affects sensitivity and reaction time.
+**ממצא נתמך:** התזה מפרידה בין רגישות להגנה מהתנגשות ומעריכה את החיישן יחד עם האלקטרוניקה שלו. הבדיקות המוצעות בה כוללות החדרה סטטית, חזרתיות, פגיעה דינמית, התאוששות ועומס יתר; הסינון משפיע על הרגישות ועל זמן התגובה.
 
-**Limit:** These proposed evaluation procedures are not a universal certification standard. The thesis itself identifies unresolved performance tradeoffs.
+**מגבלה:** נוהלי ההערכה המוצעים הללו אינם תקן הסמכה אוניברסלי. התזה עצמה מזהה פשרות ביצועים שטרם נפתרו.
 
-**Action for this project:** Add controlled dynamic indentation with an independent load/time reference, overload recovery and identical deployed filter settings. The thin TPU wear film is not an impact-energy absorber. Measure seam and mounted-curvature behavior, not flat coupons alone.
+**פעולה לפרויקט זה:** להוסיף החדרה דינמית מבוקרת עם ייחוס עומס/זמן בלתי תלוי, התאוששות מעומס יתר והגדרות סינון זהות לאלה שיופעלו במערכת. יריעת השחיקה הדקה מ־TPU אינה בולמת אנרגיית פגיעה. למדוד את התנהגות התפרים והעקמומיות בהתקנה, ולא רק דגימות שטוחות.
 
 ### [9] Conformable and scalable tactile sensor skin for curved surfaces
 
-**Supported finding:** The implementation places 32 photo-reflector sensing elements and a microcontroller on a cut/fold flexible substrate. Optical emitters are time-shared to control power; local SMBus connects to an in-body ring network. Bus capacitance constrains scaling.
+**ממצא נתמך:** המימוש מציב 32 רכיבי חישה פוטו־מחזירי־אור ומיקרו־בקר על מצע גמיש חתוך/מקופל. הפולטים האופטיים מופעלים בחלוקת זמן לשליטה בהספק; SMBus מקומי מתחבר לרשת טבעת בתוך הגוף. קיבול האפיק מגביל את ההתרחבות.
 
-**Limit:** Address-space capacity is not simultaneous full-skin throughput. The reported bare-sheet mass excludes subsequently added foam and the complete installed network. Foldability does not imply repeated stretchability.
+**מגבלה:** קיבולת מרחב הכתובות אינה קצב העברת נתונים בו־זמני של כל העור. מסת היריעה החשופה שדווחה אינה כוללת קצף שנוסף לאחר מכן ואת הרשת המותקנת המלאה. אפשרות לקיפול אינה מעידה על אפשרות למתיחה חוזרת.
 
-**Action for this project:** Use a small panel family and controlled mechanical relief. Measure aggregate power at the actual scan duty cycle, installed mass, and complete-frame freshness at maximum node count. Retain compact local analog wiring and a robust regional digital link.
+**פעולה לפרויקט זה:** להשתמש במשפחה קטנה של פנלים ובהקלה מכנית מבוקרת. למדוד את ההספק הכולל במחזור העבודה של הסריקה בפועל, את המסה המותקנת ואת עדכניות המסגרת המלאה במספר הצמתים המרבי. לשמר חיווט אנלוגי מקומי קצר וקישור דיגיטלי אזורי עמיד.
 
 ### [10] Development of the tactile sensor system of a human-interactive robot RI-MAN
 
-**Supported finding:** The original abstract reports an integrated soft areal tactile system on RI-MAN and a human-dummy lifting demonstration. No numerical sensor accuracy or robustness result from the full article is adopted here.
+**ממצא נתמך:** התקציר המקורי מדווח על מערכת מגע רכה ושטחית המשולבת ב־RI-MAN ועל הדגמת הרמת בובת אדם. לא מאומצת כאן תוצאה מספרית של דיוק חיישן או עמידותו מתוך המאמר המלא.
 
-**Limit:** Demonstrating a complete robot handling a dummy does not isolate sensor contribution or validate the proposed resistive panel. Semiconductive-pressure-sensor construction described in other reviews is secondary evidence only.
+**מגבלה:** הדגמת רובוט שלם המטפל בבובה אינה מבודדת את תרומת החיישן או מאמתת את הפנל ההתנגדותי המוצע. תיאור המבנה של חיישן לחץ חצי־מוליך בסקירות אחרות הוא ראיה משנית בלבד.
 
-**Action for this project:** Use a supported, low-mass test object for initial arm/body contact experiments. Document independently what skin detection contributes, what robot actuation contributes, and what protection is provided mechanically.
+**פעולה לפרויקט זה:** להשתמש בעצם בדיקה נתמך ובעל מסה נמוכה בניסויי המגע הראשונים בזרוע/גוף. לתעד בנפרד מה תורם זיהוי העור, מה תורמים מפעילי הרובוט ואיזו הגנה מסופקת מכנית.
 
 ### [11] ARMAR-III: An integrated humanoid platform for sensory-motor control
 
-**Supported finding:** Shoulder and arm skin is integrated through dedicated controllers into CAN, alongside separate joint-torque and wrist force/torque sensors. The architecture separates task planning, coordination and execution.
+**ממצא נתמך:** עור הכתף והזרוע משולב באמצעות בקרים ייעודיים ב־CAN, לצד חיישני מומנט מפרק וחיישני כוח/מומנט בפרק כף היד הנפרדים ממנו. הארכיטקטורה מפרידה בין תכנון משימות, תיאום וביצוע.
 
-**Limit:** This platform paper does not provide a standalone production recipe or prove that coarse skin replaces accurate joint or wrist sensing.
+**מגבלה:** מאמר זה על פלטפורמה אינו מספק מתכון עצמאי לייצור ואינו מוכיח שעור גס מחליף חישה מדויקת במפרק או בפרק כף היד.
 
-**Action for this project:** Expose timestamped contact, location, confidence and faults through a dedicated driver. Leave actuator regulation in the existing robot control layer; test timeout handling at every boundary.
+**פעולה לפרויקט זה:** לחשוף מגע, מיקום, רמת ביטחון ותקלות עם חותמות זמן באמצעות מנהל התקן ייעודי. להשאיר את ויסות המפעילים בשכבת הבקרה הקיימת של הרובוט; לבדוק טיפול בחריגות זמן בכל גבול בין רכיבים.
 
 ### [12] Design of human symbiotic robot TWENDY-ONE
 
-**Supported finding:** The design combines passive arm mechanisms and mechanical softness in joints and skin, derived from a set of assistance-task requirements.
+**ממצא נתמך:** התכנון משלב מנגנוני זרוע פסיביים ורכות מכנית במפרקים ובעור, הנגזרים ממערכת דרישות של משימות סיוע.
 
-**Limit:** The abstract does not expose contact-force limits, hazard validation, individual skin accuracy or a component-level manufacturing cost.
+**מגבלה:** התקציר אינו חושף מגבלות כוח מגע, אימות סיכונים, דיוק של העור עצמו או עלות ייצור ברמת רכיב.
 
-**Action for this project:** Specify service tasks before adding modalities. Verify joint range, friction, cable pull and sensor prestress on a limb fixture; sensing alone cannot make an otherwise stiff mechanism mechanically compliant.
+**פעולה לפרויקט זה:** להגדיר משימות שירות לפני הוספת אופני חישה. לאמת טווח מפרק, חיכוך, משיכת כבל וקדם־מאמץ בחיישן על מתקן גפה; חישה לבדה אינה יכולה להפוך מנגנון קשיח למנגנון בעל היענות מכנית.
 
 ### [13] Humanoid robot which can lift a 30 kg box by whole body contact and tactile feedback
 
-**Supported finding:** The article identity/title documents an early whole-body-contact and tactile-feedback claim. The 30 kg result is a title-level reported claim here, not an audited replication.
+**ממצא נתמך:** זהות/כותרת המאמר מתעדות טענה מוקדמת למגע כלל־גופי ולמשוב מגע. תוצאת 30 kg היא כאן טענה מדווחת ברמת הכותרת, ולא שחזור שעבר ביקורת.
 
-**Limit:** No verified gains, failure statistics, force distribution or safety conditions from the original are available in this review.
+**מגבלה:** בסקירה זו לא זמינים מן המקור הגברי בקרה מאומתים, סטטיסטיקות כשל, חלוקת כוחות או תנאי בטיחות.
 
-**Action for this project:** Cite the precedent without importing its payload. For our proof, compare skin-enabled and disabled behavior on the same restrained, low-energy fixture with objective contact-detection and response metrics.
+**פעולה לפרויקט זה:** לצטט את התקדים בלי לאמץ את המטען שהוא נשא. בהוכחת ההיתכנות שלנו, להשוות התנהגות עם עור מופעל וכבוי על אותו מתקן מרוסן ודל־אנרגיה, עם מדדים אובייקטיביים לזיהוי מגע ולתגובה.
 
 ### [14] Whole body haptics for augmented humanoid task capabilities
 
-**Supported finding:** The abstract reports whole-body tactile covering of an adult-size humanoid and contact-motion experiments including a 66 kg human dummy.
+**ממצא נתמך:** התקציר מדווח על כיסוי מגע כלל־גופי של הומנואיד בגודל מבוגר ועל ניסויי תנועה במגע, לרבות בובת אדם במשקל 66 kg.
 
-**Limit:** The abstract alone cannot validate the loading conditions, control robustness or economics. It cannot justify human-lifting demonstrations with a home-lab prototype.
+**מגבלה:** התקציר לבדו אינו יכול לאמת תנאי העמסה, עמידות בקרה או כדאיות כלכלית. הוא אינו יכול להצדיק הדגמות הרמת בני אדם באמצעות אבטיפוס ממעבדה ביתית.
 
-**Action for this project:** Keep the early demonstrator on arms and legs, with bounded low-load contact tasks and no human support. Explain the eventual application without implying its hardware/control validation is already complete.
+**פעולה לפרויקט זה:** לשמור את המדגים המוקדם בזרועות וברגליים, עם משימות מגע מוגבלות ובעומס נמוך וללא תמיכה בבני אדם. להסביר את היישום הסופי בלי לרמוז שאימות החומרה/הבקרה שלו כבר הושלם.
 
 ### [15] An embedded artificial skin for humanoid robots
 
-**Supported finding:** Twelve capacitive taxels per triangle use AD7147 conversion; up to 16 triangles/192 taxels connect through local buses to one MCU/CAN. A grounded deformable electrode enables contact from insulating objects and shielding. About 500 Hz averaged sensing trades spatial detail for speed; individual channels are slower.
+**ממצא נתמך:** שנים־עשר תאי חישה קיבוליים בכל משולש משתמשים בהמרה של AD7147; עד 16 משולשים/192 תאי חישה מתחברים באפיקים מקומיים למיקרו־בקר/CAN אחד. אלקטרודה מוארקת הניתנת לעיוות מאפשרת מגע מעצמים מבודדים ומספקת סיכוך. חישה ממוצעת בכ־500 Hz מחליפה פירוט מרחבי במהירות; הערוצים הבודדים איטיים יותר.
 
-**Limit:** The reported prototype is six triangles, with quantitative experiments ongoing. Three-to-five-millimeter foam differs from our thin laminate. Port count does not imply adaptive rerouting.
+**מגבלה:** האבטיפוס המדווח הוא בן שישה משולשים, והניסויים הכמותיים עדיין נמשכים. קצף בעובי שלושה עד חמישה מילימטרים שונה מהלמינציה הדקה שלנו. מספר הפורטים אינו מעיד על ניתוב מחדש מסתגל.
 
-**Action for this project:** Keep local aggregation and distinguish normal-force sensing from bare capacitive human-touch detection. If evaluating capacitive alternatives, include the full ground-electrode, dielectric and cover stack and measure both spatial detail and response time.
+**פעולה לפרויקט זה:** לשמר איגום מקומי ולהבחין בין חישת כוח נורמלי לזיהוי קיבולי חשוף של מגע אדם. אם מעריכים חלופות קיבוליות, לכלול את מלוא מערך אלקטרודת ההארקה, הדיאלקטרי והכיסוי ולמדוד גם פירוט מרחבי וגם זמן תגובה.
 
 ### [16] Methods and technologies for the implementation of large-scale robot tactile sensors
 
-**Supported finding:** The 16-bit CDC yielded 8 usable signal bits in that assembly. Drift adaptation freezes while touched. Probe geometry changes response, and some body configurations omit a top electrode and rely on a human ground plane.
+**ממצא נתמך:** ממיר הקיבול לדיגיטל (CDC) בן 16 הסיביות הניב 8 סיביות אות שימושיות בהרכבה ההיא. הסתגלות הסחיפה קופאת בזמן מגע. גאומטריית הגשוש משנה את התגובה, וחלק מתצורות הגוף אינן כוללות אלקטרודה עליונה ומסתמכות על גוף האדם כמישור הארקה.
 
-**Limit:** The extracted drift pseudocode has an apparent missing minus sign versus its stated ±0.5 deadband; never copy it blindly. Published sensor performance does not transfer to our resistive laminate.
+**מגבלה:** בפסאודו־קוד הסחיפה שחולץ נראה שחסר סימן מינוס בהשוואה לאזור אי־התגובה המוצהר ±0.5; אין להעתיקו באופן עיוור. ביצועי החיישן שפורסמו אינם עוברים ללמינציה ההתנגדותית שלנו.
 
-**Action for this project:** Freeze baseline during contact; test slow ramps and sustained loads. Measure actual noise-limited resolution. Test plastic, metal and gloved contacts. Calibrate several probe diameters and mounted curvature rather than claiming pressure accuracy from one probe.
+**פעולה לפרויקט זה:** להקפיא את קו הבסיס בזמן מגע; לבדוק עליות איטיות ועומסים מתמשכים. למדוד את הרזולוציה המוגבלת ברעש בפועל. לבדוק מגע בפלסטיק, במתכת ובכפפה. לכייל כמה קוטרי גשוש ואת העקמומיות המותקנת, במקום לטעון לדיוק לחץ על בסיס גשוש אחד.
 
 ### [17] A flexible and robust large scale capacitive tactile system for robots
 
-**Supported finding:** The design uses clothing-industry 3D spacer fabric and removable covers. On the flat 2 mm dielectric prototype, 15 load cycles with one-minute rests gave a maximum 9.1 fF cycle difference at 28.6 kPa, roughly 5% of range. Pressure-insensitive reference capacitors compensate structural thermal drift; they are not surface thermometers. The reported acquisition operates at 25 Hz.
+**ממצא נתמך:** התכנון משתמש בבד מרווח 3D מתעשיית הביגוד ובכיסויים נשלפים. באבטיפוס השטוח בעל דיאלקטרי בעובי 2 mm, 15 מחזורי עומס עם מנוחות של דקה הניבו הפרש מחזורי מרבי של 9.1 fF ב־28.6 kPa, כ־5% מהטווח. קבלי ייחוס שאינם רגישים ללחץ מפצים על סחיפה תרמית מבנית; הם אינם מדי חום של פני השטח. הרכישה המדווחת פועלת ב־25 Hz.
 
-**Limit:** Ten-minute constant-displacement relaxation is not a constant-force creep or lifetime test. Neither its thickness nor performance transfers to a 1.5 mm 100 Hzresistive stack.
+**מגבלה:** הרפיה של עשר דקות בהעתק קבוע אינה בדיקת זחילה בכוח קבוע או בדיקת אורך חיים. לא העובי ולא הביצועים עוברים למערך התנגדותי בעובי 1.5 mm הפועל ב־100 Hz.
 
-**Action for this project:** Use this as a capacitive fallback benchmark, subject to full-stack comparison. Separate thermal-point sensing from pressure compensation. Test both constant-force and constant-displacement holds plus local heating while loaded.
+**פעולה לפרויקט זה:** להשתמש בכך כמדד השוואה לחלופה קיבולית, בכפוף להשוואת מערך השכבות המלא. להפריד חישת טמפרטורה נקודתית מפיצוי לחץ. לבדוק החזקות גם בכוח קבוע וגם בהעתק קבוע, וכן חימום מקומי תחת עומס.
 
 ### [18] A new silicone structure for uSkin—A soft, distributed, digital 3-axis skin sensor and its integration on humanoid robot iCub
 
-**Supported finding:** Sixteen magnetic 3-axis cells occupy 26×27×6.05 mm; approximately 1 mm mounting tape adds thickness. Bumps and air gaps reduce normal-to-shear mechanical coupling. A first soft-silicone attempt allowed magnets to attract each other.
+**ממצא נתמך:** שישה־עשר תאים מגנטיים בעלי 3 צירים תופסים 26×27×6.05 mm; סרט התקנה בעובי כ־1 mm מוסיף לעובי. בליטות ומרווחי אוויר מצמצמים צימוד מכני בין הכיוון הנורמלי לגזירה. ניסיון ראשון עם סיליקון רך אפשר למגנטים למשוך זה את זה.
 
-**Limit:** Full assembly is thicker and more complex than a thin resistive film. Performance in motor magnetic fields, chosen cover adhesives and our limb geometry remains unverified.
+**מגבלה:** ההרכבה המלאה עבה ומורכבת יותר מיריעה התנגדותית דקה. הביצועים בשדות המגנטיים של מנועים, עם דבקי הכיסוי הנבחרים ובגאומטריית הגפיים שלנו טרם אומתו.
 
-**Action for this project:** Reserve this modality for a shear-sensing variant. If evaluated, test magnetic interference with motors energized, overload, cross-axis coupling and mounting-tape creep; include every protective/mounting layer in thickness and cost.
+**פעולה לפרויקט זה:** לשמור אופן חישה זה לגרסה החשה גזירה. אם הוא נבדק, לבדוק הפרעה מגנטית כשהמנועים מופעלים, עומס יתר, צימוד בין צירים וזחילת סרט ההתקנה; לכלול כל שכבת הגנה/התקנה בעובי ובעלות.
 
 ### [19] An adjustable force sensitive sensor with an electromagnet for a soft, distributed, digital 3-axis skin sensor
 
-**Supported finding:** The prototype replaces a permanent magnet with an electromagnet so current can change force sensitivity in a soft magnetic sensor.
+**ממצא נתמך:** האבטיפוס מחליף מגנט קבוע באלקטרומגנט, כך שהזרם יכול לשנות את הרגישות לכוח בחיישן מגנטי רך.
 
-**Limit:** The abstract does not establish a mass-production cost or justify extra power, thermal coupling and calibration for approximate normal-pressure sensing.
+**מגבלה:** התקציר אינו מבסס עלות ייצור המוני או מצדיק תוספת הספק, צימוד תרמי וכיול לחישת לחץ נורמלי מקורב.
 
-**Action for this project:** Exclude electromagnets from the baseline. Add them only if a specified force-range problem cannot be met passively and a measured benefit exceeds coil-power, heat and driver cost.
+**פעולה לפרויקט זה:** להוציא אלקטרומגנטים מתצורת הבסיס. להוסיפם רק אם בעיה מוגדרת של טווח כוח אינה נפתרת באופן פסיבי ואם תועלת מדודה עולה על עלות הספק הסליל, החום ומעגל ההנעה.
 
 ### [20] A real-time distributed architecture for large-scale tactile sensing
 
-**Supported finding:** Describes an EtherCAT-based distributed network connecting computational nodes associated with skin patches and evaluates the real-time architecture.
+**ממצא נתמך:** מתאר ארכיטקטורת רשת מבוזרת מבוססת EtherCAT המחברת צמתים חישוביים המשויכים למקטעי עור, ומעריך את הארכיטקטורה בזמן אמת.
 
-**Limit:** The accessible material does not establish the exact hardware cost, measured deadline distribution, or fault containment available to this project. EtherCAT results cannot certify a CAN FD implementation.
+**מגבלה:** החומר הנגיש אינו מבסס את עלות החומרה המדויקת, את ההתפלגות המדודה של עמידה בזמנים או את בידוד השפעת התקלות הזמינים לפרויקט זה. תוצאות EtherCAT אינן יכולות לאשר מימוש CAN FD.
 
-**Action for this project:** Adapt its separation of local acquisition, transport and host processing. Keep CAN FD for the low-cost baseline; qualify deadlines under maximum traffic before increasing node count.
+**פעולה לפרויקט זה:** לאמץ את ההפרדה בין רכישה מקומית, תעבורה ועיבוד במחשב המארח. לשמור על CAN FD בתצורת הבסיס הזולה; לאמת עמידה בזמנים תחת תעבורה מרבית לפני הגדלת מספר הצמתים.
 
 ### [21] A real-time data acquisition and processing framework for large-scale robot skin
 
-**Supported finding:** Skinware separates tactile applications from particular sensors and network technologies and treats data coherence, consistency and timing as architectural concerns. Its reported environment includes RTAI and an older Linux platform.
+**ממצא נתמך:** Skinware מפרידה בין יישומי מגע לחיישנים ולטכנולוגיות רשת מסוימים, ומתייחסת לקוהרנטיות נתונים, לעקביות ולתזמון כסוגיות ארכיטקטוניות. הסביבה המדווחת כוללת RTAI ופלטפורמת Linux ישנה יותר.
 
-**Limit:** Historical software-platform results do not establish present ROS2/Linux deadline behavior or direct STM32/CAN compatibility.
+**מגבלה:** תוצאות של פלטפורמת תוכנה היסטורית אינן מבססות את התנהגות זמני הקצה של ROS2/Linux כיום או תאימות ישירה ל־STM32/CAN.
 
-**Action for this project:** Adopt immutable complete-scan snapshots with versioned metadata and bounded producer-consumer queues. Keep real-time consumers independent from visualization, file I/O and discovery.
+**פעולה לפרויקט זה:** לאמץ תמונות מצב של סריקה מלאה שאינן ניתנות לשינוי, עם מטא־נתונים בעלי גרסה ותורי יצרן־צרכן חסומים בגודלם. להפריד צרכנים בזמן אמת מהמחשה, מקלט/פלט קבצים ומגילוי התקנים.
 
 ### [22] Asynchronous, event-driven readout of POSFET devices for tactile sensing
 
-**Supported finding:** The title establishes an earlier POSFET/event-readout line of work. No device-level performance or circuit claim from this paper is relied upon here.
+**ממצא נתמך:** הכותרת מבססת קו מחקר מוקדם של POSFET/קריאת אירועים. אין כאן הסתמכות על טענת ביצועים ברמת התקן או טענת מעגל מתוך מאמר זה.
 
-**Limit:** No original circuit schematic, process, power, noise or bandwidth was available for audit; a POSFET circuit cannot be presumed equivalent to the chosen resistive film.
+**מגבלה:** לא היו זמינים לביקורת תרשים מעגל מקורי, תהליך, הספק, רעש או רוחב פס; אין להניח שמעגל POSFET שקול ליריעה ההתנגדותית שנבחרה.
 
-**Action for this project:** Do not transplant or cost a POSFET circuit from this citation. The baseline continues to use a conventional ADC and firmware change detection; identify that as sampled event reporting.
+**פעולה לפרויקט זה:** לא להעתיק או לתמחר מעגל POSFET על בסיס ציטוט זה. תצורת הבסיס ממשיכה להשתמש ב־ADC רגיל ובזיהוי שינוי בקושחה; יש לזהות זאת כדיווח אירועים המבוסס על דגימה.
 
 ### [23] Event-driven encoding of off-the-shelf tactile sensors for compression and latency optimisation for robotic skin
 
-**Supported finding:** Studies event encodings of existing tactile sensors, including recorded iCub fingertip data, and describes an FPGA-based acquisition path with hierarchical event addressing. Sensor conversion and event transport are distinct stages.
+**ממצא נתמך:** חוקר קידודי אירועים של חיישני מגע קיימים, לרבות נתונים מוקלטים מקצות האצבעות של iCub, ומתאר מסלול רכישה מבוסס FPGA עם מיעון אירועים היררכי. המרת החיישן ותעבורת האירועים הן שלבים נפרדים.
 
-**Limit:** Fingertip datasets, FPGA acquisition and AS-AER links do not demonstrate whole-limb resistive-film performance. Encoding simulations and hardware properties must be distinguished.
+**מגבלה:** מערכי נתונים של קצות אצבעות, רכישה ב־FPGA וקישורי AS-AER אינם מדגימים ביצועי יריעה התנגדותית על גפה שלמה. יש להבחין בין סימולציות קידוד לתכונות חומרה.
 
-**Action for this project:** Adopt explicit body/patch/site identifiers, acquisition timestamps and a reproducible raw-data-versus-event comparison. Keep CAN integrity and periodic absolute snapshots; reject an FPGA hub as the minimum-cost baseline.
+**פעולה לפרויקט זה:** לאמץ מזהי גוף/מקטע/אתר מפורשים, חותמות זמן לרכישה והשוואה ניתנת לשחזור בין נתונים גולמיים לאירועים. לשמר את שלמות התקשורת ב־CAN ותמונות המצב המוחלטות המחזוריות; לא לבחור ברכזת FPGA כתצורת הבסיס הזולה ביותר.
 
 ### [24] The event-driven software library for YARP—With algorithms and iCub applications
 
-**Supported finding:** Provides event packet representations and software handling in YARP, with processing decoupled from receipt. The discussion recognizes large variations in event traffic and computation.
+**ממצא נתמך:** מספק ייצוגי חבילות אירועים וטיפול תוכנתי ב־YARP, תוך הפרדת העיבוד מהקבלה. הדיון מכיר בשונות גדולה בתעבורת האירועים ובחישוב.
 
-**Limit:** Its illustrative large-rate examples concern vision. A flexible event library does not establish a hard skin-control deadline or justify silently skipping required control updates.
+**מגבלה:** דוגמאות הקצב הגבוה הממחישות שלו נוגעות לראייה. ספריית אירועים גמישה אינה מבססת מועד קצה קשיח לבקרת עור ואינה מצדיקה דילוג שקט על עדכוני בקרה נדרשים.
 
-**Action for this project:** Adapt recording/replay, typed event records and independent receive/processing threads. Use bounded queues with counters and an explicit overload state; make GUI frame dropping independent of tactile validity.
+**פעולה לפרויקט זה:** לאמץ הקלטה/ניגון חוזר, רשומות אירועים בעלות טיפוס ותהליכוני קבלה/עיבוד עצמאיים. להשתמש בתורים חסומים בגודלם עם מונים ומצב עומס יתר מפורש; להפריד השמטת מסגרות בממשק הגרפי מתוקף נתוני המגע.
 
 ### [25] Reactive motion control for human-robot tactile interaction
 
-**Supported finding:** The bibliographic record establishes tactile interaction control as a research subject by 2002; no equation, response rate or robustness result is verified here.
+**ממצא נתמך:** הרשומה הביבליוגרפית מבססת בקרת אינטראקציית מגע כתחום מחקר כבר ב־2002; אין כאן אימות של משוואה, קצב תגובה או תוצאת עמידות.
 
-**Limit:** The controller's assumptions, saturation handling and experimental limits cannot be audited from the accessed material.
+**מגבלה:** אי אפשר לבחון את הנחות הבקר, את הטיפול ברוויה ואת מגבלות הניסוי מתוך החומר שאליו הושגה גישה.
 
-**Action for this project:** Retain as historical related work only. Implement our contact-to-response state machine from explicitly specified requirements and better-accessed sources [63,64,82], not this inaccessible paper.
+**פעולה לפרויקט זה:** לשמר כרקע היסטורי קשור בלבד. לממש את מכונת המצבים שלנו למעבר ממגע לתגובה לפי דרישות מפורשות ומקורות נגישים יותר [63,64,82], ולא לפי מאמר בלתי נגיש זה.
 
 ### [26] Real-time collision avoidance in teleoperated whole-sensitive robot arm manipulators
 
-**Supported finding:** The abstract describes combining operator commands with whole-arm sensing for reactive obstacle avoidance in teleoperation.
+**ממצא נתמך:** התקציר מתאר שילוב פקודות מפעיל עם חישה לאורך כל הזרוע לשם הימנעות תגובתית ממכשולים בהפעלה מרחוק.
 
-**Limit:** The original proof conditions, sensor range and timing are not available in the abstract. Contact-only resistive film cannot supply pre-contact distance.
+**מגבלה:** תנאי ההוכחה המקוריים, טווח החיישן והתזמון אינם זמינים בתקציר. יריעה התנגדותית החשה מגע בלבד אינה יכולה לספק מרחק לפני מגע.
 
-**Action for this project:** Document pre-contact detection as an external robot capability. Bench demonstrations may report contact detection and subsequent response; they must not label the film a collision-prevention sensor.
+**פעולה לפרויקט זה:** לתעד זיהוי לפני מגע כיכולת חיצונית של הרובוט. הדגמות מעבדה יכולות לדווח על זיהוי מגע ועל תגובה בעקבותיו; אין לתאר בהן את היריעה כחיישן למניעת התנגשות.
 
 ### [27] Whole-arm reactive collision avoidance control of kinematically redundant manipulators
 
-**Supported finding:** Citation confirms an early whole-arm reactive-control contribution. Its mathematical or experimental guarantees were not verified.
+**ממצא נתמך:** הציטוט מאשר תרומה מוקדמת לבקרה תגובתית של כל הזרוע. הערבויות המתמטיות או הניסויות שלו לא אומתו.
 
-**Limit:** Insufficient evidence to reproduce the controller or infer performance on the proposed robot.
+**מגבלה:** אין די ראיות לשחזור הבקר או להסקת ביצועים על הרובוט המוצע.
 
-**Action for this project:** Our design must explicitly handle infeasible withdrawal: abort the application task and request the platform's validated stop/hold rather than promise a retreat direction for every contact configuration.
+**פעולה לפרויקט זה:** התכנון שלנו חייב לטפל במפורש בנסיגה שאינה אפשרית: לבטל את משימת היישום ולבקש את העצירה/ההחזקה המאומתת של הפלטפורמה, במקום להבטיח כיוון נסיגה לכל תצורת מגע.
 
 ### [28] Programming by touch: The different way of human-robot interaction
 
-**Supported finding:** Bibliographic prior art for programming robots by physical interaction.
+**ממצא נתמך:** ידע קודם ביבליוגרפי לתכנות רובוטים באמצעות אינטראקציה פיזית.
 
-**Limit:** No controller parameters, sensor specifications or validation details were inspected.
+**מגבלה:** לא נבדקו פרמטרי בקר, מפרטי חיישנים או פרטי אימות.
 
-**Action for this project:** Treat teaching as an explicit operator-enabled mode. Record start, stop, allowed body zones and sampled robot trajectory independently from autonomous operation. Cite this paper only for historical positioning until its original text is available.
+**פעולה לפרויקט זה:** להגדיר לימוד כמצב שהמפעיל מאפשר במפורש. לתעד התחלה, עצירה, אזורי גוף מותרים ומסלול רובוט נדגם בנפרד מפעולה אוטונומית. לצטט מאמר זה רק לצורך מיקום היסטורי עד שהטקסט המקורי שלו יהיה זמין.
 
 ### [29] Manual guidance for industrial robot programming
 
-**Supported finding:** The abstract describes manual robot programming using a force/torque sensor and demonstrates an industrial application.
+**ממצא נתמך:** התקציר מתאר תכנות רובוט ידני באמצעות חיישן כוח/מומנט ומדגים יישום תעשייתי.
 
-**Limit:** Force/torque sensing is not equivalent to an uncalibrated normal-contact film. Exact control gains, task constraints and failure behavior remain unverified.
+**מגבלה:** חישת כוח/מומנט אינה שקולה ליריעה לא מכוילת של מגע נורמלי. הגברי הבקרה המדויקים, אילוצי המשימה והתנהגות הכשל טרם אומתו.
 
-**Action for this project:** Measure teaching time, operator interventions and replay error in a controlled benchmark. Use the robot's supported hand-guiding function when available; do not substitute skin intensity for a specified six-axis sensor.
+**פעולה לפרויקט זה:** למדוד זמן לימוד, התערבויות מפעיל ושגיאת ניגון חוזר במדד השוואה מבוקר. להשתמש בפונקציית ההכוונה הידנית הנתמכת של הרובוט כשזו זמינה; לא להחליף חיישן מוגדר בעל שישה צירים בעוצמת אות העור.
 
 ### [30] Tactile sensing in intelligent robotic manipulation—A review
 
-**Supported finding:** The review separates distributed contact sensing from intrinsic force/torque sensing. It discusses mechanical inversion through soft covers, FSR/capacitive drift and hysteresis, and the loss of contact-pattern information in few-wire analog schemes.
+**ממצא נתמך:** הסקירה מפרידה בין חישת מגע מבוזרת לחישת כוח/מומנט פנימית. היא דנה בפתרון הבעיה ההפוכה המכנית דרך כיסויים רכים, בסחיפה ובהיסטרזיס של חיישנים קיבוליים/FSR, ובאובדן מידע על דפוסי מגע בשיטות אנלוגיות בעלות מעט חוטים.
 
-**Limit:** Its supplier listings and dimensions are historical. A single resultant force/position cannot identify an arbitrary set of simultaneous contacts.
+**מגבלה:** רשימות הספקים והמידות שבה הן היסטוריות. כוח/מיקום שקול יחיד אינו יכול לזהות קבוצה שרירותית של מגעים בו־זמניים.
 
-**Action for this project:** Preserve separate taxel identities for multi-contact limb sensing. Do not infer shear, friction, material hardness or accurate force from ordinal normal readings without additional measurement and a validated model.
+**פעולה לפרויקט זה:** לשמר זהויות נפרדות של תאי חישה לצורך חישת ריבוי מגעים בגפיים. לא להסיק גזירה, חיכוך, קשיות חומר או כוח מדויק מקריאות נורמליות בסולם סדר ללא מדידה נוספת ומודל מאומת.
 
 ### [31] Sensitive manipulation: Manipulation through tactile feedback
 
-**Supported finding:** Obrero combines compliant actuation with tactile strategies for acquiring and maintaining contact. The text explicitly notes missed contacts at unsensed joint regions and a lift/retry strategy when immediate slip sensing is inadequate.
+**ממצא נתמך:** Obrero משלב הפעלה בעלת היענות עם אסטרטגיות מגע ליצירת מגע ולשימורו. הטקסט מציין במפורש מגעים שהוחמצו באזורי מפרקים ללא חישה, ואסטרטגיית הרמה/ניסיון חוזר כאשר חישת החלקה מיידית אינה מספקת.
 
-**Limit:** Success depends on hand hardware, force control and exploration strategies absent from our coarse arm/leg panels. It does not show that simply adding taxels delivers dexterity.
+**מגבלה:** ההצלחה תלויה בחומרת כף היד, בבקרת כוח ובאסטרטגיות חקירה שאינן קיימות בפנלי הזרוע/הרגל הגסים שלנו. היא אינה מראה שעצם הוספת תאי חישה מקנה מיומנות.
 
-**Action for this project:** Include unsensed joint seams in coverage maps. Demonstrate one bounded contact-aware behavior and compare against a baseline, recording missed contacts; do not claim general slip detection or dexterous grasping.
+**פעולה לפרויקט זה:** לכלול תפרי מפרקים ללא חישה במפות הכיסוי. להדגים התנהגות אחת מוגבלת המתחשבת במגע ולהשוותה לתצורת ייחוס, תוך רישום מגעים שהוחמצו; לא לטעון לזיהוי החלקה כללי או לאחיזה מיומנת.
 
 ### [32] High-density conformable tactile sensing glove
 
-**Supported finding:** An established high-density sensing-glove research line. Original-paper performance numbers are not independently verified in this record.
+**ממצא נתמך:** קו מחקר מבוסס של כפפת חישה בצפיפות גבוהה. מספרי הביצועים מן המאמר המקורי אינם מאומתים באופן בלתי תלוי ברשומה זו.
 
-**Limit:** Bibliographic aggregators merge the 2011 conference and 2012 Japanese journal article. Their results must not be silently treated as the same document.
+**מגבלה:** מאגרים ביבליוגרפיים מאחדים את מאמר הכנס מ־2011 ואת מאמר כתב־העת היפני מ־2012. אין להתייחס בשתיקה לתוצאותיהם כאילו היו אותו מסמך.
 
-**Action for this project:** For our arm/leg application, evaluate range-of-motion change, cable pull and pressure offsets with the covering installed. Tree/branch geometry is a useful candidate, but requires complete laminate fatigue testing.
+**פעולה לפרויקט זה:** ביישום הזרוע/הרגל שלנו, להעריך את השינוי בטווח התנועה, משיכת הכבל והיסטי הלחץ כשהכיסוי מותקן. גאומטריית עץ/ענפים היא מועמדת שימושית, אך מחייבת בדיקת עייפות של הלמינציה השלמה.
 
 ### [33] Development and applications of high-density tactile sensing glove
 
-**Supported finding:** The abstract describes 1, 052 pressure sites per hand using 1 mm elements on FPC, and human experiments relating pressure distribution to external-force direction and exploratory behavior.
+**ממצא נתמך:** התקציר מתאר 1, 052 אתרי לחץ לכל כף יד, באמצעות רכיבים בגודל 1 mm על FPC, וניסויים בבני אדם הקושרים את התפלגות הלחץ לכיוון הכוח החיצוני ולהתנהגות חקר.
 
-**Limit:** Correlation in a human-worn glove does not establish calibrated robot shear-force measurement, full-body fatigue or inexpensive manufacturing.
+**מגבלה:** מתאם בכפפה שלובש אדם אינו מבסס מדידת כוח גזירה מכוילת ברובוט, עייפות כלל־גופית או ייצור זול.
 
-**Action for this project:** Keep human-dexterity claims out of the limb-panel proof. If comparing density, state active area, sensor-element size and pitch separately, with installed mass and connectivity included.
+**פעולה לפרויקט זה:** להשאיר טענות למיומנות אנושית מחוץ להוכחת ההיתכנות של פנלי הגפיים. אם משווים צפיפות, לציין בנפרד שטח פעיל, גודל רכיב חישה ופסיעה, ולכלול מסה מותקנת וקישוריות.
 
 ### [34] Tactile object class and internal state recognition for mobile manipulation
 
-**Supported finding:** At 20 N probing, reported container-class accuracy is 93.9%, while internal-state accuracy varies substantially by container (water bottles 32.5%). Stronger probing improves one container result, illustrating task and stimulus dependence.
+**ממצא נתמך:** בגישוש של 20 N, דיוק סיווג סוג המכל המדווח הוא 93.9%, בעוד שדיוק זיהוי המצב הפנימי משתנה במידה ניכרת בין מכלים (בקבוקי מים 32.5%). גישוש חזק יותר משפר תוצאה של מכל אחד, וממחיש תלות במשימה ובגירוי.
 
-**Limit:** An overall recognition number cannot be transferred across object types or contact forces; high probing forces can damage objects. These are controlled gripper observations, not generic limb-skin intelligence.
+**מגבלה:** אי אפשר להעביר מספר זיהוי כולל בין סוגי עצמים או כוחות מגע; כוחות גישוש גבוהים עלולים להזיק לעצמים. אלו תצפיות מבוקרות במאחז, ולא אינטליגנציה כללית של עור גפיים.
 
-**Action for this project:** For any classifier, report per-class confusion matrices and separate test objects/sessions from training. Keep active exploratory-force tests outside the baseline ordinal-contact product unless actuator force is independently measured.
+**פעולה לפרויקט זה:** לכל מסווג, לדווח על מטריצות בלבול לכל מחלקה ולהפריד עצמים/מפגשי בדיקה מנתוני האימון. להשאיר בדיקות כוח חקר פעילות מחוץ למוצר המגע הבסיסי בסולם סדר, אלא אם כוח המפעיל נמדד באופן בלתי תלוי.
 
 ### [35] Learning inverse dynamics models with contacts
 
-**Supported finding:** Mixtures of Gaussian-process contact experts predict torque residuals. In §III-A, tactile data select contacts; proximal force/torque readings supply force information. Experiments use additional calibrated joint-torque sensors as targets. The multiple-contact experiment is sequential contact at alternate obstacles.
+**ממצא נתמך:** תערובות של מומחי מגע המבוססים על תהליכים גאוסיים חוזות שאריות מומנט. ב־§III-A נתוני מגע בוחרים מגעים; קריאות כוח/מומנט פרוקסימליות מספקות מידע על כוח. הניסויים משתמשים בחיישני מומנט מפרק מכוילים נוספים כיעדי אמת. ניסוי ריבוי המגעים הוא מגע עוקב במכשולים חלופיים.
 
-**Limit:** This does not establish torque learning from the proposed film alone or arbitrary simultaneous-contact generalization. Ground-truth sensor calibration and training coverage matter.
+**מגבלה:** אין בכך ביסוס ללמידת מומנט מן היריעה המוצעת בלבד או להכללה שרירותית של מגעים בו־זמניים. כיול חיישני אמת־המידה וכיסוי האימון חשובים.
 
-**Action for this project:** Keep learned dynamics outside the first control path. An optional offline comparison must log synchronized encoders, skin, reference F/T and torque targets, and split training/test by physical trial and unseen pose/contact condition.
+**פעולה לפרויקט זה:** להשאיר דינמיקה נלמדת מחוץ למסלול הבקרה הראשון. השוואה אופציונלית לא מקוונת חייבת לרשום מקודדים, עור, ייחוס F/T ויעדי מומנט מסונכרנים, ולחלק אימון/בדיקה לפי ניסוי פיזי ולפי תנוחת/תנאי מגע שלא נצפו קודם.
 
 ### [36] A simple tactile sensing foot for humanoid robot and active ground slope recognition
 
-**Supported finding:** The work uses a small set of thin force-sensitive resistors and active foot interaction to classify ground slope rather than requiring a dense whole-foot image.
+**ממצא נתמך:** העבודה משתמשת בקבוצה קטנה של נגדים דקים הרגישים לכוח ובאינטראקציה פעילה של כף הרגל לסיווג שיפוע הקרקע, במקום לדרוש תמונה צפופה של כף הרגל כולה.
 
-**Limit:** A foot-slope demonstration does not validate arm/leg pressure sensing or balance stability. Its load paths and contact geometry differ from shell-mounted skin.
+**מגבלה:** הדגמת שיפוע באמצעות כף רגל אינה מאמתת חישת לחץ בזרועות/רגליים או יציבות שיווי משקל. מסלולי העומס וגאומטריית המגע שלה שונים מאלה של עור המותקן על מעטפת.
 
-**Action for this project:** Keep feet as a separate subsystem. Establish whether a future task needs contact presence, center of pressure, slope or detailed pressure distribution before selecting sensor count.
+**פעולה לפרויקט זה:** לשמור על כפות הרגליים כתת־מערכת נפרדת. לקבוע אם משימה עתידית צריכה נוכחות מגע, מרכז לחץ, שיפוע או התפלגות לחץ מפורטת לפני בחירת מספר החיישנים.
 
 ### [37] Design and experiment of the NAO humanoid robot’s plantar tactile sensor for surface classification
 
-**Supported finding:** A 10×16 resistive array uses 400 samples/s acquisition, but the authors explicitly state 0.4 s per full image; a 20-site subset supports faster tracking. Classification aggregates multiple walking steps.
+**ממצא נתמך:** מערך התנגדותי 10×16 משתמש ברכישה של 400 דגימות/שנייה, אך המחברים מציינים במפורש 0.4 s לתמונה מלאה; תת־קבוצה של 20 אתרים מאפשרת מעקב מהיר יותר. הסיווג מאגד כמה צעדי הליכה.
 
-**Limit:** The text’s 360 total datasets versus 224 training+36 test is arithmetically inconsistent. The headline accuracy is not immediate response or demonstrated cross-robot generalization. Matrix bypass-current rejection is not established by the viewed block diagram.
+**מגבלה:** יש אי־התאמה חשבונית בין 360 מערכי הנתונים הכוללים בטקסט לבין 224 לאימון+36 לבדיקה. הדיוק שבכותרת אינו תגובה מיידית או הכללה בין רובוטים שהודגמה. תרשים הבלוקים שנצפה אינו מבסס דחיית זרמי מעקף במטריצה.
 
-**Action for this project:** Publish ADC rate, per-taxel rate, full-frame rate, scan skew and reaction latency separately. Never borrow 400 Hz as a full-array benchmark. Retain independent sensing islands unless simultaneous-contact electrical crosstalk is experimentally bounded.
+**פעולה לפרויקט זה:** לפרסם בנפרד את קצב ה־ADC, הקצב לכל תא חישה, קצב המסגרות המלאות, הפרש זמני הסריקה והשהיית התגובה. לעולם לא לאמץ 400 Hz כמדד השוואה למערך מלא. לשמר איי חישה עצמאיים אלא אם זליגה חשמלית בין ערוצים במגע בו־זמני הוגבלה בניסוי.
 
 ### [38] An adaptive sensor foot for a bipedal and quadrupedal robot
 
-**Supported finding:** The work concerns an adaptive foot mechanism and its sensor integration for different legged platforms, rather than simply applying a sensing film to an unchanged foot.
+**ממצא נתמך:** העבודה עוסקת במנגנון כף רגל מסתגל ובשילוב החיישנים שלו בפלטפורמות רגליות שונות, ולא רק בהצמדת יריעת חישה לכף רגל ללא שינוי.
 
-**Limit:** The abstract is insufficient to reproduce mechanics, control or load qualification. The institutional page’s pagination conflicts with Cheng’s bibliography.
+**מגבלה:** התקציר אינו מספיק לשחזור המכניקה, הבקרה או אימות העומס. העימוד בעמוד המוסדי סותר את הביבליוגרפיה של Cheng.
 
-**Action for this project:** Do not roll feet into the limb-panel BOM. A foot version needs its own contact mechanics, abrasion, overload, water/soil and gait-interface requirements.
+**פעולה לפרויקט זה:** לא לכלול כפות רגליים בתוך רשימת רכיבי פנלי הגפיים. גרסת כף רגל צריכה דרישות משלה למכניקת מגע, שחיקה, עומס יתר, מים/קרקע וממשק ההליכה.
 
 ### [39] A ZMP sensor for a biped robot
 
-**Supported finding:** The abstract reports four wires, response within 1 ms, 0.2 g/cm²areal mass, and simultaneous total load and center-of-load position.
+**ממצא נתמך:** התקציר מדווח על ארבעה חוטים, תגובה בתוך 1 ms, מסה ליחידת שטח של 0.2 g/cm², ועומס כולל ומיקום מרכז העומס בו־זמנית.
 
-**Limit:** These are compressed aggregate outputs, not independent contact locations.0.2 g/cm²equals 2 kg/m²; “lightweight” must be compared using consistent units. No claim about general dynamic ZMP equivalence is adopted.
+**מגבלה:** אלה פלטים מצטברים דחוסים, ולא מיקומי מגע עצמאיים. 0.2 g/cm² שווה 2 kg/m²; יש להשוות ״קל משקל״ באמצעות יחידות עקביות. לא מאומצת טענה כלשהי לשקילות כללית ל־ZMP דינמי.
 
-**Action for this project:** Test observability before replacing arrays: two equal separated contacts and one central contact can share a centroid. Our multi-contact requirement needs independent sites or another demonstrated reconstruction method.
+**פעולה לפרויקט זה:** לבדוק יכולת הבחנה לפני החלפת מערכים: שני מגעים שווים ומופרדים ומגע אחד מרכזי עשויים לחלוק אותו מרכז כובד. דרישת ריבוי המגעים שלנו מחייבת אתרים עצמאיים או שיטת שחזור אחרת שהודגמה.
 
 ### [40] High-speed pressure sensor grid for humanoid robot foot
 
-**Supported finding:** The abstract reports a 32×32 matrix, 1 kHz sampling, 14-bit conversion and 0.6 mm force-sensitive rubber. It explicitly identifies bypass-current interference and a mitigation method.
+**ממצא נתמך:** התקציר מדווח על מטריצה 32×32, דגימה ב־1 kHz, המרה של 14 סיביות וגומי רגיש לכוח בעובי 0.6 mm. הוא מזהה במפורש הפרעת זרמי מעקף ושיטה לצמצומה.
 
-**Limit:** The abstract cannot supply the exact mitigation circuit or demonstrate our laminate’s independence, accuracy or fatigue. ADC resolution is not mechanical force accuracy.
+**מגבלה:** התקציר אינו יכול לספק את המעגל המדויק לצמצום ההפרעה או להדגים את עצמאות הלמינציה שלנו, דיוקה או עייפותה. רזולוציית ה־ADC אינה דיוק כוח מכני.
 
-**Action for this project:** Our 100 Hzbody panels should not be marketed as equivalent to high-speed sole sensing. Any cheaper shared resistive matrix must pass a multi-contact test including unselected-row leakage, not merely isolated single presses.
+**פעולה לפרויקט זה:** אין לשווק את פנלי הגוף שלנו ב־100 Hz כשקולים לחישת סוליה מהירה. כל מטריצה התנגדותית משותפת זולה יותר חייבת לעבור בדיקת ריבוי מגעים הכוללת זליגה בשורות שלא נבחרו, ולא רק לחיצות בודדות ומבודדות.
 
 ### [41] Humanoid multimodal tactile-sensing modules
 
-**Supported finding:** Describes modular off-the-shelf multimodal skin with local digitization/processing and network connectivity, including temperature, acceleration and proximity sensing.
+**ממצא נתמך:** מתאר עור מודולרי רב־אופני המבוסס על רכיבי מדף, עם דיגיטציה/עיבוד מקומיים וקישוריות רשת, לרבות חישת טמפרטורה, תאוצה וקרבה.
 
-**Limit:** This earlier hardware generation should not be conflated with the later force-cap version. Its multimodal capability is absent from a pressure-plus-NTC patch.
+**מגבלה:** אין לערבב דור חומרה מוקדם זה עם הגרסה המאוחרת בעלת כיפת חישת כוח. היכולת הרב־אופנית שלו אינה קיימת במקטע לחץ בתוספת NTC.
 
-**Action for this project:** Adopt local processing and replaceable modules. Publish an explicit modality table: approximate normal contact and two temperature points in baseline; no shear, proximity or inertial self-localization.
+**פעולה לפרויקט זה:** לאמץ עיבוד מקומי ומודולים הניתנים להחלפה. לפרסם טבלה מפורשת של אופני החישה: מגע נורמלי מקורב ושתי נקודות טמפרטורה בתצורת הבסיס; ללא גזירה, קרבה או מיקום עצמי אינרציאלי.
 
 ### [42] Integrating discrete force cells into multi-modal artificial skin
 
-**Supported finding:** Uses etched CuBe2 spring structures with capacitive measurement, three force cells per skin module, and automated assembly concepts. The paper reports2.5kHz acquisition filtered to250Hz and SNR greater than50dB.
+**ממצא נתמך:** משתמש במבני קפיץ צרובים מ־CuBe2 עם מדידה קיבולית, שלושה תאי כוח בכל מודול עור, וברעיונות להרכבה אוטומטית. המאמר מדווח על רכישה ב־2.5kHz המסוננת ל־250Hz ועל SNR גדול מ־50dB.
 
-**Limit:** These figures belong to a metal-spring capacitive transducer, not a printed resistive taxel. Encapsulation and mechanical preload affect performance. CuBe processing is not proposed for the home-lab film route.
+**מגבלה:** נתונים אלה שייכים למתמר קיבולי עם קפיץ מתכתי, ולא לתא חישה התנגדותי מודפס. האנקפסולציה והעומס המקדים המכני משפיעים על הביצועים. עיבוד CuBe אינו מוצע למסלול היריעה במעבדה הביתית.
 
-**Action for this project:** Adopt mechanical overload stops, controlled preload and a cover-specific calibration record. Reject copying its performance numbers or force-cell BOM into the resistive design.
+**פעולה לפרויקט זה:** לאמץ מעצורים מכניים לעומס יתר, עומס מקדים מבוקר ורשומת כיול ייעודית לכיסוי. לא להעתיק את מספרי הביצועים שלו או את רשימת רכיבי תא הכוח לתכנון ההתנגדותי.
 
 ### [43] Towards autonomous robotic skin spatial calibration: A framework based on vision and self-touch
 
-**Supported finding:** This is relevant prior art for spatial calibration using vision and robot-generated contacts; no exact original algorithm or performance claim is used in the design.
+**ממצא נתמך:** זהו ידע קודם רלוונטי לכיול מרחבי באמצעות ראייה ומגעים שהרובוט יוצר; לא נעשה שימוש בתכנון באלגוריתם מקורי מדויק או בטענת ביצועים כלשהי ממנו.
 
-**Limit:** Reachability, camera calibration, occlusion and force-distributed contact centroids need examination before reproduction. The source available here is insufficient to promise its accuracy.
+**מגבלה:** יש לבחון נגישות קינמטית, כיול מצלמה, הסתרה ומרכזי מגע שבהם הכוח מתפלג, לפני שחזור. המקור הזמין כאן אינו מספיק כדי להבטיח את הדיוק שלו.
 
-**Action for this project:** Keep registered CAD carriers as the baseline. Use external probing at marked sites as a measurable manufacturing check; describe any future vision/self-touch implementation as a separate reproduction.
+**פעולה לפרויקט זה:** לשמור על נשאים ממוקמים ומוגדרים ב־CAD כתצורת הבסיס. להשתמש בגישוש חיצוני באתרים מסומנים כבדיקת ייצור מדידה; לתאר כל מימוש עתידי של ראייה/מגע עצמי כשחזור נפרד.
 
 ### [44] 3D surface reconstruction for robotic body parts with artificial skins
 
-**Supported finding:** Reconstruction uses the modular skin's known structural geometry and motion-related sensing. The approach concerns shaped, connected modules rather than an arbitrary uninstrumented stretchable sheet.
+**ממצא נתמך:** השחזור משתמש בגאומטריה המבנית הידועה של העור המודולרי ובחישה הקשורה לתנועה. הגישה עוסקת במודולים מעוצבים ומחוברים, ולא ביריעה נמתחת שרירותית ללא מכשור חישה מתאים.
 
-**Limit:** A shared CAN address list does not reveal physical adjacency; resistive touch values do not supply gravity vectors. Stretch and slip violate a fixed module geometry assumption.
+**מגבלה:** רשימת כתובות CAN משותפת אינה חושפת סמיכות פיזית; ערכי מגע התנגדותיים אינם מספקים וקטורי כבידה. מתיחה והחלקה מפרות את ההנחה של גאומטריית מודול קבועה.
 
-**Action for this project:** Adopt a versioned body map with per-site position and unit normal derived from the rigid carrier. Bind map revision to the installed carrier and reject unknown revisions.
+**פעולה לפרויקט זה:** לאמץ מפת גוף בעלת גרסה, עם מיקום ונורמל יחידה לכל אתר הנגזרים מהנשא הקשיח. לקשור את גרסת המפה לנשא המותקן ולדחות גרסאות לא מוכרות.
 
 ### [45] Open-loop self-calibration of articulated robots with artificial skins
 
-**Supported finding:** Uses tri-axis accelerometers and isolated joint excitation to find segment/joint activity and construct kinematic models. Requires instrumented rigid segments and a static reference. Physical KUKA results establish structural exploration; parameter estimation is additionally demonstrated in simulation.
+**ממצא נתמך:** משתמש במדדי תאוצה תלת־ציריים ובעירור מבודד של מפרקים כדי למצוא פעילות מקטע/מפרק ולבנות מודלים קינמטיים. מחייב מקטעים קשיחים המצוידים בחיישנים וייחוס סטטי. תוצאות פיזיות ב־KUKA מבססות חקירה מבנית; אמידת פרמטרים מודגמת בנוסף בסימולציה.
 
-**Limit:** Does not validate autonomous geometry from pressure-only skin. Weak excitation, reference motion and unobserved degrees of freedom can make identification ambiguous. Full numerical error bounds were not inspected.
+**מגבלה:** אינו מאמת הפקת גאומטריה אוטונומית מעור החוש לחץ בלבד. עירור חלש, תנועת הייחוס ודרגות חופש שאינן נצפות עלולים להפוך את הזיהוי לעמום. גבולות השגיאה המספריים המלאים לא נבדקו.
 
-**Action for this project:** Adapt activity-matrix validation using a reusable stationary-reference/downstream IMU fixture and known joint states. Retain CAD geometry; label the fixture an adaptation, not a full reproduction of autonomous skin localization.
+**פעולה לפרויקט זה:** להתאים אימות של מטריצת פעילות באמצעות מתקן IMU רב־פעמי בעל ייחוס נייח וחיישן בהמשך השרשרת, ומצבי מפרקים ידועים. לשמר את גאומטריית ה־CAD; לתאר את המתקן כהתאמה, ולא כשחזור מלא של מיקום עור אוטונומי.
 
 ### [46] Automatic robot kinematic modeling with a modular artificial skin
 
-**Supported finding:** Uses per-cell tri-axis accelerometers, open-loop motions and circle-point analysis to build a forward kinematic model. The abstract reports a physical UR5 experiment on an inertial dual-arm platform.
+**ממצא נתמך:** משתמש במדדי תאוצה תלת־ציריים בכל תא, בתנועות בחוג פתוח ובניתוח מעגל־נקודה כדי לבנות מודל קינמטיקה קדמית. התקציר מדווח על ניסוי פיזי ב־UR5 על פלטפורמה דו־זרועית אינרציאלית.
 
-**Limit:** No original numerical errors, conditioning tests or implementation parameters were accessible. One revolute motion identifies perpendicular radius, not the axial component of a sensor offset; full geometry needs additional constraints.
+**מגבלה:** לא היו נגישים ערכי שגיאה מספריים מקוריים, בדיקות התניה או פרמטרי מימוש. תנועה סיבובית אחת מזהה רדיוס ניצב, ולא את הרכיב הצירי של היסט חיישן; גאומטריה מלאה דורשת אילוצים נוספים.
 
-**Action for this project:** Use axis/perpendicular-radius estimation only as an offline cross-check against CAD. Do not claim recovery of every DH offset, mass, inertia or friction from a dual-IMU experiment.
+**פעולה לפרויקט זה:** להשתמש באמידת ציר/רדיוס ניצב רק כבדיקת הצלבה לא מקוונת מול CAD. לא לטעון לשחזור של כל היסט DH, מסה, מומנט התמד או חיכוך מניסוי עם שתי יחידות IMU.
 
 ### [47] 3D spatial self-organization of a modular artificial skin
 
-**Supported finding:** Combines skin-patch geometry with an active LED visual marker and a calibrated monocular camera for spatial registration, including partial visibility.
+**ממצא נתמך:** משלב את גאומטריית מקטע העור עם סמן חזותי פעיל של LED ומצלמה חד־עינית מכוילת לצורך התאמה מרחבית, לרבות במצב של נראות חלקית.
 
-**Limit:** Self-organization here is not entirely camera-free. A pressure-only film lacks the per-cell inertial and active-marker information of the studied system.
+**מגבלה:** ההתארגנות העצמית כאן אינה נטולת מצלמה לחלוטין. יריעה החשה לחץ בלבד חסרה את המידע האינרציאלי ואת הסמן הפעיל בכל תא שבמערכת שנחקרה.
 
-**Action for this project:** Maintain a declared manual/CAD root transform. If camera registration is used in a fixture, make camera intrinsics, marker geometry and observation quality part of its calibration record.
+**פעולה לפרויקט זה:** לשמר טרנספורמציית בסיס ידנית/מבוססת CAD מוצהרת. אם משתמשים בהתאמה באמצעות מצלמה במתקן, לכלול את הפרמטרים הפנימיים של המצלמה, גאומטריית הסמן ואיכות התצפית ברשומת הכיול שלו.
 
 ### [48] Touch, in Principles of Neural Science, fifth edition, chapter23
 
-**Supported finding:** Biological background cited by the2019 review. No receptor count, frequency range or quantitative biological claim is extracted here without the original chapter.
+**ממצא נתמך:** רקע ביולוגי המצוטט בסקירת 2019. לא מופקים כאן מספר קולטנים, תחום תדרים או טענה ביולוגית כמותית ללא הפרק המקורי.
 
-**Limit:** A biological analogy cannot establish robot sensitivity, safety, durability or wiring requirements.
+**מגבלה:** אנלוגיה ביולוגית אינה יכולה לבסס רגישות, בטיחות, עמידות או דרישות חיווט של רובוט.
 
-**Action for this project:** Describe the design as functionally inspired by distributed sensing. Preserve persistent contact state and temperature measurements; avoid claiming replication of human skin's complete receptor system.
+**פעולה לפרויקט זה:** לתאר את התכנון כמקבל השראה תפקודית מחישה מבוזרת. לשמר מצב מגע מתמשך ומדידות טמפרטורה; להימנע מטענה לשחזור מערכת הקולטנים המלאה של עור האדם.
 
 ### [49] Touch is a team effort: Interplay of submodalities in cutaneous sensibility
 
-**Supported finding:** The review emphasizes joint contributions of afferent submodalities to natural touch, rather than a simple one-receptor/one-percept correspondence.
+**ממצא נתמך:** הסקירה מדגישה את התרומות המשולבות של אופני החישה העצביים התחושתיים למגע טבעי, ולא התאמה פשוטה של קולטן אחד לתחושה אחת.
 
-**Limit:** It does not show that two engineered layers or sparse thermal sensors reproduce the capabilities of human skin.
+**מגבלה:** היא אינה מראה ששתי שכבות מהונדסות או חיישנים תרמיים דלילים משחזרים את היכולות של עור האדם.
 
-**Action for this project:** Keep claims modality-specific. Fuse contact and temperature at the application layer without implying that sparse NTC readings provide a complete thermal image or that normal pressure measures shear.
+**פעולה לפרויקט זה:** להקפיד על טענות ייעודיות לכל אופן חישה. לשלב מגע וטמפרטורה בשכבת היישום בלי לרמוז שקריאות NTC דלילות מספקות תמונה תרמית מלאה או שלחץ נורמלי מודד גזירה.
 
 ### [50] Event-based signaling for reducing required data rates and processing power in a large-scale artificial robotic skin
 
-**Supported finding:** A260-cell UR5 study reports remaining traffic of16.45% at rest and47.69% under heavy stimulation without timestamps; with timestamps,21.38% and62%. Compact packets of three events suit the correlated modalities studied.
+**ממצא נתמך:** מחקר UR5 בעל 260 תאים מדווח על תעבורה שנותרה בשיעור 16.45% במנוחה ו־47.69% תחת גירוי כבד ללא חותמות זמן; עם חותמות זמן, 21.38% ו־62%. חבילות קומפקטיות של שלושה אירועים מתאימות לאופני החישה המתואמים שנחקרו.
 
-**Limit:** These are remaining-traffic fractions, not reduction percentages. Packet format, timestamps and workload matter. The baseline's64-byte absolute CAN frames will not inherit these reductions.
+**מגבלה:** אלה שיעורי התעבורה שנותרה, ולא אחוזי הפחתה. מבנה החבילה, חותמות הזמן ועומס העבודה חשובים. מסגרות CAN המוחלטות של תצורת הבסיס, בנות 64 בתים, לא יקבלו אוטומטית את ההפחתות הללו.
 
-**Action for this project:** Use this as a benchmark design, not a promised percentage. Specify maximum50% idle snapshot-count reduction for100Hzactive/50Hzidle, with smaller total savings after extra overhead.
+**פעולה לפרויקט זה:** להשתמש בכך כתכנון לניסוי השוואתי, ולא כאחוז מובטח. להגדיר הפחתה מרבית של 50% במספר תמונות המצב במנוחה עבור 100Hz במצב פעיל/50Hz במנוחה, עם חיסכון כולל קטן יותר לאחר התקורה הנוספת.
 
 ### [51] Event-based signaling for large-scale artificial robotic skin—Realization and performance evaluation
 
-**Supported finding:** Uses two260-cell patches with local processing. The abstract reports48.2% packet and17.79% CPU reductions in reactive control; a worst-case5000-cell extrapolation gives21.2% and17.46%, respectively.
+**ממצא נתמך:** משתמש בשני מקטעים בני 260 תאים עם עיבוד מקומי. התקציר מדווח על הפחתות של 48.2% בחבילות ו־17.79% ב־CPU בבקרה תגובתית; אקסטרפולציה למקרה הגרוע של 5000 תאים מניבה 21.2% ו־17.46%, בהתאמה.
 
-**Limit:** The5000-cell result is an extrapolation, not a physical5000-cell validation. Traffic, CPU and control-rate metrics are different quantities.
+**מגבלה:** תוצאת 5000 התאים היא אקסטרפולציה, ולא אימות פיזי של 5000 תאים. מדדי תעבורה, CPU וקצב בקרה הם גדלים שונים.
 
-**Action for this project:** Keep a periodic diagnostic mode and a hybrid event mode in the same firmware for controlled comparison. Publish measured patch count and extrapolated counts separately.
+**פעולה לפרויקט זה:** לשמור על מצב אבחון מחזורי ועל מצב אירועים היברידי באותה קושחה לצורך השוואה מבוקרת. לפרסם בנפרד את מספר המקטעים שנמדד ואת המספרים שהתקבלו מאקסטרפולציה.
 
 ### [52] Efficient event-driven reactive control for large scale robot skin
 
-**Supported finding:** Evaluates event-driven reactive control on TOMM with two253-cell patches. The abstract reports controller CPU reductions of78% idle and66% during contact relative to the tested synchronous reference.
+**ממצא נתמך:** מעריך בקרה תגובתית מונעת־אירועים על TOMM עם שני מקטעים בני 253 תאים. התקציר מדווח על הפחתת CPU של הבקר בשיעור 78% במנוחה ו־66% בזמן מגע ביחס לתצורת הייחוס הסינכרונית שנבדקה.
 
-**Limit:** Controller savings cannot be substituted for network or driver savings. Unchanged pressure does not imply unchanged joint torque when robot configuration changes.
+**מגבלה:** אין להחליף חיסכון ברשת או במנהל ההתקן בחיסכון של הבקר. לחץ שלא השתנה אינו מעיד על מומנט מפרק שלא השתנה כאשר תצורת הרובוט משתנה.
 
-**Action for this project:** Cache contact information or link-frame wrench contributions, but recompute their mapping with current joint states in a bounded controller cycle. Separate event receipt from command execution.
+**פעולה לפרויקט זה:** לשמור במטמון מידע על מגע או תרומות של וקטור כוח־מומנט במערכת צירי החוליה, אך לחשב מחדש את המיפוי שלהן לפי מצבי המפרקים העדכניים במחזור בקרה חסום בזמן. להפריד קבלת אירועים מביצוע פקודות.
 
 ### [53] A128×128120dB15µs latency asynchronous temporal contrast vision sensor
 
-**Supported finding:** A custom asynchronous contrast imager reports120dB dynamic range,15µs latency and23mW power. Its discussion identifies event-bandwidth limitations and lack of direct DC response.
+**ממצא נתמך:** חיישן תמונה מותאם אישית, אסינכרוני ורגיש לניגודיות, מדווח על טווח דינמי של 120dB, השהיה של 15µs והספק של 23mW. הדיון בו מזהה מגבלות רוחב פס של אירועים והיעדר תגובת DC ישירה.
 
-**Limit:** These are optical custom-silicon results under the paper's conditions. They do not establish response time, energy or resolution for a scanned tactile array.
+**מגבלה:** אלו תוצאות אופטיות של סיליקון ייעודי בתנאי המאמר. הן אינן מבססות זמן תגובה, אנרגיה או רזולוציה עבור מערך מגע נסרק.
 
-**Action for this project:** Use only as historical distinction between truly asynchronous transduction and100Hz sampled send-on-delta. Retain absolute contact samples so static loads remain observable.
+**פעולה לפרויקט זה:** להשתמש בו רק כהבחנה היסטורית בין המרה אסינכרונית אמיתית לבין שליחה־בעת־שינוי הנדגמת ב־100Hz. לשמר דגימות מגע מוחלטות כדי שעומסים סטטיים יישארו נצפים.
 
 ### [54] An asynchronous time-based image sensor
 
-**Supported finding:** Identified as prior work on asynchronous time-based optical sensing. No quantitative device claim is adopted.
+**ממצא נתמך:** זוהה כעבודה קודמת על חישה אופטית אסינכרונית מבוססת זמן. לא מאומצת טענה כמותית כלשהי על ההתקן.
 
-**Limit:** It is an image-sensor design, not a tactile transducer or low-cost STM32 reference circuit.
+**מגבלה:** זהו תכנון של חיישן תמונה, ולא מתמר מגע או מעגל ייחוס זול ל־STM32.
 
-**Action for this project:** Do not add custom timing-coded hardware to the baseline on this citation alone. Ordinary absolute ADC values plus timestamps are sufficient for the intended touch task.
+**פעולה לפרויקט זה:** לא להוסיף חומרה ייעודית המקודדת בזמן לתצורת הבסיס על בסיס ציטוט זה בלבד. ערכי ADC מוחלטים רגילים עם חותמות זמן מספיקים למשימת המגע המיועדת.
 
 ### [55] AER EAR: A matched silicon cochlea pair with address event representation interface
 
-**Supported finding:** Describes paired silicon cochleae, inner-hair-cell/spiking-neuron circuitry and address-event output; its experiment uses tones from different directions.
+**ממצא נתמך:** מתאר זוג שבלולי אוזן מסיליקון, מעגלי תאי שערה פנימיים/נוירונים פולטי דחפים ופלט כתובת־אירוע; הניסוי משתמש בצלילים מכיוונים שונים.
 
-**Limit:** An auditory analog front end offers no directly transferable tactile resolution, component price or contact-safety guarantee.
+**מגבלה:** ממשק אנלוגי קדמי שמיעתי אינו מציע רזולוציית מגע, מחיר רכיב או ערובת בטיחות במגע שניתנים להעברה ישירה.
 
-**Action for this project:** Use it as a historical example of modality-specific local event generation. Keep pressure and temperature acquisition parameters independently specified.
+**פעולה לפרויקט זה:** להשתמש בו כדוגמה היסטורית ליצירת אירועים מקומית ייעודית לאופן חישה. להגדיר בנפרד את פרמטרי רכישת הלחץ והטמפרטורה.
 
 ### [56] VLSI analogs of neuronal visual processing: A synthesis of form and function
 
-**Supported finding:** Develops analog VLSI visual processing and communication inspired by neural systems, including retina/stereo/optic-nerve concepts.
+**ממצא נתמך:** מפתח עיבוד חזותי אנלוגי ב־VLSI ותקשורת בהשראת מערכות עצביות, לרבות מושגי רשתית/סטריאו/עצב הראייה.
 
-**Limit:** A thesis abstract cannot support detailed circuit reproduction or performance comparison. Visual neuromorphic circuitry does not specify the mechanics of electronic skin.
+**מגבלה:** תקציר תזה אינו יכול לתמוך בשחזור מפורט של מעגל או בהשוואת ביצועים. מעגלים נוירומורפיים חזותיים אינם מגדירים את המכניקה של עור אלקטרוני.
 
-**Action for this project:** Cite as historical context if using the artificial-nervous-system analogy. Keep the engineering argument based on tested latency, reliability, mass and cost.
+**פעולה לפרויקט זה:** לצטט כרקע היסטורי אם משתמשים באנלוגיה למערכת עצבים מלאכותית. לבסס את הטיעון ההנדסי על השהיה, אמינות, מסה ועלות שנבדקו.
 
 ### [57] Point-to-point connectivity between neuromorphic chips using address events
 
-**Supported finding:** Analyzes address-event communication and arbitration for time-multiplexed neuromorphic connections. Queueing and contention affect event timing and throughput.
+**ממצא נתמך:** מנתח תקשורת כתובת־אירוע ובוררות בחיבורים נוירומורפיים בריבוב זמן. תורים ותחרות על המשאב משפיעים על תזמון האירועים ועל קצב העברת הנתונים.
 
-**Limit:** AER timing properties do not remove finite bandwidth, arbitration delay or buffer limits, and do not automatically apply to CAN FD.
+**מגבלה:** תכונות התזמון של AER אינן מבטלות רוחב פס סופי, השהיית בוררות או מגבלות מאגר, ואינן חלות אוטומטית על CAN FD.
 
-**Action for this project:** Adopt worst-case burst and queue analysis. Preserve acquisition timestamps and distinguish age at sampling from transport delay; report queue overflow as invalid coverage.
+**פעולה לפרויקט זה:** לאמץ ניתוח פרצי תעבורה ותורים במקרה הגרוע. לשמר חותמות זמן של רכישה ולהבחין בין גיל המידע מאז הדגימה להשהיית התעבורה; לדווח על גלישת תור ככיסוי שאינו תקף.
 
 ### [58] Asynchronous DC-free serial protocol for event-based AER systems
 
-**Supported finding:** Proposes a serial event protocol with100Mbps raw rate and up to2.9million32-bit events/s; its abstract reports successful16-bit operation with ±2% clock mismatch, explicit flow control and AC-coupling compatibility.
+**ממצא נתמך:** מציע פרוטוקול אירועים טורי בקצב גולמי של 100Mbps ועד 2.9 מיליון אירועים/שנייה בני 32 סיביות; התקציר מדווח על פעולה מוצלחת של 16 סיביות עם אי־התאמת שעון של ±2%, בקרת זרימה מפורשת ותאימות לצימוד AC.
 
-**Limit:** These figures refer to that protocol and implementation. A differential pair does not make it electrically or logically interchangeable with CAN.
+**מגבלה:** נתונים אלה מתייחסים לפרוטוקול ולמימוש ההם. זוג מוליכים דיפרנציאלי אינו הופך אותו לחלופי ל־CAN מבחינה חשמלית או לוגית.
 
-**Action for this project:** Retain CAN FD transceivers, arbitration, error detection and diagnostics. Consider AS-AER only after a measured bandwidth bottleneck justifies separate FPGA/PHY cost.
+**פעולה לפרויקט זה:** לשמר משדרים־מקלטים של CAN FD, בוררות, זיהוי שגיאות ואבחון. לשקול AS-AER רק לאחר שצוואר בקבוק מדוד ברוחב הפס מצדיק עלות נפרדת של FPGA/PHY.
 
 ### [59] A QVGA143dB dynamic range frame-free PWM image sensor with lossless pixel-level video compression and time-domain CDS
 
-**Supported finding:** Identifies prior work on frame-free optical sensing with time-domain encoding; no numerical claim beyond the bibliographic title is adopted as engineering evidence.
+**ממצא נתמך:** מזהה עבודה קודמת על חישה אופטית ללא מסגרות עם קידוד בתחום הזמן; לא מאומצת כראיה הנדסית טענה מספרית מעבר לכותרת הביבליוגרפית.
 
-**Limit:** The2019 review's use as an example of absolute-value event coding does not make its optical circuit an appropriate tactile design.
+**מגבלה:** השימוש שעושה סקירת 2019 בדוגמה זו לקידוד אירועים עם ערכים מוחלטים אינו הופך את המעגל האופטי שלה לתכנון מתאים לחישת מגע.
 
-**Action for this project:** Carry absolute values in the MCU frames; do not integrate received signed increments as the only persistent contact state.
+**פעולה לפרויקט זה:** להעביר ערכים מוחלטים במסגרות המיקרו־בקר; לא לבצע אינטגרציה של תוספות בעלות סימן שהתקבלו כמצב המגע המתמשך היחיד.
 
 ### [60] A new protocol for a low power sensor network
 
-**Supported finding:** Discusses event-oriented activity for battery-powered sensor networks, relating communication scheduling to energy consumption.
+**ממצא נתמך:** דן בפעילות מוכוונת־אירועים ברשתות חיישנים המופעלות מסוללה, תוך קישור בין תזמון התקשורת לצריכת האנרגיה.
 
-**Limit:** Energy benefits depend on the radio, duty cycle and application. A wired sensor that continues sampling at100Hz does not save ADC/MCU power simply because it sends fewer packets.
+**מגבלה:** התועלת האנרגטית תלויה ברדיו, במחזור העבודה וביישום. חיישן קווי שממשיך לדגום ב־100Hz אינו חוסך הספק ADC/MCU רק מפני שהוא שולח פחות חבילות.
 
-**Action for this project:** Separate bandwidth reduction from power reduction in the cost/performance table. Measure total rail current in both periodic and hybrid modes with identical scan schedules.
+**פעולה לפרויקט זה:** להפריד הפחתת רוחב פס מהפחתת הספק בטבלת העלות/ביצועים. למדוד את הזרם הכולל במסילת ההזנה גם במצב מחזורי וגם במצב היברידי עם לוחות סריקה זהים.
 
 ### [61] Send-on-delta concept: An event-based data reporting strategy
 
-**Supported finding:** Separates continuous level-crossing from periodically sampled compound implementations (p.53). Its traffic analysis depends on signal slope, peak density and threshold, and its example compares59 periodic samples with7 events over1.2s at amplitude resolution0.2 (p.58). Heartbeat updates are already described on pp.60–61.
+**ממצא נתמך:** מפריד בין חציית רמה רציפה למימושים משולבים הנדגמים באופן מחזורי (עמ׳ 53). ניתוח התעבורה שלו תלוי בשיפוע האות, בצפיפות השיאים ובסף, והדוגמה משווה 59 דגימות מחזוריות ל־7 אירועים לאורך 1.2s ברזולוציית משרעת 0.2 (עמ׳ 58). עדכוני פעימת־חיים כבר מתוארים בעמ׳ 60–61.
 
-**Limit:** The analytical comparison assumes a specified signal and resolution; it is not a universal saving, hard latency guarantee or loss/reboot protocol. The sample-count example is a simulation, not a tactile-skin experiment.
+**מגבלה:** ההשוואה האנליטית מניחה אות ורזולוציה מוגדרים; היא אינה חיסכון אוניברסלי, ערובה להשהיה קשיחה או פרוטוקול אובדן/אתחול. דוגמת מספר הדגימות היא סימולציה, ולא ניסוי בעור חישה.
 
-**Action for this project:** Adapt to a hybrid:100Hz scanning, delta/contact/fault triggers and fresh absolute snapshots at least every20ms while idle. Include sequence, reboot/session identity and capture time; never treat silence as healthy.
+**פעולה לפרויקט זה:** להתאים למצב היברידי: סריקה ב־100Hz, טריגרים של שינוי/מגע/תקלה ותמונות מצב מוחלטות עדכניות לפחות כל 20ms במנוחה. לכלול מספר רצף, זהות אתחול/מופע וזמן לכידה; לעולם לא לפרש שתיקה כתקינות.
 
 ### [62] A robust and efficient dynamic network protocol for a large-scale artificial robotic skin
 
-**Supported finding:** Tests a multi-hop skin network with up to204cells. The original abstract reports recovery within50ms and more than30% packet-loss reduction from balancing relative to its previous protocol.
+**ממצא נתמך:** בודק רשת עור רב־דילוגית עם עד 204 תאים. התקציר המקורי מדווח על התאוששות בתוך 50ms ועל הפחתת אובדן חבילות של יותר מ־30% בעקבות איזון, ביחס לפרוטוקול הקודם שלהם.
 
-**Limit:** The supplied2019 review reports40ms and32% greater network size: those are distinct source/metric statements, not interchangeable guarantees. Rerouting requires an intact alternate physical path.
+**מגבלה:** סקירת 2019 שסופקה מדווחת על 40ms ועל גודל רשת גדול יותר ב־32%: אלו הצהרות שונות של מקור/מדד, ולא ערבויות חלופיות זו לזו. ניתוב מחדש מחייב מסלול פיזי חלופי תקין.
 
-**Action for this project:** Reject literal mesh routing on the single shared CAN bus. Use regional segmentation, bounded failure detection and physical fault containment. Any redundancy needs additional buses/ports and its own BOM.
+**פעולה לפרויקט זה:** לא לממש מילולית ניתוב רשת מש על אפיק CAN משותף יחיד. להשתמש בחלוקה לאזורים, בזיהוי כשל בזמן חסום ובבידוד פיזי של השפעת תקלות. כל יתירות דורשת אפיקים/פורטים נוספים ורשימת רכיבים משלה.
 
 ### [63] Realizing whole-body tactile interactions with a self-organizing, multi-modal artificial skin on a humanoid robot
 
-**Supported finding:** The calibration assumptions include a fixed reference, rigid links, actuated revolute joints and accelerometer-equipped cells on body parts. Gravity-aligned motion can hide activity; complementary orientations help. HRP-2 uses balance/foot tasks above tactile upper-body behavior, with designated contact zones.
+**ממצא נתמך:** הנחות הכיול כוללות ייחוס קבוע, חוליות קשיחות, מפרקים סיבוביים מונעים ותאים המצוידים במדדי תאוצה על חלקי הגוף. תנועה המקבילה לכבידה עלולה להסתיר פעילות; כיוונים משלימים מסייעים. HRP-2 נותן עדיפות למשימות שיווי משקל/כפות רגליים על פני התנהגות מגע בפלג הגוף העליון, עם אזורי מגע מוגדרים.
 
-**Limit:** Closed-loop/underactuated structures are outside its stated calibration assumptions. The base low-cost patch lacks the required accelerometers and proximity channel. Incomplete skin coverage can leave forces unobserved.
+**מגבלה:** מבנים בחוג קינמטי סגור או בעלי תת־הפעלה נמצאים מחוץ להנחות הכיול המוצהרות שלו. במקטע הבסיס הזול חסרים מדדי התאוצה וערוץ הקרבה הנדרשים. כיסוי עור חלקי עלול להשאיר כוחות בלתי נצפים.
 
-**Action for this project:** Use versioned CAD/manual cell-to-link positions and normals first. A removable IMU jig must have its own repeatability tests; do not advertise automatic arbitrary-sheet reconstruction. Mark coverage gaps and allowed interaction zones explicitly.
+**פעולה לפרויקט זה:** להשתמש תחילה במיקומי תא ביחס לחוליה ובנורמלים ידניים/מבוססי CAD ובעלי גרסה. מתקן IMU נשלף חייב לעבור בדיקות חזרתיות משלו; לא לפרסם שחזור אוטומטי של יריעה שרירותית. לסמן במפורש פערי כיסוי ואזורי אינטראקציה מותרים.
 
 ### [64] From multi-modal tactile signals to a compliant control
 
-**Supported finding:** Skin signals become weighted normal virtual forces, then Jacobian-transpose joint commands. The torque resolver includes virtual nonlinear dynamics initialized from measured robot state and inner velocity feedback to limit virtual/real drift. Dynamic-model construction is parametric, not identification of actual masses from geometry alone.
+**ממצא נתמך:** אותות העור הופכים לכוחות וירטואליים נורמליים משוקללים, ואז לפקודות מפרק באמצעות יעקוביאן משוחלף. ממיר פקודות המומנט כולל דינמיקה לא ליניארית וירטואלית המאותחלת ממצב הרובוט הנמדד ומשוב מהירות פנימי להגבלת סחיפה בין הווירטואלי לממשי. בניית המודל הדינמי היא פרמטרית, ולא זיהוי מסות בפועל מגאומטריה בלבד.
 
-**Limit:** The paper is not a complete deployable controller for an unspecified actuator. Gains, physical/model parameters, tracking behavior, saturation and transport delay still require platform-specific validation.
+**מגבלה:** המאמר אינו בקר שלם ומוכן לפריסה למפעיל לא מוגדר. הגברים, פרמטרים פיזיים/פרמטרי מודל, התנהגות עקיבה, רוויה והשהיית תעבורה עדיין דורשים אימות ייעודי לפלטפורמה.
 
-**Action for this project:** Specify command units and robot API explicitly. Never scale torque directly into a position increment. Use an OEM-supported compliance/admittance interface or a separately tested bounded trajectory generator with state feedback, tracking-error limits and reset rules.
+**פעולה לפרויקט זה:** להגדיר במפורש את יחידות הפקודה ואת API הרובוט. לעולם לא להמיר מומנט ישירות לתוספת מיקום באמצעות מקדם קנה מידה. להשתמש בממשק היענות/אדמיטנס הנתמך בידי יצרן הרובוט, או במחולל מסלולים מוגבל שנבדק בנפרד, עם משוב מצב, מגבלות שגיאת עקיבה וכללי איפוס.
 
 ### [65] Whole-body active compliance control for humanoid robots with robot skin
 
-**Supported finding:** The abstract describes hierarchical whole-body compliance on a position-controlled humanoid with more than 1,260 skin cells.
+**ממצא נתמך:** התקציר מתאר היענות כלל־גופית היררכית על הומנואיד מבוקר־מיקום עם יותר מ־1,260 תאי עור.
 
-**Limit:** The abstract cannot establish reproducible balance constraints, gains, fault response or equivalence with our slower, less multimodal hardware.
+**מגבלה:** התקציר אינו יכול לבסס אילוצי שיווי משקל ניתנים לשחזור, הגברים, תגובה לתקלות או שקילות לחומרה שלנו, האיטית יותר ובעלת פחות אופני חישה.
 
-**Action for this project:** Keep the humanoid's existing balance/stance controller authoritative. Demonstrate the skin on a fixed-base fixture before limb integration; expose contact observations to the OEM whole-body controller rather than directly commanding leg withdrawal.
+**פעולה לפרויקט זה:** לשמר את הסמכות של בקר שיווי המשקל/העמידה הקיים של ההומנואיד. להדגים את העור על מתקן בעל בסיס קבוע לפני שילוב בגפיים; לחשוף תצפיות מגע לבקר הכלל־גופי של יצרן הרובוט במקום לפקוד ישירות על נסיגת רגל.
 
 ### [66] TOMM: Tactile omnidirectional mobile manipulator
 
-**Supported finding:** The described system combines two six-DOF arms, an omnidirectional wheeled base, exchangeable end effectors and multimodal skin, with integrated hardware/software/middleware.
+**ממצא נתמך:** המערכת המתוארת משלבת שתי זרועות בעלות שש דרגות חופש, בסיס גלגלי כל־כיווני, כלי קצה מתחלפים ועור רב־אופני, עם חומרה/תוכנה/תווכה משולבות.
 
-**Limit:** A wheeled robot integration is not proof of stable bipedal response. Its platform cost and full integration effort cannot be inferred from the abstract.
+**מגבלה:** שילוב ברובוט גלגלי אינו הוכחה לתגובה דו־רגלית יציבה. אי אפשר להסיק מהתקציר את עלות הפלטפורמה ואת מלוא מאמץ השילוב.
 
-**Action for this project:** Separate skin subsystem BOM from robot, gateway, software integration and tooling. First integration contract must name joint-state rate, command interface, clocks, error states and OEM supervisor ownership.
+**פעולה לפרויקט זה:** להפריד את רשימת רכיבי תת־מערכת העור מן הרובוט, השער, שילוב התוכנה וכלי הייצור. חוזה השילוב הראשון חייב לנקוב בקצב מצבי המפרקים, בממשק הפקודות, בשעונים, במצבי השגיאה ובסמכות המפקח של יצרן הרובוט.
 
 ### [67] An overview of null space projections for redundant, torque-controlled robots
 
-**Supported finding:** Torque projection consistency depends on the inverse/weighting choice. Successive projections are not generally a strict hierarchy beyond two tasks. A reported dynamically consistent formulation became unstable when requested torques exceeded actuator limits/bandwidth.
+**ממצא נתמך:** עקביות הקרנת מומנטים תלויה בבחירת ההופכי/המשקולות. הקרנות עוקבות אינן בדרך כלל היררכיה קשיחה מעבר לשתי משימות. נוסחה מדווחת בעלת עקביות דינמית הפכה לבלתי יציבה כאשר המומנטים המבוקשים חרגו ממגבלות המפעילים/רוחב הפס שלהם.
 
-**Limit:** Full-row-rank assumptions and inertia-model errors matter. Algebraic null-space cancellation does not guarantee feasible, stable behavior after saturation or under rank changes.
+**מגבלה:** הנחות דרגת שורה מלאה ושגיאות במודל ההתמד חשובות. ביטול אלגברי במרחב האפס אינו מבטיח התנהגות אפשרית ויציבה אחרי רוויה או בשינויי דרגה.
 
-**Action for this project:** Use the existing robot constraint solver. Test conflicting three-task cases, rank loss, actuator limits and task activation/deactivation. Require bounded commands and measured violation metrics; do not declare a weighted sum or naive projector a guaranteed priority controller.
+**פעולה לפרויקט זה:** להשתמש בפותר האילוצים הקיים של הרובוט. לבדוק מצבי סתירה בין שלוש משימות, אובדן דרגה, מגבלות מפעילים והפעלה/כיבוי של משימות. לדרוש פקודות חסומות ומדדי הפרה מדודים; לא להכריז שסכום משוקלל או מקרן נאיבי הם בקר עדיפויות מובטח.
 
 ### [68] Synthesis of whole-body behaviors through hierarchical control of behavioral primitives
 
-**Supported finding:** Constraints, task behavior and posture are prioritized. Projected Jacobian rank indicates whether lower-priority motion remains feasible; an infeasible task can be modified or removed. The presented example is a simulated 24-DOF humanoid.
+**ממצא נתמך:** ניתנת עדיפות לאילוצים, להתנהגות המשימה ולתנוחה. דרגת היעקוביאן המוטל מציינת אם תנועה בעדיפות נמוכה יותר עדיין אפשרית; משימה שאינה אפשרית ניתנת לשינוי או להסרה. הדוגמה המוצגת היא הומנואיד מדומה בעל 24 דרגות חופש.
 
-**Limit:** A mathematical hierarchy under model assumptions is not a certified bound on real contact forces; the physical actuator/network limitations of our robot are unspecified by this paper.
+**מגבלה:** היררכיה מתמטית תחת הנחות מודל אינה גבול מאושר לכוחות מגע אמיתיים; מגבלות המפעילים/הרשת הפיזיות של הרובוט שלנו אינן מוגדרות במאמר זה.
 
-**Action for this project:** Define ordered responsibilities: platform stability and hard limits, collision/contact policy, application trajectory, posture. Log infeasibility and stop/hold decisions. Evaluate conflict cases in simulation before authorizing bounded fixture motion.
+**פעולה לפרויקט זה:** להגדיר סדר אחריות: יציבות הפלטפורמה ומגבלות קשיחות, מדיניות התנגשות/מגע, מסלול היישום, תנוחה. לרשום אי־ישימות והחלטות עצירה/החזקה. להעריך מקרי סתירה בסימולציה לפני מתן הרשאה לתנועה מוגבלת במתקן.
 
 ### [69] Efficient distributed torque computation for large scale robot skin
 
-**Supported finding:** The abstract proposes moving skin torque computations to distributed electronics to reduce central computation burden.
+**ממצא נתמך:** התקציר מציע להעביר חישובי מומנט של העור לאלקטרוניקה מבוזרת כדי להפחית את עומס החישוב המרכזי.
 
-**Limit:** No audited original implementation, error bound or timing budget. Reduced host computation does not remove network latency, joint-state distribution, stale data or common-mode faults.
+**מגבלה:** אין מימוש מקורי שעבר ביקורת, גבול שגיאה או תקציב תזמון שנבדקו. צמצום החישוב במחשב המארח אינו מבטל השהיית רשת, הפצת מצבי מפרקים, נתונים מיושנים או תקלות משותפות.
 
-**Action for this project:** Benchmark host computation and same-link wrench aggregation first. Keep individual contact records for constraints. Introduce MCU-side kinematics only after profiling shows a real bottleneck and synchronization/fault tests pass.
+**פעולה לפרויקט זה:** למדוד תחילה ביצועי חישוב במחשב המארח ואיגום וקטורי כוח־מומנט על אותה חוליה. לשמור רשומות מגע נפרדות לצורך אילוצים. להוסיף קינמטיקה בצד המיקרו־בקר רק אחרי שמדידת ביצועים מצביעה על צוואר בקבוק אמיתי ובדיקות סנכרון/תקלות עוברות.
 
 ### [70] Tactile-based whole-body compliance with force propagation for mobile manipulators
 
-**Supported finding:** The abstract describes constrained, limb-level optimization and propagation of unaccommodated interactions through a mobile robot, experimentally evaluated on a dual-arm platform.
+**ממצא נתמך:** התקציר מתאר אופטימיזציה מוגבלת־אילוצים ברמת הגפה והעברת אינטראקציות שלא ניתן לתת להן מענה דרך רובוט נייד, עם הערכה ניסויית בפלטפורמה דו־זרועית.
 
-**Limit:** No original full-text audit of constraint values, feasibility conditions or controller failure handling. A mobile-manipulator result does not establish walking-humanoid balance.
+**מגבלה:** אין ביקורת של הטקסט המקורי המלא בנוגע לערכי האילוצים, לתנאי הישימות או לטיפול הבקר בכשלים. תוצאה במניפולטור נייד אינה מבססת שיווי משקל של הומנואיד הולך.
 
-**Action for this project:** Represent unaccommodated contact as explicit supervisor status. Demand solver deadline, infeasibility, actuator saturation and stop/hold behavior in the robot integration specification; no automatic propagation into biped motion in the baseline.
+**פעולה לפרויקט זה:** לייצג מגע שלא ניתן לתת לו מענה כמצב מפורש של המפקח. לדרוש במפרט שילוב הרובוט התנהגות ביחס למועד הקצה של הפותר, לאי־ישימות, לרוויית מפעיל ולעצירה/החזקה; ללא העברה אוטומטית לתנועה דו־רגלית בתצורת הבסיס.
 
 ### [71] Humanoid robot HRP-2
 
-**Supported finding:** Establishes the identity of the humanoid platform used in later skin demonstrations; no original platform design data are used here.
+**ממצא נתמך:** מבסס את זהות פלטפורמת ההומנואיד ששימשה בהדגמות עור מאוחרות יותר; לא נעשה כאן שימוש בנתוני תכנון מקוריים של הפלטפורמה.
 
-**Limit:** This bibliography entry does not provide our robot's actuator, balance, thermal or payload specification.
+**מגבלה:** רשומה ביבליוגרפית זו אינה מספקת את מפרט המפעילים, שיווי המשקל, התרמיקה או המטען של הרובוט שלנו.
 
-**Action for this project:** Require a platform-specific integration sheet, including allowable added mass/inertia by link and supervisor behavior. The skin project must not inherit HRP-2 capability or reconstruct the humanoid from this citation.
+**פעולה לפרויקט זה:** לדרוש דף שילוב ייעודי לפלטפורמה, לרבות תוספת המסה/ההתמד המותרת לכל חוליה והתנהגות המפקח. פרויקט העור אינו רשאי לייחס לעצמו את יכולת HRP-2 או לשחזר את ההומנואיד מתוך ציטוט זה.
 
 ### [72] Integration of robotic technologies for rapidly deployable robots
 
-**Supported finding:** The work integrates skin, controls and teaching. It reports installation/calibration of skin on two industrial robots in about five hours. Its functional-safety discussion explicitly identifies a starting point and preliminary productization work.
+**ממצא נתמך:** העבודה משלבת עור, בקרים ולימוד. היא מדווחת על התקנה/כיול של עור על שני רובוטים תעשייתיים בכחמש שעות. הדיון בבטיחות תפקודית מציין במפורש נקודת מוצא ועבודה ראשונית להפיכה למוצר.
 
-**Limit:** Installation time is setup-specific, not a promised production takt time. This article does not certify the proposed skin or establish its commercial cost.
+**מגבלה:** זמן ההתקנה ייעודי למערך, ואינו זמן מחזור ייצור מובטח. מאמר זה אינו מסמיך את העור המוצע ואינו מבסס את עלותו המסחרית.
 
-**Action for this project:** Time assembly, programming, calibration, fitting, remapping and replacement separately. Include integration/service labor in cost comparisons and publish failed/reworked units, not only successful demonstrations.
+**פעולה לפרויקט זה:** למדוד בנפרד זמן הרכבה, תכנות, כיול, התאמה, מיפוי מחדש והחלפה. לכלול עבודת שילוב/שירות בהשוואות העלות ולפרסם יחידות שנכשלו/עברו עיבוד חוזר, ולא רק הדגמות שהצליחו.
 
 ### [73] A survey of unknown object grasping and our fast grasping algorithm—C shape grasping
 
-**Supported finding:** The abstract surveys unknown-object grasp methods and describes C-shape grasp selection from partial point clouds, evaluated in simulation.
+**ממצא נתמך:** התקציר סוקר שיטות אחיזה של עצמים לא מוכרים ומתאר בחירת אחיזה בצורת C מתוך ענני נקודות חלקיים, המוערכת בסימולציה.
 
-**Limit:** This is a grasp-planning contribution, not an affordable limb-skin fabrication or calibrated-force result.
+**מגבלה:** זו תרומה לתכנון אחיזה, ולא תוצאה של ייצור עור גפיים במחיר סביר או מדידת כוח מכוילת.
 
-**Action for this project:** Out of scope for the arm/leg skin prototype. Keep grasp planner and hand sensing as external systems; do not add finger hardware, camera cost or grasp-success claims to the baseline skin deliverable.
+**פעולה לפרויקט זה:** מחוץ להיקף אבטיפוס עור הזרוע/הרגל. לשמור את מתכנן האחיזה וחישת כף היד כמערכות חיצוניות; לא להוסיף חומרת אצבעות, עלות מצלמה או טענות להצלחת אחיזה לתוצר העור הבסיסי.
 
 ### [74] A unified approach for motion and force control of robot manipulators: The operational space formulation
 
-**Supported finding:** The abstract introduces a task-space dynamic framework for unified motion and force control.
+**ממצא נתמך:** התקציר מציג מסגרת דינמית במרחב המשימה לבקרה מאוחדת של תנועה וכוח.
 
-**Limit:** No additional theorem or exact implementation parameter is asserted from this limited read. A Jacobian-transpose mapping is only meaningful with compatible origins, frames and units.
+**מגבלה:** אין טענה למשפט נוסף או לפרמטר מימוש מדויק מתוך קריאה מוגבלת זו. מיפוי באמצעות יעקוביאן משוחלף משמעותי רק כאשר נקודות הראשית, מערכות הצירים והיחידות תואמות.
 
-**Action for this project:** Unit-test virtual work: f dot (Jv qdot) equals (Jv transpose f) dot qdot. Check moment-origin transformations and distinguish applied environmental wrench from selected reaction command sign.
+**פעולה לפרויקט זה:** לבצע בדיקת יחידה לעבודה וירטואלית: f dot (Jv qdot) equals (Jv transpose f) dot qdot. לבדוק טרנספורמציות של נקודת הייחוס למומנט ולהבחין בין וקטור הכוח־מומנט הסביבתי המופעל לבין סימן פקודת התגובה שנבחרה.
 
 ### [75] Robot Control: The Task Function Approach
 
-**Supported finding:** Background reference identity only. No chapter-specific technical claim is made.
+**ממצא נתמך:** זהות מקור רקע בלבד. לא נטענת טענה טכנית כלשהי הנוגעת לפרק מסוים.
 
-**Limit:** The book cannot be treated as an implementation manual actually inspected in this review.
+**מגבלה:** אי אפשר להתייחס לספר כמדריך מימוש שנבדק בפועל בסקירה זו.
 
-**Action for this project:** For each implemented task, define coordinates, error, Jacobian, units, command interface, constraints and termination conditions directly in the project specification; support implemented formulas with the accessible papers.
+**פעולה לפרויקט זה:** לכל משימה שממומשת, להגדיר ישירות במפרט הפרויקט קואורדינטות, שגיאה, יעקוביאן, יחידות, ממשק פקודות, אילוצים ותנאי סיום; לתמוך בנוסחאות הממומשות באמצעות המאמרים הנגישים.
 
 ### [76] Integration of reactive, torque-based self-collision avoidance into a task hierarchy
 
-**Supported finding:** The method combines repulsive collision tasks with damping and smooth task activation to control torque discontinuities. Experiments use a fast torque-controlled platform; reported controller cycle is 1 ms.
+**ממצא נתמך:** השיטה משלבת משימות דחייה מהתנגשות עם ריסון והפעלה חלקה של משימות כדי לשלוט באי־רציפויות מומנט. הניסויים משתמשים בפלטפורמה מהירה מבוקרת־מומנט; מחזור הבקר המדווח הוא 1 ms.
 
-**Limit:** Geometric closest-point changes and interacting repulsive fields complicate behavior. Its actuator interface and timing differ from our 100 Hz skin acquisition.
+**מגבלה:** שינויים בנקודה הגאומטרית הקרובה ביותר ושדות דחייה הפועלים זה על זה מסבכים את ההתנהגות. ממשק המפעילים והתזמון שלה שונים מרכישת העור שלנו ב־100 Hz.
 
-**Action for this project:** Inflate collision geometry by the assembled skin and cable envelope. Test contact enter/leave, changing nearest points and simultaneous contacts; bound command slope and record saturation. Do not equate sample rate with full control bandwidth.
+**פעולה לפרויקט זה:** להגדיל את גאומטריית ההתנגשות לפי מעטפת העור המורכב והכבלים. לבדוק כניסה/יציאה ממגע, שינויי הנקודות הקרובות ביותר ומגעים בו־זמניים; להגביל את שיפוע הפקודה ולתעד רוויה. לא להשוות קצב דגימה לרוחב הפס המלא של הבקרה.
 
 ### [77] Tactile-based compliance with hierarchical force propagation for omnidirectional mobile manipulators
 
-**Supported finding:** The modeled mobile base is holonomic with planar translation and yaw. The assumptions explicitly neglect base tilting/instability and upper-limb coupling.
+**ממצא נתמך:** הבסיס הנייד הממודל הוא הולונומי, עם תנועה מישורית וסבסוב. ההנחות מזניחות במפורש הטיה/אי־יציבות של הבסיס וצימוד בין הגפיים העליונות.
 
-**Limit:** Those omissions are material for humanoid balance and loaded arm interaction. They cannot be carried silently into a biped product.
+**מגבלה:** ההשמטות האלה מהותיות לשיווי משקל של הומנואיד ולאינטראקציה עם זרוע עמוסה. אי אפשר להעבירן בשתיקה למוצר דו־רגלי.
 
-**Action for this project:** Use a fixed base for the proof of concept. Return unresolved contact status to an existing platform supervisor; disable autonomous base/leg response unless a separate model and balance-validation campaign covers it.
+**פעולה לפרויקט זה:** להשתמש בבסיס קבוע להוכחת ההיתכנות. להחזיר מצב מגע שלא נפתר למפקח קיים של הפלטפורמה; להשבית תגובת בסיס/רגליים אוטונומית אלא אם מודל נפרד ומסע אימות שיווי משקל מכסים אותה.
 
 ### [78] Safe and dependable physical human-robot interaction in anthropic domains: State of the art and challenges
 
-**Supported finding:** The paper treats physical design, sensing, control, fault handling and maintenance as coupled dependability concerns. A soft cover does not remove the consequences of high effective inertia.
+**ממצא נתמך:** המאמר מתייחס לתכנון הפיזי, לחישה, לבקרה, לטיפול בתקלות ולתחזוקה כחששות מהימנות הקשורים זה בזה. כיסוי רך אינו מבטל את השלכותיו של מומנט התמד אפקטיבי גבוה.
 
-**Limit:** Its 2006 standards and injury-limit discussion are not present-day design limits. The paper supplies no safety qualification of this new film or electronics.
+**מגבלה:** הדיון בתקנים ובגבולות פגיעה משנת 2006 אינו גבולות תכנון עדכניים. המאמר אינו מספק הסמכת בטיחות ליריעה או לאלקטרוניקה החדשות האלה.
 
-**Action for this project:** Inject open, short, stale data, reboot and wrong-map faults in the complete application chain. Verify that operator-visible coverage validity and platform stop/hold state reflect them. Test on an instrumented fixture before human contact experiments.
+**פעולה לפרויקט זה:** להזריק תקלות נתק, קצר, נתונים מיושנים, אתחול ומפה שגויה בכל שרשרת היישום. לוודא שתוקף הכיסוי המוצג למפעיל ומצב העצירה/ההחזקה של הפלטפורמה משקפים אותן. לבדוק על מתקן מצויד במכשור לפני ניסויי מגע בבני אדם.
 
 ### [79] Impedance control: An approach to manipulation: Part III—Applications
 
-**Supported finding:** Interaction control specifies a dynamic relationship between motion and force. The illustrative optimization trades interface force against motion error under explicit simplified environmental assumptions.
+**ממצא נתמך:** בקרת אינטראקציה מגדירה קשר דינמי בין תנועה לכוח. האופטימיזציה הממחישה מאזנת בין כוח בממשק לשגיאת תנועה תחת הנחות סביבתיות מפושטות ומפורשות.
 
-**Limit:** An illustrative continuous-time optimum does not fix robust digital gains for unknown contact stiffness, transport delay, actuator bandwidth or the nonlinear resistive skin.
+**מגבלה:** אופטימום ממחיש בזמן רציף אינו קובע הגברים דיגיטליים חסינים לקשיחות מגע לא ידועה, להשהיית תעבורה, לרוחב פס של מפעיל או לעור ההתנגדותי הלא ליניארי.
 
-**Action for this project:** Validate the complete sampled robot/controller/environment loop. Sweep fixture stiffness, delays and load classes; measure oscillation, peak reference force and settling. Do not claim passivity from positive damping alone or compute physical contact power from intensity units.
+**פעולה לפרויקט זה:** לאמת את החוג הנדגם המלא של רובוט/בקר/סביבה. לסרוק קשיחות מתקן, השהיות וקבוצות עומס; למדוד תנודות, שיא כוח הייחוס וזמן התייצבות. לא לטעון לפסיביות על בסיס ריסון חיובי בלבד או לחשב הספק מגע פיזי מתוך יחידות עוצמת אות.
 
 ### [80] A new actuation approach for human friendly robot design
 
-**Supported finding:** The abstract motivates reducing effective impedance while preserving torque performance. The inspected saturation passage explains loss of ideal torque-source behavior when the smaller actuator saturates.
+**ממצא נתמך:** התקציר מנמק את הפחתת העכבה האפקטיבית תוך שימור ביצועי מומנט. הקטע שנבדק על רוויה מסביר אובדן של התנהגות מקור מומנט אידאלי כאשר המפעיל הקטן יותר מגיע לרוויה.
 
-**Limit:** No complete actuation-design or experimental audit; paper-specific performance cannot be assigned to our robot or skin.
+**מגבלה:** אין ביקורת מלאה של תכנון ההפעלה או הניסויים; אי אפשר לייחס ביצועים ייעודיים למאמר לרובוט או לעור שלנו.
 
-**Action for this project:** Include reflected inertia, drive friction, limits and braking behavior in the integration contract. Compare added skin/harness mass by link and resulting inertia, not just total grams saved.
+**פעולה לפרויקט זה:** לכלול בחוזה השילוב התמד מוחזר, חיכוך מערכת ההנעה, מגבלות והתנהגות בלימה. להשוות את המסה הנוספת של העור/הרתמה לפי חוליה ואת ההתמד הנובע ממנה, ולא רק את סך הגרמים שנחסכו.
 
 ### [81] Control of generalized contact motion and force in physical human-robot interaction
 
-**Supported finding:** The inspected text treats contact-point motion/force control using robot dynamics and contact geometry. A contact on an intermediate link has a different Jacobian from the end effector.
+**ממצא נתמך:** הטקסט שנבדק עוסק בבקרת תנועה/כוח של נקודת מגע באמצעות דינמיקת הרובוט וגאומטריית המגע. למגע בחוליה אמצעית יש יעקוביאן שונה מזה של כלי הקצה.
 
-**Limit:** No full experimental/equation audit. Normal-only resistive sensing cannot recover arbitrary shear or six-axis wrench, and not every desired contact motion is mechanically realizable.
+**מגבלה:** אין ביקורת מלאה של הניסויים/המשוואות. חישה התנגדותית בכיוון הנורמלי בלבד אינה יכולה לשחזר גזירה שרירותית או וקטור כוח־מומנט בשישה צירים, ולא כל תנועת מגע רצויה אפשרית מבחינה מכנית.
 
-**Action for this project:** Store each taxel's rigid link, local position and unit normal. Construct its link-specific Jacobian; test zero influence of downstream joints. Keep vector force reconstruction outside the baseline specification.
+**פעולה לפרויקט זה:** לשמור לכל תא חישה את החוליה הקשיחה שלו, מיקומו המקומי ונורמל יחידה. לבנות את היעקוביאן הייעודי לחוליה שלו; לבדוק שהשפעת המפרקים שבהמשך השרשרת אפסית. להשאיר שחזור וקטור כוח מחוץ למפרט הבסיס.
 
 ### [82] Human-robot coexistence and contact handling with redundant robots
 
-**Supported finding:** The method changes task behavior across contact-intensity thresholds and interpolates velocity during task abort to reduce jerk. Remark 1 specifies a single-contact algorithm in the reported formulation.
+**ממצא נתמך:** השיטה משנה את התנהגות המשימה כאשר נחצים ספי עוצמת מגע ומבצעת אינטרפולציה של מהירות בעת ביטול משימה כדי להפחית קפיצת תאוצה. הערה 1 מגדירה אלגוריתם של מגע יחיד בניסוח המדווח.
 
-**Limit:** An extension discussion is not experimental proof for arbitrary simultaneous contacts. Gradual stopping trades reduced jerk against additional motion/time.
+**מגבלה:** דיון בהרחבה אינו הוכחה ניסויית למגעים בו־זמניים שרירותיים. עצירה הדרגתית מחליפה קפיצת תאוצה קטנה יותר בתוספת תנועה/זמן.
 
-**Action for this project:** Use explicit MONITOR, CONTACT, CONTROLLED_HOLD and FAULT states with hysteresis and latched recovery. Opposing/multiple contacts or infeasible relief request OEM hold rather than ambiguous automatic withdrawal. Test both contact onset and release.
+**פעולה לפרויקט זה:** להשתמש במצבים מפורשים MONITOR, CONTACT, CONTROLLED_HOLD ו־FAULT, עם היסטרזיס והתאוששות המחייבת שחרור נעילה. מגעים מנוגדים/מרובים או הקלה שאינה אפשרית דורשים בקשת החזקה מיצרן הרובוט, במקום נסיגה אוטומטית עמומה. לבדוק גם תחילת מגע וגם שחרור.
 
 ### [83] Human body part multicontact recognition and detection methodology
 
-**Supported finding:** The system combines a 3D time-of-flight scanner with wheel-drivetrain torque sensing to associate contacts with body parts and classify predetermined interaction gestures.
+**ממצא נתמך:** המערכת משלבת סורק זמן־מעוף 3D עם חישת מומנט במערכת הנעת הגלגלים כדי לשייך מגעים לחלקי גוף ולסווג מחוות אינטראקציה שהוגדרו מראש.
 
-**Limit:** This is sensor fusion with a restricted gesture vocabulary, not proof that normal touch intensity alone reveals arbitrary human intent or body part.
+**מגבלה:** זהו מיזוג חיישנים עם אוצר מחוות מוגבל, ולא הוכחה שעוצמת מגע נורמלית לבדה חושפת כוונה אנושית או חלק גוף באופן שרירותי.
 
-**Action for this project:** Expose contact facts separately from application intent. Deliberate teaching/interaction requires explicit enable and allowed zones; any later gesture model must publish confusion matrices including accidental-contact negatives.
+**פעולה לפרויקט זה:** לחשוף עובדות מגע בנפרד מכוונת היישום. לימוד/אינטראקציה מכוונים דורשים הפעלה מפורשת ואזורים מותרים; כל מודל מחוות מאוחר יותר חייב לפרסם מטריצות בלבול, לרבות דוגמאות שליליות של מגע מקרי.
 
 ### [84] Long-term training with a brain-machine interface-based gait protocol induces partial neurological recovery in paraplegic patients
 
-**Supported finding:** The abstract reports outcomes in eight participants after a year of a combined brain-machine-interface gait-training protocol incorporating multiple feedback/training components.
+**ממצא נתמך:** התקציר מדווח על תוצאות אצל שמונה משתתפים לאחר שנה של פרוטוקול אימון הליכה משולב מבוסס ממשק מוח־מכונה, הכולל כמה רכיבי משוב/אימון.
 
-**Limit:** The abstract does not isolate electronic skin's causal contribution. It does not establish clinical benefit of this proposed skin, nor authorize extrapolation to rehabilitation products.
+**מגבלה:** התקציר אינו מבודד את התרומה הסיבתית של העור האלקטרוני. הוא אינו מבסס תועלת קלינית של העור המוצע הזה, ואינו מתיר אקסטרפולציה למוצרי שיקום.
 
-**Action for this project:** Keep medical/rehabilitation claims outside the proof-of-concept article and commercial baseline. Sensory feedback may be mentioned as a distinct future application requiring its own clinical evidence and development program.
+**פעולה לפרויקט זה:** להשאיר טענות רפואיות/שיקומיות מחוץ למאמר הוכחת ההיתכנות ולתצורה המסחרית הבסיסית. אפשר להזכיר משוב תחושתי כיישום עתידי נפרד, המחייב ראיות קליניות ותוכנית פיתוח משלו.
+
+</div>

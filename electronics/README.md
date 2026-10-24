@@ -1,42 +1,52 @@
-# ROBOSKIN sensing electronics
+<div dir="rtl" lang="he">
 
-This is an independent, low-voltage sensing subsystem for modular electronic skin. A full patch measures 28 individual contact sites and two local temperatures. Each patch converts its signals locally and sends them over a four-wire power/CAN FD harness. The initial build uses an isolated, regulated **5 V bench supply**.
+עברית · [English](README.en.md)
 
-## What is provided
+# אלקטרוניקת החישה של ROBOSKIN
 
-- [Patch circuit](patch_circuit.json), [pin connections](patch_circuit_connections.csv) and [circuit drawing](../assets/electronics/patch_schematic.svg): 222 components and 104 nets, including remote printed sensors and diagnostic resistors. The controller has 88 resistors and 52 capacitors; the 28 remote end-of-line resistors are additional.
-- [Regional circuit](region_circuit.json), [regional connections](region_circuit_connections.csv) and [harness drawing](../assets/electronics/wiring_diagram.svg): protected supply, fault indicator, manual reset, two fixed terminations and eight distributed taps on a continuous linear trunk.
-- [Harness endpoint table](harness_connections.csv), [supply contract](supply_contract.json), [assembly and acceptance](assembly_and_acceptance.md), [manufacturer source register](datasheet_traceability.md), [component cost inputs](patch_cost_inputs.csv), [system BOM](system_bom.csv) and [cost scenarios](cost_scenarios.json).
+זו תת־מערכת חישה עצמאית במתח נמוך לעור אלקטרוני מודולרי. טלאי מלא מודד 28 אתרי מגע נפרדים ושתי טמפרטורות מקומיות. כל טלאי ממיר את אותותיו מקומית ושולח אותם בצמת הזנה ו־CAN FD בעלת ארבעה חוטים. הבנייה הראשונית משתמשת ב־**ספק מעבדה מבודד ומיוצב של 5 V**.
 
-The JSON is an editable **pin-level circuit specification**. Matching `.net` files are KiCad XML interchange exports. Package strings are hints, not qualified footprint-library references. These files are not a native schematic, routed PCB, stencil or fabrication release. Schematic/ERC, footprint verification, PCB routing/DRC and physical tests remain necessary engineering steps. No hardware validation is claimed.
+## מה מסופק
 
-Regenerate and check the original circuit files offline:
+- [מעגל טלאי](patch_circuit.json), [חיבורי פינים](patch_circuit_connections.csv) ו[שרטוט מעגל](../assets/electronics/patch_schematic.svg): ‏222 רכיבים ו־104 רשתות, כולל חיישנים מודפסים מרוחקים ונגדי אבחון. בבקר 88 נגדים ו־52 קבלים; 28 נגדי סוף הקו המרוחקים הם נוספים.
+- [מעגל אזורי](region_circuit.json), [חיבורים אזוריים](region_circuit_connections.csv) ו[שרטוט צמה](../assets/electronics/wiring_diagram.svg): הזנה מוגנת, חיווי תקלה, איפוס ידני, שני סיומים קבועים ושמונה הסתעפויות מפוזרות על קו ראשי ליניארי רציף.
+- [טבלת קצות צמה](harness_connections.csv), [חוזה הזנה](supply_contract.json), [הרכבה וקבלה](assembly_and_acceptance.md), [יומן מקורות יצרן](datasheet_traceability.md), [נתוני עלות רכיבים](patch_cost_inputs.csv), [BOM של המערכת](system_bom.csv) ו[תרחישי עלות](cost_scenarios.json).
+
+ה־JSON הוא **מפרט מעגל ברמת פינים** הניתן לעריכה. קובצי `.net` התואמים הם יצוא בפורמט החלפה XML של KiCad. מחרוזות מארז הן רמזים, ולא הפניות מוסמכות לספריית טביעות רגל. קבצים אלה אינם סכמה מקורית, PCB מנותב, סטנסיל או שחרור לייצור. שרטוט סכמה ו־ERC, אימות טביעות רגל, ניתוב PCB ו־DRC ובדיקות פיזיות נשארים שלבי הנדסה נדרשים. אין טענה לאימות חומרה.
+
+הפיקו מחדש ובדקו את קובצי המעגל המקוריים ללא חיבור לרשת:
+
+<div dir="ltr">
 
 ```sh
 python3 electronics/build_circuit.py
 python3 electronics/test_circuit.py
 ```
 
-Eight checks cover connectivity, package pin assignments, independent sensor addressing, protection coverage, supply topology, standby state, termination and interchange consistency. They do not establish EMI immunity, production yield or a working MCU firmware image.
+</div>
 
-## Electrical contract
+שמונה בדיקות מכסות קישוריות, הקצאות פינים במארז, מיעון חיישנים עצמאי, כיסוי הגנה, טופולוגיית הזנה, מצב המתנה, סיום אפיק ועקביות פורמט ההחלפה. הן אינן מוכיחות חסינות להפרעות אלקטרומגנטיות, תשואת ייצור או תמונת קושחת MCU פועלת.
 
-Use 4.75–5.25 V at the regional input, nominally 5.00 V. Ripple target is at most 100 mV peak-to-peak with a 20 MHz measurement bandwidth. At the farthest node, the protected LDO input must remain at least 3.8 V under the measured peak load. A patch is budgeted at 30 mA average and 80 mA peak; an eight-node region at 240 mA average and 640 mA peak. These are design allocations until measured. The regional latch-off eFuse is nominally 1 A; the bench source limit is 1.5 A after individual-node startup tests.
+## חוזה חשמלי
 
-CAN FD uses 1 Mbit/s arbitration and 2 Mbit/s data. Limit the linear trunk to 2 m and each branch to 50 mm. Fit exactly two 120 Ω terminators on the permanent trunk. Powered-off CANH–CANL resistance should be approximately 60 Ω. Unplugging a node leaves the trunk and terminations intact; a trunk short can still disable that entire region.
+השתמשו ב־4.75–5.25 V בכניסה האזורית, ובמתח נומינלי 5.00 V. יעד האדווה הוא לכל היותר 100 mV משיא לשיא ברוחב פס מדידה של 20 MHz. בצומת הרחוק ביותר, כניסת ה־LDO המוגנת חייבת להישאר לפחות 3.8 V תחת עומס השיא המדוד. לטלאי מוקצים 30 mA בממוצע ו־80 mA בשיא; לאזור של שמונה צמתים 240 mA בממוצע ו־640 mA בשיא. אלה הקצאות תכנון עד למדידה. הנתיך האלקטרוני האזורי הננעל בכיבוי הוא נומינלית 1 A; מגבלת ספק המעבדה היא 1.5 A לאחר בדיקות התנעה של צמתים נפרדים.
 
-The lab adapter reference is the isolated **PEAK IPEH-004022**. Its D-sub connection is pin 7 CANH, pin 2 CANL and pin 3/6 sensor ground. Leave optional supply pin 1 disconnected and internal termination off. Bind the host interface to the physical adapter serial/USB path. A name such as `can0` is not device identity. [Manufacturer interface and pinout](https://www.peak-system.com/products/hardware/external-pc-interfaces/pcan-usb-fd/).
+CAN FD משתמש ב־1 Mbit/s בבוררות וב־2 Mbit/s לנתונים. הגבילו את הקו הראשי הליניארי ל־2 m וכל הסתעפות ל־50 mm. הרכיבו בדיוק שני נגדי סיום של 120 Ω על הקו הראשי הקבוע. התנגדות CANH–CANL כאשר המתח כבוי צריכה להיות כ־60 Ω. ניתוק צומת משאיר את הקו הראשי ואת הסיומים שלמים; קצר בקו הראשי עדיין יכול להשבית את כל האזור.
 
-The isolated adapter's bus-side ground belongs to the sensor supply. A grounded oscilloscope or programmer can inadvertently bridge that isolation. Use appropriate isolated/differential measurement and verify all return paths before energizing the fixture.
+מתאם הייחוס למעבדה הוא **PEAK IPEH-004022** המבודד. בחיבור D-sub שלו: פין 7 הוא CANH, פין 2 הוא CANL ופינים 3/6 הם אדמת החיישנים. השאירו את פין ההזנה האופציונלי 1 לא מחובר ואת הסיום הפנימי כבוי. קשרו את ממשק המארח למספר הסידורי או לנתיב USB של המתאם הפיזי. שם כמו `can0` אינו זהות התקן. [ממשק ומפת פינים של היצרן](https://www.peak-system.com/products/hardware/external-pc-interfaces/pcan-usb-fd/).
 
-## Sensing scope and example cost
+האדמה בצד האפיק של המתאם המבודד שייכת להזנת החיישנים. אוסצילוסקופ או מתכנת מוארק עלולים לגשר בשוגג על בידוד זה. השתמשו במדידה מבודדת או דיפרנציאלית מתאימה ואמתו את כל מסלולי הזרם החוזר לפני חיבור מתח למתקן.
 
-The base patch provides contact location, ordinal contact intensity and two **actual point temperatures**. It does not provide calibrated force, shear, proximity, a continuous thermal image or a safety-rated stop. The remote end-of-line path detects some broken conductors; it cannot prove an intact pressure-sensitive coating.
+## היקף החישה ודוגמת עלות
 
-The [generic eight-controller example](example_configuration.json) has active site counts `4, 6, 4, 6, 6, 28, 6, 28`: **88 touch sites and 16 NTC points**. This is a stationary test configuration, not a claim of fit or coverage on a particular robot. Commissioned masks disable unused ADC channels.
+הטלאי הבסיסי מספק מיקום מגע, עוצמת מגע סדרית ושתי **טמפרטורות נקודתיות אמיתיות**. הוא אינו מספק כוח מכויל, גזירה, קִרבה, תמונה תרמית רציפה או עצירה בעלת דירוג בטיחות. מסלול סוף הקו המרוחק מזהה חלק מהנתקים במוליכים; הוא אינו יכול להוכיח שציפוי רגיש ללחץ שלם.
 
-The modeled full-patch unit cost is **$34.78 at an assumed 1,000-patch manufacturing quantity**: ($29.24 material/outsourced assembly + $3.30 final process + $0.50 expected rework) / 95% yield. The process allowance is 345 attended seconds at $24/hour plus 300 station seconds at $12/hour. This is not an eight-unit retail prototype quotation. The short-sheet example holds controller costs fixed and assumes six sheets at $6 and two at $12, giving $242.24 of modeled patch hardware. With one $400 lab gateway, $67 regional harness/distributor/enclosure allowance and $300 reusable supply budget, the example totals **$1,009.24**. Actual low-volume material, PCB and assembly quotes may be substantially higher. Tooling, engineering, host computer, other instruments, tax and shipping are excluded.
+ב[דוגמה הכללית של שמונה בקרים](example_configuration.json) מספרי האתרים הפעילים הם `4, 6, 4, 6, 6, 28, 6, 28`: **88 אתרי מגע ו־16 נקודות NTC**. זו תצורת בדיקה נייחת, ולא טענה להתאמה או לכיסוי ברובוט מסוים. מסכות שהוכנסו לשירות משביתות ערוצי ADC שאינם בשימוש.
 
-Four independent regions with the same eight patches model to $2,410.24. Eight full 28-site patches in one region model to $1,045.24; 80 full patches with ten isolated lab gateways and two USB hubs model to $7,852.40. These are clearly labeled procurement scenarios, not promised selling prices.
+עלות היחידה המחושבת לטלאי מלא היא **$34.78 בכמות ייצור מונחת של 1,000 טלאים**: ‏($29.24 חומר והרכבה חיצונית + $3.30 תהליך סופי + $0.50 תיקון צפוי) / תשואה של 95%. הקצבת התהליך היא 345 שניות בנוכחות מפעיל בתעריף $24 לשעה, בתוספת 300 שניות תחנה בתעריף $12 לשעה. זו אינה הצעת מחיר קמעונאית לאב־טיפוס בן שמונה יחידות. בדוגמת היריעות הקצרות עלויות הבקר קבועות, ומונחות שש יריעות ב־$6 ושתיים ב־$12, כך שעלות חומרת הטלאים המחושבת היא $242.24. עם שער מעבדה אחד ב־$400, הקצבה של $67 לצמה אזורית, מפצל ומארז ותקציב $300 לספק רב־פעמי, הדוגמה מסתכמת ב־**$1,009.24**. הצעות מחיר בפועל לחומר בכמות קטנה, PCB והרכבה עשויות להיות גבוהות משמעותית. כלי ייצור, הנדסה, מחשב מארח, מכשירים אחרים, מס ומשלוח אינם כלולים.
 
-[Optional local inertial calibration](optional_calibration.md) adds a separate eight-IMU hardware allowance of $159.60, with firmware, synchronization and calibration engineering excluded. The base touch/temperature patch has no IMU and cannot perform inertial self-calibration by itself.
+ארבעה אזורים עצמאיים עם אותם שמונה טלאים מסתכמים במודל ב־$2,410.24. שמונה טלאים מלאים בני 28 אתרים באזור אחד מסתכמים ב־$1,045.24; ‏80 טלאים מלאים עם עשרה שערי מעבדה מבודדים ושתי רכזות USB מסתכמים ב־$7,852.40. אלה תרחישי רכש המסומנים בבירור, ולא מחירי מכירה מובטחים.
+
+[כיול אינרציאלי מקומי אופציונלי](optional_calibration.md) מוסיף הקצבת חומרה נפרדת של $159.60 לשמונה IMU, ללא הנדסת קושחה, סנכרון וכיול. לטלאי המגע והטמפרטורה הבסיסי אין IMU והוא אינו יכול לבצע כיול עצמי אינרציאלי לבדו.
+
+</div>
