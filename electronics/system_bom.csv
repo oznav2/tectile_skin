@@ -1,0 +1,8 @@
+item_key,description,manufacturer_part_or_scope,qty_80_patch_reference,unit_USD,price_status,notes,qty_8_full_patch_bench
+PATCH,Complete28-taxel2-NTCpatch,See patch_cost_inputs.csv,80,34.78,planning/yield allowance,No qualified printed-sensor vendor quote; includes patch assembly/test allowance,8
+REGION,Protected region distributor,TPS259530DSGR +TPS7A2433DBVR +passives +PCB,10,12.0,engineering allowance,Adds independent fault-indicator3.3Vrail; manualreset,1
+HARNESS,2mregiontrunk+8shortleads,120ohm continuous-flex CAN pair +24AWG power +JSTGH,10,40.0,engineering allowance,Exact moving-cablePN remains a release gate; ordinary strandedwire onlyfor stationaryfixture,1
+GATEWAY,Isolated singlechannelUSB-CANFD,PEAK IPEH-004022,10,400.0,lab procurement budget,"Maker technicalspec verified; price is budget, notquote; dedicated sensor interface",1
+DC5V,Isolated current-limited5V benchsupply,Existingqualifiedbenchunit; >=1.5A region /10A system,1,300.0,equipment allowance,One80-node source requires >=10Adistribution; gatewayUSBpowerseparate,1
+USB,USBhub andhostcables,PoweredUSBhub qualified withadapters,2,50.0,engineering allowance,Hostport/powerandlatency testsrequired; noUSBbackfeed,0
+MOUNT,Protectedbox+strainrelief+labels,Fabricatedenclosure,10,15.0,engineering allowance,Doesnotinclude mechanicalskinpanels already inPATCH,1

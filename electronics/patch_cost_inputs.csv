@@ -1,0 +1,21 @@
+item,quantity,unit_usd_1000_patches,low_unit_usd,high_unit_usd,evidence
+STM32G0B1CBT6,1,2.65,2.10,3.50,engineering allowance
+TCAN3413DR,1,1.00,0.75,1.50,engineering allowance
+TMUX1308PWR,4,0.30,0.25,0.50,engineering allowance
+TPS2553DBVR-1,1,0.75,0.60,1.10,engineering allowance
+TPS7A2433DBVR,1,0.34,0.31,0.71,DigiKey quantity 1000 snapshot 2026-10-24
+PESD2CANFD24V-T,1,0.18,0.12,0.35,engineering allowance
+TPD4E1U06DBVR,8,0.18,0.14,0.28,engineering allowance
+FH12-40S-0.5SH(55),1,2.50,2.00,3.50,engineering allowance
+BM04B-GHS-TBT(LF)(SN),1,0.24,0.18,0.45,board header only; mating set in harness
+ASV-8.000MHZ-LC-T,1,0.82,0.71,1.25,DigiKey quantity 1000 snapshot 2026-10-24
+controller passives allowance,1,0.90,0.75,1.40,schedule in main document; not sheet EOL
+controller bare PCB 4 layer 0.8mm,1,0.90,0.65,1.80,RFQ ceiling must confirm layout fits
+SMT assembly controller,1,1.20,0.80,2.50,RFQ incl AOI; programming labor separate
+fully laminated 28 cell printed PET sheet with remote EOL,1,12.00,6.00,20.00,unquoted industrial allowance; no retail film assumption
+two site thermal flex assembly excluding NTC,1,1.20,0.80,2.00,engineering allowance
+NCU18XH103F60RB,2,0.06,0.05,0.12,engineering allowance
+protective outer film die cut,1,0.60,0.40,1.20,industrial allowance incl converting scrap
+backing and attachment carrier,1,0.60,0.35,1.50,no individual caps or pucks
+cover and attachment adhesive,1,0.35,0.20,0.80,sensing-sheet spacer already in sheet price
+serial labels and packaging,1,0.25,0.15,0.50,engineering allowance

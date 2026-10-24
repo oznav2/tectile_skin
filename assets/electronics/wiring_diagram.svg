@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1030" viewBox="0 0 1500 1030"><rect width="100%" height="100%" fill="#f8fafc"/><style>text{font-family:Arial,sans-serif;fill:#102338}.title{font-size:28px;font-weight:bold}.small{font-size:14px}.label{font-size:17px}.box{fill:white;stroke:#315873;stroke-width:2}.wire{stroke:#11789a;stroke-width:3;fill:none}</style>
+<text x="35" y="45" font-family="Arial,sans-serif" font-size="28" fill="#102338">ROBOSKIN | Separate sensor power and CAN FD harness</text>
+<text x="35" y="78" font-family="Arial,sans-serif" font-size="14" fill="#102338">Engineering drawing: reference circuit only. Independent sensing circuit. Dimensions in mm; pin numbering is electrical, not a connector-view sketch.</text>
+<rect x="35" y="110" width="355" height="155" rx="8" fill="white" stroke="#315873" stroke-width="2"/>
+<text x="50" y="137" font-family="Arial,sans-serif" font-size="17" fill="#102338">Independent skin system</text>
+<text x="50" y="164" font-family="Arial,sans-serif" font-size="14" fill="#102338">28 touch sites + two NTC points per patch</text>
+<text x="50" y="186" font-family="Arial,sans-serif" font-size="14" fill="#102338">Local conversion and fault diagnostics</text>
+<text x="50" y="208" font-family="Arial,sans-serif" font-size="14" fill="#102338">Up to eight controllers per bench region</text>
+<text x="50" y="230" font-family="Arial,sans-serif" font-size="14" fill="#102338">Dedicated four-wire sensor trunk</text>
+<rect x="440" y="110" width="420" height="155" rx="8" fill="white" stroke="#315873" stroke-width="2"/>
+<text x="455" y="137" font-family="Arial,sans-serif" font-size="17" fill="#102338">Default: isolated bench supply</text>
+<text x="455" y="164" font-family="Arial,sans-serif" font-size="14" fill="#102338">5.00 V, 1.5 A current limit per region</text>
+<text x="455" y="186" font-family="Arial,sans-serif" font-size="14" fill="#102338">Region eFuse TPS259530: about 1 A latch-off</text>
+<text x="455" y="208" font-family="Arial,sans-serif" font-size="14" fill="#102338">The input accepts regulated 5 V only</text>
+<text x="455" y="230" font-family="Arial,sans-serif" font-size="14" fill="#102338">One supply -&gt; protected regional power trunk</text>
+<rect x="930" y="110" width="520" height="155" rx="8" fill="white" stroke="#315873" stroke-width="2"/>
+<text x="945" y="137" font-family="Arial,sans-serif" font-size="17" fill="#102338">Supply acceptance contract</text>
+<text x="945" y="164" font-family="Arial,sans-serif" font-size="14" fill="#102338">Use an isolated, regulated bench source</text>
+<text x="945" y="186" font-family="Arial,sans-serif" font-size="14" fill="#102338">4.75–5.25 V at regional input</text>
+<text x="945" y="208" font-family="Arial,sans-serif" font-size="14" fill="#102338">Peak regional load allocation: 0.64 A</text>
+<text x="945" y="230" font-family="Arial,sans-serif" font-size="14" fill="#102338">Current limit and ripple verified before use</text>
+<rect x="35" y="315" width="355" height="135" rx="8" fill="white" stroke="#315873" stroke-width="2"/>
+<text x="50" y="342" font-family="Arial,sans-serif" font-size="17" fill="#102338">Linux host / dedicated adapter</text>
+<text x="50" y="369" font-family="Arial,sans-serif" font-size="14" fill="#102338">PEAK IPEH-004022 isolated USB-CAN FD</text>
+<text x="50" y="391" font-family="Arial,sans-serif" font-size="14" fill="#102338">DB9: 7 H / 2 L / 3,6 skin GND</text>
+<text x="50" y="413" font-family="Arial,sans-serif" font-size="14" fill="#102338">DB9 pin 1 optional supply DISABLED</text>
+<rect x="440" y="315" width="420" height="135" rx="8" fill="white" stroke="#315873" stroke-width="2"/>
+<text x="455" y="342" font-family="Arial,sans-serif" font-size="17" fill="#102338">Region controller / trunk entry</text>
+<text x="455" y="369" font-family="Arial,sans-serif" font-size="14" fill="#102338">1 Mbit/s nominal; 2 Mbit/s data</text>
+<text x="455" y="391" font-family="Arial,sans-serif" font-size="14" fill="#102338">Near end: 120 ohm H–L; adapter term OFF</text>
+<text x="455" y="413" font-family="Arial,sans-serif" font-size="14" fill="#102338">Local fault LED + manual latch reset</text>
+<path d="M390,380 L440,380" stroke="#11789a" stroke-width="3" fill="none"/>
+<path d="M650,265 L650,315" stroke="#11789a" stroke-width="3" fill="none"/>
+<path d="M650,450 L650,470 L60,470 L60,510 L80,510" stroke="#11789a" stroke-width="3" fill="none"/>
+<path d="M80,510 L1400,510" stroke="#11789a" stroke-width="3" fill="none"/>
+<text x="80" y="495" font-family="Arial,sans-serif" font-size="14" fill="#102338">LINEAR TRUNK: power pair 24 AWG; CAN pair nominal 120 ohm; total length &lt;= 2000</text>
+<path d="M80,510 L80,555" stroke="#11789a" stroke-width="3" fill="none"/>
+<circle cx="80" cy="510" r="5" fill="#11789a"/>
+<rect x="40" y="555" width="160" height="125" rx="8" fill="white" stroke="#315873" stroke-width="2"/>
+<text x="55" y="582" font-family="Arial,sans-serif" font-size="17" fill="#102338">Node 1</text>
+<text x="55" y="609" font-family="Arial,sans-serif" font-size="14" fill="#102338">GH pin1 +5 V</text>
+<text x="55" y="631" font-family="Arial,sans-serif" font-size="14" fill="#102338">2 GND / 3 H / 4 L</text>
+<text x="55" y="653" font-family="Arial,sans-serif" font-size="14" fill="#102338">26 AWG, stub &lt;=50</text>
+<path d="M260,510 L260,555" stroke="#11789a" stroke-width="3" fill="none"/>
+<circle cx="260" cy="510" r="5" fill="#11789a"/>
+<rect x="220" y="555" width="160" height="125" rx="8" fill="white" stroke="#315873" stroke-width="2"/>
+<text x="235" y="582" font-family="Arial,sans-serif" font-size="17" fill="#102338">Node 2</text>
+<text x="235" y="609" font-family="Arial,sans-serif" font-size="14" fill="#102338">GH pin1 +5 V</text>
+<text x="235" y="631" font-family="Arial,sans-serif" font-size="14" fill="#102338">2 GND / 3 H / 4 L</text>
+<text x="235" y="653" font-family="Arial,sans-serif" font-size="14" fill="#102338">26 AWG, stub &lt;=50</text>
+<path d="M440,510 L440,555" stroke="#11789a" stroke-width="3" fill="none"/>
+<circle cx="440" cy="510" r="5" fill="#11789a"/>
+<rect x="400" y="555" width="160" height="125" rx="8" fill="white" stroke="#315873" stroke-width="2"/>
+<text x="415" y="582" font-family="Arial,sans-serif" font-size="17" fill="#102338">Node 3</text>
+<text x="415" y="609" font-family="Arial,sans-serif" font-size="14" fill="#102338">GH pin1 +5 V</text>
+<text x="415" y="631" font-family="Arial,sans-serif" font-size="14" fill="#102338">2 GND / 3 H / 4 L</text>
+<text x="415" y="653" font-family="Arial,sans-serif" font-size="14" fill="#102338">26 AWG, stub &lt;=50</text>
+<path d="M620,510 L620,555" stroke="#11789a" stroke-width="3" fill="none"/>
+<circle cx="620" cy="510" r="5" fill="#11789a"/>
+<rect x="580" y="555" width="160" height="125" rx="8" fill="white" stroke="#315873" stroke-width="2"/>
+<text x="595" y="582" font-family="Arial,sans-serif" font-size="17" fill="#102338">Node 4</text>
+<text x="595" y="609" font-family="Arial,sans-serif" font-size="14" fill="#102338">GH pin1 +5 V</text>
+<text x="595" y="631" font-family="Arial,sans-serif" font-size="14" fill="#102338">2 GND / 3 H / 4 L</text>
+<text x="595" y="653" font-family="Arial,sans-serif" font-size="14" fill="#102338">26 AWG, stub &lt;=50</text>
+<path d="M800,510 L800,555" stroke="#11789a" stroke-width="3" fill="none"/>
+<circle cx="800" cy="510" r="5" fill="#11789a"/>
+<rect x="760" y="555" width="160" height="125" rx="8" fill="white" stroke="#315873" stroke-width="2"/>
+<text x="775" y="582" font-family="Arial,sans-serif" font-size="17" fill="#102338">Node 5</text>
+<text x="775" y="609" font-family="Arial,sans-serif" font-size="14" fill="#102338">GH pin1 +5 V</text>
+<text x="775" y="631" font-family="Arial,sans-serif" font-size="14" fill="#102338">2 GND / 3 H / 4 L</text>
+<text x="775" y="653" font-family="Arial,sans-serif" font-size="14" fill="#102338">26 AWG, stub &lt;=50</text>
+<path d="M980,510 L980,555" stroke="#11789a" stroke-width="3" fill="none"/>
+<circle cx="980" cy="510" r="5" fill="#11789a"/>
+<rect x="940" y="555" width="160" height="125" rx="8" fill="white" stroke="#315873" stroke-width="2"/>
+<text x="955" y="582" font-family="Arial,sans-serif" font-size="17" fill="#102338">Node 6</text>
+<text x="955" y="609" font-family="Arial,sans-serif" font-size="14" fill="#102338">GH pin1 +5 V</text>
+<text x="955" y="631" font-family="Arial,sans-serif" font-size="14" fill="#102338">2 GND / 3 H / 4 L</text>
+<text x="955" y="653" font-family="Arial,sans-serif" font-size="14" fill="#102338">26 AWG, stub &lt;=50</text>
+<path d="M1160,510 L1160,555" stroke="#11789a" stroke-width="3" fill="none"/>
+<circle cx="1160" cy="510" r="5" fill="#11789a"/>
+<rect x="1120" y="555" width="160" height="125" rx="8" fill="white" stroke="#315873" stroke-width="2"/>
+<text x="1135" y="582" font-family="Arial,sans-serif" font-size="17" fill="#102338">Node 7</text>
+<text x="1135" y="609" font-family="Arial,sans-serif" font-size="14" fill="#102338">GH pin1 +5 V</text>
+<text x="1135" y="631" font-family="Arial,sans-serif" font-size="14" fill="#102338">2 GND / 3 H / 4 L</text>
+<text x="1135" y="653" font-family="Arial,sans-serif" font-size="14" fill="#102338">26 AWG, stub &lt;=50</text>
+<path d="M1340,510 L1340,555" stroke="#11789a" stroke-width="3" fill="none"/>
+<circle cx="1340" cy="510" r="5" fill="#11789a"/>
+<rect x="1300" y="555" width="160" height="125" rx="8" fill="white" stroke="#315873" stroke-width="2"/>
+<text x="1315" y="582" font-family="Arial,sans-serif" font-size="17" fill="#102338">Node 8</text>
+<text x="1315" y="609" font-family="Arial,sans-serif" font-size="14" fill="#102338">GH pin1 +5 V</text>
+<text x="1315" y="631" font-family="Arial,sans-serif" font-size="14" fill="#102338">2 GND / 3 H / 4 L</text>
+<text x="1315" y="653" font-family="Arial,sans-serif" font-size="14" fill="#102338">26 AWG, stub &lt;=50</text>
+<text x="1170" y="715" font-family="Arial,sans-serif" font-size="17" fill="#102338">Far end: fixed 120 ohm H–L</text>
+<text x="1170" y="738" font-family="Arial,sans-serif" font-size="14" fill="#102338">Not on removable Node 8</text>
+<rect x="35" y="775" width="670" height="190" rx="8" fill="white" stroke="#315873" stroke-width="2"/>
+<text x="50" y="802" font-family="Arial,sans-serif" font-size="17" fill="#102338">Mechanical routing and service</text>
+<text x="50" y="829" font-family="Arial,sans-serif" font-size="14" fill="#102338">Continuous trunk survives removing a node. Trunk short can disable a region.</text>
+<text x="50" y="851" font-family="Arial,sans-serif" font-size="14" fill="#102338">Use a cable rated for the actual joint bending/torsion; no film across hinge creases.</text>
+<text x="50" y="873" font-family="Arial,sans-serif" font-size="14" fill="#102338">Clamp before each bend; default radius &gt;= larger of vendor limit and 10x diameter.</text>
+<text x="50" y="895" font-family="Arial,sans-serif" font-size="14" fill="#102338">Power OFF before GH or sensor-tail insertion. No guaranteed first-mate ground.</text>
+<text x="50" y="917" font-family="Arial,sans-serif" font-size="14" fill="#102338">Label and key every harness; verify each numbered endpoint before power.</text>
+<rect x="755" y="775" width="695" height="190" rx="8" fill="white" stroke="#315873" stroke-width="2"/>
+<text x="770" y="802" font-family="Arial,sans-serif" font-size="17" fill="#102338">Acceptance measurements</text>
+<text x="770" y="829" font-family="Arial,sans-serif" font-size="14" fill="#102338">Unpowered H–L: about 60 ohm; verify polarity and every numbered endpoint.</text>
+<text x="770" y="851" font-family="Arial,sans-serif" font-size="14" fill="#102338">Loaded distal LDO input &gt;=3.8 V; ground shift target &lt;=0.25 V.</text>
+<text x="770" y="873" font-family="Arial,sans-serif" font-size="14" fill="#102338">Average eight-node load budget 0.24 A; peak allocation 0.64 A.</text>
+<text x="770" y="895" font-family="Arial,sans-serif" font-size="14" fill="#102338">Log bus errors and stale sensors while flexing the actual installed harness.</text>
+<text x="770" y="917" font-family="Arial,sans-serif" font-size="14" fill="#102338">Check isolated instrument grounds; scope/programmer must not bypass isolation.</text>
+</svg>

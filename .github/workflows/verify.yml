@@ -1,0 +1,23 @@
+name: Verify standalone skin project
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Verify documents and calculation snapshots
+        run: python3 tools/verify_repository.py
+      - name: Test protocol and observer
+        run: python3 -m unittest discover -s tests -v
+      - name: Test circuit connectivity
+        run: python3 -m unittest discover -s electronics -p 'test_*.py' -v
+      - name: Test generic mechanics
+        run: python3 -m unittest discover -s mechanics -p 'test_*.py' -v
+      - name: Run synthetic demo
+        run: python3 -m software --demo > /tmp/skin-demo.jsonl

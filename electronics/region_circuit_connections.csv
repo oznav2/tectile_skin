@@ -1,0 +1,91 @@
+reference,part,package_pin,net,assembly,note
+J_IN,Regulated isolated 5V input pads,1,5V_SUPPLY,region,
+J_IN,Regulated isolated 5V input pads,2,GND,region,
+U_REG,TPS259530DSGR,1,DV_DT,region,Pin9 denotes exposed thermal pad; latch-off 5.7V clamp variant.
+U_REG,TPS259530DSGR,2,REGION_EN,region,Pin9 denotes exposed thermal pad; latch-off 5.7V clamp variant.
+U_REG,TPS259530DSGR,3,5V_SUPPLY,region,Pin9 denotes exposed thermal pad; latch-off 5.7V clamp variant.
+U_REG,TPS259530DSGR,4,5V_SUPPLY,region,Pin9 denotes exposed thermal pad; latch-off 5.7V clamp variant.
+U_REG,TPS259530DSGR,5,5V_REGION,region,Pin9 denotes exposed thermal pad; latch-off 5.7V clamp variant.
+U_REG,TPS259530DSGR,6,REGION_FAULT_N,region,Pin9 denotes exposed thermal pad; latch-off 5.7V clamp variant.
+U_REG,TPS259530DSGR,7,REGION_ILIM,region,Pin9 denotes exposed thermal pad; latch-off 5.7V clamp variant.
+U_REG,TPS259530DSGR,8,GND,region,Pin9 denotes exposed thermal pad; latch-off 5.7V clamp variant.
+U_REG,TPS259530DSGR,9,GND,region,Pin9 denotes exposed thermal pad; latch-off 5.7V clamp variant.
+C_RAMP,180nF X7R 10V,1,DV_DT,region,
+C_RAMP,180nF X7R 10V,2,GND,region,
+C_REG_IN,10uF X7R 10V,1,5V_SUPPLY,region,
+C_REG_IN,10uF X7R 10V,2,GND,region,
+C_REG_HF,100nF X7R 10V,1,5V_SUPPLY,region,
+C_REG_HF,100nF X7R 10V,2,GND,region,
+C_REG_OUT,10uF X7R 10V,1,5V_REGION,region,
+C_REG_OUT,10uF X7R 10V,2,GND,region,
+R_REG_EN_TOP,100k 1%,1,5V_SUPPLY,region,
+R_REG_EN_TOP,100k 1%,2,REGION_EN,region,
+R_REG_EN_BOT,39k 1%,1,REGION_EN,region,
+R_REG_EN_BOT,39k 1%,2,GND,region,
+R_REG_ILIM,2.05k 1%,1,REGION_ILIM,region,
+R_REG_ILIM,2.05k 1%,2,GND,region,
+SW_RESET,Momentary normally open,1,REGION_EN,region,
+SW_RESET,Momentary normally open,2,GND,region,
+U_MON,TPS7A2433DBVR,1,5V_SUPPLY,region,
+U_MON,TPS7A2433DBVR,2,GND,region,
+U_MON,TPS7A2433DBVR,3,5V_SUPPLY,region,
+U_MON,TPS7A2433DBVR,4,GND,region,
+U_MON,TPS7A2433DBVR,5,3V3_MON,region,
+C_MON_IN,4.7uF X7R 10V,1,5V_SUPPLY,region,
+C_MON_IN,4.7uF X7R 10V,2,GND,region,
+C_MON_OUT,4.7uF X7R 10V,1,3V3_MON,region,
+C_MON_OUT,4.7uF X7R 10V,2,GND,region,
+R_FLT,10k,1,3V3_MON,region,
+R_FLT,10k,2,REGION_FAULT_N,region,
+R_LED,2.2k,1,3V3_MON,region,
+R_LED,2.2k,2,LED_A,region,
+D_FAULT,Red status LED,1,REGION_FAULT_N,region,Pin1 cathode. Advisory indication only.
+D_FAULT,Red status LED,2,LED_A,region,Pin1 cathode. Advisory indication only.
+J_FAULT,Monitor pads,1,GND,region,
+J_FAULT,Monitor pads,2,3V3_MON,region,
+J_FAULT,Monitor pads,3,REGION_FAULT_N,region,
+J_CAN,PCAN USB FD mating DB9,2,CANL,region,Never take 5V from adapter pin1. Set internal termination OFF.
+J_CAN,PCAN USB FD mating DB9,3,GND,region,Never take 5V from adapter pin1. Set internal termination OFF.
+J_CAN,PCAN USB FD mating DB9,6,GND,region,Never take 5V from adapter pin1. Set internal termination OFF.
+J_CAN,PCAN USB FD mating DB9,7,CANH,region,Never take 5V from adapter pin1. Set internal termination OFF.
+J_CAN,PCAN USB FD mating DB9,1,NC,region,Never take 5V from adapter pin1. Set internal termination OFF.
+J_CAN,PCAN USB FD mating DB9,4,NC,region,Never take 5V from adapter pin1. Set internal termination OFF.
+J_CAN,PCAN USB FD mating DB9,5,NC,region,Never take 5V from adapter pin1. Set internal termination OFF.
+J_CAN,PCAN USB FD mating DB9,8,NC,region,Never take 5V from adapter pin1. Set internal termination OFF.
+J_CAN,PCAN USB FD mating DB9,9,NC,region,Never take 5V from adapter pin1. Set internal termination OFF.
+R_TERM_NEAR,120R 1% 0.25W,1,CANH,region,
+R_TERM_NEAR,120R 1% 0.25W,2,CANL,region,
+J_BRANCH1,GHR-04V-S + SSHL-002T-P0.2,1,5V_REGION,distributed_trunk_tap,"Distributed along linear trunk, not eight 2m star stubs. Branch <=50mm."
+J_BRANCH1,GHR-04V-S + SSHL-002T-P0.2,2,GND,distributed_trunk_tap,"Distributed along linear trunk, not eight 2m star stubs. Branch <=50mm."
+J_BRANCH1,GHR-04V-S + SSHL-002T-P0.2,3,CANH,distributed_trunk_tap,"Distributed along linear trunk, not eight 2m star stubs. Branch <=50mm."
+J_BRANCH1,GHR-04V-S + SSHL-002T-P0.2,4,CANL,distributed_trunk_tap,"Distributed along linear trunk, not eight 2m star stubs. Branch <=50mm."
+J_BRANCH2,GHR-04V-S + SSHL-002T-P0.2,1,5V_REGION,distributed_trunk_tap,"Distributed along linear trunk, not eight 2m star stubs. Branch <=50mm."
+J_BRANCH2,GHR-04V-S + SSHL-002T-P0.2,2,GND,distributed_trunk_tap,"Distributed along linear trunk, not eight 2m star stubs. Branch <=50mm."
+J_BRANCH2,GHR-04V-S + SSHL-002T-P0.2,3,CANH,distributed_trunk_tap,"Distributed along linear trunk, not eight 2m star stubs. Branch <=50mm."
+J_BRANCH2,GHR-04V-S + SSHL-002T-P0.2,4,CANL,distributed_trunk_tap,"Distributed along linear trunk, not eight 2m star stubs. Branch <=50mm."
+J_BRANCH3,GHR-04V-S + SSHL-002T-P0.2,1,5V_REGION,distributed_trunk_tap,"Distributed along linear trunk, not eight 2m star stubs. Branch <=50mm."
+J_BRANCH3,GHR-04V-S + SSHL-002T-P0.2,2,GND,distributed_trunk_tap,"Distributed along linear trunk, not eight 2m star stubs. Branch <=50mm."
+J_BRANCH3,GHR-04V-S + SSHL-002T-P0.2,3,CANH,distributed_trunk_tap,"Distributed along linear trunk, not eight 2m star stubs. Branch <=50mm."
+J_BRANCH3,GHR-04V-S + SSHL-002T-P0.2,4,CANL,distributed_trunk_tap,"Distributed along linear trunk, not eight 2m star stubs. Branch <=50mm."
+J_BRANCH4,GHR-04V-S + SSHL-002T-P0.2,1,5V_REGION,distributed_trunk_tap,"Distributed along linear trunk, not eight 2m star stubs. Branch <=50mm."
+J_BRANCH4,GHR-04V-S + SSHL-002T-P0.2,2,GND,distributed_trunk_tap,"Distributed along linear trunk, not eight 2m star stubs. Branch <=50mm."
+J_BRANCH4,GHR-04V-S + SSHL-002T-P0.2,3,CANH,distributed_trunk_tap,"Distributed along linear trunk, not eight 2m star stubs. Branch <=50mm."
+J_BRANCH4,GHR-04V-S + SSHL-002T-P0.2,4,CANL,distributed_trunk_tap,"Distributed along linear trunk, not eight 2m star stubs. Branch <=50mm."
+J_BRANCH5,GHR-04V-S + SSHL-002T-P0.2,1,5V_REGION,distributed_trunk_tap,"Distributed along linear trunk, not eight 2m star stubs. Branch <=50mm."
+J_BRANCH5,GHR-04V-S + SSHL-002T-P0.2,2,GND,distributed_trunk_tap,"Distributed along linear trunk, not eight 2m star stubs. Branch <=50mm."
+J_BRANCH5,GHR-04V-S + SSHL-002T-P0.2,3,CANH,distributed_trunk_tap,"Distributed along linear trunk, not eight 2m star stubs. Branch <=50mm."
+J_BRANCH5,GHR-04V-S + SSHL-002T-P0.2,4,CANL,distributed_trunk_tap,"Distributed along linear trunk, not eight 2m star stubs. Branch <=50mm."
+J_BRANCH6,GHR-04V-S + SSHL-002T-P0.2,1,5V_REGION,distributed_trunk_tap,"Distributed along linear trunk, not eight 2m star stubs. Branch <=50mm."
+J_BRANCH6,GHR-04V-S + SSHL-002T-P0.2,2,GND,distributed_trunk_tap,"Distributed along linear trunk, not eight 2m star stubs. Branch <=50mm."
+J_BRANCH6,GHR-04V-S + SSHL-002T-P0.2,3,CANH,distributed_trunk_tap,"Distributed along linear trunk, not eight 2m star stubs. Branch <=50mm."
+J_BRANCH6,GHR-04V-S + SSHL-002T-P0.2,4,CANL,distributed_trunk_tap,"Distributed along linear trunk, not eight 2m star stubs. Branch <=50mm."
+J_BRANCH7,GHR-04V-S + SSHL-002T-P0.2,1,5V_REGION,distributed_trunk_tap,"Distributed along linear trunk, not eight 2m star stubs. Branch <=50mm."
+J_BRANCH7,GHR-04V-S + SSHL-002T-P0.2,2,GND,distributed_trunk_tap,"Distributed along linear trunk, not eight 2m star stubs. Branch <=50mm."
+J_BRANCH7,GHR-04V-S + SSHL-002T-P0.2,3,CANH,distributed_trunk_tap,"Distributed along linear trunk, not eight 2m star stubs. Branch <=50mm."
+J_BRANCH7,GHR-04V-S + SSHL-002T-P0.2,4,CANL,distributed_trunk_tap,"Distributed along linear trunk, not eight 2m star stubs. Branch <=50mm."
+J_BRANCH8,GHR-04V-S + SSHL-002T-P0.2,1,5V_REGION,distributed_trunk_tap,"Distributed along linear trunk, not eight 2m star stubs. Branch <=50mm."
+J_BRANCH8,GHR-04V-S + SSHL-002T-P0.2,2,GND,distributed_trunk_tap,"Distributed along linear trunk, not eight 2m star stubs. Branch <=50mm."
+J_BRANCH8,GHR-04V-S + SSHL-002T-P0.2,3,CANH,distributed_trunk_tap,"Distributed along linear trunk, not eight 2m star stubs. Branch <=50mm."
+J_BRANCH8,GHR-04V-S + SSHL-002T-P0.2,4,CANL,distributed_trunk_tap,"Distributed along linear trunk, not eight 2m star stubs. Branch <=50mm."
+R_TERM_FAR,120R 1% 0.25W,1,CANH,far_end_trunk,
+R_TERM_FAR,120R 1% 0.25W,2,CANL,far_end_trunk,

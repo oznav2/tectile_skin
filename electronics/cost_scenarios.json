@@ -1,0 +1,45 @@
+{
+  "currency": "USD",
+  "status": "Planning allowances, not a supplier quotation",
+  "quantity_basis": "Patch-component allowances assume a 1000-patch procurement scenario; this is not a one-off prototype checkout price.",
+  "fixed_patch_hardware_allowance": 22.78,
+  "short_sheet_allowance_each": 6,
+  "full_28_site_sheet_allowance_each": 12,
+  "patch_hardware_for_88_site_example": 242.24,
+  "single_region_88_site_example_including_reusable_equipment": 1009.24,
+  "four_independent_regions_same_88_sites": 2410.24,
+  "eight_full_patches_224_sites_single_region": 1045.24,
+  "eighty_full_patches_test_system": 7852.4,
+  "eighty_full_patches_skin_only": 2782.4,
+  "optional_eight_local_IMUs": 159.6,
+  "assumptions": [
+    "Six short sheets at 6 USD each and two full sheets at 12 USD each; no linear price per taxel assumption.",
+    "Fixed controller and auxiliary patch cost retained for short sheets.",
+    "400 USD isolated gateway, 12 USD regional distributor, 40 USD regional harness, 15 USD box and strain relief per region.",
+    "300 USD reusable bench supply budget.",
+    "Ten-region reference additionally budgets two 50 USD USB hubs."
+  ],
+  "excludes": [
+    "shipping, tax and import",
+    "host computer",
+    "other laboratory instruments",
+    "engineering and tooling NRE",
+    "qualification",
+    "unquoted material minimum orders",
+    "spares and rework beyond the stated patch allowance"
+  ],
+  "warning": "Industrial price assumptions can underestimate a home-lab build. Obtain actual quantity-specific quotes before ordering.",
+  "full_28_site_patch_modeled_unit_cost": 34.78,
+  "full_patch_model_inputs": {
+    "material_and_outsourced_assembly_subtotal_USD": 29.24,
+    "attended_labor_seconds": 345,
+    "attended_labor_USD_per_hour": 24,
+    "station_seconds": 300,
+    "station_USD_per_hour": 12,
+    "process_cost_USD": 3.3,
+    "expected_rework_per_started_unit_USD": 0.5,
+    "final_yield_fraction": 0.95,
+    "formula": "(29.24 + 3.30 + 0.50) / 0.95 = 34.778947...; displayed 34.78",
+    "short_sheet_scenario_rule": "Hold modeled full-patch cost less 12 USD sheet allowance fixed at 22.78; replace sheet by 6 or 12 USD allowance. This is a conservative scenario, not a measured short-patch manufacturing quote."
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "status": "BENCH_ONLY_DESIGN_INPUT_NOT_HARDWARE_VALIDATED",
+  "accepted_supply": "isolated regulated current-limited 5 V DC bench source",
+  "nominal_voltage_V": 5.0,
+  "allowed_region_input_V": [
+    4.75,
+    5.25
+  ],
+  "maximum_ripple_mVpp": 100,
+  "ripple_measurement_bandwidth_MHz": 20,
+  "initial_one_node_source_limit_A": 0.1,
+  "eight_node_source_current_limit_A": 1.5,
+  "eight_node_average_budget_A": 0.24,
+  "eight_node_peak_allocation_A": 0.64,
+  "region_efuse_nominal_limit_A": 1.0,
+  "minimum_distal_LDO_input_V": 3.8,
+  "required_measured_evidence": {
+    "supply_accuracy": "NOT_MEASURED",
+    "ripple_and_startup": "NOT_MEASURED",
+    "eight_node_peak_current": "NOT_MEASURED",
+    "distal_voltage": "NOT_MEASURED",
+    "regional_latch_off": "NOT_MEASURED",
+    "node_fault_containment": "NOT_MEASURED",
+    "isolation_and_no_backfeed": "NOT_MEASURED"
+  },
+  "evidence_rule": "No test target or calculated budget may be recorded as a measured pass."
+}

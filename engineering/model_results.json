@@ -1,0 +1,75 @@
+{
+  "materials_usd": 29.24,
+  "material_low_high_usd": [
+    19.09,
+    48.54
+  ],
+  "labor_seconds_per_patch": 345,
+  "machine_seconds_per_patch": 300,
+  "process_usd": 3.3,
+  "yield": 0.95,
+  "patch_usd": 34.78,
+  "robot_scenarios": [
+    {
+      "patches": 8,
+      "regions": 1,
+      "shared_usd": 767,
+      "installed_usd": 1045.24,
+      "installed_with_spares_usd": 1080.02
+    },
+    {
+      "patches": 16,
+      "regions": 2,
+      "shared_usd": 1234,
+      "installed_usd": 1790.48,
+      "installed_with_spares_usd": 1860.04
+    },
+    {
+      "patches": 36,
+      "regions": 5,
+      "shared_usd": 2735,
+      "installed_usd": 3987.08,
+      "installed_with_spares_usd": 4126.2
+    },
+    {
+      "patches": 80,
+      "regions": 10,
+      "shared_usd": 5070,
+      "installed_usd": 7852.4,
+      "installed_with_spares_usd": 8130.64
+    }
+  ],
+  "bus_airtime_bound_us_no_errors": 435.0,
+  "bus_8nodes_100Hz_utilization": 0.348,
+  "bus_plus_20_diagnostic_frames_per_s": 0.3567,
+  "scan_seven_channels_8addresses_us": 4422.0,
+  "idle_adc_nominal": 3356.55737704918,
+  "idle_adc_tolerance": [
+    3204.8522793973784,
+    3465.933135844266
+  ],
+  "idle_error_bound_counts": 107.11259982013328,
+  "open_adc_lower_bound": 3974.129856451613,
+  "open_threshold": 3900,
+  "reference_codes": [
+    1023.75,
+    1638.0,
+    2457.0,
+    3071.25
+  ],
+  "temperature": {
+    "ntc_current_uA_at_25C": 67.3469387755102,
+    "ntc_dissipation_uW_at_25C": 45.356101624323195,
+    "ntc_code_at_25C": 835.7142857142857
+  },
+  "24AWG_2m_loop_ohm_20C": 0.336,
+  "24AWG_2m_loop_ohm_50C": 0.37561440000000007,
+  "direct_2240_individual_2m_32AWG_pairs_bare_copper_kg": 2.5690112000000003,
+  "one_patch_active_area_m2": 0.014811999999999999,
+  "eighty_patch_active_area_m2_before_overlap": 1.1849599999999998,
+  "retail_film_24_5mm_squares_per_11_5x13inch_sheet": 143,
+  "full_patch_groups_from_retail_film": 5,
+  "parallel_calibration_28cells_at_20N_total_N": 560,
+  "95percent_zero_failure_lower_reliability_n30": 0.9049661471446958,
+  "n_for_99percent_reliability_95confidence_zero_failures": 299
+}

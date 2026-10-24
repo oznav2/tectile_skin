@@ -1,0 +1,28 @@
+{
+  "status": "Generic stationary example; no robot geometry or fit asserted",
+  "controller_count": 8,
+  "active_taxels_per_patch": [
+    4,
+    6,
+    4,
+    6,
+    6,
+    28,
+    6,
+    28
+  ],
+  "total_active_taxels": 88,
+  "physical_NTC_count": 16,
+  "commissioning_rule": "Mask unused ADC channels; do not count them as physical sensing area.",
+  "power": "isolated regulated 5 V bench supply",
+  "CAN_FD": {
+    "nominal_bps": 1000000,
+    "data_bps": 2000000,
+    "linear_trunk_max_m": 2.0,
+    "branch_max_mm": 50,
+    "terminators_ohm": [
+      120,
+      120
+    ]
+  }
+}

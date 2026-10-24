@@ -1,0 +1,2381 @@
+<?xml version='1.0' encoding='utf-8'?>
+<export version="D">
+  <design>
+    <source>patch_circuit.json</source>
+    <tool>ROBOSKIN build_circuit.py (review export)</tool>
+  </design>
+  <components>
+    <comp ref="U1">
+      <value>STM32G0B1CBT6</value>
+      <footprint>LQFP-48_7x7mm_P0.5mm</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="J1">
+      <value>BM04B-GHS-TBT(LF)(SN)</value>
+      <footprint>JST_GH_1x04_1.25mm</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="U2">
+      <value>TPS2553DBVR-1</value>
+      <footprint>SOT-23-6</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_NODE_EN">
+      <value>100k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_NODE_ILIM">
+      <value>200k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_NODE_FAULT">
+      <value>10k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_NODE_IN">
+      <value>1uF X7R 10V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_NODE_HF">
+      <value>100nF X7R 10V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_NODE_OUT">
+      <value>4.7uF X7R 10V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="U3">
+      <value>TPS7A2433DBVR</value>
+      <footprint>SOT-23-5</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_LDO_IN">
+      <value>4.7uF X7R 10V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_LDO_OUT">
+      <value>4.7uF X7R 10V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_MCU_HF">
+      <value>100nF X7R 10V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_MCU_BULK">
+      <value>4.7uF X7R 10V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_ANALOG">
+      <value>10R 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_ANALOG_BULK">
+      <value>1uF X7R 10V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_ANALOG_HF">
+      <value>100nF X7R 10V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_RESET">
+      <value>10k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_RESET">
+      <value>100nF X7R 10V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_SERVICE">
+      <value>10k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="J_SWD">
+      <value>SWD test pads</value>
+      <footprint>TestPads</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="J_UART">
+      <value>Service test pads</value>
+      <footprint>TestPads</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="Y1">
+      <value>ASV-8.000MHZ-LC-T</value>
+      <footprint>Oscillator_7.0x5.08mm</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_CLK">
+      <value>33R</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_CLK">
+      <value>100nF X7R 10V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="U4">
+      <value>TCAN3413DR</value>
+      <footprint>SOIC-8_3.9x4.9mm_P1.27mm</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_CAN_TX">
+      <value>10k</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_CAN_STB">
+      <value>47k</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_CAN_VCC">
+      <value>100nF X7R 10V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_CAN_VIO">
+      <value>100nF X7R 10V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_CAN_BULK">
+      <value>1uF X7R 10V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="D_CAN">
+      <value>PESD2CANFD24V-T</value>
+      <footprint>SOT-23</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="U_MUX0">
+      <value>TMUX1308PWR</value>
+      <footprint>TSSOP-16_4.4x5mm_P0.65mm</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_MUX_EN0">
+      <value>47k</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_MUX0">
+      <value>100nF X7R 10V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_MUX_OUT0">
+      <value>4.7k</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_ADC0">
+      <value>100pF C0G 50V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_REF_TOP0">
+      <value>30k</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_REF_BOT0">
+      <value>10k</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="U_MUX1">
+      <value>TMUX1308PWR</value>
+      <footprint>TSSOP-16_4.4x5mm_P0.65mm</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_MUX_EN1">
+      <value>47k</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_MUX1">
+      <value>100nF X7R 10V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_MUX_OUT1">
+      <value>4.7k</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_ADC1">
+      <value>100pF C0G 50V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_REF_TOP1">
+      <value>15k</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_REF_BOT1">
+      <value>10k</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="U_MUX2">
+      <value>TMUX1308PWR</value>
+      <footprint>TSSOP-16_4.4x5mm_P0.65mm</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_MUX_EN2">
+      <value>47k</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_MUX2">
+      <value>100nF X7R 10V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_MUX_OUT2">
+      <value>4.7k</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_ADC2">
+      <value>100pF C0G 50V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_REF_TOP2">
+      <value>10k</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_REF_BOT2">
+      <value>15k</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="U_MUX3">
+      <value>TMUX1308PWR</value>
+      <footprint>TSSOP-16_4.4x5mm_P0.65mm</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_MUX_EN3">
+      <value>47k</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_MUX3">
+      <value>100nF X7R 10V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_MUX_OUT3">
+      <value>4.7k</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_ADC3">
+      <value>100pF C0G 50V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_REF_TOP3">
+      <value>10k</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_REF_BOT3">
+      <value>30k</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_BIAS00">
+      <value>22k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_SER00">
+      <value>1k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_SNS00">
+      <value>100pF C0G 50V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="REOL00">
+      <value>100k printed +/-20%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="FSR00">
+      <value>Independent resistive taxel</value>
+      <footprint>Printed_PET_Custom</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="R_BIAS01">
+      <value>22k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_SER01">
+      <value>1k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_SNS01">
+      <value>100pF C0G 50V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="REOL01">
+      <value>100k printed +/-20%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="FSR01">
+      <value>Independent resistive taxel</value>
+      <footprint>Printed_PET_Custom</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="R_BIAS02">
+      <value>22k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_SER02">
+      <value>1k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_SNS02">
+      <value>100pF C0G 50V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="REOL02">
+      <value>100k printed +/-20%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="FSR02">
+      <value>Independent resistive taxel</value>
+      <footprint>Printed_PET_Custom</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="R_BIAS03">
+      <value>22k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_SER03">
+      <value>1k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_SNS03">
+      <value>100pF C0G 50V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="REOL03">
+      <value>100k printed +/-20%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="FSR03">
+      <value>Independent resistive taxel</value>
+      <footprint>Printed_PET_Custom</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="R_BIAS04">
+      <value>22k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_SER04">
+      <value>1k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_SNS04">
+      <value>100pF C0G 50V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="REOL04">
+      <value>100k printed +/-20%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="FSR04">
+      <value>Independent resistive taxel</value>
+      <footprint>Printed_PET_Custom</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="R_BIAS05">
+      <value>22k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_SER05">
+      <value>1k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_SNS05">
+      <value>100pF C0G 50V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="REOL05">
+      <value>100k printed +/-20%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="FSR05">
+      <value>Independent resistive taxel</value>
+      <footprint>Printed_PET_Custom</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="R_BIAS06">
+      <value>22k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_SER06">
+      <value>1k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_SNS06">
+      <value>100pF C0G 50V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="REOL06">
+      <value>100k printed +/-20%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="FSR06">
+      <value>Independent resistive taxel</value>
+      <footprint>Printed_PET_Custom</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="R_BIAS07">
+      <value>22k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_SER07">
+      <value>1k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_SNS07">
+      <value>100pF C0G 50V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="REOL07">
+      <value>100k printed +/-20%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="FSR07">
+      <value>Independent resistive taxel</value>
+      <footprint>Printed_PET_Custom</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="R_BIAS08">
+      <value>22k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_SER08">
+      <value>1k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_SNS08">
+      <value>100pF C0G 50V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="REOL08">
+      <value>100k printed +/-20%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="FSR08">
+      <value>Independent resistive taxel</value>
+      <footprint>Printed_PET_Custom</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="R_BIAS09">
+      <value>22k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_SER09">
+      <value>1k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_SNS09">
+      <value>100pF C0G 50V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="REOL09">
+      <value>100k printed +/-20%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="FSR09">
+      <value>Independent resistive taxel</value>
+      <footprint>Printed_PET_Custom</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="R_BIAS10">
+      <value>22k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_SER10">
+      <value>1k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_SNS10">
+      <value>100pF C0G 50V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="REOL10">
+      <value>100k printed +/-20%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="FSR10">
+      <value>Independent resistive taxel</value>
+      <footprint>Printed_PET_Custom</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="R_BIAS11">
+      <value>22k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_SER11">
+      <value>1k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_SNS11">
+      <value>100pF C0G 50V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="REOL11">
+      <value>100k printed +/-20%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="FSR11">
+      <value>Independent resistive taxel</value>
+      <footprint>Printed_PET_Custom</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="R_BIAS12">
+      <value>22k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_SER12">
+      <value>1k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_SNS12">
+      <value>100pF C0G 50V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="REOL12">
+      <value>100k printed +/-20%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="FSR12">
+      <value>Independent resistive taxel</value>
+      <footprint>Printed_PET_Custom</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="R_BIAS13">
+      <value>22k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_SER13">
+      <value>1k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_SNS13">
+      <value>100pF C0G 50V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="REOL13">
+      <value>100k printed +/-20%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="FSR13">
+      <value>Independent resistive taxel</value>
+      <footprint>Printed_PET_Custom</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="R_BIAS14">
+      <value>22k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_SER14">
+      <value>1k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_SNS14">
+      <value>100pF C0G 50V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="REOL14">
+      <value>100k printed +/-20%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="FSR14">
+      <value>Independent resistive taxel</value>
+      <footprint>Printed_PET_Custom</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="R_BIAS15">
+      <value>22k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_SER15">
+      <value>1k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_SNS15">
+      <value>100pF C0G 50V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="REOL15">
+      <value>100k printed +/-20%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="FSR15">
+      <value>Independent resistive taxel</value>
+      <footprint>Printed_PET_Custom</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="R_BIAS16">
+      <value>22k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_SER16">
+      <value>1k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_SNS16">
+      <value>100pF C0G 50V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="REOL16">
+      <value>100k printed +/-20%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="FSR16">
+      <value>Independent resistive taxel</value>
+      <footprint>Printed_PET_Custom</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="R_BIAS17">
+      <value>22k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_SER17">
+      <value>1k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_SNS17">
+      <value>100pF C0G 50V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="REOL17">
+      <value>100k printed +/-20%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="FSR17">
+      <value>Independent resistive taxel</value>
+      <footprint>Printed_PET_Custom</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="R_BIAS18">
+      <value>22k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_SER18">
+      <value>1k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_SNS18">
+      <value>100pF C0G 50V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="REOL18">
+      <value>100k printed +/-20%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="FSR18">
+      <value>Independent resistive taxel</value>
+      <footprint>Printed_PET_Custom</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="R_BIAS19">
+      <value>22k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_SER19">
+      <value>1k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_SNS19">
+      <value>100pF C0G 50V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="REOL19">
+      <value>100k printed +/-20%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="FSR19">
+      <value>Independent resistive taxel</value>
+      <footprint>Printed_PET_Custom</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="R_BIAS20">
+      <value>22k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_SER20">
+      <value>1k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_SNS20">
+      <value>100pF C0G 50V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="REOL20">
+      <value>100k printed +/-20%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="FSR20">
+      <value>Independent resistive taxel</value>
+      <footprint>Printed_PET_Custom</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="R_BIAS21">
+      <value>22k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_SER21">
+      <value>1k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_SNS21">
+      <value>100pF C0G 50V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="REOL21">
+      <value>100k printed +/-20%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="FSR21">
+      <value>Independent resistive taxel</value>
+      <footprint>Printed_PET_Custom</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="R_BIAS22">
+      <value>22k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_SER22">
+      <value>1k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_SNS22">
+      <value>100pF C0G 50V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="REOL22">
+      <value>100k printed +/-20%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="FSR22">
+      <value>Independent resistive taxel</value>
+      <footprint>Printed_PET_Custom</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="R_BIAS23">
+      <value>22k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_SER23">
+      <value>1k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_SNS23">
+      <value>100pF C0G 50V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="REOL23">
+      <value>100k printed +/-20%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="FSR23">
+      <value>Independent resistive taxel</value>
+      <footprint>Printed_PET_Custom</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="R_BIAS24">
+      <value>22k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_SER24">
+      <value>1k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_SNS24">
+      <value>100pF C0G 50V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="REOL24">
+      <value>100k printed +/-20%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="FSR24">
+      <value>Independent resistive taxel</value>
+      <footprint>Printed_PET_Custom</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="R_BIAS25">
+      <value>22k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_SER25">
+      <value>1k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_SNS25">
+      <value>100pF C0G 50V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="REOL25">
+      <value>100k printed +/-20%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="FSR25">
+      <value>Independent resistive taxel</value>
+      <footprint>Printed_PET_Custom</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="R_BIAS26">
+      <value>22k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_SER26">
+      <value>1k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_SNS26">
+      <value>100pF C0G 50V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="REOL26">
+      <value>100k printed +/-20%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="FSR26">
+      <value>Independent resistive taxel</value>
+      <footprint>Printed_PET_Custom</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="R_BIAS27">
+      <value>22k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_SER27">
+      <value>1k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_SNS27">
+      <value>100pF C0G 50V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="REOL27">
+      <value>100k printed +/-20%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="FSR27">
+      <value>Independent resistive taxel</value>
+      <footprint>Printed_PET_Custom</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="J_SENSOR">
+      <value>FH12-40S-0.5SH(55)</value>
+      <footprint>Hirose_FH12_1x40_P0.50mm</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_TEMP_BIAS0">
+      <value>39k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_TEMP_SER0">
+      <value>1k</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_TEMP0">
+      <value>1nF C0G 50V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="TH0">
+      <value>NCU18XH103F60RB</value>
+      <footprint>R_0603</footprint>
+      <fields>
+        <field name="Assembly">thermal_flex</field>
+      </fields>
+    </comp>
+    <comp ref="R_TEMP_BIAS1">
+      <value>39k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_TEMP_SER1">
+      <value>1k</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="C_TEMP1">
+      <value>1nF C0G 50V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="TH1">
+      <value>NCU18XH103F60RB</value>
+      <footprint>R_0603</footprint>
+      <fields>
+        <field name="Assembly">thermal_flex</field>
+      </fields>
+    </comp>
+    <comp ref="J_THERMAL">
+      <value>Thermal flex pads</value>
+      <footprint>SolderPads</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_WIT_DRIVE">
+      <value>1k</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_WIT_SER">
+      <value>1k</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="R_WIT_DOWN">
+      <value>100k</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="WIT_LOOP">
+      <value>Sheet perimeter conductor</value>
+      <footprint>Printed_Loop</footprint>
+      <fields>
+        <field name="Assembly">remote_sensor_sheet</field>
+      </fields>
+    </comp>
+    <comp ref="D_A0">
+      <value>TPD4E1U06DBVR</value>
+      <footprint>SOT-23-6</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="D_A1">
+      <value>TPD4E1U06DBVR</value>
+      <footprint>SOT-23-6</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="D_A2">
+      <value>TPD4E1U06DBVR</value>
+      <footprint>SOT-23-6</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="D_A3">
+      <value>TPD4E1U06DBVR</value>
+      <footprint>SOT-23-6</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="D_A4">
+      <value>TPD4E1U06DBVR</value>
+      <footprint>SOT-23-6</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="D_A5">
+      <value>TPD4E1U06DBVR</value>
+      <footprint>SOT-23-6</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="D_A6">
+      <value>TPD4E1U06DBVR</value>
+      <footprint>SOT-23-6</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+    <comp ref="D_A7">
+      <value>TPD4E1U06DBVR</value>
+      <footprint>SOT-23-6</footprint>
+      <fields>
+        <field name="Assembly">controller</field>
+      </fields>
+    </comp>
+  </components>
+  <nets>
+    <net code="1" name="3V3">
+      <node ref="U1" pin="4" />
+      <node ref="U1" pin="6" />
+      <node ref="R_NODE_FAULT" pin="2" />
+      <node ref="U3" pin="5" />
+      <node ref="C_LDO_OUT" pin="1" />
+      <node ref="C_MCU_HF" pin="1" />
+      <node ref="C_MCU_BULK" pin="1" />
+      <node ref="R_ANALOG" pin="1" />
+      <node ref="R_RESET" pin="1" />
+      <node ref="R_SERVICE" pin="1" />
+      <node ref="J_SWD" pin="1" />
+      <node ref="Y1" pin="1" />
+      <node ref="Y1" pin="4" />
+      <node ref="C_CLK" pin="1" />
+      <node ref="U4" pin="3" />
+      <node ref="U4" pin="5" />
+      <node ref="R_CAN_TX" pin="1" />
+      <node ref="R_CAN_STB" pin="1" />
+      <node ref="C_CAN_VCC" pin="1" />
+      <node ref="C_CAN_VIO" pin="1" />
+      <node ref="C_CAN_BULK" pin="1" />
+      <node ref="R_MUX_EN0" pin="2" />
+      <node ref="R_MUX_EN1" pin="2" />
+      <node ref="R_MUX_EN2" pin="2" />
+      <node ref="R_MUX_EN3" pin="2" />
+    </net>
+    <net code="2" name="3V3_A">
+      <node ref="U1" pin="5" />
+      <node ref="R_ANALOG" pin="2" />
+      <node ref="C_ANALOG_BULK" pin="1" />
+      <node ref="C_ANALOG_HF" pin="1" />
+      <node ref="U_MUX0" pin="16" />
+      <node ref="C_MUX0" pin="1" />
+      <node ref="R_REF_TOP0" pin="1" />
+      <node ref="U_MUX1" pin="16" />
+      <node ref="C_MUX1" pin="1" />
+      <node ref="R_REF_TOP1" pin="1" />
+      <node ref="U_MUX2" pin="16" />
+      <node ref="C_MUX2" pin="1" />
+      <node ref="R_REF_TOP2" pin="1" />
+      <node ref="U_MUX3" pin="16" />
+      <node ref="C_MUX3" pin="1" />
+      <node ref="R_REF_TOP3" pin="1" />
+      <node ref="R_BIAS00" pin="1" />
+      <node ref="R_BIAS01" pin="1" />
+      <node ref="R_BIAS02" pin="1" />
+      <node ref="R_BIAS03" pin="1" />
+      <node ref="R_BIAS04" pin="1" />
+      <node ref="R_BIAS05" pin="1" />
+      <node ref="R_BIAS06" pin="1" />
+      <node ref="R_BIAS07" pin="1" />
+      <node ref="R_BIAS08" pin="1" />
+      <node ref="R_BIAS09" pin="1" />
+      <node ref="R_BIAS10" pin="1" />
+      <node ref="R_BIAS11" pin="1" />
+      <node ref="R_BIAS12" pin="1" />
+      <node ref="R_BIAS13" pin="1" />
+      <node ref="R_BIAS14" pin="1" />
+      <node ref="R_BIAS15" pin="1" />
+      <node ref="R_BIAS16" pin="1" />
+      <node ref="R_BIAS17" pin="1" />
+      <node ref="R_BIAS18" pin="1" />
+      <node ref="R_BIAS19" pin="1" />
+      <node ref="R_BIAS20" pin="1" />
+      <node ref="R_BIAS21" pin="1" />
+      <node ref="R_BIAS22" pin="1" />
+      <node ref="R_BIAS23" pin="1" />
+      <node ref="R_BIAS24" pin="1" />
+      <node ref="R_BIAS25" pin="1" />
+      <node ref="R_BIAS26" pin="1" />
+      <node ref="R_BIAS27" pin="1" />
+      <node ref="R_TEMP_BIAS0" pin="1" />
+      <node ref="R_TEMP_BIAS1" pin="1" />
+    </net>
+    <net code="3" name="5V_NODE">
+      <node ref="U2" pin="6" />
+      <node ref="C_NODE_OUT" pin="1" />
+      <node ref="U3" pin="1" />
+      <node ref="U3" pin="3" />
+      <node ref="C_LDO_IN" pin="1" />
+    </net>
+    <net code="4" name="5V_PATCH">
+      <node ref="J1" pin="1" />
+      <node ref="U2" pin="1" />
+      <node ref="R_NODE_EN" pin="1" />
+      <node ref="C_NODE_IN" pin="1" />
+      <node ref="C_NODE_HF" pin="1" />
+    </net>
+    <net code="5" name="ADC0">
+      <node ref="U1" pin="11" />
+      <node ref="R_MUX_OUT0" pin="2" />
+      <node ref="C_ADC0" pin="1" />
+    </net>
+    <net code="6" name="ADC1">
+      <node ref="U1" pin="12" />
+      <node ref="R_MUX_OUT1" pin="2" />
+      <node ref="C_ADC1" pin="1" />
+    </net>
+    <net code="7" name="ADC2">
+      <node ref="U1" pin="18" />
+      <node ref="R_MUX_OUT2" pin="2" />
+      <node ref="C_ADC2" pin="1" />
+    </net>
+    <net code="8" name="ADC3">
+      <node ref="U1" pin="20" />
+      <node ref="R_MUX_OUT3" pin="2" />
+      <node ref="C_ADC3" pin="1" />
+    </net>
+    <net code="9" name="CANH">
+      <node ref="J1" pin="3" />
+      <node ref="U4" pin="7" />
+      <node ref="D_CAN" pin="1" />
+    </net>
+    <net code="10" name="CANL">
+      <node ref="J1" pin="4" />
+      <node ref="U4" pin="6" />
+      <node ref="D_CAN" pin="2" />
+    </net>
+    <net code="11" name="CAN_RX">
+      <node ref="U1" pin="47" />
+      <node ref="U4" pin="4" />
+    </net>
+    <net code="12" name="CAN_STB">
+      <node ref="U1" pin="28" />
+      <node ref="U4" pin="8" />
+      <node ref="R_CAN_STB" pin="2" />
+    </net>
+    <net code="13" name="CAN_TX">
+      <node ref="U1" pin="48" />
+      <node ref="U4" pin="1" />
+      <node ref="R_CAN_TX" pin="2" />
+    </net>
+    <net code="14" name="GND">
+      <node ref="U1" pin="7" />
+      <node ref="J1" pin="2" />
+      <node ref="U2" pin="2" />
+      <node ref="R_NODE_ILIM" pin="2" />
+      <node ref="C_NODE_IN" pin="2" />
+      <node ref="C_NODE_HF" pin="2" />
+      <node ref="C_NODE_OUT" pin="2" />
+      <node ref="U3" pin="2" />
+      <node ref="U3" pin="4" />
+      <node ref="C_LDO_IN" pin="2" />
+      <node ref="C_LDO_OUT" pin="2" />
+      <node ref="C_MCU_HF" pin="2" />
+      <node ref="C_MCU_BULK" pin="2" />
+      <node ref="C_ANALOG_BULK" pin="2" />
+      <node ref="C_ANALOG_HF" pin="2" />
+      <node ref="C_RESET" pin="2" />
+      <node ref="J_SWD" pin="2" />
+      <node ref="J_UART" pin="1" />
+      <node ref="Y1" pin="2" />
+      <node ref="C_CLK" pin="2" />
+      <node ref="U4" pin="2" />
+      <node ref="C_CAN_VCC" pin="2" />
+      <node ref="C_CAN_VIO" pin="2" />
+      <node ref="C_CAN_BULK" pin="2" />
+      <node ref="D_CAN" pin="3" />
+      <node ref="U_MUX0" pin="8" />
+      <node ref="C_MUX0" pin="2" />
+      <node ref="C_ADC0" pin="2" />
+      <node ref="R_REF_BOT0" pin="2" />
+      <node ref="U_MUX1" pin="8" />
+      <node ref="C_MUX1" pin="2" />
+      <node ref="C_ADC1" pin="2" />
+      <node ref="R_REF_BOT1" pin="2" />
+      <node ref="U_MUX2" pin="8" />
+      <node ref="C_MUX2" pin="2" />
+      <node ref="C_ADC2" pin="2" />
+      <node ref="R_REF_BOT2" pin="2" />
+      <node ref="U_MUX3" pin="8" />
+      <node ref="C_MUX3" pin="2" />
+      <node ref="C_ADC3" pin="2" />
+      <node ref="R_REF_BOT3" pin="2" />
+      <node ref="C_SNS00" pin="2" />
+      <node ref="REOL00" pin="2" />
+      <node ref="FSR00" pin="2" />
+      <node ref="C_SNS01" pin="2" />
+      <node ref="REOL01" pin="2" />
+      <node ref="FSR01" pin="2" />
+      <node ref="C_SNS02" pin="2" />
+      <node ref="REOL02" pin="2" />
+      <node ref="FSR02" pin="2" />
+      <node ref="C_SNS03" pin="2" />
+      <node ref="REOL03" pin="2" />
+      <node ref="FSR03" pin="2" />
+      <node ref="C_SNS04" pin="2" />
+      <node ref="REOL04" pin="2" />
+      <node ref="FSR04" pin="2" />
+      <node ref="C_SNS05" pin="2" />
+      <node ref="REOL05" pin="2" />
+      <node ref="FSR05" pin="2" />
+      <node ref="C_SNS06" pin="2" />
+      <node ref="REOL06" pin="2" />
+      <node ref="FSR06" pin="2" />
+      <node ref="C_SNS07" pin="2" />
+      <node ref="REOL07" pin="2" />
+      <node ref="FSR07" pin="2" />
+      <node ref="C_SNS08" pin="2" />
+      <node ref="REOL08" pin="2" />
+      <node ref="FSR08" pin="2" />
+      <node ref="C_SNS09" pin="2" />
+      <node ref="REOL09" pin="2" />
+      <node ref="FSR09" pin="2" />
+      <node ref="C_SNS10" pin="2" />
+      <node ref="REOL10" pin="2" />
+      <node ref="FSR10" pin="2" />
+      <node ref="C_SNS11" pin="2" />
+      <node ref="REOL11" pin="2" />
+      <node ref="FSR11" pin="2" />
+      <node ref="C_SNS12" pin="2" />
+      <node ref="REOL12" pin="2" />
+      <node ref="FSR12" pin="2" />
+      <node ref="C_SNS13" pin="2" />
+      <node ref="REOL13" pin="2" />
+      <node ref="FSR13" pin="2" />
+      <node ref="C_SNS14" pin="2" />
+      <node ref="REOL14" pin="2" />
+      <node ref="FSR14" pin="2" />
+      <node ref="C_SNS15" pin="2" />
+      <node ref="REOL15" pin="2" />
+      <node ref="FSR15" pin="2" />
+      <node ref="C_SNS16" pin="2" />
+      <node ref="REOL16" pin="2" />
+      <node ref="FSR16" pin="2" />
+      <node ref="C_SNS17" pin="2" />
+      <node ref="REOL17" pin="2" />
+      <node ref="FSR17" pin="2" />
+      <node ref="C_SNS18" pin="2" />
+      <node ref="REOL18" pin="2" />
+      <node ref="FSR18" pin="2" />
+      <node ref="C_SNS19" pin="2" />
+      <node ref="REOL19" pin="2" />
+      <node ref="FSR19" pin="2" />
+      <node ref="C_SNS20" pin="2" />
+      <node ref="REOL20" pin="2" />
+      <node ref="FSR20" pin="2" />
+      <node ref="C_SNS21" pin="2" />
+      <node ref="REOL21" pin="2" />
+      <node ref="FSR21" pin="2" />
+      <node ref="C_SNS22" pin="2" />
+      <node ref="REOL22" pin="2" />
+      <node ref="FSR22" pin="2" />
+      <node ref="C_SNS23" pin="2" />
+      <node ref="REOL23" pin="2" />
+      <node ref="FSR23" pin="2" />
+      <node ref="C_SNS24" pin="2" />
+      <node ref="REOL24" pin="2" />
+      <node ref="FSR24" pin="2" />
+      <node ref="C_SNS25" pin="2" />
+      <node ref="REOL25" pin="2" />
+      <node ref="FSR25" pin="2" />
+      <node ref="C_SNS26" pin="2" />
+      <node ref="REOL26" pin="2" />
+      <node ref="FSR26" pin="2" />
+      <node ref="C_SNS27" pin="2" />
+      <node ref="REOL27" pin="2" />
+      <node ref="FSR27" pin="2" />
+      <node ref="J_SENSOR" pin="31" />
+      <node ref="J_SENSOR" pin="32" />
+      <node ref="J_SENSOR" pin="35" />
+      <node ref="J_SENSOR" pin="36" />
+      <node ref="J_SENSOR" pin="37" />
+      <node ref="J_SENSOR" pin="38" />
+      <node ref="J_SENSOR" pin="39" />
+      <node ref="J_SENSOR" pin="40" />
+      <node ref="C_TEMP0" pin="2" />
+      <node ref="TH0" pin="2" />
+      <node ref="C_TEMP1" pin="2" />
+      <node ref="TH1" pin="2" />
+      <node ref="J_THERMAL" pin="3" />
+      <node ref="R_WIT_DOWN" pin="2" />
+      <node ref="D_A0" pin="2" />
+      <node ref="D_A1" pin="2" />
+      <node ref="D_A2" pin="2" />
+      <node ref="D_A3" pin="2" />
+      <node ref="D_A4" pin="2" />
+      <node ref="D_A5" pin="2" />
+      <node ref="D_A6" pin="2" />
+      <node ref="D_A7" pin="2" />
+    </net>
+    <net code="15" name="HSE_IN">
+      <node ref="U1" pin="8" />
+      <node ref="R_CLK" pin="2" />
+    </net>
+    <net code="16" name="MUX_A0">
+      <node ref="U1" pin="44" />
+      <node ref="U_MUX0" pin="11" />
+      <node ref="U_MUX1" pin="11" />
+      <node ref="U_MUX2" pin="11" />
+      <node ref="U_MUX3" pin="11" />
+    </net>
+    <net code="17" name="MUX_A1">
+      <node ref="U1" pin="45" />
+      <node ref="U_MUX0" pin="10" />
+      <node ref="U_MUX1" pin="10" />
+      <node ref="U_MUX2" pin="10" />
+      <node ref="U_MUX3" pin="10" />
+    </net>
+    <net code="18" name="MUX_A2">
+      <node ref="U1" pin="46" />
+      <node ref="U_MUX0" pin="9" />
+      <node ref="U_MUX1" pin="9" />
+      <node ref="U_MUX2" pin="9" />
+      <node ref="U_MUX3" pin="9" />
+    </net>
+    <net code="19" name="MUX_EN0">
+      <node ref="U1" pin="22" />
+      <node ref="U_MUX0" pin="6" />
+      <node ref="R_MUX_EN0" pin="1" />
+    </net>
+    <net code="20" name="MUX_EN1">
+      <node ref="U1" pin="25" />
+      <node ref="U_MUX1" pin="6" />
+      <node ref="R_MUX_EN1" pin="1" />
+    </net>
+    <net code="21" name="MUX_EN2">
+      <node ref="U1" pin="26" />
+      <node ref="U_MUX2" pin="6" />
+      <node ref="R_MUX_EN2" pin="1" />
+    </net>
+    <net code="22" name="MUX_EN3">
+      <node ref="U1" pin="27" />
+      <node ref="U_MUX3" pin="6" />
+      <node ref="R_MUX_EN3" pin="1" />
+    </net>
+    <net code="23" name="MUX_OUT0">
+      <node ref="U_MUX0" pin="3" />
+      <node ref="R_MUX_OUT0" pin="1" />
+    </net>
+    <net code="24" name="MUX_OUT1">
+      <node ref="U_MUX1" pin="3" />
+      <node ref="R_MUX_OUT1" pin="1" />
+    </net>
+    <net code="25" name="MUX_OUT2">
+      <node ref="U_MUX2" pin="3" />
+      <node ref="R_MUX_OUT2" pin="1" />
+    </net>
+    <net code="26" name="MUX_OUT3">
+      <node ref="U_MUX3" pin="3" />
+      <node ref="R_MUX_OUT3" pin="1" />
+    </net>
+    <net code="27" name="NODE_EN">
+      <node ref="U2" pin="3" />
+      <node ref="R_NODE_EN" pin="2" />
+    </net>
+    <net code="28" name="NODE_FAULT_N">
+      <node ref="U1" pin="29" />
+      <node ref="U2" pin="4" />
+      <node ref="R_NODE_FAULT" pin="1" />
+    </net>
+    <net code="29" name="NODE_ILIM">
+      <node ref="U2" pin="5" />
+      <node ref="R_NODE_ILIM" pin="1" />
+    </net>
+    <net code="30" name="NRST">
+      <node ref="U1" pin="10" />
+      <node ref="R_RESET" pin="2" />
+      <node ref="C_RESET" pin="1" />
+      <node ref="J_SWD" pin="5" />
+    </net>
+    <net code="31" name="OSC_RAW">
+      <node ref="Y1" pin="3" />
+      <node ref="R_CLK" pin="1" />
+    </net>
+    <net code="32" name="REF0">
+      <node ref="U_MUX0" pin="4" />
+      <node ref="R_REF_TOP0" pin="2" />
+      <node ref="R_REF_BOT0" pin="1" />
+    </net>
+    <net code="33" name="REF1">
+      <node ref="U_MUX1" pin="4" />
+      <node ref="R_REF_TOP1" pin="2" />
+      <node ref="R_REF_BOT1" pin="1" />
+    </net>
+    <net code="34" name="REF2">
+      <node ref="U_MUX2" pin="4" />
+      <node ref="R_REF_TOP2" pin="2" />
+      <node ref="R_REF_BOT2" pin="1" />
+    </net>
+    <net code="35" name="REF3">
+      <node ref="U_MUX3" pin="4" />
+      <node ref="R_REF_TOP3" pin="2" />
+      <node ref="R_REF_BOT3" pin="1" />
+    </net>
+    <net code="36" name="SERVICE_N">
+      <node ref="U1" pin="32" />
+      <node ref="R_SERVICE" pin="2" />
+      <node ref="J_UART" pin="4" />
+    </net>
+    <net code="37" name="SNS0">
+      <node ref="R_BIAS00" pin="2" />
+      <node ref="R_SER00" pin="1" />
+      <node ref="REOL00" pin="1" />
+      <node ref="FSR00" pin="1" />
+      <node ref="J_SENSOR" pin="1" />
+      <node ref="D_A0" pin="1" />
+    </net>
+    <net code="38" name="SNS1">
+      <node ref="R_BIAS01" pin="2" />
+      <node ref="R_SER01" pin="1" />
+      <node ref="REOL01" pin="1" />
+      <node ref="FSR01" pin="1" />
+      <node ref="J_SENSOR" pin="2" />
+      <node ref="D_A0" pin="6" />
+    </net>
+    <net code="39" name="SNS10">
+      <node ref="R_BIAS10" pin="2" />
+      <node ref="R_SER10" pin="1" />
+      <node ref="REOL10" pin="1" />
+      <node ref="FSR10" pin="1" />
+      <node ref="J_SENSOR" pin="11" />
+      <node ref="D_A2" pin="3" />
+    </net>
+    <net code="40" name="SNS11">
+      <node ref="R_BIAS11" pin="2" />
+      <node ref="R_SER11" pin="1" />
+      <node ref="REOL11" pin="1" />
+      <node ref="FSR11" pin="1" />
+      <node ref="J_SENSOR" pin="12" />
+      <node ref="D_A2" pin="4" />
+    </net>
+    <net code="41" name="SNS12">
+      <node ref="R_BIAS12" pin="2" />
+      <node ref="R_SER12" pin="1" />
+      <node ref="REOL12" pin="1" />
+      <node ref="FSR12" pin="1" />
+      <node ref="J_SENSOR" pin="13" />
+      <node ref="D_A3" pin="1" />
+    </net>
+    <net code="42" name="SNS13">
+      <node ref="R_BIAS13" pin="2" />
+      <node ref="R_SER13" pin="1" />
+      <node ref="REOL13" pin="1" />
+      <node ref="FSR13" pin="1" />
+      <node ref="J_SENSOR" pin="14" />
+      <node ref="D_A3" pin="6" />
+    </net>
+    <net code="43" name="SNS14">
+      <node ref="R_BIAS14" pin="2" />
+      <node ref="R_SER14" pin="1" />
+      <node ref="REOL14" pin="1" />
+      <node ref="FSR14" pin="1" />
+      <node ref="J_SENSOR" pin="15" />
+      <node ref="D_A3" pin="3" />
+    </net>
+    <net code="44" name="SNS15">
+      <node ref="R_BIAS15" pin="2" />
+      <node ref="R_SER15" pin="1" />
+      <node ref="REOL15" pin="1" />
+      <node ref="FSR15" pin="1" />
+      <node ref="J_SENSOR" pin="16" />
+      <node ref="D_A3" pin="4" />
+    </net>
+    <net code="45" name="SNS16">
+      <node ref="R_BIAS16" pin="2" />
+      <node ref="R_SER16" pin="1" />
+      <node ref="REOL16" pin="1" />
+      <node ref="FSR16" pin="1" />
+      <node ref="J_SENSOR" pin="17" />
+      <node ref="D_A4" pin="1" />
+    </net>
+    <net code="46" name="SNS17">
+      <node ref="R_BIAS17" pin="2" />
+      <node ref="R_SER17" pin="1" />
+      <node ref="REOL17" pin="1" />
+      <node ref="FSR17" pin="1" />
+      <node ref="J_SENSOR" pin="18" />
+      <node ref="D_A4" pin="6" />
+    </net>
+    <net code="47" name="SNS18">
+      <node ref="R_BIAS18" pin="2" />
+      <node ref="R_SER18" pin="1" />
+      <node ref="REOL18" pin="1" />
+      <node ref="FSR18" pin="1" />
+      <node ref="J_SENSOR" pin="19" />
+      <node ref="D_A4" pin="3" />
+    </net>
+    <net code="48" name="SNS19">
+      <node ref="R_BIAS19" pin="2" />
+      <node ref="R_SER19" pin="1" />
+      <node ref="REOL19" pin="1" />
+      <node ref="FSR19" pin="1" />
+      <node ref="J_SENSOR" pin="20" />
+      <node ref="D_A4" pin="4" />
+    </net>
+    <net code="49" name="SNS2">
+      <node ref="R_BIAS02" pin="2" />
+      <node ref="R_SER02" pin="1" />
+      <node ref="REOL02" pin="1" />
+      <node ref="FSR02" pin="1" />
+      <node ref="J_SENSOR" pin="3" />
+      <node ref="D_A0" pin="3" />
+    </net>
+    <net code="50" name="SNS20">
+      <node ref="R_BIAS20" pin="2" />
+      <node ref="R_SER20" pin="1" />
+      <node ref="REOL20" pin="1" />
+      <node ref="FSR20" pin="1" />
+      <node ref="J_SENSOR" pin="21" />
+      <node ref="D_A5" pin="1" />
+    </net>
+    <net code="51" name="SNS21">
+      <node ref="R_BIAS21" pin="2" />
+      <node ref="R_SER21" pin="1" />
+      <node ref="REOL21" pin="1" />
+      <node ref="FSR21" pin="1" />
+      <node ref="J_SENSOR" pin="22" />
+      <node ref="D_A5" pin="6" />
+    </net>
+    <net code="52" name="SNS22">
+      <node ref="R_BIAS22" pin="2" />
+      <node ref="R_SER22" pin="1" />
+      <node ref="REOL22" pin="1" />
+      <node ref="FSR22" pin="1" />
+      <node ref="J_SENSOR" pin="23" />
+      <node ref="D_A5" pin="3" />
+    </net>
+    <net code="53" name="SNS23">
+      <node ref="R_BIAS23" pin="2" />
+      <node ref="R_SER23" pin="1" />
+      <node ref="REOL23" pin="1" />
+      <node ref="FSR23" pin="1" />
+      <node ref="J_SENSOR" pin="24" />
+      <node ref="D_A5" pin="4" />
+    </net>
+    <net code="54" name="SNS24">
+      <node ref="R_BIAS24" pin="2" />
+      <node ref="R_SER24" pin="1" />
+      <node ref="REOL24" pin="1" />
+      <node ref="FSR24" pin="1" />
+      <node ref="J_SENSOR" pin="25" />
+      <node ref="D_A6" pin="1" />
+    </net>
+    <net code="55" name="SNS25">
+      <node ref="R_BIAS25" pin="2" />
+      <node ref="R_SER25" pin="1" />
+      <node ref="REOL25" pin="1" />
+      <node ref="FSR25" pin="1" />
+      <node ref="J_SENSOR" pin="26" />
+      <node ref="D_A6" pin="6" />
+    </net>
+    <net code="56" name="SNS26">
+      <node ref="R_BIAS26" pin="2" />
+      <node ref="R_SER26" pin="1" />
+      <node ref="REOL26" pin="1" />
+      <node ref="FSR26" pin="1" />
+      <node ref="J_SENSOR" pin="27" />
+      <node ref="D_A6" pin="3" />
+    </net>
+    <net code="57" name="SNS27">
+      <node ref="R_BIAS27" pin="2" />
+      <node ref="R_SER27" pin="1" />
+      <node ref="REOL27" pin="1" />
+      <node ref="FSR27" pin="1" />
+      <node ref="J_SENSOR" pin="28" />
+      <node ref="D_A6" pin="4" />
+    </net>
+    <net code="58" name="SNS3">
+      <node ref="R_BIAS03" pin="2" />
+      <node ref="R_SER03" pin="1" />
+      <node ref="REOL03" pin="1" />
+      <node ref="FSR03" pin="1" />
+      <node ref="J_SENSOR" pin="4" />
+      <node ref="D_A0" pin="4" />
+    </net>
+    <net code="59" name="SNS4">
+      <node ref="R_BIAS04" pin="2" />
+      <node ref="R_SER04" pin="1" />
+      <node ref="REOL04" pin="1" />
+      <node ref="FSR04" pin="1" />
+      <node ref="J_SENSOR" pin="5" />
+      <node ref="D_A1" pin="1" />
+    </net>
+    <net code="60" name="SNS5">
+      <node ref="R_BIAS05" pin="2" />
+      <node ref="R_SER05" pin="1" />
+      <node ref="REOL05" pin="1" />
+      <node ref="FSR05" pin="1" />
+      <node ref="J_SENSOR" pin="6" />
+      <node ref="D_A1" pin="6" />
+    </net>
+    <net code="61" name="SNS6">
+      <node ref="R_BIAS06" pin="2" />
+      <node ref="R_SER06" pin="1" />
+      <node ref="REOL06" pin="1" />
+      <node ref="FSR06" pin="1" />
+      <node ref="J_SENSOR" pin="7" />
+      <node ref="D_A1" pin="3" />
+    </net>
+    <net code="62" name="SNS7">
+      <node ref="R_BIAS07" pin="2" />
+      <node ref="R_SER07" pin="1" />
+      <node ref="REOL07" pin="1" />
+      <node ref="FSR07" pin="1" />
+      <node ref="J_SENSOR" pin="8" />
+      <node ref="D_A1" pin="4" />
+    </net>
+    <net code="63" name="SNS8">
+      <node ref="R_BIAS08" pin="2" />
+      <node ref="R_SER08" pin="1" />
+      <node ref="REOL08" pin="1" />
+      <node ref="FSR08" pin="1" />
+      <node ref="J_SENSOR" pin="9" />
+      <node ref="D_A2" pin="1" />
+    </net>
+    <net code="64" name="SNS9">
+      <node ref="R_BIAS09" pin="2" />
+      <node ref="R_SER09" pin="1" />
+      <node ref="REOL09" pin="1" />
+      <node ref="FSR09" pin="1" />
+      <node ref="J_SENSOR" pin="10" />
+      <node ref="D_A2" pin="6" />
+    </net>
+    <net code="65" name="SNS_FILT0">
+      <node ref="U_MUX0" pin="13" />
+      <node ref="R_SER00" pin="2" />
+      <node ref="C_SNS00" pin="1" />
+    </net>
+    <net code="66" name="SNS_FILT1">
+      <node ref="U_MUX0" pin="14" />
+      <node ref="R_SER01" pin="2" />
+      <node ref="C_SNS01" pin="1" />
+    </net>
+    <net code="67" name="SNS_FILT10">
+      <node ref="U_MUX1" pin="12" />
+      <node ref="R_SER10" pin="2" />
+      <node ref="C_SNS10" pin="1" />
+    </net>
+    <net code="68" name="SNS_FILT11">
+      <node ref="U_MUX1" pin="1" />
+      <node ref="R_SER11" pin="2" />
+      <node ref="C_SNS11" pin="1" />
+    </net>
+    <net code="69" name="SNS_FILT12">
+      <node ref="U_MUX1" pin="5" />
+      <node ref="R_SER12" pin="2" />
+      <node ref="C_SNS12" pin="1" />
+    </net>
+    <net code="70" name="SNS_FILT13">
+      <node ref="U_MUX1" pin="2" />
+      <node ref="R_SER13" pin="2" />
+      <node ref="C_SNS13" pin="1" />
+    </net>
+    <net code="71" name="SNS_FILT14">
+      <node ref="U_MUX2" pin="13" />
+      <node ref="R_SER14" pin="2" />
+      <node ref="C_SNS14" pin="1" />
+    </net>
+    <net code="72" name="SNS_FILT15">
+      <node ref="U_MUX2" pin="14" />
+      <node ref="R_SER15" pin="2" />
+      <node ref="C_SNS15" pin="1" />
+    </net>
+    <net code="73" name="SNS_FILT16">
+      <node ref="U_MUX2" pin="15" />
+      <node ref="R_SER16" pin="2" />
+      <node ref="C_SNS16" pin="1" />
+    </net>
+    <net code="74" name="SNS_FILT17">
+      <node ref="U_MUX2" pin="12" />
+      <node ref="R_SER17" pin="2" />
+      <node ref="C_SNS17" pin="1" />
+    </net>
+    <net code="75" name="SNS_FILT18">
+      <node ref="U_MUX2" pin="1" />
+      <node ref="R_SER18" pin="2" />
+      <node ref="C_SNS18" pin="1" />
+    </net>
+    <net code="76" name="SNS_FILT19">
+      <node ref="U_MUX2" pin="5" />
+      <node ref="R_SER19" pin="2" />
+      <node ref="C_SNS19" pin="1" />
+    </net>
+    <net code="77" name="SNS_FILT2">
+      <node ref="U_MUX0" pin="15" />
+      <node ref="R_SER02" pin="2" />
+      <node ref="C_SNS02" pin="1" />
+    </net>
+    <net code="78" name="SNS_FILT20">
+      <node ref="U_MUX2" pin="2" />
+      <node ref="R_SER20" pin="2" />
+      <node ref="C_SNS20" pin="1" />
+    </net>
+    <net code="79" name="SNS_FILT21">
+      <node ref="U_MUX3" pin="13" />
+      <node ref="R_SER21" pin="2" />
+      <node ref="C_SNS21" pin="1" />
+    </net>
+    <net code="80" name="SNS_FILT22">
+      <node ref="U_MUX3" pin="14" />
+      <node ref="R_SER22" pin="2" />
+      <node ref="C_SNS22" pin="1" />
+    </net>
+    <net code="81" name="SNS_FILT23">
+      <node ref="U_MUX3" pin="15" />
+      <node ref="R_SER23" pin="2" />
+      <node ref="C_SNS23" pin="1" />
+    </net>
+    <net code="82" name="SNS_FILT24">
+      <node ref="U_MUX3" pin="12" />
+      <node ref="R_SER24" pin="2" />
+      <node ref="C_SNS24" pin="1" />
+    </net>
+    <net code="83" name="SNS_FILT25">
+      <node ref="U_MUX3" pin="1" />
+      <node ref="R_SER25" pin="2" />
+      <node ref="C_SNS25" pin="1" />
+    </net>
+    <net code="84" name="SNS_FILT26">
+      <node ref="U_MUX3" pin="5" />
+      <node ref="R_SER26" pin="2" />
+      <node ref="C_SNS26" pin="1" />
+    </net>
+    <net code="85" name="SNS_FILT27">
+      <node ref="U_MUX3" pin="2" />
+      <node ref="R_SER27" pin="2" />
+      <node ref="C_SNS27" pin="1" />
+    </net>
+    <net code="86" name="SNS_FILT3">
+      <node ref="U_MUX0" pin="12" />
+      <node ref="R_SER03" pin="2" />
+      <node ref="C_SNS03" pin="1" />
+    </net>
+    <net code="87" name="SNS_FILT4">
+      <node ref="U_MUX0" pin="1" />
+      <node ref="R_SER04" pin="2" />
+      <node ref="C_SNS04" pin="1" />
+    </net>
+    <net code="88" name="SNS_FILT5">
+      <node ref="U_MUX0" pin="5" />
+      <node ref="R_SER05" pin="2" />
+      <node ref="C_SNS05" pin="1" />
+    </net>
+    <net code="89" name="SNS_FILT6">
+      <node ref="U_MUX0" pin="2" />
+      <node ref="R_SER06" pin="2" />
+      <node ref="C_SNS06" pin="1" />
+    </net>
+    <net code="90" name="SNS_FILT7">
+      <node ref="U_MUX1" pin="13" />
+      <node ref="R_SER07" pin="2" />
+      <node ref="C_SNS07" pin="1" />
+    </net>
+    <net code="91" name="SNS_FILT8">
+      <node ref="U_MUX1" pin="14" />
+      <node ref="R_SER08" pin="2" />
+      <node ref="C_SNS08" pin="1" />
+    </net>
+    <net code="92" name="SNS_FILT9">
+      <node ref="U_MUX1" pin="15" />
+      <node ref="R_SER09" pin="2" />
+      <node ref="C_SNS09" pin="1" />
+    </net>
+    <net code="93" name="SWCLK">
+      <node ref="U1" pin="36" />
+      <node ref="J_SWD" pin="4" />
+    </net>
+    <net code="94" name="SWDIO">
+      <node ref="U1" pin="35" />
+      <node ref="J_SWD" pin="3" />
+    </net>
+    <net code="95" name="TEMP_ADC0">
+      <node ref="U1" pin="23" />
+      <node ref="R_TEMP_SER0" pin="2" />
+      <node ref="C_TEMP0" pin="1" />
+    </net>
+    <net code="96" name="TEMP_ADC1">
+      <node ref="U1" pin="24" />
+      <node ref="R_TEMP_SER1" pin="2" />
+      <node ref="C_TEMP1" pin="1" />
+    </net>
+    <net code="97" name="TEMP_EXT0">
+      <node ref="R_TEMP_BIAS0" pin="2" />
+      <node ref="R_TEMP_SER0" pin="1" />
+      <node ref="TH0" pin="1" />
+      <node ref="J_THERMAL" pin="1" />
+      <node ref="D_A7" pin="1" />
+    </net>
+    <net code="98" name="TEMP_EXT1">
+      <node ref="R_TEMP_BIAS1" pin="2" />
+      <node ref="R_TEMP_SER1" pin="1" />
+      <node ref="TH1" pin="1" />
+      <node ref="J_THERMAL" pin="2" />
+      <node ref="D_A7" pin="6" />
+    </net>
+    <net code="99" name="UART_RX">
+      <node ref="U1" pin="14" />
+      <node ref="J_UART" pin="3" />
+    </net>
+    <net code="100" name="UART_TX">
+      <node ref="U1" pin="13" />
+      <node ref="J_UART" pin="2" />
+    </net>
+    <net code="101" name="WIT_DRIVE">
+      <node ref="U1" pin="21" />
+      <node ref="R_WIT_DRIVE" pin="1" />
+    </net>
+    <net code="102" name="WIT_IN">
+      <node ref="J_SENSOR" pin="34" />
+      <node ref="R_WIT_SER" pin="1" />
+      <node ref="WIT_LOOP" pin="2" />
+      <node ref="D_A7" pin="4" />
+    </net>
+    <net code="103" name="WIT_OUT">
+      <node ref="J_SENSOR" pin="33" />
+      <node ref="R_WIT_DRIVE" pin="2" />
+      <node ref="WIT_LOOP" pin="1" />
+      <node ref="D_A7" pin="3" />
+    </net>
+    <net code="104" name="WIT_RETURN">
+      <node ref="U1" pin="43" />
+      <node ref="R_WIT_SER" pin="2" />
+      <node ref="R_WIT_DOWN" pin="1" />
+    </net>
+  </nets>
+</export>

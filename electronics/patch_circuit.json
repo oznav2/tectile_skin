@@ -1,0 +1,5286 @@
+{
+  "design": "ROBOSKIN patch_circuit",
+  "release_status": "PIN_LEVEL_DESIGN_REVIEW_ONLY_NOT_ROUTED_OR_HARDWARE_VALIDATED",
+  "parts": [
+    {
+      "ref": "U1",
+      "value": "STM32G0B1CBT6",
+      "package": "LQFP-48_7x7mm_P0.5mm",
+      "location": "controller",
+      "note": "Non-N package only; MCU firmware not supplied by this generator.",
+      "pins": {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "3V3",
+        "5": "3V3_A",
+        "6": "3V3",
+        "7": "GND",
+        "8": "HSE_IN",
+        "9": null,
+        "10": "NRST",
+        "11": "ADC0",
+        "12": "ADC1",
+        "13": "UART_TX",
+        "14": "UART_RX",
+        "15": null,
+        "16": null,
+        "17": null,
+        "18": "ADC2",
+        "19": null,
+        "20": "ADC3",
+        "21": "WIT_DRIVE",
+        "22": "MUX_EN0",
+        "23": "TEMP_ADC0",
+        "24": "TEMP_ADC1",
+        "25": "MUX_EN1",
+        "26": "MUX_EN2",
+        "27": "MUX_EN3",
+        "28": "CAN_STB",
+        "29": "NODE_FAULT_N",
+        "30": null,
+        "31": null,
+        "32": "SERVICE_N",
+        "33": null,
+        "34": null,
+        "35": "SWDIO",
+        "36": "SWCLK",
+        "37": null,
+        "38": null,
+        "39": null,
+        "40": null,
+        "41": null,
+        "42": null,
+        "43": "WIT_RETURN",
+        "44": "MUX_A0",
+        "45": "MUX_A1",
+        "46": "MUX_A2",
+        "47": "CAN_RX",
+        "48": "CAN_TX"
+      }
+    },
+    {
+      "ref": "J1",
+      "value": "BM04B-GHS-TBT(LF)(SN)",
+      "package": "JST_GH_1x04_1.25mm",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "5V_PATCH",
+        "2": "GND",
+        "3": "CANH",
+        "4": "CANL"
+      }
+    },
+    {
+      "ref": "U2",
+      "value": "TPS2553DBVR-1",
+      "package": "SOT-23-6",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "5V_PATCH",
+        "2": "GND",
+        "3": "NODE_EN",
+        "4": "NODE_FAULT_N",
+        "5": "NODE_ILIM",
+        "6": "5V_NODE"
+      }
+    },
+    {
+      "ref": "R_NODE_EN",
+      "value": "100k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "5V_PATCH",
+        "2": "NODE_EN"
+      }
+    },
+    {
+      "ref": "R_NODE_ILIM",
+      "value": "200k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "NODE_ILIM",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "R_NODE_FAULT",
+      "value": "10k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "NODE_FAULT_N",
+        "2": "3V3"
+      }
+    },
+    {
+      "ref": "C_NODE_IN",
+      "value": "1uF X7R 10V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "5V_PATCH",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "C_NODE_HF",
+      "value": "100nF X7R 10V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "5V_PATCH",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "C_NODE_OUT",
+      "value": "4.7uF X7R 10V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "5V_NODE",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "U3",
+      "value": "TPS7A2433DBVR",
+      "package": "SOT-23-5",
+      "location": "controller",
+      "note": "Fixed-output NC pin4 tied GND per datasheet permission.",
+      "pins": {
+        "1": "5V_NODE",
+        "2": "GND",
+        "3": "5V_NODE",
+        "4": "GND",
+        "5": "3V3"
+      }
+    },
+    {
+      "ref": "C_LDO_IN",
+      "value": "4.7uF X7R 10V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "5V_NODE",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "C_LDO_OUT",
+      "value": "4.7uF X7R 10V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "C_MCU_HF",
+      "value": "100nF X7R 10V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "C_MCU_BULK",
+      "value": "4.7uF X7R 10V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "R_ANALOG",
+      "value": "10R 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3",
+        "2": "3V3_A"
+      }
+    },
+    {
+      "ref": "C_ANALOG_BULK",
+      "value": "1uF X7R 10V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3_A",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "C_ANALOG_HF",
+      "value": "100nF X7R 10V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3_A",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "R_RESET",
+      "value": "10k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3",
+        "2": "NRST"
+      }
+    },
+    {
+      "ref": "C_RESET",
+      "value": "100nF X7R 10V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "NRST",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "R_SERVICE",
+      "value": "10k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3",
+        "2": "SERVICE_N"
+      }
+    },
+    {
+      "ref": "J_SWD",
+      "value": "SWD test pads",
+      "package": "TestPads",
+      "location": "controller",
+      "note": "Pin1 sense only; do not power from debugger.",
+      "pins": {
+        "1": "3V3",
+        "2": "GND",
+        "3": "SWDIO",
+        "4": "SWCLK",
+        "5": "NRST"
+      }
+    },
+    {
+      "ref": "J_UART",
+      "value": "Service test pads",
+      "package": "TestPads",
+      "location": "controller",
+      "note": "3.3V UART 115200 8N1; strap pin4 to pin1 before reset for writes.",
+      "pins": {
+        "1": "GND",
+        "2": "UART_TX",
+        "3": "UART_RX",
+        "4": "SERVICE_N"
+      }
+    },
+    {
+      "ref": "Y1",
+      "value": "ASV-8.000MHZ-LC-T",
+      "package": "Oscillator_7.0x5.08mm",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3",
+        "2": "GND",
+        "3": "OSC_RAW",
+        "4": "3V3"
+      }
+    },
+    {
+      "ref": "R_CLK",
+      "value": "33R",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "OSC_RAW",
+        "2": "HSE_IN"
+      }
+    },
+    {
+      "ref": "C_CLK",
+      "value": "100nF X7R 10V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "U4",
+      "value": "TCAN3413DR",
+      "package": "SOIC-8_3.9x4.9mm_P1.27mm",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "CAN_TX",
+        "2": "GND",
+        "3": "3V3",
+        "4": "CAN_RX",
+        "5": "3V3",
+        "6": "CANL",
+        "7": "CANH",
+        "8": "CAN_STB"
+      }
+    },
+    {
+      "ref": "R_CAN_TX",
+      "value": "10k",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3",
+        "2": "CAN_TX"
+      }
+    },
+    {
+      "ref": "R_CAN_STB",
+      "value": "47k",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3",
+        "2": "CAN_STB"
+      }
+    },
+    {
+      "ref": "C_CAN_VCC",
+      "value": "100nF X7R 10V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "C_CAN_VIO",
+      "value": "100nF X7R 10V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "C_CAN_BULK",
+      "value": "1uF X7R 10V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "D_CAN",
+      "value": "PESD2CANFD24V-T",
+      "package": "SOT-23",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "CANH",
+        "2": "CANL",
+        "3": "GND"
+      }
+    },
+    {
+      "ref": "U_MUX0",
+      "value": "TMUX1308PWR",
+      "package": "TSSOP-16_4.4x5mm_P0.65mm",
+      "location": "controller",
+      "note": "EN low selects; high disables.",
+      "pins": {
+        "16": "3V3_A",
+        "8": "GND",
+        "11": "MUX_A0",
+        "10": "MUX_A1",
+        "9": "MUX_A2",
+        "6": "MUX_EN0",
+        "7": null,
+        "3": "MUX_OUT0",
+        "13": "SNS_FILT0",
+        "14": "SNS_FILT1",
+        "15": "SNS_FILT2",
+        "12": "SNS_FILT3",
+        "1": "SNS_FILT4",
+        "5": "SNS_FILT5",
+        "2": "SNS_FILT6",
+        "4": "REF0"
+      }
+    },
+    {
+      "ref": "R_MUX_EN0",
+      "value": "47k",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "MUX_EN0",
+        "2": "3V3"
+      }
+    },
+    {
+      "ref": "C_MUX0",
+      "value": "100nF X7R 10V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3_A",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "R_MUX_OUT0",
+      "value": "4.7k",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "MUX_OUT0",
+        "2": "ADC0"
+      }
+    },
+    {
+      "ref": "C_ADC0",
+      "value": "100pF C0G 50V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "ADC0",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "R_REF_TOP0",
+      "value": "30k",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3_A",
+        "2": "REF0"
+      }
+    },
+    {
+      "ref": "R_REF_BOT0",
+      "value": "10k",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "REF0",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "U_MUX1",
+      "value": "TMUX1308PWR",
+      "package": "TSSOP-16_4.4x5mm_P0.65mm",
+      "location": "controller",
+      "note": "EN low selects; high disables.",
+      "pins": {
+        "16": "3V3_A",
+        "8": "GND",
+        "11": "MUX_A0",
+        "10": "MUX_A1",
+        "9": "MUX_A2",
+        "6": "MUX_EN1",
+        "7": null,
+        "3": "MUX_OUT1",
+        "13": "SNS_FILT7",
+        "14": "SNS_FILT8",
+        "15": "SNS_FILT9",
+        "12": "SNS_FILT10",
+        "1": "SNS_FILT11",
+        "5": "SNS_FILT12",
+        "2": "SNS_FILT13",
+        "4": "REF1"
+      }
+    },
+    {
+      "ref": "R_MUX_EN1",
+      "value": "47k",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "MUX_EN1",
+        "2": "3V3"
+      }
+    },
+    {
+      "ref": "C_MUX1",
+      "value": "100nF X7R 10V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3_A",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "R_MUX_OUT1",
+      "value": "4.7k",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "MUX_OUT1",
+        "2": "ADC1"
+      }
+    },
+    {
+      "ref": "C_ADC1",
+      "value": "100pF C0G 50V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "ADC1",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "R_REF_TOP1",
+      "value": "15k",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3_A",
+        "2": "REF1"
+      }
+    },
+    {
+      "ref": "R_REF_BOT1",
+      "value": "10k",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "REF1",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "U_MUX2",
+      "value": "TMUX1308PWR",
+      "package": "TSSOP-16_4.4x5mm_P0.65mm",
+      "location": "controller",
+      "note": "EN low selects; high disables.",
+      "pins": {
+        "16": "3V3_A",
+        "8": "GND",
+        "11": "MUX_A0",
+        "10": "MUX_A1",
+        "9": "MUX_A2",
+        "6": "MUX_EN2",
+        "7": null,
+        "3": "MUX_OUT2",
+        "13": "SNS_FILT14",
+        "14": "SNS_FILT15",
+        "15": "SNS_FILT16",
+        "12": "SNS_FILT17",
+        "1": "SNS_FILT18",
+        "5": "SNS_FILT19",
+        "2": "SNS_FILT20",
+        "4": "REF2"
+      }
+    },
+    {
+      "ref": "R_MUX_EN2",
+      "value": "47k",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "MUX_EN2",
+        "2": "3V3"
+      }
+    },
+    {
+      "ref": "C_MUX2",
+      "value": "100nF X7R 10V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3_A",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "R_MUX_OUT2",
+      "value": "4.7k",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "MUX_OUT2",
+        "2": "ADC2"
+      }
+    },
+    {
+      "ref": "C_ADC2",
+      "value": "100pF C0G 50V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "ADC2",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "R_REF_TOP2",
+      "value": "10k",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3_A",
+        "2": "REF2"
+      }
+    },
+    {
+      "ref": "R_REF_BOT2",
+      "value": "15k",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "REF2",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "U_MUX3",
+      "value": "TMUX1308PWR",
+      "package": "TSSOP-16_4.4x5mm_P0.65mm",
+      "location": "controller",
+      "note": "EN low selects; high disables.",
+      "pins": {
+        "16": "3V3_A",
+        "8": "GND",
+        "11": "MUX_A0",
+        "10": "MUX_A1",
+        "9": "MUX_A2",
+        "6": "MUX_EN3",
+        "7": null,
+        "3": "MUX_OUT3",
+        "13": "SNS_FILT21",
+        "14": "SNS_FILT22",
+        "15": "SNS_FILT23",
+        "12": "SNS_FILT24",
+        "1": "SNS_FILT25",
+        "5": "SNS_FILT26",
+        "2": "SNS_FILT27",
+        "4": "REF3"
+      }
+    },
+    {
+      "ref": "R_MUX_EN3",
+      "value": "47k",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "MUX_EN3",
+        "2": "3V3"
+      }
+    },
+    {
+      "ref": "C_MUX3",
+      "value": "100nF X7R 10V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3_A",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "R_MUX_OUT3",
+      "value": "4.7k",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "MUX_OUT3",
+        "2": "ADC3"
+      }
+    },
+    {
+      "ref": "C_ADC3",
+      "value": "100pF C0G 50V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "ADC3",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "R_REF_TOP3",
+      "value": "10k",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3_A",
+        "2": "REF3"
+      }
+    },
+    {
+      "ref": "R_REF_BOT3",
+      "value": "30k",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "REF3",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "R_BIAS00",
+      "value": "22k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3_A",
+        "2": "SNS0"
+      }
+    },
+    {
+      "ref": "R_SER00",
+      "value": "1k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS0",
+        "2": "SNS_FILT0"
+      }
+    },
+    {
+      "ref": "C_SNS00",
+      "value": "100pF C0G 50V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS_FILT0",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "REOL00",
+      "value": "100k printed +/-20%",
+      "package": "R_0603_1608Metric",
+      "location": "remote_sensor_sheet",
+      "note": "",
+      "pins": {
+        "1": "SNS0",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "FSR00",
+      "value": "Independent resistive taxel",
+      "package": "Printed_PET_Custom",
+      "location": "remote_sensor_sheet",
+      "note": "Process-dependent resistance; remote EOL must be at this cell.",
+      "pins": {
+        "1": "SNS0",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "R_BIAS01",
+      "value": "22k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3_A",
+        "2": "SNS1"
+      }
+    },
+    {
+      "ref": "R_SER01",
+      "value": "1k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS1",
+        "2": "SNS_FILT1"
+      }
+    },
+    {
+      "ref": "C_SNS01",
+      "value": "100pF C0G 50V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS_FILT1",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "REOL01",
+      "value": "100k printed +/-20%",
+      "package": "R_0603_1608Metric",
+      "location": "remote_sensor_sheet",
+      "note": "",
+      "pins": {
+        "1": "SNS1",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "FSR01",
+      "value": "Independent resistive taxel",
+      "package": "Printed_PET_Custom",
+      "location": "remote_sensor_sheet",
+      "note": "Process-dependent resistance; remote EOL must be at this cell.",
+      "pins": {
+        "1": "SNS1",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "R_BIAS02",
+      "value": "22k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3_A",
+        "2": "SNS2"
+      }
+    },
+    {
+      "ref": "R_SER02",
+      "value": "1k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS2",
+        "2": "SNS_FILT2"
+      }
+    },
+    {
+      "ref": "C_SNS02",
+      "value": "100pF C0G 50V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS_FILT2",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "REOL02",
+      "value": "100k printed +/-20%",
+      "package": "R_0603_1608Metric",
+      "location": "remote_sensor_sheet",
+      "note": "",
+      "pins": {
+        "1": "SNS2",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "FSR02",
+      "value": "Independent resistive taxel",
+      "package": "Printed_PET_Custom",
+      "location": "remote_sensor_sheet",
+      "note": "Process-dependent resistance; remote EOL must be at this cell.",
+      "pins": {
+        "1": "SNS2",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "R_BIAS03",
+      "value": "22k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3_A",
+        "2": "SNS3"
+      }
+    },
+    {
+      "ref": "R_SER03",
+      "value": "1k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS3",
+        "2": "SNS_FILT3"
+      }
+    },
+    {
+      "ref": "C_SNS03",
+      "value": "100pF C0G 50V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS_FILT3",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "REOL03",
+      "value": "100k printed +/-20%",
+      "package": "R_0603_1608Metric",
+      "location": "remote_sensor_sheet",
+      "note": "",
+      "pins": {
+        "1": "SNS3",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "FSR03",
+      "value": "Independent resistive taxel",
+      "package": "Printed_PET_Custom",
+      "location": "remote_sensor_sheet",
+      "note": "Process-dependent resistance; remote EOL must be at this cell.",
+      "pins": {
+        "1": "SNS3",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "R_BIAS04",
+      "value": "22k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3_A",
+        "2": "SNS4"
+      }
+    },
+    {
+      "ref": "R_SER04",
+      "value": "1k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS4",
+        "2": "SNS_FILT4"
+      }
+    },
+    {
+      "ref": "C_SNS04",
+      "value": "100pF C0G 50V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS_FILT4",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "REOL04",
+      "value": "100k printed +/-20%",
+      "package": "R_0603_1608Metric",
+      "location": "remote_sensor_sheet",
+      "note": "",
+      "pins": {
+        "1": "SNS4",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "FSR04",
+      "value": "Independent resistive taxel",
+      "package": "Printed_PET_Custom",
+      "location": "remote_sensor_sheet",
+      "note": "Process-dependent resistance; remote EOL must be at this cell.",
+      "pins": {
+        "1": "SNS4",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "R_BIAS05",
+      "value": "22k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3_A",
+        "2": "SNS5"
+      }
+    },
+    {
+      "ref": "R_SER05",
+      "value": "1k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS5",
+        "2": "SNS_FILT5"
+      }
+    },
+    {
+      "ref": "C_SNS05",
+      "value": "100pF C0G 50V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS_FILT5",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "REOL05",
+      "value": "100k printed +/-20%",
+      "package": "R_0603_1608Metric",
+      "location": "remote_sensor_sheet",
+      "note": "",
+      "pins": {
+        "1": "SNS5",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "FSR05",
+      "value": "Independent resistive taxel",
+      "package": "Printed_PET_Custom",
+      "location": "remote_sensor_sheet",
+      "note": "Process-dependent resistance; remote EOL must be at this cell.",
+      "pins": {
+        "1": "SNS5",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "R_BIAS06",
+      "value": "22k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3_A",
+        "2": "SNS6"
+      }
+    },
+    {
+      "ref": "R_SER06",
+      "value": "1k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS6",
+        "2": "SNS_FILT6"
+      }
+    },
+    {
+      "ref": "C_SNS06",
+      "value": "100pF C0G 50V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS_FILT6",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "REOL06",
+      "value": "100k printed +/-20%",
+      "package": "R_0603_1608Metric",
+      "location": "remote_sensor_sheet",
+      "note": "",
+      "pins": {
+        "1": "SNS6",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "FSR06",
+      "value": "Independent resistive taxel",
+      "package": "Printed_PET_Custom",
+      "location": "remote_sensor_sheet",
+      "note": "Process-dependent resistance; remote EOL must be at this cell.",
+      "pins": {
+        "1": "SNS6",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "R_BIAS07",
+      "value": "22k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3_A",
+        "2": "SNS7"
+      }
+    },
+    {
+      "ref": "R_SER07",
+      "value": "1k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS7",
+        "2": "SNS_FILT7"
+      }
+    },
+    {
+      "ref": "C_SNS07",
+      "value": "100pF C0G 50V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS_FILT7",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "REOL07",
+      "value": "100k printed +/-20%",
+      "package": "R_0603_1608Metric",
+      "location": "remote_sensor_sheet",
+      "note": "",
+      "pins": {
+        "1": "SNS7",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "FSR07",
+      "value": "Independent resistive taxel",
+      "package": "Printed_PET_Custom",
+      "location": "remote_sensor_sheet",
+      "note": "Process-dependent resistance; remote EOL must be at this cell.",
+      "pins": {
+        "1": "SNS7",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "R_BIAS08",
+      "value": "22k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3_A",
+        "2": "SNS8"
+      }
+    },
+    {
+      "ref": "R_SER08",
+      "value": "1k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS8",
+        "2": "SNS_FILT8"
+      }
+    },
+    {
+      "ref": "C_SNS08",
+      "value": "100pF C0G 50V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS_FILT8",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "REOL08",
+      "value": "100k printed +/-20%",
+      "package": "R_0603_1608Metric",
+      "location": "remote_sensor_sheet",
+      "note": "",
+      "pins": {
+        "1": "SNS8",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "FSR08",
+      "value": "Independent resistive taxel",
+      "package": "Printed_PET_Custom",
+      "location": "remote_sensor_sheet",
+      "note": "Process-dependent resistance; remote EOL must be at this cell.",
+      "pins": {
+        "1": "SNS8",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "R_BIAS09",
+      "value": "22k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3_A",
+        "2": "SNS9"
+      }
+    },
+    {
+      "ref": "R_SER09",
+      "value": "1k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS9",
+        "2": "SNS_FILT9"
+      }
+    },
+    {
+      "ref": "C_SNS09",
+      "value": "100pF C0G 50V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS_FILT9",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "REOL09",
+      "value": "100k printed +/-20%",
+      "package": "R_0603_1608Metric",
+      "location": "remote_sensor_sheet",
+      "note": "",
+      "pins": {
+        "1": "SNS9",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "FSR09",
+      "value": "Independent resistive taxel",
+      "package": "Printed_PET_Custom",
+      "location": "remote_sensor_sheet",
+      "note": "Process-dependent resistance; remote EOL must be at this cell.",
+      "pins": {
+        "1": "SNS9",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "R_BIAS10",
+      "value": "22k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3_A",
+        "2": "SNS10"
+      }
+    },
+    {
+      "ref": "R_SER10",
+      "value": "1k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS10",
+        "2": "SNS_FILT10"
+      }
+    },
+    {
+      "ref": "C_SNS10",
+      "value": "100pF C0G 50V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS_FILT10",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "REOL10",
+      "value": "100k printed +/-20%",
+      "package": "R_0603_1608Metric",
+      "location": "remote_sensor_sheet",
+      "note": "",
+      "pins": {
+        "1": "SNS10",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "FSR10",
+      "value": "Independent resistive taxel",
+      "package": "Printed_PET_Custom",
+      "location": "remote_sensor_sheet",
+      "note": "Process-dependent resistance; remote EOL must be at this cell.",
+      "pins": {
+        "1": "SNS10",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "R_BIAS11",
+      "value": "22k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3_A",
+        "2": "SNS11"
+      }
+    },
+    {
+      "ref": "R_SER11",
+      "value": "1k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS11",
+        "2": "SNS_FILT11"
+      }
+    },
+    {
+      "ref": "C_SNS11",
+      "value": "100pF C0G 50V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS_FILT11",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "REOL11",
+      "value": "100k printed +/-20%",
+      "package": "R_0603_1608Metric",
+      "location": "remote_sensor_sheet",
+      "note": "",
+      "pins": {
+        "1": "SNS11",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "FSR11",
+      "value": "Independent resistive taxel",
+      "package": "Printed_PET_Custom",
+      "location": "remote_sensor_sheet",
+      "note": "Process-dependent resistance; remote EOL must be at this cell.",
+      "pins": {
+        "1": "SNS11",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "R_BIAS12",
+      "value": "22k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3_A",
+        "2": "SNS12"
+      }
+    },
+    {
+      "ref": "R_SER12",
+      "value": "1k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS12",
+        "2": "SNS_FILT12"
+      }
+    },
+    {
+      "ref": "C_SNS12",
+      "value": "100pF C0G 50V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS_FILT12",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "REOL12",
+      "value": "100k printed +/-20%",
+      "package": "R_0603_1608Metric",
+      "location": "remote_sensor_sheet",
+      "note": "",
+      "pins": {
+        "1": "SNS12",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "FSR12",
+      "value": "Independent resistive taxel",
+      "package": "Printed_PET_Custom",
+      "location": "remote_sensor_sheet",
+      "note": "Process-dependent resistance; remote EOL must be at this cell.",
+      "pins": {
+        "1": "SNS12",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "R_BIAS13",
+      "value": "22k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3_A",
+        "2": "SNS13"
+      }
+    },
+    {
+      "ref": "R_SER13",
+      "value": "1k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS13",
+        "2": "SNS_FILT13"
+      }
+    },
+    {
+      "ref": "C_SNS13",
+      "value": "100pF C0G 50V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS_FILT13",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "REOL13",
+      "value": "100k printed +/-20%",
+      "package": "R_0603_1608Metric",
+      "location": "remote_sensor_sheet",
+      "note": "",
+      "pins": {
+        "1": "SNS13",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "FSR13",
+      "value": "Independent resistive taxel",
+      "package": "Printed_PET_Custom",
+      "location": "remote_sensor_sheet",
+      "note": "Process-dependent resistance; remote EOL must be at this cell.",
+      "pins": {
+        "1": "SNS13",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "R_BIAS14",
+      "value": "22k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3_A",
+        "2": "SNS14"
+      }
+    },
+    {
+      "ref": "R_SER14",
+      "value": "1k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS14",
+        "2": "SNS_FILT14"
+      }
+    },
+    {
+      "ref": "C_SNS14",
+      "value": "100pF C0G 50V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS_FILT14",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "REOL14",
+      "value": "100k printed +/-20%",
+      "package": "R_0603_1608Metric",
+      "location": "remote_sensor_sheet",
+      "note": "",
+      "pins": {
+        "1": "SNS14",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "FSR14",
+      "value": "Independent resistive taxel",
+      "package": "Printed_PET_Custom",
+      "location": "remote_sensor_sheet",
+      "note": "Process-dependent resistance; remote EOL must be at this cell.",
+      "pins": {
+        "1": "SNS14",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "R_BIAS15",
+      "value": "22k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3_A",
+        "2": "SNS15"
+      }
+    },
+    {
+      "ref": "R_SER15",
+      "value": "1k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS15",
+        "2": "SNS_FILT15"
+      }
+    },
+    {
+      "ref": "C_SNS15",
+      "value": "100pF C0G 50V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS_FILT15",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "REOL15",
+      "value": "100k printed +/-20%",
+      "package": "R_0603_1608Metric",
+      "location": "remote_sensor_sheet",
+      "note": "",
+      "pins": {
+        "1": "SNS15",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "FSR15",
+      "value": "Independent resistive taxel",
+      "package": "Printed_PET_Custom",
+      "location": "remote_sensor_sheet",
+      "note": "Process-dependent resistance; remote EOL must be at this cell.",
+      "pins": {
+        "1": "SNS15",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "R_BIAS16",
+      "value": "22k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3_A",
+        "2": "SNS16"
+      }
+    },
+    {
+      "ref": "R_SER16",
+      "value": "1k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS16",
+        "2": "SNS_FILT16"
+      }
+    },
+    {
+      "ref": "C_SNS16",
+      "value": "100pF C0G 50V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS_FILT16",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "REOL16",
+      "value": "100k printed +/-20%",
+      "package": "R_0603_1608Metric",
+      "location": "remote_sensor_sheet",
+      "note": "",
+      "pins": {
+        "1": "SNS16",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "FSR16",
+      "value": "Independent resistive taxel",
+      "package": "Printed_PET_Custom",
+      "location": "remote_sensor_sheet",
+      "note": "Process-dependent resistance; remote EOL must be at this cell.",
+      "pins": {
+        "1": "SNS16",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "R_BIAS17",
+      "value": "22k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3_A",
+        "2": "SNS17"
+      }
+    },
+    {
+      "ref": "R_SER17",
+      "value": "1k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS17",
+        "2": "SNS_FILT17"
+      }
+    },
+    {
+      "ref": "C_SNS17",
+      "value": "100pF C0G 50V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS_FILT17",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "REOL17",
+      "value": "100k printed +/-20%",
+      "package": "R_0603_1608Metric",
+      "location": "remote_sensor_sheet",
+      "note": "",
+      "pins": {
+        "1": "SNS17",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "FSR17",
+      "value": "Independent resistive taxel",
+      "package": "Printed_PET_Custom",
+      "location": "remote_sensor_sheet",
+      "note": "Process-dependent resistance; remote EOL must be at this cell.",
+      "pins": {
+        "1": "SNS17",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "R_BIAS18",
+      "value": "22k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3_A",
+        "2": "SNS18"
+      }
+    },
+    {
+      "ref": "R_SER18",
+      "value": "1k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS18",
+        "2": "SNS_FILT18"
+      }
+    },
+    {
+      "ref": "C_SNS18",
+      "value": "100pF C0G 50V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS_FILT18",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "REOL18",
+      "value": "100k printed +/-20%",
+      "package": "R_0603_1608Metric",
+      "location": "remote_sensor_sheet",
+      "note": "",
+      "pins": {
+        "1": "SNS18",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "FSR18",
+      "value": "Independent resistive taxel",
+      "package": "Printed_PET_Custom",
+      "location": "remote_sensor_sheet",
+      "note": "Process-dependent resistance; remote EOL must be at this cell.",
+      "pins": {
+        "1": "SNS18",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "R_BIAS19",
+      "value": "22k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3_A",
+        "2": "SNS19"
+      }
+    },
+    {
+      "ref": "R_SER19",
+      "value": "1k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS19",
+        "2": "SNS_FILT19"
+      }
+    },
+    {
+      "ref": "C_SNS19",
+      "value": "100pF C0G 50V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS_FILT19",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "REOL19",
+      "value": "100k printed +/-20%",
+      "package": "R_0603_1608Metric",
+      "location": "remote_sensor_sheet",
+      "note": "",
+      "pins": {
+        "1": "SNS19",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "FSR19",
+      "value": "Independent resistive taxel",
+      "package": "Printed_PET_Custom",
+      "location": "remote_sensor_sheet",
+      "note": "Process-dependent resistance; remote EOL must be at this cell.",
+      "pins": {
+        "1": "SNS19",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "R_BIAS20",
+      "value": "22k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3_A",
+        "2": "SNS20"
+      }
+    },
+    {
+      "ref": "R_SER20",
+      "value": "1k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS20",
+        "2": "SNS_FILT20"
+      }
+    },
+    {
+      "ref": "C_SNS20",
+      "value": "100pF C0G 50V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS_FILT20",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "REOL20",
+      "value": "100k printed +/-20%",
+      "package": "R_0603_1608Metric",
+      "location": "remote_sensor_sheet",
+      "note": "",
+      "pins": {
+        "1": "SNS20",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "FSR20",
+      "value": "Independent resistive taxel",
+      "package": "Printed_PET_Custom",
+      "location": "remote_sensor_sheet",
+      "note": "Process-dependent resistance; remote EOL must be at this cell.",
+      "pins": {
+        "1": "SNS20",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "R_BIAS21",
+      "value": "22k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3_A",
+        "2": "SNS21"
+      }
+    },
+    {
+      "ref": "R_SER21",
+      "value": "1k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS21",
+        "2": "SNS_FILT21"
+      }
+    },
+    {
+      "ref": "C_SNS21",
+      "value": "100pF C0G 50V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS_FILT21",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "REOL21",
+      "value": "100k printed +/-20%",
+      "package": "R_0603_1608Metric",
+      "location": "remote_sensor_sheet",
+      "note": "",
+      "pins": {
+        "1": "SNS21",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "FSR21",
+      "value": "Independent resistive taxel",
+      "package": "Printed_PET_Custom",
+      "location": "remote_sensor_sheet",
+      "note": "Process-dependent resistance; remote EOL must be at this cell.",
+      "pins": {
+        "1": "SNS21",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "R_BIAS22",
+      "value": "22k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3_A",
+        "2": "SNS22"
+      }
+    },
+    {
+      "ref": "R_SER22",
+      "value": "1k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS22",
+        "2": "SNS_FILT22"
+      }
+    },
+    {
+      "ref": "C_SNS22",
+      "value": "100pF C0G 50V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS_FILT22",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "REOL22",
+      "value": "100k printed +/-20%",
+      "package": "R_0603_1608Metric",
+      "location": "remote_sensor_sheet",
+      "note": "",
+      "pins": {
+        "1": "SNS22",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "FSR22",
+      "value": "Independent resistive taxel",
+      "package": "Printed_PET_Custom",
+      "location": "remote_sensor_sheet",
+      "note": "Process-dependent resistance; remote EOL must be at this cell.",
+      "pins": {
+        "1": "SNS22",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "R_BIAS23",
+      "value": "22k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3_A",
+        "2": "SNS23"
+      }
+    },
+    {
+      "ref": "R_SER23",
+      "value": "1k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS23",
+        "2": "SNS_FILT23"
+      }
+    },
+    {
+      "ref": "C_SNS23",
+      "value": "100pF C0G 50V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS_FILT23",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "REOL23",
+      "value": "100k printed +/-20%",
+      "package": "R_0603_1608Metric",
+      "location": "remote_sensor_sheet",
+      "note": "",
+      "pins": {
+        "1": "SNS23",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "FSR23",
+      "value": "Independent resistive taxel",
+      "package": "Printed_PET_Custom",
+      "location": "remote_sensor_sheet",
+      "note": "Process-dependent resistance; remote EOL must be at this cell.",
+      "pins": {
+        "1": "SNS23",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "R_BIAS24",
+      "value": "22k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3_A",
+        "2": "SNS24"
+      }
+    },
+    {
+      "ref": "R_SER24",
+      "value": "1k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS24",
+        "2": "SNS_FILT24"
+      }
+    },
+    {
+      "ref": "C_SNS24",
+      "value": "100pF C0G 50V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS_FILT24",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "REOL24",
+      "value": "100k printed +/-20%",
+      "package": "R_0603_1608Metric",
+      "location": "remote_sensor_sheet",
+      "note": "",
+      "pins": {
+        "1": "SNS24",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "FSR24",
+      "value": "Independent resistive taxel",
+      "package": "Printed_PET_Custom",
+      "location": "remote_sensor_sheet",
+      "note": "Process-dependent resistance; remote EOL must be at this cell.",
+      "pins": {
+        "1": "SNS24",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "R_BIAS25",
+      "value": "22k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3_A",
+        "2": "SNS25"
+      }
+    },
+    {
+      "ref": "R_SER25",
+      "value": "1k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS25",
+        "2": "SNS_FILT25"
+      }
+    },
+    {
+      "ref": "C_SNS25",
+      "value": "100pF C0G 50V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS_FILT25",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "REOL25",
+      "value": "100k printed +/-20%",
+      "package": "R_0603_1608Metric",
+      "location": "remote_sensor_sheet",
+      "note": "",
+      "pins": {
+        "1": "SNS25",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "FSR25",
+      "value": "Independent resistive taxel",
+      "package": "Printed_PET_Custom",
+      "location": "remote_sensor_sheet",
+      "note": "Process-dependent resistance; remote EOL must be at this cell.",
+      "pins": {
+        "1": "SNS25",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "R_BIAS26",
+      "value": "22k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3_A",
+        "2": "SNS26"
+      }
+    },
+    {
+      "ref": "R_SER26",
+      "value": "1k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS26",
+        "2": "SNS_FILT26"
+      }
+    },
+    {
+      "ref": "C_SNS26",
+      "value": "100pF C0G 50V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS_FILT26",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "REOL26",
+      "value": "100k printed +/-20%",
+      "package": "R_0603_1608Metric",
+      "location": "remote_sensor_sheet",
+      "note": "",
+      "pins": {
+        "1": "SNS26",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "FSR26",
+      "value": "Independent resistive taxel",
+      "package": "Printed_PET_Custom",
+      "location": "remote_sensor_sheet",
+      "note": "Process-dependent resistance; remote EOL must be at this cell.",
+      "pins": {
+        "1": "SNS26",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "R_BIAS27",
+      "value": "22k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3_A",
+        "2": "SNS27"
+      }
+    },
+    {
+      "ref": "R_SER27",
+      "value": "1k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS27",
+        "2": "SNS_FILT27"
+      }
+    },
+    {
+      "ref": "C_SNS27",
+      "value": "100pF C0G 50V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "SNS_FILT27",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "REOL27",
+      "value": "100k printed +/-20%",
+      "package": "R_0603_1608Metric",
+      "location": "remote_sensor_sheet",
+      "note": "",
+      "pins": {
+        "1": "SNS27",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "FSR27",
+      "value": "Independent resistive taxel",
+      "package": "Printed_PET_Custom",
+      "location": "remote_sensor_sheet",
+      "note": "Process-dependent resistance; remote EOL must be at this cell.",
+      "pins": {
+        "1": "SNS27",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "J_SENSOR",
+      "value": "FH12-40S-0.5SH(55)",
+      "package": "Hirose_FH12_1x40_P0.50mm",
+      "location": "controller",
+      "note": "Bottom-contact; 0.3mm stiffened tail. Thermal signals are separate pads, not reserved29/30.",
+      "pins": {
+        "1": "SNS0",
+        "2": "SNS1",
+        "3": "SNS2",
+        "4": "SNS3",
+        "5": "SNS4",
+        "6": "SNS5",
+        "7": "SNS6",
+        "8": "SNS7",
+        "9": "SNS8",
+        "10": "SNS9",
+        "11": "SNS10",
+        "12": "SNS11",
+        "13": "SNS12",
+        "14": "SNS13",
+        "15": "SNS14",
+        "16": "SNS15",
+        "17": "SNS16",
+        "18": "SNS17",
+        "19": "SNS18",
+        "20": "SNS19",
+        "21": "SNS20",
+        "22": "SNS21",
+        "23": "SNS22",
+        "24": "SNS23",
+        "25": "SNS24",
+        "26": "SNS25",
+        "27": "SNS26",
+        "28": "SNS27",
+        "29": null,
+        "30": null,
+        "31": "GND",
+        "32": "GND",
+        "33": "WIT_OUT",
+        "34": "WIT_IN",
+        "35": "GND",
+        "36": "GND",
+        "37": "GND",
+        "38": "GND",
+        "39": "GND",
+        "40": "GND"
+      }
+    },
+    {
+      "ref": "R_TEMP_BIAS0",
+      "value": "39k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3_A",
+        "2": "TEMP_EXT0"
+      }
+    },
+    {
+      "ref": "R_TEMP_SER0",
+      "value": "1k",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "TEMP_EXT0",
+        "2": "TEMP_ADC0"
+      }
+    },
+    {
+      "ref": "C_TEMP0",
+      "value": "1nF C0G 50V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "TEMP_ADC0",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "TH0",
+      "value": "NCU18XH103F60RB",
+      "package": "R_0603",
+      "location": "thermal_flex",
+      "note": "",
+      "pins": {
+        "1": "TEMP_EXT0",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "R_TEMP_BIAS1",
+      "value": "39k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "3V3_A",
+        "2": "TEMP_EXT1"
+      }
+    },
+    {
+      "ref": "R_TEMP_SER1",
+      "value": "1k",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "TEMP_EXT1",
+        "2": "TEMP_ADC1"
+      }
+    },
+    {
+      "ref": "C_TEMP1",
+      "value": "1nF C0G 50V",
+      "package": "C_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "TEMP_ADC1",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "TH1",
+      "value": "NCU18XH103F60RB",
+      "package": "R_0603",
+      "location": "thermal_flex",
+      "note": "",
+      "pins": {
+        "1": "TEMP_EXT1",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "J_THERMAL",
+      "value": "Thermal flex pads",
+      "package": "SolderPads",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "TEMP_EXT0",
+        "2": "TEMP_EXT1",
+        "3": "GND"
+      }
+    },
+    {
+      "ref": "R_WIT_DRIVE",
+      "value": "1k",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "WIT_DRIVE",
+        "2": "WIT_OUT"
+      }
+    },
+    {
+      "ref": "R_WIT_SER",
+      "value": "1k",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "WIT_IN",
+        "2": "WIT_RETURN"
+      }
+    },
+    {
+      "ref": "R_WIT_DOWN",
+      "value": "100k",
+      "package": "R_0603_1608Metric",
+      "location": "controller",
+      "note": "",
+      "pins": {
+        "1": "WIT_RETURN",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "WIT_LOOP",
+      "value": "Sheet perimeter conductor",
+      "package": "Printed_Loop",
+      "location": "remote_sensor_sheet",
+      "note": "",
+      "pins": {
+        "1": "WIT_OUT",
+        "2": "WIT_IN"
+      }
+    },
+    {
+      "ref": "D_A0",
+      "value": "TPD4E1U06DBVR",
+      "package": "SOT-23-6",
+      "location": "controller",
+      "note": "Entry ESD array; system ESD protection requires measurement, not just part rating.",
+      "pins": {
+        "2": "GND",
+        "5": null,
+        "1": "SNS0",
+        "6": "SNS1",
+        "3": "SNS2",
+        "4": "SNS3"
+      }
+    },
+    {
+      "ref": "D_A1",
+      "value": "TPD4E1U06DBVR",
+      "package": "SOT-23-6",
+      "location": "controller",
+      "note": "Entry ESD array; system ESD protection requires measurement, not just part rating.",
+      "pins": {
+        "2": "GND",
+        "5": null,
+        "1": "SNS4",
+        "6": "SNS5",
+        "3": "SNS6",
+        "4": "SNS7"
+      }
+    },
+    {
+      "ref": "D_A2",
+      "value": "TPD4E1U06DBVR",
+      "package": "SOT-23-6",
+      "location": "controller",
+      "note": "Entry ESD array; system ESD protection requires measurement, not just part rating.",
+      "pins": {
+        "2": "GND",
+        "5": null,
+        "1": "SNS8",
+        "6": "SNS9",
+        "3": "SNS10",
+        "4": "SNS11"
+      }
+    },
+    {
+      "ref": "D_A3",
+      "value": "TPD4E1U06DBVR",
+      "package": "SOT-23-6",
+      "location": "controller",
+      "note": "Entry ESD array; system ESD protection requires measurement, not just part rating.",
+      "pins": {
+        "2": "GND",
+        "5": null,
+        "1": "SNS12",
+        "6": "SNS13",
+        "3": "SNS14",
+        "4": "SNS15"
+      }
+    },
+    {
+      "ref": "D_A4",
+      "value": "TPD4E1U06DBVR",
+      "package": "SOT-23-6",
+      "location": "controller",
+      "note": "Entry ESD array; system ESD protection requires measurement, not just part rating.",
+      "pins": {
+        "2": "GND",
+        "5": null,
+        "1": "SNS16",
+        "6": "SNS17",
+        "3": "SNS18",
+        "4": "SNS19"
+      }
+    },
+    {
+      "ref": "D_A5",
+      "value": "TPD4E1U06DBVR",
+      "package": "SOT-23-6",
+      "location": "controller",
+      "note": "Entry ESD array; system ESD protection requires measurement, not just part rating.",
+      "pins": {
+        "2": "GND",
+        "5": null,
+        "1": "SNS20",
+        "6": "SNS21",
+        "3": "SNS22",
+        "4": "SNS23"
+      }
+    },
+    {
+      "ref": "D_A6",
+      "value": "TPD4E1U06DBVR",
+      "package": "SOT-23-6",
+      "location": "controller",
+      "note": "Entry ESD array; system ESD protection requires measurement, not just part rating.",
+      "pins": {
+        "2": "GND",
+        "5": null,
+        "1": "SNS24",
+        "6": "SNS25",
+        "3": "SNS26",
+        "4": "SNS27"
+      }
+    },
+    {
+      "ref": "D_A7",
+      "value": "TPD4E1U06DBVR",
+      "package": "SOT-23-6",
+      "location": "controller",
+      "note": "Entry ESD array; system ESD protection requires measurement, not just part rating.",
+      "pins": {
+        "2": "GND",
+        "5": null,
+        "1": "TEMP_EXT0",
+        "6": "TEMP_EXT1",
+        "3": "WIT_OUT",
+        "4": "WIT_IN"
+      }
+    }
+  ],
+  "nets": {
+    "3V3": [
+      {
+        "ref": "U1",
+        "pin": "4"
+      },
+      {
+        "ref": "U1",
+        "pin": "6"
+      },
+      {
+        "ref": "R_NODE_FAULT",
+        "pin": "2"
+      },
+      {
+        "ref": "U3",
+        "pin": "5"
+      },
+      {
+        "ref": "C_LDO_OUT",
+        "pin": "1"
+      },
+      {
+        "ref": "C_MCU_HF",
+        "pin": "1"
+      },
+      {
+        "ref": "C_MCU_BULK",
+        "pin": "1"
+      },
+      {
+        "ref": "R_ANALOG",
+        "pin": "1"
+      },
+      {
+        "ref": "R_RESET",
+        "pin": "1"
+      },
+      {
+        "ref": "R_SERVICE",
+        "pin": "1"
+      },
+      {
+        "ref": "J_SWD",
+        "pin": "1"
+      },
+      {
+        "ref": "Y1",
+        "pin": "1"
+      },
+      {
+        "ref": "Y1",
+        "pin": "4"
+      },
+      {
+        "ref": "C_CLK",
+        "pin": "1"
+      },
+      {
+        "ref": "U4",
+        "pin": "3"
+      },
+      {
+        "ref": "U4",
+        "pin": "5"
+      },
+      {
+        "ref": "R_CAN_TX",
+        "pin": "1"
+      },
+      {
+        "ref": "R_CAN_STB",
+        "pin": "1"
+      },
+      {
+        "ref": "C_CAN_VCC",
+        "pin": "1"
+      },
+      {
+        "ref": "C_CAN_VIO",
+        "pin": "1"
+      },
+      {
+        "ref": "C_CAN_BULK",
+        "pin": "1"
+      },
+      {
+        "ref": "R_MUX_EN0",
+        "pin": "2"
+      },
+      {
+        "ref": "R_MUX_EN1",
+        "pin": "2"
+      },
+      {
+        "ref": "R_MUX_EN2",
+        "pin": "2"
+      },
+      {
+        "ref": "R_MUX_EN3",
+        "pin": "2"
+      }
+    ],
+    "3V3_A": [
+      {
+        "ref": "U1",
+        "pin": "5"
+      },
+      {
+        "ref": "R_ANALOG",
+        "pin": "2"
+      },
+      {
+        "ref": "C_ANALOG_BULK",
+        "pin": "1"
+      },
+      {
+        "ref": "C_ANALOG_HF",
+        "pin": "1"
+      },
+      {
+        "ref": "U_MUX0",
+        "pin": "16"
+      },
+      {
+        "ref": "C_MUX0",
+        "pin": "1"
+      },
+      {
+        "ref": "R_REF_TOP0",
+        "pin": "1"
+      },
+      {
+        "ref": "U_MUX1",
+        "pin": "16"
+      },
+      {
+        "ref": "C_MUX1",
+        "pin": "1"
+      },
+      {
+        "ref": "R_REF_TOP1",
+        "pin": "1"
+      },
+      {
+        "ref": "U_MUX2",
+        "pin": "16"
+      },
+      {
+        "ref": "C_MUX2",
+        "pin": "1"
+      },
+      {
+        "ref": "R_REF_TOP2",
+        "pin": "1"
+      },
+      {
+        "ref": "U_MUX3",
+        "pin": "16"
+      },
+      {
+        "ref": "C_MUX3",
+        "pin": "1"
+      },
+      {
+        "ref": "R_REF_TOP3",
+        "pin": "1"
+      },
+      {
+        "ref": "R_BIAS00",
+        "pin": "1"
+      },
+      {
+        "ref": "R_BIAS01",
+        "pin": "1"
+      },
+      {
+        "ref": "R_BIAS02",
+        "pin": "1"
+      },
+      {
+        "ref": "R_BIAS03",
+        "pin": "1"
+      },
+      {
+        "ref": "R_BIAS04",
+        "pin": "1"
+      },
+      {
+        "ref": "R_BIAS05",
+        "pin": "1"
+      },
+      {
+        "ref": "R_BIAS06",
+        "pin": "1"
+      },
+      {
+        "ref": "R_BIAS07",
+        "pin": "1"
+      },
+      {
+        "ref": "R_BIAS08",
+        "pin": "1"
+      },
+      {
+        "ref": "R_BIAS09",
+        "pin": "1"
+      },
+      {
+        "ref": "R_BIAS10",
+        "pin": "1"
+      },
+      {
+        "ref": "R_BIAS11",
+        "pin": "1"
+      },
+      {
+        "ref": "R_BIAS12",
+        "pin": "1"
+      },
+      {
+        "ref": "R_BIAS13",
+        "pin": "1"
+      },
+      {
+        "ref": "R_BIAS14",
+        "pin": "1"
+      },
+      {
+        "ref": "R_BIAS15",
+        "pin": "1"
+      },
+      {
+        "ref": "R_BIAS16",
+        "pin": "1"
+      },
+      {
+        "ref": "R_BIAS17",
+        "pin": "1"
+      },
+      {
+        "ref": "R_BIAS18",
+        "pin": "1"
+      },
+      {
+        "ref": "R_BIAS19",
+        "pin": "1"
+      },
+      {
+        "ref": "R_BIAS20",
+        "pin": "1"
+      },
+      {
+        "ref": "R_BIAS21",
+        "pin": "1"
+      },
+      {
+        "ref": "R_BIAS22",
+        "pin": "1"
+      },
+      {
+        "ref": "R_BIAS23",
+        "pin": "1"
+      },
+      {
+        "ref": "R_BIAS24",
+        "pin": "1"
+      },
+      {
+        "ref": "R_BIAS25",
+        "pin": "1"
+      },
+      {
+        "ref": "R_BIAS26",
+        "pin": "1"
+      },
+      {
+        "ref": "R_BIAS27",
+        "pin": "1"
+      },
+      {
+        "ref": "R_TEMP_BIAS0",
+        "pin": "1"
+      },
+      {
+        "ref": "R_TEMP_BIAS1",
+        "pin": "1"
+      }
+    ],
+    "GND": [
+      {
+        "ref": "U1",
+        "pin": "7"
+      },
+      {
+        "ref": "J1",
+        "pin": "2"
+      },
+      {
+        "ref": "U2",
+        "pin": "2"
+      },
+      {
+        "ref": "R_NODE_ILIM",
+        "pin": "2"
+      },
+      {
+        "ref": "C_NODE_IN",
+        "pin": "2"
+      },
+      {
+        "ref": "C_NODE_HF",
+        "pin": "2"
+      },
+      {
+        "ref": "C_NODE_OUT",
+        "pin": "2"
+      },
+      {
+        "ref": "U3",
+        "pin": "2"
+      },
+      {
+        "ref": "U3",
+        "pin": "4"
+      },
+      {
+        "ref": "C_LDO_IN",
+        "pin": "2"
+      },
+      {
+        "ref": "C_LDO_OUT",
+        "pin": "2"
+      },
+      {
+        "ref": "C_MCU_HF",
+        "pin": "2"
+      },
+      {
+        "ref": "C_MCU_BULK",
+        "pin": "2"
+      },
+      {
+        "ref": "C_ANALOG_BULK",
+        "pin": "2"
+      },
+      {
+        "ref": "C_ANALOG_HF",
+        "pin": "2"
+      },
+      {
+        "ref": "C_RESET",
+        "pin": "2"
+      },
+      {
+        "ref": "J_SWD",
+        "pin": "2"
+      },
+      {
+        "ref": "J_UART",
+        "pin": "1"
+      },
+      {
+        "ref": "Y1",
+        "pin": "2"
+      },
+      {
+        "ref": "C_CLK",
+        "pin": "2"
+      },
+      {
+        "ref": "U4",
+        "pin": "2"
+      },
+      {
+        "ref": "C_CAN_VCC",
+        "pin": "2"
+      },
+      {
+        "ref": "C_CAN_VIO",
+        "pin": "2"
+      },
+      {
+        "ref": "C_CAN_BULK",
+        "pin": "2"
+      },
+      {
+        "ref": "D_CAN",
+        "pin": "3"
+      },
+      {
+        "ref": "U_MUX0",
+        "pin": "8"
+      },
+      {
+        "ref": "C_MUX0",
+        "pin": "2"
+      },
+      {
+        "ref": "C_ADC0",
+        "pin": "2"
+      },
+      {
+        "ref": "R_REF_BOT0",
+        "pin": "2"
+      },
+      {
+        "ref": "U_MUX1",
+        "pin": "8"
+      },
+      {
+        "ref": "C_MUX1",
+        "pin": "2"
+      },
+      {
+        "ref": "C_ADC1",
+        "pin": "2"
+      },
+      {
+        "ref": "R_REF_BOT1",
+        "pin": "2"
+      },
+      {
+        "ref": "U_MUX2",
+        "pin": "8"
+      },
+      {
+        "ref": "C_MUX2",
+        "pin": "2"
+      },
+      {
+        "ref": "C_ADC2",
+        "pin": "2"
+      },
+      {
+        "ref": "R_REF_BOT2",
+        "pin": "2"
+      },
+      {
+        "ref": "U_MUX3",
+        "pin": "8"
+      },
+      {
+        "ref": "C_MUX3",
+        "pin": "2"
+      },
+      {
+        "ref": "C_ADC3",
+        "pin": "2"
+      },
+      {
+        "ref": "R_REF_BOT3",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS00",
+        "pin": "2"
+      },
+      {
+        "ref": "REOL00",
+        "pin": "2"
+      },
+      {
+        "ref": "FSR00",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS01",
+        "pin": "2"
+      },
+      {
+        "ref": "REOL01",
+        "pin": "2"
+      },
+      {
+        "ref": "FSR01",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS02",
+        "pin": "2"
+      },
+      {
+        "ref": "REOL02",
+        "pin": "2"
+      },
+      {
+        "ref": "FSR02",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS03",
+        "pin": "2"
+      },
+      {
+        "ref": "REOL03",
+        "pin": "2"
+      },
+      {
+        "ref": "FSR03",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS04",
+        "pin": "2"
+      },
+      {
+        "ref": "REOL04",
+        "pin": "2"
+      },
+      {
+        "ref": "FSR04",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS05",
+        "pin": "2"
+      },
+      {
+        "ref": "REOL05",
+        "pin": "2"
+      },
+      {
+        "ref": "FSR05",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS06",
+        "pin": "2"
+      },
+      {
+        "ref": "REOL06",
+        "pin": "2"
+      },
+      {
+        "ref": "FSR06",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS07",
+        "pin": "2"
+      },
+      {
+        "ref": "REOL07",
+        "pin": "2"
+      },
+      {
+        "ref": "FSR07",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS08",
+        "pin": "2"
+      },
+      {
+        "ref": "REOL08",
+        "pin": "2"
+      },
+      {
+        "ref": "FSR08",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS09",
+        "pin": "2"
+      },
+      {
+        "ref": "REOL09",
+        "pin": "2"
+      },
+      {
+        "ref": "FSR09",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS10",
+        "pin": "2"
+      },
+      {
+        "ref": "REOL10",
+        "pin": "2"
+      },
+      {
+        "ref": "FSR10",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS11",
+        "pin": "2"
+      },
+      {
+        "ref": "REOL11",
+        "pin": "2"
+      },
+      {
+        "ref": "FSR11",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS12",
+        "pin": "2"
+      },
+      {
+        "ref": "REOL12",
+        "pin": "2"
+      },
+      {
+        "ref": "FSR12",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS13",
+        "pin": "2"
+      },
+      {
+        "ref": "REOL13",
+        "pin": "2"
+      },
+      {
+        "ref": "FSR13",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS14",
+        "pin": "2"
+      },
+      {
+        "ref": "REOL14",
+        "pin": "2"
+      },
+      {
+        "ref": "FSR14",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS15",
+        "pin": "2"
+      },
+      {
+        "ref": "REOL15",
+        "pin": "2"
+      },
+      {
+        "ref": "FSR15",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS16",
+        "pin": "2"
+      },
+      {
+        "ref": "REOL16",
+        "pin": "2"
+      },
+      {
+        "ref": "FSR16",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS17",
+        "pin": "2"
+      },
+      {
+        "ref": "REOL17",
+        "pin": "2"
+      },
+      {
+        "ref": "FSR17",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS18",
+        "pin": "2"
+      },
+      {
+        "ref": "REOL18",
+        "pin": "2"
+      },
+      {
+        "ref": "FSR18",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS19",
+        "pin": "2"
+      },
+      {
+        "ref": "REOL19",
+        "pin": "2"
+      },
+      {
+        "ref": "FSR19",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS20",
+        "pin": "2"
+      },
+      {
+        "ref": "REOL20",
+        "pin": "2"
+      },
+      {
+        "ref": "FSR20",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS21",
+        "pin": "2"
+      },
+      {
+        "ref": "REOL21",
+        "pin": "2"
+      },
+      {
+        "ref": "FSR21",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS22",
+        "pin": "2"
+      },
+      {
+        "ref": "REOL22",
+        "pin": "2"
+      },
+      {
+        "ref": "FSR22",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS23",
+        "pin": "2"
+      },
+      {
+        "ref": "REOL23",
+        "pin": "2"
+      },
+      {
+        "ref": "FSR23",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS24",
+        "pin": "2"
+      },
+      {
+        "ref": "REOL24",
+        "pin": "2"
+      },
+      {
+        "ref": "FSR24",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS25",
+        "pin": "2"
+      },
+      {
+        "ref": "REOL25",
+        "pin": "2"
+      },
+      {
+        "ref": "FSR25",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS26",
+        "pin": "2"
+      },
+      {
+        "ref": "REOL26",
+        "pin": "2"
+      },
+      {
+        "ref": "FSR26",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS27",
+        "pin": "2"
+      },
+      {
+        "ref": "REOL27",
+        "pin": "2"
+      },
+      {
+        "ref": "FSR27",
+        "pin": "2"
+      },
+      {
+        "ref": "J_SENSOR",
+        "pin": "31"
+      },
+      {
+        "ref": "J_SENSOR",
+        "pin": "32"
+      },
+      {
+        "ref": "J_SENSOR",
+        "pin": "35"
+      },
+      {
+        "ref": "J_SENSOR",
+        "pin": "36"
+      },
+      {
+        "ref": "J_SENSOR",
+        "pin": "37"
+      },
+      {
+        "ref": "J_SENSOR",
+        "pin": "38"
+      },
+      {
+        "ref": "J_SENSOR",
+        "pin": "39"
+      },
+      {
+        "ref": "J_SENSOR",
+        "pin": "40"
+      },
+      {
+        "ref": "C_TEMP0",
+        "pin": "2"
+      },
+      {
+        "ref": "TH0",
+        "pin": "2"
+      },
+      {
+        "ref": "C_TEMP1",
+        "pin": "2"
+      },
+      {
+        "ref": "TH1",
+        "pin": "2"
+      },
+      {
+        "ref": "J_THERMAL",
+        "pin": "3"
+      },
+      {
+        "ref": "R_WIT_DOWN",
+        "pin": "2"
+      },
+      {
+        "ref": "D_A0",
+        "pin": "2"
+      },
+      {
+        "ref": "D_A1",
+        "pin": "2"
+      },
+      {
+        "ref": "D_A2",
+        "pin": "2"
+      },
+      {
+        "ref": "D_A3",
+        "pin": "2"
+      },
+      {
+        "ref": "D_A4",
+        "pin": "2"
+      },
+      {
+        "ref": "D_A5",
+        "pin": "2"
+      },
+      {
+        "ref": "D_A6",
+        "pin": "2"
+      },
+      {
+        "ref": "D_A7",
+        "pin": "2"
+      }
+    ],
+    "HSE_IN": [
+      {
+        "ref": "U1",
+        "pin": "8"
+      },
+      {
+        "ref": "R_CLK",
+        "pin": "2"
+      }
+    ],
+    "NRST": [
+      {
+        "ref": "U1",
+        "pin": "10"
+      },
+      {
+        "ref": "R_RESET",
+        "pin": "2"
+      },
+      {
+        "ref": "C_RESET",
+        "pin": "1"
+      },
+      {
+        "ref": "J_SWD",
+        "pin": "5"
+      }
+    ],
+    "ADC0": [
+      {
+        "ref": "U1",
+        "pin": "11"
+      },
+      {
+        "ref": "R_MUX_OUT0",
+        "pin": "2"
+      },
+      {
+        "ref": "C_ADC0",
+        "pin": "1"
+      }
+    ],
+    "ADC1": [
+      {
+        "ref": "U1",
+        "pin": "12"
+      },
+      {
+        "ref": "R_MUX_OUT1",
+        "pin": "2"
+      },
+      {
+        "ref": "C_ADC1",
+        "pin": "1"
+      }
+    ],
+    "UART_TX": [
+      {
+        "ref": "U1",
+        "pin": "13"
+      },
+      {
+        "ref": "J_UART",
+        "pin": "2"
+      }
+    ],
+    "UART_RX": [
+      {
+        "ref": "U1",
+        "pin": "14"
+      },
+      {
+        "ref": "J_UART",
+        "pin": "3"
+      }
+    ],
+    "ADC2": [
+      {
+        "ref": "U1",
+        "pin": "18"
+      },
+      {
+        "ref": "R_MUX_OUT2",
+        "pin": "2"
+      },
+      {
+        "ref": "C_ADC2",
+        "pin": "1"
+      }
+    ],
+    "ADC3": [
+      {
+        "ref": "U1",
+        "pin": "20"
+      },
+      {
+        "ref": "R_MUX_OUT3",
+        "pin": "2"
+      },
+      {
+        "ref": "C_ADC3",
+        "pin": "1"
+      }
+    ],
+    "WIT_DRIVE": [
+      {
+        "ref": "U1",
+        "pin": "21"
+      },
+      {
+        "ref": "R_WIT_DRIVE",
+        "pin": "1"
+      }
+    ],
+    "MUX_EN0": [
+      {
+        "ref": "U1",
+        "pin": "22"
+      },
+      {
+        "ref": "U_MUX0",
+        "pin": "6"
+      },
+      {
+        "ref": "R_MUX_EN0",
+        "pin": "1"
+      }
+    ],
+    "TEMP_ADC0": [
+      {
+        "ref": "U1",
+        "pin": "23"
+      },
+      {
+        "ref": "R_TEMP_SER0",
+        "pin": "2"
+      },
+      {
+        "ref": "C_TEMP0",
+        "pin": "1"
+      }
+    ],
+    "TEMP_ADC1": [
+      {
+        "ref": "U1",
+        "pin": "24"
+      },
+      {
+        "ref": "R_TEMP_SER1",
+        "pin": "2"
+      },
+      {
+        "ref": "C_TEMP1",
+        "pin": "1"
+      }
+    ],
+    "MUX_EN1": [
+      {
+        "ref": "U1",
+        "pin": "25"
+      },
+      {
+        "ref": "U_MUX1",
+        "pin": "6"
+      },
+      {
+        "ref": "R_MUX_EN1",
+        "pin": "1"
+      }
+    ],
+    "MUX_EN2": [
+      {
+        "ref": "U1",
+        "pin": "26"
+      },
+      {
+        "ref": "U_MUX2",
+        "pin": "6"
+      },
+      {
+        "ref": "R_MUX_EN2",
+        "pin": "1"
+      }
+    ],
+    "MUX_EN3": [
+      {
+        "ref": "U1",
+        "pin": "27"
+      },
+      {
+        "ref": "U_MUX3",
+        "pin": "6"
+      },
+      {
+        "ref": "R_MUX_EN3",
+        "pin": "1"
+      }
+    ],
+    "CAN_STB": [
+      {
+        "ref": "U1",
+        "pin": "28"
+      },
+      {
+        "ref": "U4",
+        "pin": "8"
+      },
+      {
+        "ref": "R_CAN_STB",
+        "pin": "2"
+      }
+    ],
+    "NODE_FAULT_N": [
+      {
+        "ref": "U1",
+        "pin": "29"
+      },
+      {
+        "ref": "U2",
+        "pin": "4"
+      },
+      {
+        "ref": "R_NODE_FAULT",
+        "pin": "1"
+      }
+    ],
+    "SERVICE_N": [
+      {
+        "ref": "U1",
+        "pin": "32"
+      },
+      {
+        "ref": "R_SERVICE",
+        "pin": "2"
+      },
+      {
+        "ref": "J_UART",
+        "pin": "4"
+      }
+    ],
+    "SWDIO": [
+      {
+        "ref": "U1",
+        "pin": "35"
+      },
+      {
+        "ref": "J_SWD",
+        "pin": "3"
+      }
+    ],
+    "SWCLK": [
+      {
+        "ref": "U1",
+        "pin": "36"
+      },
+      {
+        "ref": "J_SWD",
+        "pin": "4"
+      }
+    ],
+    "WIT_RETURN": [
+      {
+        "ref": "U1",
+        "pin": "43"
+      },
+      {
+        "ref": "R_WIT_SER",
+        "pin": "2"
+      },
+      {
+        "ref": "R_WIT_DOWN",
+        "pin": "1"
+      }
+    ],
+    "MUX_A0": [
+      {
+        "ref": "U1",
+        "pin": "44"
+      },
+      {
+        "ref": "U_MUX0",
+        "pin": "11"
+      },
+      {
+        "ref": "U_MUX1",
+        "pin": "11"
+      },
+      {
+        "ref": "U_MUX2",
+        "pin": "11"
+      },
+      {
+        "ref": "U_MUX3",
+        "pin": "11"
+      }
+    ],
+    "MUX_A1": [
+      {
+        "ref": "U1",
+        "pin": "45"
+      },
+      {
+        "ref": "U_MUX0",
+        "pin": "10"
+      },
+      {
+        "ref": "U_MUX1",
+        "pin": "10"
+      },
+      {
+        "ref": "U_MUX2",
+        "pin": "10"
+      },
+      {
+        "ref": "U_MUX3",
+        "pin": "10"
+      }
+    ],
+    "MUX_A2": [
+      {
+        "ref": "U1",
+        "pin": "46"
+      },
+      {
+        "ref": "U_MUX0",
+        "pin": "9"
+      },
+      {
+        "ref": "U_MUX1",
+        "pin": "9"
+      },
+      {
+        "ref": "U_MUX2",
+        "pin": "9"
+      },
+      {
+        "ref": "U_MUX3",
+        "pin": "9"
+      }
+    ],
+    "CAN_RX": [
+      {
+        "ref": "U1",
+        "pin": "47"
+      },
+      {
+        "ref": "U4",
+        "pin": "4"
+      }
+    ],
+    "CAN_TX": [
+      {
+        "ref": "U1",
+        "pin": "48"
+      },
+      {
+        "ref": "U4",
+        "pin": "1"
+      },
+      {
+        "ref": "R_CAN_TX",
+        "pin": "2"
+      }
+    ],
+    "5V_PATCH": [
+      {
+        "ref": "J1",
+        "pin": "1"
+      },
+      {
+        "ref": "U2",
+        "pin": "1"
+      },
+      {
+        "ref": "R_NODE_EN",
+        "pin": "1"
+      },
+      {
+        "ref": "C_NODE_IN",
+        "pin": "1"
+      },
+      {
+        "ref": "C_NODE_HF",
+        "pin": "1"
+      }
+    ],
+    "CANH": [
+      {
+        "ref": "J1",
+        "pin": "3"
+      },
+      {
+        "ref": "U4",
+        "pin": "7"
+      },
+      {
+        "ref": "D_CAN",
+        "pin": "1"
+      }
+    ],
+    "CANL": [
+      {
+        "ref": "J1",
+        "pin": "4"
+      },
+      {
+        "ref": "U4",
+        "pin": "6"
+      },
+      {
+        "ref": "D_CAN",
+        "pin": "2"
+      }
+    ],
+    "NODE_EN": [
+      {
+        "ref": "U2",
+        "pin": "3"
+      },
+      {
+        "ref": "R_NODE_EN",
+        "pin": "2"
+      }
+    ],
+    "NODE_ILIM": [
+      {
+        "ref": "U2",
+        "pin": "5"
+      },
+      {
+        "ref": "R_NODE_ILIM",
+        "pin": "1"
+      }
+    ],
+    "5V_NODE": [
+      {
+        "ref": "U2",
+        "pin": "6"
+      },
+      {
+        "ref": "C_NODE_OUT",
+        "pin": "1"
+      },
+      {
+        "ref": "U3",
+        "pin": "1"
+      },
+      {
+        "ref": "U3",
+        "pin": "3"
+      },
+      {
+        "ref": "C_LDO_IN",
+        "pin": "1"
+      }
+    ],
+    "OSC_RAW": [
+      {
+        "ref": "Y1",
+        "pin": "3"
+      },
+      {
+        "ref": "R_CLK",
+        "pin": "1"
+      }
+    ],
+    "MUX_OUT0": [
+      {
+        "ref": "U_MUX0",
+        "pin": "3"
+      },
+      {
+        "ref": "R_MUX_OUT0",
+        "pin": "1"
+      }
+    ],
+    "SNS_FILT0": [
+      {
+        "ref": "U_MUX0",
+        "pin": "13"
+      },
+      {
+        "ref": "R_SER00",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS00",
+        "pin": "1"
+      }
+    ],
+    "SNS_FILT1": [
+      {
+        "ref": "U_MUX0",
+        "pin": "14"
+      },
+      {
+        "ref": "R_SER01",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS01",
+        "pin": "1"
+      }
+    ],
+    "SNS_FILT2": [
+      {
+        "ref": "U_MUX0",
+        "pin": "15"
+      },
+      {
+        "ref": "R_SER02",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS02",
+        "pin": "1"
+      }
+    ],
+    "SNS_FILT3": [
+      {
+        "ref": "U_MUX0",
+        "pin": "12"
+      },
+      {
+        "ref": "R_SER03",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS03",
+        "pin": "1"
+      }
+    ],
+    "SNS_FILT4": [
+      {
+        "ref": "U_MUX0",
+        "pin": "1"
+      },
+      {
+        "ref": "R_SER04",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS04",
+        "pin": "1"
+      }
+    ],
+    "SNS_FILT5": [
+      {
+        "ref": "U_MUX0",
+        "pin": "5"
+      },
+      {
+        "ref": "R_SER05",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS05",
+        "pin": "1"
+      }
+    ],
+    "SNS_FILT6": [
+      {
+        "ref": "U_MUX0",
+        "pin": "2"
+      },
+      {
+        "ref": "R_SER06",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS06",
+        "pin": "1"
+      }
+    ],
+    "REF0": [
+      {
+        "ref": "U_MUX0",
+        "pin": "4"
+      },
+      {
+        "ref": "R_REF_TOP0",
+        "pin": "2"
+      },
+      {
+        "ref": "R_REF_BOT0",
+        "pin": "1"
+      }
+    ],
+    "MUX_OUT1": [
+      {
+        "ref": "U_MUX1",
+        "pin": "3"
+      },
+      {
+        "ref": "R_MUX_OUT1",
+        "pin": "1"
+      }
+    ],
+    "SNS_FILT7": [
+      {
+        "ref": "U_MUX1",
+        "pin": "13"
+      },
+      {
+        "ref": "R_SER07",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS07",
+        "pin": "1"
+      }
+    ],
+    "SNS_FILT8": [
+      {
+        "ref": "U_MUX1",
+        "pin": "14"
+      },
+      {
+        "ref": "R_SER08",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS08",
+        "pin": "1"
+      }
+    ],
+    "SNS_FILT9": [
+      {
+        "ref": "U_MUX1",
+        "pin": "15"
+      },
+      {
+        "ref": "R_SER09",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS09",
+        "pin": "1"
+      }
+    ],
+    "SNS_FILT10": [
+      {
+        "ref": "U_MUX1",
+        "pin": "12"
+      },
+      {
+        "ref": "R_SER10",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS10",
+        "pin": "1"
+      }
+    ],
+    "SNS_FILT11": [
+      {
+        "ref": "U_MUX1",
+        "pin": "1"
+      },
+      {
+        "ref": "R_SER11",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS11",
+        "pin": "1"
+      }
+    ],
+    "SNS_FILT12": [
+      {
+        "ref": "U_MUX1",
+        "pin": "5"
+      },
+      {
+        "ref": "R_SER12",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS12",
+        "pin": "1"
+      }
+    ],
+    "SNS_FILT13": [
+      {
+        "ref": "U_MUX1",
+        "pin": "2"
+      },
+      {
+        "ref": "R_SER13",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS13",
+        "pin": "1"
+      }
+    ],
+    "REF1": [
+      {
+        "ref": "U_MUX1",
+        "pin": "4"
+      },
+      {
+        "ref": "R_REF_TOP1",
+        "pin": "2"
+      },
+      {
+        "ref": "R_REF_BOT1",
+        "pin": "1"
+      }
+    ],
+    "MUX_OUT2": [
+      {
+        "ref": "U_MUX2",
+        "pin": "3"
+      },
+      {
+        "ref": "R_MUX_OUT2",
+        "pin": "1"
+      }
+    ],
+    "SNS_FILT14": [
+      {
+        "ref": "U_MUX2",
+        "pin": "13"
+      },
+      {
+        "ref": "R_SER14",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS14",
+        "pin": "1"
+      }
+    ],
+    "SNS_FILT15": [
+      {
+        "ref": "U_MUX2",
+        "pin": "14"
+      },
+      {
+        "ref": "R_SER15",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS15",
+        "pin": "1"
+      }
+    ],
+    "SNS_FILT16": [
+      {
+        "ref": "U_MUX2",
+        "pin": "15"
+      },
+      {
+        "ref": "R_SER16",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS16",
+        "pin": "1"
+      }
+    ],
+    "SNS_FILT17": [
+      {
+        "ref": "U_MUX2",
+        "pin": "12"
+      },
+      {
+        "ref": "R_SER17",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS17",
+        "pin": "1"
+      }
+    ],
+    "SNS_FILT18": [
+      {
+        "ref": "U_MUX2",
+        "pin": "1"
+      },
+      {
+        "ref": "R_SER18",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS18",
+        "pin": "1"
+      }
+    ],
+    "SNS_FILT19": [
+      {
+        "ref": "U_MUX2",
+        "pin": "5"
+      },
+      {
+        "ref": "R_SER19",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS19",
+        "pin": "1"
+      }
+    ],
+    "SNS_FILT20": [
+      {
+        "ref": "U_MUX2",
+        "pin": "2"
+      },
+      {
+        "ref": "R_SER20",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS20",
+        "pin": "1"
+      }
+    ],
+    "REF2": [
+      {
+        "ref": "U_MUX2",
+        "pin": "4"
+      },
+      {
+        "ref": "R_REF_TOP2",
+        "pin": "2"
+      },
+      {
+        "ref": "R_REF_BOT2",
+        "pin": "1"
+      }
+    ],
+    "MUX_OUT3": [
+      {
+        "ref": "U_MUX3",
+        "pin": "3"
+      },
+      {
+        "ref": "R_MUX_OUT3",
+        "pin": "1"
+      }
+    ],
+    "SNS_FILT21": [
+      {
+        "ref": "U_MUX3",
+        "pin": "13"
+      },
+      {
+        "ref": "R_SER21",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS21",
+        "pin": "1"
+      }
+    ],
+    "SNS_FILT22": [
+      {
+        "ref": "U_MUX3",
+        "pin": "14"
+      },
+      {
+        "ref": "R_SER22",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS22",
+        "pin": "1"
+      }
+    ],
+    "SNS_FILT23": [
+      {
+        "ref": "U_MUX3",
+        "pin": "15"
+      },
+      {
+        "ref": "R_SER23",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS23",
+        "pin": "1"
+      }
+    ],
+    "SNS_FILT24": [
+      {
+        "ref": "U_MUX3",
+        "pin": "12"
+      },
+      {
+        "ref": "R_SER24",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS24",
+        "pin": "1"
+      }
+    ],
+    "SNS_FILT25": [
+      {
+        "ref": "U_MUX3",
+        "pin": "1"
+      },
+      {
+        "ref": "R_SER25",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS25",
+        "pin": "1"
+      }
+    ],
+    "SNS_FILT26": [
+      {
+        "ref": "U_MUX3",
+        "pin": "5"
+      },
+      {
+        "ref": "R_SER26",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS26",
+        "pin": "1"
+      }
+    ],
+    "SNS_FILT27": [
+      {
+        "ref": "U_MUX3",
+        "pin": "2"
+      },
+      {
+        "ref": "R_SER27",
+        "pin": "2"
+      },
+      {
+        "ref": "C_SNS27",
+        "pin": "1"
+      }
+    ],
+    "REF3": [
+      {
+        "ref": "U_MUX3",
+        "pin": "4"
+      },
+      {
+        "ref": "R_REF_TOP3",
+        "pin": "2"
+      },
+      {
+        "ref": "R_REF_BOT3",
+        "pin": "1"
+      }
+    ],
+    "SNS0": [
+      {
+        "ref": "R_BIAS00",
+        "pin": "2"
+      },
+      {
+        "ref": "R_SER00",
+        "pin": "1"
+      },
+      {
+        "ref": "REOL00",
+        "pin": "1"
+      },
+      {
+        "ref": "FSR00",
+        "pin": "1"
+      },
+      {
+        "ref": "J_SENSOR",
+        "pin": "1"
+      },
+      {
+        "ref": "D_A0",
+        "pin": "1"
+      }
+    ],
+    "SNS1": [
+      {
+        "ref": "R_BIAS01",
+        "pin": "2"
+      },
+      {
+        "ref": "R_SER01",
+        "pin": "1"
+      },
+      {
+        "ref": "REOL01",
+        "pin": "1"
+      },
+      {
+        "ref": "FSR01",
+        "pin": "1"
+      },
+      {
+        "ref": "J_SENSOR",
+        "pin": "2"
+      },
+      {
+        "ref": "D_A0",
+        "pin": "6"
+      }
+    ],
+    "SNS2": [
+      {
+        "ref": "R_BIAS02",
+        "pin": "2"
+      },
+      {
+        "ref": "R_SER02",
+        "pin": "1"
+      },
+      {
+        "ref": "REOL02",
+        "pin": "1"
+      },
+      {
+        "ref": "FSR02",
+        "pin": "1"
+      },
+      {
+        "ref": "J_SENSOR",
+        "pin": "3"
+      },
+      {
+        "ref": "D_A0",
+        "pin": "3"
+      }
+    ],
+    "SNS3": [
+      {
+        "ref": "R_BIAS03",
+        "pin": "2"
+      },
+      {
+        "ref": "R_SER03",
+        "pin": "1"
+      },
+      {
+        "ref": "REOL03",
+        "pin": "1"
+      },
+      {
+        "ref": "FSR03",
+        "pin": "1"
+      },
+      {
+        "ref": "J_SENSOR",
+        "pin": "4"
+      },
+      {
+        "ref": "D_A0",
+        "pin": "4"
+      }
+    ],
+    "SNS4": [
+      {
+        "ref": "R_BIAS04",
+        "pin": "2"
+      },
+      {
+        "ref": "R_SER04",
+        "pin": "1"
+      },
+      {
+        "ref": "REOL04",
+        "pin": "1"
+      },
+      {
+        "ref": "FSR04",
+        "pin": "1"
+      },
+      {
+        "ref": "J_SENSOR",
+        "pin": "5"
+      },
+      {
+        "ref": "D_A1",
+        "pin": "1"
+      }
+    ],
+    "SNS5": [
+      {
+        "ref": "R_BIAS05",
+        "pin": "2"
+      },
+      {
+        "ref": "R_SER05",
+        "pin": "1"
+      },
+      {
+        "ref": "REOL05",
+        "pin": "1"
+      },
+      {
+        "ref": "FSR05",
+        "pin": "1"
+      },
+      {
+        "ref": "J_SENSOR",
+        "pin": "6"
+      },
+      {
+        "ref": "D_A1",
+        "pin": "6"
+      }
+    ],
+    "SNS6": [
+      {
+        "ref": "R_BIAS06",
+        "pin": "2"
+      },
+      {
+        "ref": "R_SER06",
+        "pin": "1"
+      },
+      {
+        "ref": "REOL06",
+        "pin": "1"
+      },
+      {
+        "ref": "FSR06",
+        "pin": "1"
+      },
+      {
+        "ref": "J_SENSOR",
+        "pin": "7"
+      },
+      {
+        "ref": "D_A1",
+        "pin": "3"
+      }
+    ],
+    "SNS7": [
+      {
+        "ref": "R_BIAS07",
+        "pin": "2"
+      },
+      {
+        "ref": "R_SER07",
+        "pin": "1"
+      },
+      {
+        "ref": "REOL07",
+        "pin": "1"
+      },
+      {
+        "ref": "FSR07",
+        "pin": "1"
+      },
+      {
+        "ref": "J_SENSOR",
+        "pin": "8"
+      },
+      {
+        "ref": "D_A1",
+        "pin": "4"
+      }
+    ],
+    "SNS8": [
+      {
+        "ref": "R_BIAS08",
+        "pin": "2"
+      },
+      {
+        "ref": "R_SER08",
+        "pin": "1"
+      },
+      {
+        "ref": "REOL08",
+        "pin": "1"
+      },
+      {
+        "ref": "FSR08",
+        "pin": "1"
+      },
+      {
+        "ref": "J_SENSOR",
+        "pin": "9"
+      },
+      {
+        "ref": "D_A2",
+        "pin": "1"
+      }
+    ],
+    "SNS9": [
+      {
+        "ref": "R_BIAS09",
+        "pin": "2"
+      },
+      {
+        "ref": "R_SER09",
+        "pin": "1"
+      },
+      {
+        "ref": "REOL09",
+        "pin": "1"
+      },
+      {
+        "ref": "FSR09",
+        "pin": "1"
+      },
+      {
+        "ref": "J_SENSOR",
+        "pin": "10"
+      },
+      {
+        "ref": "D_A2",
+        "pin": "6"
+      }
+    ],
+    "SNS10": [
+      {
+        "ref": "R_BIAS10",
+        "pin": "2"
+      },
+      {
+        "ref": "R_SER10",
+        "pin": "1"
+      },
+      {
+        "ref": "REOL10",
+        "pin": "1"
+      },
+      {
+        "ref": "FSR10",
+        "pin": "1"
+      },
+      {
+        "ref": "J_SENSOR",
+        "pin": "11"
+      },
+      {
+        "ref": "D_A2",
+        "pin": "3"
+      }
+    ],
+    "SNS11": [
+      {
+        "ref": "R_BIAS11",
+        "pin": "2"
+      },
+      {
+        "ref": "R_SER11",
+        "pin": "1"
+      },
+      {
+        "ref": "REOL11",
+        "pin": "1"
+      },
+      {
+        "ref": "FSR11",
+        "pin": "1"
+      },
+      {
+        "ref": "J_SENSOR",
+        "pin": "12"
+      },
+      {
+        "ref": "D_A2",
+        "pin": "4"
+      }
+    ],
+    "SNS12": [
+      {
+        "ref": "R_BIAS12",
+        "pin": "2"
+      },
+      {
+        "ref": "R_SER12",
+        "pin": "1"
+      },
+      {
+        "ref": "REOL12",
+        "pin": "1"
+      },
+      {
+        "ref": "FSR12",
+        "pin": "1"
+      },
+      {
+        "ref": "J_SENSOR",
+        "pin": "13"
+      },
+      {
+        "ref": "D_A3",
+        "pin": "1"
+      }
+    ],
+    "SNS13": [
+      {
+        "ref": "R_BIAS13",
+        "pin": "2"
+      },
+      {
+        "ref": "R_SER13",
+        "pin": "1"
+      },
+      {
+        "ref": "REOL13",
+        "pin": "1"
+      },
+      {
+        "ref": "FSR13",
+        "pin": "1"
+      },
+      {
+        "ref": "J_SENSOR",
+        "pin": "14"
+      },
+      {
+        "ref": "D_A3",
+        "pin": "6"
+      }
+    ],
+    "SNS14": [
+      {
+        "ref": "R_BIAS14",
+        "pin": "2"
+      },
+      {
+        "ref": "R_SER14",
+        "pin": "1"
+      },
+      {
+        "ref": "REOL14",
+        "pin": "1"
+      },
+      {
+        "ref": "FSR14",
+        "pin": "1"
+      },
+      {
+        "ref": "J_SENSOR",
+        "pin": "15"
+      },
+      {
+        "ref": "D_A3",
+        "pin": "3"
+      }
+    ],
+    "SNS15": [
+      {
+        "ref": "R_BIAS15",
+        "pin": "2"
+      },
+      {
+        "ref": "R_SER15",
+        "pin": "1"
+      },
+      {
+        "ref": "REOL15",
+        "pin": "1"
+      },
+      {
+        "ref": "FSR15",
+        "pin": "1"
+      },
+      {
+        "ref": "J_SENSOR",
+        "pin": "16"
+      },
+      {
+        "ref": "D_A3",
+        "pin": "4"
+      }
+    ],
+    "SNS16": [
+      {
+        "ref": "R_BIAS16",
+        "pin": "2"
+      },
+      {
+        "ref": "R_SER16",
+        "pin": "1"
+      },
+      {
+        "ref": "REOL16",
+        "pin": "1"
+      },
+      {
+        "ref": "FSR16",
+        "pin": "1"
+      },
+      {
+        "ref": "J_SENSOR",
+        "pin": "17"
+      },
+      {
+        "ref": "D_A4",
+        "pin": "1"
+      }
+    ],
+    "SNS17": [
+      {
+        "ref": "R_BIAS17",
+        "pin": "2"
+      },
+      {
+        "ref": "R_SER17",
+        "pin": "1"
+      },
+      {
+        "ref": "REOL17",
+        "pin": "1"
+      },
+      {
+        "ref": "FSR17",
+        "pin": "1"
+      },
+      {
+        "ref": "J_SENSOR",
+        "pin": "18"
+      },
+      {
+        "ref": "D_A4",
+        "pin": "6"
+      }
+    ],
+    "SNS18": [
+      {
+        "ref": "R_BIAS18",
+        "pin": "2"
+      },
+      {
+        "ref": "R_SER18",
+        "pin": "1"
+      },
+      {
+        "ref": "REOL18",
+        "pin": "1"
+      },
+      {
+        "ref": "FSR18",
+        "pin": "1"
+      },
+      {
+        "ref": "J_SENSOR",
+        "pin": "19"
+      },
+      {
+        "ref": "D_A4",
+        "pin": "3"
+      }
+    ],
+    "SNS19": [
+      {
+        "ref": "R_BIAS19",
+        "pin": "2"
+      },
+      {
+        "ref": "R_SER19",
+        "pin": "1"
+      },
+      {
+        "ref": "REOL19",
+        "pin": "1"
+      },
+      {
+        "ref": "FSR19",
+        "pin": "1"
+      },
+      {
+        "ref": "J_SENSOR",
+        "pin": "20"
+      },
+      {
+        "ref": "D_A4",
+        "pin": "4"
+      }
+    ],
+    "SNS20": [
+      {
+        "ref": "R_BIAS20",
+        "pin": "2"
+      },
+      {
+        "ref": "R_SER20",
+        "pin": "1"
+      },
+      {
+        "ref": "REOL20",
+        "pin": "1"
+      },
+      {
+        "ref": "FSR20",
+        "pin": "1"
+      },
+      {
+        "ref": "J_SENSOR",
+        "pin": "21"
+      },
+      {
+        "ref": "D_A5",
+        "pin": "1"
+      }
+    ],
+    "SNS21": [
+      {
+        "ref": "R_BIAS21",
+        "pin": "2"
+      },
+      {
+        "ref": "R_SER21",
+        "pin": "1"
+      },
+      {
+        "ref": "REOL21",
+        "pin": "1"
+      },
+      {
+        "ref": "FSR21",
+        "pin": "1"
+      },
+      {
+        "ref": "J_SENSOR",
+        "pin": "22"
+      },
+      {
+        "ref": "D_A5",
+        "pin": "6"
+      }
+    ],
+    "SNS22": [
+      {
+        "ref": "R_BIAS22",
+        "pin": "2"
+      },
+      {
+        "ref": "R_SER22",
+        "pin": "1"
+      },
+      {
+        "ref": "REOL22",
+        "pin": "1"
+      },
+      {
+        "ref": "FSR22",
+        "pin": "1"
+      },
+      {
+        "ref": "J_SENSOR",
+        "pin": "23"
+      },
+      {
+        "ref": "D_A5",
+        "pin": "3"
+      }
+    ],
+    "SNS23": [
+      {
+        "ref": "R_BIAS23",
+        "pin": "2"
+      },
+      {
+        "ref": "R_SER23",
+        "pin": "1"
+      },
+      {
+        "ref": "REOL23",
+        "pin": "1"
+      },
+      {
+        "ref": "FSR23",
+        "pin": "1"
+      },
+      {
+        "ref": "J_SENSOR",
+        "pin": "24"
+      },
+      {
+        "ref": "D_A5",
+        "pin": "4"
+      }
+    ],
+    "SNS24": [
+      {
+        "ref": "R_BIAS24",
+        "pin": "2"
+      },
+      {
+        "ref": "R_SER24",
+        "pin": "1"
+      },
+      {
+        "ref": "REOL24",
+        "pin": "1"
+      },
+      {
+        "ref": "FSR24",
+        "pin": "1"
+      },
+      {
+        "ref": "J_SENSOR",
+        "pin": "25"
+      },
+      {
+        "ref": "D_A6",
+        "pin": "1"
+      }
+    ],
+    "SNS25": [
+      {
+        "ref": "R_BIAS25",
+        "pin": "2"
+      },
+      {
+        "ref": "R_SER25",
+        "pin": "1"
+      },
+      {
+        "ref": "REOL25",
+        "pin": "1"
+      },
+      {
+        "ref": "FSR25",
+        "pin": "1"
+      },
+      {
+        "ref": "J_SENSOR",
+        "pin": "26"
+      },
+      {
+        "ref": "D_A6",
+        "pin": "6"
+      }
+    ],
+    "SNS26": [
+      {
+        "ref": "R_BIAS26",
+        "pin": "2"
+      },
+      {
+        "ref": "R_SER26",
+        "pin": "1"
+      },
+      {
+        "ref": "REOL26",
+        "pin": "1"
+      },
+      {
+        "ref": "FSR26",
+        "pin": "1"
+      },
+      {
+        "ref": "J_SENSOR",
+        "pin": "27"
+      },
+      {
+        "ref": "D_A6",
+        "pin": "3"
+      }
+    ],
+    "SNS27": [
+      {
+        "ref": "R_BIAS27",
+        "pin": "2"
+      },
+      {
+        "ref": "R_SER27",
+        "pin": "1"
+      },
+      {
+        "ref": "REOL27",
+        "pin": "1"
+      },
+      {
+        "ref": "FSR27",
+        "pin": "1"
+      },
+      {
+        "ref": "J_SENSOR",
+        "pin": "28"
+      },
+      {
+        "ref": "D_A6",
+        "pin": "4"
+      }
+    ],
+    "WIT_OUT": [
+      {
+        "ref": "J_SENSOR",
+        "pin": "33"
+      },
+      {
+        "ref": "R_WIT_DRIVE",
+        "pin": "2"
+      },
+      {
+        "ref": "WIT_LOOP",
+        "pin": "1"
+      },
+      {
+        "ref": "D_A7",
+        "pin": "3"
+      }
+    ],
+    "WIT_IN": [
+      {
+        "ref": "J_SENSOR",
+        "pin": "34"
+      },
+      {
+        "ref": "R_WIT_SER",
+        "pin": "1"
+      },
+      {
+        "ref": "WIT_LOOP",
+        "pin": "2"
+      },
+      {
+        "ref": "D_A7",
+        "pin": "4"
+      }
+    ],
+    "TEMP_EXT0": [
+      {
+        "ref": "R_TEMP_BIAS0",
+        "pin": "2"
+      },
+      {
+        "ref": "R_TEMP_SER0",
+        "pin": "1"
+      },
+      {
+        "ref": "TH0",
+        "pin": "1"
+      },
+      {
+        "ref": "J_THERMAL",
+        "pin": "1"
+      },
+      {
+        "ref": "D_A7",
+        "pin": "1"
+      }
+    ],
+    "TEMP_EXT1": [
+      {
+        "ref": "R_TEMP_BIAS1",
+        "pin": "2"
+      },
+      {
+        "ref": "R_TEMP_SER1",
+        "pin": "1"
+      },
+      {
+        "ref": "TH1",
+        "pin": "1"
+      },
+      {
+        "ref": "J_THERMAL",
+        "pin": "2"
+      },
+      {
+        "ref": "D_A7",
+        "pin": "6"
+      }
+    ]
+  }
+}

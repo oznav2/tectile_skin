@@ -1,0 +1,712 @@
+{
+  "design": "ROBOSKIN region_circuit",
+  "release_status": "PIN_LEVEL_DESIGN_REVIEW_ONLY_NOT_ROUTED_OR_HARDWARE_VALIDATED",
+  "parts": [
+    {
+      "ref": "J_IN",
+      "value": "Regulated isolated 5V input pads",
+      "package": "Terminal_Block_5.08mm",
+      "location": "region",
+      "note": "",
+      "pins": {
+        "1": "5V_SUPPLY",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "U_REG",
+      "value": "TPS259530DSGR",
+      "package": "WSON-8_2x2mm_EP",
+      "location": "region",
+      "note": "Pin9 denotes exposed thermal pad; latch-off 5.7V clamp variant.",
+      "pins": {
+        "1": "DV_DT",
+        "2": "REGION_EN",
+        "3": "5V_SUPPLY",
+        "4": "5V_SUPPLY",
+        "5": "5V_REGION",
+        "6": "REGION_FAULT_N",
+        "7": "REGION_ILIM",
+        "8": "GND",
+        "9": "GND"
+      }
+    },
+    {
+      "ref": "C_RAMP",
+      "value": "180nF X7R 10V",
+      "package": "C_0603_1608Metric",
+      "location": "region",
+      "note": "",
+      "pins": {
+        "1": "DV_DT",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "C_REG_IN",
+      "value": "10uF X7R 10V",
+      "package": "C_0603_1608Metric",
+      "location": "region",
+      "note": "",
+      "pins": {
+        "1": "5V_SUPPLY",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "C_REG_HF",
+      "value": "100nF X7R 10V",
+      "package": "C_0603_1608Metric",
+      "location": "region",
+      "note": "",
+      "pins": {
+        "1": "5V_SUPPLY",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "C_REG_OUT",
+      "value": "10uF X7R 10V",
+      "package": "C_0603_1608Metric",
+      "location": "region",
+      "note": "",
+      "pins": {
+        "1": "5V_REGION",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "R_REG_EN_TOP",
+      "value": "100k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "region",
+      "note": "",
+      "pins": {
+        "1": "5V_SUPPLY",
+        "2": "REGION_EN"
+      }
+    },
+    {
+      "ref": "R_REG_EN_BOT",
+      "value": "39k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "region",
+      "note": "",
+      "pins": {
+        "1": "REGION_EN",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "R_REG_ILIM",
+      "value": "2.05k 1%",
+      "package": "R_0603_1608Metric",
+      "location": "region",
+      "note": "",
+      "pins": {
+        "1": "REGION_ILIM",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "SW_RESET",
+      "value": "Momentary normally open",
+      "package": "Reset_Button",
+      "location": "region",
+      "note": "",
+      "pins": {
+        "1": "REGION_EN",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "U_MON",
+      "value": "TPS7A2433DBVR",
+      "package": "SOT-23-5",
+      "location": "region",
+      "note": "",
+      "pins": {
+        "1": "5V_SUPPLY",
+        "2": "GND",
+        "3": "5V_SUPPLY",
+        "4": "GND",
+        "5": "3V3_MON"
+      }
+    },
+    {
+      "ref": "C_MON_IN",
+      "value": "4.7uF X7R 10V",
+      "package": "C_0603_1608Metric",
+      "location": "region",
+      "note": "",
+      "pins": {
+        "1": "5V_SUPPLY",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "C_MON_OUT",
+      "value": "4.7uF X7R 10V",
+      "package": "C_0603_1608Metric",
+      "location": "region",
+      "note": "",
+      "pins": {
+        "1": "3V3_MON",
+        "2": "GND"
+      }
+    },
+    {
+      "ref": "R_FLT",
+      "value": "10k",
+      "package": "R_0603_1608Metric",
+      "location": "region",
+      "note": "",
+      "pins": {
+        "1": "3V3_MON",
+        "2": "REGION_FAULT_N"
+      }
+    },
+    {
+      "ref": "R_LED",
+      "value": "2.2k",
+      "package": "R_0603_1608Metric",
+      "location": "region",
+      "note": "",
+      "pins": {
+        "1": "3V3_MON",
+        "2": "LED_A"
+      }
+    },
+    {
+      "ref": "D_FAULT",
+      "value": "Red status LED",
+      "package": "LED_0603",
+      "location": "region",
+      "note": "Pin1 cathode. Advisory indication only.",
+      "pins": {
+        "1": "REGION_FAULT_N",
+        "2": "LED_A"
+      }
+    },
+    {
+      "ref": "J_FAULT",
+      "value": "Monitor pads",
+      "package": "TestPads",
+      "location": "region",
+      "note": "",
+      "pins": {
+        "1": "GND",
+        "2": "3V3_MON",
+        "3": "REGION_FAULT_N"
+      }
+    },
+    {
+      "ref": "J_CAN",
+      "value": "PCAN USB FD mating DB9",
+      "package": "DB9_Female",
+      "location": "region",
+      "note": "Never take 5V from adapter pin1. Set internal termination OFF.",
+      "pins": {
+        "2": "CANL",
+        "3": "GND",
+        "6": "GND",
+        "7": "CANH",
+        "1": null,
+        "4": null,
+        "5": null,
+        "8": null,
+        "9": null
+      }
+    },
+    {
+      "ref": "R_TERM_NEAR",
+      "value": "120R 1% 0.25W",
+      "package": "R_0603_1608Metric",
+      "location": "region",
+      "note": "",
+      "pins": {
+        "1": "CANH",
+        "2": "CANL"
+      }
+    },
+    {
+      "ref": "J_BRANCH1",
+      "value": "GHR-04V-S + SSHL-002T-P0.2",
+      "package": "Cable_Housing",
+      "location": "distributed_trunk_tap",
+      "note": "Distributed along linear trunk, not eight 2m star stubs. Branch <=50mm.",
+      "pins": {
+        "1": "5V_REGION",
+        "2": "GND",
+        "3": "CANH",
+        "4": "CANL"
+      }
+    },
+    {
+      "ref": "J_BRANCH2",
+      "value": "GHR-04V-S + SSHL-002T-P0.2",
+      "package": "Cable_Housing",
+      "location": "distributed_trunk_tap",
+      "note": "Distributed along linear trunk, not eight 2m star stubs. Branch <=50mm.",
+      "pins": {
+        "1": "5V_REGION",
+        "2": "GND",
+        "3": "CANH",
+        "4": "CANL"
+      }
+    },
+    {
+      "ref": "J_BRANCH3",
+      "value": "GHR-04V-S + SSHL-002T-P0.2",
+      "package": "Cable_Housing",
+      "location": "distributed_trunk_tap",
+      "note": "Distributed along linear trunk, not eight 2m star stubs. Branch <=50mm.",
+      "pins": {
+        "1": "5V_REGION",
+        "2": "GND",
+        "3": "CANH",
+        "4": "CANL"
+      }
+    },
+    {
+      "ref": "J_BRANCH4",
+      "value": "GHR-04V-S + SSHL-002T-P0.2",
+      "package": "Cable_Housing",
+      "location": "distributed_trunk_tap",
+      "note": "Distributed along linear trunk, not eight 2m star stubs. Branch <=50mm.",
+      "pins": {
+        "1": "5V_REGION",
+        "2": "GND",
+        "3": "CANH",
+        "4": "CANL"
+      }
+    },
+    {
+      "ref": "J_BRANCH5",
+      "value": "GHR-04V-S + SSHL-002T-P0.2",
+      "package": "Cable_Housing",
+      "location": "distributed_trunk_tap",
+      "note": "Distributed along linear trunk, not eight 2m star stubs. Branch <=50mm.",
+      "pins": {
+        "1": "5V_REGION",
+        "2": "GND",
+        "3": "CANH",
+        "4": "CANL"
+      }
+    },
+    {
+      "ref": "J_BRANCH6",
+      "value": "GHR-04V-S + SSHL-002T-P0.2",
+      "package": "Cable_Housing",
+      "location": "distributed_trunk_tap",
+      "note": "Distributed along linear trunk, not eight 2m star stubs. Branch <=50mm.",
+      "pins": {
+        "1": "5V_REGION",
+        "2": "GND",
+        "3": "CANH",
+        "4": "CANL"
+      }
+    },
+    {
+      "ref": "J_BRANCH7",
+      "value": "GHR-04V-S + SSHL-002T-P0.2",
+      "package": "Cable_Housing",
+      "location": "distributed_trunk_tap",
+      "note": "Distributed along linear trunk, not eight 2m star stubs. Branch <=50mm.",
+      "pins": {
+        "1": "5V_REGION",
+        "2": "GND",
+        "3": "CANH",
+        "4": "CANL"
+      }
+    },
+    {
+      "ref": "J_BRANCH8",
+      "value": "GHR-04V-S + SSHL-002T-P0.2",
+      "package": "Cable_Housing",
+      "location": "distributed_trunk_tap",
+      "note": "Distributed along linear trunk, not eight 2m star stubs. Branch <=50mm.",
+      "pins": {
+        "1": "5V_REGION",
+        "2": "GND",
+        "3": "CANH",
+        "4": "CANL"
+      }
+    },
+    {
+      "ref": "R_TERM_FAR",
+      "value": "120R 1% 0.25W",
+      "package": "R_0603_1608Metric",
+      "location": "far_end_trunk",
+      "note": "",
+      "pins": {
+        "1": "CANH",
+        "2": "CANL"
+      }
+    }
+  ],
+  "nets": {
+    "5V_SUPPLY": [
+      {
+        "ref": "J_IN",
+        "pin": "1"
+      },
+      {
+        "ref": "U_REG",
+        "pin": "3"
+      },
+      {
+        "ref": "U_REG",
+        "pin": "4"
+      },
+      {
+        "ref": "C_REG_IN",
+        "pin": "1"
+      },
+      {
+        "ref": "C_REG_HF",
+        "pin": "1"
+      },
+      {
+        "ref": "R_REG_EN_TOP",
+        "pin": "1"
+      },
+      {
+        "ref": "U_MON",
+        "pin": "1"
+      },
+      {
+        "ref": "U_MON",
+        "pin": "3"
+      },
+      {
+        "ref": "C_MON_IN",
+        "pin": "1"
+      }
+    ],
+    "GND": [
+      {
+        "ref": "J_IN",
+        "pin": "2"
+      },
+      {
+        "ref": "U_REG",
+        "pin": "8"
+      },
+      {
+        "ref": "U_REG",
+        "pin": "9"
+      },
+      {
+        "ref": "C_RAMP",
+        "pin": "2"
+      },
+      {
+        "ref": "C_REG_IN",
+        "pin": "2"
+      },
+      {
+        "ref": "C_REG_HF",
+        "pin": "2"
+      },
+      {
+        "ref": "C_REG_OUT",
+        "pin": "2"
+      },
+      {
+        "ref": "R_REG_EN_BOT",
+        "pin": "2"
+      },
+      {
+        "ref": "R_REG_ILIM",
+        "pin": "2"
+      },
+      {
+        "ref": "SW_RESET",
+        "pin": "2"
+      },
+      {
+        "ref": "U_MON",
+        "pin": "2"
+      },
+      {
+        "ref": "U_MON",
+        "pin": "4"
+      },
+      {
+        "ref": "C_MON_IN",
+        "pin": "2"
+      },
+      {
+        "ref": "C_MON_OUT",
+        "pin": "2"
+      },
+      {
+        "ref": "J_FAULT",
+        "pin": "1"
+      },
+      {
+        "ref": "J_CAN",
+        "pin": "3"
+      },
+      {
+        "ref": "J_CAN",
+        "pin": "6"
+      },
+      {
+        "ref": "J_BRANCH1",
+        "pin": "2"
+      },
+      {
+        "ref": "J_BRANCH2",
+        "pin": "2"
+      },
+      {
+        "ref": "J_BRANCH3",
+        "pin": "2"
+      },
+      {
+        "ref": "J_BRANCH4",
+        "pin": "2"
+      },
+      {
+        "ref": "J_BRANCH5",
+        "pin": "2"
+      },
+      {
+        "ref": "J_BRANCH6",
+        "pin": "2"
+      },
+      {
+        "ref": "J_BRANCH7",
+        "pin": "2"
+      },
+      {
+        "ref": "J_BRANCH8",
+        "pin": "2"
+      }
+    ],
+    "DV_DT": [
+      {
+        "ref": "U_REG",
+        "pin": "1"
+      },
+      {
+        "ref": "C_RAMP",
+        "pin": "1"
+      }
+    ],
+    "REGION_EN": [
+      {
+        "ref": "U_REG",
+        "pin": "2"
+      },
+      {
+        "ref": "R_REG_EN_TOP",
+        "pin": "2"
+      },
+      {
+        "ref": "R_REG_EN_BOT",
+        "pin": "1"
+      },
+      {
+        "ref": "SW_RESET",
+        "pin": "1"
+      }
+    ],
+    "5V_REGION": [
+      {
+        "ref": "U_REG",
+        "pin": "5"
+      },
+      {
+        "ref": "C_REG_OUT",
+        "pin": "1"
+      },
+      {
+        "ref": "J_BRANCH1",
+        "pin": "1"
+      },
+      {
+        "ref": "J_BRANCH2",
+        "pin": "1"
+      },
+      {
+        "ref": "J_BRANCH3",
+        "pin": "1"
+      },
+      {
+        "ref": "J_BRANCH4",
+        "pin": "1"
+      },
+      {
+        "ref": "J_BRANCH5",
+        "pin": "1"
+      },
+      {
+        "ref": "J_BRANCH6",
+        "pin": "1"
+      },
+      {
+        "ref": "J_BRANCH7",
+        "pin": "1"
+      },
+      {
+        "ref": "J_BRANCH8",
+        "pin": "1"
+      }
+    ],
+    "REGION_FAULT_N": [
+      {
+        "ref": "U_REG",
+        "pin": "6"
+      },
+      {
+        "ref": "R_FLT",
+        "pin": "2"
+      },
+      {
+        "ref": "D_FAULT",
+        "pin": "1"
+      },
+      {
+        "ref": "J_FAULT",
+        "pin": "3"
+      }
+    ],
+    "REGION_ILIM": [
+      {
+        "ref": "U_REG",
+        "pin": "7"
+      },
+      {
+        "ref": "R_REG_ILIM",
+        "pin": "1"
+      }
+    ],
+    "3V3_MON": [
+      {
+        "ref": "U_MON",
+        "pin": "5"
+      },
+      {
+        "ref": "C_MON_OUT",
+        "pin": "1"
+      },
+      {
+        "ref": "R_FLT",
+        "pin": "1"
+      },
+      {
+        "ref": "R_LED",
+        "pin": "1"
+      },
+      {
+        "ref": "J_FAULT",
+        "pin": "2"
+      }
+    ],
+    "LED_A": [
+      {
+        "ref": "R_LED",
+        "pin": "2"
+      },
+      {
+        "ref": "D_FAULT",
+        "pin": "2"
+      }
+    ],
+    "CANL": [
+      {
+        "ref": "J_CAN",
+        "pin": "2"
+      },
+      {
+        "ref": "R_TERM_NEAR",
+        "pin": "2"
+      },
+      {
+        "ref": "J_BRANCH1",
+        "pin": "4"
+      },
+      {
+        "ref": "J_BRANCH2",
+        "pin": "4"
+      },
+      {
+        "ref": "J_BRANCH3",
+        "pin": "4"
+      },
+      {
+        "ref": "J_BRANCH4",
+        "pin": "4"
+      },
+      {
+        "ref": "J_BRANCH5",
+        "pin": "4"
+      },
+      {
+        "ref": "J_BRANCH6",
+        "pin": "4"
+      },
+      {
+        "ref": "J_BRANCH7",
+        "pin": "4"
+      },
+      {
+        "ref": "J_BRANCH8",
+        "pin": "4"
+      },
+      {
+        "ref": "R_TERM_FAR",
+        "pin": "2"
+      }
+    ],
+    "CANH": [
+      {
+        "ref": "J_CAN",
+        "pin": "7"
+      },
+      {
+        "ref": "R_TERM_NEAR",
+        "pin": "1"
+      },
+      {
+        "ref": "J_BRANCH1",
+        "pin": "3"
+      },
+      {
+        "ref": "J_BRANCH2",
+        "pin": "3"
+      },
+      {
+        "ref": "J_BRANCH3",
+        "pin": "3"
+      },
+      {
+        "ref": "J_BRANCH4",
+        "pin": "3"
+      },
+      {
+        "ref": "J_BRANCH5",
+        "pin": "3"
+      },
+      {
+        "ref": "J_BRANCH6",
+        "pin": "3"
+      },
+      {
+        "ref": "J_BRANCH7",
+        "pin": "3"
+      },
+      {
+        "ref": "J_BRANCH8",
+        "pin": "3"
+      },
+      {
+        "ref": "R_TERM_FAR",
+        "pin": "1"
+      }
+    ]
+  }
+}

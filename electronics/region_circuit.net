@@ -1,0 +1,314 @@
+<?xml version='1.0' encoding='utf-8'?>
+<export version="D">
+  <design>
+    <source>region_circuit.json</source>
+    <tool>ROBOSKIN build_circuit.py (review export)</tool>
+  </design>
+  <components>
+    <comp ref="J_IN">
+      <value>Regulated isolated 5V input pads</value>
+      <footprint>Terminal_Block_5.08mm</footprint>
+      <fields>
+        <field name="Assembly">region</field>
+      </fields>
+    </comp>
+    <comp ref="U_REG">
+      <value>TPS259530DSGR</value>
+      <footprint>WSON-8_2x2mm_EP</footprint>
+      <fields>
+        <field name="Assembly">region</field>
+      </fields>
+    </comp>
+    <comp ref="C_RAMP">
+      <value>180nF X7R 10V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">region</field>
+      </fields>
+    </comp>
+    <comp ref="C_REG_IN">
+      <value>10uF X7R 10V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">region</field>
+      </fields>
+    </comp>
+    <comp ref="C_REG_HF">
+      <value>100nF X7R 10V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">region</field>
+      </fields>
+    </comp>
+    <comp ref="C_REG_OUT">
+      <value>10uF X7R 10V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">region</field>
+      </fields>
+    </comp>
+    <comp ref="R_REG_EN_TOP">
+      <value>100k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">region</field>
+      </fields>
+    </comp>
+    <comp ref="R_REG_EN_BOT">
+      <value>39k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">region</field>
+      </fields>
+    </comp>
+    <comp ref="R_REG_ILIM">
+      <value>2.05k 1%</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">region</field>
+      </fields>
+    </comp>
+    <comp ref="SW_RESET">
+      <value>Momentary normally open</value>
+      <footprint>Reset_Button</footprint>
+      <fields>
+        <field name="Assembly">region</field>
+      </fields>
+    </comp>
+    <comp ref="U_MON">
+      <value>TPS7A2433DBVR</value>
+      <footprint>SOT-23-5</footprint>
+      <fields>
+        <field name="Assembly">region</field>
+      </fields>
+    </comp>
+    <comp ref="C_MON_IN">
+      <value>4.7uF X7R 10V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">region</field>
+      </fields>
+    </comp>
+    <comp ref="C_MON_OUT">
+      <value>4.7uF X7R 10V</value>
+      <footprint>C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">region</field>
+      </fields>
+    </comp>
+    <comp ref="R_FLT">
+      <value>10k</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">region</field>
+      </fields>
+    </comp>
+    <comp ref="R_LED">
+      <value>2.2k</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">region</field>
+      </fields>
+    </comp>
+    <comp ref="D_FAULT">
+      <value>Red status LED</value>
+      <footprint>LED_0603</footprint>
+      <fields>
+        <field name="Assembly">region</field>
+      </fields>
+    </comp>
+    <comp ref="J_FAULT">
+      <value>Monitor pads</value>
+      <footprint>TestPads</footprint>
+      <fields>
+        <field name="Assembly">region</field>
+      </fields>
+    </comp>
+    <comp ref="J_CAN">
+      <value>PCAN USB FD mating DB9</value>
+      <footprint>DB9_Female</footprint>
+      <fields>
+        <field name="Assembly">region</field>
+      </fields>
+    </comp>
+    <comp ref="R_TERM_NEAR">
+      <value>120R 1% 0.25W</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">region</field>
+      </fields>
+    </comp>
+    <comp ref="J_BRANCH1">
+      <value>GHR-04V-S + SSHL-002T-P0.2</value>
+      <footprint>Cable_Housing</footprint>
+      <fields>
+        <field name="Assembly">distributed_trunk_tap</field>
+      </fields>
+    </comp>
+    <comp ref="J_BRANCH2">
+      <value>GHR-04V-S + SSHL-002T-P0.2</value>
+      <footprint>Cable_Housing</footprint>
+      <fields>
+        <field name="Assembly">distributed_trunk_tap</field>
+      </fields>
+    </comp>
+    <comp ref="J_BRANCH3">
+      <value>GHR-04V-S + SSHL-002T-P0.2</value>
+      <footprint>Cable_Housing</footprint>
+      <fields>
+        <field name="Assembly">distributed_trunk_tap</field>
+      </fields>
+    </comp>
+    <comp ref="J_BRANCH4">
+      <value>GHR-04V-S + SSHL-002T-P0.2</value>
+      <footprint>Cable_Housing</footprint>
+      <fields>
+        <field name="Assembly">distributed_trunk_tap</field>
+      </fields>
+    </comp>
+    <comp ref="J_BRANCH5">
+      <value>GHR-04V-S + SSHL-002T-P0.2</value>
+      <footprint>Cable_Housing</footprint>
+      <fields>
+        <field name="Assembly">distributed_trunk_tap</field>
+      </fields>
+    </comp>
+    <comp ref="J_BRANCH6">
+      <value>GHR-04V-S + SSHL-002T-P0.2</value>
+      <footprint>Cable_Housing</footprint>
+      <fields>
+        <field name="Assembly">distributed_trunk_tap</field>
+      </fields>
+    </comp>
+    <comp ref="J_BRANCH7">
+      <value>GHR-04V-S + SSHL-002T-P0.2</value>
+      <footprint>Cable_Housing</footprint>
+      <fields>
+        <field name="Assembly">distributed_trunk_tap</field>
+      </fields>
+    </comp>
+    <comp ref="J_BRANCH8">
+      <value>GHR-04V-S + SSHL-002T-P0.2</value>
+      <footprint>Cable_Housing</footprint>
+      <fields>
+        <field name="Assembly">distributed_trunk_tap</field>
+      </fields>
+    </comp>
+    <comp ref="R_TERM_FAR">
+      <value>120R 1% 0.25W</value>
+      <footprint>R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Assembly">far_end_trunk</field>
+      </fields>
+    </comp>
+  </components>
+  <nets>
+    <net code="1" name="3V3_MON">
+      <node ref="U_MON" pin="5" />
+      <node ref="C_MON_OUT" pin="1" />
+      <node ref="R_FLT" pin="1" />
+      <node ref="R_LED" pin="1" />
+      <node ref="J_FAULT" pin="2" />
+    </net>
+    <net code="2" name="5V_REGION">
+      <node ref="U_REG" pin="5" />
+      <node ref="C_REG_OUT" pin="1" />
+      <node ref="J_BRANCH1" pin="1" />
+      <node ref="J_BRANCH2" pin="1" />
+      <node ref="J_BRANCH3" pin="1" />
+      <node ref="J_BRANCH4" pin="1" />
+      <node ref="J_BRANCH5" pin="1" />
+      <node ref="J_BRANCH6" pin="1" />
+      <node ref="J_BRANCH7" pin="1" />
+      <node ref="J_BRANCH8" pin="1" />
+    </net>
+    <net code="3" name="5V_SUPPLY">
+      <node ref="J_IN" pin="1" />
+      <node ref="U_REG" pin="3" />
+      <node ref="U_REG" pin="4" />
+      <node ref="C_REG_IN" pin="1" />
+      <node ref="C_REG_HF" pin="1" />
+      <node ref="R_REG_EN_TOP" pin="1" />
+      <node ref="U_MON" pin="1" />
+      <node ref="U_MON" pin="3" />
+      <node ref="C_MON_IN" pin="1" />
+    </net>
+    <net code="4" name="CANH">
+      <node ref="J_CAN" pin="7" />
+      <node ref="R_TERM_NEAR" pin="1" />
+      <node ref="J_BRANCH1" pin="3" />
+      <node ref="J_BRANCH2" pin="3" />
+      <node ref="J_BRANCH3" pin="3" />
+      <node ref="J_BRANCH4" pin="3" />
+      <node ref="J_BRANCH5" pin="3" />
+      <node ref="J_BRANCH6" pin="3" />
+      <node ref="J_BRANCH7" pin="3" />
+      <node ref="J_BRANCH8" pin="3" />
+      <node ref="R_TERM_FAR" pin="1" />
+    </net>
+    <net code="5" name="CANL">
+      <node ref="J_CAN" pin="2" />
+      <node ref="R_TERM_NEAR" pin="2" />
+      <node ref="J_BRANCH1" pin="4" />
+      <node ref="J_BRANCH2" pin="4" />
+      <node ref="J_BRANCH3" pin="4" />
+      <node ref="J_BRANCH4" pin="4" />
+      <node ref="J_BRANCH5" pin="4" />
+      <node ref="J_BRANCH6" pin="4" />
+      <node ref="J_BRANCH7" pin="4" />
+      <node ref="J_BRANCH8" pin="4" />
+      <node ref="R_TERM_FAR" pin="2" />
+    </net>
+    <net code="6" name="DV_DT">
+      <node ref="U_REG" pin="1" />
+      <node ref="C_RAMP" pin="1" />
+    </net>
+    <net code="7" name="GND">
+      <node ref="J_IN" pin="2" />
+      <node ref="U_REG" pin="8" />
+      <node ref="U_REG" pin="9" />
+      <node ref="C_RAMP" pin="2" />
+      <node ref="C_REG_IN" pin="2" />
+      <node ref="C_REG_HF" pin="2" />
+      <node ref="C_REG_OUT" pin="2" />
+      <node ref="R_REG_EN_BOT" pin="2" />
+      <node ref="R_REG_ILIM" pin="2" />
+      <node ref="SW_RESET" pin="2" />
+      <node ref="U_MON" pin="2" />
+      <node ref="U_MON" pin="4" />
+      <node ref="C_MON_IN" pin="2" />
+      <node ref="C_MON_OUT" pin="2" />
+      <node ref="J_FAULT" pin="1" />
+      <node ref="J_CAN" pin="3" />
+      <node ref="J_CAN" pin="6" />
+      <node ref="J_BRANCH1" pin="2" />
+      <node ref="J_BRANCH2" pin="2" />
+      <node ref="J_BRANCH3" pin="2" />
+      <node ref="J_BRANCH4" pin="2" />
+      <node ref="J_BRANCH5" pin="2" />
+      <node ref="J_BRANCH6" pin="2" />
+      <node ref="J_BRANCH7" pin="2" />
+      <node ref="J_BRANCH8" pin="2" />
+    </net>
+    <net code="8" name="LED_A">
+      <node ref="R_LED" pin="2" />
+      <node ref="D_FAULT" pin="2" />
+    </net>
+    <net code="9" name="REGION_EN">
+      <node ref="U_REG" pin="2" />
+      <node ref="R_REG_EN_TOP" pin="2" />
+      <node ref="R_REG_EN_BOT" pin="1" />
+      <node ref="SW_RESET" pin="1" />
+    </net>
+    <net code="10" name="REGION_FAULT_N">
+      <node ref="U_REG" pin="6" />
+      <node ref="R_FLT" pin="2" />
+      <node ref="D_FAULT" pin="1" />
+      <node ref="J_FAULT" pin="3" />
+    </net>
+    <net code="11" name="REGION_ILIM">
+      <node ref="U_REG" pin="7" />
+      <node ref="R_REG_ILIM" pin="1" />
+    </net>
+  </nets>
+</export>

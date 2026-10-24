@@ -1,0 +1,1 @@
+test_id,document_revision,hardware_revision,firmware_sha256,config_crc,controller_uid,sheet_serial,film_lot,cover_lot,fixture_id,fixture_calibration_date,operator,utc_time,ambient_C,humidity_percent,supply_V,procedure_step,raw_data_file,raw_data_sha256,measured_value,unit,lower_limit,upper_limit,result,exception,corrective_action,reviewer

@@ -1,0 +1,9 @@
+item,quantity,unit_USD,subtotal_USD,evidence
+Fixed patch hardware excluding printed touch sheet,8,22.78,182.24,Industrial planning allowance
+Short 4- or 6-site printed sheet,6,6,36,Minimum-sheet allowance; supplier quote required
+Full 28-site printed sheet,2,12,24,Unquoted custom-sheet allowance
+Isolated USB CAN FD adapter,1,400,400,Lab equipment budget
+Protected regional distributor,1,12,12,Engineering allowance
+Region harness,1,40,40,Engineering allowance
+Box and strain relief,1,15,15,Engineering allowance
+Reusable isolated bench supply,1,300,300,Equipment budget

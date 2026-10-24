@@ -1,0 +1,569 @@
+{
+  "schema_version": 1,
+  "status": "DIMENSIONAL_PROTOTYPE_NOT_MANUFACTURING_RELEASE",
+  "coordinate_origin": "center of nominal sensing field",
+  "robot_specific_fit_validated": false,
+  "temperature_sensor_positions": null,
+  "sensor_tail_geometry": null,
+  "profiles": [
+    {
+      "profile_id": "compact_2x2",
+      "columns": 2,
+      "rows": 2,
+      "pitch_mm": 25.0,
+      "nominal_perimeter_mm": 3.0,
+      "physical_mm": [
+        56.0,
+        56.0
+      ],
+      "sensing_field_mm": [
+        50.0,
+        50.0
+      ],
+      "active_mask": 15,
+      "controller_contact_capacity": 28,
+      "sites": [
+        {
+          "index": 0,
+          "position_mm": [
+            -12.5,
+            -12.5,
+            0.0
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "index": 1,
+          "position_mm": [
+            12.5,
+            -12.5,
+            0.0
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "index": 2,
+          "position_mm": [
+            -12.5,
+            12.5,
+            0.0
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "index": 3,
+          "position_mm": [
+            12.5,
+            12.5,
+            0.0
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      ]
+    },
+    {
+      "profile_id": "compact_3x2",
+      "columns": 3,
+      "rows": 2,
+      "pitch_mm": 25.0,
+      "nominal_perimeter_mm": 3.0,
+      "physical_mm": [
+        81.0,
+        56.0
+      ],
+      "sensing_field_mm": [
+        75.0,
+        50.0
+      ],
+      "active_mask": 63,
+      "controller_contact_capacity": 28,
+      "sites": [
+        {
+          "index": 0,
+          "position_mm": [
+            -25.0,
+            -12.5,
+            0.0
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "index": 1,
+          "position_mm": [
+            0.0,
+            -12.5,
+            0.0
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "index": 2,
+          "position_mm": [
+            25.0,
+            -12.5,
+            0.0
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "index": 3,
+          "position_mm": [
+            -25.0,
+            12.5,
+            0.0
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "index": 4,
+          "position_mm": [
+            0.0,
+            12.5,
+            0.0
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "index": 5,
+          "position_mm": [
+            25.0,
+            12.5,
+            0.0
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      ]
+    },
+    {
+      "profile_id": "standard_7x4",
+      "columns": 7,
+      "rows": 4,
+      "pitch_mm": 25.0,
+      "nominal_perimeter_mm": 3.0,
+      "physical_mm": [
+        181.0,
+        106.0
+      ],
+      "sensing_field_mm": [
+        175.0,
+        100.0
+      ],
+      "active_mask": 268435455,
+      "controller_contact_capacity": 28,
+      "sites": [
+        {
+          "index": 0,
+          "position_mm": [
+            -75.0,
+            -37.5,
+            0.0
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "index": 1,
+          "position_mm": [
+            -50.0,
+            -37.5,
+            0.0
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "index": 2,
+          "position_mm": [
+            -25.0,
+            -37.5,
+            0.0
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "index": 3,
+          "position_mm": [
+            0.0,
+            -37.5,
+            0.0
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "index": 4,
+          "position_mm": [
+            25.0,
+            -37.5,
+            0.0
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "index": 5,
+          "position_mm": [
+            50.0,
+            -37.5,
+            0.0
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "index": 6,
+          "position_mm": [
+            75.0,
+            -37.5,
+            0.0
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "index": 7,
+          "position_mm": [
+            -75.0,
+            -12.5,
+            0.0
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "index": 8,
+          "position_mm": [
+            -50.0,
+            -12.5,
+            0.0
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "index": 9,
+          "position_mm": [
+            -25.0,
+            -12.5,
+            0.0
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "index": 10,
+          "position_mm": [
+            0.0,
+            -12.5,
+            0.0
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "index": 11,
+          "position_mm": [
+            25.0,
+            -12.5,
+            0.0
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "index": 12,
+          "position_mm": [
+            50.0,
+            -12.5,
+            0.0
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "index": 13,
+          "position_mm": [
+            75.0,
+            -12.5,
+            0.0
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "index": 14,
+          "position_mm": [
+            -75.0,
+            12.5,
+            0.0
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "index": 15,
+          "position_mm": [
+            -50.0,
+            12.5,
+            0.0
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "index": 16,
+          "position_mm": [
+            -25.0,
+            12.5,
+            0.0
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "index": 17,
+          "position_mm": [
+            0.0,
+            12.5,
+            0.0
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "index": 18,
+          "position_mm": [
+            25.0,
+            12.5,
+            0.0
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "index": 19,
+          "position_mm": [
+            50.0,
+            12.5,
+            0.0
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "index": 20,
+          "position_mm": [
+            75.0,
+            12.5,
+            0.0
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "index": 21,
+          "position_mm": [
+            -75.0,
+            37.5,
+            0.0
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "index": 22,
+          "position_mm": [
+            -50.0,
+            37.5,
+            0.0
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "index": 23,
+          "position_mm": [
+            -25.0,
+            37.5,
+            0.0
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "index": 24,
+          "position_mm": [
+            0.0,
+            37.5,
+            0.0
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "index": 25,
+          "position_mm": [
+            25.0,
+            37.5,
+            0.0
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "index": 26,
+          "position_mm": [
+            50.0,
+            37.5,
+            0.0
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "index": 27,
+          "position_mm": [
+            75.0,
+            37.5,
+            0.0
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      ]
+    }
+  ],
+  "eight_panel_example": {
+    "compact_2x2": 2,
+    "compact_3x2": 4,
+    "standard_7x4": 2,
+    "contact_sites": 88,
+    "local_temperature_channels": 16,
+    "note": "Arithmetic example only; panel locations and robot fit are not specified."
+  }
+}

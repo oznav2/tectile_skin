@@ -1,0 +1,641 @@
+reference,part,package_pin,net,assembly,note
+U1,STM32G0B1CBT6,1,NC,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,2,NC,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,3,NC,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,4,3V3,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,5,3V3_A,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,6,3V3,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,7,GND,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,8,HSE_IN,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,9,NC,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,10,NRST,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,11,ADC0,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,12,ADC1,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,13,UART_TX,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,14,UART_RX,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,15,NC,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,16,NC,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,17,NC,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,18,ADC2,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,19,NC,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,20,ADC3,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,21,WIT_DRIVE,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,22,MUX_EN0,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,23,TEMP_ADC0,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,24,TEMP_ADC1,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,25,MUX_EN1,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,26,MUX_EN2,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,27,MUX_EN3,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,28,CAN_STB,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,29,NODE_FAULT_N,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,30,NC,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,31,NC,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,32,SERVICE_N,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,33,NC,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,34,NC,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,35,SWDIO,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,36,SWCLK,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,37,NC,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,38,NC,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,39,NC,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,40,NC,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,41,NC,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,42,NC,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,43,WIT_RETURN,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,44,MUX_A0,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,45,MUX_A1,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,46,MUX_A2,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,47,CAN_RX,controller,Non-N package only; MCU firmware not supplied by this generator.
+U1,STM32G0B1CBT6,48,CAN_TX,controller,Non-N package only; MCU firmware not supplied by this generator.
+J1,BM04B-GHS-TBT(LF)(SN),1,5V_PATCH,controller,
+J1,BM04B-GHS-TBT(LF)(SN),2,GND,controller,
+J1,BM04B-GHS-TBT(LF)(SN),3,CANH,controller,
+J1,BM04B-GHS-TBT(LF)(SN),4,CANL,controller,
+U2,TPS2553DBVR-1,1,5V_PATCH,controller,
+U2,TPS2553DBVR-1,2,GND,controller,
+U2,TPS2553DBVR-1,3,NODE_EN,controller,
+U2,TPS2553DBVR-1,4,NODE_FAULT_N,controller,
+U2,TPS2553DBVR-1,5,NODE_ILIM,controller,
+U2,TPS2553DBVR-1,6,5V_NODE,controller,
+R_NODE_EN,100k 1%,1,5V_PATCH,controller,
+R_NODE_EN,100k 1%,2,NODE_EN,controller,
+R_NODE_ILIM,200k 1%,1,NODE_ILIM,controller,
+R_NODE_ILIM,200k 1%,2,GND,controller,
+R_NODE_FAULT,10k 1%,1,NODE_FAULT_N,controller,
+R_NODE_FAULT,10k 1%,2,3V3,controller,
+C_NODE_IN,1uF X7R 10V,1,5V_PATCH,controller,
+C_NODE_IN,1uF X7R 10V,2,GND,controller,
+C_NODE_HF,100nF X7R 10V,1,5V_PATCH,controller,
+C_NODE_HF,100nF X7R 10V,2,GND,controller,
+C_NODE_OUT,4.7uF X7R 10V,1,5V_NODE,controller,
+C_NODE_OUT,4.7uF X7R 10V,2,GND,controller,
+U3,TPS7A2433DBVR,1,5V_NODE,controller,Fixed-output NC pin4 tied GND per datasheet permission.
+U3,TPS7A2433DBVR,2,GND,controller,Fixed-output NC pin4 tied GND per datasheet permission.
+U3,TPS7A2433DBVR,3,5V_NODE,controller,Fixed-output NC pin4 tied GND per datasheet permission.
+U3,TPS7A2433DBVR,4,GND,controller,Fixed-output NC pin4 tied GND per datasheet permission.
+U3,TPS7A2433DBVR,5,3V3,controller,Fixed-output NC pin4 tied GND per datasheet permission.
+C_LDO_IN,4.7uF X7R 10V,1,5V_NODE,controller,
+C_LDO_IN,4.7uF X7R 10V,2,GND,controller,
+C_LDO_OUT,4.7uF X7R 10V,1,3V3,controller,
+C_LDO_OUT,4.7uF X7R 10V,2,GND,controller,
+C_MCU_HF,100nF X7R 10V,1,3V3,controller,
+C_MCU_HF,100nF X7R 10V,2,GND,controller,
+C_MCU_BULK,4.7uF X7R 10V,1,3V3,controller,
+C_MCU_BULK,4.7uF X7R 10V,2,GND,controller,
+R_ANALOG,10R 1%,1,3V3,controller,
+R_ANALOG,10R 1%,2,3V3_A,controller,
+C_ANALOG_BULK,1uF X7R 10V,1,3V3_A,controller,
+C_ANALOG_BULK,1uF X7R 10V,2,GND,controller,
+C_ANALOG_HF,100nF X7R 10V,1,3V3_A,controller,
+C_ANALOG_HF,100nF X7R 10V,2,GND,controller,
+R_RESET,10k 1%,1,3V3,controller,
+R_RESET,10k 1%,2,NRST,controller,
+C_RESET,100nF X7R 10V,1,NRST,controller,
+C_RESET,100nF X7R 10V,2,GND,controller,
+R_SERVICE,10k 1%,1,3V3,controller,
+R_SERVICE,10k 1%,2,SERVICE_N,controller,
+J_SWD,SWD test pads,1,3V3,controller,Pin1 sense only; do not power from debugger.
+J_SWD,SWD test pads,2,GND,controller,Pin1 sense only; do not power from debugger.
+J_SWD,SWD test pads,3,SWDIO,controller,Pin1 sense only; do not power from debugger.
+J_SWD,SWD test pads,4,SWCLK,controller,Pin1 sense only; do not power from debugger.
+J_SWD,SWD test pads,5,NRST,controller,Pin1 sense only; do not power from debugger.
+J_UART,Service test pads,1,GND,controller,3.3V UART 115200 8N1; strap pin4 to pin1 before reset for writes.
+J_UART,Service test pads,2,UART_TX,controller,3.3V UART 115200 8N1; strap pin4 to pin1 before reset for writes.
+J_UART,Service test pads,3,UART_RX,controller,3.3V UART 115200 8N1; strap pin4 to pin1 before reset for writes.
+J_UART,Service test pads,4,SERVICE_N,controller,3.3V UART 115200 8N1; strap pin4 to pin1 before reset for writes.
+Y1,ASV-8.000MHZ-LC-T,1,3V3,controller,
+Y1,ASV-8.000MHZ-LC-T,2,GND,controller,
+Y1,ASV-8.000MHZ-LC-T,3,OSC_RAW,controller,
+Y1,ASV-8.000MHZ-LC-T,4,3V3,controller,
+R_CLK,33R,1,OSC_RAW,controller,
+R_CLK,33R,2,HSE_IN,controller,
+C_CLK,100nF X7R 10V,1,3V3,controller,
+C_CLK,100nF X7R 10V,2,GND,controller,
+U4,TCAN3413DR,1,CAN_TX,controller,
+U4,TCAN3413DR,2,GND,controller,
+U4,TCAN3413DR,3,3V3,controller,
+U4,TCAN3413DR,4,CAN_RX,controller,
+U4,TCAN3413DR,5,3V3,controller,
+U4,TCAN3413DR,6,CANL,controller,
+U4,TCAN3413DR,7,CANH,controller,
+U4,TCAN3413DR,8,CAN_STB,controller,
+R_CAN_TX,10k,1,3V3,controller,
+R_CAN_TX,10k,2,CAN_TX,controller,
+R_CAN_STB,47k,1,3V3,controller,
+R_CAN_STB,47k,2,CAN_STB,controller,
+C_CAN_VCC,100nF X7R 10V,1,3V3,controller,
+C_CAN_VCC,100nF X7R 10V,2,GND,controller,
+C_CAN_VIO,100nF X7R 10V,1,3V3,controller,
+C_CAN_VIO,100nF X7R 10V,2,GND,controller,
+C_CAN_BULK,1uF X7R 10V,1,3V3,controller,
+C_CAN_BULK,1uF X7R 10V,2,GND,controller,
+D_CAN,PESD2CANFD24V-T,1,CANH,controller,
+D_CAN,PESD2CANFD24V-T,2,CANL,controller,
+D_CAN,PESD2CANFD24V-T,3,GND,controller,
+U_MUX0,TMUX1308PWR,16,3V3_A,controller,EN low selects; high disables.
+U_MUX0,TMUX1308PWR,8,GND,controller,EN low selects; high disables.
+U_MUX0,TMUX1308PWR,11,MUX_A0,controller,EN low selects; high disables.
+U_MUX0,TMUX1308PWR,10,MUX_A1,controller,EN low selects; high disables.
+U_MUX0,TMUX1308PWR,9,MUX_A2,controller,EN low selects; high disables.
+U_MUX0,TMUX1308PWR,6,MUX_EN0,controller,EN low selects; high disables.
+U_MUX0,TMUX1308PWR,7,NC,controller,EN low selects; high disables.
+U_MUX0,TMUX1308PWR,3,MUX_OUT0,controller,EN low selects; high disables.
+U_MUX0,TMUX1308PWR,13,SNS_FILT0,controller,EN low selects; high disables.
+U_MUX0,TMUX1308PWR,14,SNS_FILT1,controller,EN low selects; high disables.
+U_MUX0,TMUX1308PWR,15,SNS_FILT2,controller,EN low selects; high disables.
+U_MUX0,TMUX1308PWR,12,SNS_FILT3,controller,EN low selects; high disables.
+U_MUX0,TMUX1308PWR,1,SNS_FILT4,controller,EN low selects; high disables.
+U_MUX0,TMUX1308PWR,5,SNS_FILT5,controller,EN low selects; high disables.
+U_MUX0,TMUX1308PWR,2,SNS_FILT6,controller,EN low selects; high disables.
+U_MUX0,TMUX1308PWR,4,REF0,controller,EN low selects; high disables.
+R_MUX_EN0,47k,1,MUX_EN0,controller,
+R_MUX_EN0,47k,2,3V3,controller,
+C_MUX0,100nF X7R 10V,1,3V3_A,controller,
+C_MUX0,100nF X7R 10V,2,GND,controller,
+R_MUX_OUT0,4.7k,1,MUX_OUT0,controller,
+R_MUX_OUT0,4.7k,2,ADC0,controller,
+C_ADC0,100pF C0G 50V,1,ADC0,controller,
+C_ADC0,100pF C0G 50V,2,GND,controller,
+R_REF_TOP0,30k,1,3V3_A,controller,
+R_REF_TOP0,30k,2,REF0,controller,
+R_REF_BOT0,10k,1,REF0,controller,
+R_REF_BOT0,10k,2,GND,controller,
+U_MUX1,TMUX1308PWR,16,3V3_A,controller,EN low selects; high disables.
+U_MUX1,TMUX1308PWR,8,GND,controller,EN low selects; high disables.
+U_MUX1,TMUX1308PWR,11,MUX_A0,controller,EN low selects; high disables.
+U_MUX1,TMUX1308PWR,10,MUX_A1,controller,EN low selects; high disables.
+U_MUX1,TMUX1308PWR,9,MUX_A2,controller,EN low selects; high disables.
+U_MUX1,TMUX1308PWR,6,MUX_EN1,controller,EN low selects; high disables.
+U_MUX1,TMUX1308PWR,7,NC,controller,EN low selects; high disables.
+U_MUX1,TMUX1308PWR,3,MUX_OUT1,controller,EN low selects; high disables.
+U_MUX1,TMUX1308PWR,13,SNS_FILT7,controller,EN low selects; high disables.
+U_MUX1,TMUX1308PWR,14,SNS_FILT8,controller,EN low selects; high disables.
+U_MUX1,TMUX1308PWR,15,SNS_FILT9,controller,EN low selects; high disables.
+U_MUX1,TMUX1308PWR,12,SNS_FILT10,controller,EN low selects; high disables.
+U_MUX1,TMUX1308PWR,1,SNS_FILT11,controller,EN low selects; high disables.
+U_MUX1,TMUX1308PWR,5,SNS_FILT12,controller,EN low selects; high disables.
+U_MUX1,TMUX1308PWR,2,SNS_FILT13,controller,EN low selects; high disables.
+U_MUX1,TMUX1308PWR,4,REF1,controller,EN low selects; high disables.
+R_MUX_EN1,47k,1,MUX_EN1,controller,
+R_MUX_EN1,47k,2,3V3,controller,
+C_MUX1,100nF X7R 10V,1,3V3_A,controller,
+C_MUX1,100nF X7R 10V,2,GND,controller,
+R_MUX_OUT1,4.7k,1,MUX_OUT1,controller,
+R_MUX_OUT1,4.7k,2,ADC1,controller,
+C_ADC1,100pF C0G 50V,1,ADC1,controller,
+C_ADC1,100pF C0G 50V,2,GND,controller,
+R_REF_TOP1,15k,1,3V3_A,controller,
+R_REF_TOP1,15k,2,REF1,controller,
+R_REF_BOT1,10k,1,REF1,controller,
+R_REF_BOT1,10k,2,GND,controller,
+U_MUX2,TMUX1308PWR,16,3V3_A,controller,EN low selects; high disables.
+U_MUX2,TMUX1308PWR,8,GND,controller,EN low selects; high disables.
+U_MUX2,TMUX1308PWR,11,MUX_A0,controller,EN low selects; high disables.
+U_MUX2,TMUX1308PWR,10,MUX_A1,controller,EN low selects; high disables.
+U_MUX2,TMUX1308PWR,9,MUX_A2,controller,EN low selects; high disables.
+U_MUX2,TMUX1308PWR,6,MUX_EN2,controller,EN low selects; high disables.
+U_MUX2,TMUX1308PWR,7,NC,controller,EN low selects; high disables.
+U_MUX2,TMUX1308PWR,3,MUX_OUT2,controller,EN low selects; high disables.
+U_MUX2,TMUX1308PWR,13,SNS_FILT14,controller,EN low selects; high disables.
+U_MUX2,TMUX1308PWR,14,SNS_FILT15,controller,EN low selects; high disables.
+U_MUX2,TMUX1308PWR,15,SNS_FILT16,controller,EN low selects; high disables.
+U_MUX2,TMUX1308PWR,12,SNS_FILT17,controller,EN low selects; high disables.
+U_MUX2,TMUX1308PWR,1,SNS_FILT18,controller,EN low selects; high disables.
+U_MUX2,TMUX1308PWR,5,SNS_FILT19,controller,EN low selects; high disables.
+U_MUX2,TMUX1308PWR,2,SNS_FILT20,controller,EN low selects; high disables.
+U_MUX2,TMUX1308PWR,4,REF2,controller,EN low selects; high disables.
+R_MUX_EN2,47k,1,MUX_EN2,controller,
+R_MUX_EN2,47k,2,3V3,controller,
+C_MUX2,100nF X7R 10V,1,3V3_A,controller,
+C_MUX2,100nF X7R 10V,2,GND,controller,
+R_MUX_OUT2,4.7k,1,MUX_OUT2,controller,
+R_MUX_OUT2,4.7k,2,ADC2,controller,
+C_ADC2,100pF C0G 50V,1,ADC2,controller,
+C_ADC2,100pF C0G 50V,2,GND,controller,
+R_REF_TOP2,10k,1,3V3_A,controller,
+R_REF_TOP2,10k,2,REF2,controller,
+R_REF_BOT2,15k,1,REF2,controller,
+R_REF_BOT2,15k,2,GND,controller,
+U_MUX3,TMUX1308PWR,16,3V3_A,controller,EN low selects; high disables.
+U_MUX3,TMUX1308PWR,8,GND,controller,EN low selects; high disables.
+U_MUX3,TMUX1308PWR,11,MUX_A0,controller,EN low selects; high disables.
+U_MUX3,TMUX1308PWR,10,MUX_A1,controller,EN low selects; high disables.
+U_MUX3,TMUX1308PWR,9,MUX_A2,controller,EN low selects; high disables.
+U_MUX3,TMUX1308PWR,6,MUX_EN3,controller,EN low selects; high disables.
+U_MUX3,TMUX1308PWR,7,NC,controller,EN low selects; high disables.
+U_MUX3,TMUX1308PWR,3,MUX_OUT3,controller,EN low selects; high disables.
+U_MUX3,TMUX1308PWR,13,SNS_FILT21,controller,EN low selects; high disables.
+U_MUX3,TMUX1308PWR,14,SNS_FILT22,controller,EN low selects; high disables.
+U_MUX3,TMUX1308PWR,15,SNS_FILT23,controller,EN low selects; high disables.
+U_MUX3,TMUX1308PWR,12,SNS_FILT24,controller,EN low selects; high disables.
+U_MUX3,TMUX1308PWR,1,SNS_FILT25,controller,EN low selects; high disables.
+U_MUX3,TMUX1308PWR,5,SNS_FILT26,controller,EN low selects; high disables.
+U_MUX3,TMUX1308PWR,2,SNS_FILT27,controller,EN low selects; high disables.
+U_MUX3,TMUX1308PWR,4,REF3,controller,EN low selects; high disables.
+R_MUX_EN3,47k,1,MUX_EN3,controller,
+R_MUX_EN3,47k,2,3V3,controller,
+C_MUX3,100nF X7R 10V,1,3V3_A,controller,
+C_MUX3,100nF X7R 10V,2,GND,controller,
+R_MUX_OUT3,4.7k,1,MUX_OUT3,controller,
+R_MUX_OUT3,4.7k,2,ADC3,controller,
+C_ADC3,100pF C0G 50V,1,ADC3,controller,
+C_ADC3,100pF C0G 50V,2,GND,controller,
+R_REF_TOP3,10k,1,3V3_A,controller,
+R_REF_TOP3,10k,2,REF3,controller,
+R_REF_BOT3,30k,1,REF3,controller,
+R_REF_BOT3,30k,2,GND,controller,
+R_BIAS00,22k 1%,1,3V3_A,controller,
+R_BIAS00,22k 1%,2,SNS0,controller,
+R_SER00,1k 1%,1,SNS0,controller,
+R_SER00,1k 1%,2,SNS_FILT0,controller,
+C_SNS00,100pF C0G 50V,1,SNS_FILT0,controller,
+C_SNS00,100pF C0G 50V,2,GND,controller,
+REOL00,100k printed +/-20%,1,SNS0,remote_sensor_sheet,
+REOL00,100k printed +/-20%,2,GND,remote_sensor_sheet,
+FSR00,Independent resistive taxel,1,SNS0,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+FSR00,Independent resistive taxel,2,GND,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+R_BIAS01,22k 1%,1,3V3_A,controller,
+R_BIAS01,22k 1%,2,SNS1,controller,
+R_SER01,1k 1%,1,SNS1,controller,
+R_SER01,1k 1%,2,SNS_FILT1,controller,
+C_SNS01,100pF C0G 50V,1,SNS_FILT1,controller,
+C_SNS01,100pF C0G 50V,2,GND,controller,
+REOL01,100k printed +/-20%,1,SNS1,remote_sensor_sheet,
+REOL01,100k printed +/-20%,2,GND,remote_sensor_sheet,
+FSR01,Independent resistive taxel,1,SNS1,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+FSR01,Independent resistive taxel,2,GND,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+R_BIAS02,22k 1%,1,3V3_A,controller,
+R_BIAS02,22k 1%,2,SNS2,controller,
+R_SER02,1k 1%,1,SNS2,controller,
+R_SER02,1k 1%,2,SNS_FILT2,controller,
+C_SNS02,100pF C0G 50V,1,SNS_FILT2,controller,
+C_SNS02,100pF C0G 50V,2,GND,controller,
+REOL02,100k printed +/-20%,1,SNS2,remote_sensor_sheet,
+REOL02,100k printed +/-20%,2,GND,remote_sensor_sheet,
+FSR02,Independent resistive taxel,1,SNS2,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+FSR02,Independent resistive taxel,2,GND,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+R_BIAS03,22k 1%,1,3V3_A,controller,
+R_BIAS03,22k 1%,2,SNS3,controller,
+R_SER03,1k 1%,1,SNS3,controller,
+R_SER03,1k 1%,2,SNS_FILT3,controller,
+C_SNS03,100pF C0G 50V,1,SNS_FILT3,controller,
+C_SNS03,100pF C0G 50V,2,GND,controller,
+REOL03,100k printed +/-20%,1,SNS3,remote_sensor_sheet,
+REOL03,100k printed +/-20%,2,GND,remote_sensor_sheet,
+FSR03,Independent resistive taxel,1,SNS3,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+FSR03,Independent resistive taxel,2,GND,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+R_BIAS04,22k 1%,1,3V3_A,controller,
+R_BIAS04,22k 1%,2,SNS4,controller,
+R_SER04,1k 1%,1,SNS4,controller,
+R_SER04,1k 1%,2,SNS_FILT4,controller,
+C_SNS04,100pF C0G 50V,1,SNS_FILT4,controller,
+C_SNS04,100pF C0G 50V,2,GND,controller,
+REOL04,100k printed +/-20%,1,SNS4,remote_sensor_sheet,
+REOL04,100k printed +/-20%,2,GND,remote_sensor_sheet,
+FSR04,Independent resistive taxel,1,SNS4,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+FSR04,Independent resistive taxel,2,GND,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+R_BIAS05,22k 1%,1,3V3_A,controller,
+R_BIAS05,22k 1%,2,SNS5,controller,
+R_SER05,1k 1%,1,SNS5,controller,
+R_SER05,1k 1%,2,SNS_FILT5,controller,
+C_SNS05,100pF C0G 50V,1,SNS_FILT5,controller,
+C_SNS05,100pF C0G 50V,2,GND,controller,
+REOL05,100k printed +/-20%,1,SNS5,remote_sensor_sheet,
+REOL05,100k printed +/-20%,2,GND,remote_sensor_sheet,
+FSR05,Independent resistive taxel,1,SNS5,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+FSR05,Independent resistive taxel,2,GND,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+R_BIAS06,22k 1%,1,3V3_A,controller,
+R_BIAS06,22k 1%,2,SNS6,controller,
+R_SER06,1k 1%,1,SNS6,controller,
+R_SER06,1k 1%,2,SNS_FILT6,controller,
+C_SNS06,100pF C0G 50V,1,SNS_FILT6,controller,
+C_SNS06,100pF C0G 50V,2,GND,controller,
+REOL06,100k printed +/-20%,1,SNS6,remote_sensor_sheet,
+REOL06,100k printed +/-20%,2,GND,remote_sensor_sheet,
+FSR06,Independent resistive taxel,1,SNS6,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+FSR06,Independent resistive taxel,2,GND,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+R_BIAS07,22k 1%,1,3V3_A,controller,
+R_BIAS07,22k 1%,2,SNS7,controller,
+R_SER07,1k 1%,1,SNS7,controller,
+R_SER07,1k 1%,2,SNS_FILT7,controller,
+C_SNS07,100pF C0G 50V,1,SNS_FILT7,controller,
+C_SNS07,100pF C0G 50V,2,GND,controller,
+REOL07,100k printed +/-20%,1,SNS7,remote_sensor_sheet,
+REOL07,100k printed +/-20%,2,GND,remote_sensor_sheet,
+FSR07,Independent resistive taxel,1,SNS7,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+FSR07,Independent resistive taxel,2,GND,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+R_BIAS08,22k 1%,1,3V3_A,controller,
+R_BIAS08,22k 1%,2,SNS8,controller,
+R_SER08,1k 1%,1,SNS8,controller,
+R_SER08,1k 1%,2,SNS_FILT8,controller,
+C_SNS08,100pF C0G 50V,1,SNS_FILT8,controller,
+C_SNS08,100pF C0G 50V,2,GND,controller,
+REOL08,100k printed +/-20%,1,SNS8,remote_sensor_sheet,
+REOL08,100k printed +/-20%,2,GND,remote_sensor_sheet,
+FSR08,Independent resistive taxel,1,SNS8,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+FSR08,Independent resistive taxel,2,GND,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+R_BIAS09,22k 1%,1,3V3_A,controller,
+R_BIAS09,22k 1%,2,SNS9,controller,
+R_SER09,1k 1%,1,SNS9,controller,
+R_SER09,1k 1%,2,SNS_FILT9,controller,
+C_SNS09,100pF C0G 50V,1,SNS_FILT9,controller,
+C_SNS09,100pF C0G 50V,2,GND,controller,
+REOL09,100k printed +/-20%,1,SNS9,remote_sensor_sheet,
+REOL09,100k printed +/-20%,2,GND,remote_sensor_sheet,
+FSR09,Independent resistive taxel,1,SNS9,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+FSR09,Independent resistive taxel,2,GND,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+R_BIAS10,22k 1%,1,3V3_A,controller,
+R_BIAS10,22k 1%,2,SNS10,controller,
+R_SER10,1k 1%,1,SNS10,controller,
+R_SER10,1k 1%,2,SNS_FILT10,controller,
+C_SNS10,100pF C0G 50V,1,SNS_FILT10,controller,
+C_SNS10,100pF C0G 50V,2,GND,controller,
+REOL10,100k printed +/-20%,1,SNS10,remote_sensor_sheet,
+REOL10,100k printed +/-20%,2,GND,remote_sensor_sheet,
+FSR10,Independent resistive taxel,1,SNS10,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+FSR10,Independent resistive taxel,2,GND,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+R_BIAS11,22k 1%,1,3V3_A,controller,
+R_BIAS11,22k 1%,2,SNS11,controller,
+R_SER11,1k 1%,1,SNS11,controller,
+R_SER11,1k 1%,2,SNS_FILT11,controller,
+C_SNS11,100pF C0G 50V,1,SNS_FILT11,controller,
+C_SNS11,100pF C0G 50V,2,GND,controller,
+REOL11,100k printed +/-20%,1,SNS11,remote_sensor_sheet,
+REOL11,100k printed +/-20%,2,GND,remote_sensor_sheet,
+FSR11,Independent resistive taxel,1,SNS11,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+FSR11,Independent resistive taxel,2,GND,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+R_BIAS12,22k 1%,1,3V3_A,controller,
+R_BIAS12,22k 1%,2,SNS12,controller,
+R_SER12,1k 1%,1,SNS12,controller,
+R_SER12,1k 1%,2,SNS_FILT12,controller,
+C_SNS12,100pF C0G 50V,1,SNS_FILT12,controller,
+C_SNS12,100pF C0G 50V,2,GND,controller,
+REOL12,100k printed +/-20%,1,SNS12,remote_sensor_sheet,
+REOL12,100k printed +/-20%,2,GND,remote_sensor_sheet,
+FSR12,Independent resistive taxel,1,SNS12,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+FSR12,Independent resistive taxel,2,GND,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+R_BIAS13,22k 1%,1,3V3_A,controller,
+R_BIAS13,22k 1%,2,SNS13,controller,
+R_SER13,1k 1%,1,SNS13,controller,
+R_SER13,1k 1%,2,SNS_FILT13,controller,
+C_SNS13,100pF C0G 50V,1,SNS_FILT13,controller,
+C_SNS13,100pF C0G 50V,2,GND,controller,
+REOL13,100k printed +/-20%,1,SNS13,remote_sensor_sheet,
+REOL13,100k printed +/-20%,2,GND,remote_sensor_sheet,
+FSR13,Independent resistive taxel,1,SNS13,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+FSR13,Independent resistive taxel,2,GND,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+R_BIAS14,22k 1%,1,3V3_A,controller,
+R_BIAS14,22k 1%,2,SNS14,controller,
+R_SER14,1k 1%,1,SNS14,controller,
+R_SER14,1k 1%,2,SNS_FILT14,controller,
+C_SNS14,100pF C0G 50V,1,SNS_FILT14,controller,
+C_SNS14,100pF C0G 50V,2,GND,controller,
+REOL14,100k printed +/-20%,1,SNS14,remote_sensor_sheet,
+REOL14,100k printed +/-20%,2,GND,remote_sensor_sheet,
+FSR14,Independent resistive taxel,1,SNS14,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+FSR14,Independent resistive taxel,2,GND,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+R_BIAS15,22k 1%,1,3V3_A,controller,
+R_BIAS15,22k 1%,2,SNS15,controller,
+R_SER15,1k 1%,1,SNS15,controller,
+R_SER15,1k 1%,2,SNS_FILT15,controller,
+C_SNS15,100pF C0G 50V,1,SNS_FILT15,controller,
+C_SNS15,100pF C0G 50V,2,GND,controller,
+REOL15,100k printed +/-20%,1,SNS15,remote_sensor_sheet,
+REOL15,100k printed +/-20%,2,GND,remote_sensor_sheet,
+FSR15,Independent resistive taxel,1,SNS15,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+FSR15,Independent resistive taxel,2,GND,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+R_BIAS16,22k 1%,1,3V3_A,controller,
+R_BIAS16,22k 1%,2,SNS16,controller,
+R_SER16,1k 1%,1,SNS16,controller,
+R_SER16,1k 1%,2,SNS_FILT16,controller,
+C_SNS16,100pF C0G 50V,1,SNS_FILT16,controller,
+C_SNS16,100pF C0G 50V,2,GND,controller,
+REOL16,100k printed +/-20%,1,SNS16,remote_sensor_sheet,
+REOL16,100k printed +/-20%,2,GND,remote_sensor_sheet,
+FSR16,Independent resistive taxel,1,SNS16,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+FSR16,Independent resistive taxel,2,GND,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+R_BIAS17,22k 1%,1,3V3_A,controller,
+R_BIAS17,22k 1%,2,SNS17,controller,
+R_SER17,1k 1%,1,SNS17,controller,
+R_SER17,1k 1%,2,SNS_FILT17,controller,
+C_SNS17,100pF C0G 50V,1,SNS_FILT17,controller,
+C_SNS17,100pF C0G 50V,2,GND,controller,
+REOL17,100k printed +/-20%,1,SNS17,remote_sensor_sheet,
+REOL17,100k printed +/-20%,2,GND,remote_sensor_sheet,
+FSR17,Independent resistive taxel,1,SNS17,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+FSR17,Independent resistive taxel,2,GND,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+R_BIAS18,22k 1%,1,3V3_A,controller,
+R_BIAS18,22k 1%,2,SNS18,controller,
+R_SER18,1k 1%,1,SNS18,controller,
+R_SER18,1k 1%,2,SNS_FILT18,controller,
+C_SNS18,100pF C0G 50V,1,SNS_FILT18,controller,
+C_SNS18,100pF C0G 50V,2,GND,controller,
+REOL18,100k printed +/-20%,1,SNS18,remote_sensor_sheet,
+REOL18,100k printed +/-20%,2,GND,remote_sensor_sheet,
+FSR18,Independent resistive taxel,1,SNS18,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+FSR18,Independent resistive taxel,2,GND,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+R_BIAS19,22k 1%,1,3V3_A,controller,
+R_BIAS19,22k 1%,2,SNS19,controller,
+R_SER19,1k 1%,1,SNS19,controller,
+R_SER19,1k 1%,2,SNS_FILT19,controller,
+C_SNS19,100pF C0G 50V,1,SNS_FILT19,controller,
+C_SNS19,100pF C0G 50V,2,GND,controller,
+REOL19,100k printed +/-20%,1,SNS19,remote_sensor_sheet,
+REOL19,100k printed +/-20%,2,GND,remote_sensor_sheet,
+FSR19,Independent resistive taxel,1,SNS19,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+FSR19,Independent resistive taxel,2,GND,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+R_BIAS20,22k 1%,1,3V3_A,controller,
+R_BIAS20,22k 1%,2,SNS20,controller,
+R_SER20,1k 1%,1,SNS20,controller,
+R_SER20,1k 1%,2,SNS_FILT20,controller,
+C_SNS20,100pF C0G 50V,1,SNS_FILT20,controller,
+C_SNS20,100pF C0G 50V,2,GND,controller,
+REOL20,100k printed +/-20%,1,SNS20,remote_sensor_sheet,
+REOL20,100k printed +/-20%,2,GND,remote_sensor_sheet,
+FSR20,Independent resistive taxel,1,SNS20,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+FSR20,Independent resistive taxel,2,GND,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+R_BIAS21,22k 1%,1,3V3_A,controller,
+R_BIAS21,22k 1%,2,SNS21,controller,
+R_SER21,1k 1%,1,SNS21,controller,
+R_SER21,1k 1%,2,SNS_FILT21,controller,
+C_SNS21,100pF C0G 50V,1,SNS_FILT21,controller,
+C_SNS21,100pF C0G 50V,2,GND,controller,
+REOL21,100k printed +/-20%,1,SNS21,remote_sensor_sheet,
+REOL21,100k printed +/-20%,2,GND,remote_sensor_sheet,
+FSR21,Independent resistive taxel,1,SNS21,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+FSR21,Independent resistive taxel,2,GND,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+R_BIAS22,22k 1%,1,3V3_A,controller,
+R_BIAS22,22k 1%,2,SNS22,controller,
+R_SER22,1k 1%,1,SNS22,controller,
+R_SER22,1k 1%,2,SNS_FILT22,controller,
+C_SNS22,100pF C0G 50V,1,SNS_FILT22,controller,
+C_SNS22,100pF C0G 50V,2,GND,controller,
+REOL22,100k printed +/-20%,1,SNS22,remote_sensor_sheet,
+REOL22,100k printed +/-20%,2,GND,remote_sensor_sheet,
+FSR22,Independent resistive taxel,1,SNS22,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+FSR22,Independent resistive taxel,2,GND,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+R_BIAS23,22k 1%,1,3V3_A,controller,
+R_BIAS23,22k 1%,2,SNS23,controller,
+R_SER23,1k 1%,1,SNS23,controller,
+R_SER23,1k 1%,2,SNS_FILT23,controller,
+C_SNS23,100pF C0G 50V,1,SNS_FILT23,controller,
+C_SNS23,100pF C0G 50V,2,GND,controller,
+REOL23,100k printed +/-20%,1,SNS23,remote_sensor_sheet,
+REOL23,100k printed +/-20%,2,GND,remote_sensor_sheet,
+FSR23,Independent resistive taxel,1,SNS23,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+FSR23,Independent resistive taxel,2,GND,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+R_BIAS24,22k 1%,1,3V3_A,controller,
+R_BIAS24,22k 1%,2,SNS24,controller,
+R_SER24,1k 1%,1,SNS24,controller,
+R_SER24,1k 1%,2,SNS_FILT24,controller,
+C_SNS24,100pF C0G 50V,1,SNS_FILT24,controller,
+C_SNS24,100pF C0G 50V,2,GND,controller,
+REOL24,100k printed +/-20%,1,SNS24,remote_sensor_sheet,
+REOL24,100k printed +/-20%,2,GND,remote_sensor_sheet,
+FSR24,Independent resistive taxel,1,SNS24,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+FSR24,Independent resistive taxel,2,GND,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+R_BIAS25,22k 1%,1,3V3_A,controller,
+R_BIAS25,22k 1%,2,SNS25,controller,
+R_SER25,1k 1%,1,SNS25,controller,
+R_SER25,1k 1%,2,SNS_FILT25,controller,
+C_SNS25,100pF C0G 50V,1,SNS_FILT25,controller,
+C_SNS25,100pF C0G 50V,2,GND,controller,
+REOL25,100k printed +/-20%,1,SNS25,remote_sensor_sheet,
+REOL25,100k printed +/-20%,2,GND,remote_sensor_sheet,
+FSR25,Independent resistive taxel,1,SNS25,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+FSR25,Independent resistive taxel,2,GND,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+R_BIAS26,22k 1%,1,3V3_A,controller,
+R_BIAS26,22k 1%,2,SNS26,controller,
+R_SER26,1k 1%,1,SNS26,controller,
+R_SER26,1k 1%,2,SNS_FILT26,controller,
+C_SNS26,100pF C0G 50V,1,SNS_FILT26,controller,
+C_SNS26,100pF C0G 50V,2,GND,controller,
+REOL26,100k printed +/-20%,1,SNS26,remote_sensor_sheet,
+REOL26,100k printed +/-20%,2,GND,remote_sensor_sheet,
+FSR26,Independent resistive taxel,1,SNS26,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+FSR26,Independent resistive taxel,2,GND,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+R_BIAS27,22k 1%,1,3V3_A,controller,
+R_BIAS27,22k 1%,2,SNS27,controller,
+R_SER27,1k 1%,1,SNS27,controller,
+R_SER27,1k 1%,2,SNS_FILT27,controller,
+C_SNS27,100pF C0G 50V,1,SNS_FILT27,controller,
+C_SNS27,100pF C0G 50V,2,GND,controller,
+REOL27,100k printed +/-20%,1,SNS27,remote_sensor_sheet,
+REOL27,100k printed +/-20%,2,GND,remote_sensor_sheet,
+FSR27,Independent resistive taxel,1,SNS27,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+FSR27,Independent resistive taxel,2,GND,remote_sensor_sheet,Process-dependent resistance; remote EOL must be at this cell.
+J_SENSOR,FH12-40S-0.5SH(55),1,SNS0,controller,"Bottom-contact; 0.3mm stiffened tail. Thermal signals are separate pads, not reserved29/30."
+J_SENSOR,FH12-40S-0.5SH(55),2,SNS1,controller,"Bottom-contact; 0.3mm stiffened tail. Thermal signals are separate pads, not reserved29/30."
+J_SENSOR,FH12-40S-0.5SH(55),3,SNS2,controller,"Bottom-contact; 0.3mm stiffened tail. Thermal signals are separate pads, not reserved29/30."
+J_SENSOR,FH12-40S-0.5SH(55),4,SNS3,controller,"Bottom-contact; 0.3mm stiffened tail. Thermal signals are separate pads, not reserved29/30."
+J_SENSOR,FH12-40S-0.5SH(55),5,SNS4,controller,"Bottom-contact; 0.3mm stiffened tail. Thermal signals are separate pads, not reserved29/30."
+J_SENSOR,FH12-40S-0.5SH(55),6,SNS5,controller,"Bottom-contact; 0.3mm stiffened tail. Thermal signals are separate pads, not reserved29/30."
+J_SENSOR,FH12-40S-0.5SH(55),7,SNS6,controller,"Bottom-contact; 0.3mm stiffened tail. Thermal signals are separate pads, not reserved29/30."
+J_SENSOR,FH12-40S-0.5SH(55),8,SNS7,controller,"Bottom-contact; 0.3mm stiffened tail. Thermal signals are separate pads, not reserved29/30."
+J_SENSOR,FH12-40S-0.5SH(55),9,SNS8,controller,"Bottom-contact; 0.3mm stiffened tail. Thermal signals are separate pads, not reserved29/30."
+J_SENSOR,FH12-40S-0.5SH(55),10,SNS9,controller,"Bottom-contact; 0.3mm stiffened tail. Thermal signals are separate pads, not reserved29/30."
+J_SENSOR,FH12-40S-0.5SH(55),11,SNS10,controller,"Bottom-contact; 0.3mm stiffened tail. Thermal signals are separate pads, not reserved29/30."
+J_SENSOR,FH12-40S-0.5SH(55),12,SNS11,controller,"Bottom-contact; 0.3mm stiffened tail. Thermal signals are separate pads, not reserved29/30."
+J_SENSOR,FH12-40S-0.5SH(55),13,SNS12,controller,"Bottom-contact; 0.3mm stiffened tail. Thermal signals are separate pads, not reserved29/30."
+J_SENSOR,FH12-40S-0.5SH(55),14,SNS13,controller,"Bottom-contact; 0.3mm stiffened tail. Thermal signals are separate pads, not reserved29/30."
+J_SENSOR,FH12-40S-0.5SH(55),15,SNS14,controller,"Bottom-contact; 0.3mm stiffened tail. Thermal signals are separate pads, not reserved29/30."
+J_SENSOR,FH12-40S-0.5SH(55),16,SNS15,controller,"Bottom-contact; 0.3mm stiffened tail. Thermal signals are separate pads, not reserved29/30."
+J_SENSOR,FH12-40S-0.5SH(55),17,SNS16,controller,"Bottom-contact; 0.3mm stiffened tail. Thermal signals are separate pads, not reserved29/30."
+J_SENSOR,FH12-40S-0.5SH(55),18,SNS17,controller,"Bottom-contact; 0.3mm stiffened tail. Thermal signals are separate pads, not reserved29/30."
+J_SENSOR,FH12-40S-0.5SH(55),19,SNS18,controller,"Bottom-contact; 0.3mm stiffened tail. Thermal signals are separate pads, not reserved29/30."
+J_SENSOR,FH12-40S-0.5SH(55),20,SNS19,controller,"Bottom-contact; 0.3mm stiffened tail. Thermal signals are separate pads, not reserved29/30."
+J_SENSOR,FH12-40S-0.5SH(55),21,SNS20,controller,"Bottom-contact; 0.3mm stiffened tail. Thermal signals are separate pads, not reserved29/30."
+J_SENSOR,FH12-40S-0.5SH(55),22,SNS21,controller,"Bottom-contact; 0.3mm stiffened tail. Thermal signals are separate pads, not reserved29/30."
+J_SENSOR,FH12-40S-0.5SH(55),23,SNS22,controller,"Bottom-contact; 0.3mm stiffened tail. Thermal signals are separate pads, not reserved29/30."
+J_SENSOR,FH12-40S-0.5SH(55),24,SNS23,controller,"Bottom-contact; 0.3mm stiffened tail. Thermal signals are separate pads, not reserved29/30."
+J_SENSOR,FH12-40S-0.5SH(55),25,SNS24,controller,"Bottom-contact; 0.3mm stiffened tail. Thermal signals are separate pads, not reserved29/30."
+J_SENSOR,FH12-40S-0.5SH(55),26,SNS25,controller,"Bottom-contact; 0.3mm stiffened tail. Thermal signals are separate pads, not reserved29/30."
+J_SENSOR,FH12-40S-0.5SH(55),27,SNS26,controller,"Bottom-contact; 0.3mm stiffened tail. Thermal signals are separate pads, not reserved29/30."
+J_SENSOR,FH12-40S-0.5SH(55),28,SNS27,controller,"Bottom-contact; 0.3mm stiffened tail. Thermal signals are separate pads, not reserved29/30."
+J_SENSOR,FH12-40S-0.5SH(55),29,NC,controller,"Bottom-contact; 0.3mm stiffened tail. Thermal signals are separate pads, not reserved29/30."
+J_SENSOR,FH12-40S-0.5SH(55),30,NC,controller,"Bottom-contact; 0.3mm stiffened tail. Thermal signals are separate pads, not reserved29/30."
+J_SENSOR,FH12-40S-0.5SH(55),31,GND,controller,"Bottom-contact; 0.3mm stiffened tail. Thermal signals are separate pads, not reserved29/30."
+J_SENSOR,FH12-40S-0.5SH(55),32,GND,controller,"Bottom-contact; 0.3mm stiffened tail. Thermal signals are separate pads, not reserved29/30."
+J_SENSOR,FH12-40S-0.5SH(55),33,WIT_OUT,controller,"Bottom-contact; 0.3mm stiffened tail. Thermal signals are separate pads, not reserved29/30."
+J_SENSOR,FH12-40S-0.5SH(55),34,WIT_IN,controller,"Bottom-contact; 0.3mm stiffened tail. Thermal signals are separate pads, not reserved29/30."
+J_SENSOR,FH12-40S-0.5SH(55),35,GND,controller,"Bottom-contact; 0.3mm stiffened tail. Thermal signals are separate pads, not reserved29/30."
+J_SENSOR,FH12-40S-0.5SH(55),36,GND,controller,"Bottom-contact; 0.3mm stiffened tail. Thermal signals are separate pads, not reserved29/30."
+J_SENSOR,FH12-40S-0.5SH(55),37,GND,controller,"Bottom-contact; 0.3mm stiffened tail. Thermal signals are separate pads, not reserved29/30."
+J_SENSOR,FH12-40S-0.5SH(55),38,GND,controller,"Bottom-contact; 0.3mm stiffened tail. Thermal signals are separate pads, not reserved29/30."
+J_SENSOR,FH12-40S-0.5SH(55),39,GND,controller,"Bottom-contact; 0.3mm stiffened tail. Thermal signals are separate pads, not reserved29/30."
+J_SENSOR,FH12-40S-0.5SH(55),40,GND,controller,"Bottom-contact; 0.3mm stiffened tail. Thermal signals are separate pads, not reserved29/30."
+R_TEMP_BIAS0,39k 1%,1,3V3_A,controller,
+R_TEMP_BIAS0,39k 1%,2,TEMP_EXT0,controller,
+R_TEMP_SER0,1k,1,TEMP_EXT0,controller,
+R_TEMP_SER0,1k,2,TEMP_ADC0,controller,
+C_TEMP0,1nF C0G 50V,1,TEMP_ADC0,controller,
+C_TEMP0,1nF C0G 50V,2,GND,controller,
+TH0,NCU18XH103F60RB,1,TEMP_EXT0,thermal_flex,
+TH0,NCU18XH103F60RB,2,GND,thermal_flex,
+R_TEMP_BIAS1,39k 1%,1,3V3_A,controller,
+R_TEMP_BIAS1,39k 1%,2,TEMP_EXT1,controller,
+R_TEMP_SER1,1k,1,TEMP_EXT1,controller,
+R_TEMP_SER1,1k,2,TEMP_ADC1,controller,
+C_TEMP1,1nF C0G 50V,1,TEMP_ADC1,controller,
+C_TEMP1,1nF C0G 50V,2,GND,controller,
+TH1,NCU18XH103F60RB,1,TEMP_EXT1,thermal_flex,
+TH1,NCU18XH103F60RB,2,GND,thermal_flex,
+J_THERMAL,Thermal flex pads,1,TEMP_EXT0,controller,
+J_THERMAL,Thermal flex pads,2,TEMP_EXT1,controller,
+J_THERMAL,Thermal flex pads,3,GND,controller,
+R_WIT_DRIVE,1k,1,WIT_DRIVE,controller,
+R_WIT_DRIVE,1k,2,WIT_OUT,controller,
+R_WIT_SER,1k,1,WIT_IN,controller,
+R_WIT_SER,1k,2,WIT_RETURN,controller,
+R_WIT_DOWN,100k,1,WIT_RETURN,controller,
+R_WIT_DOWN,100k,2,GND,controller,
+WIT_LOOP,Sheet perimeter conductor,1,WIT_OUT,remote_sensor_sheet,
+WIT_LOOP,Sheet perimeter conductor,2,WIT_IN,remote_sensor_sheet,
+D_A0,TPD4E1U06DBVR,2,GND,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A0,TPD4E1U06DBVR,5,NC,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A0,TPD4E1U06DBVR,1,SNS0,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A0,TPD4E1U06DBVR,6,SNS1,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A0,TPD4E1U06DBVR,3,SNS2,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A0,TPD4E1U06DBVR,4,SNS3,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A1,TPD4E1U06DBVR,2,GND,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A1,TPD4E1U06DBVR,5,NC,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A1,TPD4E1U06DBVR,1,SNS4,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A1,TPD4E1U06DBVR,6,SNS5,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A1,TPD4E1U06DBVR,3,SNS6,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A1,TPD4E1U06DBVR,4,SNS7,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A2,TPD4E1U06DBVR,2,GND,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A2,TPD4E1U06DBVR,5,NC,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A2,TPD4E1U06DBVR,1,SNS8,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A2,TPD4E1U06DBVR,6,SNS9,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A2,TPD4E1U06DBVR,3,SNS10,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A2,TPD4E1U06DBVR,4,SNS11,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A3,TPD4E1U06DBVR,2,GND,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A3,TPD4E1U06DBVR,5,NC,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A3,TPD4E1U06DBVR,1,SNS12,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A3,TPD4E1U06DBVR,6,SNS13,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A3,TPD4E1U06DBVR,3,SNS14,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A3,TPD4E1U06DBVR,4,SNS15,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A4,TPD4E1U06DBVR,2,GND,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A4,TPD4E1U06DBVR,5,NC,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A4,TPD4E1U06DBVR,1,SNS16,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A4,TPD4E1U06DBVR,6,SNS17,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A4,TPD4E1U06DBVR,3,SNS18,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A4,TPD4E1U06DBVR,4,SNS19,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A5,TPD4E1U06DBVR,2,GND,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A5,TPD4E1U06DBVR,5,NC,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A5,TPD4E1U06DBVR,1,SNS20,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A5,TPD4E1U06DBVR,6,SNS21,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A5,TPD4E1U06DBVR,3,SNS22,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A5,TPD4E1U06DBVR,4,SNS23,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A6,TPD4E1U06DBVR,2,GND,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A6,TPD4E1U06DBVR,5,NC,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A6,TPD4E1U06DBVR,1,SNS24,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A6,TPD4E1U06DBVR,6,SNS25,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A6,TPD4E1U06DBVR,3,SNS26,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A6,TPD4E1U06DBVR,4,SNS27,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A7,TPD4E1U06DBVR,2,GND,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A7,TPD4E1U06DBVR,5,NC,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A7,TPD4E1U06DBVR,1,TEMP_EXT0,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A7,TPD4E1U06DBVR,6,TEMP_EXT1,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A7,TPD4E1U06DBVR,3,WIT_OUT,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."
+D_A7,TPD4E1U06DBVR,4,WIT_IN,controller,"Entry ESD array; system ESD protection requires measurement, not just part rating."

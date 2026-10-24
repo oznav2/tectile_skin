@@ -1,0 +1,117 @@
+{
+  "schema": 1,
+  "commissioned": false,
+  "note": "Synthetic identities. Copy then enter measured UID/configCRC/profile/calibration; never commission this example unchanged.",
+  "nodes": [
+    {
+      "patch_id": "la_upperarm",
+      "interface": "can_skin_la",
+      "node_id": 1,
+      "uid": "000000000000000000000001",
+      "config_crc": "12345678",
+      "body_frame": "upper_arm_left",
+      "profile": "2x2",
+      "expected_mask": "0000000f",
+      "geometry_status": "UNCOMMISSIONED",
+      "sheet_serial": "REPLACE_WITH_PHYSICAL_SERIAL",
+      "calibration_sha256": "REPLACE_WITH_MEASURED_CALIBRATION_HASH"
+    },
+    {
+      "patch_id": "la_forearm",
+      "interface": "can_skin_la",
+      "node_id": 2,
+      "uid": "000000000000000000000002",
+      "config_crc": "12345678",
+      "body_frame": "forearm_left",
+      "profile": "3x2",
+      "expected_mask": "0000003f",
+      "geometry_status": "UNCOMMISSIONED",
+      "sheet_serial": "REPLACE_WITH_PHYSICAL_SERIAL",
+      "calibration_sha256": "REPLACE_WITH_MEASURED_CALIBRATION_HASH"
+    },
+    {
+      "patch_id": "ra_upperarm",
+      "interface": "can_skin_ra",
+      "node_id": 1,
+      "uid": "000000000000000000000005",
+      "config_crc": "12345678",
+      "body_frame": "upper_arm_right",
+      "profile": "2x2",
+      "expected_mask": "0000000f",
+      "geometry_status": "UNCOMMISSIONED",
+      "sheet_serial": "REPLACE_WITH_PHYSICAL_SERIAL",
+      "calibration_sha256": "REPLACE_WITH_MEASURED_CALIBRATION_HASH"
+    },
+    {
+      "patch_id": "ra_forearm",
+      "interface": "can_skin_ra",
+      "node_id": 2,
+      "uid": "000000000000000000000006",
+      "config_crc": "12345678",
+      "body_frame": "forearm_right",
+      "profile": "3x2",
+      "expected_mask": "0000003f",
+      "geometry_status": "UNCOMMISSIONED",
+      "sheet_serial": "REPLACE_WITH_PHYSICAL_SERIAL",
+      "calibration_sha256": "REPLACE_WITH_MEASURED_CALIBRATION_HASH"
+    },
+    {
+      "patch_id": "ll_thigh",
+      "interface": "can_skin_ll",
+      "node_id": 1,
+      "uid": "000000000000000000000003",
+      "config_crc": "12345678",
+      "body_frame": "thigh_left",
+      "profile": "3x2",
+      "expected_mask": "0000003f",
+      "geometry_status": "UNCOMMISSIONED",
+      "sheet_serial": "REPLACE_WITH_PHYSICAL_SERIAL",
+      "calibration_sha256": "REPLACE_WITH_MEASURED_CALIBRATION_HASH"
+    },
+    {
+      "patch_id": "ll_shin",
+      "interface": "can_skin_ll",
+      "node_id": 2,
+      "uid": "000000000000000000000004",
+      "config_crc": "12345678",
+      "body_frame": "shin_left",
+      "profile": "7x4",
+      "expected_mask": "0fffffff",
+      "geometry_status": "UNCOMMISSIONED",
+      "sheet_serial": "REPLACE_WITH_PHYSICAL_SERIAL",
+      "calibration_sha256": "REPLACE_WITH_MEASURED_CALIBRATION_HASH"
+    },
+    {
+      "patch_id": "rl_thigh",
+      "interface": "can_skin_rl",
+      "node_id": 1,
+      "uid": "000000000000000000000007",
+      "config_crc": "12345678",
+      "body_frame": "thigh_right",
+      "profile": "3x2",
+      "expected_mask": "0000003f",
+      "geometry_status": "UNCOMMISSIONED",
+      "sheet_serial": "REPLACE_WITH_PHYSICAL_SERIAL",
+      "calibration_sha256": "REPLACE_WITH_MEASURED_CALIBRATION_HASH"
+    },
+    {
+      "patch_id": "rl_shin",
+      "interface": "can_skin_rl",
+      "node_id": 2,
+      "uid": "000000000000000000000008",
+      "config_crc": "12345678",
+      "body_frame": "shin_right",
+      "profile": "7x4",
+      "expected_mask": "0fffffff",
+      "geometry_status": "UNCOMMISSIONED",
+      "sheet_serial": "REPLACE_WITH_PHYSICAL_SERIAL",
+      "calibration_sha256": "REPLACE_WITH_MEASURED_CALIBRATION_HASH"
+    }
+  ],
+  "interface_device_realpaths": {
+    "can_skin_la": "/sys/devices/REPLACE_WITH_OBSERVED_PHYSICAL_DEVICE_PATH",
+    "can_skin_ll": "/sys/devices/REPLACE_WITH_OBSERVED_PHYSICAL_DEVICE_PATH",
+    "can_skin_ra": "/sys/devices/REPLACE_WITH_OBSERVED_PHYSICAL_DEVICE_PATH",
+    "can_skin_rl": "/sys/devices/REPLACE_WITH_OBSERVED_PHYSICAL_DEVICE_PATH"
+  }
+}
