@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-25",
+  "tool": "image_gen.imagegen",
+  "mode": "built-in",
+  "source_reference": "https://github.com/Roboparty/RP1_hardware/blob/18ca38832cde37a8a4349cff8fbb565f05c6f254/assets/images/robot-overview.png",
+  "prompt_set": "hardware/provenance/skin_visualization_prompts.json",
+  "scope": "Conceptual studio renderings of skin overlays. Not CAD, physical installation evidence or validated sensor artwork.",
+  "assets": [
+    {
+      "number": 1,
+      "path": "hardware/assets/images/skin-application-overview.he.png",
+      "sha256": "4d8efaae2696ca64addd76fb48c42c88f0be420733351b35c80da450bdb71098",
+      "dimensions_px": [
+        1672,
+        941
+      ],
+      "bytes": 1757815
+    },
+    {
+      "number": 2,
+      "path": "hardware/assets/images/skin-layers-cutaway.he.png",
+      "sha256": "78cc950840459569a95b851b006692b1d1e00bec37606d2968cbb75e134e7d1a",
+      "dimensions_px": [
+        1672,
+        941
+      ],
+      "bytes": 2140247
+    },
+    {
+      "number": 3,
+      "path": "hardware/assets/images/skin-joints-service.he.png",
+      "sha256": "fa35f6afbc4af1130f02290fbdadde1d0b97578fb88660ab477a14f72c94072f",
+      "dimensions_px": [
+        1672,
+        941
+      ],
+      "bytes": 2091852
+    }
+  ]
+}

@@ -19,6 +19,10 @@
       "english": "docs/robot_overview.en.md"
     },
     {
+      "hebrew": "docs/skin_visualizations.md",
+      "english": "docs/skin_visualizations.en.md"
+    },
+    {
       "hebrew": "docs/verification.md",
       "english": "docs/verification.en.md"
     },

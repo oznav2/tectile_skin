@@ -6,9 +6,28 @@
 
 An independent electronic-skin project for contact location, approximate contact intensity and sparse temperature sensing. The design combines replaceable protected sensor sheets, local acquisition and a segmented CAN FD network.
 
+[![ROBOSKIN concept: modular sensing skin installed over the RP1 robot's arms and legs](hardware/assets/images/skin-application-overview.he.png)](hardware/assets/images/skin-application-overview.he.png)
+
+**Skin on the robot:** protected, removable panels over rigid arm and leg segments, with gaps for joint movement. These are design visualizations; colours, coverage and cable routes illustrate the concept and do not establish physical fit.
+
+**Beneath the skin:** replaceable protective cover, two temperature points, touch-sensing laminate, insulating carrier and local controller. Layer thicknesses are exaggerated for clarity.
+
+[![Layer cutaway: protection, two temperature points, touch sensing and local controller](hardware/assets/images/skin-layers-cutaway.he.png)](hardware/assets/images/skin-layers-cutaway.he.png)
+
+**Movement and panel replacement:** separate sensing sheets on either side of a joint, a cable service loop and a removable panel for maintenance.
+
+[![Separate elbow and knee panels, flexible cable and removable cassette](hardware/assets/images/skin-joints-service.he.png)](hardware/assets/images/skin-joints-service.he.png)
+
+[All three full-size illustrations with English explanations](docs/skin_visualizations.en.md)
+
+<details>
+<summary>Base hardware overview — materials and finishes</summary>
+
 [![Hebrew robot overview: front, side and rear views with materials and finishes](hardware/assets/images/robot-overview.png)](hardware/assets/images/robot-overview.png)
 
 Hebrew-localized visual adaptation of the base robot hardware overview. [Open full-size image](hardware/assets/images/robot-overview.png) · [English translation of all 26 callouts, materials and finishes](docs/robot_overview.en.md) · **[14-board catalogue with direct PCB file links](hardware/02_PCB/README.en.md)**. The illustration introduces the structure; manufacturing dimensions come from the part drawings.
+
+</details>
 
 The full reference patch has **28 touch sites and two temperature points**. An optional compact demonstration uses eight controllers with **88 installed touch sites and 16 temperature points**. Panel dimensions and counts are generic examples; they do not prove fit on a particular robot.
 

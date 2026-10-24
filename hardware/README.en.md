@@ -4,9 +4,18 @@
 
 [Integrated project](../README.en.md)
 
+[![ROBOSKIN concept showing sensing skin on RP1 arms and legs](assets/images/skin-application-overview.he.png)](assets/images/skin-application-overview.he.png)
+
+[Skin application gallery: whole robot, layer cutaway and moving joints](../docs/skin_visualizations.en.md). These design visualizations use separate panels on rigid segments; physical fit and cable routing require validation.
+
+<details>
+<summary>Base hardware overview before the sensing skin</summary>
+
 [![Hebrew robot hardware overview: structure, materials and finishes](assets/images/robot-overview.png)](assets/images/robot-overview.png)
 
 [Full-size image](assets/images/robot-overview.png) · [Complete 26-callout English legend](../docs/robot_overview.en.md) · **[Every PCB file, by board](02_PCB/README.en.md)**. This is a localized visual adaptation of the base hardware overview; use the part drawings for manufacturing dimensions.
+
+</details>
 
 Humanoid robot hardware based on RoboParty RP1, with English working filenames, ROBOSKIN part numbers and Hebrew translations of extractable Chinese text. Text inside images, outlines and Gerber graphics requires separate examination of the graphical source and is not presented as completely translated. Originals are retained separately for traceability and licensing.
 

@@ -31,7 +31,7 @@ These checks cover the original skin implementation and offline verification. Th
 
 | Check | Result and scope |
 | --- | --- |
-| Markdown documentation | 29 Hebrew/English pairs; heading/table structure and code preserved; 30 plan navigation anchors in each language |
+| Markdown documentation | 30 Hebrew/English pairs; heading/table structure and code preserved; 30 plan navigation anchors in each language |
 | Import completeness | All 550 source-tree files represented; CNC — 303, 3D printing — 78, rubber — 20 |
 | STEP geometry | 186 documents including one archive member; 1,383 translated labels with unchanged non-string data streams |
 | Manufacturing spreadsheets | 7,280 numeric cells in 49 spreadsheets identical to source |

@@ -3817,8 +3817,8 @@
       "source_path": "README.md",
       "source_sha256": "8e89519ec3680a46aeba95c86edd6ed199b0cb3757c9aa46d852a666b9c3f542",
       "destination_path": "hardware/README.md",
-      "delivered_sha256": "b614a3c43b32b97bcd39e271b59bb8753a8966ac234cfbf9861de7c25720b584",
-      "delivered_bytes": 3401
+      "delivered_sha256": "e3eb5e762fbc272706f768ece7bb8fedfc515116a86c1c9f354cc246f5e57c3d",
+      "delivered_bytes": 4017
     },
     {
       "source_path": "README_CN.md",
