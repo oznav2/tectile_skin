@@ -15,6 +15,10 @@
       "english": "docs/release_status.en.md"
     },
     {
+      "hebrew": "docs/robot_overview.md",
+      "english": "docs/robot_overview.en.md"
+    },
+    {
       "hebrew": "docs/verification.md",
       "english": "docs/verification.en.md"
     },

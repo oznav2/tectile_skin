@@ -3453,8 +3453,8 @@
       "source_path": "02_PCB/README.md",
       "source_sha256": "23cec346320986461fbf0076dc41e4ee4dff5cfec4e18d91127e01ecf408b2ac",
       "destination_path": "hardware/02_PCB/README.md",
-      "delivered_sha256": "195d6216369240666fbe0758339488dccec6724784c46f4431eafacc3a644d6f",
-      "delivered_bytes": 3086
+      "delivered_sha256": "60655dbb9de0c7c9289c4312848aaf0146beef370bdce78fb6766b67f321dcbd",
+      "delivered_bytes": 10944
     },
     {
       "source_path": "03_Harness/Drawings/ARM_10_\u4fe1\u53f7\u7ebf.pdf",
@@ -3761,8 +3761,8 @@
       "source_path": "03_Harness/README.md",
       "source_sha256": "ac77aff281cf054294183256d621c2348637d9fe35c808dcbf2a786e8d160b39",
       "destination_path": "hardware/03_Harness/README.md",
-      "delivered_sha256": "c19ee45645245d6ea45e2583cc57b5cedb9c94e2918654659bf3039fdfeaf8b0",
-      "delivered_bytes": 1290
+      "delivered_sha256": "c96888a7f7ebaf584c706ef920bffd28f75da22641f3806e568f58a8de5ecb6b",
+      "delivered_bytes": 8255
     },
     {
       "source_path": "03_Harness/RP1_Harness_BOM.xlsx",
@@ -3817,8 +3817,8 @@
       "source_path": "README.md",
       "source_sha256": "8e89519ec3680a46aeba95c86edd6ed199b0cb3757c9aa46d852a666b9c3f542",
       "destination_path": "hardware/README.md",
-      "delivered_sha256": "e417f6339951214b40303a20cdc86cfd3eadee38c8ab3db9f4f1906b3989969d",
-      "delivered_bytes": 2880
+      "delivered_sha256": "b614a3c43b32b97bcd39e271b59bb8753a8966ac234cfbf9861de7c25720b584",
+      "delivered_bytes": 3401
     },
     {
       "source_path": "README_CN.md",
@@ -3852,8 +3852,8 @@
       "source_path": "assets/images/robot-overview.png",
       "source_sha256": "cf55a01e9e791385cc45a2b41ad67e0572abf5afe0a1b9fd19dc8a0c0802ecf0",
       "destination_path": "hardware/assets/images/robot-overview.png",
-      "delivered_sha256": "98da872efa265edb9309183da76b62d4e5e26a89008d9808806b3fea5d2f489a",
-      "delivered_bytes": 641998
+      "delivered_sha256": "3ba33e6940f488d4f7330bfe64b05e2d4911a85e5bfc62e71ebbfc16417cb206",
+      "delivered_bytes": 1772128
     }
   ]
 }

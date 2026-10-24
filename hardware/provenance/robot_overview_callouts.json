@@ -1,0 +1,293 @@
+{
+  "source_commit": "18ca38832cde37a8a4349cff8fbb565f05c6f254",
+  "source_path": "assets/images/robot-overview.png",
+  "callout_count": 26,
+  "callouts": [
+    {
+      "number": 1,
+      "source_view": "front",
+      "part_he": "גוף הכתף",
+      "part_en": "Shoulder body",
+      "colour_he": "כחול",
+      "colour_en": "Blue",
+      "material": "AL6061",
+      "finish_he": "התזת חול וצביעה",
+      "finish_en": "Sandblasting and spray painting"
+    },
+    {
+      "number": 2,
+      "source_view": "front",
+      "part_he": "גוף עליון של הזרוע",
+      "part_en": "Upper arm, upper body",
+      "colour_he": "לבן",
+      "colour_en": "White",
+      "material": "AL6061",
+      "finish_he": "התזת חול וצביעה",
+      "finish_en": "Sandblasting and spray painting"
+    },
+    {
+      "number": 3,
+      "source_view": "front",
+      "part_he": "גוף תחתון של הזרוע, ימין",
+      "part_en": "Right upper arm, lower body",
+      "colour_he": "לבן",
+      "colour_en": "White",
+      "material": "AL6061",
+      "finish_he": "התזת חול וצביעה",
+      "finish_en": "Sandblasting and spray painting"
+    },
+    {
+      "number": 4,
+      "source_view": "front",
+      "part_he": "מכסה תחתון של האמה",
+      "part_en": "Forearm lower cover",
+      "colour_he": "אפור",
+      "colour_en": "Grey",
+      "material": "resin",
+      "finish_he": "ליטוש וצביעה",
+      "finish_en": "Sanding/polishing and spray painting"
+    },
+    {
+      "number": 5,
+      "source_view": "front",
+      "part_he": "מכסה הירך",
+      "part_en": "Thigh cover",
+      "colour_he": "אפור",
+      "colour_en": "Grey",
+      "material": "resin",
+      "finish_he": "ליטוש וצביעה",
+      "finish_en": "Sanding/polishing and spray painting"
+    },
+    {
+      "number": 6,
+      "source_view": "front",
+      "part_he": "מכסה קדמי של השוק",
+      "part_en": "Front shin cover",
+      "colour_he": "אפור",
+      "colour_en": "Grey",
+      "material": "resin",
+      "finish_he": "ליטוש וצביעה",
+      "finish_en": "Sanding/polishing and spray painting"
+    },
+    {
+      "number": 7,
+      "source_view": "front",
+      "part_he": "בסיס כף הרגל",
+      "part_en": "Foot pad",
+      "colour_he": "כחול",
+      "colour_en": "Blue",
+      "material": "AL7075-T6",
+      "finish_he": "התזת חול וצביעה",
+      "finish_en": "Sandblasting and spray painting"
+    },
+    {
+      "number": 8,
+      "source_view": "front",
+      "part_he": "פס תאורה",
+      "part_en": "Light strip",
+      "colour_he": "כחול",
+      "colour_en": "Blue",
+      "material": "LED",
+      "finish_he": "לא צוין במקור (/)",
+      "finish_en": "Unspecified in source (/)"
+    },
+    {
+      "number": 9,
+      "source_view": "front",
+      "part_he": "מכסה עליון של הזרוע",
+      "part_en": "Upper arm top cover",
+      "colour_he": "אפור",
+      "colour_en": "Grey",
+      "material": "resin",
+      "finish_he": "צביעה",
+      "finish_en": "Spray painting"
+    },
+    {
+      "number": 10,
+      "source_view": "front",
+      "part_he": "מכסה קדמי של מפרק הירך",
+      "part_en": "Hip joint front cover",
+      "colour_he": "אפור",
+      "colour_en": "Grey",
+      "material": "6061 alloy",
+      "finish_he": "התזת חול וצביעה",
+      "finish_en": "Sandblasting and spray painting"
+    },
+    {
+      "number": 11,
+      "source_view": "front",
+      "part_he": "רפידת גומי לירך",
+      "part_en": "Thigh rubber pad",
+      "colour_he": "אפור",
+      "colour_en": "Grey",
+      "material": "PU",
+      "finish_he": "לא צוין במקור (/)",
+      "finish_en": "Unspecified in source (/)"
+    },
+    {
+      "number": 12,
+      "source_view": "side",
+      "part_he": "ראש אינטראקציה",
+      "part_en": "Interaction head",
+      "colour_he": "לבן",
+      "colour_en": "White",
+      "material": "resin",
+      "finish_he": "ליטוש וצביעה",
+      "finish_en": "Sanding/polishing and spray painting"
+    },
+    {
+      "number": 13,
+      "source_view": "side",
+      "part_he": "מעטפת החזה",
+      "part_en": "Chest shell",
+      "colour_he": "לבן",
+      "colour_en": "White",
+      "material": "PC",
+      "finish_he": "ליטוש וצביעה",
+      "finish_en": "Sanding/polishing and spray painting"
+    },
+    {
+      "number": 14,
+      "source_view": "side",
+      "part_he": "גוף שורש כף היד",
+      "part_en": "Wrist body",
+      "colour_he": "כחול",
+      "colour_en": "Blue",
+      "material": "AL6061",
+      "finish_he": "התזת חול וצביעה",
+      "finish_en": "Sandblasting and spray painting"
+    },
+    {
+      "number": 15,
+      "source_view": "side",
+      "part_he": "מכסה קצה שורש כף היד",
+      "part_en": "Wrist end cover",
+      "colour_he": "אפור",
+      "colour_en": "Grey",
+      "material": "resin",
+      "finish_he": "ליטוש וצביעה",
+      "finish_en": "Sanding/polishing and spray painting"
+    },
+    {
+      "number": 16,
+      "source_view": "side",
+      "part_he": "גוף תחתון של הירך, שמאל",
+      "part_en": "Left thigh lower body",
+      "colour_he": "לבן",
+      "colour_en": "White",
+      "material": "AL6061",
+      "finish_he": "התזת חול וצביעה",
+      "finish_en": "Sandblasting and spray painting"
+    },
+    {
+      "number": 17,
+      "source_view": "side",
+      "part_he": "גוף השוק, שמאל",
+      "part_en": "Left shin body",
+      "colour_he": "לבן וכחול",
+      "colour_en": "White and blue",
+      "material": "AL6061",
+      "finish_he": "צביעה והדפסת טמפון",
+      "finish_en": "Spray painting and pad printing"
+    },
+    {
+      "number": 18,
+      "source_view": "side",
+      "part_he": "מעטפת גב כף הרגל",
+      "part_en": "Foot upper",
+      "colour_he": "לבן",
+      "colour_en": "White",
+      "material": "PU",
+      "finish_he": "לא צוין במקור (/)",
+      "finish_en": "Unspecified in source (/)"
+    },
+    {
+      "number": 19,
+      "source_view": "side",
+      "part_he": "שרוול הידית",
+      "part_en": "Handle sleeve",
+      "colour_he": "לבן",
+      "colour_en": "White",
+      "material": "PU",
+      "finish_he": "לא צוין במקור (/)",
+      "finish_en": "Unspecified in source (/)"
+    },
+    {
+      "number": 20,
+      "source_view": "side",
+      "part_he": "מגן פגיעה למפרק הירך",
+      "part_en": "Hip joint impact pad",
+      "colour_he": "כחול",
+      "colour_en": "Blue",
+      "material": "PU",
+      "finish_he": "לא צוין במקור (/)",
+      "finish_en": "Unspecified in source (/)"
+    },
+    {
+      "number": 21,
+      "source_view": "side",
+      "part_he": "מכסה אחורי של השוק",
+      "part_en": "Rear shin cover",
+      "colour_he": "אפור",
+      "colour_en": "Grey",
+      "material": "resin",
+      "finish_he": "ליטוש וצביעה",
+      "finish_en": "Sanding/polishing and spray painting"
+    },
+    {
+      "number": 22,
+      "source_view": "rear",
+      "part_he": "גוף עליון של האמה, ימין",
+      "part_en": "Right forearm upper body",
+      "colour_he": "לבן",
+      "colour_en": "White",
+      "material": "AL6061",
+      "finish_he": "התזת חול וצביעה",
+      "finish_en": "Sandblasting and spray painting"
+    },
+    {
+      "number": 23,
+      "source_view": "rear",
+      "part_he": "מכסה גומי למפרק הירך",
+      "part_en": "Hip joint rubber cover",
+      "colour_he": "כחול",
+      "colour_en": "Blue",
+      "material": "PU",
+      "finish_he": "לא צוין במקור (/)",
+      "finish_en": "Unspecified in source (/)"
+    },
+    {
+      "number": 24,
+      "source_view": "rear",
+      "part_he": "לחצן",
+      "part_en": "Button",
+      "colour_he": "לבן",
+      "colour_en": "White",
+      "material": "resin",
+      "finish_he": "ליטוש וצביעה",
+      "finish_en": "Sanding/polishing and spray painting"
+    },
+    {
+      "number": 25,
+      "source_view": "rear",
+      "part_he": "גוף תחתון של האמה",
+      "part_en": "Forearm lower body",
+      "colour_he": "לבן",
+      "colour_en": "White",
+      "material": "AL6061",
+      "finish_he": "צביעה",
+      "finish_en": "Spray painting"
+    },
+    {
+      "number": 26,
+      "source_view": "rear",
+      "part_he": "מפרק הירך, ימין",
+      "part_en": "Right hip joint",
+      "colour_he": "כחול",
+      "colour_en": "Blue",
+      "material": "AL6061",
+      "finish_he": "התזת חול וצביעה",
+      "finish_en": "Sandblasting and spray painting"
+    }
+  ]
+}

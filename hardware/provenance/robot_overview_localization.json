@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-25",
+  "source_repository": "https://github.com/Roboparty/RP1_hardware",
+  "source_commit": "18ca38832cde37a8a4349cff8fbb565f05c6f254",
+  "source_path": "assets/images/robot-overview.png",
+  "source_sha256": "cf55a01e9e791385cc45a2b41ad67e0572abf5afe0a1b9fd19dc8a0c0802ecf0",
+  "output_path": "hardware/assets/images/robot-overview.png",
+  "output_sha256": "3ba33e6940f488d4f7330bfe64b05e2d4911a85e5bfc62e71ebbfc16417cb206",
+  "method": "Hebrew visual adaptation using built-in image_gen.imagegen; three edit passes; manually transcribed bilingual 26-callout register",
+  "pixel_exact": false,
+  "scope": "Editorial overview only. Use the callout register for material/finish values and source part drawings/CAD for exact identity, geometry and placement. No manufacturing data was changed.",
+  "callout_count": 26,
+  "callout_register": "hardware/provenance/robot_overview_callouts.json",
+  "prompt_set": "hardware/provenance/robot_overview_prompts.json",
+  "prior_substitute_retained_as": "hardware/assets/images/skin-placement-concept.he.png",
+  "prior_substitute_sha256": "98da872efa265edb9309183da76b62d4e5e26a89008d9808806b3fea5d2f489a",
+  "prior_substitute_description": "Three-view mesh render with proposed green skin panels; this was not a translation of the source material/finish overview.",
+  "licence": "CC-BY-SA-4.0; source attribution and modification record retained."
+}

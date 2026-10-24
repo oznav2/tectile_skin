@@ -31,10 +31,12 @@ These checks cover the original skin implementation and offline verification. Th
 
 | Check | Result and scope |
 | --- | --- |
-| Markdown documentation | 28 Hebrew/English pairs; heading/table structure and code preserved; 30 plan navigation anchors in each language |
+| Markdown documentation | 29 Hebrew/English pairs; heading/table structure and code preserved; 30 plan navigation anchors in each language |
 | Import completeness | All 550 source-tree files represented; CNC — 303, 3D printing — 78, rubber — 20 |
 | STEP geometry | 186 documents including one archive member; 1,383 translated labels with unchanged non-string data streams |
 | Manufacturing spreadsheets | 7,280 numeric cells in 49 spreadsheets identical to source |
+| PCB and harness file access | All 88 source PCB files and all 46 source harness files are present and mapped; bilingual catalogues link directly to manufacturing and support assets |
+| Overview image | Hebrew visual adaptation embedded in both landing pages; all 26 callouts recorded in both languages; no claim of pixel identity or geometric validation from the image |
 | PDF technical information | 281 files and 384 source pages, including 380 positional-check pages; four redrawn architecture pages excluded; 27,167 eligible technical spans checked at original positions, with no unresolved collateral deletions |
 | Archive images | All 15 archives inspected; the only two table images recreated in Hebrew, 82 values/blank cells checked, Gerber and drill files unchanged |
 

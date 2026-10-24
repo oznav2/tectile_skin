@@ -4,6 +4,10 @@
 
 [Integrated project](../README.en.md)
 
+[![Hebrew robot hardware overview: structure, materials and finishes](assets/images/robot-overview.png)](assets/images/robot-overview.png)
+
+[Full-size image](assets/images/robot-overview.png) · [Complete 26-callout English legend](../docs/robot_overview.en.md) · **[Every PCB file, by board](02_PCB/README.en.md)**. This is a localized visual adaptation of the base hardware overview; use the part drawings for manufacturing dimensions.
+
 Humanoid robot hardware based on RoboParty RP1, with English working filenames, ROBOSKIN part numbers and Hebrew translations of extractable Chinese text. Text inside images, outlines and Gerber graphics requires separate examination of the graphical source and is not presented as completely translated. Originals are retained separately for traceability and licensing.
 
 | Area | Documents |

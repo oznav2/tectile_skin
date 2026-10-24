@@ -15,6 +15,7 @@ Source: [RoboParty rp1_hardware](https://github.com/Roboparty/rp1_hardware), pin
 | [Branding changes](branding_changes.json) | Adapted text fields and preservation of upstream attribution |
 | [STEP verification](step_geometry_checks.json) | 186 documents, 1,383 translated labels and unchanged non-text geometry stream |
 | [Spreadsheet verification](office_numeric_checks.json) | 7,280 numeric cells in 49 spreadsheets compared with original source |
+| [Overview localization](robot_overview_localization.json) | Hebrew material/finish overview, 26-callout register and image-change record; previous conceptual rendering retained separately |
 | [PDF annotation repair](pdf_glyph_repair_report.json) | Restored exact technical glyph outlines lost in text editing, without restoring source branding or Chinese |
 
 Chinese source names in JSON records are encoded for traceability. They are not a substitute for translating working names and documents.
