@@ -39,7 +39,8 @@ for pair in languages['pairs']:
   errors.append(f'Primary document must be Hebrew with RTL layout: {pair["hebrew"]}')
  code=lambda s:re.findall(r'^```[^\n]*\n(.*?)^```',s,re.M|re.S)
  if code(hs)!=code(es):errors.append(f'Code blocks differ between language versions: {pair["hebrew"]}')
-primary={str(p.relative_to(ROOT)) for p in ROOT.rglob('*.md') if '.git' not in p.parts and not p.name.endswith(('.en.md','.he.md'))}
+# CLAUDE.md is agent guidance, not project documentation.
+primary={str(p.relative_to(ROOT)) for p in ROOT.rglob('*.md') if '.git' not in p.parts and not p.name.endswith(('.en.md','.he.md')) and str(p.relative_to(ROOT))!='CLAUDE.md'}
 if primary!={p['hebrew'] for p in languages['pairs']}:errors.append('Language manifest does not cover all primary Markdown documents')
 manifest=json.loads((ROOT/'hardware/provenance/file_manifest.json').read_text())
 for row in manifest['files']:
